@@ -13,4 +13,5 @@ const nextConfig = {
   }
 }
 
-export default nextConfig
+// Change this line
+module.exports = nextConfig
