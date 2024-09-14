@@ -1,0 +1,159 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.main {
+  padding: 3rem 0;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.date {
+  font-size: 1rem;
+  color: #718096;
+  font-weight: 500;
+}
+
+.fullWidth, .twoColumns {
+  background-color: #f7fafc;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.twoColumns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.column {
+  flex-basis: calc(50% - 1rem);
+}
+
+/* New class for the Chiefs section */
+.chiefsSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.chiefColumn {
+  flex-basis: calc(50% - 1rem);
+}
+
+/* Update the media query for responsiveness */
+@media (max-width: 768px) {
+  .twoColumns, .chiefsSection {
+    flex-direction: column;
+  }
+
+  .column, .chiefColumn {
+    flex-basis: 100%;
+  }
+}
+
+.column {
+  flex-basis: calc(50% - 1rem);
+}
+
+.sectionTitle {
+  color: #2b6cb0;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.spotlightName {
+  color: #2d3748;
+  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.text {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.photoOfMonth {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem 0;
+  color: #718096;
+  font-size: 0.875rem;
+}
+
+.link {
+  color: #3182ce;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #2c5282;
+}
+
+.list {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.listItem {
+  margin-bottom: 0.5rem;
+}
+
+.blockquote {
+  border-left: 4px solid #4299e1;
+  padding-left: 1rem;
+  margin-left: 0;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  color: #4a5568;
+}
+
+@media (max-width: 768px) {
+  .twoColumns {
+    flex-direction: column;
+  }
+
+  .column {
+    flex-basis: 100%;
+  }
+}
