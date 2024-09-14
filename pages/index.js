@@ -1,9 +1,10 @@
 import Head from "next/head"
 import { attributes, react as HomeContent } from '../content/home.md'
 import styles from '../styles/Home.module.css'
+import Image from 'next/image'
 
 export default function Home() {
-  const { title, date, welcome, statistics, spotlight, tribalCouncil, chiefChat, farewell, photoOfMonth, events } = attributes
+  const { title, subtitle, team, date, welcome, statistics, spotlight, tribalCouncil, chiefChat, farewell, photoOfMonth, events } = attributes
 
   return (
     <div className={styles.container}>
@@ -14,14 +15,21 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-      <header className={styles.header}>
-          <h1 className={styles.title}>{title}</h1>
-          <p className={styles.date}>{date}</p>
+        <header className={styles.header}>
+          <div className={styles.logoContainer}>
+            <Image src="/img/azalea.svg" alt="azalea-logo" width={150} height={150} className={styles.logo} />
+          </div>
+          <div className={styles.titleContainer}>
+            <h1 className={styles.title}>{title}</h1>
+            <p className={styles.subtitle}>{subtitle}</p>
+            <p className={styles.date}>{date}</p>
+          </div>
         </header>
 
         <section className={styles.fullWidth}>
           <h2 className={styles.sectionTitle}>Welcome</h2>
           <p className={styles.text}>{welcome}</p>
+          <p className={styles.text}>{team}</p>
         </section>
 
         <section className={styles.twoColumns}>
@@ -89,7 +97,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <p>© {new Date().getFullYear()} SGMC Internal Medicine Residency Newsletter</p>
+        <p>© {new Date().getFullYear()} Azalea Report - The SGMC Internal Medicine Residency Newsletter</p>
       </footer>
     </div>
   )
