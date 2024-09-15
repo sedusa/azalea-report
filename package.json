@@ -1,11 +1,11 @@
 {
-  "name": "azalear-report",
+  "name": "azalea-report",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build --verbose",
+    "build": "next build",
     "start": "next start"
   },
   "keywords": [],

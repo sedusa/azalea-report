@@ -2,7 +2,6 @@
 const nextConfig = {
   output: 'export',
   webpack: (cfg) => {
-    console.log('Next.js config:', JSON.stringify(nextConfig, null, 2));
     cfg.module.rules.push(
       {
         test: /\.md$/,
@@ -14,6 +13,5 @@ const nextConfig = {
   }
 }
 
-console.log('Next.js config:', JSON.stringify(nextConfig, null, 2));
 // Change this line
 module.exports = nextConfig
