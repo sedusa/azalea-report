@@ -1,13 +1,15 @@
 ---
-title: Azalea Report
+title: AZALEA REPORT
 subtitle: SGMC Internal Medicine Residency Newsletter
-date: September 2024
+date: Edition 1, September 2024
 welcome: Welcome to the inaugural edition of the Azalea Report, a resident-led e-newsletter for our Internal Medicine Residency program at South Georgia Medical Center in Valdosta, Georgia. We chose the name "Azalea Report" to honor Valdosta's nickname as the "Azalea City," reflecting our aim to flourish and showcase the best of our program, much like the vibrant azaleas that bloom across our city each spring. In this first edition, we're excited to introduce our editorial team, spotlight outstanding residents, share program achievements, and hear from our newly appointed Chief Residents about their plans for the coming year. We'll also feature a section on community engagement, highlighting how our residents contribute to Valdosta and surrounding areas. Whether you're a current resident, faculty member, prospective applicant, or simply interested in our program, we invite you to explore the Azalea Report and join us on this exciting journey of growth and excellence in medical education.
 team: The Azalea Report team
+aboutProgram: SGMC Health's Internal Medicine Residency Program, in partnership with Mercer University School of Medicine, aims to create a broader pipeline of doctors in Georgia, especially in rural communities. Our program combines academic excellence with hands-on experience, leveraging SGMC Health's highly capable health delivery system. Under the leadership of Dr. Gregory Beale, Program Director, and Dr. Leslie Lamptey, Associate Program Director, we are committed to educating physicians to meet the primary care and healthcare needs of rural and medically underserved areas of Georgia.
+sgmcImage: /img/sgmc.jpg
 statistics:
-  residentCount: 71
-  countryCount: 27
-  languageCount: 26
+  residentCount: 24
+  countryCount: 10
+  languageCount: 12
 spotlight:
   name: James McSweeney, MD
   image: https://www.sgmc.org/wp-content/uploads/2023/06/James-McSweeney.png
@@ -45,16 +47,16 @@ chiefChat:
       Outside of his professional life, Dr. Gandi values quality time with his wife and enjoys traveling, maintaining a balance that enhances both his personal growth and medical career.
 farewell:
   content: >
-    Academic year 2022-2023 has not only seen the graduating class of 2022 leave us to start their new professional lives as attendings but we have also lost faculty and administrative staff. Esteemed Associate Program Director, Dr Nedsley Vila left PAR GME after 6 years of service. Dr Vila sat down with The Residency Reader and shared some important lessons learned during her time with PAR. "I learned the value of building close relationships and that the key to building trust and respect was through empathy, active listening, and providing the support and guidance you needed to succeed."
-
-    Asked about the advice she would give to the residents as they progress through the program, she said this: "My advice is to never forget to put everything in perspective! You are all so incredible and have worked so hard to be where you are. There is a reason for every stage of life and while I know residency is hard, I hope you can focus on all of the positives and make the most of the friendships because it will pass before you know it."
-
-    "What I'll miss most is the satisfaction of seeing my residents grow and develop into skilled, compassionate doctors who I am proud to call my family." We asked Dr Vila what advice she would give to the current residents to ensure their success in the field of medicine: "Approach your work with empathy, kindness, and a willingness to learn and grow. Treat your patients and colleagues as if they were your own family. By modeling empathy, active listening, and a commitment to ongoing learning and growth, I hope to have inspired my residents to become skilled and compassionate doctors who will in turn leave their own positive impact on the lives of their patients and colleagues." 
-
-    Another member of the PAR family who flew the nest is Rachel Hatton, a GME Administrator who has moved on to clinical management consulting/recruitment. "I will miss being able to watch the growth that every resident makes from the time they arrive until graduation. It's so special to see the confidence and accomplishments that you achieve in just 3 short years."
+    <div class="farewell-kevin">
+      It is with mixed emotions that we bid farewell to Kevin, our beloved residency coordinator. For years, Kevin has been the heart and soul of our program, guiding residents through the complexities of their medical journey with unwavering dedication and a warm smile.
+      Kevin's impact on our residency program cannot be overstated. His organizational skills kept our program running smoothly, while his compassionate nature provided comfort and support during challenging times. From managing rotations to organizing social events, Kevin's attention to detail and genuine care for each resident's well-being have been instrumental in creating a positive and nurturing learning environment.
+      As Kevin moves on to new adventures, we want to express our heartfelt gratitude for his years of service. His legacy of kindness, efficiency, and commitment will continue to inspire us. While we will miss his daily presence, the lessons he taught us about professionalism, empathy, and the importance of community in medical education will remain with us throughout our careers.
+      Kevin, thank you for being not just a coordinator, but a mentor, a friend, and a pillar of support. Your impact on our lives and careers is immeasurable. We wish you the very best in your future endeavors and hope you'll always remember the positive influence you've had on countless residents at SGMC.
+      Best wishes, Kevin! You will be deeply missed and fondly remembered.
+    </div>
 photoOfMonth:
-  image: https://via.placeholder.com/800x400.png?text=Mount+Yonah,+GA
-  caption: "Mount Yonah, GA: Dr Sahar Karim"
+  image: /img/twinning.jpg
+  caption: "Impromptu twinning"
 events:
   - date: June 15, 2023
     description: Annual Residency Graduation Ceremony

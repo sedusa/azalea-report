@@ -1,10 +1,16 @@
+.pageBackground {
+  background-color: #FEFBF3;
+  min-height: 100vh;
+  width: 100%;
+}
+
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 1rem;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: #333;
-  line-height: 1.6;
+  font-family: 'Georgia', serif; /* Add serif font for body text */
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .main {
@@ -35,18 +41,22 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  line-height: 1.2;
 }
 
 .title {
+  color: #016F53;
   margin: 0;
-  line-height: 1;
-  font-size: 3.0rem;
+  line-height: 1.2;
+  font-size: 2.5rem;
+  font-family: 'Arial', sans-serif; /* Use sans-serif for headings */
 }
 
 .subtitle {
   margin: 0.25rem 0;
   font-size: 1.2rem;
   color: #4a5568;
+  font-family: 'Arial', sans-serif;
 }
 
 .date {
@@ -55,12 +65,10 @@
   color: #718096;
 }
 
-.fullWidth, .twoColumns {
-  background-color: #f7fafc;
-  border-radius: 12px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+.fullWidth, .twoColumns, .threeColumns {
+  background-color: transparent;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .twoColumns {
@@ -95,6 +103,10 @@
   .column, .chiefColumn {
     flex-basis: 100%;
   }
+
+  .column:first-child {
+    order: -1; /* This ensures the Resident Spotlight stays on top in mobile view */
+  }
 }
 
 .column {
@@ -106,43 +118,70 @@
   margin-bottom: 1.5rem;
   font-size: 1.8rem;
   font-weight: 600;
+  font-family: 'Arial', sans-serif;
 }
 
 .image {
   width: 200px;
   height: 200px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 0; /* Remove border radius */
   margin-bottom: 1.5rem;
-  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.spotlightContainer {
+  background-color: #f7f3e8; /* A slightly darker shade of the page background */
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.spotlightImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 1rem;
 }
 
 .spotlightName {
-  color: #2d3748;
+  color: #016F53;
   margin-bottom: 0.75rem;
   font-size: 1.4rem;
+  font-weight: 600;
+  font-family: 'Arial', sans-serif;
+}
+
+.spotlightText {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.spotlightText strong {
+  color: #016F53;
   font-weight: 600;
 }
 
 .text {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
   font-size: 1rem;
+  line-height: 1.6; /* Improve readability with increased line height */
 }
 
 .photoOfMonth {
   width: 100%;
   max-height: 400px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 0; /* Remove border radius */
   margin-bottom: 1rem;
-  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
 
 .footer {
   text-align: center;
   padding: 2rem 0;
   color: #718096;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
 }
 
 .link {
@@ -162,6 +201,7 @@
 
 .listItem {
   margin-bottom: 0.5rem;
+  font-size: 1rem;
 }
 
 .blockquote {
@@ -171,6 +211,7 @@
   margin-bottom: 1.5rem;
   font-style: italic;
   color: #4a5568;
+  font-size: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -181,6 +222,10 @@
   .column {
     flex-basis: 100%;
   }
+
+  .column:first-child {
+    order: -1; /* This ensures the Resident Spotlight stays on top in mobile view */
+  }
 }
 
 .logoContainer {
@@ -189,4 +234,40 @@
 
 .titleContainer {
   flex-grow: 1;
+}
+
+.farewellContent {
+  overflow: hidden; /* Ensures the content wraps around the floated image */
+}
+
+.farewellImage {
+  width: 300px; /* Adjust this value as needed */
+  height: auto; /* Maintains aspect ratio */
+  float: left;
+  margin: 0 1.5rem 1rem 0;
+  shape-outside: margin-box; /* Allows text to flow around the image's margin box */
+}
+
+.farewellText {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.farewellText p {
+  margin-bottom: 1rem;
+}
+
+.farewellText p:first-child {
+  margin-top: 0;
+}
+
+.sgmcImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.aboutProgram {
+  margin-bottom: 2rem;
 }
