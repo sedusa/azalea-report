@@ -2,9 +2,48 @@ import Head from "next/head"
 import { attributes, react as HomeContent } from '../content/home.md'
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
+import { useState, useEffect } from 'react';
+import { FaBirthdayCake } from 'react-icons/fa'; // Import the birthday cake icon
 
 export default function Home() {
-  const { title, subtitle, team, date, welcome, aboutProgram, sgmcImage, statistics, spotlight, tribalCouncil, chiefChat, farewell, photoOfMonth, events } = attributes
+  const { title, subtitle, team, date, welcome, aboutProgram, sgmcImage, statistics, spotlight, tribalCouncil, chiefChat, farewell, photoOfMonth, events, upcomingBirthdays } = attributes
+
+  const [expandedChiefs, setExpandedChiefs] = useState({});
+  const [isMobile, setIsMobile] = useState(false);
+  const [expandedFarewell, setExpandedFarewell] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize(); // Call it initially
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const toggleChiefContent = (index) => {
+    setExpandedChiefs(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
+  const truncateContent = (content, maxLength = isMobile ? 200 : 450) => {
+    if (content.length <= maxLength) return content;
+    return content.substr(0, content.lastIndexOf(' ', maxLength)) + '...';
+  };
+
+  const truncateFarewell = (content, maxWords = 50) => {
+    const div = document.createElement('div');
+    div.innerHTML = content;
+    const text = div.textContent || div.innerText;
+    const words = text.split(/\s+/);
+    if (words.length <= maxWords) return content;
+    
+    const truncatedText = words.slice(0, maxWords).join(' ') + '...';
+    return `<p>${truncatedText}</p>`;
+  };
 
   return (
     <div className={styles.pageBackground}>
@@ -73,9 +112,23 @@ export default function Home() {
             <div className={styles.chiefsSection}>
               {chiefChat.map((chief, index) => (
                 <div key={index} className={styles.chiefColumn}>
-                  <img src={chief.image} alt={chief.name} className={styles.image} />
-                  <h3 className={styles.spotlightName}>{chief.name}</h3>
-                  <div className={styles.text} dangerouslySetInnerHTML={{ __html: chief.content }} />
+                  <img src={chief.image} alt={chief.name} className={styles.chiefImage} />
+                  <h3 className={styles.chiefName}>{chief.name}</h3>
+                  <div className={styles.chiefText}>
+                    <div dangerouslySetInnerHTML={{ 
+                      __html: expandedChiefs[index] 
+                        ? chief.content 
+                        : truncateContent(chief.content) 
+                    }} />
+                    {chief.content.length > (isMobile ? 200 : 450) && (
+                      <button 
+                        onClick={() => toggleChiefContent(index)}
+                        className={styles.toggleButton}
+                      >
+                        {expandedChiefs[index] ? 'Show Less' : 'Show More'}
+                      </button>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
@@ -85,25 +138,59 @@ export default function Home() {
             <h2 className={styles.sectionTitle}>Farewell</h2>
             <div className={styles.farewellContent}>
               <img src="/img/kevin-farewell.jpg" alt="Farewell to Kevin" className={styles.farewellImage} />
-              <div className={styles.farewellText} dangerouslySetInnerHTML={{ __html: farewell.content }} />
+              <div className={styles.farewellText}>
+                {isMobile ? (
+                  <>
+                    <div dangerouslySetInnerHTML={{ 
+                      __html: expandedFarewell 
+                        ? farewell.content 
+                        : truncateFarewell(farewell.content) 
+                    }} />
+                    <button 
+                      onClick={() => setExpandedFarewell(!expandedFarewell)}
+                      className={styles.farewellToggleButton}
+                    >
+                      {expandedFarewell ? 'Show Less' : 'Show More'}
+                    </button>
+                  </>
+                ) : (
+                  <div dangerouslySetInnerHTML={{ __html: farewell.content }} />
+                )}
+              </div>
             </div>
           </section>
 
           <section className={styles.fullWidth}>
             <h2>Photo of the Month</h2>
             <img src={photoOfMonth.image} alt={photoOfMonth.caption} className={styles.photoOfMonth} />
-            <p>{photoOfMonth.caption}</p>
+            <p className={styles.photoCaption}>{photoOfMonth.caption}</p>
           </section>
 
-          <section className={styles.fullWidth}>
-            <h2>Upcoming Events</h2>
-            <ul>
-              {events.map((event, index) => (
-                <li key={index}>
-                  <strong>{event.date}:</strong> {event.description}
-                </li>
-              ))}
-            </ul>
+          <section className={styles.twoColumns}>
+            <div className={styles.column}>
+              <h2 className={styles.sectionTitle}>Upcoming Events</h2>
+              <ul className={styles.eventList}>
+                {events.map((event, index) => (
+                  <li key={index} className={styles.eventItem}>
+                    <strong>{event.date}:</strong> {event.description}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className={styles.column}>
+              <div className={styles.birthdaySection}>
+                <h2 className={styles.birthdayTitle}>
+                  🎂 Upcoming Birthdays
+                </h2>
+                <ul className={styles.birthdayList}>
+                  {upcomingBirthdays.map((birthday, index) => (
+                    <li key={index} className={styles.birthdayItem}>
+                      <strong>{birthday.name}:</strong> {birthday.date}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </section>
 
           <HomeContent />

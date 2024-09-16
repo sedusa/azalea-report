@@ -5,11 +5,11 @@
 }
 
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 0 1rem;
   font-family: 'Georgia', serif; /* Add serif font for body text */
-  font-size: 16px;
+  font-size: 18px; /* Increased from 16px */
   line-height: 1.5;
 }
 
@@ -19,6 +19,7 @@
 
 .header {
   display: flex;
+  flex-direction: column;
   align-items: center;
   width: 100%;
   margin-bottom: 2rem;
@@ -27,7 +28,7 @@
 .logoContainer {
   width: 150px;
   height: 150px;
-  margin-right: 1rem;
+  margin-bottom: 1rem;
   flex-shrink: 0;
   overflow: hidden;
 }
@@ -38,9 +39,7 @@
 }
 
 .titleContainer {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+  text-align: center;
   line-height: 1.2;
 }
 
@@ -68,18 +67,18 @@
 .fullWidth, .twoColumns, .threeColumns {
   background-color: transparent;
   padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  /* Removed margin-bottom: 1.5rem; */
 }
 
 .twoColumns {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   gap: 2rem;
 }
 
 .column {
-  flex-basis: calc(50% - 1rem);
+  flex: 1;
+  min-width: calc(50% - 1rem);
 }
 
 /* New class for the Chiefs section */
@@ -88,24 +87,135 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 2rem;
+  background-color: #e6f0ed; /* Light green background */
+  padding: 2rem;
+  border-radius: 8px;
+  /* Removed margin-bottom: 2rem; */
 }
 
 .chiefColumn {
   flex-basis: calc(50% - 1rem);
+  background-color: transparent;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.chiefImage {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.chiefName {
+  margin-bottom: 0.5rem;
+}
+
+.chiefText {
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.toggleButton {
+  background-color: #016F53;
+  color: #FFFFFF;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.toggleButton:hover {
+  background-color: #014d3a;
 }
 
 /* Update the media query for responsiveness */
 @media (max-width: 768px) {
-  .twoColumns, .chiefsSection {
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .main {
+    padding: 1.5rem 0;
+  }
+
+  .header {
+    margin-bottom: 1rem;
+  }
+
+  .logoContainer {
+    width: 120px;
+    height: 120px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .date {
+    font-size: 0.9rem;
+  }
+
+  .fullWidth, .twoColumns, .threeColumns, .chiefsSection {
+    padding: 1rem;
+    /* Removed margin-bottom: 1rem; */
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .text, .spotlightText, .chiefText, .farewellText {
+    font-size: 1rem;
+  }
+
+  .image, .chiefImage {
+    width: 150px;
+    height: 150px;
+  }
+
+  .spotlightName, .chiefName {
+    font-size: 1.2rem;
+  }
+
+  .chiefsSection {
     flex-direction: column;
+    padding: 1rem;
   }
 
-  .column, .chiefColumn {
+  .chiefColumn {
     flex-basis: 100%;
+    padding: 1rem;
   }
 
-  .column:first-child {
-    order: -1; /* This ensures the Resident Spotlight stays on top in mobile view */
+  .chiefImage {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 0 1rem 0; /* Left-align the image */
+  }
+
+  .chiefName {
+    text-align: left; /* Left-align the name */
+  }
+
+  .chiefText {
+    text-align: left;
+    padding: 0;
+  }
+
+  .toggleButton {
+    display: block;
+    margin: 1rem 0 0; /* Left-align the button */
   }
 }
 
@@ -154,7 +264,7 @@
 
 .spotlightText {
   margin-bottom: 0.5rem;
-  font-size: 0.95rem;
+  font-size: 1.0625rem; /* Increased from 0.95rem */
   line-height: 1.5;
 }
 
@@ -165,7 +275,7 @@
 
 .text {
   margin-bottom: 1rem;
-  font-size: 1rem;
+  font-size: 1.125rem; /* Increased from 1rem */
   line-height: 1.6; /* Improve readability with increased line height */
 }
 
@@ -174,7 +284,12 @@
   max-height: 400px;
   object-fit: cover;
   border-radius: 0; /* Remove border radius */
-  margin-bottom: 1rem;
+}
+
+.photoCaption {
+  font-size: 1.125rem; 
+  line-height: 1.6;
+  margin: 0;
 }
 
 .footer {
@@ -201,7 +316,7 @@
 
 .listItem {
   margin-bottom: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.125rem; /* Increased from 1rem */
 }
 
 .blockquote {
@@ -211,7 +326,7 @@
   margin-bottom: 1.5rem;
   font-style: italic;
   color: #4a5568;
-  font-size: 1rem;
+  font-size: 1.125rem; /* Increased from 1rem */
 }
 
 @media (max-width: 768px) {
@@ -237,19 +352,20 @@
 }
 
 .farewellContent {
-  overflow: hidden; /* Ensures the content wraps around the floated image */
+  overflow: visible; /* Change from hidden to visible */
 }
 
 .farewellImage {
-  width: 300px; /* Adjust this value as needed */
-  height: auto; /* Maintains aspect ratio */
+  width: 100%; /* Change from 400px to 100% */
+  max-width: 400px; /* Add max-width */
+  height: auto;
   float: left;
   margin: 0 1.5rem 1rem 0;
-  shape-outside: margin-box; /* Allows text to flow around the image's margin box */
+  shape-outside: margin-box;
 }
 
 .farewellText {
-  font-size: 1rem;
+  font-size: 1.125rem; /* Increased from 1rem */
   line-height: 1.6;
 }
 
@@ -261,6 +377,45 @@
   margin-top: 0;
 }
 
+/* Add these new styles */
+.farewellToggleButton {
+  background-color: #016F53;
+  color: #FFFFFF;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.farewellToggleButton:hover {
+  background-color: #014d3a;
+}
+
+@media (max-width: 768px) {
+  /* ... existing mobile styles ... */
+
+  .farewellImage {
+    float: none;
+    margin: 0 auto 1rem;
+    display: block;
+  }
+
+  .farewellText {
+    clear: both;
+    font-size: 1rem;
+  }
+
+  .farewellToggleButton {
+    margin: 1rem 0 0;
+    display: inline-block;
+  }
+}
+
 .sgmcImage {
   width: 100%;
   height: auto;
@@ -269,5 +424,48 @@
 }
 
 .aboutProgram {
-  margin-bottom: 2rem;
+  /* Removed margin-bottom: 2rem; */
 }
+
+/* New styles for upcoming birthdays section */
+.birthdaySection {
+  background-color: #ECCE45;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.birthdayTitle {
+  color: #333;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.birthdayIcon {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.birthdayList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.birthdayItem {
+  color: #333;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .birthdaySection {
+    padding: 1rem;
+  }
+
+  .birthdayItem {
+    font-size: 1rem;
+  }
+}
+
+/* ... existing styles ... */

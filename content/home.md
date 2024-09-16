@@ -15,7 +15,7 @@ spotlight:
   image: https://www.sgmc.org/wp-content/uploads/2023/06/James-McSweeney.png
   birthplace: San Diego, CA
   funFact: Dr McSweeney is a huge fan of the TV show "The Office" and even has a tattoo of the show's logo on his arm.
-  favoriteDish: "I love all food, but my favorite meal is breakfast for any time of the day."
+  favoriteDish: "Breakfast Burrito."
   interests: Trying out new foods, traveling and spending time at his beach house in Florida.
   postResidencyPlans: "Unsure for now, but I'm excited to see what the future holds!"
 tribalCouncil:
@@ -56,7 +56,7 @@ farewell:
     </div>
 photoOfMonth:
   image: /img/twinning.jpg
-  caption: "Impromptu twinning"
+  caption: "Residents' impromptu twinning"
 events:
   - date: June 15, 2023
     description: Annual Residency Graduation Ceremony
@@ -64,6 +64,15 @@ events:
     description: Welcome New Interns Orientation
   - date: August 5, 2023
     description: Research Symposium
+
+upcomingBirthdays:
+  - name: Dr. Michael Heron
+    date: September 15
+  - name: Dr. Patrick Joseph
+    date: September 29
+  - name: Dr. Ornob Rahman
+    date: September 30
+
 ---
 
 We hope you've enjoyed this edition of The Residency Reader. Stay tuned for more updates, achievements, and news from our Internal Medicine Residency program. Remember, your success is our success, and we're here to support you every step of the way. Keep up the great work!
