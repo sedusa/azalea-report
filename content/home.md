@@ -11,12 +11,12 @@ statistics:
   countryCount: 10
   languageCount: 12
 spotlight:
-  name: James McSweeney, MD
-  image: https://www.sgmc.org/wp-content/uploads/2023/06/James-McSweeney.png
-  birthplace: San Diego, CA
-  funFact: Dr McSweeney is a huge fan of the TV show "The Office" and even has a tattoo of the show's logo on his arm.
-  favoriteDish: "Breakfast Burrito."
-  interests: Trying out new foods, traveling and spending time at his beach house in Florida.
+  name: Jane Doe, MD
+  image: https://static01.nyt.com/images/2021/02/23/science/19SCI-VIRUS-UNMATCHED1/merlin_183762117_379fef2b-2fb8-4ce0-91d0-a7eb6cc3a5e4-articleLarge.jpg?quality=75&auto=webp&disable=upscale
+  birthplace: San Bernardino, CA
+  funFact: Dr Doe used to be a professional cook.
+  favoriteDish: "Jollof rice."
+  interests: Trying out new foods, traveling and spending time at the beach.
   postResidencyPlans: "Unsure for now, but I'm excited to see what the future holds!"
 tribalCouncil:
   content: >
@@ -48,11 +48,11 @@ chiefChat:
 farewell:
   content: >
     <div class="farewell-kevin">
-      It is with mixed emotions that we bid farewell to Kevin, our beloved residency coordinator. For years, Kevin has been the heart and soul of our program, guiding residents through the complexities of their medical journey with unwavering dedication and a warm smile.
-      Kevin's impact on our residency program cannot be overstated. His organizational skills kept our program running smoothly, while his compassionate nature provided comfort and support during challenging times. From managing rotations to organizing social events, Kevin's attention to detail and genuine care for each resident's well-being have been instrumental in creating a positive and nurturing learning environment.
-      As Kevin moves on to new adventures, we want to express our heartfelt gratitude for his years of service. His legacy of kindness, efficiency, and commitment will continue to inspire us. While we will miss his daily presence, the lessons he taught us about professionalism, empathy, and the importance of community in medical education will remain with us throughout our careers.
-      Kevin, thank you for being not just a coordinator, but a mentor, a friend, and a pillar of support. Your impact on our lives and careers is immeasurable. We wish you the very best in your future endeavors and hope you'll always remember the positive influence you've had on countless residents at SGMC.
-      Best wishes, Kevin! You will be deeply missed and fondly remembered.
+      It is with mixed emotions that we bid farewell to John, our beloved residency coordinator. For years, John has been the heart and soul of our program, guiding residents through the complexities of their medical journey with unwavering dedication and a warm smile.
+      John's impact on our residency program cannot be overstated. His organizational skills kept our program running smoothly, while his compassionate nature provided comfort and support during challenging times. From managing rotations to organizing social events, John's attention to detail and genuine care for each resident's well-being have been instrumental in creating a positive and nurturing learning environment.
+      As John moves on to new adventures, we want to express our heartfelt gratitude for his years of service. His legacy of kindness, efficiency, and commitment will continue to inspire us. While we will miss his daily presence, the lessons he taught us about professionalism, empathy, and the importance of community in medical education will remain with us throughout our careers.
+      John, thank you for being not just a coordinator, but a mentor, a friend, and a pillar of support. Your impact on our lives and careers is immeasurable. We wish you the very best in your future endeavors and hope you'll always remember the positive influence you've had on countless residents at SGMC.
+      Best wishes, John! You will be deeply missed and fondly remembered.
     </div>
 photoOfMonth:
   image: /img/twinning.jpg
