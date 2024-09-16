@@ -92,8 +92,6 @@ export default function Home() {
         <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5' />
         <meta name='msapplication-TileColor' content='#da532c' />
         <meta name='theme-color' content='#ffffff' />
-
-        {/* Add these new meta tags */}
         <meta
           name='description'
           content='SGMC Internal Medicine Residency Newsletter'
@@ -109,8 +107,6 @@ export default function Home() {
         />
         <meta property='og:url' content='https://azaleareport.netlify.app/' />
         <meta property='og:type' content='website' />
-
-        {/* Link to the manifest file */}
         <link rel='manifest' href='/manifest.json' />
       </Head>
 

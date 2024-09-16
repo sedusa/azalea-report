@@ -8,14 +8,14 @@
   "theme_color": "#016F53",
   "icons": [
     {
-      "src": "/img/azalea-icon-192.png",
+      "src": "/img/azalea-192.jpg",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/jpg"
     },
     {
-      "src": "/img/azalea-icon-512.png",
+      "src": "/img/azalea-512.jpg",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/jpg"
     }
   ]
 }
