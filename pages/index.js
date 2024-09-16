@@ -105,9 +105,9 @@ export default function Home() {
         />
         <meta
           property='og:image'
-          content='https://yourdomain.com/img/azalea-og.jpg'
+          content='https://azaleareport.netlify.app/img/azalea.svg'
         />
-        <meta property='og:url' content='https://yourdomain.com' />
+        <meta property='og:url' content='https://azaleareport.netlify.app/' />
         <meta property='og:type' content='website' />
 
         {/* Link to the manifest file */}
