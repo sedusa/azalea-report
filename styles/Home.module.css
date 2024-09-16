@@ -170,12 +170,15 @@
   }
 
   .sectionTitle {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-bottom: 1rem;
+    color: #333;
   }
 
-  .text, .spotlightText, .chiefText, .farewellText {
-    font-size: 1rem;
+  .text, .eventItem, .birthdayItem, .spotlightText, .chiefText, .farewellText {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #333;
   }
 
   .image, .chiefImage {
@@ -224,11 +227,9 @@
 }
 
 .sectionTitle {
-  color: #016F53;
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
-  font-weight: 600;
-  font-family: 'Arial', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
 }
 
 .image {
@@ -436,10 +437,9 @@
 }
 
 .birthdayTitle {
-  color: #333;
-  display: flex;
-  align-items: center;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
+  color: #333;
 }
 
 .birthdayIcon {
