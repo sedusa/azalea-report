@@ -1,0 +1,21 @@
+{
+  "name": "Azalea Report",
+  "short_name": "Azalea",
+  "description": "SGMC Internal Medicine Residency Newsletter",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FEFBF3",
+  "theme_color": "#016F53",
+  "icons": [
+    {
+      "src": "/img/azalea-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/azalea-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
