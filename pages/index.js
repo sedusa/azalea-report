@@ -233,8 +233,8 @@ export default function Home() {
             <h2 className={styles.sectionTitle}>Farewell</h2>
             <div className={styles.farewellContent}>
               <img
-                src='https://img.freepik.com/free-photo/front-view-friends-celebrating-gender-reveal_23-2150154733.jpg'
-                alt='Farewell to Kevin'
+                src='/img/flare.jpeg'
+                alt='Farewell placeholder image'
                 className={styles.farewellImage}
               />
               <div className={styles.farewellText}>
