@@ -553,25 +553,394 @@
     width: 100%;
     margin-right: 0;
     margin-bottom: 20px;
+    order: 2; /* Move the image container below the text */
   }
 
   .employeeSpotlightImage {
-    width: 120px;
-    height: 120px;
+    width: 200px; /* Increase the image size */
+    height: 200px; /* Increase the image size */
     border-radius: 50%;
   }
 
   .employeeSpotlightText {
     text-align: center;
+    order: 1; /* Move the text above the image */
+    margin-bottom: 20px; /* Add some space between the text and image */
   }
 
   .employeeSpotlightHeader {
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 1.5rem; /* Increase the font size */
+    margin-bottom: 15px; /* Add more space below the header */
   }
 
   .employeeSpotlightDescription {
     font-size: 1rem;
+  }
+
+  .employeeName {
+    font-size: 1.3rem; /* Increase the font size */
+    margin-top: 10px; /* Add more space above the name */
+  }
+
+  .employeeTitle {
+    font-size: 1rem; /* Increase the font size */
+  }
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0; /* Remove border radius */
+  margin-bottom: 1.5rem;
+}
+
+.spotlightContainer {
+  background-color: #f7f3e8;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.spotlightImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.spotlightName {
+  color: #016F53;
+  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: 'Arial', sans-serif;
+}
+
+.spotlightText {
+  margin-bottom: 0.5rem;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+}
+
+.spotlightText strong {
+  color: #016F53;
+  font-weight: 600;
+}
+
+.text {
+  margin-bottom: 1rem;
+  font-size: 1.125rem; /* Increased from 1rem */
+  line-height: 1.6; /* Improve readability with increased line height */
+}
+
+.photoOfMonth {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 0; /* Remove border radius */
+}
+
+.photoCaption {
+  font-size: 1.125rem; 
+  line-height: 1.6;
+  margin: 0;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem 0;
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.link {
+  color: #3182ce;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #2c5282;
+}
+
+.list {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.listItem {
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem; /* Increased from 1rem */
+}
+
+.blockquote {
+  border-left: 4px solid #4299e1;
+  padding-left: 1rem;
+  margin-left: 0;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  color: #4a5568;
+  font-size: 1.125rem; /* Increased from 1rem */
+}
+
+@media (max-width: 768px) {
+  .twoColumns {
+    flex-direction: column;
+  }
+
+  .column {
+    flex-basis: 100%;
+  }
+
+  .column:first-child {
+    order: -1; /* This ensures the Resident Spotlight stays on top in mobile view */
+  }
+}
+
+.logoContainer {
+  margin-right: 1rem;
+}
+
+.titleContainer {
+  flex-grow: 1;
+}
+
+.farewellContent {
+  overflow: visible; /* Change from hidden to visible */
+}
+
+.farewellImage {
+  width: 100%; /* Change from 400px to 100% */
+  max-width: 400px; /* Add max-width */
+  height: auto;
+  float: left;
+  margin: 0 1.5rem 1rem 0;
+  shape-outside: margin-box;
+}
+
+.farewellText {
+  font-size: 1.125rem; /* Increased from 1rem */
+  line-height: 1.6;
+}
+
+.farewellText p {
+  margin-bottom: 1rem;
+}
+
+.farewellText p:first-child {
+  margin-top: 0;
+}
+
+/* Add these new styles */
+.farewellToggleButton {
+  background-color: #016F53;
+  color: #FFFFFF;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.farewellToggleButton:hover {
+  background-color: #014d3a;
+}
+
+@media (max-width: 768px) {
+  /* ... existing mobile styles ... */
+
+  .farewellImage {
+    float: none;
+    margin: 0 auto 1rem;
+    display: block;
+  }
+
+  .farewellText {
+    clear: both;
+    font-size: 1rem;
+  }
+
+  .farewellToggleButton {
+    margin: 1rem 0 0;
+    display: inline-block;
+  }
+}
+
+.sgmcImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.aboutProgram {
+  /* Removed margin-bottom: 2rem; */
+}
+
+/* New styles for upcoming birthdays section */
+.birthdaySection {
+  background-color: #ECCE45;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.birthdayTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.birthdayIcon {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.birthdayList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.birthdayItem {
+  color: #333;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .birthdaySection {
+    padding: 1rem;
+  }
+
+  .birthdayItem {
+    font-size: 1rem;
+  }
+}
+
+/* ... existing styles ... */
+
+.employeeSpotlightContainer {
+  background-color: #f5e6c6;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  height: auto;
+  min-height: 200px;
+}
+
+.employeeSpotlightImageContainer {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.employeeSpotlightImage {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.employeeName {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 5px 0 0;
+  color: #016F53;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+.employeeTitle {
+  font-size: 0.9rem;
+  color: #333;
+  text-align: center;
+  margin: 0;
+}
+
+.employeeSpotlightText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.employeeSpotlightHeader {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #016F53;
+  margin: 0 0 10px;
+  text-align: left;
+  font-family: 'Arial', sans-serif;
+}
+
+.employeeSpotlightDivider {
+  width: 100%;
+  height: 2px;
+  background-color: #016F53;
+  margin-bottom: 10px;
+}
+
+.employeeSpotlightDescription {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #333;
+  overflow: hidden;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .employeeSpotlightContainer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .employeeSpotlightImageContainer {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+    order: 2; /* Move the image container below the text */
+  }
+
+  .employeeSpotlightImage {
+    width: 200px; /* Increase the image size */
+    height: 200px; /* Increase the image size */
+    border-radius: 50%;
+  }
+
+  .employeeSpotlightText {
+    text-align: center;
+    order: 1; /* Move the text above the image */
+    margin-bottom: 20px; /* Add some space between the text and image */
+  }
+
+  .employeeSpotlightHeader {
+    text-align: center;
+    font-size: 1.5rem; /* Increase the font size */
+    margin-bottom: 15px; /* Add more space below the header */
+  }
+
+  .employeeSpotlightDescription {
+    font-size: 1rem;
+  }
+
+  .employeeName {
+    font-size: 1.3rem; /* Increase the font size */
+    margin-top: 10px; /* Add more space above the name */
+  }
+
+  .employeeTitle {
+    font-size: 1rem; /* Increase the font size */
   }
 }
 

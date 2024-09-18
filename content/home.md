@@ -27,15 +27,15 @@ chiefChat:
   - name: Monica Kovuri, MD
     image: https://www.sgmc.org/wp-content/uploads/2022/06/1.png
     content: >
-      Dr. Monica Kuvori joins our team of Chief Residents, bringing a wealth of diverse experience and a passion for endocrinology. A graduate of Sri Devaraj Urs Medical College, Dr. Kuvori has demonstrated exceptional clinical skills and leadership throughout her residency.
+      Dr. Monica Kovuri joins our team of Chief Residents, bringing a wealth of diverse experience and a passion for endocrinology. A graduate of Sri Devaraj Urs Medical College, Dr. Kovuri has demonstrated exceptional clinical skills and leadership throughout her residency.
 
-      "I'm honored to serve as a Chief Resident and excited to contribute to our program's growth," says Dr. Kuvori. "My goal is to foster an environment of continuous learning and support for our residents, particularly in research and specialized areas like endocrinology."
+      "I'm honored to serve as a Chief Resident and excited to contribute to our program's growth," says Dr. Kovuri. "My goal is to foster an environment of continuous learning and support for our residents, particularly in research and specialized areas like endocrinology."
 
-      Dr. Kuvori's interest in endocrinology shapes her approach to patient care and resident education. She plans to organize focused workshops and case discussions in this field, benefiting residents interested in metabolic disorders and hormone-related conditions.
+      Dr. Kovuri's interest in endocrinology shapes her approach to patient care and resident education. She plans to organize focused workshops and case discussions in this field, benefiting residents interested in metabolic disorders and hormone-related conditions.
 
-      Looking ahead, Dr. Kuvori aspires to pursue a fellowship in endocrinology, where she hopes to further specialize and contribute to advancements in the field. Her dedication to this subspecialty will undoubtedly enrich our program's curriculum and inspire residents with similar interests.
+      Looking ahead, Dr. Kovuri aspires to pursue a fellowship in endocrinology, where she hopes to further specialize and contribute to advancements in the field. Her dedication to this subspecialty will undoubtedly enrich our program's curriculum and inspire residents with similar interests.
 
-      "To our current and incoming residents," Dr. Kuvori advises, "embrace every learning opportunity, stay curious, and don't hesitate to explore your specific areas of interest within internal medicine. The depth and breadth of our field offer endless possibilities for growth and specialization."
+      "To our current and incoming residents," Dr. Kovuri advises, "embrace every learning opportunity, stay curious, and don't hesitate to explore your specific areas of interest within internal medicine. The depth and breadth of our field offer endless possibilities for growth and specialization."
   - name: Venkata Gandi, MD
     image: https://www.sgmc.org/wp-content/uploads/2022/06/7.png
     content: >
@@ -74,11 +74,11 @@ upcomingBirthdays:
     date: September 30
 
 employeeSpotlight:
-  name: Mary Okereke
-  image: /img/place.jpeg
+  name: Melissa Wilkerson
+  image: /img/employee-spotlight-09-24.jpeg
   title: Medical Assistant
   description: >
-    Meet Mary Okere, our outstanding Medical Assistant and Employee of the Month. Mary's dedication to patient care, efficient team support, and innovative office improvements have boosted our practice's success. Her recent streamlining of check-in processes has significantly enhanced clinic efficiency. We congratulate Mary on this well-deserved recognition.`
+    Meet Melissa Wilkerson, one of our devoted Medical Assistants who has been with our clinic since its opening in August 2022. Melissa is passionate about her work and equally dedicated to her family life. When not providing excellent care to our patients, she can often be found cheering on her daughter at softball games. Melissa also enjoys quality time with family and friends. Her long-standing commitment and experience make her an invaluable member of our team.
 
 ---
 
