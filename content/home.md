@@ -73,6 +73,13 @@ upcomingBirthdays:
   - name: Dr. Ornob Rahman
     date: September 30
 
+employeeSpotlight:
+  name: Mary Okereke
+  image: /img/place.jpeg
+  title: Medical Assistant
+  description: >
+    Meet Mary Okere, our outstanding Medical Assistant and Employee of the Month. Mary's dedication to patient care, efficient team support, and innovative office improvements have boosted our practice's success. Her recent streamlining of check-in processes has significantly enhanced clinic efficiency. We congratulate Mary on this well-deserved recognition.`
+
 ---
 
 We hope you've enjoyed this edition of The Residency Reader. Stay tuned for more updates, achievements, and news from our Internal Medicine Residency program. Remember, your success is our success, and we're here to support you every step of the way. Keep up the great work!

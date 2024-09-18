@@ -22,6 +22,7 @@ export default function Home() {
     photoOfMonth,
     events,
     upcomingBirthdays,
+    employeeSpotlight,
   } = attributes;
 
   const [expandedChiefs, setExpandedChiefs] = useState({});
@@ -108,6 +109,10 @@ export default function Home() {
         <meta property='og:url' content='https://azaleareport.netlify.app/' />
         <meta property='og:type' content='website' />
         <link rel='manifest' href='/manifest.json' />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
       <div className={styles.container}>
@@ -292,6 +297,35 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
+              </div>
+            </div>
+          </section>
+
+          <section className={styles.fullWidth}>
+            <div className={styles.spotlightIconContainer}>
+              <Image
+                src="/img/spotlight.svg"
+                alt="Spotlight"
+                width={50}
+                height={50}
+                className={styles.spotlightIcon}
+              />
+              <h2 className={styles.newsFromClinic}>News from the clinic</h2>
+            </div>
+            <div className={styles.employeeSpotlightContainer}>
+              <div className={styles.employeeSpotlightImageContainer}>
+                <img
+                  src={employeeSpotlight.image || '/img/employee-placeholder.jpg'}
+                  alt={employeeSpotlight.name}
+                  className={styles.employeeSpotlightImage}
+                />
+                <h3 className={styles.employeeName}>{employeeSpotlight.name}</h3>
+                <p className={styles.employeeTitle}>{employeeSpotlight.title}</p>
+              </div>
+              <div className={styles.employeeSpotlightText}>
+                <h3 className={styles.employeeSpotlightHeader}>Employee Spotlight</h3>
+                <div className={styles.employeeSpotlightDivider}></div>
+                <p className={styles.employeeSpotlightDescription}>{employeeSpotlight.description}</p>
               </div>
             </div>
           </section>
