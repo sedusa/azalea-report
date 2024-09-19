@@ -80,6 +80,13 @@ employeeSpotlight:
   description: >
     Meet Melissa Wilkerson, one of our devoted Medical Assistants who has been with our clinic since its opening in August 2022. Melissa is passionate about her work and equally dedicated to her family life. When not providing excellent care to our patients, she can often be found cheering on her daughter at softball games. Melissa also enjoys quality time with family and friends. Her long-standing commitment and experience make her an invaluable member of our team.
 
+programDirector:
+  name: Dr. Gregory Beale
+  title: Program Director, Internal Medicine Residency
+  image: /img/beale.jpeg
+  message: >
+    Welcome to the Azalea Report! As we embark on this new chapter, I'm filled with pride and excitement for what lies ahead. Our residency program is more than just medical training; it's a journey of growth, discovery, and transformation. Remember, each challenge you face is an opportunity to learn and excel. Embrace the diversity of our program, support one another, and never lose sight of the compassionate care that defines our profession. Together, we will shape the future of healthcare and make a lasting impact on our community. Your dedication inspires us all, and I look forward to witnessing your continued success and growth.
+
 ---
 
 We hope you've enjoyed this edition of The Residency Reader. Stay tuned for more updates, achievements, and news from our Internal Medicine Residency program. Remember, your success is our success, and we're here to support you every step of the way. Keep up the great work!

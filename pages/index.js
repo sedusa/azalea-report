@@ -23,6 +23,7 @@ export default function Home() {
     events,
     upcomingBirthdays,
     employeeSpotlight,
+    programDirector,
   } = attributes;
 
   const [expandedChiefs, setExpandedChiefs] = useState({});
@@ -231,6 +232,25 @@ export default function Home() {
                   </div>
                 </div>
               ))}
+            </div>
+          </section>
+
+          <section className={styles.fullWidth}>
+          <h2 className={styles.sectionTitle}>Message from the Program Director</h2>
+            <div className={styles.programDirectorSection}>
+              <img
+                src={programDirector.image}
+                alt={programDirector.name}
+                className={styles.programDirectorImage}
+              />
+              <div className={styles.programDirectorContent}>
+                <h2 className={styles.programDirectorName}>{programDirector.name}</h2>
+                <p className={styles.programDirectorTitle}>{programDirector.title}</p>
+                <div
+                  className={styles.programDirectorMessage}
+                  dangerouslySetInnerHTML={{ __html: programDirector.message }}
+                />
+              </div>
             </div>
           </section>
 

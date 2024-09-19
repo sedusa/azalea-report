@@ -62,3 +62,11 @@ collections:
               - { label: "Date", name: "date", widget: "string" }
               - { label: "Description", name: "description", widget: "string" }
           - { label: "Additional Content", name: "body", widget: "markdown" }
+          - label: "Program Director Message"
+            name: "programDirector"
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Message", name: "message", widget: "markdown" }
