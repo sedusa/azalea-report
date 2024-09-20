@@ -1,6 +1,6 @@
 ---
 title: AZALEA REPORT
-subtitle: SGMC Internal Medicine Residency Newsletter
+subtitle: SGMC Health Internal Medicine Residency Newsletter
 date: Edition 1, September 2024
 welcome: Welcome to the inaugural edition of the Azalea Report, a resident-led e-newsletter for our Internal Medicine Residency program at South Georgia Medical Center in Valdosta, Georgia. We chose the name "Azalea Report" to honor Valdosta's nickname as the "Azalea City," reflecting our aim to flourish and showcase the best of our program, much like the vibrant azaleas that bloom across our city each spring. In this first edition, we're excited to introduce our editorial team, spotlight outstanding residents, share program achievements, and hear from our newly appointed Chief Residents about their plans for the coming year. We'll also feature a section on community engagement, highlighting how our residents contribute to Valdosta and surrounding areas. Whether you're a current resident, faculty member, prospective applicant, or simply interested in our program, we invite you to explore the Azalea Report and join us on this exciting journey of growth and excellence in medical education.
 team: The Azalea Report team

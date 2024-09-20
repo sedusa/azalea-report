@@ -96,12 +96,12 @@ export default function Home() {
         <meta name='theme-color' content='#ffffff' />
         <meta
           name='description'
-          content='SGMC Internal Medicine Residency Newsletter'
+          content='SGMC HealthInternal Medicine Residency Newsletter'
         />
         <meta property='og:title' content={title} />
         <meta
           property='og:description'
-          content='SGMC Internal Medicine Residency Newsletter'
+          content='SGMC HealthInternal Medicine Residency Newsletter'
         />
         <meta
           property='og:image'
@@ -287,7 +287,7 @@ export default function Home() {
           </section>
 
           <section className={styles.fullWidth}>
-            <h2>Photo of the Month</h2>
+            <h2 className={styles.sectionTitle}>Photo of the Month</h2>
             <img
               src={photoOfMonth.image}
               alt={photoOfMonth.caption}
@@ -309,7 +309,7 @@ export default function Home() {
             </div>
             <div className={styles.column}>
               <div className={styles.birthdaySection}>
-                <h2 className={styles.birthdayTitle}>🎂 Upcoming Birthdays</h2>
+                <h2 className={styles.sectionTitle}>🎂 Birthdays</h2>
                 <ul className={styles.birthdayList}>
                   {upcomingBirthdays.map((birthday, index) => (
                     <li key={index} className={styles.birthdayItem}>
