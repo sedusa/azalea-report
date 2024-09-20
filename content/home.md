@@ -2,7 +2,7 @@
 title: AZALEA REPORT
 subtitle: SGMC Health Internal Medicine Residency Newsletter
 date: Edition 1, September 2024
-welcome: Welcome to the inaugural edition of the Azalea Report, a resident-led e-newsletter for our Internal Medicine Residency program at South Georgia Medical Center in Valdosta, Georgia. We chose the name "Azalea Report" to honor Valdosta's nickname as the "Azalea City," reflecting our aim to flourish and showcase the best of our program, much like the vibrant azaleas that bloom across our city each spring. In this first edition, we're excited to introduce our editorial team, spotlight outstanding residents, share program achievements, and hear from our newly appointed Chief Residents about their plans for the coming year. We'll also feature a section on community engagement, highlighting how our residents contribute to Valdosta and surrounding areas. Whether you're a current resident, faculty member, prospective applicant, or simply interested in our program, we invite you to explore the Azalea Report and join us on this exciting journey of growth and excellence in medical education.
+welcome: Welcome to the inaugural edition of the Azalea Report, a resident-led e-newsletter for the Internal Medicine Residency program at South Georgia Health in Valdosta, Georgia. We chose the name "Azalea Report" to honor Valdosta's nickname as the "Azalea City," reflecting our aim to flourish and showcase the best of our program, much like the vibrant azaleas that bloom across our city each spring. In this first edition, we're excited to spotlight outstanding residents, share program achievements, and hear from our newly appointed Chief Residents about their plans for the coming year. We'll also feature a section on community engagement, highlighting how our residents contribute to Valdosta and surrounding areas. Whether you're a current resident, faculty member, prospective applicant, or simply interested in our program, we invite you to explore the Azalea Report and join us on this exciting journey of growth and excellence in medical education.
 team: The Azalea Report team 
 aboutProgram: SGMC Health's Internal Medicine Residency Program, in partnership with Mercer University School of Medicine, aims to create a broader pipeline of doctors in Georgia, especially in rural communities. Our program combines academic excellence with hands-on experience, leveraging SGMC Health's highly capable health delivery system. Under the leadership of Dr. Gregory Beale, Program Director, and Dr. Leslie Lamptey, Associate Program Director, we are committed to educating physicians to meet the primary care and healthcare needs of rural and medically underserved areas of Georgia.
 sgmcImage: /img/sgmc.jpg
@@ -11,11 +11,11 @@ statistics:
   countryCount: 10
   languageCount: 12
 spotlight:
-  name: Jane Doe, MD
-  image: https://static01.nyt.com/images/2021/02/23/science/19SCI-VIRUS-UNMATCHED1/merlin_183762117_379fef2b-2fb8-4ce0-91d0-a7eb6cc3a5e4-articleLarge.jpg?quality=75&auto=webp&disable=upscale
-  birthplace: San Bernardino, CA
-  funFact: Dr Doe used to be a professional cook.
-  favoriteDish: "Jollof rice."
+  name: Michael Heron, MD
+  image: /img/michael-heron-md.jpeg
+  birthplace: Kingston, Jamaica
+  funFact: Used to be a professional bodybuilder.
+  favoriteDish: "Jamaican Ackee and Saltfish"
   interests: Trying out new foods, traveling and spending time at the beach.
   postResidencyPlans: "Unsure for now, but I'm excited to see what the future holds!"
 tribalCouncil:
@@ -81,7 +81,7 @@ employeeSpotlight:
     Meet Melissa Wilkerson, one of our devoted Medical Assistants who has been with our clinic since its opening in August 2022. Melissa is passionate about her work and equally dedicated to her family life. When not providing excellent care to our patients, she can often be found cheering on her daughter at softball games. Melissa also enjoys quality time with family and friends. Her long-standing commitment and experience make her an invaluable member of our team.
 
 programDirector:
-  name: Dr. Gregory Beale
+  name: Gregory Beale, MD
   title: Program Director, Internal Medicine Residency
   image: /img/beale.jpeg
   message: >
