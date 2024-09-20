@@ -3,7 +3,6 @@ import { attributes, react as HomeContent } from '../content/home.md';
 import styles from '../styles/Home.module.css';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { FaBirthdayCake } from 'react-icons/fa'; // Import the birthday cake icon
 
 export default function Home() {
   const {
@@ -164,7 +163,7 @@ export default function Home() {
                   <strong>Interests:</strong> {spotlight.interests}
                 </p>
                 <p className={styles.spotlightText}>
-                  <strong>Post-residency Plans:</strong>{' '}
+                  <strong>Post-residency plans:</strong>{' '}
                   {spotlight.postResidencyPlans}
                 </p>
               </div>
