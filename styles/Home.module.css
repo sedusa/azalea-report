@@ -243,6 +243,7 @@
   .list,
   .listItem {
     font-size: 1.2rem;
+    line-height: 1.6;
   }
 }
 
@@ -292,7 +293,8 @@
   color: #ffffff;
   cursor: pointer;
   font-family: 'Georgia', serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  margin-top: 10px;
   padding: 0.5rem 1rem;
   transition: background-color 0.3s ease;
 }
@@ -333,6 +335,7 @@
     display: block;
     font-family: 'Georgia', serif;
     margin: 1rem 0 0;
+    font-size: 1rem;
   }
 }
 
@@ -434,7 +437,8 @@
   cursor: pointer;
   display: inline-block;
   font-family: 'Georgia', serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  margin-top: 10px;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   text-align: left;
@@ -453,8 +457,9 @@
   }
 
   .farewellToggleButton {
-    margin: 1rem 0 0;
     display: inline-block;
+    font-size: 1rem;
+    margin: 1rem 0 0;
   }
 }
 

@@ -67,11 +67,11 @@ events:
 
 upcomingBirthdays:
   - name: Dr. Michael Heron
-    date: September 15
+    date: Sept 15
   - name: Dr. Patrick Joseph
-    date: September 29
+    date: Sept 29
   - name: Dr. Ornob Rahman
-    date: September 30
+    date: Sept 30
 
 employeeSpotlight:
   name: Melissa Wilkerson
