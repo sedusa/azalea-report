@@ -83,7 +83,7 @@ export default function Home() {
 
     return (
       <div className={styles.birthdaySection}>
-        <h2 className={styles.sectionTitle}>{currentMonth} Birthdays 🎂</h2>
+        <h2 className={styles.sectionTitle}>{currentMonth} Birthdays</h2>
         {currentMonthBirthdays.length > 0 ? (
           <ul className={styles.birthdayList}>
             {currentMonthBirthdays.map((birthday, index) => (
