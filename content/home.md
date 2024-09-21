@@ -58,13 +58,15 @@ photosOfMonth:
   - image: /img/carousel/twinning.jpeg
     caption: "Residents' impromptu twinning"
   - image: /img/carousel/dodge-ball.jpeg
-    caption: "Dodgeball tournament"
+    caption: "Dodgeball tournament with Drs. Beale & Hayes"
   - image: /img/carousel/partnership-health-gala.jpeg
     caption: "Residents at the Partnership Health Gala"
   - image: /img/carousel/trivia-night.jpeg
     caption: "Residents and attendings at trivia night"
   - image: /img/carousel/winter-is-coming.jpeg
     caption: "Nik deciding to pull out his winter gear to prechart"
+  - image: /img/carousel/pickle-ball.jpeg
+    caption: "Playing pickleball with Dr. Hasan"
 wellnessTip:
   title: Quick Tips for Healthy Eating at Work
   image: /img/eating-healthy.jpeg
