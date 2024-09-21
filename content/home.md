@@ -14,10 +14,10 @@ spotlight:
   name: Michael Heron, MD
   image: /img/michael-heron-md.jpeg
   birthplace: Kingston, Jamaica
-  funFact: Used to be a professional bodybuilder.
-  favoriteDish: "Jamaican Ackee and Saltfish"
-  interests: Trying out new foods, traveling and spending time at the beach.
-  postResidencyPlans: "Unsure for now, but I'm excited to see what the future holds!"
+  funFact: I run the 100m in 11 seconds when I was 15 🏃🏾
+  favoriteDish: Oxtails or Shrimp Alfredo
+  interests: Soccer, fitness
+  postResidencyPlans: Get rich 💰
 tribalCouncil:
   content: >
     The PAR tribal system aims to act as a liaison between residents and GME focusing on resident wellness, building camaraderie and improving the resident experience. The PAR resident body recently voted for Dr Ghida Akdhar as the new Vice President, with Dr Danhely Cruz continuing on as our president. We thank Dr Sheri Walls for all her hardwork and dedication in advocating for the resident body and improving the resident experience. 
@@ -67,11 +67,11 @@ events:
 
 upcomingBirthdays:
   - name: Dr. Michael Heron
-    date: Sept 15
-  - name: Dr. Patrick Joseph
-    date: Sept 29
-  - name: Dr. Ornob Rahman
-    date: Sept 30
+    date: Oct 8
+  - name: Dr. Rija Chaudhary
+    date: Oct 8
+  - name: Cathy Dean
+    date: Nov 16
 
 employeeSpotlight:
   name: Melissa Wilkerson
