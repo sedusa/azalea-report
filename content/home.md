@@ -56,17 +56,17 @@ farewell:
     </div>
 photosOfMonth:
   - image: /img/carousel/twinning.jpeg
-    caption: "Residents' impromptu twinning"
+    caption: "Impromptu twinning"
   - image: /img/carousel/dodge-ball.jpeg
-    caption: "Dodgeball tournament with Drs. Beale & Hayes"
+    caption: "Dodgeball tournament"
   - image: /img/carousel/partnership-health-gala.jpeg
-    caption: "Residents at the Partnership Health Gala"
+    caption: "Partnership for Health Gala"
   - image: /img/carousel/trivia-night.jpeg
-    caption: "Residents and attendings at trivia night"
+    caption: "Monday night trivia"
   - image: /img/carousel/winter-is-coming.jpeg
-    caption: "Nik deciding to pull out his winter gear to prechart"
+    caption: "Nik pre-charting"
   - image: /img/carousel/pickle-ball.jpeg
-    caption: "Playing pickleball with Dr. Hasan"
+    caption: "Pickleball with Dr. Hasan"
 wellnessTip:
   title: Quick Tips for Healthy Eating at Work
   image: /img/eating-healthy.jpeg
