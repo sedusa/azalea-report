@@ -68,7 +68,7 @@
 /* Title section */
 
 .titleContainer {
-  line-height: 1.2;
+  line-height: 1.4;
   text-align: center;
 }
 
@@ -79,13 +79,14 @@
 .birthdayTitle,
 .employeeName {
   font-family: 'Montserrat', sans-serif;
+  line-height: 1.4;
 }
 
 .title {
   color: #016f53;
   font-family: 'Montserrat', sans-serif;
   font-size: 2.8rem;
-  line-height: 1.2;
+  line-height: 1.4;
   margin: 0;
 }
 
@@ -162,12 +163,6 @@
   flex-basis: calc(50% - 1rem);
   flex: 1;
   min-width: calc(50% - 1rem);
-}
-
-.sectionTitle {
-  color: #333;
-  font-size: 1.9rem;
-  margin-bottom: 1rem;
 }
 
 .spotlightContainer {
@@ -469,16 +464,17 @@
 /* Photo of the Month Section */
 
 .carouselContainer {
+  height: 400px;
+  margin-bottom: 5px;
+  overflow: hidden;
   position: relative;
   width: 100%;
-  height: 400px;
-  overflow: hidden;
 }
 
 .carouselImageContainer {
+  height: 100%;
   position: relative;
   width: 100%;
-  height: 100%;
 }
 
 .carouselImage {
@@ -486,15 +482,15 @@
 }
 
 .carouselButton {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 2rem;
+  padding: 10px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.3);
-  color: white;
-  border: none;
-  font-size: 2rem;
-  padding: 10px;
-  cursor: pointer;
   transition: background-color 0.3s ease;
   z-index: 10;
 }
@@ -584,6 +580,7 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 1.8rem;
   font-weight: bold;
+  line-height: 1.4;
   margin-bottom: 1rem;
 }
 
@@ -735,7 +732,7 @@
 
   .newsFromClinic {
     font-size: 2rem;
-    line-height: 1.2;
+    line-height: 1.4;
   }
 
   .employeeSpotlightContainer {
