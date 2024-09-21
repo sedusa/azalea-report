@@ -468,11 +468,58 @@
 
 /* Photo of the Month Section */
 
-.photoOfMonth {
-  border-radius: 0;
-  max-height: 400px;
-  object-fit: cover;
+.carouselContainer {
+  position: relative;
   width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.carouselImageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carouselImage {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carouselButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+.carouselButton:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carouselButton:first-child {
+  left: 10px;
+}
+
+.carouselButton:last-child {
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  .carouselContainer {
+    height: 250px;
+  }
+
+  .carouselButton {
+    font-size: 1.5rem;
+    padding: 5px;
+  }
 }
 
 .photoCaption {

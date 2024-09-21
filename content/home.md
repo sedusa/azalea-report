@@ -54,10 +54,17 @@ farewell:
       John, thank you for being not just a coordinator, but a mentor, a friend, and a pillar of support. Your impact on our lives and careers is immeasurable. We wish you the very best in your future endeavors and hope you'll always remember the positive influence you've had on countless residents at SGMC.
       Best wishes, John! You will be deeply missed and fondly remembered.
     </div>
-photoOfMonth:
-  image: /img/twinning.jpg
-  caption: "Residents' impromptu twinning"
-
+photosOfMonth:
+  - image: /img/carousel/twinning.jpeg
+    caption: "Residents' impromptu twinning"
+  - image: /img/carousel/dodge-ball.jpeg
+    caption: "Dodgeball tournament"
+  - image: /img/carousel/partnership-health-gala.jpeg
+    caption: "Residents at the Partnership Health Gala"
+  - image: /img/carousel/trivia-night.jpeg
+    caption: "Residents and attendings at trivia night"
+  - image: /img/carousel/winter-is-coming.jpeg
+    caption: "Nik deciding to pull out his winter gear to prechart"
 wellnessTip:
   title: Quick Tips for Healthy Eating at Work
   image: /img/eating-healthy.jpeg

@@ -19,7 +19,7 @@ export default function Home() {
     tribalCouncil,
     chiefChat,
     farewell,
-    photoOfMonth,
+    photosOfMonth,
     events,
     upcomingBirthdays,
     employeeSpotlight,
@@ -30,6 +30,7 @@ export default function Home() {
   const [expandedChiefs, setExpandedChiefs] = useState({});
   const [isMobile, setIsMobile] = useState(false);
   const [expandedFarewell, setExpandedFarewell] = useState(false);
+  const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {
@@ -102,6 +103,18 @@ export default function Home() {
           <p className={styles.birthdayItem}>No birthdays this month 😞</p>
         )}
       </div>
+    );
+  };
+
+  const nextPhoto = () => {
+    setCurrentPhotoIndex((prevIndex) =>
+      (prevIndex + 1) % photosOfMonth.length
+    );
+  };
+
+  const prevPhoto = () => {
+    setCurrentPhotoIndex((prevIndex) =>
+      (prevIndex - 1 + photosOfMonth.length) % photosOfMonth.length
     );
   };
 
@@ -335,13 +348,21 @@ export default function Home() {
           </section>
 
           <section className={styles.fullWidth}>
-            <h2 className={styles.sectionTitle}>Photo of the Month</h2>
-            <img
-              src={photoOfMonth.image}
-              alt={photoOfMonth.caption}
-              className={styles.photoOfMonth}
-            />
-            <p className={styles.photoCaption}>{photoOfMonth.caption}</p>
+            <h2 className={styles.sectionTitle}>Through the Lens: Residency Highlights</h2>
+            <div className={styles.carouselContainer}>
+              <button className={styles.carouselButton} onClick={prevPhoto}>‹</button>
+              <div className={styles.carouselImageContainer}>
+                <Image
+                  src={photosOfMonth[currentPhotoIndex].image}
+                  alt={photosOfMonth[currentPhotoIndex].caption}
+                  layout="fill"
+                  objectFit="cover"
+                  className={styles.carouselImage}
+                />
+              </div>
+              <button className={styles.carouselButton} onClick={nextPhoto}>›</button>
+            </div>
+            <p className={styles.photoCaption}>{photosOfMonth[currentPhotoIndex].caption}</p>
           </section>
 
           <section className={styles.twoColumns}>

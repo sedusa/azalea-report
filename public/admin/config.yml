@@ -53,11 +53,11 @@ collections:
             widget: "object"
             fields:
               - { label: "Content", name: "content", widget: "markdown" }
-          - label: "Photo of the Month"
-            name: "photoOfMonth"
-            widget: "object"
+          - label: "Photos of the Month"
+            name: "photosOfMonth"
+            widget: "list"
             fields:
-              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Image", name: "image", widget: "image", media_folder: "/public/img/carousel" }
               - { label: "Caption", name: "caption", widget: "string" }
           - label: "Wellness Tip"
             name: "wellnessTip"
