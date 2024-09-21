@@ -187,7 +187,7 @@
 .spotlightName {
   color: #016f53;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   margin-bottom: 0.75rem;
 }
 
@@ -277,6 +277,9 @@
 }
 
 .chiefName {
+  color: #016f53;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
@@ -364,7 +367,7 @@
 
 .programDirectorName {
   color: #016f53;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
@@ -518,6 +521,61 @@
 @media (max-width: 768px) {
   .birthdaySection {
     padding: 1rem;
+  }
+}
+
+/* Wellness Tip Section */
+.wellnessTipSection {
+  background-color: #27ae60; 
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.wellnessTipTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.wellnessTipContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.wellnessTipImage {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.wellnessTipText {
+  flex: 1;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.wellnessTipText ul {
+  padding-left: 20px;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .wellnessTipContent {
+    flex-direction: column;
+  }
+
+  .wellnessTipImage {
+    width: 100%;
+    margin-bottom: 1rem;
+    order: -1;
+  }
+
+  .wellnessTipTitle {
+    font-size: 1.5rem;
   }
 }
 
@@ -687,3 +745,4 @@
   padding: 2rem 0;
   text-align: center;
 }
+

@@ -24,6 +24,7 @@ export default function Home() {
     upcomingBirthdays,
     employeeSpotlight,
     programDirector,
+    wellnessTip,
   } = attributes;
 
   const [expandedChiefs, setExpandedChiefs] = useState({});
@@ -69,14 +70,18 @@ export default function Home() {
 
     useEffect(() => {
       const currentDate = new Date();
-      const monthName = currentDate.toLocaleString('default', { month: 'long' });
-      const currentMonthShort = currentDate.toLocaleString('default', { month: 'short' });
+      const monthName = currentDate.toLocaleString('default', {
+        month: 'long',
+      });
+      const currentMonthShort = currentDate.toLocaleString('default', {
+        month: 'short',
+      });
 
       setCurrentMonth(monthName);
 
-      const filteredBirthdays = birthdays.staff.filter(
-        (birthday) => birthday.month === currentMonthShort
-      ).sort((a, b) => a.day - b.day);
+      const filteredBirthdays = birthdays.staff
+        .filter((birthday) => birthday.month === currentMonthShort)
+        .sort((a, b) => a.day - b.day);
 
       setCurrentMonthBirthdays(filteredBirthdays);
     }, []);
@@ -88,7 +93,8 @@ export default function Home() {
           <ul className={styles.birthdayList}>
             {currentMonthBirthdays.map((birthday, index) => (
               <li key={index} className={styles.birthdayItem}>
-                <strong>{birthday.name}:</strong> {birthday.day} {birthday.month}
+                <strong>{birthday.name}:</strong> {birthday.day}{' '}
+                {birthday.month}
               </li>
             ))}
           </ul>
@@ -147,8 +153,8 @@ export default function Home() {
         <meta property='og:type' content='website' />
         <link rel='manifest' href='/manifest.json' />
         <link
-          href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
-          rel="stylesheet"
+          href='https://fonts.googleapis.com/css2?family=Anton&display=swap'
+          rel='stylesheet'
         />
       </Head>
 
@@ -272,7 +278,9 @@ export default function Home() {
           </section>
 
           <section className={styles.fullWidth}>
-          <h2 className={styles.sectionTitle}>Message from the Program Director</h2>
+            <h2 className={styles.sectionTitle}>
+              Message from the Program Director
+            </h2>
             <div className={styles.programDirectorSection}>
               <img
                 src={programDirector.image}
@@ -280,8 +288,12 @@ export default function Home() {
                 className={styles.programDirectorImage}
               />
               <div className={styles.programDirectorContent}>
-                <h2 className={styles.programDirectorName}>{programDirector.name}</h2>
-                <p className={styles.programDirectorTitle}>{programDirector.title}</p>
+                <h2 className={styles.programDirectorName}>
+                  {programDirector.name}
+                </h2>
+                <p className={styles.programDirectorTitle}>
+                  {programDirector.title}
+                </p>
                 <div
                   className={styles.programDirectorMessage}
                   dangerouslySetInnerHTML={{ __html: programDirector.message }}
@@ -349,10 +361,29 @@ export default function Home() {
           </section>
 
           <section className={styles.fullWidth}>
+            <h2 className={styles.sectionTitle}>Wellness corner</h2>
+            <div className={styles.wellnessTipSection}>
+              <h2 className={styles.wellnessTipTitle}>{wellnessTip.title}</h2>
+              <div className={styles.wellnessTipContent}>
+                <div className={styles.wellnessTipText}>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: wellnessTip.content }}
+                  />
+                </div>
+                <img
+                  src={wellnessTip.image}
+                  alt='Healthy eating'
+                  className={styles.wellnessTipImage}
+                />
+              </div>
+            </div>
+          </section>
+
+          <section className={styles.fullWidth}>
             <div className={styles.spotlightIconContainer}>
               <Image
-                src="/img/spotlight.svg"
-                alt="Spotlight"
+                src='/img/spotlight.svg'
+                alt='Spotlight'
                 width={50}
                 height={50}
                 className={styles.spotlightIcon}
@@ -362,17 +393,27 @@ export default function Home() {
             <div className={styles.employeeSpotlightContainer}>
               <div className={styles.employeeSpotlightImageContainer}>
                 <img
-                  src={employeeSpotlight.image || '/img/employee-placeholder.jpg'}
+                  src={
+                    employeeSpotlight.image || '/img/employee-placeholder.jpg'
+                  }
                   alt={employeeSpotlight.name}
                   className={styles.employeeSpotlightImage}
                 />
-                <h3 className={styles.employeeName}>{employeeSpotlight.name}</h3>
-                <p className={styles.employeeTitle}>{employeeSpotlight.title}</p>
+                <h3 className={styles.employeeName}>
+                  {employeeSpotlight.name}
+                </h3>
+                <p className={styles.employeeTitle}>
+                  {employeeSpotlight.title}
+                </p>
               </div>
               <div className={styles.employeeSpotlightText}>
-                <h3 className={styles.employeeSpotlightHeader}>Employee Spotlight</h3>
+                <h3 className={styles.employeeSpotlightHeader}>
+                  Employee Spotlight
+                </h3>
                 <div className={styles.employeeSpotlightDivider}></div>
-                <p className={styles.employeeSpotlightDescription}>{employeeSpotlight.description}</p>
+                <p className={styles.employeeSpotlightDescription}>
+                  {employeeSpotlight.description}
+                </p>
               </div>
             </div>
           </section>

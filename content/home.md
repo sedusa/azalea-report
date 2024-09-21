@@ -3,7 +3,7 @@ title: AZALEA REPORT
 subtitle: SGMC Health Internal Medicine Residency Newsletter
 date: Edition 1, September 2024
 welcome: Welcome to the inaugural edition of the Azalea Report, a resident-led e-newsletter for the Internal Medicine Residency program at South Georgia Health in Valdosta, Georgia. We chose the name "Azalea Report" to honor Valdosta's nickname as the "Azalea City," reflecting our aim to flourish and showcase the best of our program, much like the vibrant azaleas that bloom across our city each spring. In this first edition, we're excited to spotlight outstanding residents, share program achievements, and hear from our newly appointed Chief Residents about their plans for the coming year. We'll also feature a section on community engagement, highlighting how our residents contribute to Valdosta and surrounding areas. Whether you're a current resident, faculty member, prospective applicant, or simply interested in our program, we invite you to explore the Azalea Report and join us on this exciting journey of growth and excellence in medical education.
-team: The Azalea Report team 
+team: The Azalea Report team
 aboutProgram: SGMC Health's Internal Medicine Residency Program, in partnership with Mercer University School of Medicine, aims to create a broader pipeline of doctors in Georgia, especially in rural communities. Our program combines academic excellence with hands-on experience, leveraging SGMC Health's highly capable health delivery system. Under the leadership of Dr. Gregory Beale, Program Director, and Dr. Leslie Lamptey, Associate Program Director, we are committed to educating physicians to meet the primary care and healthcare needs of rural and medically underserved areas of Georgia.
 sgmcImage: /img/sgmc.jpg
 statistics:
@@ -16,7 +16,7 @@ spotlight:
   birthplace: Kingston, Jamaica
   funFact: I run the 100m in 11 seconds when I was 15 🏃🏾
   favoriteDish: Oxtails or Shrimp Alfredo
-  interests: Soccer, fitness
+  interests: Soccer & fitness ("nothing beats a good workout after a long day of work")
   postResidencyPlans: Get rich 💰
 tribalCouncil:
   content: >
@@ -57,6 +57,20 @@ farewell:
 photoOfMonth:
   image: /img/twinning.jpg
   caption: "Residents' impromptu twinning"
+
+wellnessTip:
+  title: Quick Tips for Healthy Eating at Work
+  image: /img/eating-healthy.jpeg
+  content: >
+    Good nutrition is key to mental and physical health. Here are some tips to eat healthier at work:
+    <ol>
+      <li> <strong>Plan ahead:</strong> Set time each week to plan meals and shop for groceries.</li>
+      <li> <strong>Stock up:</strong> Keep healthy basics at work (e.g., whole grain crackers, fruit, yogurt)</li>
+      <li> <strong>Prep smartly:</strong> Use food containers to keep ingredients separate until eating</li>
+      <li> <strong>Pack essentials:</strong> Bring fresh bread, lean meats, salad extras, and healthy snacks</li>
+    </ol>
+    Remember, the food you eat affects how you feel and perform. Start small and build healthier habits over time!
+
 events:
   - date: June 15, 2023
     description: Annual Residency Graduation Ceremony
@@ -86,6 +100,4 @@ programDirector:
   image: /img/beale.jpeg
   message: >
     Welcome to the Azalea Report! As we embark on this new chapter, I'm filled with pride and excitement for what lies ahead. Our residency program is more than just medical training; it's a journey of growth, discovery, and transformation. Remember, each challenge you face is an opportunity to learn and excel. Embrace the diversity of our program, support one another, and never lose sight of the compassionate care that defines our profession. Together, we will shape the future of healthcare and make a lasting impact on our community. Your dedication inspires us all, and I look forward to witnessing your continued success and growth.
-
 ---
-

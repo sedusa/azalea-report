@@ -12,8 +12,12 @@ collections:
         file: "content/home.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Publish Date", name: "date", widget: "datetime" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Date", name: "date", widget: "string" }
           - { label: "Welcome Message", name: "welcome", widget: "text" }
+          - { label: "Team", name: "team", widget: "string" }
+          - { label: "About Program", name: "aboutProgram", widget: "text" }
+          - { label: "SGMC Image", name: "sgmcImage", widget: "image" }
           - label: "Program Statistics"
             name: "statistics"
             widget: "object"
@@ -42,7 +46,7 @@ collections:
             widget: "list"
             fields:
               - { label: "Name", name: "name", widget: "string" }
-              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Image", name: "image", widget: "string" }
               - { label: "Content", name: "content", widget: "markdown" }
           - label: "Farewell Section"
             name: "farewell"
@@ -55,13 +59,27 @@ collections:
             fields:
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Caption", name: "caption", widget: "string" }
+          - label: "Wellness Tip"
+            name: "wellnessTip"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Content", name: "content", widget: "markdown" }
           - label: "Upcoming Events"
             name: "events"
             widget: "list"
             fields:
               - { label: "Date", name: "date", widget: "string" }
               - { label: "Description", name: "description", widget: "string" }
-          - { label: "Additional Content", name: "body", widget: "markdown" }
+          - label: "Employee Spotlight"
+            name: "employeeSpotlight"
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
           - label: "Program Director Message"
             name: "programDirector"
             widget: "object"
