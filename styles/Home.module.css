@@ -644,10 +644,10 @@
 .thingsToDoContainer {
   background-color: #f0f8ff;
   border-radius: 15px;
-  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: 20px;
 }
 
 .thingsToDoImageContainer {
@@ -659,13 +659,13 @@
 }
 
 .thingsToDoImage {
+  height: 100%;
+  left: 0;
+  opacity: 0;
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
   transition: opacity 0.5s ease-in-out;
+  width: 100%;
 }
 
 .thingsToDoImage.active {
@@ -676,16 +676,16 @@
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  padding: 0;
-  margin: 0;
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .thingsToDoItem {
+  border-bottom: 1px solid #ccc;
   flex: 0 0 calc(50% - 7.5px);
   margin-bottom: 15px;
   padding-bottom: 15px;
-  border-bottom: 1px solid #ccc;
 }
 
 .thingsToDoItem:last-child,
@@ -697,23 +697,24 @@
   color: #016f53;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.3rem;
-  margin-bottom: 5px;
+  margin: 0 auto 5px;
 }
 
 .thingsToDoDate {
   color: #666;
   font-size: 1rem;
-  margin-bottom: 5px;
+  margin: 0 auto 5px;
 }
 
 .thingsToDoDescription {
   font-size: 1.1rem;
   line-height: 1.5;
-  margin-bottom: 10px;
+  margin: 0 auto;
 }
 
 .thingsToDoLink {
   color: #016f53;
+  font-size: 1rem;
   font-weight: bold;
   text-decoration: none;
 }
