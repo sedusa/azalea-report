@@ -18,7 +18,7 @@ export default function Home() {
     spotlight,
     tribalCouncil,
     chiefChat,
-    farewell,
+    recentSuccess,
     photosOfMonth,
     events,
     upcomingBirthdays,
@@ -30,7 +30,7 @@ export default function Home() {
 
   const [expandedChiefs, setExpandedChiefs] = useState({});
   const [isMobile, setIsMobile] = useState(false);
-  const [expandedFarewell, setExpandedFarewell] = useState(false);
+  const [expandedRecentSuccess, setExpandedRecentSuccess] = useState(false);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [currentThingsToDoImage, setCurrentThingsToDoImage] = useState(0);
 
@@ -39,9 +39,12 @@ export default function Home() {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    handleResize(); // Call it initially
+    handleResize();
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   useEffect(() => {
@@ -66,15 +69,10 @@ export default function Home() {
     return content.substr(0, content.lastIndexOf(' ', maxLength)) + '...';
   };
 
-  const truncateFarewell = (content, maxWords = 50) => {
-    const div = document.createElement('div');
-    div.innerHTML = content;
-    const text = div.textContent || div.innerText;
-    const words = text.split(/\s+/);
-    if (words.length <= maxWords) return content;
-
-    const truncatedText = words.slice(0, maxWords).join(' ') + '...';
-    return `<p>${truncatedText}</p>`;
+  const truncateRecentSuccess = (content) => {
+    const maxLength = 240;
+    if (content.length <= maxLength) return content;
+    return content.substr(0, content.lastIndexOf(' ', maxLength)) + '...';
   };
 
   const BirthdaySection = () => {
@@ -263,11 +261,6 @@ export default function Home() {
             </div>
           </section>
 
-          {/* <section className={styles.fullWidth}>
-            <h2>Tribal Council Corner</h2>
-            <div dangerouslySetInnerHTML={{ __html: tribalCouncil.content }} />
-          </section> */}
-
           <section className={styles.fullWidth}>
             <h2 className={styles.sectionTitle}>Chat With Our Chiefs</h2>
             <div className={styles.chiefsSection}>
@@ -327,32 +320,37 @@ export default function Home() {
           </section>
 
           <section className={styles.fullWidth}>
-            <h2 className={styles.sectionTitle}>Farewell</h2>
-            <div className={styles.farewellContent}>
+            <h2 className={styles.sectionTitle}>Recent Success</h2>
+            <div className={styles.recentSuccessContent}>
+              <h3 className={styles.recentSuccessTitle}>{recentSuccess.title}</h3>
               <img
-                src='/img/flare.jpeg'
-                alt='Farewell placeholder image'
-                className={styles.farewellImage}
+                src={recentSuccess.image}
+                alt='Recent success highlight'
+                className={styles.recentSuccessImage}
               />
-              <div className={styles.farewellText}>
+              <div className={styles.recentSuccessText}>
                 {isMobile ? (
                   <>
                     <div
                       dangerouslySetInnerHTML={{
-                        __html: expandedFarewell
-                          ? farewell.content
-                          : truncateFarewell(farewell.content),
+                        __html: expandedRecentSuccess
+                          ? recentSuccess.content
+                          : truncateRecentSuccess(recentSuccess.content),
                       }}
                     />
                     <button
-                      onClick={() => setExpandedFarewell(!expandedFarewell)}
-                      className={styles.farewellToggleButton}
+                      onClick={() =>
+                        setExpandedRecentSuccess(!expandedRecentSuccess)
+                      }
+                      className={styles.recentSuccessToggleButton}
                     >
-                      {expandedFarewell ? 'Show Less' : 'Show More'}
+                      {expandedRecentSuccess ? 'Show Less' : 'Show More'}
                     </button>
                   </>
                 ) : (
-                  <div dangerouslySetInnerHTML={{ __html: farewell.content }} />
+                  <div
+                    dangerouslySetInnerHTML={{ __html: recentSuccess.content }}
+                  />
                 )}
               </div>
             </div>

@@ -144,7 +144,7 @@
   .text,
   .birthdayItem,
   .chiefText,
-  .farewellText {
+  .recentSuccessText {
     font-size: 1.2rem; 
     line-height: 1.6;
     color: #333;
@@ -399,35 +399,49 @@
   }
 }
 
-/* Farewell Section */
+/* Recent Success Section */
 
-.farewellContent {
+.recentSuccessContent {
+  background-color: #e6f0ed;
+  border-radius: 15px;
+  padding: 30px;
   overflow: visible;
 }
 
-.farewellImage {
+.recentSuccessTitle {
+  color: #016f53;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.recentSuccessImage {
   float: left;
   height: auto;
   margin: 0 1.5rem 1rem 0;
   max-width: 400px;
   shape-outside: margin-box;
   width: 100%;
+  border-radius: 8px;
 }
 
-.farewellText {
-  font-size: 1.2 rem;
+.recentSuccessText {
+  font-size: 1.2rem;
   line-height: 1.6;
+  color: #333;
 }
 
-.farewellText p {
+.recentSuccessText p {
   margin-bottom: 1rem;
 }
 
-.farewellText p:first-child {
+.recentSuccessText p:first-child {
   margin-top: 0;
 }
 
-.farewellToggleButton {
+.recentSuccessToggleButton {
   background-color: #016f53;
   border-radius: 4px;
   border: none;
@@ -436,28 +450,31 @@
   display: inline-block;
   font-family: 'Georgia', serif;
   font-size: 1.2rem;
-  margin-top: 10px;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   text-align: left;
   transition: background-color 0.3s ease;
 }
 
-.farewellToggleButton:hover {
+.recentSuccessToggleButton:hover {
   background-color: #014d3a;
 }
 
 @media (max-width: 768px) {
-  .farewellImage {
+  .recentSuccessImage {
     float: none;
     margin: 0 auto 1rem;
     display: block;
   }
 
-  .farewellToggleButton {
+  .recentSuccessToggleButton {
     display: inline-block;
     font-size: 1rem;
     margin: 1rem 0 0;
+  }
+
+  .recentSuccessTitle {
+    font-size: 1.5rem;
   }
 }
 
@@ -895,7 +912,7 @@
 
 .footer {
   color: #718096;
-  font-size: 0.9rem;
+  font-size: 1rem;
   padding: 2rem 0;
   text-align: center;
 }

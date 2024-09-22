@@ -17,7 +17,7 @@ spotlight:
   funFact: I run the 100m in 11 seconds when I was 15 🏃🏾
   favoriteDish: Oxtails or Shrimp Alfredo
   interests: Soccer & fitness ("nothing beats a good workout after a long day of work")
-  postResidencyPlans: I aspire to take on leadership roles within internal medicine and contribute to advancements in clinical guidelines and patient care.
+  postResidencyPlans: I aspire to assume leadership roles within internal medicine and contribute to advancements in clinical guidelines and patient care.
 tribalCouncil:
   content: >
     The PAR tribal system aims to act as a liaison between residents and GME focusing on resident wellness, building camaraderie and improving the resident experience. The PAR resident body recently voted for Dr Ghida Akdhar as the new Vice President, with Dr Danhely Cruz continuing on as our president. We thank Dr Sheri Walls for all her hardwork and dedication in advocating for the resident body and improving the resident experience. 
@@ -45,15 +45,11 @@ chiefChat:
       Looking ahead, Dr. Gandi aspires to pursue a fellowship in Pulmonary Critical Care, where he hopes to further specialize and contribute to advancements in the field. His dedication to this subspecialty will undoubtedly enrich our program's curriculum and inspire residents with similar interests.
       "To our fellow residents," Dr. Gandi advises, "remember to have each other's backs. Our diverse backgrounds are our strength – let's learn from one another and grow together. When things get challenging, there's nothing more valuable than the support of your colleagues."
       Outside of his professional life, Dr. Gandi values quality time with his wife and enjoys traveling, maintaining a balance that enhances both his personal growth and medical career.
-farewell:
+recentSuccess:
+  title: Savannah Bound - Residents Set to Shine at Upcoming Georgia ACP Conference
+  image: /img/savannah.jpeg
   content: >
-    <div class="farewell-kevin">
-      It is with mixed emotions that we bid farewell to John, our beloved residency coordinator. For years, John has been the heart and soul of our program, guiding residents through the complexities of their medical journey with unwavering dedication and a warm smile.
-      John's impact on our residency program cannot be overstated. His organizational skills kept our program running smoothly, while his compassionate nature provided comfort and support during challenging times. From managing rotations to organizing social events, John's attention to detail and genuine care for each resident's well-being have been instrumental in creating a positive and nurturing learning environment.
-      As John moves on to new adventures, we want to express our heartfelt gratitude for his years of service. His legacy of kindness, efficiency, and commitment will continue to inspire us. While we will miss his daily presence, the lessons he taught us about professionalism, empathy, and the importance of community in medical education will remain with us throughout our careers.
-      John, thank you for being not just a coordinator, but a mentor, a friend, and a pillar of support. Your impact on our lives and careers is immeasurable. We wish you the very best in your future endeavors and hope you'll always remember the positive influence you've had on countless residents at SGMC.
-      Best wishes, John! You will be deeply missed and fondly remembered.
-    </div>
+    <p>We are thrilled to announce that a number of our residents' posters were accepted at this year's Georgia ACP conference in Savannah. This achievement reflects the hard work and dedication of our talented residents, mentors, and attendings—it truly takes a village. We extend our heartfelt congratulations to all the residents whose work was selected. In addition to this success, we are proud to recognize the residents chosen (<strong>Drs. McSweeney, Silverio-Lopez and Mohan</strong>) to represent our program in this year's Jeopardy competition at the conference. This is an excellent opportunity to showcase their knowledge and quick thinking. We wish all of our participating residents the very best as they represent our program at these prestigious events.</p>
 photosOfMonth:
   - image: /img/carousel/twinning.jpeg
     caption: "Impromptu twinning"

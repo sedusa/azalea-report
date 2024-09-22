@@ -48,10 +48,12 @@ collections:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Image", name: "image", widget: "string" }
               - { label: "Content", name: "content", widget: "markdown" }
-          - label: "Farewell Section"
-            name: "farewell"
+          - label: "Recent Success"
+            name: "recentSuccess"
             widget: "object"
             fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
               - { label: "Content", name: "content", widget: "markdown" }
           - label: "Photos of the Month"
             name: "photosOfMonth"
