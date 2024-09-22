@@ -22,6 +22,7 @@ export default function Home() {
     photosOfMonth,
     events,
     upcomingBirthdays,
+    thingsToDoInValdosta,
     employeeSpotlight,
     programDirector,
     wellnessTip,
@@ -31,6 +32,7 @@ export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
   const [expandedFarewell, setExpandedFarewell] = useState(false);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
+  const [currentThingsToDoImage, setCurrentThingsToDoImage] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {
@@ -41,6 +43,16 @@ export default function Home() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentThingsToDoImage(
+        (prevIndex) => (prevIndex + 1) % thingsToDoInValdosta.images.length
+      );
+    }, 8000);
+
+    return () => clearInterval(interval);
+  }, [thingsToDoInValdosta.images.length]);
 
   const toggleChiefContent = (index) => {
     setExpandedChiefs((prev) => ({
@@ -107,14 +119,13 @@ export default function Home() {
   };
 
   const nextPhoto = () => {
-    setCurrentPhotoIndex((prevIndex) =>
-      (prevIndex + 1) % photosOfMonth.length
-    );
+    setCurrentPhotoIndex((prevIndex) => (prevIndex + 1) % photosOfMonth.length);
   };
 
   const prevPhoto = () => {
-    setCurrentPhotoIndex((prevIndex) =>
-      (prevIndex - 1 + photosOfMonth.length) % photosOfMonth.length
+    setCurrentPhotoIndex(
+      (prevIndex) =>
+        (prevIndex - 1 + photosOfMonth.length) % photosOfMonth.length
     );
   };
 
@@ -348,21 +359,29 @@ export default function Home() {
           </section>
 
           <section className={styles.fullWidth}>
-            <h2 className={styles.sectionTitle}>Through the Lens: Residency Highlights</h2>
+            <h2 className={styles.sectionTitle}>
+              Through the Lens: Residency Highlights
+            </h2>
             <div className={styles.carouselContainer}>
-              <button className={styles.carouselButton} onClick={prevPhoto}>‹</button>
+              <button className={styles.carouselButton} onClick={prevPhoto}>
+                ‹
+              </button>
               <div className={styles.carouselImageContainer}>
                 <Image
                   src={photosOfMonth[currentPhotoIndex].image}
                   alt={photosOfMonth[currentPhotoIndex].caption}
-                  layout="fill"
-                  objectFit="cover"
+                  fill
+                  style={{ objectFit: 'cover' }}
                   className={styles.carouselImage}
                 />
               </div>
-              <button className={styles.carouselButton} onClick={nextPhoto}>›</button>
+              <button className={styles.carouselButton} onClick={nextPhoto}>
+                ›
+              </button>
             </div>
-            <p className={styles.photoCaption}>{photosOfMonth[currentPhotoIndex].caption}</p>
+            <p className={styles.photoCaption}>
+              {photosOfMonth[currentPhotoIndex].caption}
+            </p>
           </section>
 
           <section className={styles.twoColumns}>
@@ -371,13 +390,52 @@ export default function Home() {
               <ul className={styles.eventList}>
                 {events.map((event, index) => (
                   <li key={index} className={styles.eventItem}>
-                    <strong>{event.date}:</strong> {event.description}
+                    <strong>{event.date} - </strong> {event.description}
                   </li>
                 ))}
               </ul>
             </div>
             <div className={styles.column}>
               <BirthdaySection />
+            </div>
+          </section>
+
+          <section className={styles.fullWidth}>
+            <h2 className={styles.sectionTitle}>Things to Do in Valdosta</h2>
+            <div className={styles.thingsToDoContainer}>
+              <div className={styles.thingsToDoImageContainer}>
+                {thingsToDoInValdosta.images.map((image, index) => (
+                  <Image
+                    key={image}
+                    src={image}
+                    alt={`Things to do in Valdosta ${index + 1}`}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    className={`${styles.thingsToDoImage} ${
+                      index === currentThingsToDoImage ? styles.active : ''
+                    }`}
+                  />
+                ))}
+              </div>
+              <ul className={styles.thingsToDoList}>
+                {thingsToDoInValdosta.items.map((item, index) => (
+                  <li key={index} className={styles.thingsToDoItem}>
+                    <h3 className={styles.thingsToDoTitle}>{item.title}</h3>
+                    <p className={styles.thingsToDoDate}>{item.date}</p>
+                    <p className={styles.thingsToDoDescription}>
+                      {item.description}
+                    </p>
+                    <a
+                      href={item.url}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className={styles.thingsToDoLink}
+                    >
+                      Learn More
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </section>
 
@@ -444,7 +502,7 @@ export default function Home() {
 
         <footer className={styles.footer}>
           <p>
-            © {new Date().getFullYear()} Azalea Report - The SGMC Internal
+            © {new Date().getFullYear()} Azalea Report - SGMC Health Internal
             Medicine Residency Newsletter
           </p>
         </footer>

@@ -17,7 +17,7 @@ spotlight:
   funFact: I run the 100m in 11 seconds when I was 15 🏃🏾
   favoriteDish: Oxtails or Shrimp Alfredo
   interests: Soccer & fitness ("nothing beats a good workout after a long day of work")
-  postResidencyPlans: Get rich 💰
+  postResidencyPlans: I aspire to take on leadership roles within internal medicine and contribute to advancements in clinical guidelines and patient care.
 tribalCouncil:
   content: >
     The PAR tribal system aims to act as a liaison between residents and GME focusing on resident wellness, building camaraderie and improving the resident experience. The PAR resident body recently voted for Dr Ghida Akdhar as the new Vice President, with Dr Danhely Cruz continuing on as our president. We thank Dr Sheri Walls for all her hardwork and dedication in advocating for the resident body and improving the resident experience. 
@@ -81,12 +81,14 @@ wellnessTip:
     Remember, the food you eat affects how you feel and perform. Start small and build healthier habits over time!
 
 events:
-  - date: June 15, 2023
-    description: Annual Residency Graduation Ceremony
-  - date: July 1, 2023
-    description: Welcome New Interns Orientation
-  - date: August 5, 2023
-    description: Research Symposium
+  - date: Wed Sept 25, 2024
+    description: Baby shower for Dr. & Mrs. Brown
+  - date: Thurs Sept 26, 2024
+    description: Moments of Truth by Eli Pagonis
+  - date: Fri Sept 27, 2024
+    description: Celebration Lunch for 2024 ERAS opening
+  - date: Sat Sept 28, 2024 (9:30 am)
+    description: Walk with a Doc
 
 upcomingBirthdays:
   - name: Dr. Michael Heron
@@ -109,4 +111,37 @@ programDirector:
   image: /img/beale.jpeg
   message: >
     Welcome to the Azalea Report! As we embark on this new chapter, I'm filled with pride and excitement for what lies ahead. Our residency program is more than just medical training; it's a journey of growth, discovery, and transformation. Remember, each challenge you face is an opportunity to learn and excel. Embrace the diversity of our program, support one another, and never lose sight of the compassionate care that defines our profession. Together, we will shape the future of healthcare and make a lasting impact on our community. Your dedication inspires us all, and I look forward to witnessing your continued success and growth.
+
+thingsToDoInValdosta:
+  images:
+    - /img/things-to-do/valdosta-1.jpeg
+    - /img/things-to-do/valdosta-2.jpeg
+    - /img/things-to-do/valdosta-3.jpeg
+    - /img/things-to-do/valdosta-4.jpeg
+    - /img/things-to-do/valdosta-5.jpeg
+    - /img/things-to-do/valdosta-6.jpeg
+    - /img/things-to-do/valdosta-7.jpeg
+    - /img/things-to-do/valdosta-8.jpeg
+  items:
+    - title: Wild Adventures Theme Park
+      date: Open year-round
+      description: Enjoy thrilling rides, exotic animals, and live entertainment at this popular theme park.
+      url: https://www.wildadventures.com/
+    - title: Valdosta Wake Compound
+      date: Open seasonally
+      description: Experience wakeboarding and other water sports at this state-of-the-art facility.
+      url: https://valdostawakecompound.com/
+    - title: South Georgia Military Aviation Museum
+      date: Open Tuesday-Saturday
+      description: Explore aviation history with vintage aircraft and memorabilia.
+      url: https://www.sgmam.us/
+    - title: Grand Bay Wildlife Management Area
+      date: Open daily, sunrise to sunset
+      description: Hike, bird watch, and enjoy nature in this diverse ecosystem.
+      url: https://georgiawildlife.com/grand-bay-wma
+    - title: Valdosta State University Fine Arts Gallery
+      date: Check website for current exhibitions
+      description: View rotating exhibitions of contemporary art by regional and national artists.
+      url: https://www.valdosta.edu/colleges/arts/art/gallery/
+
 ---

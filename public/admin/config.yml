@@ -88,3 +88,19 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Message", name: "message", widget: "markdown" }
+          - label: "Things to Do in Valdosta"
+            name: "thingsToDoInValdosta"
+            widget: "object"
+            fields:
+              - label: "Images"
+                name: "images"
+                widget: "list"
+                field: { label: "Image", name: "image", widget: "image", media_folder: "/public/img/things-to-do" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Date", name: "date", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "URL", name: "url", widget: "string" }
