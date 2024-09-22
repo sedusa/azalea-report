@@ -322,7 +322,9 @@ export default function Home() {
           <section className={styles.fullWidth}>
             <h2 className={styles.sectionTitle}>Recent Success</h2>
             <div className={styles.recentSuccessContent}>
-              <h3 className={styles.recentSuccessTitle}>{recentSuccess.title}</h3>
+              <h3 className={styles.recentSuccessTitle}>
+                {recentSuccess.title}
+              </h3>
               <img
                 src={recentSuccess.image}
                 alt='Recent success highlight'
@@ -438,25 +440,6 @@ export default function Home() {
           </section>
 
           <section className={styles.fullWidth}>
-            <h2 className={styles.sectionTitle}>Wellness corner</h2>
-            <div className={styles.wellnessTipSection}>
-              <h2 className={styles.wellnessTipTitle}>{wellnessTip.title}</h2>
-              <div className={styles.wellnessTipContent}>
-                <div className={styles.wellnessTipText}>
-                  <div
-                    dangerouslySetInnerHTML={{ __html: wellnessTip.content }}
-                  />
-                </div>
-                <img
-                  src={wellnessTip.image}
-                  alt='Healthy eating'
-                  className={styles.wellnessTipImage}
-                />
-              </div>
-            </div>
-          </section>
-
-          <section className={styles.fullWidth}>
             <div className={styles.spotlightIconContainer}>
               <Image
                 src='/img/spotlight.svg'
@@ -491,6 +474,25 @@ export default function Home() {
                 <p className={styles.employeeSpotlightDescription}>
                   {employeeSpotlight.description}
                 </p>
+              </div>
+            </div>
+          </section>
+
+          <section className={styles.fullWidth}>
+            <h2 className={styles.sectionTitle}>Wellness corner</h2>
+            <div className={styles.wellnessTipSection}>
+              <h2 className={styles.wellnessTipTitle}>{wellnessTip.title}</h2>
+              <div className={styles.wellnessTipContent}>
+                <div className={styles.wellnessTipText}>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: wellnessTip.content }}
+                  />
+                </div>
+                <img
+                  src={wellnessTip.image}
+                  alt='Healthy eating'
+                  className={styles.wellnessTipImage}
+                />
               </div>
             </div>
           </section>
