@@ -106,8 +106,7 @@ programDirector:
   title: Program Director, Internal Medicine Residency
   image: /img/beale.jpeg
   message: >
-    Welcome to the Azalea Report! As we embark on this new chapter, I'm filled with pride and excitement for what lies ahead. Our residency program is more than just medical training; it's a journey of growth, discovery, and transformation. Remember, each challenge you face is an opportunity to learn and excel. Embrace the diversity of our program, support one another, and never lose sight of the compassionate care that defines our profession. Together, we will shape the future of healthcare and make a lasting impact on our community. Your dedication inspires us all, and I look forward to witnessing your continued success and growth.
-
+    "Hard to believe that we are now 2 1/3 years into our IM residency program. I am proud of each and every one of you. Keep up the hard work and independent education. ABIM will come quicker than you think."
 thingsToDoInValdosta:
   images:
     - /img/things-to-do/valdosta-1.jpeg

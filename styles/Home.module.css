@@ -369,7 +369,7 @@
 
 .programDirectorTitle {
   color: #333;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
@@ -464,7 +464,6 @@
   .recentSuccessImage {
     float: none;
     margin: 0 auto 1rem;
-    display: block;
   }
 
   .recentSuccessToggleButton {
