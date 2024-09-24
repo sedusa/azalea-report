@@ -49,7 +49,7 @@ recentSuccess:
   title: Savannah Bound - Residents Set to Shine at Upcoming Georgia ACP Conference
   image: /img/savannah.jpeg
   content: >
-    <p>We are thrilled to announce that a number of our residents' posters were accepted at this year's Georgia ACP conference in Savannah. This achievement reflects the hard work and dedication of our talented residents, mentors, and attendings—it truly takes a village. We extend our heartfelt congratulations to all the residents whose work was selected. In addition to this success, we are proud to recognize the residents chosen (<strong>Drs. McSweeney, Silverio-Lopez and Mohan</strong>) to represent our program in this year's Jeopardy competition at the conference. This is an excellent opportunity to showcase their knowledge and quick thinking. We wish all of our participating residents the very best as they represent our program at these prestigious events.</p>
+    <p>We are thrilled to announce that a number of our residents' posters were accepted at this year's Georgia ACP conference in Savannah. This achievement reflects the hard work and dedication of our talented residents, mentors, and attendings—it truly takes a village. We extend our heartfelt congratulations to all the residents whose work was selected. In addition to this success, we are proud to recognize the residents chosen (<strong>Drs. McSweeney, Silverio-Lopez and Mohan</strong>) to represent our program in this year's Jeopardy competition at the conference. We wish all of our participating residents the very best as they represent our program at these prestigious events.</p>
 photosOfMonth:
   - image: /img/carousel/twinning.jpeg
     caption: "Impromptu twinning"
@@ -99,7 +99,7 @@ employeeSpotlight:
   image: /img/employee-spotlight-09-24.jpeg
   title: Medical Assistant
   description: >
-    Meet Melissa Wilkerson, one of our devoted Medical Assistants who has been with our clinic since its opening in August 2022. Melissa is passionate about her work and equally dedicated to her family life. When not providing excellent care to our patients, she can often be found cheering on her daughter at softball games. Melissa also enjoys quality time with family and friends. Her long-standing commitment and experience make her an invaluable member of our team.
+    Meet Melissa Wilkerson, one of our devoted medical assistants who has been with our clinic since its opening in August 2022. Melissa is passionate about her work and equally dedicated to her family life. When not providing excellent care to our patients, she can often be found cheering on her daughter at softball games. Melissa also enjoys quality time with family and friends. Her long-standing commitment and experience make her an invaluable member of our team.
 
 programDirector:
   name: Gregory Beale, MD
