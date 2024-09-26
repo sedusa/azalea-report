@@ -59,6 +59,8 @@ photosOfMonth:
     caption: "Partnership for Health Gala"
   - image: /img/carousel/trivia-night.jpeg
     caption: "Monday night trivia"
+  - image: /img/carousel/baby-shower.jpeg
+    caption: "Baby Shower for Dr. and Mrs. Brown"
   - image: /img/carousel/winter-is-coming.jpeg
     caption: "Nik pre-charting"
   - image: /img/carousel/pickle-ball.jpeg
