@@ -178,6 +178,7 @@ export default function Home() {
           href='https://fonts.googleapis.com/css2?family=Anton&display=swap'
           rel='stylesheet'
         />
+        <script defer data-domain="azaleareport.com" src="https://plausible.io/js/script.js"></script>
       </Head>
 
       <div className={styles.container}>
