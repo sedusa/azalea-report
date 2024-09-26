@@ -160,18 +160,18 @@ export default function Home() {
         <meta name='theme-color' content='#ffffff' />
         <meta
           name='description'
-          content='SGMC HealthInternal Medicine Residency Newsletter'
+          content='SGMC Health IM Residency Newsletter'
         />
         <meta property='og:title' content={title} />
         <meta
           property='og:description'
-          content='SGMC HealthInternal Medicine Residency Newsletter'
+          content='SGMC Health IM Residency Newsletter'
         />
         <meta
           property='og:image'
-          content='https://azaleareport.netlify.app/img/azalea.svg'
+          content='https://azaleareport.com/img/sgmchealth.jpeg'
         />
-        <meta property='og:url' content='https://azaleareport.netlify.app/' />
+        <meta property='og:url' content='https://azaleareport.com' />
         <meta property='og:type' content='website' />
         <link rel='manifest' href='/manifest.json' />
         <link
