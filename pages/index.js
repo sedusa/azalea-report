@@ -19,6 +19,7 @@ export default function Home() {
     tribalCouncil,
     chiefChat,
     recentSuccess,
+    communityServiceCorner,
     photosOfMonth,
     events,
     upcomingBirthdays,
@@ -33,6 +34,8 @@ export default function Home() {
   const [expandedRecentSuccess, setExpandedRecentSuccess] = useState(false);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [currentThingsToDoImage, setCurrentThingsToDoImage] = useState(0);
+  const [expandedCommunityService, setExpandedCommunityService] =
+    useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -71,6 +74,12 @@ export default function Home() {
 
   const truncateRecentSuccess = (content) => {
     const maxLength = 240;
+    if (content.length <= maxLength) return content;
+    return content.substr(0, content.lastIndexOf(' ', maxLength)) + '...';
+  };
+
+  const truncateCommunityService = (content) => {
+    const maxLength = 645;
     if (content.length <= maxLength) return content;
     return content.substr(0, content.lastIndexOf(' ', maxLength)) + '...';
   };
@@ -178,7 +187,11 @@ export default function Home() {
           href='https://fonts.googleapis.com/css2?family=Anton&display=swap'
           rel='stylesheet'
         />
-        <script defer data-domain="azaleareport.com" src="https://plausible.io/js/script.js"></script>
+        <script
+          defer
+          data-domain='azaleareport.com'
+          src='https://plausible.io/js/script.js'
+        ></script>
       </Head>
 
       <div className={styles.container}>
@@ -383,6 +396,41 @@ export default function Home() {
             <p className={styles.photoCaption}>
               {photosOfMonth[currentPhotoIndex].caption}
             </p>
+          </section>
+
+          <section className={styles.fullWidth}>
+            <h2 className={styles.sectionTitle}>Community Service Corner</h2>
+            <div className={styles.communityServiceCornerContent}>
+              <h3 className={styles.communityServiceCornerTitle}>
+                {communityServiceCorner.title}
+              </h3>
+              <img
+                src={communityServiceCorner.image}
+                alt='Community service highlight'
+                className={styles.communityServiceCornerImage}
+              />
+              <div className={styles.communityServiceCornerText}>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: expandedCommunityService
+                      ? communityServiceCorner.content
+                      : truncateCommunityService(
+                          communityServiceCorner.content
+                        ),
+                  }}
+                />
+                {communityServiceCorner.content.length > 240 && (
+                  <button
+                    onClick={() =>
+                      setExpandedCommunityService(!expandedCommunityService)
+                    }
+                    className={styles.communityServiceCornerToggleButton}
+                  >
+                    {expandedCommunityService ? 'Show Less' : 'Show More'}
+                  </button>
+                )}
+              </div>
+            </div>
           </section>
 
           <section className={styles.twoColumns}>

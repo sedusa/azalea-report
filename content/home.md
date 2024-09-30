@@ -50,6 +50,38 @@ recentSuccess:
   image: /img/savannah.jpeg
   content: >
     <p>We are thrilled to announce that a number of our residents' posters were accepted at this year's Georgia ACP conference in Savannah. This achievement reflects the hard work and dedication of our talented residents, mentors, and attendings—it truly takes a village. We extend our heartfelt congratulations to all the residents whose work was selected. In addition to this success, we are proud to recognize the residents chosen (<strong>Drs. McSweeney, Silverio-Lopez and Mohan</strong>) to represent our program in this year's Jeopardy competition at the conference. We wish all of our participating residents the very best as they represent our program at these prestigious events.</p>
+communityServiceCorner:
+  title: The Eye of the Storm - Humanity Unveiled
+  image: /img/outside-church.jpeg
+  content: >
+    <p>As Hurricane Helene howled outside, an unlikely assemblage of strangers sought sanctuary within the walls of a local church. I found myself there, a resident physician volunteering alongside Red Cross staff, about to witness an extraordinary display of human resilience and connection.</p>
+
+    <p>SGMC Health had prepared the shelter to accommodate patients requiring oxygen support. Among them were Ron, a young man with autism, and his mother. Her constant justification for their presence struck a chord. It was a poignant reminder of the difficult choices we face during crises, when the lines between necessity and precaution blur.</p>
+
+    <p>The shelter's inhabitants were a tapestry of lives interrupted. A thirty-something-year-old African American mother spoke with quiet pride about her dozen well-behaved children. Nearby, a former hospital employee naturally assumed a leadership role, her calm demeanor serving as a balm for frayed nerves in this impromptu community.</p>
+
+    <img src="/img/inside-church.jpeg" alt="People sheltering inside the church" />
+
+    <p>An anxious woman approached me, her eyes wide with fear of a Category 4 hurricane. I drew upon my medical training to assuage her concerns, even as uncertainty about Helene's true intensity gnawed at me. Not far away, a tattooed woman in her thirties cradled her oxygen-dependent infant. She shared her story as a recovering addict, her determination to stay clean for her child both heartbreaking and inspiring. In that moment, the fragility and strength of the human spirit were laid bare.</p>
+
+    <p>As night fell, the tapestry of humanity grew richer. An elderly woman kept vigil over her two grown autistic sons, who slept peacefully on the floor, their trust in her protection absolute. A Hispanic family fashioned a makeshift living room, finding joy in board games amidst the chaos. Their laughter, a defiant counterpoint to the storm's fury, echoed through the shelter.</p>
+
+    <p>The hours ticked by, bringing more seekers of refuge: a sleeping Hispanic man watched over by his vigilant wife; an elderly woman eager to share her entire medical history; a mentally challenged man who, in a bid for normalcy, set up his TV in the bathroom; and a homeless man who humbly requested a hot meal.</p>
+
+    <p>As Helene raged on, the storm outside seemed to mirror the tumult within each of us. Our deepest fears and our greatest capacity for connection were brought to the surface. Huddled together on that long night, we realized a profound truth: we were in this collectively. Our shared experience became a wellspring of strength.</p>
+
+    <p>When dawn finally broke and Helene's fury subsided, it was clear we had weathered more than just a hurricane. We had experienced a powerful reminder of our common humanity. Though we would soon part ways, each of us would carry this night with us, a testament to the unexpected strength found in shared vulnerability.</p>
+
+    <p>This is the essence of community: supporting one another through life's storms and emerging stronger, more connected. As I reflect on that night, I am humbled by the resilience I witnessed and grateful for the opportunity to serve. It reinforced a universal truth: when stripped of our usual comforts and pretenses, we are all simply human, seeking safety, comfort, and understanding.</p>
+
+    <p>In the eye of the storm, we found each other. And in finding each other, we found ourselves.</p>
+    <br/>
+
+    <p><i>To prepare for Hurricane Helene, SGMC Health established a shelter at a local church in Valdosta, Georgia, specifically for people who require oxygen as well as other vulnerable populations. Two resident physicians, Drs. Edusa and Joseph, volunteered to assist with the shelter's operations.</i></p>
+
+    <p><i>Note: All names in this article have been replaced with pseudonyms to protect individuals' privacy.</i></p>
+
+
 photosOfMonth:
   - image: /img/carousel/twinning.jpeg
     caption: "Impromptu twinning"

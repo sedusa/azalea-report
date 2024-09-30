@@ -145,7 +145,7 @@
   .birthdayItem,
   .chiefText,
   .recentSuccessText {
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
     line-height: 1.6;
     color: #333;
   }
@@ -477,6 +477,91 @@
   }
 }
 
+/* Community Service Corner Section */
+
+.communityServiceCornerContent {
+  background-color: #f7f3e8;
+  border-radius: 15px;
+  padding: 30px;
+  overflow: visible;
+}
+
+.communityServiceCornerTitle {
+  color: #016f53;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.communityServiceCornerImage {
+  float: left;
+  height: auto;
+  margin: 0 1.5rem 1rem 0;
+  max-width: 400px;
+  shape-outside: margin-box;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.communityServiceCornerText {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.communityServiceCornerText p {
+  margin-bottom: 1rem;
+}
+
+.communityServiceCornerText p:first-child {
+  margin-top: 0;
+}
+
+.communityServiceCornerText img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.communityServiceCornerToggleButton {
+  background-color: #016f53;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Georgia', serif;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+.communityServiceCornerToggleButton:hover {
+  background-color: #014d3a;
+}
+
+@media (max-width: 768px) {
+  .communityServiceCornerImage {
+    float: none;
+    margin: 0 auto 1rem;
+  }
+
+  .communityServiceCornerTitle {
+    font-size: 1.5rem;
+  }
+
+  .communityServiceCornerToggleButton {
+    display: inline-block;
+    font-size: 1rem;
+    margin: 1rem 0 0;
+  }
+}
+
 /* Photo of the Month Section */
 
 .carouselContainer {
@@ -585,7 +670,7 @@
 
 /* Wellness Tip Section */
 .wellnessTipSection {
-  background-color: #27ae60; 
+  background-color: #27ae60;
   border-radius: 15px;
   padding: 20px;
   margin-bottom: 2rem;
@@ -846,8 +931,7 @@
   overflow: hidden;
 }
 
-@media (max-width: 768px) { 
-
+@media (max-width: 768px) {
   .spotlightIconContainer {
     align-items: flex-start;
     flex-direction: column;
@@ -905,7 +989,6 @@
   .employeeSpotlightDescription {
     font-size: 1.2rem;
   }
-
 }
 
 /* Footer section */
