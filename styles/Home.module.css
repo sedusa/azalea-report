@@ -222,6 +222,12 @@
   width: 100%;
 }
 
+.sgmcImageCaption {
+  display: block;
+  font-size: 1.0rem;
+  color: #666;
+}
+
 /* Program statistics */
 
 .list {
@@ -417,14 +423,24 @@
   margin-bottom: 1rem;
 }
 
-.recentSuccessImage {
+.recentSuccessImageWrapper {
   float: left;
-  height: auto;
-  margin: 0 1.5rem 1rem 0;
+  margin: 0 1rem 0 0;
   max-width: 400px;
-  shape-outside: margin-box;
   width: 100%;
+}
+
+.recentSuccessImage {
   border-radius: 8px;
+  height: auto;
+  width: 100%;
+}
+
+.recentSuccessCaption {
+  display: block;
+  font-size: 1.0rem;
+  color: #666;
+  text-align: left;
 }
 
 .recentSuccessText {
@@ -461,9 +477,16 @@
 }
 
 @media (max-width: 768px) {
+  .recentSuccessImageWrapper {
+    float: none;
+  }
+  
   .recentSuccessImage {
     float: none;
-    margin: 0 auto 1rem;
+  }
+
+  .recentSuccessCaption {
+    margin-bottom: 1rem;
   }
 
   .recentSuccessToggleButton {
@@ -503,6 +526,7 @@
   shape-outside: margin-box;
   width: 100%;
   border-radius: 8px;
+  margin-bottom: 0.5rem; /* Add some space below the image */
 }
 
 .communityServiceCornerText {
@@ -560,6 +584,14 @@
     font-size: 1rem;
     margin: 1rem 0 0;
   }
+}
+
+.communityServiceCornerContent small {
+  display: block;
+  font-size: 1.0rem;
+  color: #666;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 /* Photo of the Month Section */
@@ -620,7 +652,9 @@
 }
 
 .photoCaption {
-  font-size: 1.3rem;
+  color: #666;
+  display: block;
+  font-size: 1.0rem;
   line-height: 1.6;
   margin: 0;
 }

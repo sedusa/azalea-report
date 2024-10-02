@@ -14,6 +14,7 @@ export default function Home() {
     welcome,
     aboutProgram,
     sgmcImage,
+    sgmcImageCaption,
     statistics,
     spotlight,
     tribalCouncil,
@@ -215,8 +216,13 @@ export default function Home() {
 
           <section className={styles.fullWidth}>
             <h2 className={styles.sectionTitle}>Welcome</h2>
-            <p className={styles.text}>{welcome}</p>
-            <p className={styles.text}>{team}</p>
+            <div
+              className={styles.text}
+              dangerouslySetInnerHTML={{
+                __html: welcome,
+              }}
+            />
+            <div className={styles.text}>{team}</div>
           </section>
 
           <section className={styles.twoColumns}>
@@ -255,6 +261,7 @@ export default function Home() {
                   alt='SGMC Building'
                   className={styles.sgmcImage}
                 />
+                <small className={styles.sgmcImageCaption}>{sgmcImageCaption}</small>
                 <p className={styles.text}>{aboutProgram}</p>
               </div>
 
@@ -339,11 +346,14 @@ export default function Home() {
               <h3 className={styles.recentSuccessTitle}>
                 {recentSuccess.title}
               </h3>
-              <img
-                src={recentSuccess.image}
-                alt='Recent success highlight'
-                className={styles.recentSuccessImage}
-              />
+              <div className={styles.recentSuccessImageWrapper}>
+                <img
+                  src={recentSuccess.image}
+                  alt='Recent success highlight'
+                  className={styles.recentSuccessImage}
+                />
+                <small className={styles.recentSuccessCaption}>{recentSuccess.imageCaption}</small>
+              </div>
               <div className={styles.recentSuccessText}>
                 {isMobile ? (
                   <>
