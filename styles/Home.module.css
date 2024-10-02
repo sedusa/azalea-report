@@ -426,7 +426,7 @@
 
 .recentSuccessImageWrapper {
   float: left;
-  margin: 0 1rem 0 0;
+  margin: 0 1.5rem 1rem 0;
   max-width: 400px;
   width: 100%;
 }
@@ -528,15 +528,24 @@
   margin: 0.5rem 0 1.5rem;
 }
 
-.communityServiceCornerImage {
+.communityServiceCornerImageWrapper {
   float: left;
-  height: auto;
   margin: 0 1.5rem 1rem 0;
   max-width: 400px;
-  shape-outside: margin-box;
   width: 100%;
+}
+
+.communityServiceCornerImage {
   border-radius: 8px;
-  margin-bottom: 0.5rem; /* Add some space below the image */
+  height: auto;
+  width: 100%;
+}
+
+.communityServiceCornerCaption {
+  display: block;
+  font-size: 1.0rem;
+  color: #666;
+  text-align: left;
 }
 
 .communityServiceCornerText {
@@ -564,10 +573,8 @@
   display: block;
   font-size: 1.0rem;
   color: #666;
-  margin-bottom: 1rem;
   text-align: left;
 }
-
 
 .communityServiceCornerToggleButton {
   background-color: #016f53;
@@ -589,9 +596,12 @@
 }
 
 @media (max-width: 768px) {
+  .communityServiceCornerImageWrapper {
+    float: none;
+  }
+  
   .communityServiceCornerImage {
     float: none;
-    margin: 0 auto 1rem;
   }
 
   .communityServiceCornerTitle {

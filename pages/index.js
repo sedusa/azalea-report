@@ -261,7 +261,9 @@ export default function Home() {
                   alt='SGMC Building'
                   className={styles.sgmcImage}
                 />
-                <small className={styles.sgmcImageCaption}>{sgmcImageCaption}</small>
+                <small className={styles.sgmcImageCaption}>
+                  {sgmcImageCaption}
+                </small>
                 <p className={styles.text}>{aboutProgram}</p>
               </div>
 
@@ -352,7 +354,9 @@ export default function Home() {
                   alt='Recent success highlight'
                   className={styles.recentSuccessImage}
                 />
-                <small className={styles.recentSuccessCaption}>{recentSuccess.imageCaption}</small>
+                <small className={styles.recentSuccessCaption}>
+                  {recentSuccess.imageCaption}
+                </small>
               </div>
               <div className={styles.recentSuccessText}>
                 {isMobile ? (
@@ -414,12 +418,19 @@ export default function Home() {
               <h3 className={styles.communityServiceCornerTitle}>
                 {communityServiceCorner.title}
               </h3>
-              <div className={styles.communityServiceCornerSubTitle}>By: {communityServiceCorner.author}</div>
-              <img
-                src={communityServiceCorner.image}
-                alt='Community service highlight'
-                className={styles.communityServiceCornerImage}
-              />
+              <div className={styles.communityServiceCornerSubTitle}>
+                By: {communityServiceCorner.author}
+              </div>
+              <div className={styles.communityServiceCornerImageWrapper}>
+                <img
+                  src={communityServiceCorner.image}
+                  alt='Community service highlight'
+                  className={styles.communityServiceCornerImage}
+                />
+                <small className={styles.communityServiceCornerCaption}>
+                  {communityServiceCorner.imageCaption}
+                </small>
+              </div>
               <div className={styles.communityServiceCornerText}>
                 <div
                   dangerouslySetInnerHTML={{

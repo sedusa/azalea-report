@@ -56,6 +56,7 @@ communityServiceCorner:
   title: The Eye of the Storm - Humanity Unveiled
   author: Samuel Edusa, MD
   image: /img/outside-church.jpeg
+  imageCaption: Outside the shelter before the storm hit
   content: >
     <p>As Hurricane Helene howled outside, an unlikely assemblage of strangers sought sanctuary within the walls of a local church. I found myself there, a resident physician volunteering alongside Red Cross staff, about to witness an extraordinary display of human resilience and connection.</p>
 
