@@ -414,6 +414,7 @@ export default function Home() {
               <h3 className={styles.communityServiceCornerTitle}>
                 {communityServiceCorner.title}
               </h3>
+              <div className={styles.communityServiceCornerSubTitle}>By: {communityServiceCorner.author}</div>
               <img
                 src={communityServiceCorner.image}
                 alt='Community service highlight'

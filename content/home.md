@@ -54,6 +54,7 @@ recentSuccess:
     <p>We are thrilled to announce that a number of our residents' posters were accepted at this year's Georgia ACP conference in Savannah. This achievement reflects the hard work and dedication of our talented residents, mentors, and attendings—it truly takes a village. We extend our heartfelt congratulations to all the residents whose work was selected. In addition to this success, we are proud to recognize the residents chosen (<strong>Drs. McSweeney, Silverio-Lopez and Mohan</strong>) to represent our program in this year's Jeopardy competition at the conference. We wish all of our participating residents the very best as they represent our program at these prestigious events.</p>
 communityServiceCorner:
   title: The Eye of the Storm - Humanity Unveiled
+  author: Samuel Edusa, MD
   image: /img/outside-church.jpeg
   content: >
     <p>As Hurricane Helene howled outside, an unlikely assemblage of strangers sought sanctuary within the walls of a local church. I found myself there, a resident physician volunteering alongside Red Cross staff, about to witness an extraordinary display of human resilience and connection.</p>
@@ -63,6 +64,7 @@ communityServiceCorner:
     <p>The shelter's inhabitants were a tapestry of lives interrupted. A thirty-something-year-old African American mother spoke with quiet pride about her dozen well-behaved children. Nearby, a former hospital employee naturally assumed a leadership role, her calm demeanor serving as a balm for frayed nerves in this impromptu community.</p>
 
     <img src="/img/inside-church.jpeg" alt="People sheltering inside the church" />
+    <small>People sheltering inside the church</small>
 
     <p>An anxious woman approached me, her eyes wide with fear of a Category 4 hurricane. I drew upon my medical training to assuage her concerns, even as uncertainty about Helene's true intensity gnawed at me. Not far away, a tattooed woman in her thirties cradled her oxygen-dependent infant. She shared her story as a recovering addict, her determination to stay clean for her child both heartbreaking and inspiring. In that moment, the fragility and strength of the human spirit were laid bare.</p>
 
