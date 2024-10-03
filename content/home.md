@@ -116,14 +116,12 @@ wellnessTip:
     Remember, the food you eat affects how you feel and perform. Start small and build healthier habits over time!
 
 events:
-  - date: Wed Sept 25, 2024
-    description: Baby shower for Dr. & Mrs. Brown
-  - date: Thurs Sept 26, 2024
-    description: Moments of Truth by Eli Pagonis
-  - date: Fri Sept 27, 2024 (postponed)
-    description: Celebration Lunch for 2024 ERAS opening
-  - date: Sat Sept 28, 2024 (postponed)
-    description: Walk with a Doc
+  - date: Oct 4 & 5, 2024
+    description: ACP Savannah
+  - date: Oct 15 - 17, 2024
+    description: Moultrie Sun Ag Expo
+  - date: Oct 26, 2024 
+    description: Halloween Party at Dr. Bias'
 
 upcomingBirthdays:
   - name: Dr. Michael Heron
