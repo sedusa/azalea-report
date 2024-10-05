@@ -4,112 +4,147 @@ backend:
 media_folder: public/img
 public_folder: img
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: 'pages'
+    label: 'Pages'
     files:
-      - label: "Home"
-        name: "home"
-        file: "content/home.md"
+      - label: 'Home'
+        name: 'home'
+        file: 'content/home.md'
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Subtitle", name: "subtitle", widget: "string" }
-          - { label: "Date", name: "date", widget: "string" }
-          - { label: "Welcome Message", name: "welcome", widget: "text" }
-          - { label: "Team", name: "team", widget: "string" }
-          - { label: "About Program", name: "aboutProgram", widget: "text" }
-          - { label: "SGMC Image", name: "sgmcImage", widget: "image" }
-          - label: "Program Statistics"
-            name: "statistics"
-            widget: "object"
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Subtitle', name: 'subtitle', widget: 'string' }
+          - { label: 'Date', name: 'date', widget: 'string' }
+          - { label: 'Welcome Message', name: 'welcome', widget: 'text' }
+          - { label: 'Team', name: 'team', widget: 'string' }
+          - { label: 'About Program', name: 'aboutProgram', widget: 'text' }
+          - { label: 'SGMC Image', name: 'sgmcImage', widget: 'image' }
+          - label: 'Program Statistics'
+            name: 'statistics'
+            widget: 'object'
             fields:
-              - { label: "Number of Residents", name: "residentCount", widget: "number" }
-              - { label: "Number of Countries", name: "countryCount", widget: "number" }
-              - { label: "Number of Languages", name: "languageCount", widget: "number" }
-          - label: "Resident Spotlight"
-            name: "spotlight"
-            widget: "object"
+              - {
+                  label: 'Number of Residents',
+                  name: 'residentCount',
+                  widget: 'number',
+                }
+              - {
+                  label: 'Number of Countries',
+                  name: 'countryCount',
+                  widget: 'number',
+                }
+              - {
+                  label: 'Number of Languages',
+                  name: 'languageCount',
+                  widget: 'number',
+                }
+          - label: 'Resident Spotlight'
+            name: 'spotlight'
+            widget: 'object'
             fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Birth Place", name: "birthplace", widget: "string" }
-              - { label: "Fun Fact", name: "funFact", widget: "text" }
-              - { label: "Favorite Dish", name: "favoriteDish", widget: "string" }
-              - { label: "Interests", name: "interests", widget: "text" }
-              - { label: "Post-Residency Plans", name: "postResidencyPlans", widget: "text" }
-          - label: "Tribal Council Corner"
-            name: "tribalCouncil"
-            widget: "object"
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Image', name: 'image', widget: 'image' }
+              - { label: 'Birth Place', name: 'birthplace', widget: 'string' }
+              - { label: 'Fun Fact', name: 'funFact', widget: 'text' }
+              - {
+                  label: 'Favorite Dish',
+                  name: 'favoriteDish',
+                  widget: 'string',
+                }
+              - { label: 'Interests', name: 'interests', widget: 'text' }
+              - {
+                  label: 'Post-Residency Plans',
+                  name: 'postResidencyPlans',
+                  widget: 'text',
+                }
+          - label: 'Tribal Council Corner'
+            name: 'tribalCouncil'
+            widget: 'object'
             fields:
-              - { label: "Content", name: "content", widget: "markdown" }
-          - label: "Chat With Our Chiefs"
-            name: "chiefChat"
-            widget: "list"
+              - { label: 'Content', name: 'content', widget: 'markdown' }
+          - label: 'Chat With Our Chiefs'
+            name: 'chiefChat'
+            widget: 'list'
             fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Image", name: "image", widget: "string" }
-              - { label: "Content", name: "content", widget: "markdown" }
-          - label: "Recent Success"
-            name: "recentSuccess"
-            widget: "object"
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Image', name: 'image', widget: 'string' }
+              - { label: 'Content', name: 'content', widget: 'markdown' }
+          - label: 'Recent Success'
+            name: 'recentSuccess'
+            widget: 'object'
             fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Content", name: "content", widget: "markdown" }
-           - label: "Community Service Corner"
-            name: "communityServiceCorner"
-            widget: "object"
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Image', name: 'image', widget: 'image' }
+              - { label: 'Content', name: 'content', widget: 'markdown' }
+          - label: 'Community Service Corner'
+            name: 'communityServiceCorner'
+            widget: 'object'
             fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Content", name: "content", widget: "markdown" }
-          - label: "Photos of the Month"
-            name: "photosOfMonth"
-            widget: "list"
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Image', name: 'image', widget: 'image' }
+              - { label: 'Content', name: 'content', widget: 'markdown' }
+          - label: 'Photos of the Month'
+            name: 'photosOfMonth'
+            widget: 'list'
             fields:
-              - { label: "Image", name: "image", widget: "image", media_folder: "/public/img/carousel" }
-              - { label: "Caption", name: "caption", widget: "string" }
-          - label: "Wellness Tip"
-            name: "wellnessTip"
-            widget: "object"
+              - {
+                  label: 'Image',
+                  name: 'image',
+                  widget: 'image',
+                  media_folder: '/public/img/carousel',
+                }
+              - { label: 'Caption', name: 'caption', widget: 'string' }
+          - label: 'Wellness Tip'
+            name: 'wellnessTip'
+            widget: 'object'
             fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Content", name: "content", widget: "markdown" }
-          - label: "Upcoming Events"
-            name: "events"
-            widget: "list"
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Image', name: 'image', widget: 'image' }
+              - { label: 'Content', name: 'content', widget: 'markdown' }
+          - label: 'Upcoming Events'
+            name: 'events'
+            widget: 'list'
             fields:
-              - { label: "Date", name: "date", widget: "string" }
-              - { label: "Description", name: "description", widget: "string" }
-          - label: "Employee Spotlight"
-            name: "employeeSpotlight"
-            widget: "object"
+              - { label: 'Date', name: 'date', widget: 'string' }
+              - { label: 'Description', name: 'description', widget: 'string' }
+          - label: 'Employee Spotlight'
+            name: 'employeeSpotlight'
+            widget: 'object'
             fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-          - label: "Program Director Message"
-            name: "programDirector"
-            widget: "object"
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Image', name: 'image', widget: 'image' }
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Description', name: 'description', widget: 'text' }
+          - label: 'Program Director Message'
+            name: 'programDirector'
+            widget: 'object'
             fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Message", name: "message", widget: "markdown" }
-          - label: "Things to Do in Valdosta"
-            name: "thingsToDoInValdosta"
-            widget: "object"
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Image', name: 'image', widget: 'image' }
+              - { label: 'Message', name: 'message', widget: 'markdown' }
+          - label: 'Things to Do in Valdosta'
+            name: 'thingsToDoInValdosta'
+            widget: 'object'
             fields:
-              - label: "Images"
-                name: "images"
-                widget: "list"
-                field: { label: "Image", name: "image", widget: "image", media_folder: "/public/img/things-to-do" }
-              - label: "Items"
-                name: "items"
-                widget: "list"
+              - label: 'Images'
+                name: 'images'
+                widget: 'list'
+                field:
+                  {
+                    label: 'Image',
+                    name: 'image',
+                    widget: 'image',
+                    media_folder: '/public/img/things-to-do',
+                  }
+              - label: 'Items'
+                name: 'items'
+                widget: 'list'
                 fields:
-                  - { label: "Title", name: "title", widget: "string" }
-                  - { label: "Date", name: "date", widget: "string" }
-                  - { label: "Description", name: "description", widget: "text" }
-                  - { label: "URL", name: "url", widget: "string" }
+                  - { label: 'Title', name: 'title', widget: 'string' }
+                  - { label: 'Date', name: 'date', widget: 'string' }
+                  - {
+                      label: 'Description',
+                      name: 'description',
+                      widget: 'text',
+                    }
+                  - { label: 'URL', name: 'url', widget: 'string' }
