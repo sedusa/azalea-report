@@ -84,7 +84,7 @@ communityServiceCorner:
 
     <p><i>To prepare for Hurricane Helene, SGMC Health established a shelter at a local church in Valdosta, Georgia, specifically for people who require oxygen as well as other vulnerable populations. Two resident physicians, Drs. Edusa and Joseph, volunteered to assist with the shelter's operations.</i></p>
 
-    <p><i>Note: All names in this article have been replaced with pseudonyms to protect individuals' privacy.</i></p>
+    <p><i>Note: All names in this article were replaced with pseudonyms to protect individuals' privacy.</i></p>
 
 
 photosOfMonth:
