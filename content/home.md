@@ -47,7 +47,7 @@ chiefChat:
       "To our fellow residents," Dr. Gandi advises, "remember to have each other's backs. Our diverse backgrounds are our strength – let's learn from one another and grow together. When things get challenging, there's nothing more valuable than the support of your colleagues."
       Outside of his professional life, Dr. Gandi values quality time with his wife and enjoys traveling, maintaining a balance that enhances both his personal growth and medical career.
 recentSuccess:
-  title: SGMC Residents Shine Bright - Impressive Performance at Georgia ACP Conference in Savannah, GA
+  title: SGMC Residents Shine Bright at recent Georgia ACP Conference in Savannah, GA
   image: /img/sgmc-team.jpeg
   imageCaption: Residents and faculty at the Georgia ACP conference
   content: >
