@@ -650,7 +650,7 @@
 }
 
 .carouselButton {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.6);
   border: none;
   color: white;
   cursor: pointer;
@@ -664,7 +664,7 @@
 }
 
 .carouselButton:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .carouselButton:first-child {

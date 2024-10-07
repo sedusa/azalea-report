@@ -101,6 +101,8 @@ photosOfMonth:
     caption: "Jeopardy team at Georgia ACP conference, Savannah"
   - image: /img/carousel/escape-room.jpeg
     caption: "Code Blue averted: Docs escape (the escape room) without a consult! (Georgia ACP 2024, Savannah)"
+  - image: /img/carousel/brandons-hand.jpeg
+    caption: "Brandons' hand (an expression of how to seize the moment) (Georgia ACP 2024, Savannah) "
   - image: /img/carousel/faculty-cheering.jpeg
     caption: "Faculty cheer residents at Georgia ACP, Savannah"
   - image: /img/carousel/twinning.jpeg
