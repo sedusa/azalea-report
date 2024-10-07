@@ -23,7 +23,6 @@ export default function Home() {
     communityServiceCorner,
     photosOfMonth,
     events,
-    upcomingBirthdays,
     thingsToDoInValdosta,
     employeeSpotlight,
     programDirector,
@@ -60,6 +59,14 @@ export default function Home() {
 
     return () => clearInterval(interval);
   }, [thingsToDoInValdosta.images.length]);
+
+  useEffect(() => {
+    const photoInterval = setInterval(() => {
+      setCurrentPhotoIndex((prevIndex) => (prevIndex + 1) % photosOfMonth.length);
+    }, 8000); // Change slide every 8 seconds
+
+    return () => clearInterval(photoInterval);
+  }, [photosOfMonth.length]);
 
   const toggleChiefContent = (index) => {
     setExpandedChiefs((prev) => ({
@@ -387,21 +394,27 @@ export default function Home() {
           </section>
 
           <section className={styles.fullWidth}>
-            <h2 className={styles.sectionTitle}>
+            <h2 className={styles.lensSectionTitle}>
               Through the Lens: Residency Highlights
             </h2>
+            <p className={styles.lensSectionSubTitle}>Capturing the Smiles, Milestones, and Unforgettable Moments</p>
             <div className={styles.carouselContainer}>
               <button className={styles.carouselButton} onClick={prevPhoto}>
                 ‹
               </button>
               <div className={styles.carouselImageContainer}>
-                <Image
-                  src={photosOfMonth[currentPhotoIndex].image}
-                  alt={photosOfMonth[currentPhotoIndex].caption}
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  className={styles.carouselImage}
-                />
+                {photosOfMonth.map((photo, index) => (
+                  <Image
+                    key={index}
+                    src={photo.image}
+                    alt={photo.caption}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    className={`${styles.carouselImage} ${
+                      index === currentPhotoIndex ? styles.active : ''
+                    }`}
+                  />
+                ))}
               </div>
               <button className={styles.carouselButton} onClick={nextPhoto}>
                 ›

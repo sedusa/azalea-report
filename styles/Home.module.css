@@ -536,10 +536,10 @@
 .communityServiceCornerSubTitle {
   color: #666;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-style: italic;
   line-height: 1.4;
-  margin: 0.5rem 0 1.5rem;
+  margin: 0.2rem 0 1.3rem;
 }
 
 .communityServiceCornerImageWrapper {
@@ -631,6 +631,21 @@
 
 /* Photo of the Month Section */
 
+.lensSectionTitle {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.4;
+  margin: 0 0 0.5rem 0;
+}
+
+.lensSectionSubTitle {
+  color: #016f53;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem; 
+  font-weight: bold;
+  line-height: 1.4;
+  margin: 0 0 1rem 0;
+}
+
 .carouselContainer {
   height: 400px;
   margin-bottom: 5px;
@@ -646,7 +661,12 @@
 }
 
 .carouselImage {
+  opacity: 0;
   transition: opacity 0.5s ease-in-out;
+}
+
+.carouselImage.active {
+  opacity: 1;
 }
 
 .carouselButton {
