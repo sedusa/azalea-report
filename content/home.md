@@ -47,11 +47,20 @@ chiefChat:
       "To our fellow residents," Dr. Gandi advises, "remember to have each other's backs. Our diverse backgrounds are our strength – let's learn from one another and grow together. When things get challenging, there's nothing more valuable than the support of your colleagues."
       Outside of his professional life, Dr. Gandi values quality time with his wife and enjoys traveling, maintaining a balance that enhances both his personal growth and medical career.
 recentSuccess:
-  title: Savannah Bound - Residents Set to Shine at Upcoming Georgia ACP Conference
-  image: /img/savannah.jpeg
-  imageCaption: Downtown Savannah, GA
+  title: SGMC Residents Shine Bright - Impressive Performance at Georgia ACP Conference in Savannah, GA
+  image: /img/sgmc-team.jpeg
+  imageCaption: Residents and faculty at the Georgia ACP conference
   content: >
-    <p>We are thrilled to announce that a number of our residents' posters were accepted at this year's Georgia ACP conference in Savannah. This achievement reflects the hard work and dedication of our talented residents, mentors, and attendings—it truly takes a village. We extend our heartfelt congratulations to all the residents whose work was selected. In addition to this success, we are proud to recognize the residents chosen (<strong>Drs. McSweeney, Silverio-Lopez and Mohan</strong>) to represent our program in this year's Jeopardy competition at the conference. We wish all of our participating residents the very best as they represent our program at these prestigious events.</p>
+    <p>We are thrilled to report that our residents returned from the Georgia ACP conference in Savannah with remarkable achievements! Our poster presenters demonstrated exceptional knowledge and skill, impressing attendees and judges alike with their research and clinical insights.<br/><br/>
+
+    In an outstanding display of medical acumen, our Jeopardy team - <strong>Drs. McSweeney, Silverio-Lopez, and Mohan</strong> - demonstrated lightning-fast recall and precision, securing an impressive 5th place out of 15 teams. This accomplishment is particularly noteworthy as they outperformed several highly-ranked residency programs, solidifying our program's growing reputation for excellence.<br/><br/>
+
+    <img src="/img/hala-poster.jpeg" alt="People sheltering inside the church" />
+    <small>Dr. Hala Sharma presenting her poster on HIV associated neuropathy</small><br/>
+
+    The entire SGMC Internal Medicine Residency Program is immensely proud of all our participants. Their dedication, hard work, and stellar performance have not only brought recognition to our program but have also set a new standard for future residents.<br/>
+
+    As we celebrate this year's success, we're already looking ahead with great anticipation. With the foundation laid by this year's outstanding showing, we're excited about the prospect of an even stronger performance at next year's conference. Strong work 💪🏼 everyone!</p>
 communityServiceCorner:
   title: The Eye of the Storm - Humanity Unveiled
   author: Samuel Edusa, MD
@@ -88,6 +97,12 @@ communityServiceCorner:
 
 
 photosOfMonth:
+  - image: /img/carousel/jeopardy-team.jpeg
+    caption: "Jeopardy team at Georgia ACP conference, Savannah"
+  - image: /img/carousel/escape-room.jpeg
+    caption: "Code Blue averted: Docs escape (the escape room) without a consult! (Georgia ACP 2024, Savannah)"
+  - image: /img/carousel/faculty-cheering.jpeg
+    caption: "Faculty cheer residents at Georgia ACP, Savannah"
   - image: /img/carousel/twinning.jpeg
     caption: "Impromptu twinning"
   - image: /img/carousel/dodge-ball.jpeg

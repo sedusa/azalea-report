@@ -458,6 +458,20 @@
   margin-top: 0;
 }
 
+.recentSuccessText img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1rem 0 0;
+}
+
+.recentSuccessText small {
+  display: block;
+  font-size: 1.0rem;
+  color: #666;
+  text-align: left;
+}
+
 .recentSuccessToggleButton {
   background-color: #016f53;
   border-radius: 4px;
