@@ -696,6 +696,10 @@
 }
 
 @media (max-width: 768px) {
+  .lensSectionTitle {
+    font-size: 1.5rem;
+  }
+
   .carouselContainer {
     height: 250px;
   }
