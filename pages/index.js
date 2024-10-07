@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import birthdays from '../public/birthdays.json';
+import Carousel from '../components/Carousel';
 
 export default function Home() {
   const {
@@ -32,8 +33,6 @@ export default function Home() {
   const [expandedChiefs, setExpandedChiefs] = useState({});
   const [isMobile, setIsMobile] = useState(false);
   const [expandedRecentSuccess, setExpandedRecentSuccess] = useState(false);
-  const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
-  const [currentThingsToDoImage, setCurrentThingsToDoImage] = useState(0);
   const [expandedCommunityService, setExpandedCommunityService] =
     useState(false);
 
@@ -49,24 +48,6 @@ export default function Home() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentThingsToDoImage(
-        (prevIndex) => (prevIndex + 1) % thingsToDoInValdosta.images.length
-      );
-    }, 8000);
-
-    return () => clearInterval(interval);
-  }, [thingsToDoInValdosta.images.length]);
-
-  useEffect(() => {
-    const photoInterval = setInterval(() => {
-      setCurrentPhotoIndex((prevIndex) => (prevIndex + 1) % photosOfMonth.length);
-    }, 8000); // Change slide every 8 seconds
-
-    return () => clearInterval(photoInterval);
-  }, [photosOfMonth.length]);
 
   const toggleChiefContent = (index) => {
     setExpandedChiefs((prev) => ({
@@ -130,17 +111,6 @@ export default function Home() {
           <p className={styles.birthdayItem}>No birthdays this month 😞</p>
         )}
       </div>
-    );
-  };
-
-  const nextPhoto = () => {
-    setCurrentPhotoIndex((prevIndex) => (prevIndex + 1) % photosOfMonth.length);
-  };
-
-  const prevPhoto = () => {
-    setCurrentPhotoIndex(
-      (prevIndex) =>
-        (prevIndex - 1 + photosOfMonth.length) % photosOfMonth.length
     );
   };
 
@@ -292,7 +262,7 @@ export default function Home() {
           </section>
 
           <section className={styles.fullWidth}>
-            <h2 className={styles.sectionTitle}>Our Chiefs' Corner</h2>
+            <h2 className={styles.sectionTitle}>The Chiefs' Corner</h2>
             <div className={styles.chiefsSection}>
               {chiefChat.map((chief, index) => (
                 <div key={index} className={styles.chiefColumn}>
@@ -390,6 +360,7 @@ export default function Home() {
                   />
                 )}
               </div>
+              <Carousel images={recentSuccess.posterImage} interval={10000} />
             </div>
           </section>
 
@@ -397,32 +368,10 @@ export default function Home() {
             <h2 className={styles.lensSectionTitle}>
               Through the Lens: Residency Highlights
             </h2>
-            <p className={styles.lensSectionSubTitle}>Capturing the Smiles, Milestones, and Unforgettable Moments</p>
-            <div className={styles.carouselContainer}>
-              <button className={styles.carouselButton} onClick={prevPhoto}>
-                ‹
-              </button>
-              <div className={styles.carouselImageContainer}>
-                {photosOfMonth.map((photo, index) => (
-                  <Image
-                    key={index}
-                    src={photo.image}
-                    alt={photo.caption}
-                    fill
-                    style={{ objectFit: 'cover' }}
-                    className={`${styles.carouselImage} ${
-                      index === currentPhotoIndex ? styles.active : ''
-                    }`}
-                  />
-                ))}
-              </div>
-              <button className={styles.carouselButton} onClick={nextPhoto}>
-                ›
-              </button>
-            </div>
-            <p className={styles.photoCaption}>
-              {photosOfMonth[currentPhotoIndex].caption}
+            <p className={styles.lensSectionSubTitle}>
+              Capturing the Smiles, Milestones, and Unforgettable Moments
             </p>
+            <Carousel images={photosOfMonth} interval={8000} />
           </section>
 
           <section className={styles.fullWidth}>
@@ -486,41 +435,31 @@ export default function Home() {
 
           <section className={styles.fullWidth}>
             <h2 className={styles.sectionTitle}>Things to Do in Valdosta</h2>
-            <div className={styles.thingsToDoContainer}>
-              <div className={styles.thingsToDoImageContainer}>
-                {thingsToDoInValdosta.images.map((image, index) => (
-                  <Image
-                    key={image}
-                    src={image}
-                    alt={`Things to do in Valdosta ${index + 1}`}
-                    fill
-                    style={{ objectFit: 'cover' }}
-                    className={`${styles.thingsToDoImage} ${
-                      index === currentThingsToDoImage ? styles.active : ''
-                    }`}
-                  />
-                ))}
-              </div>
-              <ul className={styles.thingsToDoList}>
-                {thingsToDoInValdosta.items.map((item, index) => (
-                  <li key={index} className={styles.thingsToDoItem}>
-                    <h3 className={styles.thingsToDoTitle}>{item.title}</h3>
-                    <p className={styles.thingsToDoDate}>{item.date}</p>
-                    <p className={styles.thingsToDoDescription}>
-                      {item.description}
-                    </p>
-                    <a
-                      href={item.url}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className={styles.thingsToDoLink}
-                    >
-                      Learn More
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <Carousel
+              images={thingsToDoInValdosta.images.map((image) => ({ image }))}
+              interval={8000}
+              showCaption={false}
+              showArrows={false}
+            />
+            <ul className={styles.thingsToDoList}>
+              {thingsToDoInValdosta.items.map((item, index) => (
+                <li key={index} className={styles.thingsToDoItem}>
+                  <h3 className={styles.thingsToDoTitle}>{item.title}</h3>
+                  <p className={styles.thingsToDoDate}>{item.date}</p>
+                  <p className={styles.thingsToDoDescription}>
+                    {item.description}
+                  </p>
+                  <a
+                    href={item.url}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className={styles.thingsToDoLink}
+                  >
+                    Learn More
+                  </a>
+                </li>
+              ))}
+            </ul>
           </section>
 
           <section className={styles.fullWidth}>

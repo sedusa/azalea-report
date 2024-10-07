@@ -49,18 +49,26 @@ chiefChat:
 recentSuccess:
   title: SGMC Residents Shine Bright at recent Georgia ACP Conference in Savannah, GA
   image: /img/sgmc-team.jpeg
-  imageCaption: Residents and faculty at the Georgia ACP conference
+  imageCaption: Residents, leadership and faculty at the Georgia ACP conference
+  posterImage:
+    - image: /img/acp/poster-1.jpeg
+      caption: "Dr. Sharma presenting her poster on an intriguing case of HIV associated neuropathy"
+    - image: /img/acp/poster-2.jpeg
+      caption: "Dr. Gandi presenting his poster on an interesting case of Renal Subcapsular Hematoma Post Transradial Catheterization'"
+    - image: /img/acp/poster-3.jpeg
+      caption: "Dr. Silverio presenting her poster on 'Chagas Cardiomyopathy in a Central American Native residing in the United States'"
+    - image: /img/acp/poster-4.jpeg
+      caption: "Dr. Munir presenting her poster on 'A Rare case of Recurrent Respiratory Papillomatosis presenting as cavitary right upper lobe lesion'"
+    - image: /img/acp/poster-5.jpeg
+      caption: "Dr. Rockwell presenting his poster on 'A Case of Cefdinir induced Acute Febrile Neutrophilic Dermatosis (Sweet Syndrome)'"
   content: >
     <p>We are thrilled to report that our residents returned from the Georgia ACP conference in Savannah with remarkable achievements! Our poster presenters demonstrated exceptional knowledge and skill, impressing attendees and judges alike with their research and clinical insights.<br/><br/>
 
     In an outstanding display of medical acumen, our Jeopardy team - <strong>Drs. McSweeney, Silverio-Lopez, and Mohan</strong> - demonstrated lightning-fast recall and precision, securing an impressive 5th place out of 15 teams. This accomplishment is particularly noteworthy as they outperformed several highly-ranked residency programs, solidifying our program's growing reputation for excellence.<br/><br/>
 
-    <img src="/img/hala-poster.jpeg" alt="People sheltering inside the church" />
-    <small>Dr. Hala Sharma presenting her poster on HIV associated neuropathy</small><br/>
-
     The entire SGMC Internal Medicine Residency Program is immensely proud of all our participants. Their dedication, hard work, and stellar performance have not only brought recognition to our program but have also set a new standard for future residents.<br/>
 
-    As we celebrate this year's success, we're already looking ahead with great anticipation. With the foundation laid by this year's outstanding showing, we're excited about the prospect of an even stronger performance at next year's conference. Strong work 💪🏼 everyone!</p>
+    As we celebrate this year's success, we're already looking ahead with great anticipation. With the foundation laid by this year's outstanding showing, we're excited about the prospect of an even stronger performance at next year's conference. Strong work 💪🏼 everyone!</p><br/>
 communityServiceCorner:
   title: The Eye of the Storm - Humanity Unveiled
   author: Samuel Edusa, MD

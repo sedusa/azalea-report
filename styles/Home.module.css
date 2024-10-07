@@ -646,81 +646,9 @@
   margin: 0 0 1rem 0;
 }
 
-.carouselContainer {
-  height: 400px;
-  margin-bottom: 5px;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
-
-.carouselImageContainer {
-  height: 100%;
-  position: relative;
-  width: 100%;
-}
-
-.carouselImage {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.carouselImage.active {
-  opacity: 1;
-}
-
-.carouselButton {
-  background-color: rgba(0, 0, 0, 0.6);
-  border: none;
-  color: white;
-  cursor: pointer;
-  font-size: 2rem;
-  padding: 10px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: background-color 0.3s ease;
-  z-index: 10;
-}
-
-.carouselButton:hover {
-  background-color: rgba(0, 0, 0, 0.9);
-}
-
-.carouselButton:first-child {
-  left: 10px;
-}
-
-.carouselButton:last-child {
-  right: 10px;
-}
-
 @media (max-width: 768px) {
   .lensSectionTitle {
     font-size: 1.5rem;
-  }
-
-  .carouselContainer {
-    height: 250px;
-  }
-
-  .carouselButton {
-    font-size: 1.5rem;
-    padding: 5px;
-  }
-}
-
-.photoCaption {
-  color: #666;
-  display: block;
-  font-size: 1.0rem;
-  line-height: 1.6;
-  margin: 0;
-}
-
-@media (max-width: 768px) {
-  .photoCaption {
-    font-size: 1.1rem;
   }
 }
 
