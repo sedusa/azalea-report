@@ -285,7 +285,7 @@ export default function Home() {
           </section>
 
           <section className={styles.fullWidth}>
-            <h2 className={styles.sectionTitle}>Chief residents' corner</h2>
+            <h2 className={styles.sectionTitle}>Our Chiefs' Corner</h2>
             <div className={styles.chiefsSection}>
               {chiefChat.map((chief, index) => (
                 <div key={index} className={styles.chiefColumn}>
