@@ -52,23 +52,18 @@ recentSuccess:
   imageCaption: Residents, leadership and faculty at the Georgia ACP conference
   posterImage:
     - image: /img/acp/poster-1.jpeg
-      caption: "Dr. Sharma presenting her poster on an intriguing case of HIV associated neuropathy"
+      caption: "Dr. Sharma presents an intriguing HIV neuropathy case"
     - image: /img/acp/poster-2.jpeg
-      caption: "Dr. Gandi presenting his poster on an interesting case of Renal Subcapsular Hematoma Post Transradial Catheterization'"
+      caption: "Dr. Gandi presents an intriguing case of Renal Subcapsular Hematoma following transradial catheterization"
     - image: /img/acp/poster-3.jpeg
-      caption: "Dr. Silverio presenting her poster on 'Chagas Cardiomyopathy in a Central American Native residing in the United States'"
+      caption: "Dr. Silverio presents case of Chagas cardiomyopathy in US resident from Central America"
     - image: /img/acp/poster-4.jpeg
-      caption: "Dr. Munir presenting her poster on 'A Rare case of Recurrent Respiratory Papillomatosis presenting as cavitary right upper lobe lesion'"
+      caption: "Dr. Munir presents a rare case of recurrent respiratory papillomatosis"
     - image: /img/acp/poster-5.jpeg
-      caption: "Dr. Rockwell presenting his poster on 'A Case of Cefdinir induced Acute Febrile Neutrophilic Dermatosis (Sweet Syndrome)'"
+      caption: "Dr. Rockwell presents case of Sweet syndrome"
   content: >
-    <p>We are thrilled to report that our residents returned from the Georgia ACP conference in Savannah with remarkable achievements! Our poster presenters demonstrated exceptional knowledge and skill, impressing attendees and judges alike with their research and clinical insights.<br/><br/>
-
-    In an outstanding display of medical acumen, our Jeopardy team - <strong>Drs. McSweeney, Silverio-Lopez, and Mohan</strong> - demonstrated lightning-fast recall and precision, securing an impressive 5th place out of 15 teams. This accomplishment is particularly noteworthy as they outperformed several highly-ranked residency programs, solidifying our program's growing reputation for excellence.<br/><br/>
-
-    The entire SGMC Internal Medicine Residency Program is immensely proud of all our participants. Their dedication, hard work, and stellar performance have not only brought recognition to our program but have also set a new standard for future residents.<br/>
-
-    As we celebrate this year's success, we're already looking ahead with great anticipation. With the foundation laid by this year's outstanding showing, we're excited about the prospect of an even stronger performance at next year's conference. Strong work 💪🏼 everyone!</p><br/>
+    <p>Our residents shone brightly at the Georgia ACP conference in Savannah! Poster presenters wowed audiences with their research and clinical insights, while our Jeopardy team - <strong>Drs. McSweeney, Silverio-Lopez, and Mohan</strong> - clinched an impressive 5th place out of 15, surpassing several highly-ranked programs.
+    The SGMC Internal Medicine Residency Program couldn't be prouder of all participants. Their outstanding performance has not only brought recognition to our program but also set a new benchmark for future residents. As we celebrate this year's achievements, we're already excited for an even stronger showing next year. Strong work 💪🏼 everyone!</p><br/>
 communityServiceCorner:
   title: The Eye of the Storm - Humanity Unveiled
   author: Samuel Edusa, MD

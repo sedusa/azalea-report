@@ -8,7 +8,7 @@
 
 .container {
   font-family: 'Georgia', serif;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   line-height: 1.7;
   margin: 0 auto;
   max-width: 900px;
@@ -298,7 +298,7 @@
   color: #ffffff;
   cursor: pointer;
   font-family: 'Georgia', serif;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-top: 10px;
   padding: 0.5rem 1rem;
   transition: background-color 0.3s ease;
@@ -340,7 +340,7 @@
     display: block;
     font-family: 'Georgia', serif;
     margin: 1rem 0 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -408,13 +408,6 @@
 
 /* Recent Success Section */
 
-.recentSuccessContent {
-  background-color: #e6f0ed;
-  border-radius: 15px;
-  padding: 30px;
-  overflow: visible;
-}
-
 .recentSuccessTitle {
   color: #016f53;
   font-family: 'Montserrat', sans-serif;
@@ -424,10 +417,15 @@
   margin: 0 0 1rem 0;
 }
 
+.recentSuccessContent {
+  background-color: #e6f0ed;
+  border-radius: 15px;
+  padding: 30px;
+  overflow: visible;
+}
+
 .recentSuccessImageWrapper {
-  float: left;
   margin: 0 1.5rem 1rem 0;
-  max-width: 400px;
   width: 100%;
 }
 
@@ -445,7 +443,7 @@
 }
 
 .recentSuccessText {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 1.6;
   color: #333;
 }
@@ -480,7 +478,7 @@
   cursor: pointer;
   display: inline-block;
   font-family: 'Georgia', serif;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   text-align: left;
@@ -502,6 +500,10 @@
 
   .recentSuccessCaption {
     margin-bottom: 1rem;
+  }
+
+  .recentSuccessText {
+    font-size: 1.2rem;
   }
 
   .recentSuccessToggleButton {
@@ -563,7 +565,7 @@
 }
 
 .communityServiceCornerText {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 1.6;
   color: #333;
 }
@@ -598,7 +600,7 @@
   cursor: pointer;
   display: inline-block;
   font-family: 'Georgia', serif;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   text-align: left;
@@ -620,6 +622,12 @@
 
   .communityServiceCornerTitle {
     font-size: 1.5rem;
+  }
+
+  .communityServiceCornerText {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
   }
 
   .communityServiceCornerToggleButton {
@@ -655,8 +663,14 @@
 /* Upcoming Events Section */
 
 .eventList {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+  .eventList {
+    font-size: 1.2rem;
+  }
 }
 
 /* Upcoming Birthdays Section */
@@ -679,13 +693,17 @@
 
 .birthdayItem {
   color: #333;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
 }
 
 @media (max-width: 768px) {
   .birthdaySection {
     padding: 1rem;
+  }
+
+  .birthdayItem {
+    font-size: 1.2rem;
   }
 }
 
@@ -720,7 +738,7 @@
 
 .wellnessTipText {
   flex: 1;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 1.5;
 }
 
@@ -742,6 +760,10 @@
 
   .wellnessTipTitle {
     font-size: 1.5rem;
+  }
+
+  .wellnessTipText {
+    font-size: 1.2rem;
   }
 }
 
@@ -812,14 +834,14 @@
 }
 
 .thingsToDoDescription {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   line-height: 1.5;
   margin: 0 auto;
 }
 
 .thingsToDoLink {
   color: #016f53;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   text-decoration: none;
 }
@@ -845,6 +867,10 @@
     flex: 0 0 100%;
     margin-bottom: 10px;
     padding-bottom: 10px;
+  }
+
+  .thingsToDoDescription {
+    font-size: 1.2rem;
   }
 
   .thingsToDoItem:nth-last-child(2):nth-child(odd) {

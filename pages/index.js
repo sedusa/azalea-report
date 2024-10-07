@@ -335,43 +335,19 @@ export default function Home() {
                   {recentSuccess.imageCaption}
                 </small>
               </div>
-              <div className={styles.recentSuccessText}>
-                {isMobile ? (
-                  <>
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: expandedRecentSuccess
-                          ? recentSuccess.content
-                          : truncateRecentSuccess(recentSuccess.content),
-                      }}
-                    />
-                    <button
-                      onClick={() =>
-                        setExpandedRecentSuccess(!expandedRecentSuccess)
-                      }
-                      className={styles.recentSuccessToggleButton}
-                    >
-                      {expandedRecentSuccess ? 'Show Less' : 'Show More'}
-                    </button>
-                  </>
-                ) : (
-                  <div
-                    dangerouslySetInnerHTML={{ __html: recentSuccess.content }}
-                  />
-                )}
-              </div>
-              <Carousel images={recentSuccess.posterImage} interval={10000} />
+              <div
+                className={styles.recentSuccessText}
+                dangerouslySetInnerHTML={{ __html: recentSuccess.content }}
+              />
+              <h3 className={styles.recentSuccessTitle}>
+                Poster Presentation Highlights
+              </h3>
+              <Carousel
+                images={recentSuccess.posterImage}
+                interval={12000}
+                aspectRatio='1:1'
+              />
             </div>
-          </section>
-
-          <section className={styles.fullWidth}>
-            <h2 className={styles.lensSectionTitle}>
-              Through the Lens: Residency Highlights
-            </h2>
-            <p className={styles.lensSectionSubTitle}>
-              Capturing the Smiles, Milestones, and Unforgettable Moments
-            </p>
-            <Carousel images={photosOfMonth} interval={8000} />
           </section>
 
           <section className={styles.fullWidth}>
@@ -415,6 +391,16 @@ export default function Home() {
                 )}
               </div>
             </div>
+          </section>
+
+          <section className={styles.fullWidth}>
+            <h2 className={styles.lensSectionTitle}>
+              Through the Lens: Residency Highlights
+            </h2>
+            <p className={styles.lensSectionSubTitle}>
+              Capturing the Smiles, Milestones, and Unforgettable Moments
+            </p>
+            <Carousel images={photosOfMonth} interval={8000} />
           </section>
 
           <section className={styles.twoColumns}>

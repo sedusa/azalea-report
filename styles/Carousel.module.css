@@ -3,11 +3,17 @@
 }
 
 .carouselContainer {
-  height: 400px;
-  margin-bottom: 10px;
-  overflow: hidden;
   position: relative;
   width: 100%;
+  overflow: hidden;
+}
+
+.carouselContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .carouselImageContainer {
@@ -26,21 +32,27 @@
 }
 
 .carouselButton {
-  background-color: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
   border: none;
   color: white;
   cursor: pointer;
+  display: flex; 
   font-size: 2rem;
-  padding: 10px;
+  height: 50px; 
+  justify-content: center;
+  padding: 15px; 
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   transition: background-color 0.3s ease;
+  width: 50px; 
   z-index: 10;
 }
 
 .carouselButton:hover {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .prevButton {
@@ -57,20 +69,16 @@
   font-size: 1.0rem;
   line-height: 1.6;
   margin: 10px 0 0;
-  text-align: left;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
-  .carouselContainer {
-    height: 250px;
-  }
-
   .carouselButton {
     font-size: 1.5rem;
     padding: 5px;
   }
 
   .photoCaption {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 }
