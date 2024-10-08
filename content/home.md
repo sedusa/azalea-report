@@ -100,6 +100,8 @@ communityServiceCorner:
 
 
 photosOfMonth:
+  - image: /img/carousel/happy-birthday-rija.jpeg
+    caption: "Happy Birthday Dr. Chaudhary"
   - image: /img/carousel/jeopardy-team.jpeg
     caption: "Jeopardy team at Georgia ACP conference, Savannah"
   - image: /img/carousel/escape-room.jpeg
@@ -107,7 +109,7 @@ photosOfMonth:
   - image: /img/carousel/brandons-hand.jpeg
     caption: "Brandons' hand (an expression of how to seize the moment) (Georgia ACP 2024, Savannah) "
   - image: /img/carousel/faculty-cheering.jpeg
-    caption: "Faculty cheer residents at Georgia ACP, Savannah"
+    caption: "Leadership & faculty cheer residents on at Georgia ACP, Savannah"
   - image: /img/carousel/twinning.jpeg
     caption: "Impromptu twinning"
   - image: /img/carousel/dodge-ball.jpeg
