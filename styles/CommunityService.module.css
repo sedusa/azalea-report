@@ -1,0 +1,117 @@
+.communityServiceCornerContent {
+  background-color: #f7f3e8;
+  border-radius: 15px;
+  padding: 30px;
+  overflow: visible;
+}
+
+.communityServiceCornerTitle {
+  color: #016f53;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: bold;
+  margin: 0;
+}
+
+.communityServiceCornerSubTitle {
+  color: #666;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.4;
+  margin: 0.2rem 0 1.3rem;
+}
+
+.communityServiceCornerImageWrapper {
+  float: left;
+  margin: 0 1.5rem 1rem 0;
+  max-width: 400px;
+  width: 100%;
+}
+
+.communityServiceCornerImage {
+  border-radius: 8px;
+  height: auto;
+  width: 100%;
+}
+
+.communityServiceCornerCaption {
+  display: block;
+  font-size: 1.0rem;
+  color: #666;
+  text-align: left;
+}
+
+.communityServiceCornerText {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.communityServiceCornerText p {
+  margin-bottom: 1rem;
+}
+
+.communityServiceCornerText p:first-child {
+  margin-top: 0;
+}
+
+.communityServiceCornerText img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1rem 0 0;
+}
+
+.communityServiceCornerContent small {
+  display: block;
+  font-size: 1.0rem;
+  color: #666;
+  text-align: left;
+}
+
+.communityServiceCornerToggleButton {
+  background-color: #016f53;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Georgia', serif;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+.communityServiceCornerToggleButton:hover {
+  background-color: #014d3a;
+}
+
+@media (max-width: 768px) {
+  .communityServiceCornerImageWrapper {
+    float: none;
+  }
+  
+  .communityServiceCornerImage {
+    float: none;
+  }
+
+  .communityServiceCornerTitle {
+    font-size: 1.5rem;
+  }
+
+  .communityServiceCornerText {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  .communityServiceCornerToggleButton {
+    display: inline-block;
+    font-size: 1rem;
+    margin: 1rem 0 0;
+  }
+}

@@ -1,0 +1,59 @@
+.programDirectorSection {
+  align-items: flex-start;
+  background-color: #f0f8ff;
+  border-radius: 15px;
+  display: flex;
+  margin-top: 2rem;
+  padding: 20px;
+}
+
+.programDirectorImage {
+  border-radius: 50%;
+  height: 250px;
+  margin-right: 20px;
+  object-fit: cover;
+  width: 250px;
+}
+
+.programDirectorContent {
+  flex: 1;
+}
+
+.programDirectorName {
+  color: #016f53;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.programDirectorTitle {
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.programDirectorMessage {
+  color: #333;
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .programDirectorSection {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .programDirectorImage {
+    height: 200px;
+    margin-bottom: 1rem;
+    margin-right: 0;
+    width: 200px;
+  }
+
+  .programDirectorMessage {
+    color: #333;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+}

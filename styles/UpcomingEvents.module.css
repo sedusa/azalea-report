@@ -1,0 +1,10 @@
+.eventList {
+  font-size: 1.3rem;
+  padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+  .eventList {
+    font-size: 1.2rem;
+  }
+}

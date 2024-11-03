@@ -1,37 +1,42 @@
-import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import { attributes } from '../content/home.md';
 import styles from '../styles/Home.module.css';
 import Image from 'next/image';
-import birthdays from '../public/birthdays.json';
 import Layout from '../app/Layout';
+import birthdays from '../public/birthdays.json';
 import TwoColumnLayout from '../components/types/TwoColumnLayout';
+import SingleColumnLayout from '../components/types/SingleColumnLayout';
 import ResidentSpotlight from '../components/sections/ResidentSpotlight';
 import ProgramInfo from '../components/sections/ProgramInfo';
+import ChiefsCorner from '../components/sections/ChiefsCorner';
+import ProgramDirector from '../components/sections/ProgramDirector';
+import RecentSuccess from '../components/sections/RecentSuccess';
+import CommunityService from '../components/sections/CommunityService';
+import PhotosOfTheMonth from '../components/sections/PhotosOfMonth';
+import UpcomingEvents from '../components/sections/UpcomingEvents';
+import BirthdaySection from '../components/sections/BirthdaySection'
+import ThingsToDo from '../components/sections/ThingsToDo';
 import Carousel from '../components/Carousel';
+
 
 export default function Home() {
   const {
     program,
     spotlight,
     tribalCouncil,
-    chiefChat,
+    chiefsCorner,
+    programDirector,
     recentSuccess,
     communityServiceCorner,
     photosOfMonth,
     events,
-    thingsToDoInValdosta,
+    thingsToDo,
     employeeSpotlight,
-    programDirector,
     wellnessTip,
   } = attributes;
 
-  const [expandedChiefs, setExpandedChiefs] = useState({});
   const [isMobile, setIsMobile] = useState(false);
-  const [expandedRecentSuccess, setExpandedRecentSuccess] = useState(false);
-  const [expandedCommunityService, setExpandedCommunityService] =
-    useState(false);
-
+  
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -45,257 +50,34 @@ export default function Home() {
     };
   }, []);
 
-  const toggleChiefContent = (index) => {
-    setExpandedChiefs((prev) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
-  };
-
-  const truncateContent = (content, maxLength = isMobile ? 200 : 450) => {
-    if (content.length <= maxLength) return content;
-    return content.substr(0, content.lastIndexOf(' ', maxLength)) + '...';
-  };
-
-  const truncateRecentSuccess = (content) => {
-    const maxLength = 240;
-    if (content.length <= maxLength) return content;
-    return content.substr(0, content.lastIndexOf(' ', maxLength)) + '...';
-  };
-
-  const truncateCommunityService = (content) => {
-    const maxLength = 645;
-    if (content.length <= maxLength) return content;
-    return content.substr(0, content.lastIndexOf(' ', maxLength)) + '...';
-  };
-
-  const BirthdaySection = () => {
-    const [currentMonthBirthdays, setCurrentMonthBirthdays] = useState([]);
-    const [currentMonth, setCurrentMonth] = useState('');
-
-    useEffect(() => {
-      const currentDate = new Date();
-      const monthName = currentDate.toLocaleString('default', {
-        month: 'long',
-      });
-      const currentMonthShort = currentDate.toLocaleString('default', {
-        month: 'short',
-      });
-
-      setCurrentMonth(monthName);
-
-      const filteredBirthdays = birthdays.staff
-        .filter((birthday) => birthday.month === currentMonthShort)
-        .sort((a, b) => a.day - b.day);
-
-      setCurrentMonthBirthdays(filteredBirthdays);
-    }, []);
-
-    return (
-      <div className={styles.birthdaySection}>
-        <h2 className={styles.sectionTitle}>{currentMonth} Birthdays</h2>
-        {currentMonthBirthdays.length > 0 ? (
-          <ul className={styles.birthdayList}>
-            {currentMonthBirthdays.map((birthday, index) => (
-              <li key={index} className={styles.birthdayItem}>
-                <strong>{birthday.name}:</strong> {birthday.day}{' '}
-                {birthday.month}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className={styles.birthdayItem}>No birthdays this month 😞</p>
-        )}
-      </div>
-    );
-  };
-
   return (
     <Layout>
       <TwoColumnLayout
         leftColumn={<ResidentSpotlight spotlight={spotlight} />}
         rightColumn={<ProgramInfo program={program} />}
       />
-      <section className={styles.fullWidth}>
-        <h2 className={styles.sectionTitle}>The Chiefs' Corner</h2>
-        <div className={styles.chiefsSection}>
-          {chiefChat.map((chief, index) => (
-            <div key={index} className={styles.chiefColumn}>
-              <img
-                src={chief.image}
-                alt={chief.name}
-                className={styles.chiefImage}
-              />
-              <h3 className={styles.chiefName}>{chief.name}</h3>
-              <div className={styles.chiefText}>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: expandedChiefs[index]
-                      ? chief.content
-                      : truncateContent(chief.content),
-                  }}
-                />
-                {chief.content.length > (isMobile ? 200 : 450) && (
-                  <button
-                    onClick={() => toggleChiefContent(index)}
-                    className={styles.toggleButton}
-                  >
-                    {expandedChiefs[index] ? 'Show Less' : 'Show More'}
-                  </button>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className={styles.fullWidth}>
-        <h2 className={styles.sectionTitle}>
-          Message from the Program Director
-        </h2>
-        <div className={styles.programDirectorSection}>
-          <img
-            src={programDirector.image}
-            alt={programDirector.name}
-            className={styles.programDirectorImage}
-          />
-          <div className={styles.programDirectorContent}>
-            <h2 className={styles.programDirectorName}>
-              {programDirector.name}
-            </h2>
-            <p className={styles.programDirectorTitle}>
-              {programDirector.title}
-            </p>
-            <div
-              className={styles.programDirectorMessage}
-              dangerouslySetInnerHTML={{ __html: programDirector.message }}
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.fullWidth}>
-        <h2 className={styles.sectionTitle}>Recent Success</h2>
-        <div className={styles.recentSuccessContent}>
-          <h3 className={styles.recentSuccessTitle}>{recentSuccess.title}</h3>
-          <div className={styles.recentSuccessImageWrapper}>
-            <img
-              src={recentSuccess.image}
-              alt='Recent success highlight'
-              className={styles.recentSuccessImage}
-            />
-            <small className={styles.recentSuccessCaption}>
-              {recentSuccess.imageCaption}
-            </small>
-          </div>
-          <div
-            className={styles.recentSuccessText}
-            dangerouslySetInnerHTML={{ __html: recentSuccess.content }}
-          />
-          <h3 className={styles.recentSuccessTitle}>
-            Poster Presentation Highlights
-          </h3>
-          <Carousel
-            images={recentSuccess.posterImage}
-            interval={12000}
-            aspectRatio='1:1'
-          />
-        </div>
-      </section>
-
-      <section className={styles.fullWidth}>
-        <h2 className={styles.sectionTitle}>Community Service Corner</h2>
-        <div className={styles.communityServiceCornerContent}>
-          <h3 className={styles.communityServiceCornerTitle}>
-            {communityServiceCorner.title}
-          </h3>
-          <div className={styles.communityServiceCornerSubTitle}>
-            By: {communityServiceCorner.author}
-          </div>
-          <div className={styles.communityServiceCornerImageWrapper}>
-            <img
-              src={communityServiceCorner.image}
-              alt='Community service highlight'
-              className={styles.communityServiceCornerImage}
-            />
-            <small className={styles.communityServiceCornerCaption}>
-              {communityServiceCorner.imageCaption}
-            </small>
-          </div>
-          <div className={styles.communityServiceCornerText}>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: expandedCommunityService
-                  ? communityServiceCorner.content
-                  : truncateCommunityService(communityServiceCorner.content),
-              }}
-            />
-            {communityServiceCorner.content.length > 240 && (
-              <button
-                onClick={() =>
-                  setExpandedCommunityService(!expandedCommunityService)
-                }
-                className={styles.communityServiceCornerToggleButton}
-              >
-                {expandedCommunityService ? 'Show Less' : 'Show More'}
-              </button>
-            )}
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.fullWidth}>
-        <h2 className={styles.lensSectionTitle}>
-          Through the Lens: Residency Highlights
-        </h2>
-        <p className={styles.lensSectionSubTitle}>
-          Capturing the Smiles, Milestones, and Unforgettable Moments
-        </p>
-        <Carousel images={photosOfMonth} interval={8000} />
-      </section>
-
-      <section className={styles.twoColumns}>
-        <div className={styles.column}>
-          <h2 className={styles.sectionTitle}>Upcoming Events</h2>
-          <ul className={styles.eventList}>
-            {events.map((event, index) => (
-              <li key={index} className={styles.eventItem}>
-                <strong>{event.date} - </strong> {event.description}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className={styles.column}>
-          <BirthdaySection />
-        </div>
-      </section>
-
-      <section className={styles.fullWidth}>
-        <h2 className={styles.sectionTitle}>Things to Do in Valdosta</h2>
-        <Carousel
-          images={thingsToDoInValdosta.images.map((image) => ({ image }))}
-          interval={8000}
-          showCaption={false}
-          showArrows={false}
-        />
-        <ul className={styles.thingsToDoList}>
-          {thingsToDoInValdosta.items.map((item, index) => (
-            <li key={index} className={styles.thingsToDoItem}>
-              <h3 className={styles.thingsToDoTitle}>{item.title}</h3>
-              <p className={styles.thingsToDoDate}>{item.date}</p>
-              <p className={styles.thingsToDoDescription}>{item.description}</p>
-              <a
-                href={item.url}
-                target='_blank'
-                rel='noopener noreferrer'
-                className={styles.thingsToDoLink}
-              >
-                Learn More
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <SingleColumnLayout
+        column={<ChiefsCorner chiefsCorner={chiefsCorner} />}
+      />
+      <SingleColumnLayout
+        column={<ProgramDirector programDirector={programDirector} />}
+      />
+      <SingleColumnLayout
+        column={<RecentSuccess recentSuccess={recentSuccess} />}
+      />
+      <SingleColumnLayout
+        column={<CommunityService communityServiceCorner={communityServiceCorner} />}
+      />
+      <SingleColumnLayout
+        column={<PhotosOfTheMonth photosOfMonth={photosOfMonth} />}
+      />
+      <TwoColumnLayout
+        leftColumn={<UpcomingEvents events={events} />}
+        rightColumn={<BirthdaySection birthdays={birthdays} />}
+      />
+      <SingleColumnLayout
+        column={<ThingsToDo thingsToDo={thingsToDo} />}
+      />
 
       <section className={styles.fullWidth}>
         <div className={styles.spotlightIconContainer}>

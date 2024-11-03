@@ -1,0 +1,116 @@
+
+.recentSuccessTitle {
+  color: #016f53;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: bold;
+  margin: 0 0 1rem 0;
+}
+
+.recentSuccessContent {
+  background-color: #e6f0ed;
+  border-radius: 15px;
+  padding: 30px;
+  overflow: visible;
+}
+
+.recentSuccessImageWrapper {
+  margin: 0 1.5rem 1rem 0;
+  width: 100%;
+}
+
+.recentSuccessImage {
+  border-radius: 8px;
+  height: auto;
+  width: 100%;
+}
+
+.recentSuccessCaption {
+  display: block;
+  font-size: 1.0rem;
+  color: #666;
+  text-align: left;
+}
+
+.recentSuccessText {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.recentSuccessText p {
+  margin-bottom: 1rem;
+}
+
+.recentSuccessText p:first-child {
+  margin-top: 0;
+}
+
+.recentSuccessText img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1rem 0 0;
+}
+
+.recentSuccessText small {
+  display: block;
+  font-size: 1.0rem;
+  color: #666;
+  text-align: left;
+}
+
+.recentSuccessToggleButton {
+  background-color: #016f53;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Georgia', serif;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+.recentSuccessToggleButton:hover {
+  background-color: #014d3a;
+}
+
+@media (max-width: 768px) {
+
+  .recentSuccessText {
+    color: #333;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .recentSuccessImageWrapper {
+    float: none;
+  }
+  
+  .recentSuccessImage {
+    float: none;
+  }
+
+  .recentSuccessCaption {
+    margin-bottom: 1rem;
+  }
+
+  .recentSuccessText {
+    font-size: 1.2rem;
+  }
+
+  .recentSuccessToggleButton {
+    display: inline-block;
+    font-size: 1rem;
+    margin: 1rem 0 0;
+  }
+
+  .recentSuccessTitle {
+    font-size: 1.5rem;
+  }
+}
