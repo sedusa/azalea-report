@@ -4,6 +4,8 @@
   background-color: #fefbf3;
   min-height: 100vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
@@ -12,12 +14,15 @@
   line-height: 1.7;
   margin: 0 auto;
   max-width: 900px;
-  padding-top: 60px;
   padding: 0 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .main {
   padding: 3rem 0;
+  flex: 1;
 }
 
 .sectionTitle {

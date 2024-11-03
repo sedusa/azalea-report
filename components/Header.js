@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FiMenu, FiX } from 'react-icons/fi';
@@ -6,6 +6,18 @@ import styles from '../styles/Header.module.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
 
   return (
     <>
@@ -23,7 +35,7 @@ const Header = () => {
           </Link>
           
           <nav className={styles.desktopNav}>
-            <Link href="/previous">Previous Issues</Link>
+            <Link href="/archives">Previous Issues</Link>
           </nav>
           
           <button 
@@ -44,7 +56,7 @@ const Header = () => {
             <FiX size={24} />
           </button>
           <nav className={styles.mobileNav}>
-            <Link href="/previous" onClick={() => setIsMenuOpen(false)}>Previous Issues</Link> 
+            <Link href="/archives" onClick={() => setIsMenuOpen(false)}>Previous Issues</Link> 
           </nav>
         </div>
       )}

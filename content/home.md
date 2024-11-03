@@ -1,13 +1,13 @@
 ---
 banner:
-  headerImage: /img/banner.jpeg
+  headerImage: /img/november-banner.jpeg
   title: AZALEA REPORT
   subtitle: SGMC Health Internal Medicine Residency Newsletter
   edition: 2
-  date: October 2024
+  date: November 2024
 about:
-  sectionTitle: Welcome
-  content: We are excited to launch the inaugural edition of Azalea Report, a resident-led digital newsletter for the Internal Medicine Residency program at South Georgia Health in Valdosta, Georgia. We chose the name "Azalea Report" to honor Valdosta's nickname as the "Azalea City," reflecting our aim to flourish and showcase the best of our program, much like the vibrant azaleas that bloom across our city each spring. In this first edition, we're excited to spotlight outstanding residents, share program achievements, and hear from our newly appointed Chief Residents about their plans for the coming year. We'll also feature a section on community engagement, highlighting how our residents contribute to Valdosta and surrounding areas. Whether you're a current resident, faculty member, or prospective applicant, we invite you to learn more about our residency program through the Azalea Report and join us on this exciting journey of growth and excellence in medical education.<br/><br/> Sincerely,
+  sectionTitle: 
+  content: Welcome 👋🏼 to the Azalea Report - the digital newsletter of South Georgia Health's Internal Medicine Residency program in Valdosta, Georgia. Named after our city's beloved azaleas, this resident-led publication aims to showcase our program's achievements, spotlight outstanding residents, and share updates from our residency program. We look forward to bringing you stories of excellence in medical education from the Azalea City.<br/><br/> Sincerely,
   signature: The Azalea Report team
 program: 
   title: About the Program
@@ -57,10 +57,10 @@ chiefsCorner:
         "To our fellow residents," Dr. Gandi advises, "remember to have each other's backs. Our diverse backgrounds are our strength – let's learn from one another and grow together. When things get challenging, there's nothing more valuable than the support of your colleagues."
         Outside of his professional life, Dr. Gandi values quality time with his wife and enjoys traveling, maintaining a balance that enhances both his personal growth and medical career.
 programDirector:
-  sectionTitle: Message from the Program Director
-  name: Gregory Beale, MD
-  title: Program Director, Internal Medicine Residency
-  image: /img/beale.jpeg
+  sectionTitle: Message from the Assistant Program Director
+  name: Leslie Lamptey, MD
+  title: Assistant Program Director, Internal Medicine Residency
+  image: /img/lamptey.jpeg
   message: >
     "Hard to believe that we are now 2 1/3 years into our IM residency program. I am proud of each and every one of you. Keep up the hard work and independent education. ABIM will come quicker than you think."
 recentSuccess:
@@ -214,13 +214,4 @@ wellnessCorner:
       <li> <strong>Pack essentials:</strong> Bring fresh bread, lean meats, salad extras, and healthy snacks</li>
     </ol>
     Remember, the food you eat affects how you feel and perform. Start small and build healthier habits over time!
-
-upcomingBirthdays:
-  - name: Dr. Michael Heron
-    date: Oct 8
-  - name: Dr. Rija Chaudhary
-    date: Oct 8
-  - name: Cathy Dean
-    date: Nov 16
-
 ---

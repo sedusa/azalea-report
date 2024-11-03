@@ -1,0 +1,25 @@
+.archivesList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.archiveLink {
+  text-decoration: none;
+  color: #016f53;  /* Matching the signature green color */
+  transition: color 0.2s ease;
+}
+
+.archiveLink:hover {
+  color: #015542;
+}
+
+.archiveTitle {
+  font-family: var(--font-inter), sans-serif;  /* Assuming Inter is your main font */
+  font-weight: 600;
+  margin: 0;
+}
+
+.archiveDate {
+  color: #666;
+  font-size: 0.9rem;
+} 
