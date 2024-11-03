@@ -23,8 +23,6 @@ const Header = () => {
           </Link>
           
           <nav className={styles.desktopNav}>
-            <Link href="/about">About</Link>
-            <Link href="/feedback">Feedback</Link>
             <Link href="/previous">Previous Issues</Link>
           </nav>
           
@@ -46,10 +44,7 @@ const Header = () => {
             <FiX size={24} />
           </button>
           <nav className={styles.mobileNav}>
-            <Link href="/previous" onClick={() => setIsMenuOpen(false)}>Previous Issues</Link>
-            <Link href="/about" onClick={() => setIsMenuOpen(false)}>About</Link>
-            <Link href="/feedback" onClick={() => setIsMenuOpen(false)}>Feedback</Link>
-            
+            <Link href="/previous" onClick={() => setIsMenuOpen(false)}>Previous Issues</Link> 
           </nav>
         </div>
       )}

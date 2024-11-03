@@ -1,11 +1,14 @@
 ---
-title: AZALEA REPORT
-subtitle: SGMC Health Internal Medicine Residency Newsletter
-date: Edition 1, October 2024
-welcome:
-  title: Welcome
-  message: We are excited to launch the inaugural edition of Azalea Report, a resident-led digital newsletter for the Internal Medicine Residency program at South Georgia Health in Valdosta, Georgia. We chose the name "Azalea Report" to honor Valdosta's nickname as the "Azalea City," reflecting our aim to flourish and showcase the best of our program, much like the vibrant azaleas that bloom across our city each spring. In this first edition, we're excited to spotlight outstanding residents, share program achievements, and hear from our newly appointed Chief Residents about their plans for the coming year. We'll also feature a section on community engagement, highlighting how our residents contribute to Valdosta and surrounding areas. Whether you're a current resident, faculty member, or prospective applicant, we invite you to learn more about our residency program through the Azalea Report and join us on this exciting journey of growth and excellence in medical education.<br/><br/> Sincerely,
-  team: The Azalea Report team
+banner:
+  headerImage: /img/banner.jpeg
+  title: AZALEA REPORT
+  subtitle: SGMC Health Internal Medicine Residency Newsletter
+  edition: 2
+  date: October 2024
+about:
+  sectionTitle: Welcome
+  content: We are excited to launch the inaugural edition of Azalea Report, a resident-led digital newsletter for the Internal Medicine Residency program at South Georgia Health in Valdosta, Georgia. We chose the name "Azalea Report" to honor Valdosta's nickname as the "Azalea City," reflecting our aim to flourish and showcase the best of our program, much like the vibrant azaleas that bloom across our city each spring. In this first edition, we're excited to spotlight outstanding residents, share program achievements, and hear from our newly appointed Chief Residents about their plans for the coming year. We'll also feature a section on community engagement, highlighting how our residents contribute to Valdosta and surrounding areas. Whether you're a current resident, faculty member, or prospective applicant, we invite you to learn more about our residency program through the Azalea Report and join us on this exciting journey of growth and excellence in medical education.<br/><br/> Sincerely,
+  signature: The Azalea Report team
 program: 
   title: About the Program
   about: SGMC Health's Internal Medicine Residency Program, in partnership with Mercer University School of Medicine, combines academic excellence with hands-on experience, leveraging SGMC Health's highly capable healthcare delivery system to meet the primary care and healthcare needs of rural and medically underserved areas of Georgia.
@@ -156,7 +159,7 @@ events:
       description: Dr. Kinley Shook-Chacon's baby shower   
     - date: Oct 26, 2024 
       description: Halloween Party at Dr. Bias'
-thingsToDoInValdosta:
+thingsToDo:
   sectionTitle: Things To Do In Valdosta
   images:
     - /img/things-to-do/valdosta-1.jpeg
@@ -188,10 +191,19 @@ thingsToDoInValdosta:
       date: Check website for current exhibitions
       description: View rotating exhibitions of contemporary art by regional and national artists.
       url: https://www.valdosta.edu/colleges/arts/art/gallery/
-
-
-wellnessTip:
+newsFromClinic:
+  sectionTitle: News From The Clinic
+  employeeSpotlight:
+    subSectionTitle: Employee Spotlight
+    name: Melissa Wilkerson
+    image: /img/employee-spotlight-09-24.jpeg
+    title: Medical Assistant
+    profile: >
+      Meet Melissa Wilkerson, one of our devoted medical assistants who has been with our clinic since its opening in August 2022. Melissa is passionate about her work and equally dedicated to her family life. When not providing excellent care to our patients, she can often be found cheering on her daughter at softball games. Melissa also enjoys quality time with family and friends. Her long-standing commitment and experience make her an invaluable member of our team.
+wellnessCorner:
+  sectionTitle: Wellness Corner
   title: Quick Tips for Healthy Eating at Work
+  altImageText: Health eating
   image: /img/eating-healthy.jpeg
   content: >
     Good nutrition is key to mental and physical health. Here are some tips to eat healthier at work:
@@ -210,14 +222,5 @@ upcomingBirthdays:
     date: Oct 8
   - name: Cathy Dean
     date: Nov 16
-
-employeeSpotlight:
-  name: Melissa Wilkerson
-  image: /img/employee-spotlight-09-24.jpeg
-  title: Medical Assistant
-  description: >
-    Meet Melissa Wilkerson, one of our devoted medical assistants who has been with our clinic since its opening in August 2022. Melissa is passionate about her work and equally dedicated to her family life. When not providing excellent care to our patients, she can often be found cheering on her daughter at softball games. Melissa also enjoys quality time with family and friends. Her long-standing commitment and experience make her an invaluable member of our team.
-
-
 
 ---

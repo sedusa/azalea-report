@@ -1,0 +1,58 @@
+.wellnessTipSection {
+  background-color: #27ae60;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.wellnessTipTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.wellnessTipContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.wellnessTipImage {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.wellnessTipText {
+  flex: 1;
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+.wellnessTipText ul {
+  padding-left: 20px;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .wellnessTipContent {
+    flex-direction: column;
+  }
+
+  .wellnessTipImage {
+    width: 100%;
+    margin-bottom: 1rem;
+    order: -1;
+  }
+
+  .wellnessTipTitle {
+    font-size: 1.5rem;
+  }
+
+  .wellnessTipText {
+    font-size: 1.2rem;
+  }
+}

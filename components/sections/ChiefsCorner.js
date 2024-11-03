@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import styles from '../../styles/ChiefsCorner.module.css';
-import TruncateText from '../../utils/truncateText';
+import styles from '@styles/ChiefsCorner.module.css';
+import TruncateText from '@utils/truncateText';
 
 const ChiefsCorner = ({ chiefsCorner: { title, chiefs } }) => {
   const [expandedChiefs, setExpandedChiefs] = useState({});

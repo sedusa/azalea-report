@@ -1,0 +1,141 @@
+.bannerContainer {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.bannerContent {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+.bannerImageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2/1;
+  display: block;
+  line-height: 0;
+}
+
+.bannerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bannerOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.2) 70%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.bannerText {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  transform: none;
+  padding: 0;
+  width: 90%;
+  max-width: 800px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bannerTitle {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.bannerSubtitle {
+  font-size: 1.3rem;
+  font-weight: normal;
+  margin: 0;
+  color: white;
+  line-height: 1.4;
+}
+
+.bannerMetadata {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  color: white;
+  margin-top: 4px;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .bannerTitle {
+    font-size: 48px;
+  }
+
+  .bannerSubtitle {
+    font-size: 24px;
+  }
+
+  .bannerMetadata {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bannerImageContainer {
+    aspect-ratio: 3/2;
+  }
+
+  .bannerText {
+    bottom: 24px;
+    left: 24px;
+    width: 90%;
+    gap: 4px;
+  }
+
+  .bannerTitle {
+    font-size: 36px;
+  }
+
+  .bannerSubtitle {
+    font-size: 20px;
+  }
+
+  .bannerMetadata {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bannerText {
+    bottom: 16px;
+    left: 16px;
+    width: 95%;
+    gap: 4px;
+  }
+
+  .bannerTitle {
+    font-size: 28px;
+  }
+
+  .bannerSubtitle {
+    font-size: 16px;
+  }
+
+  .bannerMetadata {
+    font-size: 14px;
+  }
+}

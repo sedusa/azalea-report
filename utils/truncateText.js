@@ -1,4 +1,4 @@
-import { useBreakpoint } from './useBreakpoint';
+import { useBreakpoint } from '@utils/useBreakpoint';
 
 // Convert to a component that returns the truncated text
 const TruncateText = ({ content, maxLength }) => {
