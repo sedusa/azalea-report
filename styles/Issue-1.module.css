@@ -13,7 +13,6 @@
   margin: 0 auto;
   max-width: 900px;
   padding: 0 1rem;
-  padding-top: 60px;
 }
 
 .main {
@@ -1037,4 +1036,13 @@
   .employeeSpotlightDescription {
     font-size: 1.2rem;
   }
+}
+
+/* Footer section */
+
+.footer {
+  color: #718096;
+  font-size: 1rem;
+  padding: 2rem 0;
+  text-align: center;
 }

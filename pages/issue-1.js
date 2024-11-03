@@ -1,13 +1,10 @@
 import Head from 'next/head';
-import { attributes, react as HomeContent } from '../content/home.md';
-import styles from '../styles/Home.module.css';
+import { attributes, react as HomeContent } from '../content/issue-1.md';
+import styles from '../styles/Issue-1.module.css';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import birthdays from '../public/birthdays.json';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import Carousel from '../components/Carousel';
-
 
 export default function Home() {
   const {
@@ -119,7 +116,62 @@ export default function Home() {
 
   return (
     <div className={styles.pageBackground}>
-      <Header />
+      <Head>
+        <title>{title}</title>
+        <link rel='icon' href='/favicon.ico' />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Georgia&family=Arial&display=swap'
+          rel='stylesheet'
+        />
+
+        <link
+          rel='apple-touch-icon'
+          sizes='180x180'
+          href='/apple-touch-icon.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='32x32'
+          href='/favicon-32x32.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='16x16'
+          href='/favicon-16x16.png'
+        />
+        <link rel='manifest' href='/site.webmanifest' />
+        <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5' />
+        <meta name='msapplication-TileColor' content='#da532c' />
+        <meta name='theme-color' content='#ffffff' />
+        <meta
+          name='description'
+          content='SGMC Health IM Residency Newsletter'
+        />
+        <meta property='og:title' content={title} />
+        <meta
+          property='og:description'
+          content='SGMC Health IM Residency Newsletter'
+        />
+        <meta
+          property='og:image'
+          content='https://azaleareport.com/img/sgmchealth.jpeg'
+        />
+        <meta property='og:url' content='https://azaleareport.com' />
+        <meta property='og:type' content='website' />
+        <link rel='manifest' href='/manifest.json' />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Anton&display=swap'
+          rel='stylesheet'
+        />
+        <script
+          defer
+          data-domain='azaleareport.com'
+          src='https://plausible.io/js/script.js'
+        ></script>
+      </Head>
+
       <div className={styles.container}>
         <main className={styles.main}>
           <header className={styles.header}>
@@ -457,7 +509,12 @@ export default function Home() {
           <HomeContent />
         </main>
 
-        <Footer/ >
+        <footer className={styles.footer}>
+          <p>
+            © {new Date().getFullYear()} Azalea Report - SGMC Health Internal
+            Medicine Residency Newsletter
+          </p>
+        </footer>
       </div>
     </div>
   );
