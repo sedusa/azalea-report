@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.pageBackground {
+  background-color: #fefbf3;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.container {
+  font-family: 'Georgia', serif;
+  font-size: 1.3rem;
+  line-height: 1.7;
+  margin: 0 auto;
+  max-width: 900px;
+  padding-top: 60px;
+  padding: 0 1rem;
+}
+
+.main {
+  padding: 3rem 0;
+}

@@ -3,8 +3,9 @@ import { attributes, react as HomeContent } from '../content/issue-1.md';
 import styles from '../styles/Issue-1.module.css';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import birthdays from '../public/birthdays.json';
-import Carousel from '../components/Carousel';
+import birthdays from '../../public/birthdays.json';
+import Carousel from '../../components/Carousel';
+import useBreakPoint from '../../utils/useBreakPoint'
 
 export default function Home() {
   const {
@@ -31,23 +32,13 @@ export default function Home() {
   } = attributes;
 
   const [expandedChiefs, setExpandedChiefs] = useState({});
-  const [isMobile, setIsMobile] = useState(false);
+
+  const isMobile = useBreakPoint(768);
   const [expandedRecentSuccess, setExpandedRecentSuccess] = useState(false);
   const [expandedCommunityService, setExpandedCommunityService] =
     useState(false);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  
 
   const toggleChiefContent = (index) => {
     setExpandedChiefs((prev) => ({

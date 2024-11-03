@@ -1,25 +1,18 @@
 import Head from 'next/head';
-import { attributes, react as HomeContent } from '../content/home.md';
+import { useState, useEffect } from 'react';
+import { attributes } from '../content/home.md';
 import styles from '../styles/Home.module.css';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
 import birthdays from '../public/birthdays.json';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Layout from '../app/Layout';
+import TwoColumnLayout from '../components/types/TwoColumnLayout';
+import ResidentSpotlight from '../components/sections/ResidentSpotlight';
+import ProgramInfo from '../components/sections/ProgramInfo';
 import Carousel from '../components/Carousel';
-
 
 export default function Home() {
   const {
-    title,
-    subtitle,
-    team,
-    date,
-    welcome,
-    aboutProgram,
-    sgmcImage,
-    sgmcImageCaption,
-    statistics,
+    program,
     spotlight,
     tribalCouncil,
     chiefChat,
@@ -118,347 +111,241 @@ export default function Home() {
   };
 
   return (
-    <div className={styles.pageBackground}>
-      <Header />
-      <div className={styles.container}>
-        <main className={styles.main}>
-          <header className={styles.header}>
-            <div className={styles.logoContainer}>
-              <Image
-                src='/img/azalea.svg'
-                alt='azalea-logo'
-                width={150}
-                height={150}
-                className={styles.logo}
-              />
-            </div>
-            <div className={styles.titleContainer}>
-              <h1 className={styles.title}>{title}</h1>
-              <p className={styles.subtitle}>{subtitle}</p>
-              <p className={styles.date}>{date}</p>
-            </div>
-          </header>
-
-          <section className={styles.fullWidth}>
-            <h2 className={styles.sectionTitle}>Welcome</h2>
-            <div
-              className={styles.text}
-              dangerouslySetInnerHTML={{
-                __html: welcome,
-              }}
-            />
-            <div className={styles.text}>{team}</div>
-          </section>
-
-          <section className={styles.twoColumns}>
-            <div className={styles.column}>
-              <h2 className={styles.sectionTitle}>Resident Spotlight</h2>
-              <div className={styles.spotlightContainer}>
-                <img
-                  src={spotlight.image}
-                  alt={spotlight.name}
-                  className={styles.spotlightImage}
-                />
-                <h3 className={styles.spotlightName}>{spotlight.name}</h3>
-                <p className={styles.spotlightText}>
-                  <strong>Birth place:</strong> {spotlight.birthplace}
-                </p>
-                <p className={styles.spotlightText}>
-                  <strong>Fun fact:</strong> {spotlight.funFact}
-                </p>
-                <p className={styles.spotlightText}>
-                  <strong>Favorite dish:</strong> {spotlight.favoriteDish}
-                </p>
-                <p className={styles.spotlightText}>
-                  <strong>Interests:</strong> {spotlight.interests}
-                </p>
-                <p className={styles.spotlightText}>
-                  <strong>Post-residency plans:</strong>{' '}
-                  {spotlight.postResidencyPlans}
-                </p>
-              </div>
-            </div>
-            <div className={styles.column}>
-              <div className={styles.aboutProgram}>
-                <h2 className={styles.sectionTitle}>About the Program</h2>
-                <img
-                  src={sgmcImage}
-                  alt='SGMC Building'
-                  className={styles.sgmcImage}
-                />
-                <small className={styles.sgmcImageCaption}>
-                  {sgmcImageCaption}
-                </small>
-                <p className={styles.text}>{aboutProgram}</p>
-              </div>
-
-              <h2 className={styles.sectionTitle}>Program Statistics</h2>
-              <ul className={styles.list}>
-                <li className={styles.listItem}>
-                  Number of current residents: {statistics.residentCount}
-                </li>
-                <li className={styles.listItem}>
-                  Our diversity: Residents from {statistics.countryCount}{' '}
-                  different countries
-                </li>
-                <li className={styles.listItem}>
-                  Number of languages: We speak {statistics.languageCount}{' '}
-                  different languages
-                </li>
-              </ul>
-            </div>
-          </section>
-
-          <section className={styles.fullWidth}>
-            <h2 className={styles.sectionTitle}>The Chiefs' Corner</h2>
-            <div className={styles.chiefsSection}>
-              {chiefChat.map((chief, index) => (
-                <div key={index} className={styles.chiefColumn}>
-                  <img
-                    src={chief.image}
-                    alt={chief.name}
-                    className={styles.chiefImage}
-                  />
-                  <h3 className={styles.chiefName}>{chief.name}</h3>
-                  <div className={styles.chiefText}>
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: expandedChiefs[index]
-                          ? chief.content
-                          : truncateContent(chief.content),
-                      }}
-                    />
-                    {chief.content.length > (isMobile ? 200 : 450) && (
-                      <button
-                        onClick={() => toggleChiefContent(index)}
-                        className={styles.toggleButton}
-                      >
-                        {expandedChiefs[index] ? 'Show Less' : 'Show More'}
-                      </button>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <section className={styles.fullWidth}>
-            <h2 className={styles.sectionTitle}>
-              Message from the Program Director
-            </h2>
-            <div className={styles.programDirectorSection}>
+    <Layout>
+      <TwoColumnLayout
+        leftColumn={<ResidentSpotlight spotlight={spotlight} />}
+        rightColumn={<ProgramInfo program={program} />}
+      />
+      <section className={styles.fullWidth}>
+        <h2 className={styles.sectionTitle}>The Chiefs' Corner</h2>
+        <div className={styles.chiefsSection}>
+          {chiefChat.map((chief, index) => (
+            <div key={index} className={styles.chiefColumn}>
               <img
-                src={programDirector.image}
-                alt={programDirector.name}
-                className={styles.programDirectorImage}
+                src={chief.image}
+                alt={chief.name}
+                className={styles.chiefImage}
               />
-              <div className={styles.programDirectorContent}>
-                <h2 className={styles.programDirectorName}>
-                  {programDirector.name}
-                </h2>
-                <p className={styles.programDirectorTitle}>
-                  {programDirector.title}
-                </p>
-                <div
-                  className={styles.programDirectorMessage}
-                  dangerouslySetInnerHTML={{ __html: programDirector.message }}
-                />
-              </div>
-            </div>
-          </section>
-
-          <section className={styles.fullWidth}>
-            <h2 className={styles.sectionTitle}>Recent Success</h2>
-            <div className={styles.recentSuccessContent}>
-              <h3 className={styles.recentSuccessTitle}>
-                {recentSuccess.title}
-              </h3>
-              <div className={styles.recentSuccessImageWrapper}>
-                <img
-                  src={recentSuccess.image}
-                  alt='Recent success highlight'
-                  className={styles.recentSuccessImage}
-                />
-                <small className={styles.recentSuccessCaption}>
-                  {recentSuccess.imageCaption}
-                </small>
-              </div>
-              <div
-                className={styles.recentSuccessText}
-                dangerouslySetInnerHTML={{ __html: recentSuccess.content }}
-              />
-              <h3 className={styles.recentSuccessTitle}>
-                Poster Presentation Highlights
-              </h3>
-              <Carousel
-                images={recentSuccess.posterImage}
-                interval={12000}
-                aspectRatio='1:1'
-              />
-            </div>
-          </section>
-
-          <section className={styles.fullWidth}>
-            <h2 className={styles.sectionTitle}>Community Service Corner</h2>
-            <div className={styles.communityServiceCornerContent}>
-              <h3 className={styles.communityServiceCornerTitle}>
-                {communityServiceCorner.title}
-              </h3>
-              <div className={styles.communityServiceCornerSubTitle}>
-                By: {communityServiceCorner.author}
-              </div>
-              <div className={styles.communityServiceCornerImageWrapper}>
-                <img
-                  src={communityServiceCorner.image}
-                  alt='Community service highlight'
-                  className={styles.communityServiceCornerImage}
-                />
-                <small className={styles.communityServiceCornerCaption}>
-                  {communityServiceCorner.imageCaption}
-                </small>
-              </div>
-              <div className={styles.communityServiceCornerText}>
+              <h3 className={styles.chiefName}>{chief.name}</h3>
+              <div className={styles.chiefText}>
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: expandedCommunityService
-                      ? communityServiceCorner.content
-                      : truncateCommunityService(
-                          communityServiceCorner.content
-                        ),
+                    __html: expandedChiefs[index]
+                      ? chief.content
+                      : truncateContent(chief.content),
                   }}
                 />
-                {communityServiceCorner.content.length > 240 && (
+                {chief.content.length > (isMobile ? 200 : 450) && (
                   <button
-                    onClick={() =>
-                      setExpandedCommunityService(!expandedCommunityService)
-                    }
-                    className={styles.communityServiceCornerToggleButton}
+                    onClick={() => toggleChiefContent(index)}
+                    className={styles.toggleButton}
                   >
-                    {expandedCommunityService ? 'Show Less' : 'Show More'}
+                    {expandedChiefs[index] ? 'Show Less' : 'Show More'}
                   </button>
                 )}
               </div>
             </div>
-          </section>
+          ))}
+        </div>
+      </section>
 
-          <section className={styles.fullWidth}>
-            <h2 className={styles.lensSectionTitle}>
-              Through the Lens: Residency Highlights
+      <section className={styles.fullWidth}>
+        <h2 className={styles.sectionTitle}>
+          Message from the Program Director
+        </h2>
+        <div className={styles.programDirectorSection}>
+          <img
+            src={programDirector.image}
+            alt={programDirector.name}
+            className={styles.programDirectorImage}
+          />
+          <div className={styles.programDirectorContent}>
+            <h2 className={styles.programDirectorName}>
+              {programDirector.name}
             </h2>
-            <p className={styles.lensSectionSubTitle}>
-              Capturing the Smiles, Milestones, and Unforgettable Moments
+            <p className={styles.programDirectorTitle}>
+              {programDirector.title}
             </p>
-            <Carousel images={photosOfMonth} interval={8000} />
-          </section>
-
-          <section className={styles.twoColumns}>
-            <div className={styles.column}>
-              <h2 className={styles.sectionTitle}>Upcoming Events</h2>
-              <ul className={styles.eventList}>
-                {events.map((event, index) => (
-                  <li key={index} className={styles.eventItem}>
-                    <strong>{event.date} - </strong> {event.description}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className={styles.column}>
-              <BirthdaySection />
-            </div>
-          </section>
-
-          <section className={styles.fullWidth}>
-            <h2 className={styles.sectionTitle}>Things to Do in Valdosta</h2>
-            <Carousel
-              images={thingsToDoInValdosta.images.map((image) => ({ image }))}
-              interval={8000}
-              showCaption={false}
-              showArrows={false}
+            <div
+              className={styles.programDirectorMessage}
+              dangerouslySetInnerHTML={{ __html: programDirector.message }}
             />
-            <ul className={styles.thingsToDoList}>
-              {thingsToDoInValdosta.items.map((item, index) => (
-                <li key={index} className={styles.thingsToDoItem}>
-                  <h3 className={styles.thingsToDoTitle}>{item.title}</h3>
-                  <p className={styles.thingsToDoDate}>{item.date}</p>
-                  <p className={styles.thingsToDoDescription}>
-                    {item.description}
-                  </p>
-                  <a
-                    href={item.url}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className={styles.thingsToDoLink}
-                  >
-                    Learn More
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </section>
+          </div>
+        </div>
+      </section>
 
-          <section className={styles.fullWidth}>
-            <div className={styles.spotlightIconContainer}>
-              <Image
-                src='/img/spotlight.svg'
-                alt='Spotlight'
-                width={50}
-                height={50}
-                className={styles.spotlightIcon}
-              />
-              <h2 className={styles.newsFromClinic}>News from the clinic</h2>
+      <section className={styles.fullWidth}>
+        <h2 className={styles.sectionTitle}>Recent Success</h2>
+        <div className={styles.recentSuccessContent}>
+          <h3 className={styles.recentSuccessTitle}>{recentSuccess.title}</h3>
+          <div className={styles.recentSuccessImageWrapper}>
+            <img
+              src={recentSuccess.image}
+              alt='Recent success highlight'
+              className={styles.recentSuccessImage}
+            />
+            <small className={styles.recentSuccessCaption}>
+              {recentSuccess.imageCaption}
+            </small>
+          </div>
+          <div
+            className={styles.recentSuccessText}
+            dangerouslySetInnerHTML={{ __html: recentSuccess.content }}
+          />
+          <h3 className={styles.recentSuccessTitle}>
+            Poster Presentation Highlights
+          </h3>
+          <Carousel
+            images={recentSuccess.posterImage}
+            interval={12000}
+            aspectRatio='1:1'
+          />
+        </div>
+      </section>
+
+      <section className={styles.fullWidth}>
+        <h2 className={styles.sectionTitle}>Community Service Corner</h2>
+        <div className={styles.communityServiceCornerContent}>
+          <h3 className={styles.communityServiceCornerTitle}>
+            {communityServiceCorner.title}
+          </h3>
+          <div className={styles.communityServiceCornerSubTitle}>
+            By: {communityServiceCorner.author}
+          </div>
+          <div className={styles.communityServiceCornerImageWrapper}>
+            <img
+              src={communityServiceCorner.image}
+              alt='Community service highlight'
+              className={styles.communityServiceCornerImage}
+            />
+            <small className={styles.communityServiceCornerCaption}>
+              {communityServiceCorner.imageCaption}
+            </small>
+          </div>
+          <div className={styles.communityServiceCornerText}>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: expandedCommunityService
+                  ? communityServiceCorner.content
+                  : truncateCommunityService(communityServiceCorner.content),
+              }}
+            />
+            {communityServiceCorner.content.length > 240 && (
+              <button
+                onClick={() =>
+                  setExpandedCommunityService(!expandedCommunityService)
+                }
+                className={styles.communityServiceCornerToggleButton}
+              >
+                {expandedCommunityService ? 'Show Less' : 'Show More'}
+              </button>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.fullWidth}>
+        <h2 className={styles.lensSectionTitle}>
+          Through the Lens: Residency Highlights
+        </h2>
+        <p className={styles.lensSectionSubTitle}>
+          Capturing the Smiles, Milestones, and Unforgettable Moments
+        </p>
+        <Carousel images={photosOfMonth} interval={8000} />
+      </section>
+
+      <section className={styles.twoColumns}>
+        <div className={styles.column}>
+          <h2 className={styles.sectionTitle}>Upcoming Events</h2>
+          <ul className={styles.eventList}>
+            {events.map((event, index) => (
+              <li key={index} className={styles.eventItem}>
+                <strong>{event.date} - </strong> {event.description}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className={styles.column}>
+          <BirthdaySection />
+        </div>
+      </section>
+
+      <section className={styles.fullWidth}>
+        <h2 className={styles.sectionTitle}>Things to Do in Valdosta</h2>
+        <Carousel
+          images={thingsToDoInValdosta.images.map((image) => ({ image }))}
+          interval={8000}
+          showCaption={false}
+          showArrows={false}
+        />
+        <ul className={styles.thingsToDoList}>
+          {thingsToDoInValdosta.items.map((item, index) => (
+            <li key={index} className={styles.thingsToDoItem}>
+              <h3 className={styles.thingsToDoTitle}>{item.title}</h3>
+              <p className={styles.thingsToDoDate}>{item.date}</p>
+              <p className={styles.thingsToDoDescription}>{item.description}</p>
+              <a
+                href={item.url}
+                target='_blank'
+                rel='noopener noreferrer'
+                className={styles.thingsToDoLink}
+              >
+                Learn More
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className={styles.fullWidth}>
+        <div className={styles.spotlightIconContainer}>
+          <Image
+            src='/img/spotlight.svg'
+            alt='Spotlight'
+            width={50}
+            height={50}
+            className={styles.spotlightIcon}
+          />
+          <h2 className={styles.newsFromClinic}>News from the clinic</h2>
+        </div>
+        <div className={styles.employeeSpotlightContainer}>
+          <div className={styles.employeeSpotlightImageContainer}>
+            <img
+              src={employeeSpotlight.image || '/img/employee-placeholder.jpg'}
+              alt={employeeSpotlight.name}
+              className={styles.employeeSpotlightImage}
+            />
+            <h3 className={styles.employeeName}>{employeeSpotlight.name}</h3>
+            <p className={styles.employeeTitle}>{employeeSpotlight.title}</p>
+          </div>
+          <div className={styles.employeeSpotlightText}>
+            <h3 className={styles.employeeSpotlightHeader}>
+              Employee Spotlight
+            </h3>
+            <div className={styles.employeeSpotlightDivider}></div>
+            <p className={styles.employeeSpotlightDescription}>
+              {employeeSpotlight.description}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.fullWidth}>
+        <h2 className={styles.sectionTitle}>Wellness corner</h2>
+        <div className={styles.wellnessTipSection}>
+          <h2 className={styles.wellnessTipTitle}>{wellnessTip.title}</h2>
+          <div className={styles.wellnessTipContent}>
+            <div className={styles.wellnessTipText}>
+              <div dangerouslySetInnerHTML={{ __html: wellnessTip.content }} />
             </div>
-            <div className={styles.employeeSpotlightContainer}>
-              <div className={styles.employeeSpotlightImageContainer}>
-                <img
-                  src={
-                    employeeSpotlight.image || '/img/employee-placeholder.jpg'
-                  }
-                  alt={employeeSpotlight.name}
-                  className={styles.employeeSpotlightImage}
-                />
-                <h3 className={styles.employeeName}>
-                  {employeeSpotlight.name}
-                </h3>
-                <p className={styles.employeeTitle}>
-                  {employeeSpotlight.title}
-                </p>
-              </div>
-              <div className={styles.employeeSpotlightText}>
-                <h3 className={styles.employeeSpotlightHeader}>
-                  Employee Spotlight
-                </h3>
-                <div className={styles.employeeSpotlightDivider}></div>
-                <p className={styles.employeeSpotlightDescription}>
-                  {employeeSpotlight.description}
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <section className={styles.fullWidth}>
-            <h2 className={styles.sectionTitle}>Wellness corner</h2>
-            <div className={styles.wellnessTipSection}>
-              <h2 className={styles.wellnessTipTitle}>{wellnessTip.title}</h2>
-              <div className={styles.wellnessTipContent}>
-                <div className={styles.wellnessTipText}>
-                  <div
-                    dangerouslySetInnerHTML={{ __html: wellnessTip.content }}
-                  />
-                </div>
-                <img
-                  src={wellnessTip.image}
-                  alt='Healthy eating'
-                  className={styles.wellnessTipImage}
-                />
-              </div>
-            </div>
-          </section>
-
-          <HomeContent />
-        </main>
-
-        <Footer/ >
-      </div>
-    </div>
+            <img
+              src={wellnessTip.image}
+              alt='Healthy eating'
+              className={styles.wellnessTipImage}
+            />
+          </div>
+        </div>
+      </section>
+    </Layout>
   );
 }

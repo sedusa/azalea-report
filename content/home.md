@@ -2,15 +2,20 @@
 title: AZALEA REPORT
 subtitle: SGMC Health Internal Medicine Residency Newsletter
 date: Edition 1, October 2024
-welcome: We are excited to launch the inaugural edition of Azalea Report, a resident-led digital newsletter for the Internal Medicine Residency program at South Georgia Health in Valdosta, Georgia. We chose the name "Azalea Report" to honor Valdosta's nickname as the "Azalea City," reflecting our aim to flourish and showcase the best of our program, much like the vibrant azaleas that bloom across our city each spring. In this first edition, we're excited to spotlight outstanding residents, share program achievements, and hear from our newly appointed Chief Residents about their plans for the coming year. We'll also feature a section on community engagement, highlighting how our residents contribute to Valdosta and surrounding areas. Whether you're a current resident, faculty member, or prospective applicant, we invite you to learn more about our residency program through the Azalea Report and join us on this exciting journey of growth and excellence in medical education.<br/><br/> Sincerely,
-team: The Azalea Report team
-aboutProgram: SGMC Health's Internal Medicine Residency Program, in partnership with Mercer University School of Medicine, combines academic excellence with hands-on experience, leveraging SGMC Health's highly capable healthcare delivery system to meet the primary care and healthcare needs of rural and medically underserved areas of Georgia.
-sgmcImage: /img/sgmc.jpg
-sgmcImageCaption: Aerial view of SGMC in Valdosta, GA
-statistics:
-  residentCount: 24
-  countryCount: 10
-  languageCount: 12
+welcome:
+  title: Welcome
+  message: We are excited to launch the inaugural edition of Azalea Report, a resident-led digital newsletter for the Internal Medicine Residency program at South Georgia Health in Valdosta, Georgia. We chose the name "Azalea Report" to honor Valdosta's nickname as the "Azalea City," reflecting our aim to flourish and showcase the best of our program, much like the vibrant azaleas that bloom across our city each spring. In this first edition, we're excited to spotlight outstanding residents, share program achievements, and hear from our newly appointed Chief Residents about their plans for the coming year. We'll also feature a section on community engagement, highlighting how our residents contribute to Valdosta and surrounding areas. Whether you're a current resident, faculty member, or prospective applicant, we invite you to learn more about our residency program through the Azalea Report and join us on this exciting journey of growth and excellence in medical education.<br/><br/> Sincerely,
+  team: The Azalea Report team
+program: 
+  title: About the Program
+  about: SGMC Health's Internal Medicine Residency Program, in partnership with Mercer University School of Medicine, combines academic excellence with hands-on experience, leveraging SGMC Health's highly capable healthcare delivery system to meet the primary care and healthcare needs of rural and medically underserved areas of Georgia.
+  sgmcImage: /img/sgmc.jpg
+  sgmcImageCaption: Aerial view of SGMC in Valdosta, GA
+  statistics:
+    sectionTitle: Program Statistics
+    residentCount: 24
+    countryCount: 10
+    languageCount: 12
 spotlight:
   name: Michael Heron, MD
   image: /img/michael-heron-md.jpeg

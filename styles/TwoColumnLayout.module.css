@@ -1,0 +1,27 @@
+.twoColumns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background-color: transparent;
+  padding: 1.5rem;
+}
+
+.column {
+  flex-basis: calc(50% - 1rem);
+  flex: 1;
+  min-width: calc(50% - 1rem);
+}
+
+@media (max-width: 768px) {
+  .twoColumns {
+    flex-direction: column;
+  }
+
+  .column {
+    flex-basis: 100%;
+  }
+
+  .column:first-child {
+    order: 1;
+  }
+}

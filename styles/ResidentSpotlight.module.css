@@ -1,0 +1,40 @@
+.sectionTitle {
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
+}
+
+.spotlightContainer {
+  background-color: #f7f3e8;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.spotlightImage {
+  border-radius: 4px;
+  height: auto;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  width: 100%;
+}
+
+.spotlightName {
+  color: #016f53;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.spotlightText {
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .spotlightText {
+    font-size: 1.2rem;
+  }
+}

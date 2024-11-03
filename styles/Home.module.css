@@ -1,24 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-.pageBackground {
-  background-color: #fefbf3;
-  min-height: 100vh;
-  width: 100%;
-}
 
-.container {
-  font-family: 'Georgia', serif;
-  font-size: 1.3rem;
-  line-height: 1.7;
-  margin: 0 auto;
-  max-width: 900px;
-  padding: 0 1rem;
-  padding-top: 60px;
-}
-
-.main {
-  padding: 3rem 0;
-}
 
 .header {
   align-items: center;
@@ -153,102 +135,6 @@
   }
 }
 
-/* Resident Spotlight Section */
-
-.twoColumns {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.column {
-  flex-basis: calc(50% - 1rem);
-  flex: 1;
-  min-width: calc(50% - 1rem);
-}
-
-.spotlightContainer {
-  background-color: #f7f3e8;
-  border-radius: 8px;
-  padding: 1.5rem;
-}
-
-.spotlightImage {
-  border-radius: 4px;
-  height: auto;
-  margin-bottom: 1rem;
-  object-fit: cover;
-  width: 100%;
-}
-
-.spotlightName {
-  color: #016f53;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
-}
-
-.spotlightText {
-  font-size: 1.3rem;
-  line-height: 1.5;
-}
-
-@media (max-width: 768px) {
-  .twoColumns {
-    flex-direction: column;
-  }
-
-  .column {
-    flex-basis: 100%;
-  }
-
-  .column:first-child {
-    order: 1;
-  }
-
-  .spotlightText {
-    font-size: 1.2rem;
-  }
-}
-
-/* About the Program Section */
-
-.aboutProgram {
-  /* Removed margin-bottom: 2rem; */
-}
-
-.sgmcImage {
-  border-radius: 8px;
-  height: auto;
-  object-fit: cover;
-  width: 100%;
-}
-
-.sgmcImageCaption {
-  display: block;
-  font-size: 1.0rem;
-  color: #666;
-}
-
-/* Program statistics */
-
-.list {
-  margin-bottom: 1.5rem;
-  padding-left: 1.5rem;
-}
-
-.listItem {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-}
-
-@media (max-width: 768px) {
-  .list,
-  .listItem {
-    font-size: 1.2rem;
-    line-height: 1.6;
-  }
-}
 
 /* Tribal Council Corner Section */
 
