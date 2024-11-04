@@ -1,4 +1,4 @@
-import styles from '../../styles/About.module.css';
+import styles from '@styles/About.module.css';
 
 const AboutSection = ({ about: { sectionTitle, content, signature } }) => {
   return (

@@ -1,5 +1,5 @@
-import Carousel from '../Carousel';
-import styles from '../../styles/ThingsToDo.module.css';
+import Carousel from '@components/Carousel';
+import styles from '@styles/ThingsToDo.module.css';
 
 const ThingsToDo = ({ thingsToDo: { sectionTitle, images, items } }) => {
   return (

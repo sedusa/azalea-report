@@ -1,4 +1,4 @@
-import styles from '../../styles/ResidentSpotlight.module.css';
+import styles from '@styles/ResidentSpotlight.module.css';
 
 const ResidentSpotlight = ({
   spotlight: {

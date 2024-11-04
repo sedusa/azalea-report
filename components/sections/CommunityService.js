@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import styles from '../../styles/CommunityService.module.css';
-import { truncateText } from '../../utils/truncateText';
+import styles from '@styles/CommunityService.module.css';
+import { truncateText } from '@utils/truncateText';
 
 const CommunityService = ({
   communityServiceCorner: {

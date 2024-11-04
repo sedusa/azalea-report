@@ -1,4 +1,4 @@
-import styles from '../../styles/ProgramInfo.module.css';
+import styles from '@styles/ProgramInfo.module.css';
 
 const ProgramInfo = ({
   program: {

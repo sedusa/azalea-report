@@ -1,5 +1,5 @@
-import styles from '../../styles/RecentSuccess.module.css';
-import Carousel from '../../components/Carousel';
+import styles from '@styles/RecentSuccess.module.css';
+import Carousel from '@components/Carousel';
 
 const RecentSuccess = ({
   recentSuccess: {

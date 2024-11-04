@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from '../../styles/NewFromClinic.module.css';
+import styles from '@styles/NewFromClinic.module.css';
 
 const NewsFromClinic = ({
   newsFromClinic: {

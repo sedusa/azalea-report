@@ -1,4 +1,4 @@
-import styles from '../../styles/UpcomingEvents.module.css';
+import styles from '@styles/UpcomingEvents.module.css';
 
 const UpcomingEvents = ({ events: { sectionTitle, eventsList } }) => {
   return (

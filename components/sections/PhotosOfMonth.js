@@ -1,5 +1,5 @@
-import Carousel from '../Carousel';
-import styles from '../../styles/PhotosOfMonth.module.css';
+import Carousel from '@components/Carousel';
+import styles from '@styles/PhotosOfMonth.module.css';
 
 const PhotosOfTheMonth = ({
   photosOfMonth: {

@@ -1,4 +1,4 @@
-import styles from '../../styles/WellnessCorner.module.css';
+import styles from '@styles/WellnessCorner.module.css';
 
 const WellnessCorner = ({
   wellnessCorner: {
