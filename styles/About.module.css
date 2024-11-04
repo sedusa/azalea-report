@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
-
 .signature {
-  font-family: 'Caveat', cursive;
-  font-size: 2rem;
+  font-family: 'Georgia', serif;;
+  font-size: 1.3rem;
   color: #016f53;
 }
 
