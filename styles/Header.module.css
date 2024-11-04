@@ -4,8 +4,9 @@
   left: 0;
   right: 0;
   height: 60px;
-  background-color: #fefbf3;
+  background-color: var(--header-bg);
   z-index: 1000;
+  transition: all 0.3s ease;
 }
 
 .headerContent {
@@ -33,7 +34,7 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #016f53;
+  color: var(--primary-color);
 }
 
 .desktopNav {
@@ -50,7 +51,7 @@
 }
 
 .desktopNav a {
-  color: #016f53;
+  color: var(--link-color);
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
@@ -59,7 +60,7 @@
 }
 
 .desktopNav a:hover {
-  color: #014d3a;
+  color: var(--link-hover-color);
 }
 
 .mobileMenuButton {
