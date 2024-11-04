@@ -53,6 +53,11 @@
   transition: all 0.01s ease;
   width: 3.5rem;
   z-index: 1000;
+
+  & svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
 
 .themeToggle:hover {
@@ -83,5 +88,10 @@
     min-width: 3.5rem;
     text-size-adjust: 100%;
     width: 3.5rem;
+
+    & svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }
