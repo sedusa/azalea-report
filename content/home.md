@@ -35,7 +35,12 @@ podcast:
   sectionTitle: Podcasts
   title: "What Brings You In Today? - Featured Podcasts"
   subtitle: A Podcast from SGMC Health
-  description: "What Brings You In Today? is an insightful podcast from SGMC Health where expert physicians and medical professionals dive into the world of healthcare. Each episode features seasoned healthcare professionals breaking down complex medical topics into easily digestible insights."
+  episodes:
+    - name: "Episode #5 - Joseph Hayes, MD"
+      synopsis: This episode of the podcast features Dr. Hayes, Medical Director at SGMC  Internal Medicine and Assistant Professor at Mercer Medical School. From chief resident to program architect, he now leads South Georgia's newest medical residency program, training the next generation of physicians.
+      iframeUrl: https://open.spotify.com/embed/episode/68KNFYvib3spPv0rqB56aB?utm_source=generator&theme=0
+      noPlayerLink: https://open.spotify.com/episode/68KNFYvib3spPv0rqB56aB?si=YyhvygV2T9G3jpyiQG0OJg
+      noPlayerLinkText: Listen to Episode 5 with Dr. Joseph Hayes on Spotify
 tribalCouncil:
   content: >
     The PAR tribal system aims to act as a liaison between residents and GME focusing on resident wellness, building camaraderie and improving the resident experience. The PAR resident body recently voted for Dr Ghida Akdhar as the new Vice President, with Dr Danhely Cruz continuing on as our president. We thank Dr Sheri Walls for all her hardwork and dedication in advocating for the resident body and improving the resident experience. 

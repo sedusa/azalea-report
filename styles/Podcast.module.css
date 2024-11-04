@@ -20,6 +20,17 @@
   margin: 0.2rem 0 1.3rem;
 }
 
+.episodeContainer {
+  margin-top: 10px;
+}
+
+.episodeTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.4; 
+  margin: 0 0 0.5rem;
+}
+
 .fallbackLink {
   margin-top: 0 !important;
   font-size: 1.1rem;
