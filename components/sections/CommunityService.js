@@ -10,6 +10,8 @@ const CommunityService = ({
     image,
     imageCaption,
     content,
+    content2,
+    photos,
   },
 }) => {
   const [expandedCommunityService, setExpandedCommunityService] =

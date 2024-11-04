@@ -108,38 +108,27 @@ musings:
     <p>Nevertheless, the intern's resilience propels them forward; four months have flown by before they know it. Medicine is a mosaic of physiological intricacies intertwined with pathology further colored by the psyche of human nature. Though it never gets easy, there is a certain fulfillment in this career within which one holds the ability to reduce human suffering. So continue to forge ahead little intern. The mistakes, errors, and indecision will lessen as you cement your growing foundation and build your way to attendinghood.</p>
 communityServiceCorner:
   sectionTitle: Community Service Corner
-  title: The Eye of the Storm - Humanity Unveiled
+  title: Addressing Farmer Health at the 46th Sunbelt Agricultural Exposition
   author: Samuel Edusa, MD
-  image: /img/outside-church.jpeg
-  imageCaption: Outside the shelter before the storm hit
+  image: /img/ag-expo-aerial.jpeg
+  imageCaption: "Aerial view of the expo (Source: Farm Monitor)"
   content: >
-    <p>As Hurricane Helene howled outside, an unlikely assemblage of strangers sought sanctuary within the walls of a local church. I found myself there, a resident physician volunteering alongside Red Cross staff, about to witness an extraordinary display of human resilience and connection.</p>
+    <p>As a healthcare professional, I, together with a few colleagues, recently had the privilege of volunteering and presenting short talks on pertinent health topics at the 46th Annual Sunbelt Agricultural Exposition in Moultrie, Georgia. This event, held from October 15–17, 2024, at Spence Field, is truly a spectacle to behold — rightfully crowned as "North America's Premier Farm Show."</p>
+    
+    <p>The Sunbelt Ag Expo is a massive undertaking, spanning 93 acres and featuring over 850 exhibitors. It’s a melting pot of farmers, educators, policymakers, and ag-enthusiasts, all gathered to witness the latest innovations in agriculture. From cutting-edge technology demonstrations to the naming of the Southeastern Farmer of the Year, the expo is a celebration of all things agriculture.</p>
 
-    <p>SGMC Health had prepared the shelter to accommodate patients requiring oxygen support. Among them were Ron, a young man with autism, and his mother. Her constant justification for their presence struck a chord. It was a poignant reminder of the difficult choices we face during crises, when the lines between necessity and precaution blur.</p>
-
-    <p>The shelter's inhabitants were a tapestry of lives interrupted. A thirty-something-year-old African American mother spoke with quiet pride about her dozen well-behaved children. Nearby, a former hospital employee naturally assumed a leadership role, her calm demeanor serving as a balm for frayed nerves in this impromptu community.</p>
-
-    <img src="/img/inside-church.jpeg" alt="People sheltering inside the church" />
-    <small>People sheltering inside the church</small>
-
-    <p>An anxious woman approached me, her eyes wide with fear of a Category 4 hurricane. I drew upon my medical training to assuage her concerns, even as uncertainty about Helene's true intensity gnawed at me. Not far away, a tattooed woman in her thirties cradled her oxygen-dependent infant. She shared her story as a recovering addict, her determination to stay clean for her child both heartbreaking and inspiring. In that moment, the fragility and strength of the human spirit were laid bare.</p>
-
-    <p>As night fell, the tapestry of humanity grew richer. An elderly woman kept vigil over her two grown autistic sons, who slept peacefully on the floor, their trust in her protection absolute. A Hispanic family fashioned a makeshift living room, finding joy in board games amidst the chaos. Their laughter, a defiant counterpoint to the storm's fury, echoed through the shelter.</p>
-
-    <p>The hours ticked by, bringing more seekers of refuge: a sleeping Hispanic man watched over by his vigilant wife; an elderly woman eager to share her entire medical history; a mentally challenged man who, in a bid for normalcy, set up his TV in the bathroom; and a homeless man who humbly requested a hot meal.</p>
-
-    <p>As Helene raged on, the storm outside seemed to mirror the tumult within each of us. Our deepest fears and our greatest capacity for connection were brought to the surface. Huddled together on that long night, we realized a profound truth: we were in this collectively. Our shared experience became a wellspring of strength.</p>
-
-    <p>When dawn finally broke and Helene's fury subsided, it was clear we had weathered more than just a hurricane. We had experienced a powerful reminder of our common humanity. Though we would soon part ways, each of us would carry this night with us, a testament to the unexpected strength found in shared vulnerability.</p>
-
-    <p>This is the essence of community: supporting one another through life's storms and emerging stronger, more connected. As I reflect on that night, I am humbled by the resilience I witnessed and grateful for the opportunity to serve. It reinforced a universal truth: when stripped of our usual comforts and pretenses, we are all simply human, seeking safety, comfort, and understanding.</p>
-
-    <p>In the eye of the storm, we found each other. And in finding each other, we found ourselves.</p>
-    <br/>
-
-    <p><i>To prepare for Hurricane Helene, SGMC Health established a shelter at a local church in Valdosta, Georgia, specifically for people who require oxygen as well as other vulnerable populations. Two resident physicians, Drs. Edusa and Joseph, volunteered to assist with the shelter's operations.</i></p>
-
-    <p><i>Note: All names in this article were replaced with pseudonyms to protect individuals' privacy.</i></p>
+    <p>This year, the expo partnered with the Philadelphia College of Osteopathic Medicine (PCOM) South Georgia to introduce a groundbreaking healthcare exhibit. As part of this initiative, I, along with Dr. Tom and Dr. Silverio-Lopez, presented respectively on skin cancer, complications of diabetes mellitus, and cardiovascular disease prevention.</p>
+  photos:
+    - image: /img/carousel/happy-birthday-rija.jpeg
+      caption: "Happy Birthday Dr. Chaudhary"
+    - image: /img/carousel/jeopardy-team.jpeg
+      caption: "Jeopardy team at Georgia ACP conference, Savannah"
+    - image: /img/carousel/escape-room.jpeg
+      caption: "Code Blue averted: Docs escape (the escape room) without a consult! (Georgia ACP 2024, Savannah)"
+    - image: /img/carousel/brandons-hand.jpeg
+      caption: "Brandons' hand (an expression of how to seize the moment) (Georgia ACP 2024, Savannah) "
+  content2: >
+    <p>Participating in the Sunbelt Agricultural Exposition was an eye-opening experience. It highlighted the intricate connection between agriculture and healthcare, particularly in areas like skin cancer prevention for farmers. Events like these provide a unique opportunity to bridge the gap between these two vital sectors, ensuring that those who feed the world are also taking care of their health.</p>
 photosOfMonth:
   sectionTitle: "Through the Lens: Residency Highlights"
   subTitle: Capturing the Smiles, Milestones, and Unforgettable Moments
