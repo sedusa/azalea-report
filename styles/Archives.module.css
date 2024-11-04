@@ -1,3 +1,16 @@
+.sectionTitle {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.divider {
+  border: none;
+  border-top: 2px dotted var(--text-color);
+  width: 100%;
+  margin: 1rem 0;
+}
+
 .archivesList {
   list-style-type: none;
   padding: 0;
@@ -5,21 +18,27 @@
 
 .archiveLink {
   text-decoration: none;
-  color: #016f53;  /* Matching the signature green color */
+  color: var(--text-color);
   transition: color 0.01s ease;
 }
 
 .archiveLink:hover {
-  color: #015542;
+  color: var(--text-color);
 }
 
 .archiveTitle {
-  font-family: var(--font-inter), sans-serif;  /* Assuming Inter is your main font */
+  font-family: var(--font-inter), sans-serif; 
   font-weight: 600;
   margin: 0;
 }
 
 .archiveDate {
-  color: #666;
+  color: var(--text-color);
   font-size: 0.9rem;
 } 
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+}

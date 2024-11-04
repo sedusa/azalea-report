@@ -32,7 +32,7 @@ const Header = () => {
           </Link>
 
           <nav className={styles.desktopNav}>
-            <Link href='/archives'>Previous Issues</Link>
+            <Link href='/archives'>Archived Issues</Link>
           </nav>
 
           <button

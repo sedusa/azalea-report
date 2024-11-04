@@ -1,7 +1,6 @@
 .sectionTitle {
   color: var(--text-color);
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
   line-height: 1.4;
   margin: 0 0 1rem 0;
 }
@@ -34,6 +33,11 @@
 }
 
 @media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
   .spotlightText {
     font-size: 1.2rem;
   }

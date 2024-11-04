@@ -18,6 +18,7 @@ const Archives = () => {
         column={
           <>
             <h2 className={styles.sectionTitle}>Newsletter Archives</h2>
+            <hr className={styles.divider} />
             <ul className={styles.archivesList}>
               {archives.map((archive, index) => (
                 <li key={index}>
