@@ -6,7 +6,7 @@
 .archiveLink {
   text-decoration: none;
   color: #016f53;  /* Matching the signature green color */
-  transition: color 0.2s ease;
+  transition: color 0.01s ease;
 }
 
 .archiveLink:hover {

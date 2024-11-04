@@ -301,7 +301,7 @@
   font-size: 1.3rem;
   margin-top: 10px;
   padding: 0.5rem 1rem;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.01s ease;
 }
 
 .toggleButton:hover {
@@ -482,7 +482,7 @@
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   text-align: left;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.01s ease;
 }
 
 .recentSuccessToggleButton:hover {
@@ -604,7 +604,7 @@
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   text-align: left;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.01s ease;
 }
 
 .communityServiceCornerToggleButton:hover {

@@ -6,7 +6,7 @@
   height: 60px;
   background-color: var(--header-bg);
   z-index: 1000;
-  transition: all 0.3s ease;
+  transition: all 0.01s ease;
 }
 
 .headerContent {
@@ -27,7 +27,10 @@
 }
 
 .headerLogo {
-  transform: scale(4.0);
+  transform: scale(6.0);
+  display: flex;
+  align-items: center;
+  color: var(--primary-color);
 }
 
 .headerTitle {
@@ -56,7 +59,7 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  transition: color 0.3s ease;
+  transition: color 0.01s ease;
 }
 
 .desktopNav a:hover {
@@ -67,7 +70,7 @@
   display: none;
   background: none;
   border: none;
-  color: #016f53;
+  color: var(--primary-color);
   cursor: pointer;
   padding: 5px;
 }
@@ -78,7 +81,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #fefbf3;
+  background-color: var(--background-color);
   z-index: 2000;
   display: flex;
   flex-direction: column;
@@ -92,7 +95,7 @@
   right: 20px;
   background: none;
   border: none;
-  color: #016f53;
+  color: var(--primary-color);
   cursor: pointer;
   padding: 5px;
 }
@@ -107,16 +110,16 @@
 }
 
 .mobileNav a {
-  color: #016f53;
+  color: var(--primary-color);
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
-  transition: color 0.3s ease;
+  transition: color 0.01s ease;
 }
 
 .mobileNav a:hover {
-  color: #014d3a;
+  color: var(--link-hover-color);
 }
 
 .container {

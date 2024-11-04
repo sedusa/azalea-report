@@ -78,7 +78,7 @@
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   text-align: left;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.01s ease;
 }
 
 .recentSuccessToggleButton:hover {

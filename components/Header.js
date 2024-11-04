@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Logo from '@components/Logo';
 import { FiMenu, FiX } from 'react-icons/fi';
 import styles from '../styles/Header.module.css';
 
@@ -23,22 +24,18 @@ const Header = () => {
     <>
       <header className={styles.fixedHeader}>
         <div className={styles.headerContent}>
-          <Link href="/" className={styles.headerLeft}>
-            <Image
-              src="/img/azalea.svg"
-              alt="azalea-logo"
-              width={40}
-              height={40}
-              className={styles.headerLogo}
-            />
+          <Link href='/' className={styles.headerLeft}>
+            <div className={styles.headerLogo}>
+              <Logo />
+            </div>
             <span className={styles.headerTitle}>Azalea Report</span>
           </Link>
-          
+
           <nav className={styles.desktopNav}>
-            <Link href="/archives">Previous Issues</Link>
+            <Link href='/archives'>Previous Issues</Link>
           </nav>
-          
-          <button 
+
+          <button
             className={styles.mobileMenuButton}
             onClick={() => setIsMenuOpen(true)}
           >
@@ -49,14 +46,16 @@ const Header = () => {
 
       {isMenuOpen && (
         <div className={styles.mobileMenu}>
-          <button 
+          <button
             className={styles.closeButton}
             onClick={() => setIsMenuOpen(false)}
           >
             <FiX size={24} />
           </button>
           <nav className={styles.mobileNav}>
-            <Link href="/archives" onClick={() => setIsMenuOpen(false)}>Previous Issues</Link> 
+            <Link href='/archives' onClick={() => setIsMenuOpen(false)}>
+              Previous Issues
+            </Link>
           </nav>
         </div>
       )}
