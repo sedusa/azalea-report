@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import styles from '../../styles/BirthdaySection.module.css';
+import styles from '@styles/BirthdaySection.module.css';
 
 const BirthdaySection = ( {birthdays }) => {
   const [currentMonthBirthdays, setCurrentMonthBirthdays] = useState([]);

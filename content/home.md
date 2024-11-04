@@ -145,7 +145,7 @@ photosOfMonth:
     - image: /img/carousel/pickle-ball.jpeg
       caption: "Pickleball with Dr. Hasan"
 events:
-  sectionTitle:
+  sectionTitle: Upcoming Events
   eventsList:
     - date: Oct 14, 2024
       description: First day of interviews

@@ -1,4 +1,4 @@
-import styles from '../../styles/ProgramDirector.module.css';
+import styles from '@styles/ProgramDirector.module.css';
 
 const ProgramDirector = ({
   programDirector: {

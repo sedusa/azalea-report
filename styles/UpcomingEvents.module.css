@@ -1,9 +1,21 @@
+.sectionTitle {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.4;
+  margin: 0 0 1rem 0;
+}
+
 .eventList {
   font-size: 1.3rem;
   padding-left: 20px;
 }
 
 @media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
   .eventList {
     font-size: 1.2rem;
   }

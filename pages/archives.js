@@ -26,7 +26,7 @@ const Archives = () => {
                     className={styles.archiveLink}
                   >
                     <p className={styles.archiveTitle}>
-                      - {archive.title} - {archive.date}
+                      {archive.title} - {archive.date}
                     </p>
                   </a>
                 </li>
