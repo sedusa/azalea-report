@@ -43,7 +43,7 @@
   color: var(--icon-color);
   cursor: pointer;
   display: flex;
-  font-size: 1.5rem;
+  font-size: 24px;
   height: 3.5rem;
   justify-content: center;
   min-height: 3.5rem;
@@ -55,8 +55,9 @@
   z-index: 1000;
 
   & svg {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
   }
 }
 
@@ -82,7 +83,7 @@
   .themeToggle {
     -webkit-tap-highlight-color: transparent;
     -webkit-text-size-adjust: 100%;
-    font-size: 1.5rem;
+    font-size: 24px;
     height: 3.5rem;
     min-height: 3.5rem;
     min-width: 3.5rem;
@@ -90,8 +91,9 @@
     width: 3.5rem;
 
     & svg {
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
     }
   }
 }

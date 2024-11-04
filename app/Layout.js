@@ -32,7 +32,7 @@ export default function Layout({ children }) {
         onClick={toggleTheme}
         aria-label='Toggle theme'
       >
-        {darkMode ? <FaSun /> : <FaMoon />}
+        {darkMode ? <FaSun size={24} /> : <FaMoon size={24} />}
       </button>
     </div>
   );
