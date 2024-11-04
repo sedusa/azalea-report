@@ -51,19 +51,19 @@
   text-align: left;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0;
 }
 
 .bannerTitle {
   color: white;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
   line-height: 1.2;
   margin: 0;
 }
 
 .bannerSubtitle {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: normal;
   margin: 0;
   color: white;
@@ -73,27 +73,30 @@
 .bannerMetadata {
   display: flex;
   flex-direction: column;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: white;
-  margin-top: 4px;
 }
 
 /* Media Queries */
 @media (max-width: 1024px) {
   .bannerTitle {
-    font-size: 48px;
+    font-size: 2.3rem;
   }
 
   .bannerSubtitle {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 
   .bannerMetadata {
-    font-size: 18px;
+    font-size: 1.3rem;
   }
 }
 
 @media (max-width: 768px) {
+  .bannerContainer {
+    margin-top: 40px;
+  }
+
   .bannerImageContainer {
     aspect-ratio: 3/2;
   }
@@ -102,19 +105,20 @@
     bottom: 24px;
     left: 24px;
     width: 90%;
-    gap: 4px;
+    gap: 0;
   }
 
   .bannerTitle {
-    font-size: 36px;
+    font-size: 2.25rem;
   }
 
   .bannerSubtitle {
-    font-size: 20px;
+    display: none;
+    font-size: 1.3rem;
   }
 
   .bannerMetadata {
-    font-size: 16px;
+    font-size: 1.2rem;
   }
 }
 
@@ -123,19 +127,19 @@
     bottom: 16px;
     left: 16px;
     width: 95%;
-    gap: 4px;
+    gap: 0;
   }
 
   .bannerTitle {
-    font-size: 28px;
+    font-size: 1.75rem;
   }
 
   .bannerSubtitle {
     display: none;
-    font-size: 16px;
+    font-size: 1.2rem;
   }
 
   .bannerMetadata {
-    font-size: 14px;
+    font-size: 1.15rem;
   }
 }
