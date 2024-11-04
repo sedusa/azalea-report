@@ -3,6 +3,7 @@ import styles from '@styles/Musings.module.css';
 const Musings= ({
   musings: {
     sectionTitle,
+    title,
     image,
     author,
     content
@@ -11,13 +12,16 @@ const Musings= ({
   return (
     <>
       <h2 className={styles.sectionTitle}>{sectionTitle}</h2>
-      <div className={styles.spotlightContainer}>
-        <img src={image} alt={'musings-image'} className={styles.spotlightImage} />
+      <div className={styles.musingsContainer}>
+        <h3 className={styles.musingsTitle}>{title}</h3>
+        <div className={styles.musingsSubTitle}>
+          By: {author}
+        </div>
+        <img src={image} alt={'musings-image'} className={styles.musingsImage} />
         <div
-            className={styles.text}
+            className={styles.musingsText}
             dangerouslySetInnerHTML={{ __html: content }}
           />
-        <h4 className={styles.text}><i>By:</i> {author}</h4>
       </div>
     </>
   );

@@ -2,31 +2,40 @@
   color: var(--text-color);
   font-family: 'Montserrat', sans-serif;
   line-height: 1.4;
-  margin: 0 0 1rem 0;
+  margin: 1rem auto;
 }
 
-.spotlightContainer {
+.musingsContainer {
   background-color: var(--accent-color);
   border-radius: 8px;
   padding: 1.5rem;
 }
 
-.spotlightImage {
+.musingsImage {
   border-radius: 4px;
   height: auto;
-  margin-bottom: 1rem;
   object-fit: cover;
   width: 100%;
 }
 
-.spotlightName {
-  color: var(--primary-color);
+.musingsTitle {
+  color:;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
-  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  font-weight: bold;
+  margin: 0;
 }
 
-.spotlightText {
+.musingsSubTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.4;
+  margin: 0.2rem 0 1.3rem;
+}
+
+.musingsText {
   font-size: 1.3rem;
   line-height: 1.5;
   color: var(--text-color);
@@ -37,8 +46,8 @@
     font-size: 1.5rem;
     margin-bottom: 1rem;
   }
-  
-  .spotlightText {
+
+  .musingsText {
     font-size: 1.2rem;
   }
 }

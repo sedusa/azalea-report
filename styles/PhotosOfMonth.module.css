@@ -1,14 +1,12 @@
 .lensSectionTitle {
   font-family: 'Montserrat', sans-serif;
   line-height: 1.4;
-  margin: 0 0 0.5rem 0;
+  margin: 1rem auto;
 }
 
 .lensSectionSubTitle {
-  color: #016f53;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem; 
-  font-weight: bold;
   line-height: 1.4;
   margin: 0 0 1rem 0;
 }

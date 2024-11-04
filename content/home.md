@@ -83,7 +83,8 @@ recentSuccess:
     <p>Our residents shone brightly at the Georgia ACP conference in Savannah! Poster presenters wowed audiences with their research and clinical insights, while our Jeopardy team - <strong>Drs. McSweeney, Silverio-Lopez, and Mohan</strong> - clinched an impressive 5th place out of 15, surpassing several highly-ranked programs.
     The SGMC Internal Medicine Residency Program couldn't be prouder of all participants. Their outstanding performance has not only brought recognition to our program but also set a new benchmark for future residents. As we celebrate this year's achievements, we're already excited for an even stronger showing next year. Strong work 💪🏼 everyone!</p><br/>
 musings:
-  sectionTitle: Musings Of A Resident
+  sectionTitle: "Notes from the White Coat"
+  title: Musings Of A Resident
   image: /img/musings-november.jpeg
   author: Hala Sharma, PGY-2
   content: >
