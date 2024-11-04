@@ -18,6 +18,7 @@ import BirthdaySection from '@components/sections/BirthdaySection';
 import ThingsToDo from '@components/sections/ThingsToDo';
 import NewsFromClinic from '@components/sections/NewsFromClinic';
 import WellnessCorner from '@components/sections/WellnessCorner';
+import Podcast from '@/components/sections/Podcast';
 
 export default function Home() {
   const {
@@ -35,6 +36,7 @@ export default function Home() {
     thingsToDo,
     newsFromClinic,
     wellnessCorner,
+    podcast,
   } = attributes;
 
   return (
@@ -50,6 +52,7 @@ export default function Home() {
       <SingleColumnLayout column={<Musings musings={musings} />} />
       <SingleColumnLayout column={<RecentSuccess recentSuccess={recentSuccess} />} />
       <SingleColumnLayout column={<CommunityService communityServiceCorner={communityServiceCorner} />} />
+      <SingleColumnLayout column={<Podcast podcast={podcast} />} />
       <SingleColumnLayout column={<PhotosOfTheMonth photosOfMonth={photosOfMonth} />} />
       <TwoColumnLayout
         leftColumn={<UpcomingEvents events={events} />}

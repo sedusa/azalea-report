@@ -1,0 +1,39 @@
+.sectionTitle {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.4;
+  margin: 1rem auto;
+}
+
+.podcastTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: bold;
+  margin: 0;
+}
+
+.podcastSubtitle {
+  color: #016f53;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 0.2rem 0 1.3rem;
+}
+
+.fallbackLink {
+  margin-top: 0 !important;
+  font-size: 1.1rem;
+}
+
+.fallbackLink p {
+  margin-top: 0 !important;
+}
+
+.fallbackLink a {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+.fallbackLink a:hover {
+  opacity: 0.8;
+}

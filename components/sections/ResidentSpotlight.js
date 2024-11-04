@@ -2,6 +2,7 @@ import styles from '@styles/ResidentSpotlight.module.css';
 
 const ResidentSpotlight = ({
   spotlight: {
+    sectionTitle,
     image,
     name,
     birthplace,
@@ -9,11 +10,12 @@ const ResidentSpotlight = ({
     favoriteDish,
     interests,
     postResidencyPlans,
+    wordsOfWisdom
   },
 }) => {
   return (
     <>
-      <h2 className={styles.sectionTitle}>Resident Spotlight</h2>
+      <h2 className={styles.sectionTitle}>{sectionTitle}</h2>
       <div className={styles.spotlightContainer}>
         <img src={image} alt={name} className={styles.spotlightImage} />
         <h3 className={styles.spotlightName}>{name}</h3>
@@ -31,6 +33,9 @@ const ResidentSpotlight = ({
         </p>
         <p className={styles.spotlightText}>
           <strong>Post-residency plans:</strong> {postResidencyPlans}
+        </p>
+        <p className={styles.spotlightText}>
+          <strong>Advice to the incoming class:</strong> {wordsOfWisdom}
         </p>
       </div>
     </>

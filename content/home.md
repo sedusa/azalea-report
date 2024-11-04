@@ -15,18 +15,27 @@ program:
   sgmcImage: /img/sgmc.jpg
   sgmcImageCaption: Aerial view of SGMC in Valdosta, GA
   statistics:
-    sectionTitle: Program Statistics
+    sectionTitle: Interesting Facts
     residentCount: 24
     countryCount: 10
     languageCount: 12
+    partnership: "SGMC's internal medicine residency program is a partnership with Mercer University School of Medicine (MUSM)"
+    continuityClinic: The program operates a continuity clinic at SGMC Internal Medicine on Park Avenue in Valdosta. This clinic allows residents to learn how to manage outpatient conditions and follow patients over time.
 spotlight:
-  name: Michael Heron, MD
-  image: /img/michael-heron-md.jpeg
-  birthplace: Kingston, Jamaica
-  funFact: I run the 100m in 11 seconds when I was 15 🏃🏾
-  favoriteDish: Oxtails or Shrimp Alfredo
-  interests: Soccer & fitness ("nothing beats a good workout after a long day of work")
-  postResidencyPlans: I aspire to assume leadership roles within internal medicine and contribute to advancements in clinical guidelines and patient care.
+  sectionTitle: Resident Spotlight
+  name: Dwayne Mohan, MD
+  image: /img/dwayne-mohan-md.jpeg
+  birthplace: Jamaica
+  funFact: I can cook 3 different types of cuisine 🍛
+  favoriteDish: Sushi is my go to. Love Uni
+  interests: I like trying new things and experiences. Surprise me.
+  postResidencyPlans: Operate a local clinic and hopefully have a community outreach program in place to give back.
+  wordsOfWisdom: "Keep moving forward! Everyone had to start somewhere, though that somewhere may oftentimes be the same place. Your beginning is your own. Your experiences will be your own. Conquer it in your own way! We may be the same, but we are also very different. Embrace your differences, learn from everyone around you, and always remember: Keep moving forward!"
+podcast:
+  sectionTitle: Podcasts
+  title: "What Brings You In Today? - Featured Podcasts"
+  subtitle: A Podcast from SGMC Health
+  description: "What Brings You In Today? is an insightful podcast from SGMC Health where expert physicians and medical professionals dive into the world of healthcare. Each episode features seasoned healthcare professionals breaking down complex medical topics into easily digestible insights."
 tribalCouncil:
   content: >
     The PAR tribal system aims to act as a liaison between residents and GME focusing on resident wellness, building camaraderie and improving the resident experience. The PAR resident body recently voted for Dr Ghida Akdhar as the new Vice President, with Dr Danhely Cruz continuing on as our president. We thank Dr Sheri Walls for all her hardwork and dedication in advocating for the resident body and improving the resident experience. 
@@ -83,7 +92,7 @@ recentSuccess:
     <p>Our residents shone brightly at the Georgia ACP conference in Savannah! Poster presenters wowed audiences with their research and clinical insights, while our Jeopardy team - <strong>Drs. McSweeney, Silverio-Lopez, and Mohan</strong> - clinched an impressive 5th place out of 15, surpassing several highly-ranked programs.
     The SGMC Internal Medicine Residency Program couldn't be prouder of all participants. Their outstanding performance has not only brought recognition to our program but also set a new benchmark for future residents. As we celebrate this year's achievements, we're already excited for an even stronger showing next year. Strong work 💪🏼 everyone!</p><br/>
 musings:
-  sectionTitle: "Notes from the White Coat"
+  sectionTitle: "House Staff Diaries"
   title: Musings Of A Resident
   image: /img/musings-november.jpeg
   author: Hala Sharma, PGY-2

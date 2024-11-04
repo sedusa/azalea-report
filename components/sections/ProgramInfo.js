@@ -10,7 +10,9 @@ const ProgramInfo = ({
       sectionTitle,
       residentCount,
       countryCount,
-      languageCount
+      languageCount,
+      partnership,
+      continuityClinic
     }
   },
 }) => {
@@ -34,6 +36,12 @@ const ProgramInfo = ({
         <li className={styles.listItem}>
           Number of languages: We speak {languageCount} different
           languages
+        </li>
+        <li className={styles.listItem}>
+          Partnership:  {partnership}
+        </li>
+        <li className={styles.listItem}>
+          Continuity clinic:  {continuityClinic}
         </li>
       </ul>
     </>
