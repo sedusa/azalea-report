@@ -109,7 +109,7 @@ musings:
 communityServiceCorner:
   sectionTitle: Community Service Corner
   title: Addressing Farmer Health at the 46th Sunbelt Agricultural Exposition
-  author: Samuel Edusa, MD
+  author: 
   image: /img/ag-expo-aerial.jpeg
   imageCaption: "Aerial view of the expo (Source: Farm Monitor)"
   content: >
@@ -119,20 +119,56 @@ communityServiceCorner:
 
     <p>This year, the expo partnered with the Philadelphia College of Osteopathic Medicine (PCOM) South Georgia to introduce a groundbreaking healthcare exhibit. As part of this initiative, I, along with Dr. Tom and Dr. Silverio-Lopez, presented respectively on skin cancer, complications of diabetes mellitus, and cardiovascular disease prevention.</p>
   photos:
-    - image: /img/carousel/happy-birthday-rija.jpeg
-      caption: "Happy Birthday Dr. Chaudhary"
-    - image: /img/carousel/jeopardy-team.jpeg
-      caption: "Jeopardy team at Georgia ACP conference, Savannah"
-    - image: /img/carousel/escape-room.jpeg
-      caption: "Code Blue averted: Docs escape (the escape room) without a consult! (Georgia ACP 2024, Savannah)"
-    - image: /img/carousel/brandons-hand.jpeg
-      caption: "Brandons' hand (an expression of how to seize the moment) (Georgia ACP 2024, Savannah) "
+    - image: /img/moultrie/grounds.jpeg
+      caption: "Expo grounds"
+    - image: /img/moultrie/cows.jpeg
+      caption: "Exhibit showcasing cows"
+    - image: /img/moultrie/mariya.jpeg
+      caption: "Dr. Mariya Tom"
+    - image: /img/moultrie/rose.jpeg
+      caption: "Dr. Silverio-Lopez presented on cardiovascular disease prevention"
+    - image: /img/moultrie/edusa.jpeg
+      caption: "Dr. Edusa presented on skin cancer"  
+    - image: /img/moultrie/mariya-presenting.jpeg
+      caption: "Dr. Tom presenting on complications of Diabetes mellitus" 
   content2: >
     <p>Participating in the Sunbelt Agricultural Exposition was an eye-opening experience. It highlighted the intricate connection between agriculture and healthcare, particularly in areas like skin cancer prevention for farmers. Events like these provide a unique opportunity to bridge the gap between these two vital sectors, ensuring that those who feed the world are also taking care of their health.</p>
 photosOfMonth:
   sectionTitle: "Through the Lens: Residency Highlights"
   subTitle: Capturing the Smiles, Milestones, and Unforgettable Moments
   photos:
+    - image: /img/carousel/halloween-1.jpeg
+      caption: "Guess who's behind the mask?"
+    - image: /img/carousel/halloween-2.jpeg
+      caption: "Halloween at Dr. Bias' house"
+    - image: /img/carousel/halloween-3.jpeg
+      caption: "Gotta love those costumes"
+    - image: /img/carousel/beale-balloon.jpeg
+      caption: "Dr. Beale trying to pop a balloon 🤣"
+    - image: /img/carousel/brandon-karen-hope.jpeg
+      caption: "Loofah & Soap"
+    - image: /img/carousel/halloween-boxer.jpeg
+      caption: "Heavy hitter"
+    - image: /img/carousel/halloween-count-cat.jpeg
+      caption: "Very cool costumes guys"
+    - image: /img/carousel/halloween-security.jpeg
+      caption: "Halloween security"
+    - image: /img/carousel/halloween-taylor.jpeg
+      caption: "Drs. White & Martin! Nice costumes!"
+    - image: /img/carousel/halloween-witches.jpeg
+      caption: "Awesome customes 🎃🧙‍♀️"
+    - image: /img/carousel/kinley-baby-shower-1.jpeg
+      caption: "Dr. Shook-Chacon's baby shower"
+    - image: /img/carousel/kinley-food.jpeg
+      caption: "Dr. Shook-Chacon's baby shower - All that food! 🍲 Yum!"
+    - image: /img/carousel/patrick-skeleton.jpeg
+      caption: "Dr. Joseph discharging his patient"
+    - image: /img/carousel/trunk-treat-1.jpeg
+      caption: "Handing out candy at the SGMC Health employee trunk or treat! 👻🎃"
+    - image: /img/carousel/trunk-treat-2.jpeg
+      caption: "SGMC Health Employee Trunk or Treat Group Photo! 👻🎃"
+    - image: /img/carousel/trunk-treat-3.jpeg
+      caption: "Dr. Beale at the SGMC Health Employee Trunk or Treat! 👻🎃"
     - image: /img/carousel/happy-birthday-rija.jpeg
       caption: "Happy Birthday Dr. Chaudhary"
     - image: /img/carousel/jeopardy-team.jpeg
