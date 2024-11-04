@@ -40,8 +40,8 @@
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
-  background: var(--primary-color);
-  color: #ffffff;
+  background: var(--theme-toggle-bg);
+  color: var(--icon-color);
   border: none;
   cursor: pointer;
   display: flex;
@@ -55,8 +55,7 @@
 
 .themeToggle:hover {
   transform: scale(1.1);
-  background: var(--link-hover-color);
-  color: #ffffff;
+  background: var(--theme-toggle-hover-bg);
 }
 
 @media (max-width: 768px) {

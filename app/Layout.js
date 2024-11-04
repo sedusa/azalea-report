@@ -24,18 +24,16 @@ export default function Layout({ children }) {
     <div className={styles.pageBackground}>
       <Header />
       <div className={styles.container}>
-        <main className={styles.main}>
-          {children}
-        </main>
-        <button 
-          className={styles.themeToggle}
-          onClick={toggleTheme}
-          aria-label="Toggle theme"
-        >
-          {darkMode ? <FaSun /> : <FaMoon />}
-        </button>
+        <main className={styles.main}>{children}</main>
         <Footer />
       </div>
+      <button
+        className={styles.themeToggle}
+        onClick={toggleTheme}
+        aria-label='Toggle theme'
+      >
+        {darkMode ? <FaSun /> : <FaMoon />}
+      </button>
     </div>
   );
 }
