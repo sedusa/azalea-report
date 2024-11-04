@@ -3,9 +3,3 @@
   font-size: 1.3rem;
   color: #016f53;
 }
-
-@media (max-width: 768px) {
-  .signature {
-    font-size: 1.6rem;
-  }
-}

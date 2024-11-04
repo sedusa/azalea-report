@@ -10,6 +10,7 @@ import ProgramInfo from '@components/sections/ProgramInfo';
 import ChiefsCorner from '@components/sections/ChiefsCorner';
 import ProgramDirector from '@components/sections/ProgramDirector';
 import RecentSuccess from '@components/sections/RecentSuccess';
+import Musings from '@components/sections/Musings';
 import CommunityService from '@components/sections/CommunityService';
 import PhotosOfTheMonth from '@components/sections/PhotosOfMonth';
 import UpcomingEvents from '@components/sections/UpcomingEvents';
@@ -27,6 +28,7 @@ export default function Home() {
     chiefsCorner,
     programDirector,
     recentSuccess,
+    musings,
     communityServiceCorner,
     photosOfMonth,
     events,
@@ -45,6 +47,7 @@ export default function Home() {
       />
       <SingleColumnLayout column={<ProgramDirector programDirector={programDirector} />} />
       <SingleColumnLayout column={<ChiefsCorner chiefsCorner={chiefsCorner} />} />
+      <SingleColumnLayout column={<Musings musings={musings} />} />
       <SingleColumnLayout column={<RecentSuccess recentSuccess={recentSuccess} />} />
       <SingleColumnLayout column={<CommunityService communityServiceCorner={communityServiceCorner} />} />
       <SingleColumnLayout column={<PhotosOfTheMonth photosOfMonth={photosOfMonth} />} />
