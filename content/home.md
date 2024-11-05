@@ -137,24 +137,63 @@ communityServiceCorner:
     <p>See you all at next year's event!</p> 
 culturosity:
   sectionTitle: Culturosity
-  subtitle: A bite-sized journey through cultures, one story at a time
+  description: Culturosity is a bite-sized journey through our residency community's cultures, one story at a time. This weekly column spotlights diverse traditions, celebrations, and daily lives, revealing the rich cultural tapestry that fosters growth within our community.
+  title: "Gateway to Golden Ghana: Where Proverbs Dance with Paradise 🇬🇭" 
   author: Samuel Edusa, MD 
   coverImage: /img/akwaaba.jpeg
+  imageCaption: Akwaaba = Welcome To Ghana
   content: >
-    <p>Akwaaba from Ghana! 🇬🇭</p>
-    <p><i>Ɛte sɛn?</i> (How are you?) Welcome to my corner of West Africa, where tradition dances with modernity in the vibrant streets of our cities and villages, and where <i>Bɔkɔɔ</i> (Take it easy) is more than just a phrase – it's a way of life.</p>
+    <p>In the heart of West Africa, where golden stools once cradled kings and warrior queens commanded armies, the Akan (a tribe in Ghana) people's wisdom flows like the precious dust that made their ancestors legendary. "Knowledge is like a baobab tree; no one person's arms can fully embrace it," their elders say, their words still echoing through grand palaces where ancient and modern Ghana dance as one.</p>
 
-    <p>In my homeland Ghana, known as the "Gateway to Africa," life moves to the rhythm of <i>dunun</i> drums and the warmth of the endless summer sun. Here in Accra, our capital city, the aroma of jollof rice (which we proudly claim to make better than our Nigerian neighbors!) mingles with the salty breeze from the Gulf of Guinea. Market women, whom we respectfully call <i>Mama</i>, balance colorful baskets of plantains, garden eggs, and cassava atop their heads with remarkable grace, calling out <i>Bra bɛfa!</i> (Come and buy!) to passing customers.</p>
+    <p><i>"Ɛte sɛn?",</i> (How are you?) is the melodious greeting that floats through the air, where life moves to the rhythm of dunun drums and basks in the warmth of endless summer sun. In Ghana's bustling capital Accra, multiple languages create a beautiful symphony - English weaves through rapid-fire Twi (the most widely spoken Akan language), melodious Ga, and rhythmic Ewe, while the aroma of jollof rice (claimed by Ghanaians as the world's finest!) drifts from local chop bars to meet the salty breeze from the Gulf of Guinea.</p>
+
+    <div class="imageGrid">
+      <div class="imageColumn">
+        <img src="/img/culturosity/jollof.jpeg" alt="Jollof rice">
+        <span class="imageCaption">Ghanaian jollof rice (claimed by Ghanaians as the world's finest!)</span>
+      </div>
+    </div>
 
     <p>We are a people who speak with both words and cloth - our traditional kente fabric, originally worn by Ashanti royalty, tells stories through its intricate patterns. The <i>Adwinasa</i> pattern, meaning "all motifs are exhausted," represents excellence and creativity. When you hear someone say <i>Medaase</i> (thank you), it's often accompanied by a slight bow and sometimes followed by <i>Ɛyɛ</i> (It is good) - small gestures that speak volumes about our culture of respect and gratitude.</p>
 
-    <p>Our markets aren't just places of commerce; they're the heartbeat of our communities where <i>Yɛma mo akye</i> (Good morning to you all) echoes through the stalls at daybreak. At Makola Market, the largest in Accra, haggling starts with <i>Ei, sister, woti bo sen?</i> (How much is your price?), and a simple shopping trip can turn into an hour of friendly banter and catching up on <i>Amaneɛ</i> (neighborhood news). Don't be surprised if a stranger calls you <i>Sister</i> or <i>Brother</i> – in Ghana, everyone is family.</p>
+    <p>At the legendary Makola Market, traders balance vibrant baskets with remarkable grace, their calls of <i>"Bra bɛfa!"</i> (Come and buy!) mixing with friendly haggling and laughter. Market women, respectfully addressed as "Mama," display everything from garden-fresh vegetables to the spectacular kente cloth. The Adwinasa pattern of kente, meaning "all motifs are exhausted," tells stories of excellence through its intricate designs, each thread woven with history.</p>
 
-    <p>In our homes, when someone sneezes, you'll hear <i>Nkwa</i> (life), wishing them good health, and meals always begin with <i>Mommɛto nsa</i> (let's wash our hands). The evening air fills with the sound of children playing <i>Ampe</i> (a traditional jumping game) and calls of <i>Mama/Papa, me kɔ da</i> (Mom/Dad, I'm going to sleep) as the sun sets.</p>
+     <div class="imageGrid">
+      <div class="imageColumn">
+        <img src="/img/culturosity/kente-weaving.jpeg" alt="Kente weaving">
+        <span class="imageCaption">Kente weaving</span>
+      </div>
+      <div class="imageColumn">
+        <img src="/img/culturosity/fabric-seller.jpeg" alt="Fabric seller">
+        <span class="imageCaption">Fabric seller at a local market</span>
+      </div>
+    </div>
 
-    <p>Did you know? The Ghanaian handshake, which we call <i>Fɛw</i>, is a unique three-part greeting that starts formal, transitions to casual, and ends with a finger snap - a small but distinctive part of our daily social fabric. And if someone tells you <i>Wo ho ye fɛ</i> (You're beautiful/handsome), respond with <i>Wo nso</i> (You too) to show proper Ghanaian courtesy!</p>
+    <p>In the evening, as the sun paints the sky over Lake Volta, children's laughter rings out during games of ampe, their joy infectious. Cape Coast Castle, standing stark white against the blue horizon, tells powerful stories of the past, while Labadi Beach pulses with modern highlife music and the tempting aroma of grilled tilapia.</p>
 
-    <p><i>Me da wo ase!</i> (Thank you!)</p>
+    <div class="imageGrid">
+      <div class="imageColumn">
+        <img src="/img/culturosity/ampe.jpeg" alt="Children playing ampe">
+        <span class="imageCaption">Children playing ampe</span>
+      </div>
+      <div class="imageColumn">
+        <img src="/img/culturosity/labadi-beach.jpeg" alt="Beautiful labadi beach">
+        <span class="imageCaption">Labadi beach</span>
+      </div>
+    </div>
+
+    <p>The Ghanaian handshake, known as <i>"Fɛw,"</i> captures the spirit of this magical land - starting formal, warming to casual, and ending with a playful finger snap. When someone offers a heartfelt <i>"Wo ho ye fɛ"</i> (You're beautiful/handsome), the proper response is <i>"Wo nso"</i> (You too) - a small but meaningful exchange that exemplifies Ghanaian charm.</p>
+
+     <div class="imageGrid">
+      <div class="imageColumn">
+        <img src="/img/culturosity/castle.jpeg" alt="Elmina Castle">
+        <span class="imageCaption">Elmina Castle</span>
+      </div>
+    </div>
+
+    <p>In the cool of the evening, when calls of <i>"Me kɔ da"</i> (I'm going to sleep) signal day's end, the magic of Ghana lingers like a sweet aftertaste of ripe pineapple. Here, strangers become family, and time slows to the peaceful pace of <i>"Bɔkɔɔ"</i> (Take it easy) - not just a phrase, but the very heartbeat of Ghanaian life.</p>
+
+    <p><i>"Me da wo ase!"</i> (Thank you!) for experiencing this glimpse into a land where tradition dances with tomorrow, and every sunrise brings new adventures wrapped in age-old wisdom.</p>
 photosOfMonth:
   sectionTitle: "Through the Lens: Residency Highlights"
   subTitle: Capturing the Smiles, Milestones, and Unforgettable Moments

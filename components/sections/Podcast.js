@@ -14,7 +14,7 @@ const Podcast = ({
           <div className={styles.text}>{episode.synopsis}</div>
           <iframe
             style={{ borderRadius: '12px', marginTop: '10px' }}
-            src='https://open.spotify.com/embed/episode/68KNFYvib3spPv0rqB56aB?utm_source=generator&theme=0'
+            src={episode.iframeUrl}
             width='100%'
             height='352'
             frameBorder='0'
@@ -23,16 +23,14 @@ const Podcast = ({
             loading='lazy'
           />
           <div className={styles.fallbackLink}>
-            <p>
-              Can't see the player?{' '}
-              <a
-                href='https://open.spotify.com/episode/68KNFYvib3spPv0rqB56aB?si=YyhvygV2T9G3jpyiQG0OJg'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                Listen to Episode 5 with Dr. Joseph Hayes on Spotify
-              </a>
-            </p>
+            Can&apos;t see the player?
+            <a
+              href={episode.noPlayerLink}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              {episode.noPlayerLinkText}
+            </a>
           </div>
         </div>
       ))}
