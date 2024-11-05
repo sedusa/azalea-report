@@ -118,6 +118,27 @@ communityServiceCorner:
     <p>The Sunbelt Ag Expo is a massive undertaking, spanning 93 acres and featuring over 850 exhibitors. It’s a melting pot of farmers, educators, policymakers, and ag-enthusiasts, all gathered to witness the latest innovations in agriculture. From cutting-edge technology demonstrations to the naming of the Southeastern Farmer of the Year, the expo is a celebration of all things agriculture.</p>
 
     <p>This year, the expo partnered with the Philadelphia College of Osteopathic Medicine (PCOM) South Georgia to introduce a groundbreaking healthcare exhibit. As part of this initiative, I, along with Dr. Tom and Dr. Silverio-Lopez, presented respectively on skin cancer, complications of diabetes mellitus, and cardiovascular disease prevention.</p>
+
+culturosity:
+  sectionTitle: Culturosity
+  subtitle: A bite-sized journey through cultures, one story at a time
+  author: Samuel Edusa, MD
+  coverImage: /img/akwaaba.jpeg
+  content: >
+    <p>Akwaaba from Ghana! 🇬🇭</p>
+    <p><i>Ɛte sɛn?</i> (How are you?) Welcome to my corner of West Africa, where tradition dances with modernity in the vibrant streets of our cities and villages, and where <i>Bɔkɔɔ</i> (Take it easy) is more than just a phrase – it's a way of life.</p>
+
+    <p>In my homeland Ghana, known as the "Gateway to Africa," life moves to the rhythm of <i>dunun</i> drums and the warmth of the endless summer sun. Here in Accra, our capital city, the aroma of jollof rice (which we proudly claim to make better than our Nigerian neighbors!) mingles with the salty breeze from the Gulf of Guinea. Market women, whom we respectfully call <i>Mama</i>, balance colorful baskets of plantains, garden eggs, and cassava atop their heads with remarkable grace, calling out <i>Bra bɛfa!</i> (Come and buy!) to passing customers.</p>
+
+    <p>We are a people who speak with both words and cloth - our traditional kente fabric, originally worn by Ashanti royalty, tells stories through its intricate patterns. The <i>Adwinasa</i> pattern, meaning "all motifs are exhausted," represents excellence and creativity. When you hear someone say <i>Medaase</i> (thank you), it's often accompanied by a slight bow and sometimes followed by <i>Ɛyɛ</i> (It is good) - small gestures that speak volumes about our culture of respect and gratitude.</p>
+
+    <p>Our markets aren't just places of commerce; they're the heartbeat of our communities where <i>Yɛma mo akye</i> (Good morning to you all) echoes through the stalls at daybreak. At Makola Market, the largest in Accra, haggling starts with <i>Ei, sister, woti bo sen?</i> (How much is your price?), and a simple shopping trip can turn into an hour of friendly banter and catching up on <i>Amaneɛ</i> (neighborhood news). Don't be surprised if a stranger calls you <i>Sister</i> or <i>Brother</i> – in Ghana, everyone is family.</p>
+
+    <p>In our homes, when someone sneezes, you'll hear <i>Nkwa</i> (life), wishing them good health, and meals always begin with <i>Mommɛto nsa</i> (let's wash our hands). The evening air fills with the sound of children playing <i>Ampe</i> (a traditional jumping game) and calls of <i>Mama/Papa, me kɔ da</i> (Mom/Dad, I'm going to sleep) as the sun sets.</p>
+
+    <p>Did you know? The Ghanaian handshake, which we call <i>Fɛw</i>, is a unique three-part greeting that starts formal, transitions to casual, and ends with a finger snap - a small but distinctive part of our daily social fabric. And if someone tells you <i>Wo ho ye fɛ</i> (You're beautiful/handsome), respond with <i>Wo nso</i> (You too) to show proper Ghanaian courtesy!</p>
+
+    <p><i>Me da wo ase!</i> (Thank you!)</p>
   photos:
     - image: /img/moultrie/grounds.jpeg
       caption: "Expo grounds"
