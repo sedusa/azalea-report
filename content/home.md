@@ -118,7 +118,23 @@ communityServiceCorner:
     <p>The Sunbelt Ag Expo is a massive undertaking, spanning 93 acres and featuring over 850 exhibitors. It’s a melting pot of farmers, educators, policymakers, and ag-enthusiasts, all gathered to witness the latest innovations in agriculture. From cutting-edge technology demonstrations to the naming of the Southeastern Farmer of the Year, the expo is a celebration of all things agriculture.</p>
 
     <p>This year, the expo partnered with the Philadelphia College of Osteopathic Medicine (PCOM) South Georgia to introduce a groundbreaking healthcare exhibit. As part of this initiative, I, along with Dr. Tom and Dr. Silverio-Lopez, presented respectively on skin cancer, complications of diabetes mellitus, and cardiovascular disease prevention.</p>
-
+  photosTitle: Highlights from the Expo
+  photos:
+    - image: /img/moultrie/grounds.jpeg
+      caption: "Expo grounds"
+    - image: /img/moultrie/cows.jpeg
+      caption: "Exhibit showcasing cows"
+    - image: /img/moultrie/mariya.jpeg
+      caption: "Dr. Mariya Tom"
+    - image: /img/moultrie/rose.jpeg
+      caption: "Dr. Silverio-Lopez presented on cardiovascular disease prevention"
+    - image: /img/moultrie/edusa.jpeg
+      caption: "Dr. Edusa presented on skin cancer"  
+    - image: /img/moultrie/mariya-presenting.jpeg
+      caption: "Dr. Tom presenting on complications of Diabetes mellitus"
+  content2: > 
+    <p>Participating in the Sunbelt Agricultural Exposition was an eye-opening experience. It highlighted the intricate connection between agriculture and healthcare, particularly in areas like skin cancer prevention for farmers. Events like these provide a unique opportunity to bridge the gap between these two vital sectors, ensuring that those who feed the world are also taking care of their health.</p> 
+    <p>See you all at next year's event!</p> 
 culturosity:
   sectionTitle: Culturosity
   subtitle: A bite-sized journey through cultures, one story at a time
@@ -139,21 +155,6 @@ culturosity:
     <p>Did you know? The Ghanaian handshake, which we call <i>Fɛw</i>, is a unique three-part greeting that starts formal, transitions to casual, and ends with a finger snap - a small but distinctive part of our daily social fabric. And if someone tells you <i>Wo ho ye fɛ</i> (You're beautiful/handsome), respond with <i>Wo nso</i> (You too) to show proper Ghanaian courtesy!</p>
 
     <p><i>Me da wo ase!</i> (Thank you!)</p>
-  photos:
-    - image: /img/moultrie/grounds.jpeg
-      caption: "Expo grounds"
-    - image: /img/moultrie/cows.jpeg
-      caption: "Exhibit showcasing cows"
-    - image: /img/moultrie/mariya.jpeg
-      caption: "Dr. Mariya Tom"
-    - image: /img/moultrie/rose.jpeg
-      caption: "Dr. Silverio-Lopez presented on cardiovascular disease prevention"
-    - image: /img/moultrie/edusa.jpeg
-      caption: "Dr. Edusa presented on skin cancer"  
-    - image: /img/moultrie/mariya-presenting.jpeg
-      caption: "Dr. Tom presenting on complications of Diabetes mellitus" 
-  content2: >
-    <p>Participating in the Sunbelt Agricultural Exposition was an eye-opening experience. It highlighted the intricate connection between agriculture and healthcare, particularly in areas like skin cancer prevention for farmers. Events like these provide a unique opportunity to bridge the gap between these two vital sectors, ensuring that those who feed the world are also taking care of their health.</p>
 photosOfMonth:
   sectionTitle: "Through the Lens: Residency Highlights"
   subTitle: Capturing the Smiles, Milestones, and Unforgettable Moments

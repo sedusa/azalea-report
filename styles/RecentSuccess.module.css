@@ -33,6 +33,7 @@
 
 .recentSuccessCaption {
   display: block;
+  color: #666;
   font-size: 1.0rem;
   text-align: left;
 }

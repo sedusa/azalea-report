@@ -34,6 +34,7 @@ const RecentSuccess = ({
             Poster Presentation Highlights
           </h3>
           <Carousel
+            onBackground
             images={posterImage}
             interval={12000}
             aspectRatio='1:1'

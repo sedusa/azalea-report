@@ -12,13 +12,14 @@ const CommunityService = ({
     imageCaption,
     content,
     content2,
+    photosTitle,
     photos,
   },
 }) => {
   const [expandedCommunityService, setExpandedCommunityService] =
     useState(false);
 
-  const showFullContent = photos?.length > 0 && content2;
+  const shouldTruncate = content.length > 645;
 
   return (
     <>
@@ -43,36 +44,36 @@ const CommunityService = ({
         <div className={styles.communityServiceCornerText}>
           <div
             dangerouslySetInnerHTML={{
-              __html:
-                showFullContent || expandedCommunityService
-                  ? content
-                  : truncateText(content, 645),
+              __html: expandedCommunityService
+                ? content
+                : truncateText(content, 645),
             }}
           />
-          {photos && photos.length > 0 && (
-            <Carousel images={photos} interval={8000} />
+          {(!shouldTruncate || expandedCommunityService) && (
+            <>
+              <h3 className={styles.communityServiceCarouselTitle}>
+                {photosTitle}
+              </h3>
+              {photos && photos.length > 0 && (
+                <Carousel onBackground images={photos} interval={8000} />
+              )}
+              {content2 && (
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: content2
+                  }}
+                />
+              )}
+            </>
           )}
-          {content2 && (
-            <div
-              dangerouslySetInnerHTML={{
-                __html:
-                  showFullContent || expandedCommunityService
-                    ? content2
-                    : truncateText(content2, 645),
-              }}
-            />
+          {shouldTruncate && (
+            <button
+              onClick={() => setExpandedCommunityService(!expandedCommunityService)}
+              className={styles.communityServiceCornerToggleButton}
+            >
+              {expandedCommunityService ? 'Show Less' : 'Show More'}
+            </button>
           )}
-          {!showFullContent &&
-            (content.length > 240 || (content2 && content2.length > 240)) && (
-              <button
-                onClick={() =>
-                  setExpandedCommunityService(!expandedCommunityService)
-                }
-                className={styles.communityServiceCornerToggleButton}
-              >
-                {expandedCommunityService ? 'Show Less' : 'Show More'}
-              </button>
-            )}
         </div>
       </div>
     </>

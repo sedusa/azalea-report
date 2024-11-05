@@ -54,6 +54,15 @@
   color: #333;
 }
 
+.communityServiceCarouselTitle {
+  color: #016f53;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin: 2rem 0 0;
+  font-weight: bold;
+}
+
 .communityServiceCornerText p {
   margin-bottom: 1rem;
 }

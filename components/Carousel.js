@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from '../styles/Carousel.module.css';
 
-const Carousel = ({ images, interval = 8000, showCaption = true, showArrows = true, aspectRatio = '16:9' }) => {
+const Carousel = ({ onBackground, images, interval = 8000, showCaption = true, showArrows = true, aspectRatio = '16:9' }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -57,7 +57,7 @@ const Carousel = ({ images, interval = 8000, showCaption = true, showArrows = tr
         </div>
       </div>
       {showCaption && (
-        <p className={styles.photoCaption}>
+        <p className={`${styles.photoCaption} ${onBackground ? styles.onBackground : ''}`}>
           {images[currentIndex].caption || ''}
         </p>
       )}
