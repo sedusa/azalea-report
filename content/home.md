@@ -127,9 +127,9 @@ communityServiceCorner:
     - image: /img/moultrie/mariya.jpeg
       caption: "Dr. Mariya Tom"
     - image: /img/moultrie/rose.jpeg
-      caption: "Dr. Silverio-Lopez presented on cardiovascular disease prevention"
+      caption: "Dr. Silverio-Lopez presenting on cardiovascular disease prevention"
     - image: /img/moultrie/edusa.jpeg
-      caption: "Dr. Edusa presented on skin cancer"  
+      caption: "Dr. Edusa presenting on 'Skin cancer: What every farmer should know'"  
     - image: /img/moultrie/mariya-presenting.jpeg
       caption: "Dr. Tom presenting on complications of Diabetes mellitus"
   content2: > 
