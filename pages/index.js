@@ -7,7 +7,7 @@ import Banner from '@/components/Banner';
 import AboutSection from '@/components/sections/AboutSection';
 import ResidentSpotlight from '@components/sections/ResidentSpotlight';
 import ProgramInfo from '@components/sections/ProgramInfo';
-import ChiefsCorner from '@components/sections/ChiefsCorner';
+// import ChiefsCorner from '@components/sections/ChiefsCorner';
 import ProgramDirector from '@components/sections/ProgramDirector';
 import RecentSuccess from '@components/sections/RecentSuccess';
 import Musings from '@components/sections/Musings';
@@ -50,12 +50,12 @@ export default function Home() {
         rightColumn={<ProgramInfo program={program} />}
       />
       <SingleColumnLayout column={<ProgramDirector programDirector={programDirector} />} />
-      <SingleColumnLayout column={<ChiefsCorner chiefsCorner={chiefsCorner} />} />
-      <SingleColumnLayout column={<Musings musings={musings} />} />
-      <SingleColumnLayout column={ <Culturosity culturosity={culturosity} /> } />
+      {/* <SingleColumnLayout column={<ChiefsCorner chiefsCorner={chiefsCorner} />} /> */}
       <SingleColumnLayout column={<RecentSuccess recentSuccess={recentSuccess} />} />
+      <SingleColumnLayout column={<Musings musings={musings} />} />
       <SingleColumnLayout column={<CommunityService communityServiceCorner={communityServiceCorner} />} />
       <SingleColumnLayout column={<Podcast podcast={podcast} />} />
+      <SingleColumnLayout column={ <Culturosity culturosity={culturosity} /> } />
       <SingleColumnLayout column={<PhotosOfTheMonth photosOfMonth={photosOfMonth} />} />
       <TwoColumnLayout
         leftColumn={<UpcomingEvents events={events} />}
