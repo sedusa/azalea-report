@@ -100,7 +100,7 @@ musings:
   sectionTitle: "House Staff Diaries"
   title: Musings Of A Resident
   image: /img/musings-november.jpeg
-  author: Hala Sharma, PGY-2
+  author: Hala Sharma, MD PGY-2
   content: >
     <p>As November looms ahead, the intern is four months into their residency, a fledgling, who can now retrospectively analyze and reminisce the bygone days from medical school while simultaneously establishing their identity as a physician. November also means interview season is once again overhead however, it feels strange observing from the other side. There is a sense of relief that washes over one to know the tumultuous journey of participating in the Match is behind you. Unless that is, the journey as a physician-in-training in the residency life cycle is just beginning and there are thoughts about fellowship. The prospect of this exciting venture will be discussed later.</p>
     <p>It is hard to escape the excitement of graduating from school and entering the real world. The longer white coat symbolizes stepping into the new milestone. Excitement is shared with your current peers and senior residents who you will continue to bond with over the next few years and spend more time with than family and friends. Bright-eyed and bursting with the energy to tackle this new conquest and step closer to their goals, the newly-minted intern heads into the yet hidden chaos of intern year.</p>
@@ -122,7 +122,7 @@ communityServiceCorner:
 culturosity:
   sectionTitle: Culturosity
   subtitle: A bite-sized journey through cultures, one story at a time
-  author: Samuel Edusa, MD
+  author: Samuel Edusa, MD 
   coverImage: /img/akwaaba.jpeg
   content: >
     <p>Akwaaba from Ghana! 🇬🇭</p>
