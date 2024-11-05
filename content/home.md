@@ -138,12 +138,12 @@ communityServiceCorner:
 culturosity:
   sectionTitle: Culturosity
   description: Culturosity is a bite-sized journey through our residency community's cultures, one story at a time. This weekly column spotlights diverse traditions, celebrations, and daily lives, revealing the rich cultural tapestry that fosters growth within our community.
-  title: "Gateway to Golden Ghana: Where Proverbs Dance with Paradise 🇬🇭" 
+  title: "Welcome To Ghana: Where Proverbs Dance with Paradise 🇬🇭" 
   author: Samuel Edusa, MD 
   coverImage: /img/akwaaba.jpeg
-  imageCaption: Akwaaba = Welcome To Ghana
+  imageCaption: Akwaaba = Welcome
   content: >
-    <p>In the heart of West Africa, where golden stools once cradled kings and warrior queens commanded armies, the Akan (a tribe in Ghana) people's wisdom flows like the precious dust that made their ancestors legendary. "Knowledge is like a baobab tree; no one person's arms can fully embrace it," their elders say, their words still echoing through grand palaces where ancient and modern Ghana dance as one.</p>
+    <p>In the heart of West Africa lies Ghana—a vibrant nation that shed its colonial name "the Gold Coast" upon gaining independence in 1957. From the bustling streets of coastal Accra to the storied palaces of Ashanti kingdoms, this land pulses with a cultural tapestry woven from over 100 ethnic groups, colorful festivals, and time-honored traditions that breathe life into every corner of this enchanting country..</p>
 
     <p><i>"Ɛte sɛn?",</i> (How are you?) is the melodious greeting that floats through the air, where life moves to the rhythm of dunun drums and basks in the warmth of endless summer sun. In Ghana's bustling capital Accra, multiple languages create a beautiful symphony - English weaves through rapid-fire Twi (the most widely spoken Akan language), melodious Ga, and rhythmic Ewe, while the aroma of jollof rice (claimed by Ghanaians as the world's finest!) drifts from local chop bars to meet the salty breeze from the Gulf of Guinea.</p>
 
@@ -193,7 +193,7 @@ culturosity:
 
     <p>In the cool of the evening, when calls of <i>"Me kɔ da"</i> (I'm going to sleep) signal day's end, the magic of Ghana lingers like a sweet aftertaste of ripe pineapple. Here, strangers become family, and time slows to the peaceful pace of <i>"Bɔkɔɔ"</i> (Take it easy) - not just a phrase, but the very heartbeat of Ghanaian life.</p>
 
-    <p><i>"Me da wo ase!"</i> (Thank you!) for experiencing this glimpse into a land where tradition dances with tomorrow, and every sunrise brings new adventures wrapped in age-old wisdom.</p>
+    <p><i>"Me da wo ase!"</i> (Thank you!) for experiencing this glimpse into a land where coastal rhythms blend with palace drums, where a hundred cultures weave tomorrow's stories into the vibrant fabric of Ghana.</p>
 photosOfMonth:
   sectionTitle: "Through the Lens: Residency Highlights"
   subTitle: Capturing the Smiles, Milestones, and Unforgettable Moments
