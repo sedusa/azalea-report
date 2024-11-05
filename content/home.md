@@ -169,7 +169,7 @@ photosOfMonth:
     - image: /img/carousel/brandon-karen-hope.jpeg
       caption: "Loofah & Soap"
     - image: /img/carousel/halloween-boxer.jpeg
-      caption: "Heavy hitter"
+      caption: "Drs. Silverio-Lopez & Lakkireddy showing off their amazing costumes"
     - image: /img/carousel/halloween-count-cat.jpeg
       caption: "Very cool costumes guys"
     - image: /img/carousel/halloween-security.jpeg
@@ -217,18 +217,10 @@ photosOfMonth:
 events:
   sectionTitle: Upcoming Events
   eventsList:
-    - date: Oct 14, 2024
-      description: First day of interviews
-    - date: Oct 15, 2024
-      description: Dr. Bipin Patel retirement celebration (2.30-4.30 PM at Main campus cafeteria)
-    - date: Oct 15, 2024
-      description: Medical staff meeting in the evening
-    - date: Oct 15 - 17, 2024
-      description: Moultrie PCOM Sun Ag Expo
-    - date: Oct 25, 2024
-      description: Dr. Kinley Shook-Chacon's baby shower   
-    - date: Oct 26, 2024 
-      description: Halloween Party at Dr. Bias'
+    - date: Nov 9, 2024
+      description: Dr. Bipin Patel's retirement party
+    - date: Nov 13, 2024
+      description: Open enrollment for medical staff ends
 thingsToDo:
   sectionTitle: Things To Do In Valdosta
   images:

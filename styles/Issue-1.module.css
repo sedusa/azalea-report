@@ -224,7 +224,6 @@
 .sgmcImageCaption {
   display: block;
   font-size: 1.0rem;
-  color: #666;
 }
 
 /* Program statistics */
@@ -436,7 +435,6 @@
 .recentSuccessCaption {
   display: block;
   font-size: 1.0rem;
-  color: #666;
   text-align: left;
 }
 
@@ -464,7 +462,6 @@
 .recentSuccessText small {
   display: block;
   font-size: 1.0rem;
-  color: #666;
   text-align: left;
 }
 
@@ -534,7 +531,6 @@
 }
 
 .communityServiceCornerSubTitle {
-  color: #666;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-style: italic;
@@ -558,7 +554,6 @@
 .communityServiceCornerCaption {
   display: block;
   font-size: 1.0rem;
-  color: #666;
   text-align: left;
 }
 
@@ -586,7 +581,6 @@
 .communityServiceCornerContent small {
   display: block;
   font-size: 1.0rem;
-  color: #666;
   text-align: left;
 }
 
@@ -826,7 +820,6 @@
 }
 
 .thingsToDoDate {
-  color: #666;
   font-size: 1rem;
   margin: 0 auto 5px;
 }

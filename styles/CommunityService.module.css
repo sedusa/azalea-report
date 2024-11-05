@@ -21,7 +21,6 @@
 }
 
 .communityServiceCornerSubTitle {
-  color: #666;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-style: italic;
@@ -45,7 +44,6 @@
 .communityServiceCornerCaption {
   display: block;
   font-size: 1.0rem;
-  color: #666;
   text-align: left;
 }
 

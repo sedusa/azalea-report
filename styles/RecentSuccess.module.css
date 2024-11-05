@@ -34,7 +34,6 @@
 .recentSuccessCaption {
   display: block;
   font-size: 1.0rem;
-  color: #666;
   text-align: left;
 }
 
@@ -62,7 +61,6 @@
 .recentSuccessText small {
   display: block;
   font-size: 1.0rem;
-  color: #666;
   text-align: left;
 }
 
