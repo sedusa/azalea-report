@@ -37,7 +37,7 @@
 
 .musingsText {
   font-size: 1.3rem;
-  line-height: 1.5;
+  line-height: 1.6;
   color: var(--text-color);
 }
 
@@ -47,7 +47,12 @@
     margin-bottom: 1rem;
   }
 
+  .musingsContainer {
+    padding: 1.2rem;
+  }
+
   .musingsText {
     font-size: 1.2rem;
+    line-height: 1.7;
   }
 }

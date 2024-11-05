@@ -35,7 +35,7 @@
 .wellnessTipText {
   flex: 1;
   font-size: 1.3rem;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .wellnessTipText ul {
@@ -65,5 +65,6 @@
 
   .wellnessTipText {
     font-size: 1.2rem;
+    line-height: 1.7;
   }
 }

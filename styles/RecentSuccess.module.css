@@ -91,10 +91,14 @@
     margin-bottom: 1rem;
   }
 
+  .recentSuccessContent {
+    padding: 20px;
+  }
+
   .recentSuccessText {
     color: #333;
     font-size: 1.2rem;
-    line-height: 1.6;
+    line-height: 1.7;
   }
 
   .recentSuccessImageWrapper {

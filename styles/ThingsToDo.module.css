@@ -70,7 +70,7 @@
 
 .thingsToDoDescription {
   font-size: 1.3rem;
-  line-height: 1.5;
+  line-height: 1.6;
   margin: 0 auto;
 }
 
@@ -111,6 +111,7 @@
 
   .thingsToDoDescription {
     font-size: 1.2rem;
+    line-height: 1.7;
   }
 
   .thingsToDoItem:nth-last-child(2):nth-child(odd) {

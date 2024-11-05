@@ -10,7 +10,7 @@ const AboutSection = ({ about: { sectionTitle, content, signature } }) => {
           __html: content,
         }}
       />
-      <div className={styles.signature}>{signature}</div>
+      <div className={styles.text}>{signature}</div>
       <br />
     </>
   );

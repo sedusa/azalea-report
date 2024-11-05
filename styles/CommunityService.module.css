@@ -101,9 +101,14 @@
     font-size: 1.5rem;
     margin-bottom: 1rem;
   }
+
+  .communityServiceCornerContent {
+    padding: 20px;
+  }
   
   .communityServiceCornerImageWrapper {
     float: none;
+    margin: 1rem 0;
   }
   
   .communityServiceCornerImage {
@@ -116,7 +121,7 @@
 
   .communityServiceCornerText {
     font-size: 1.2rem;
-    line-height: 1.6;
+    line-height: 1.7;
     color: #333;
   }
 
