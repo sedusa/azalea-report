@@ -304,16 +304,23 @@ newsFromClinic:
       Meet Melissa Wilkerson, one of our devoted medical assistants who has been with our clinic since its opening in August 2022. Melissa is passionate about her work and equally dedicated to her family life. When not providing excellent care to our patients, she can often be found cheering on her daughter at softball games. Melissa also enjoys quality time with family and friends. Her long-standing commitment and experience make her an invaluable member of our team.
 wellnessCorner:
   sectionTitle: Wellness Corner
-  title: Quick Tips for Healthy Eating at Work
+  title: Recognizing and Preventing Burnout During Residency
   altImageText: Health eating
-  image: /img/eating-healthy.jpeg
+  image: /img/burnout.jpeg
   content: >
-    Good nutrition is key to mental and physical health. Here are some tips to eat healthier at work:
+    Burnout is a common challenge in residency that can affect both your well-being and patient care. Learning to recognize and address burnout early is crucial for a sustainable medical career:
+    <p>Key warning signs of burnout include:</p>
     <ol>
-      <li> <strong>Plan ahead:</strong> Set time each week to plan meals and shop for groceries.</li>
-      <li> <strong>Stock up:</strong> Keep healthy basics at work (e.g., whole grain crackers, fruit, yogurt)</li>
-      <li> <strong>Prep smartly:</strong> Use food containers to keep ingredients separate until eating</li>
-      <li> <strong>Pack essentials:</strong> Bring fresh bread, lean meats, salad extras, and healthy snacks</li>
+      <li> <strong>Emotional exhaustion:</strong> Feeling drained after shifts, detached from patients.</li>
+      <li> <strong>Physical fatigue:</strong> Trouble sleeping, frequent illnesses, persistent tiredness</li>
+      <li> <strong>Mental fog:</strong> Difficulty concentrating, making decisions, or remembering details</li>
+      <li> <strong>Loss of purpose:</strong> Questioning career choice or feeling cynical about medicine</li>
     </ol>
-    Remember, the food you eat affects how you feel and perform. Start small and build healthier habits over time!
+    <p>Practical steps to prevent burnout:</p>
+      <li> <strong>Set boundaries:</strong> Stay in touch with family and friends outside medicine.</li>
+      <li> <strong>Practice micro-breaks:</strong> Take short moments between patients to breathe and reset</li>
+      <li> <strong>Seek support early:</strong> Talk to chief residents, mentors, or professional counselors</li>
+      <li> <strong>Prioritize basics:</strong> Protect your sleep, exercise, and meal times</li>
+    <br/>
+    Remember: Taking care of yourself isn't selfish—it's essential for providing the best care to your patients. If you're struggling, reach out. You're not alone in this journey.
 ---

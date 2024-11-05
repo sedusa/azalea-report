@@ -17,19 +17,19 @@
   font-size: 1.8rem;
   font-weight: bold;
   line-height: 1.4;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
 }
 
 .wellnessTipContent {
   display: flex;
   align-items: flex-start;
+  margin-top: 1rem;
   gap: 20px;
 }
 
 .wellnessTipImage {
-  width: 200px;
-  height: auto;
   border-radius: 8px;
+  width: 100%;
 }
 
 .wellnessTipText {
@@ -51,6 +51,7 @@
 
   .wellnessTipContent {
     flex-direction: column;
+    margin: 0;
   }
 
   .wellnessTipImage {

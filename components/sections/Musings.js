@@ -1,6 +1,8 @@
 import styles from '@styles/Musings.module.css';
+import { useState } from 'react';
+import { truncateText } from '@utils/truncateText';
 
-const Musings= ({
+const Musings = ({
   musings: {
     sectionTitle,
     title,
@@ -9,6 +11,9 @@ const Musings= ({
     content
   },
 }) => {
+  const [expandedMusings, setExpandedMusings] = useState(false);
+  const shouldTruncate = content.length > 645;
+
   return (
     <>
       <h2 className={styles.sectionTitle}>{sectionTitle}</h2>
@@ -18,10 +23,21 @@ const Musings= ({
           By: {author}
         </div>
         <img src={image} alt={'musings-image'} className={styles.musingsImage} />
-        <div
-            className={styles.musingsText}
-            dangerouslySetInnerHTML={{ __html: content }}
+        <div className={styles.musingsText}>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: expandedMusings ? content : truncateText(content, 645),
+            }}
           />
+          {shouldTruncate && (
+            <button
+              onClick={() => setExpandedMusings(!expandedMusings)}
+              className={styles.musingsToggleButton}
+            >
+              {expandedMusings ? 'Show Less' : 'Show More'}
+            </button>
+          )}
+        </div>
       </div>
     </>
   );

@@ -52,9 +52,9 @@ export default function Home() {
       <SingleColumnLayout column={<ProgramDirector programDirector={programDirector} />} />
       <SingleColumnLayout column={<ChiefsCorner chiefsCorner={chiefsCorner} />} />
       <SingleColumnLayout column={<Musings musings={musings} />} />
+      <SingleColumnLayout column={ <Culturosity culturosity={culturosity} /> } />
       <SingleColumnLayout column={<RecentSuccess recentSuccess={recentSuccess} />} />
       <SingleColumnLayout column={<CommunityService communityServiceCorner={communityServiceCorner} />} />
-      <SingleColumnLayout column={ <Culturosity culturosity={culturosity} /> } />
       <SingleColumnLayout column={<Podcast podcast={podcast} />} />
       <SingleColumnLayout column={<PhotosOfTheMonth photosOfMonth={photosOfMonth} />} />
       <TwoColumnLayout

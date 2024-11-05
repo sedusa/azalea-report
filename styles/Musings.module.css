@@ -41,6 +41,25 @@
   color: var(--text-color);
 }
 
+.musingsToggleButton {
+  background-color: #016f53;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Georgia', serif;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  transition: background-color 0.01s ease;
+}
+
+.musingsToggleButton:hover {
+  background-color: #014d3a;
+}
+
 @media (max-width: 768px) {
   .sectionTitle {
     font-size: 1.5rem;
@@ -54,5 +73,11 @@
   .musingsText {
     font-size: 1.2rem;
     line-height: 1.7;
+  }
+
+  .musingsToggleButton {
+    display: inline-block;
+    font-size: 1rem;
+    margin: 1rem 0 0;
   }
 }

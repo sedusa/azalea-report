@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import styles from '@styles/Culturosity.module.css';
+import { truncateText } from '@utils/truncateText';
 
 const Culturosity = ({
   culturosity: {
@@ -11,6 +13,9 @@ const Culturosity = ({
     content,
   },
 }) => {
+  const [expandedCulturosity, setExpandedCulturosity] = useState(false);
+  const shouldTruncate = content.length > 645;
+
   return (
     <>
       <h2 className={styles.sectionTitle}>{sectionTitle}</h2>
@@ -32,11 +37,21 @@ const Culturosity = ({
         <div className={styles.culturosityText}>
           <div
             dangerouslySetInnerHTML={{
-              __html: content,
+              __html: expandedCulturosity ? content : truncateText(content, 645),
             }}
           />
+          {shouldTruncate && (
+            <button
+              onClick={() => setExpandedCulturosity(!expandedCulturosity)}
+              className={styles.culturosityToggleButton}
+            >
+              {expandedCulturosity ? 'Show Less' : 'Show More'}
+            </button>
+          )}
         </div>
-        <div className={styles.culturosityDescription}>{description}</div>
+        {(!shouldTruncate || expandedCulturosity) && (
+          <div className={styles.culturosityDescription}>{description}</div>
+        )}
       </div>
     </>
   );
