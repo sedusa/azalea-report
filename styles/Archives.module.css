@@ -1,14 +1,13 @@
 .sectionTitle {
   font-family: 'Montserrat', sans-serif;
   line-height: 1.4;
-  margin: 1rem auto;
+  margin: 2rem auto 0;
 }
 
 .divider {
   border: none;
   border-top: 2px dotted var(--text-color);
   width: 100%;
-  margin: 1rem 0;
 }
 
 .archivesList {

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import styles from '@styles/Culturosity.module.css';
 import { truncateText } from '@utils/truncateText';
 
@@ -14,7 +14,20 @@ const Culturosity = ({
   },
 }) => {
   const [expandedCulturosity, setExpandedCulturosity] = useState(false);
+  const buttonRef = useRef(null);
   const shouldTruncate = content.length > 645;
+
+  const handleToggle = () => {
+    setExpandedCulturosity(!expandedCulturosity);
+    setTimeout(() => {
+      const buttonPosition = buttonRef.current?.getBoundingClientRect().top;
+      const offset = 1000;
+      window.scrollTo({
+        top: window.scrollY + buttonPosition - offset,
+        behavior: 'smooth'
+      });
+    }, 0);
+  };
 
   return (
     <>
@@ -45,7 +58,8 @@ const Culturosity = ({
           )}
           {shouldTruncate && (
             <button
-              onClick={() => setExpandedCulturosity(!expandedCulturosity)}
+              ref={buttonRef}
+              onClick={handleToggle}
               className={styles.culturosityToggleButton}
             >
               {expandedCulturosity ? 'Show Less' : 'Show More'}

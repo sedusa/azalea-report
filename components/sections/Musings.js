@@ -1,5 +1,5 @@
 import styles from '@styles/Musings.module.css';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { truncateText } from '@utils/truncateText';
 
 const Musings = ({
@@ -12,7 +12,20 @@ const Musings = ({
   },
 }) => {
   const [expandedMusings, setExpandedMusings] = useState(false);
+  const buttonRef = useRef(null);
   const shouldTruncate = content.length > 645;
+
+  const handleToggle = () => {
+    setExpandedMusings(!expandedMusings);
+    setTimeout(() => {
+      const buttonPosition = buttonRef.current?.getBoundingClientRect().top;
+      const offset = 1000;
+      window.scrollTo({
+        top: window.scrollY + buttonPosition - offset,
+        behavior: 'smooth'
+      });
+    }, 0);
+  };
 
   return (
     <>
@@ -31,7 +44,8 @@ const Musings = ({
           />
           {shouldTruncate && (
             <button
-              onClick={() => setExpandedMusings(!expandedMusings)}
+              ref={buttonRef}
+              onClick={handleToggle}
               className={styles.musingsToggleButton}
             >
               {expandedMusings ? 'Show Less' : 'Show More'}

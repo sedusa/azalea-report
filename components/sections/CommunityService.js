@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Carousel from '@components/Carousel';
 import styles from '@styles/CommunityService.module.css';
 import { truncateText } from '@utils/truncateText';
@@ -18,8 +18,21 @@ const CommunityService = ({
 }) => {
   const [expandedCommunityService, setExpandedCommunityService] =
     useState(false);
+  const buttonRef = useRef(null);
 
   const shouldTruncate = content.length > 645;
+
+  const handleToggle = () => {
+    setExpandedCommunityService(!expandedCommunityService);
+    setTimeout(() => {
+      const buttonPosition = buttonRef.current?.getBoundingClientRect().top;
+      const offset = 1000;
+      window.scrollTo({
+        top: window.scrollY + buttonPosition - offset,
+        behavior: 'smooth'
+      });
+    }, 0);
+  };
 
   return (
     <>
@@ -68,7 +81,8 @@ const CommunityService = ({
           )}
           {shouldTruncate && (
             <button
-              onClick={() => setExpandedCommunityService(!expandedCommunityService)}
+              ref={buttonRef}
+              onClick={handleToggle}
               className={styles.communityServiceCornerToggleButton}
             >
               {expandedCommunityService ? 'Show Less' : 'Show More'}
