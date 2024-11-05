@@ -13,10 +13,11 @@
 }
 
 .culturosityDescription {
+  color: #333;
   font-size: 1.3rem;
-  line-height: 1.6;
   font-style: italic;
-  margin-top: 5rem;
+  line-height: 1.6;
+  margin-top: 4rem;
 }
 
 .culturosityTitle {
@@ -90,7 +91,11 @@
     margin-bottom: 1rem;
   }
 
-  .culturosityText {
+  .culturosityText, {
+    font-size: 1.2rem;
+  }
+
+  .culturosityDescription {
     font-size: 1.2rem;
   }
 

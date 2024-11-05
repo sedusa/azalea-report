@@ -21,9 +21,7 @@ const Culturosity = ({
       <h2 className={styles.sectionTitle}>{sectionTitle}</h2>
       <div className={styles.culturosityContent}>
         <h3 className={styles.culturosityTitle}>{title}</h3>
-        <div className={styles.culturosityAuthor}>
-          By: {author}
-        </div>
+        <div className={styles.culturosityAuthor}>By: {author}</div>
         <div className={styles.culturosityImageWrapper}>
           <img
             src={coverImage}
@@ -33,13 +31,18 @@ const Culturosity = ({
           <small className={styles.culturosityCoverImageCaption}>
             {imageCaption}
           </small>
-        </div>    
+        </div>
         <div className={styles.culturosityText}>
           <div
             dangerouslySetInnerHTML={{
-              __html: expandedCulturosity ? content : truncateText(content, 645),
+              __html: expandedCulturosity
+                ? content
+                : truncateText(content, 645),
             }}
           />
+          {(!shouldTruncate || expandedCulturosity) && (
+            <div className={styles.culturosityDescription}>{description}</div>
+          )}
           {shouldTruncate && (
             <button
               onClick={() => setExpandedCulturosity(!expandedCulturosity)}
@@ -49,9 +52,6 @@ const Culturosity = ({
             </button>
           )}
         </div>
-        {(!shouldTruncate || expandedCulturosity) && (
-          <div className={styles.culturosityDescription}>{description}</div>
-        )}
       </div>
     </>
   );

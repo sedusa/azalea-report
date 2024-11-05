@@ -57,69 +57,29 @@
   color: var(--link-color);
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.1rem;
   transition: color 0.01s ease;
+  position: relative;
 }
 
 .desktopNav a:hover {
   color: var(--link-hover-color);
 }
 
-.mobileMenuButton {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--primary-color);
-  cursor: pointer;
-  padding: 5px;
-}
-
-.mobileMenu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--background-color);
-  z-index: 2000;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  overflow: hidden;
-}
-
-.closeButton {
+.desktopNav a::after {
+  content: '';
   position: absolute;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: none;
-  color: var(--primary-color);
-  cursor: pointer;
-  padding: 5px;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--link-hover-color);
+  transform: scaleX(0);
+  transition: transform 0.2s ease-out;
 }
 
-.mobileNav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  gap: 30px;
-}
-
-.mobileNav a {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  transition: color 0.01s ease;
-}
-
-.mobileNav a:hover {
-  color: var(--link-hover-color);
+.desktopNav a:hover::after {
+  transform: scaleX(1);
 }
 
 .container {
@@ -127,14 +87,6 @@
 }
 
 @media (max-width: 768px) {
-  .desktopNav {
-    display: none;
-  }
-
-  .mobileMenuButton {
-    display: block;
-  }
-
   .headerTitle {
     display: none;
   }
