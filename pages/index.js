@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { attributes } from '@content/home.md';
 import Layout from '@app/Layout';
 import birthdays from '@public/birthdays.json';
@@ -43,6 +44,19 @@ export default function Home() {
 
   return (
     <Layout>
+      <Head>
+        <title>Azalea Report - SGMC Health IM Residency Newsletter</title>
+        <meta property="og:title" content="Azalea Report" />
+        <meta property="og:description" content="SGMC Health IM Residency Newsletter" />
+        <meta property="og:image" content="https://azaleareport.com/img/og.jpeg" />
+        <meta property="og:url" content="https://azaleareport.com" />
+        <meta property="og:type" content="website" />
+      
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Azalea Report" />
+        <meta name="twitter:description" content="SGMC Health IM Residency Newsletter" />
+        <meta name="twitter:image" content="https://azaleareport.com/img/og-twitter.jpeg" />
+      </Head>
       <Banner banner={banner} />
       <SingleColumnLayout column={<AboutSection about={about} />} />
       <TwoColumnLayout
