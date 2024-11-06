@@ -299,11 +299,11 @@ newsFromClinic:
   sectionTitle: News From The Clinic
   employeeSpotlight:
     subSectionTitle: Employee Spotlight
-    name: Melissa Wilkerson
-    image: /img/employee-spotlight-09-24.jpeg
+    name: Cathy Dean
+    image: /img/cathy-dean.jpeg
     title: Medical Assistant
     profile: >
-      Meet Melissa Wilkerson, one of our devoted medical assistants who has been with our clinic since its opening in August 2022. Melissa is passionate about her work and equally dedicated to her family life. When not providing excellent care to our patients, she can often be found cheering on her daughter at softball games. Melissa also enjoys quality time with family and friends. Her long-standing commitment and experience make her an invaluable member of our team.
+      Meet Cathy Dean, a skilled, always-smiling medical assistant. She transferred here last year after serving 24 distinguished years at the SGMC Health Emergency Department. Cathy offers significant clinical proficiency and exhibits genuine enthusiasm and dedication to patient care. She is very passionate about her work and goes above and beyond to help in any way she can. She is equally devoted to her husband, family, and friends. Her interests include Georgia football, beaches, traveling, holiday celebrations, spoiling her six grandchildren, and spending quality time with family and friends. Cathy's 25 years of unwavering dedication, commitment, and service to SGMC Health make her an invaluable member of our team.
 wellnessCorner:
   sectionTitle: Wellness Corner
   title: Recognizing and Preventing Burnout During Residency
