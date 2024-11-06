@@ -76,7 +76,9 @@ programDirector:
   title: Assistant Program Director, Internal Medicine Residency
   image: /img/lamptey.jpeg
   message: >
-    "Hard to believe that we are now 2 1/3 years into our IM residency program. I am proud of each and every one of you. Keep up the hard work and independent education. ABIM will come quicker than you think."
+    <p>Our internal medicine residents continue to excel, delivering outstanding patient care while mastering core medical competencies in rural South Georgia. They have quickly become integral members of our community, understanding and addressing its unique healthcare needs with compassion and skill.</p>
+    <p>Our dedicated faculty and Graduate Medical Education team provide a supportive environment that promotes both academic excellence and personal growth. As we prepare to expand with new residency programs, we remain committed to our mission: providing exceptional training and advancing rural healthcare.</p>
+    <p>I'm deeply grateful to our residents, faculty, and staff for their dedication to our program's success and to shaping healthcare's future in South Georgia.</p>
 recentSuccess:
   sectionTitle: Recent Success
   title: SGMC Residents Shine Bright at recent Georgia ACP Conference in Savannah, GA
