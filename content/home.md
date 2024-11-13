@@ -263,6 +263,12 @@ events:
       description: Dr. Bipin Patel's retirement party
     - date: Nov 13, 2024
       description: Open enrollment for medical staff ends
+    - date: Nov 28, 2024
+      description: Thanksgiving Luncheon
+    - date: Dec 4, 2024
+      description: Meet and Greet
+    - date:  Dec 5, 2024
+      description: Physician's Christmas Party
 thingsToDo:
   sectionTitle: Things To Do In Valdosta
   images:
