@@ -223,6 +223,42 @@ photosOfMonth:
   sectionTitle: "Through the Lens: Residency Highlights"
   subTitle: Capturing the Smiles, Milestones, and Unforgettable Moments
   photos:
+    - image: /img/carousel/val-team-1.jpeg
+      caption: "Valentine's Day team pose"
+    - image: /img/carousel/val-team-2.jpeg
+      caption: "Valentine's Day team pose"
+    - image: /img/carousel/team-pose-3.jpeg
+      caption: "Rocking Red For CHD - Brexton Foundation"
+    - image: /img/carousel/intern-hangout.jpeg
+      caption: "Intern hangoug: Cookout at Asma's house"
+    - image: /img/carousel/women-in-medicine-1.jpeg
+      caption: "Women in Medicine"
+    - image: /img/carousel/women-in-medicine-2.jpeg
+      caption: "Women in Medicine"
+    - image: /img/carousel/grand-rounds-1.jpeg
+      caption: "Drs. Silverio-Lopez & Chaudhary's Grand Rounds"
+    - image: /img/carousel/grand-rounds-2.jpeg
+      caption: "Drs. Silverio-Lopez & Chaudhary's Grand Rounds"
+    - image: /img/carousel/lamptey-cake.jpeg
+      caption: "Happy Birthday Dr. Lamptey"
+    - image: /img/carousel/enzo-1.jpeg
+      caption: "Winter Storm Enzo at SGMC"
+    - image: /img/carousel/enzo-2.jpeg
+      caption: "Outside Dwayne's house"
+    - image: /img/carousel/enzo-3.jpeg
+      caption: "Snowed in at SGMC"
+    - image: /img/carousel/christmas-party-brown.jpeg
+      caption: "Dr. Brown on the guitar"
+    - image: /img/carousel/christmas-party-beale.jpeg
+      caption: "Candid camera moment"
+    - image: /img/carousel/christmas-party-women.jpeg
+      caption: "Physicians's Christmas Party"
+    - image: /img/carousel/christmas-party-2.jpeg
+      caption: "Physicians's Christmas Party"
+    - image: /img/carousel/christmas-party-1.jpeg
+      caption: "Physicians's Christmas Party"
+    - image: /img/carousel/chook-baby.jpeg
+      caption: "Welcoming baby Alejandro - congratulations Dr. Shook-Chacon!"
     - image: /img/carousel/halloween-1.jpeg
       caption: "Guess who's behind the mask?"
     - image: /img/carousel/halloween-2.jpeg
