@@ -3,8 +3,8 @@ banner:
   headerImage: /img/november-banner.jpeg
   title: AZALEA REPORT
   subtitle: SGMC Health Internal Medicine Residency Newsletter
-  edition: 3
-  date: February 2025
+  edition: 2
+  date: November 2024
 about:
   sectionTitle: 
   content: Welcome 👋🏼 to the Azalea Report - the digital newsletter of South Georgia Health's Internal Medicine Residency program in Valdosta, Georgia. Named after our city's beloved azaleas, this resident-led publication aims to showcase our program's achievements, spotlight outstanding residents, and share updates from our residency program. We look forward to bringing you stories of excellence in medical education from the Azalea City.<br/><br/> Sincerely,
@@ -23,14 +23,14 @@ program:
     continuityClinic: The program operates a continuity clinic at SGMC Internal Medicine on Park Avenue in Valdosta. This clinic allows residents to learn how to manage outpatient conditions and follow patients over time.
 spotlight:
   sectionTitle: Resident Spotlight
-  name: Rija Chaudhary, MD
-  image: /img/rija-chaudhary-md.jpeg
-  birthplace: Rawalpindi, Pakistan.
-  funFact: I was a Bollywood dance teacher 💃🏽 once upon a time.
-  favoriteDish: Biryani.
-  interests: Yoga, trying new desserts, being chronically online.
-  postResidencyPlans: Fellowship in Geriatric Medicine. New York City here I come!
-  wordsOfWisdom: "'Humility is fundamental to your growth during residency—embrace every opportunity to learn with an open mind. It will not only make you a more knowledgeable physician but also a more empathetic and collaborative one.'"
+  name: Dwayne Mohan, MD
+  image: /img/dwayne-mohan-md.jpeg
+  birthplace: Jamaica
+  funFact: I can cook 3 different types of cuisine 🍛
+  favoriteDish: Sushi is my go to. Love Uni
+  interests: I like trying new things and experiences. Surprise me.
+  postResidencyPlans: Operate a local clinic and hopefully have a community outreach program in place to give back.
+  wordsOfWisdom: "Keep moving forward! Everyone had to start somewhere, though that somewhere may oftentimes be the same place. Your beginning is your own. Your experiences will be your own. Conquer it in your own way! We may be the same, but we are also very different. Embrace your differences, learn from everyone around you, and always remember: Keep moving forward!"
 podcast:
   sectionTitle: Podcasts
   title: "What Brings You In Today? - Featured Podcasts"
@@ -41,16 +41,6 @@ podcast:
       iframeUrl: https://open.spotify.com/embed/episode/68KNFYvib3spPv0rqB56aB?utm_source=generator&theme=0
       noPlayerLink: https://open.spotify.com/episode/68KNFYvib3spPv0rqB56aB?si=YyhvygV2T9G3jpyiQG0OJg
       noPlayerLinkText: Listen to Episode 5 with Dr. Joseph Hayes on Spotify
-    - name: "Episode #23 - Anna Ledford, MD & Samuel Edusa, MD"
-      synopsis: This episode of the podcast features Dr. Anna Ledford and Dr. Samuel Edusa, internal medicine resident physicians at SGMC Health. These dedicated physicians share their unique paths to medicine, provide insight into the daily rhythms of residency training, and discuss the vital importance of primary care relationships. 
-      iframeUrl: https://open.spotify.com/embed/episode/4lCMsGHz2YIvevCzMVwxvw??utm_source=generator&theme=0
-      noPlayerLink: https://open.spotify.com/episode/4lCMsGHz2YIvevCzMVwxvw?si=aAvDCs23Rl2Xtn0lXTSA8g
-      noPlayerLinkText: Listen to Episode 23 with Dr. Anna and Dr. Samuel on Spotify
-    - name: "Episode #26 - Joseph Hayes, MD"
-      synopsis: This episode of the podcast welcomes back Dr. Joseph Hayes, Medical Director at SGMC Internal Medicine and Assistant Professor at Mercer Medical School, for an engaging exploration of 2024's most searched health topics. From common phenomena like motion sickness and hiccups to popular medical myths, Dr. Hayes brings his expertise to answer pressing health questions and debunk widespread misconceptions with both scientific insight and humor.
-      iframeUrl: https://open.spotify.com/embed/episode/7aaDfIN16pms2nx5D22anB?utm_source=generator&theme=0
-      noPlayerLink: https://open.spotify.com/episode/7aaDfIN16pms2nx5D22anB?si=LpT8tewbQuC6WQd8m-EyWQ
-      noPlayerLinkText: Listen to Episode 26 with Dr. Joseph Hayes on Spotify
 tribalCouncil:
   content: >
     The PAR tribal system aims to act as a liaison between residents and GME focusing on resident wellness, building camaraderie and improving the resident experience. The PAR resident body recently voted for Dr Ghida Akdhar as the new Vice President, with Dr Danhely Cruz continuing on as our president. We thank Dr Sheri Walls for all her hardwork and dedication in advocating for the resident body and improving the resident experience. 

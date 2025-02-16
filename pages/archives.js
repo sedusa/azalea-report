@@ -10,6 +10,16 @@ const Archives = () => {
       title: 'Issue 1',
       link: '/archives/issue-1'
     },
+    {
+      date: 'November 2024',
+      title: 'Issue 2',
+      link: '/archives/issue-2'
+    },
+    {
+      date: 'February 2025',
+      title: 'Issue 3',
+      link: '/'
+    }
   ];
 
   return (
