@@ -25,11 +25,11 @@ spotlight:
   sectionTitle: Resident Spotlight
   name: Rija Chaudhary, MD
   image: /img/rija-chaudhary-md.jpeg
-  birthplace: Rawalpindi, Pakistan.
-  funFact: I was a Bollywood dance teacher 💃🏽 once upon a time.
-  favoriteDish: Biryani.
-  interests: Yoga, trying new desserts, being chronically online.
-  postResidencyPlans: Fellowship in Geriatric Medicine. New York City here I come!
+  birthplace: Rawalpindi, Pakistan
+  funFact: I was a Bollywood dance teacher 💃🏽 once upon a time
+  favoriteDish: Biryani
+  interests: Yoga, trying new desserts, being chronically online
+  postResidencyPlans: Fellowship in Geriatric Medicine
   wordsOfWisdom: "'Humility is fundamental to your growth during residency—embrace every opportunity to learn with an open mind. It will not only make you a more knowledgeable physician but also a more empathetic and collaborative one.'"
 genericSingleImageTextSection:
   sectionTitle: GME Corner
@@ -48,6 +48,25 @@ genericSingleImageTextSection:
     <p>Greg Beale, MD, Program Director of the Internal Medicine Residency Program, expressed his enthusiasm for the new Chief Residents. "I am incredibly proud of our first set of Chief Residents, Venkata Gandi, MD, and Monica Kovuri, MD, who set a high standard for leadership within our program," said Dr. Beale. "Dr. Rockwell and Dr. Tom embody the values and excellence we strive for at SGMC Health, and I am thrilled to see how they will lead and inspire their peers this year."</p>
 
     <p>The Chief Residency position stands as a vital component of SGMC Health's mission to cultivate future healthcare leaders. This distinguished role reflects the program's dedication to fostering professionalism, excellence, and innovation in medical education.</p>
+chiefsCorner:
+  title: The Intern's Corner
+  chiefs:
+    - name: Rabail Shaikh, MD
+      image: /img/rabail-shaikh-md.jpeg
+      content: >
+        Inspired by her father's work in medicine, Dr. Shaikh developed a passion for solving complex cases and helping patients heal. She enjoys the challenge of creating comprehensive treatment plans and seeing patients respond positively. She finds it a truly rewarding experience. 💙
+
+        Dr. Shaikh plans to become a hospitalist, drawn to the fast-paced, dynamic nature of internal medicine. She loves the variety of cases and the excitement of managing multiple systems in an acute hospital setting. 🏥
+
+        Outside of work, she enjoys relaxing with movie marathons or exploring her creative side with art projects. 🎬🎨
+    - name: Patrick Joseph, MD
+      image: /img/patrick-joseph-md.jpeg
+      content: >
+        Dr. Joseph's journey into medicine was shaped by his early experiences witnessing the impact of healthcare disparities in his community. These moments fueled his commitment to making a difference through compassionate and skillful care. Every patient interaction reaffirms his passion for medicine and dedication to improving lives. 🩺
+
+        With aspirations to specialize in interventional cardiology, Dr. Joseph is excited about advancing his skills in a field that blends precision, innovation, and life-saving care. Transitioning from Haiti's healthcare system to practicing in the United States has been one of his greatest challenges, but also one of his most rewarding achievements. ❤️
+
+        Outside of the hospital, he enjoys playing basketball, joining his colleagues for a friendly game of pickleball, and cherishing time with his family. 🏀🏓
 podcast:
   sectionTitle: Podcasts
   title: "What Brings You In Today? - Featured Podcasts"
@@ -162,62 +181,44 @@ musings:
 culturosity:
   sectionTitle: Culturosity
   description: Culturosity is a bite-sized journey through our residency community's cultures, one story at a time. This weekly column spotlights diverse traditions, celebrations, and daily lives, revealing the rich cultural tapestry that fosters growth within our community.
-  title: "Welcome To Ghana: Where Proverbs Dance with Paradise 🇬🇭" 
+  title: "Ghana 🇬🇭 vs Nigeria 🇳🇬: A Feast Of Two Nations" 
   author: Samuel Edusa, MD 
-  coverImage: /img/akwaaba.jpeg
-  imageCaption: Akwaaba = Welcome
+  coverImage: /img/culturosity/food.jpeg
+  imageCaption: Traditional Ghanaian and Nigerian dishes
   content: >
-    <p>In the heart of West Africa lies Ghana—a vibrant nation that shed its colonial name "the Gold Coast" upon gaining independence in 1957. From the bustling streets of coastal Accra to the storied palaces of Ashanti kingdoms, this land pulses with a cultural tapestry woven from over 100 ethnic groups, colorful festivals, and time-honored traditions that breathe life into every corner of this enchanting country..</p>
+    <p>In the basement classrooms of SGMC Health, an extraordinary cultural exchange unfolded as medical residents gathered for "Culturosity: Ghana vs. Nigeria," transforming a typical lunch hour into a vibrant celebration of West African heritage. The event, far from being a competition as its playful title might suggest, showcased the rich culinary traditions that bind these two influential African nations.</p>
 
-    <p><i>"Ɛte sɛn?",</i> (How are you?) is the melodious greeting that floats through the air, where life moves to the rhythm of dunun drums and basks in the warmth of endless summer sun. In Ghana's bustling capital Accra, multiple languages create a beautiful symphony - English weaves through rapid-fire Twi (the most widely spoken Akan language), melodious Ga, and rhythmic Ewe, while the aroma of jollof rice (claimed by Ghanaians as the world's finest!) drifts from local chop bars to meet the salty breeze from the Gulf of Guinea.</p>
-
-    <div class="imageGrid">
-      <div class="imageColumn">
-        <img src="/img/culturosity/jollof.jpeg" alt="Jollof rice">
-        <span class="imageCaption">Ghanaian jollof rice (claimed by Ghanaians as the world's finest!)</span>
-      </div>
-    </div>
-
-    <p>We are a people who speak with both words and cloth - our traditional kente fabric, originally worn by Ashanti royalty, tells stories through its intricate patterns. The <i>Adwinasa</i> pattern, meaning "all motifs are exhausted," represents excellence and creativity. When you hear someone say <i>Medaase</i> (thank you), it's often accompanied by a slight bow and sometimes followed by <i>Ɛyɛ</i> (It is good) - small gestures that speak volumes about our culture of respect and gratitude.</p>
-
-    <p>At the legendary Makola Market, traders balance vibrant baskets with remarkable grace, their calls of <i>"Bra bɛfa!"</i> (Come and buy!) mixing with friendly haggling and laughter. Market women, respectfully addressed as "Mama," display everything from garden-fresh vegetables to the spectacular kente cloth. The Adwinasa pattern of kente, meaning "all motifs are exhausted," tells stories of excellence through its intricate designs, each thread woven with history.</p>
-
-     <div class="imageGrid">
-      <div class="imageColumn">
-        <img src="/img/culturosity/kente-weaving.jpeg" alt="Kente weaving">
-        <span class="imageCaption">Kente weaving</span>
-      </div>
-      <div class="imageColumn">
-        <img src="/img/culturosity/fabric-seller.jpeg" alt="Fabric seller">
-        <span class="imageCaption">Fabric seller at a local market</span>
-      </div>
-    </div>
-
-    <p>In the evening, as the sun paints the sky over Lake Volta, children's laughter rings out during games of ampe, their joy infectious. Cape Coast Castle, standing stark white against the blue horizon, tells powerful stories of the past, while Labadi Beach pulses with modern highlife music and the tempting aroma of grilled tilapia.</p>
+    <p>The spread was a visual and aromatic testament to the depth of both cultures' cuisines. Traditional Ghanaian and Nigerian dishes filled the serving tables, from aromatic jollof rice displaying its characteristic orange-red hue to tender khebab skewers seasoned with complex spice blends. Plates of grilled chicken, prepared in distinctly different but equally mouthwatering styles, sat alongside pots of rich stews studded with fish and vegetables. The centerpiece was a variety of rice dishes, each telling its own story of regional preferences and cooking techniques.</p>
 
     <div class="imageGrid">
       <div class="imageColumn">
-        <img src="/img/culturosity/ampe.jpeg" alt="Children playing ampe">
-        <span class="imageCaption">Children playing ampe</span>
-      </div>
-      <div class="imageColumn">
-        <img src="/img/culturosity/labadi-beach.jpeg" alt="Beautiful labadi beach">
-        <span class="imageCaption">Labadi beach</span>
+        <img src="/img/culturosity/presentation.jpeg" alt="Dr. Fashugba presenting on Nigerian cuisine">
+        <span class="imageCaption">Dr. Fashugba's presentation on Nigerian history and culture</span>
       </div>
     </div>
 
-    <p>The Ghanaian handshake, known as <i>"Fɛw,"</i> captures the spirit of this magical land - starting formal, warming to casual, and ending with a playful finger snap. When someone offers a heartfelt <i>"Wo ho ye fɛ"</i> (You're beautiful/handsome), the proper response is <i>"Wo nso"</i> (You too) - a small but meaningful exchange that exemplifies Ghanaian charm.</p>
+    <p>But this gathering transcended the dining experience, evolving into a masterclass in cultural exchange. The event artfully wove together culinary traditions with deeper insights into West African heritage. While the aromas of spiced dishes filled the air, conversations flowed naturally between residents and students, bridging gaps in cultural understanding. The long-standing playful debate over jollof rice supremacy between Ghana and Nigeria sparked animated discussions, while first-time tastings of traditional dishes created moments of discovery and connection. Through these shared experiences, the medical community demonstrated how food can serve as a powerful catalyst for cultural appreciation and understanding.</p>
 
-     <div class="imageGrid">
+    <div class="imageGrid">
       <div class="imageColumn">
-        <img src="/img/culturosity/castle.jpeg" alt="Elmina Castle">
-        <span class="imageCaption">Elmina Castle</span>
+        <img src="/img/culturosity/gandi-rockwell-eating.jpeg" alt="Dr. Gandi & Dr. Rockwell">
+        <span class="imageCaption">Drs. Gandi & Rockwell eating poundeded yam</span>
+      </div>
+      <div class="imageColumn">
+        <img src="/img/culturosity/more-food.jpeg" alt="More food">
+        <span class="imageCaption">More Ghanaian and Nigerian food</span>
       </div>
     </div>
 
-    <p>In the cool of the evening, when calls of <i>"Me kɔ da"</i> (I'm going to sleep) signal day's end, the magic of Ghana lingers like a sweet aftertaste of ripe pineapple. Here, strangers become family, and time slows to the peaceful pace of <i>"Bɔkɔɔ"</i> (Take it easy) - not just a phrase, but the very heartbeat of Ghanaian life.</p>
+    <div class="imageGrid">
+      <div class="imageColumn">
+        <img src="/img/culturosity/ghana-vs-nigeria.jpeg" alt="Ghana vs Nigeria">
+        <span class="imageCaption">Drs. Fashugba and Edusa presented on Ghanaian and Nigerian cultures</span>
+      </div>
+    </div>
 
-    <p><i>"Me da wo ase!"</i> (Thank you!) for experiencing this glimpse into a land where coastal rhythms blend with palace drums, where a hundred cultures weave tomorrow's stories into the vibrant fabric of Ghana.</p>
+    <p>The event exemplified how food serves as a universal language, breaking down barriers and fostering genuine connections that transcend professional and cultural boundaries. As one resident was overheard saying while reaching for seconds, "Understanding each other's cultures makes us better doctors." </p>
+
 photosOfMonth:
   sectionTitle: "Through the Lens: Residency Highlights"
   subTitle: Capturing the Smiles, Milestones, and Unforgettable Moments
@@ -281,16 +282,12 @@ photosOfMonth:
 events:
   sectionTitle: Upcoming Events
   eventsList:
-    - date: Nov 9, 2024
-      description: Dr. Bipin Patel's retirement party
-    - date: Nov 13, 2024
-      description: Open enrollment for medical staff ends
-    - date: Nov 28, 2024
-      description: Thanksgiving Luncheon
-    - date: Dec 4, 2024
-      description: Meet and Greet
-    - date:  Dec 5, 2024
-      description: Physician's Christmas Party
+    - date: Mar 21, 2025
+      description: Match Day
+    - date: Mar 15, 2025
+      description: Drs. Megan & Daryoosh's Baby Shower
+    - date: Deb 27, 2025
+      description: "Grand Rounds: Drs. Gandi and Mohan"
 thingsToDo:
   sectionTitle: Things To Do In Valdosta
   images:
@@ -327,30 +324,22 @@ newsFromClinic:
   sectionTitle: News From The Clinic
   employeeSpotlight:
     subSectionTitle: Employee Spotlight
-    name: Cathy Dean
-    image: /img/cathy-dean.jpeg
-    title: Medical Assistant
+    name: Annette Robinson
+    image: /img/annette-robinson.jpeg
+    title: Family Nurse Practitioner (APRN-BC, FNP-BC)
     profile: >
-      Meet Cathy Dean, a skilled, always-smiling medical assistant. She transferred here last year after serving 24 distinguished years at the SGMC Health Emergency Department. Cathy offers significant clinical proficiency and exhibits genuine enthusiasm and dedication to patient care. She is very passionate about her work and goes above and beyond to help in any way she can. She is equally devoted to her husband, family, and friends. Her interests include Georgia football, beaches, traveling, holiday celebrations, spoiling her six grandchildren, and spending quality time with family and friends. Cathy's 25 years of unwavering dedication, commitment, and service to SGMC Health make her an invaluable member of our team.
+      Meet Annette Robinson, APRN-BC, FNP-BC, a dedicated healthcare provider who recently joined Internal Medicine Park from Health Care South. Her remarkable journey in healthcare began as a nurse's aide, steadily advancing through LPN, RN BSN, Master's degree, and Post-Master's in Family Nurse Practice and Midwifery.
+      As the first college graduate among ten siblings raised by her maternal grandmother, Annette's determination led her through studies at Valdosta Technical School, Valdosta University, Albany State University, and the University of Florida—all while balancing full-time work and family responsibilities. Her perseverance and dedication to nursing have touched countless lives, including delivering over 1,400 newborns and assisting with C-sections throughout her career.
+      With a deep passion for patient care rooted in her own life experiences, Annette brings exceptional empathy and expertise to women's health and primary care services. Her commitment to serving others and genuine care for her patients make her an invaluable addition to our team. When you visit Internal Medicine Park, you'll find Annette ready to provide compassionate, skilled care with the same determination that has defined her inspiring career.
 wellnessCorner:
   sectionTitle: Wellness Corner
-  title: Recognizing and Preventing Burnout During Residency
-  altImageText: Health eating
-  image: /img/burnout.jpeg
+  title: "Finding Humor in the Hard Days: A Reminder About Emotional Well-being"
+  altImageText: Emotional well-being
+  image: /img/emotional-plushie.jpeg
   content: >
-    Burnout is a common challenge in residency that can affect both your well-being and patient care. Learning to recognize and address burnout early is crucial for a sustainable medical career:
-    <p>Key warning signs of burnout include:</p>
-    <ol>
-      <li> <strong>Emotional exhaustion:</strong> Feeling drained after shifts, detached from patients.</li>
-      <li> <strong>Physical fatigue:</strong> Trouble sleeping, frequent illnesses, persistent tiredness</li>
-      <li> <strong>Mental fog:</strong> Difficulty concentrating, making decisions, or remembering details</li>
-      <li> <strong>Loss of purpose:</strong> Questioning career choice or feeling cynical about medicine</li>
-    </ol>
-    <p>Practical steps to prevent burnout:</p>
-      <li> <strong>Set boundaries:</strong> Stay in touch with family and friends outside medicine.</li>
-      <li> <strong>Practice micro-breaks:</strong> Take short moments between patients to breathe and reset</li>
-      <li> <strong>Seek support early:</strong> Talk to chief residents, mentors, or professional counselors</li>
-      <li> <strong>Prioritize basics:</strong> Protect your sleep, exercise, and meal times</li>
-    <br/>
-    Remember: Taking care of yourself isn't selfish—it's essential for providing the best care to your patients. If you're struggling, reach out. You're not alone in this journey.
+    <p>Those charming "Emotional Support" plushies you might have spotted scattered throughout our hospital corridors capture the often-unspoken reality of medical residency perfectly. These whimsical crochet creations, shaped like teacups with wisps of steam rising from their rims, hold a telling message: "It's fine, I'm fine. Everything is fine!"</p>
+
+    <p>While these delightful companions make us smile, they also open an important dialogue about how we, as healthcare professionals, process stress and emotions. It's a gentle reminder that sometimes saying "I'm fine" three times doesn't make it true, and that's okay.</p>
+
+    <p>Remember: Our residency program offers confidential counseling services and peer support groups. Taking care of yourself isn't just fine—it's essential.</p>
 ---
