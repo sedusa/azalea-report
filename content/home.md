@@ -1,6 +1,6 @@
 ---
 banner:
-  headerImage: /img/november-banner.jpeg
+  headerImage: /img/feb-banner.jpeg
   title: AZALEA REPORT
   subtitle: SGMC Health Internal Medicine Residency Newsletter
   edition: 3
@@ -31,6 +31,23 @@ spotlight:
   interests: Yoga, trying new desserts, being chronically online.
   postResidencyPlans: Fellowship in Geriatric Medicine. New York City here I come!
   wordsOfWisdom: "'Humility is fundamental to your growth during residency—embrace every opportunity to learn with an open mind. It will not only make you a more knowledgeable physician but also a more empathetic and collaborative one.'"
+genericSingleImageTextSection:
+  sectionTitle: GME Corner
+  description: 
+  title: "SGMC Health GME Announces New Chief Residents for The Internal Medicine Residency Program" 
+  author: SGMC Health GME (posted originally on December 30th, 2024)
+  coverImage: /img/new-chiefs.jpeg
+  imageCaption: 2025 Chief Residents Mariya Tom, MD, and Brandon Rockwell, MD; GME Leadership Greg Beale, MD, and Leslie Lamptey, MD; Past Chief Residents Monica Kovuri, MD, and Venkata Gandi, MD
+  content: >
+    <p>SGMC Health's Graduate Medical Education (GME) program proudly announces the appointment of Brandon Rockwell, MD, and Mariya Tom, MD, as the new Chief Residents for the Internal Medicine Residency Program for 2025. These exemplary physicians were selected by their peers and approved by faculty and staff for their outstanding leadership skills, moral integrity, and clinical expertise.</p>
+
+    <p>The role of Chief Resident represents a prestigious milestone in medical education, providing an opportunity to develop and refine clinical, teaching, and administrative skills. During their one-year term, Dr. Rockwell and Dr. Tom will serve as liaisons between residents and faculty, lead educational conferences, supervise trainees, coordinate schedules, and promote resident well-being.</p>
+
+    <p>Dr. Rockwell, who earned his medical degree from the Medical College of Georgia in Augusta, GA, has consistently demonstrated exceptional dedication to patient care and professional development. Dr. Tom, a graduate of Pushpagiri Institute of Medical Sciences and Research Centre in India, is widely admired for her compassionate leadership and clinical acumen.</p>
+
+    <p>Greg Beale, MD, Program Director of the Internal Medicine Residency Program, expressed his enthusiasm for the new Chief Residents. "I am incredibly proud of our first set of Chief Residents, Venkata Gandi, MD, and Monica Kovuri, MD, who set a high standard for leadership within our program," said Dr. Beale. "Dr. Rockwell and Dr. Tom embody the values and excellence we strive for at SGMC Health, and I am thrilled to see how they will lead and inspire their peers this year."</p>
+
+    <p>The Chief Residency position stands as a vital component of SGMC Health's mission to cultivate future healthcare leaders. This distinguished role reflects the program's dedication to fostering professionalism, excellence, and innovation in medical education.</p>
 podcast:
   sectionTitle: Podcasts
   title: "What Brings You In Today? - Featured Podcasts"
@@ -51,44 +68,50 @@ podcast:
       iframeUrl: https://open.spotify.com/embed/episode/7aaDfIN16pms2nx5D22anB?utm_source=generator&theme=0
       noPlayerLink: https://open.spotify.com/episode/7aaDfIN16pms2nx5D22anB?si=LpT8tewbQuC6WQd8m-EyWQ
       noPlayerLinkText: Listen to Episode 26 with Dr. Joseph Hayes on Spotify
-tribalCouncil:
+basicSection:
+  sectionTitle: Recent Wins
+  sectionColor: '#E6E6FA'
+  description: The Josh Nahum Award, presented annually at the GHA Patient Safety Summit, recognizes exceptional initiatives that improve healthcare delivery and patient care. Recipients are selected for their commitment to patient safety excellence, implementation of best practices, and contributions to positive change in healthcare.
+  title: SGMC Health Receives Statewide Awards for Patient Safety
+  author: SGMC Health
   content: >
-    The PAR tribal system aims to act as a liaison between residents and GME focusing on resident wellness, building camaraderie and improving the resident experience. The PAR resident body recently voted for Dr Ghida Akdhar as the new Vice President, with Dr Danhely Cruz continuing on as our president. We thank Dr Sheri Walls for all her hardwork and dedication in advocating for the resident body and improving the resident experience. 
+    <div class="imageGrid">
+      <div class="imageColumn">
+        <img src="/img/patient-safety/award-1.jpeg" alt="Patient Safety Award">
+        <span class="imageCaption"><strong>Discharge Antibiotics Optimization for Urinary Tract Infections for Emergency Room Patients</strong>: <i>Bailey Boyd, BS; Hala Sharma, MD; Ironica Pye, MBA; Rosaida Silverio Lopez, MD; Luke Saunders, PharmD; Mariya Tom, MD; James McSweeney, MD. Not pictured: Leslie Lamptey, MD</i></span>
+      </div>
+    </div>
 
-    Dr Akdhar, a Lebanese national who studied medicine at The Universite Saint Joseph in Lebanon, is excited for her new role and is committed to the continued improvement of resident well-being. "I was always drawn to extracurricular activities where I can voice my opinion, advocate for change and develop my leadership skills. I don't believe that we have to be in any titled position to have a leading role in change, but I did want to be held accountable for my work, and that's why I decided to run for a leadership position in the Tribal Council. I really believe we can shape residency into what it's supposed to be, an enjoyable training experience that does not come at the cost of our well-being."
-chiefsCorner:
-  title: The Chiefs' Corner
-  chiefs:
-    - name: Monica Kovuri, MD
-      image: https://www.sgmc.org/wp-content/uploads/2022/06/1.png
-      content: >
-        Dr. Monica Kovuri joins our team of Chief Residents, bringing a wealth of diverse experience and a passion for endocrinology. A graduate of Sri Devaraj Urs Medical College, Dr. Kovuri has demonstrated exceptional clinical skills and leadership throughout her residency.
+    <p>SGMC Health earned recognition at the Georgia Hospital Association (GHA) Patient Safety Summit, receiving second and third place Josh Nahum Awards for their Infection Prevention and Control projects.</p>
 
-        "I'm honored to serve as a Chief Resident and excited to contribute to our program's growth," says Dr. Kovuri. "My goal is to foster an environment of continuous learning and support for our residents, particularly in research and specialized areas like endocrinology."
+    <p>The second-place project, "Discharge Antibiotics Optimization for Urinary Tract Infections in Emergency Room Patients," developed an antibiogram to help emergency department physicians select more effective empiric antibiotics for UTI treatment. By analyzing local population data, the team created evidence-based treatment guidelines to reduce ineffective prescriptions.</p>
 
-        Dr. Kovuri's interest in endocrinology shapes her approach to patient care and resident education. She plans to organize focused workshops and case discussions in this field, benefiting residents interested in metabolic disorders and hormone-related conditions.
+    <p>The third-place "Antimicrobial Stewardship Team for Better Clinical Outcomes" project focuses on optimizing antimicrobial use. The team meets quarterly to evaluate prescription practices, ensuring appropriate medication selection, dosing, and treatment duration while minimizing side effects. These efforts improve patient outcomes, prevent drug resistance, and reduce costs.</p>
 
-        Looking ahead, Dr. Kovuri aspires to pursue a fellowship in endocrinology, where she hopes to further specialize and contribute to advancements in the field. Her dedication to this subspecialty will undoubtedly enrich our program's curriculum and inspire residents with similar interests.
+    <div class="imageGrid">
+      <div class="imageColumn">
+        <img src="/img/patient-safety/award-2.jpeg" alt="Patient Safety Award">
+        <span class="imageCaption"><strong>Antimicrobial Stewardship Team for Better Clinical Outcomes:</strong> <i>Monica Kovuri, MD; Samuel Edusa, MD; Rosaida Silverio Lopez, MD; Ornob Rahman, MD; Hala Sharma, MD; Mariya Tom, MD; Timothy Sobukonla, MD; Rita Medina-Vega, MD. Not pictured: Matthew Brown, MD</i></span>
+      </div>
+    </div>
 
-        "To our current and incoming residents," Dr. Kovuri advises, "embrace every learning opportunity, stay curious, and don't hesitate to explore your specific areas of interest within internal medicine. The depth and breadth of our field offer endless possibilities for growth and specialization."
-    - name: Venkata Gandi, MD
-      image: https://www.sgmc.org/wp-content/uploads/2022/06/7.png
-      content: >
-        Dr. Gandi joins our team of Chief Residents, bringing a unique international perspective and a keen interest in pulmonary critical care. A graduate of St. Matthew's University School of Medicine in Grand Cayman, Dr. Gandi has consistently demonstrated exceptional clinical acumen and leadership throughout his residency.
-        "As a Chief Resident, my primary goal is to be a strong advocate for our residents at both the GME and attending physician levels," says Dr. Gandi. "I understand the challenges of residency and believe that robust support from leadership can significantly enhance the learning experience."
-        Dr. Gandi's interest in pulmonary critical care influences his approach to patient management and resident education. He plans to organize specialized workshops and case discussions in this field, benefiting residents interested in pulmonary disorders and critical care medicine.
-        Looking ahead, Dr. Gandi aspires to pursue a fellowship in Pulmonary Critical Care, where he hopes to further specialize and contribute to advancements in the field. His dedication to this subspecialty will undoubtedly enrich our program's curriculum and inspire residents with similar interests.
-        "To our fellow residents," Dr. Gandi advises, "remember to have each other's backs. Our diverse backgrounds are our strength – let's learn from one another and grow together. When things get challenging, there's nothing more valuable than the support of your colleagues."
-        Outside of his professional life, Dr. Gandi values quality time with his wife and enjoys traveling, maintaining a balance that enhances both his personal growth and medical career.
-programDirector:
-  sectionTitle: Message from the Assistant Program Director
-  name: Leslie Lamptey, MD
-  title: Assistant Program Director, Internal Medicine Residency
-  image: /img/lamptey.jpeg
-  message: >
-    <p>Our internal medicine residents continue to excel, delivering outstanding patient care while mastering core medical competencies in rural South Georgia. They have quickly become integral members of our community, understanding and addressing its unique healthcare needs with compassion and skill.</p>
-    <p>Our dedicated faculty and Graduate Medical Education team provide a supportive environment that promotes both academic excellence and personal growth. As we prepare to expand with new residency programs, we remain committed to our mission: providing exceptional training and advancing rural healthcare.</p>
-    <p>I'm deeply grateful to our residents, faculty, and staff for their dedication to our program's success and to shaping healthcare's future in South Georgia.</p>
+    <p>"These award-winning initiatives highlight SGMC Health's role in advancing medical education and research to enhance patient safety and quality," said Senior Vice President and Chief Medical Officer Pankaj Agrawal, MD. "The clinical acumen, collaboration, and innovation of our team deserves this recognition."</p>
+
+    <p>GHA President and CEO Caylee Noggle praised SGMC Health's contributions: "We are proud to recognize SGMC Health for their outstanding work to enhance patient safety and quality. Their projects support GHA's strategic initiatives and demonstrate our shared commitment to improving patient outcomes across Georgia."</p>
+communityServiceCorner:
+  sectionTitle: Faculty Update
+  title: SGMC Health Welcomes Matthew Varn, MD, to the Internal Medicine Residency Program Faculty
+  author: 
+  image: /img/matthew-varn-md.jpeg
+  imageCaption: "Matthew Varn, MD, (Internal Medicine Residency Core Faculty)"
+  content: >
+    <p>SGMC Health welcomes Matthew Varn, MD, to its Graduate Medical Education Internal Medicine Residency program as teaching faculty. A board-certified internal medicine physician with deep local roots, Dr. Varn was born at SGMC Health and raised in Valdosta.</p>
+    
+    <p>Having provided outpatient and inpatient care in the community for the past four years, Dr. Varn brings valuable experience to his new role. He earned his Bachelor of Science from Valdosta State University and medical degree from Mercer University School of Medicine before completing his internal medicine residency at Mercer University's Navicent Health program in Macon, where he served as Chief Resident.</p>
+
+    <p>"Everyone deserves the best care, and I take great pride in knowing that I do everything possible to make this happen," says Dr. Varn. Program Director Dr. Greg Beale adds, "His expertise, dedication to patient care, and passion for academic medicine align perfectly with our mission to train the next generation of outstanding physicians."</p>
+
+    <p>Dr. Varn lives in Valdosta with his wife, Dr. Jessica Varn, a local dentist, and their four daughters. When not teaching or caring for patients, he enjoys fly fishing, programming, and spending time with family and friends.</p>
 recentSuccess:
   sectionTitle: Recent Success
   title: SGMC Residents Shine Bright at recent Georgia ACP Conference in Savannah, GA
@@ -111,25 +134,14 @@ recentSuccess:
 musings:
   sectionTitle: "House Staff Diaries"
   title: Musings Of A Resident
-  image: /img/musings-november.jpeg
+  image: /img/musings-december-2024.jpeg
   author: Hala Sharma, MD PGY-2
   content: >
-    <p>As November looms ahead, the intern is four months into their residency, a fledgling, who can now retrospectively analyze and reminisce the bygone days from medical school while simultaneously establishing their identity as a physician. November also means interview season is once again overhead however, it feels strange observing from the other side. There is a sense of relief that washes over one to know the tumultuous journey of participating in the Match is behind you. Unless that is, the journey as a physician-in-training in the residency life cycle is just beginning and there are thoughts about fellowship. The prospect of this exciting venture will be discussed later.</p>
-    <p>It is hard to escape the excitement of graduating from school and entering the real world. The longer white coat symbolizes stepping into the new milestone. Excitement is shared with your current peers and senior residents who you will continue to bond with over the next few years and spend more time with than family and friends. Bright-eyed and bursting with the energy to tackle this new conquest and step closer to their goals, the newly-minted intern heads into the yet hidden chaos of intern year.</p>
-    <p>The bustle and hum of a community hospital encompasses the intern as they step into the fluorescent lights, blinking, and fluttering with intermittent palpitations as they succumb to the reality of their responsibility and the confusion of navigating a maze of unfamiliar hallways. In the resident conference room, they are greeted by Dr. B, the program director who reassures the nervous interns as they head to their first rotations. The intern dives in wholly unaware of the challenging road ahead. Patients, medications, and early hours amalgamate in a caffeinated haze.</p>
-    <p>Nevertheless, the intern's resilience propels them forward; four months have flown by before they know it. Medicine is a mosaic of physiological intricacies intertwined with pathology further colored by the psyche of human nature. Though it never gets easy, there is a certain fulfillment in this career within which one holds the ability to reduce human suffering. So continue to forge ahead little intern. The mistakes, errors, and indecision will lessen as you cement your growing foundation and build your way to attendinghood.</p>
-communityServiceCorner:
-  sectionTitle: Community Service Corner
-  title: Addressing Farmer Health at the 46th Sunbelt Agricultural Exposition
-  author: 
-  image: /img/ag-expo-aerial.jpeg
-  imageCaption: "Aerial view of the expo (Source: Farm Monitor)"
-  content: >
-    <p>As a healthcare professional, I, together with a few colleagues, recently had the privilege of volunteering and presenting short talks on pertinent health topics at the 46th Annual Sunbelt Agricultural Exposition in Moultrie, Georgia. This event, held from October 15–17, 2024, at Spence Field, is truly a spectacle to behold — rightfully crowned as "North America's Premier Farm Show."</p>
-    
-    <p>The Sunbelt Ag Expo is a massive undertaking, spanning 93 acres and featuring over 850 exhibitors. It’s a melting pot of farmers, educators, policymakers, and ag-enthusiasts, all gathered to witness the latest innovations in agriculture. From cutting-edge technology demonstrations to the naming of the Southeastern Farmer of the Year, the expo is a celebration of all things agriculture.</p>
+    <p>Amidst the hustle and bustle of residency, never-ending labs, vitals, nursing requests, seminars, and lengthy note-writing, the bigger picture may become obscured. The why can fall to the wayside while working through the details and minutiae. My most important realization during my intern year while learning what to do was remembering why I was doing it. I wanted to learn and become more efficient and interpreting labs, remembering medications, and improving my presentations during rounds. Yet, some moments would ground and swing me back to reality.</p>
 
-    <p>This year, the expo partnered with the Philadelphia College of Osteopathic Medicine (PCOM) South Georgia to introduce a groundbreaking healthcare exhibit. As part of this initiative, I, along with Dr. Tom and Dr. Silverio-Lopez, presented respectively on skin cancer, complications of diabetes mellitus, and cardiovascular disease prevention.</p>
+    <p>I would walk into the room of my patient and see the scared, confused pained look in their eyes as they tried to observe the myriad of medical information hurtling their way. Their lives were about to change or transform before my eyes. In times like this, I needed to stop and take a breath as well. This was my eighth patient, but it was their whole world. I would need to remind myself to sit down and give this person, who has a whole life outside of this room, the moment they needed to understand and tell me how they felt. They needed to be heard. Sometimes I felt helpless and confused because I did not have many of the answers to their questions immediately. Or perhaps at other moments, I lacked the confidence to clarify their confusion. This would become my splash of cold-water clarity that there was a human life sitting before me. This was not a textbook module or an exam question I could repeat if I was wrong. Thankfully, I observed humanistic qualities among my peers and sought advice from great mentors. I recalled times when I was the person sitting on the bed waiting for a doctor to come by to answer all my questions and reassure me from my fears. The waiting is painful and terrifying when sick and in pain. There is the hope that this suffering will be temporary and will end. This requires trust in those caring for you. In my day, this may mean spending an extra ten minutes in a patient room talking with them but for them, it will shape the rest of their day.</p>
+
+    <p>Another important realization that washed over me was how much of a team effort it is to care for a patient. So many cogs are required to run this machine, which becomes painfully noticeable when one is not working. The nucleus of each is the patient. This line of work requires a lot of patience and emotional maturity. Learning this is an integral part of our training. It is not necessarily perfection that is the goal of medicine but the ability to learn and adapt. At the heart of the matter is kindness and empathy for the suffering and patience when it may be the hardest to give.</p>
   photosTitle: Highlights from the Expo
   photos:
     - image: /img/moultrie/grounds.jpeg

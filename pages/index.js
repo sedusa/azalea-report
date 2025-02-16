@@ -21,6 +21,8 @@ import NewsFromClinic from '@components/sections/NewsFromClinic';
 import WellnessCorner from '@components/sections/WellnessCorner';
 import Podcast from '@/components/sections/Podcast';
 import Culturosity from '@/components/sections/Culturosity';
+import GenericSingleImageTextSection from '@/components/sections/GenericSingleImageTextSection';
+import BasicSection from '@/components/sections/BasicSection';
 
 export default function Home() {
   const {
@@ -28,6 +30,8 @@ export default function Home() {
     about,
     program,
     spotlight,
+    genericSingleImageTextSection,
+    basicSection,
     chiefsCorner,
     programDirector,
     recentSuccess,
@@ -63,11 +67,14 @@ export default function Home() {
         leftColumn={<ResidentSpotlight spotlight={spotlight} />}
         rightColumn={<ProgramInfo program={program} />}
       />
-      <SingleColumnLayout column={<ProgramDirector programDirector={programDirector} />} />
+      <SingleColumnLayout column={ <GenericSingleImageTextSection genericSingleImageTextSection={genericSingleImageTextSection} /> } />
+      {/* <SingleColumnLayout column={<ProgramDirector programDirector={programDirector} />} /> */}
       {/* <SingleColumnLayout column={<ChiefsCorner chiefsCorner={chiefsCorner} />} /> */}
-      <SingleColumnLayout column={<RecentSuccess recentSuccess={recentSuccess} />} />
-      <SingleColumnLayout column={<Musings musings={musings} />} />
       <SingleColumnLayout column={<CommunityService communityServiceCorner={communityServiceCorner} />} />
+      <SingleColumnLayout column={<BasicSection basicSection={basicSection} />} />
+      {/* <SingleColumnLayout column={<RecentSuccess recentSuccess={recentSuccess} />} /> */}
+      <SingleColumnLayout column={<Musings musings={musings} />} />
+      
       <SingleColumnLayout column={<Podcast podcast={podcast} />} />
       <SingleColumnLayout column={ <Culturosity culturosity={culturosity} /> } />
       <SingleColumnLayout column={<PhotosOfTheMonth photosOfMonth={photosOfMonth} />} />

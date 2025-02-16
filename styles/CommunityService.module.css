@@ -31,7 +31,7 @@
 
 .communityServiceCornerImageWrapper {
   float: left;
-  margin: 0 1.5rem 1rem 0;
+  margin: 1.5rem 1.5rem 1rem 0;
   max-width: 400px;
   width: 100%;
 }
@@ -51,6 +51,7 @@
 .communityServiceCornerText {
   font-size: 1.3rem;
   line-height: 1.6;
+  margin-top: 1.5rem;
   color: #333;
 }
 
