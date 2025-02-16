@@ -69,7 +69,7 @@ chiefsCorner:
         Dr. Gandi's interest in pulmonary critical care influences his approach to patient management and resident education. He plans to organize specialized workshops and case discussions in this field, benefiting residents interested in pulmonary disorders and critical care medicine.
         Looking ahead, Dr. Gandi aspires to pursue a fellowship in Pulmonary Critical Care, where he hopes to further specialize and contribute to advancements in the field. His dedication to this subspecialty will undoubtedly enrich our program's curriculum and inspire residents with similar interests.
         "To our fellow residents," Dr. Gandi advises, "remember to have each other's backs. Our diverse backgrounds are our strength – let's learn from one another and grow together. When things get challenging, there's nothing more valuable than the support of your colleagues."
-        Outside of his professional life, Dr. Gandi values quality time with his wife and enjoys traveling, maintaining a balance that enhances both his personal growth and medical career.
+        Outside of his professional life, Dr. Gandi values quality time with his wife and enjoys traveling, maintaining a balance that enhances both his personal growth and medical career..
 programDirector:
   sectionTitle: Message from the Assistant Program Director
   name: Leslie Lamptey, MD
