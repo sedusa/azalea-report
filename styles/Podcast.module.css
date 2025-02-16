@@ -47,3 +47,22 @@
 .fallbackLink a:hover {
   opacity: 0.8;
 }
+
+.toggleButton {
+  background-color: #016f53;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Georgia', serif;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  transition: background-color 0.01s ease;
+}
+
+.toggleButton:hover {
+  background-color: #014d3a;
+}
