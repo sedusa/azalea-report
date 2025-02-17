@@ -230,7 +230,7 @@ photosOfMonth:
     - image: /img/carousel/team-pose-3.jpeg
       caption: "Rocking Red For CHD - Brexton Foundation"
     - image: /img/carousel/intern-hangout.jpeg
-      caption: "Intern hangoug: Cookout at Asma's house"
+      caption: "Intern hangout: Cookout at Asma's house"
     - image: /img/carousel/women-in-medicine-1.jpeg
       caption: "Women in Medicine"
     - image: /img/carousel/women-in-medicine-2.jpeg
