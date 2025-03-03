@@ -322,8 +322,6 @@ events:
       description: Match Day
     - date: Mar 15, 2025
       description: Drs. Megan & Daryoosh's Baby Shower
-    - date: Deb 27, 2025
-      description: "Grand Rounds: Drs. Gandi and Mohan"
 thingsToDo:
   sectionTitle: Things To Do In Valdosta
   images:
