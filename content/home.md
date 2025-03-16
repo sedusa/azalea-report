@@ -223,6 +223,8 @@ photosOfMonth:
   sectionTitle: "Through the Lens: Residency Highlights"
   subTitle: Capturing the Smiles, Milestones, and Unforgettable Moments
   photos:
+    - image: /img/carousel/gallagher-baby-shower.jpeg
+      caption: "Dr. Gallaghers baby shower"
     - image: /img/carousel/val-team-1.jpeg
       caption: "Valentine's Day team pose"
     - image: /img/carousel/val-team-2.jpeg
