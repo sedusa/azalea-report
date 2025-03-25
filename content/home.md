@@ -223,6 +223,12 @@ photosOfMonth:
   sectionTitle: "Through the Lens: Residency Highlights"
   subTitle: Capturing the Smiles, Milestones, and Unforgettable Moments
   photos:
+    - image: /img/carousel/match-day-1.jpeg
+      caption: "Match Day 2025 🎉"
+    - image: /img/carousel/match-day-2.jpeg
+      caption: "Incoming IM Residents 2025 🎉"
+    - image: /img/carousel/match-day-3.jpeg
+      caption: "Incoming TY Residents 2025 🎉"
     - image: /img/carousel/gallagher-baby-shower.jpeg
       caption: "Dr. Gallaghers baby shower"
     - image: /img/carousel/val-team-1.jpeg
@@ -320,10 +326,14 @@ photosOfMonth:
 events:
   sectionTitle: Upcoming Events
   eventsList:
+    - date: May 31st, 2025
+      description: Graduation
+    - date: Apr 26th, 2025
+      description: Walk with a doc
+    - date: Mar 31, 2025
+      description: Retired Physicians' Breakfast (9 - 10:30 am)
     - date: Mar 21, 2025
       description: Match Day
-    - date: Mar 15, 2025
-      description: Drs. Megan & Daryoosh's Baby Shower
 thingsToDo:
   sectionTitle: Things To Do In Valdosta
   images:
