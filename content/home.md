@@ -223,6 +223,8 @@ photosOfMonth:
   sectionTitle: "Through the Lens: Residency Highlights"
   subTitle: Capturing the Smiles, Milestones, and Unforgettable Moments
   photos:
+    - image: /img/carousel/ornob-bag.jpeg
+      caption: "Dr. Rahman sporting his SGMC weekender bag. Happy Doctors Day!👨🏽‍⚕️👩🏻‍⚕️👩🏽‍⚕️🩺"
     - image: /img/carousel/match-day-1.jpeg
       caption: "Match Day 2025 🎉"
     - image: /img/carousel/match-day-2.jpeg
