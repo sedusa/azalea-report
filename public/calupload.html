@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar Upload</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #0070f3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #0051b3;
+        }
+
+        .error {
+            color: #dc2626;
+            margin-bottom: 1rem;
+        }
+
+        .success {
+            color: #059669;
+            margin-bottom: 1rem;
+        }
+
+        #uploadForm {
+            display: none;
+        }
+
+        #loginForm {
+            display: block;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="loginForm">
+            <h2>Login</h2>
+            <div id="loginError" class="error hidden"></div>
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <div id="uploadForm" class="hidden">
+            <h2>Upload Calendar</h2>
+            <div id="uploadError" class="error hidden"></div>
+            <div id="uploadSuccess" class="success hidden"></div>
+            <form onsubmit="handleUpload(event)">
+                <div class="form-group">
+                    <label for="file">Select Calendar File (PDF or Image):</label>
+                    <input type="file" id="file" accept=".pdf,.png,.jpg,.jpeg" required>
+                </div>
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const USERNAME = 'chief';
+        const PASSWORD = 'current2025!';
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const loginError = document.getElementById('loginError');
+
+            if (username === USERNAME && password === PASSWORD) {
+                localStorage.setItem('isLoggedIn', 'true');
+                document.getElementById('loginForm').classList.add('hidden');
+                document.getElementById('uploadForm').classList.remove('hidden');
+            } else {
+                loginError.textContent = 'Invalid credentials';
+                loginError.classList.remove('hidden');
+            }
+        }
+
+        async function handleUpload(event) {
+            event.preventDefault();
+            const fileInput = document.getElementById('file');
+            const uploadError = document.getElementById('uploadError');
+            const uploadSuccess = document.getElementById('uploadSuccess');
+            
+            if (!fileInput.files.length) {
+                uploadError.textContent = 'Please select a file';
+                uploadError.classList.remove('hidden');
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                const response = await fetch('/.netlify/functions/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    uploadSuccess.textContent = `File uploaded successfully for ${data.monthYear}`;
+                    uploadSuccess.classList.remove('hidden');
+                    uploadError.classList.add('hidden');
+                    fileInput.value = '';
+                } else {
+                    throw new Error('Upload failed');
+                }
+            } catch (error) {
+                uploadError.textContent = 'Failed to upload file';
+                uploadError.classList.remove('hidden');
+                uploadSuccess.classList.add('hidden');
+            }
+        }
+
+        // Check login status on page load
+        window.onload = function() {
+            if (localStorage.getItem('isLoggedIn') === 'true') {
+                document.getElementById('loginForm').classList.add('hidden');
+                document.getElementById('uploadForm').classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html> 

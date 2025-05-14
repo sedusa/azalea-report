@@ -1,0 +1,96 @@
+const { getStore } = require('@netlify/blobs');
+
+exports.handler = async (event, context) => {
+    // Only allow POST requests
+    if (event.httpMethod !== 'POST') {
+        return {
+            statusCode: 405,
+            body: JSON.stringify({ error: 'Method not allowed' })
+        };
+    }
+
+    try {
+        const formData = await parseMultipartForm(event);
+        const file = formData.file;
+        const monthYear = new Date().toLocaleString('default', { month: 'long', year: 'numeric' });
+        
+        // Get the blob store
+        const store = getStore('calendar-uploads');
+        
+        // Create a unique filename
+        const timestamp = new Date().getTime();
+        const filename = `${timestamp}-${file.filename}`;
+        
+        // Upload file to Netlify Blobs
+        await store.set(filename, file.buffer, {
+            metadata: {
+                contentType: file.contentType,
+                monthYear: monthYear,
+                originalFilename: file.filename,
+                uploadedAt: new Date().toISOString()
+            }
+        });
+
+        // Get the URL for the uploaded file
+        const url = await store.getURL(filename);
+
+        // Store metadata in a separate blob
+        const metadata = {
+            monthYear,
+            fileUrl: url,
+            filename: filename,
+            originalFilename: file.filename,
+            uploadedAt: new Date().toISOString()
+        };
+
+        // Store the latest upload metadata
+        await store.set('latest-upload', JSON.stringify(metadata));
+
+        return {
+            statusCode: 200,
+            body: JSON.stringify({
+                message: 'File uploaded successfully',
+                monthYear,
+                url: url
+            })
+        };
+    } catch (error) {
+        console.error('Upload error:', error);
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ error: 'Failed to upload file' })
+        };
+    }
+};
+
+// Helper function to parse multipart form data
+async function parseMultipartForm(event) {
+    const boundary = event.headers['content-type'].split('boundary=')[1];
+    const body = Buffer.from(event.body, 'base64');
+    const parts = body.toString().split(`--${boundary}`);
+    
+    const formData = {};
+    
+    for (const part of parts) {
+        if (part.includes('Content-Disposition: form-data')) {
+            const [header, ...content] = part.split('\r\n\r\n');
+            const name = header.match(/name="([^"]+)"/)[1];
+            
+            if (header.includes('filename=')) {
+                const filename = header.match(/filename="([^"]+)"/)[1];
+                const contentType = header.match(/Content-Type: ([^\r\n]+)/)[1];
+                const buffer = Buffer.from(content.join('\r\n\r\n').trim());
+                
+                formData[name] = {
+                    filename,
+                    contentType,
+                    buffer
+                };
+            } else {
+                formData[name] = content.join('\r\n\r\n').trim();
+            }
+        }
+    }
+    
+    return formData;
+} 

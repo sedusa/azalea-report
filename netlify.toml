@@ -1,0 +1,16 @@
+[build]
+  functions = "netlify/functions"
+  publish = "public"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/calupload"
+  to = "/calupload.html"
+  status = 200
+
+[[redirects]]
+  from = "/cal"
+  to = "/cal.html"
+  status = 200 
