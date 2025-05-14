@@ -1,71 +1,74 @@
 import { getStore } from "@netlify/blobs";
+import { v4 as uuid } from "uuid";
 
-export const handler = async (event, context) => {
+export const handler = async (request, context) => {
     // Only allow POST requests
-    if (event.httpMethod !== 'POST') {
-        return {
-            statusCode: 405,
-            body: JSON.stringify({ error: 'Method not allowed' })
-        };
+    if (request.method !== 'POST') {
+        return new Response('Method not allowed', { status: 405 });
     }
 
     try {
         // Get the blob store
         const store = getStore('calendar-uploads');
         
-        // Parse the multipart form data
-        const formData = await parseMultipartForm(event);
-        const file = formData.file;
+        // Parse the form data
+        const formData = await request.formData();
+        const file = formData.get('file');
         
         if (!file) {
-            throw new Error('No file provided');
+            return new Response('No file provided', { status: 400 });
         }
 
         const monthYear = new Date().toLocaleString('default', { month: 'long', year: 'numeric' });
         
-        // Create a unique filename
-        const timestamp = new Date().getTime();
-        const filename = `${timestamp}-${file.filename}`;
+        // Generate a unique key for the file
+        const key = uuid();
         
         // Upload file to Netlify Blobs
-        await store.set(filename, file.buffer, {
+        await store.set(key, file, {
             metadata: {
-                contentType: file.contentType,
+                contentType: file.type,
                 monthYear: monthYear,
-                originalFilename: file.filename,
+                originalFilename: file.name,
                 uploadedAt: new Date().toISOString()
             }
         });
 
         // Get the URL for the uploaded file
-        const url = await store.getURL(filename);
+        const url = await store.getURL(key);
 
         // Store metadata in a separate blob
         const metadata = {
             monthYear,
             fileUrl: url,
-            filename: filename,
-            originalFilename: file.filename,
+            filename: key,
+            originalFilename: file.name,
             uploadedAt: new Date().toISOString()
         };
 
         // Store the latest upload metadata
         await store.set('latest-upload', JSON.stringify(metadata));
 
-        return {
-            statusCode: 200,
-            body: JSON.stringify({
-                message: 'File uploaded successfully',
-                monthYear,
-                url: url
-            })
-        };
+        return new Response(JSON.stringify({
+            message: 'File uploaded successfully',
+            monthYear,
+            url: url
+        }), {
+            status: 200,
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
     } catch (error) {
         console.error('Upload error:', error);
-        return {
-            statusCode: 500,
-            body: JSON.stringify({ error: error.message || 'Failed to upload file' })
-        };
+        return new Response(JSON.stringify({ 
+            error: error.message || 'Failed to upload file' 
+        }), {
+            status: 500,
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
     }
 };
 
