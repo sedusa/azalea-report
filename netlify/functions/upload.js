@@ -1,6 +1,6 @@
-const { getStore } = require('@netlify/blobs');
+import { getStore } from "@netlify/blobs";
 
-exports.handler = async (event, context) => {
+export const handler = async (event, context) => {
     // Only allow POST requests
     if (event.httpMethod !== 'POST') {
         return {
@@ -10,12 +10,18 @@ exports.handler = async (event, context) => {
     }
 
     try {
-        const formData = await parseMultipartForm(event);
-        const file = formData.file;
-        const monthYear = new Date().toLocaleString('default', { month: 'long', year: 'numeric' });
-        
         // Get the blob store
         const store = getStore('calendar-uploads');
+        
+        // Parse the multipart form data
+        const formData = await parseMultipartForm(event);
+        const file = formData.file;
+        
+        if (!file) {
+            throw new Error('No file provided');
+        }
+
+        const monthYear = new Date().toLocaleString('default', { month: 'long', year: 'numeric' });
         
         // Create a unique filename
         const timestamp = new Date().getTime();
@@ -58,7 +64,7 @@ exports.handler = async (event, context) => {
         console.error('Upload error:', error);
         return {
             statusCode: 500,
-            body: JSON.stringify({ error: 'Failed to upload file' })
+            body: JSON.stringify({ error: error.message || 'Failed to upload file' })
         };
     }
 };

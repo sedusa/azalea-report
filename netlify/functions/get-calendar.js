@@ -1,6 +1,6 @@
-const { getStore } = require('@netlify/blobs');
+import { getStore } from "@netlify/blobs";
 
-exports.handler = async (event, context) => {
+export const handler = async (event, context) => {
     try {
         // Get the blob store
         const store = getStore('calendar-uploads');
