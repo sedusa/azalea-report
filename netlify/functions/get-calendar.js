@@ -1,6 +1,6 @@
 const { getStore } = require('@netlify/blobs');
 
-exports.handler = async (request, context) => {
+exports.handler = async (event, context) => {
   try {
     // Get the blob store
     const store = getStore('calendar-uploads');
@@ -9,46 +9,40 @@ exports.handler = async (request, context) => {
     const metadataBlob = await store.get('latest-upload');
 
     if (!metadataBlob) {
-      return new Response(
-        JSON.stringify({
-          error: 'No calendar found',
-        }),
-        {
-          status: 404,
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
+      return {
+        statusCode: 404,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ 
+          error: 'No calendar found' 
+        })
+      };
     }
 
     const metadata = JSON.parse(metadataBlob);
 
-    return new Response(
-      JSON.stringify({
+    return {
+      statusCode: 200,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
         monthYear: metadata.monthYear,
         url: metadata.fileUrl,
-        filename: metadata.originalFilename,
-      }),
-      {
-        status: 200,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
-    );
+        filename: metadata.originalFilename
+      })
+    };
   } catch (error) {
     console.error('Error fetching calendar:', error);
-    return new Response(
-      JSON.stringify({
-        error: 'Failed to fetch calendar',
-      }),
-      {
-        status: 500,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
-    );
+    return {
+      statusCode: 500,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 
+        error: 'Failed to fetch calendar' 
+      })
+    };
   }
 };

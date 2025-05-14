@@ -1,22 +1,28 @@
 const { getStore } = require('@netlify/blobs');
 const { v4: uuid } = require('uuid');
 
-exports.handler = async (request, context) => {
+exports.handler = async (event, context) => {
   // Only allow POST requests
-  if (request.method !== 'POST') {
-    return new Response('Method not allowed', { status: 405 });
+  if (event.httpMethod !== 'POST') {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({ error: 'Method not allowed' })
+    };
   }
 
   try {
     // Get the blob store
     const store = getStore('calendar-uploads');
 
-    // Parse the form data
-    const formData = await request.formData();
-    const file = formData.get('file');
+    // Parse the multipart form data
+    const formData = await parseMultipartForm(event);
+    const file = formData.file;
 
     if (!file) {
-      return new Response('No file provided', { status: 400 });
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: 'No file provided' })
+      };
     }
 
     const monthYear = new Date().toLocaleString('default', {
@@ -28,11 +34,11 @@ exports.handler = async (request, context) => {
     const key = uuid();
 
     // Upload file to Netlify Blobs
-    await store.set(key, file, {
+    await store.set(key, file.buffer, {
       metadata: {
-        contentType: file.type,
+        contentType: file.contentType,
         monthYear: monthYear,
-        originalFilename: file.name,
+        originalFilename: file.filename,
         uploadedAt: new Date().toISOString(),
       },
     });
@@ -45,39 +51,35 @@ exports.handler = async (request, context) => {
       monthYear,
       fileUrl: url,
       filename: key,
-      originalFilename: file.name,
+      originalFilename: file.filename,
       uploadedAt: new Date().toISOString(),
     };
 
     // Store the latest upload metadata
     await store.set('latest-upload', JSON.stringify(metadata));
 
-    return new Response(
-      JSON.stringify({
+    return {
+      statusCode: 200,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
         message: 'File uploaded successfully',
         monthYear,
         url: url,
-      }),
-      {
-        status: 200,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
-    );
+      })
+    };
   } catch (error) {
     console.error('Upload error:', error);
-    return new Response(
-      JSON.stringify({
-        error: error.message || 'Failed to upload file',
-      }),
-      {
-        status: 500,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
-    );
+    return {
+      statusCode: 500,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 
+        error: error.message || 'Failed to upload file' 
+      })
+    };
   }
 };
 
