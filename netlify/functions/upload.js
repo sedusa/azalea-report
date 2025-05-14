@@ -1,105 +1,114 @@
-import { getStore } from "@netlify/blobs";
-import { v4 as uuid } from "uuid";
+import { getStore } from '@netlify/blobs';
+import { v4 as uuid } from 'uuid';
 
 export const handler = async (request, context) => {
-    // Only allow POST requests
-    if (request.method !== 'POST') {
-        return new Response('Method not allowed', { status: 405 });
+  // Only allow POST requests
+  if (request.method !== 'POST') {
+    return new Response('Method not allowed', { status: 405 });
+  }
+
+  try {
+    // Get the blob store
+    const store = getStore('calendar-uploads');
+
+    // Parse the form data
+    const formData = await request.formData();
+    const file = formData.get('file');
+
+    if (!file) {
+      return new Response('No file provided', { status: 400 });
     }
 
-    try {
-        // Get the blob store
-        const store = getStore('calendar-uploads');
-        
-        // Parse the form data
-        const formData = await request.formData();
-        const file = formData.get('file');
-        
-        if (!file) {
-            return new Response('No file provided', { status: 400 });
-        }
+    const monthYear = new Date().toLocaleString('default', {
+      month: 'long',
+      year: 'numeric',
+    });
 
-        const monthYear = new Date().toLocaleString('default', { month: 'long', year: 'numeric' });
-        
-        // Generate a unique key for the file
-        const key = uuid();
-        
-        // Upload file to Netlify Blobs
-        await store.set(key, file, {
-            metadata: {
-                contentType: file.type,
-                monthYear: monthYear,
-                originalFilename: file.name,
-                uploadedAt: new Date().toISOString()
-            }
-        });
+    // Generate a unique key for the file
+    const key = uuid();
 
-        // Get the URL for the uploaded file
-        const url = await store.getURL(key);
+    // Upload file to Netlify Blobs
+    await store.set(key, file, {
+      metadata: {
+        contentType: file.type,
+        monthYear: monthYear,
+        originalFilename: file.name,
+        uploadedAt: new Date().toISOString(),
+      },
+    });
 
-        // Store metadata in a separate blob
-        const metadata = {
-            monthYear,
-            fileUrl: url,
-            filename: key,
-            originalFilename: file.name,
-            uploadedAt: new Date().toISOString()
-        };
+    // Get the URL for the uploaded file
+    const url = await store.getURL(key);
 
-        // Store the latest upload metadata
-        await store.set('latest-upload', JSON.stringify(metadata));
+    // Store metadata in a separate blob
+    const metadata = {
+      monthYear,
+      fileUrl: url,
+      filename: key,
+      originalFilename: file.name,
+      uploadedAt: new Date().toISOString(),
+    };
 
-        return new Response(JSON.stringify({
-            message: 'File uploaded successfully',
-            monthYear,
-            url: url
-        }), {
-            status: 200,
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-    } catch (error) {
-        console.error('Upload error:', error);
-        return new Response(JSON.stringify({ 
-            error: error.message || 'Failed to upload file' 
-        }), {
-            status: 500,
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-    }
+    // Store the latest upload metadata
+    await store.set('latest-upload', JSON.stringify(metadata));
+
+    return new Response(
+      JSON.stringify({
+        message: 'File uploaded successfully',
+        monthYear,
+        url: url,
+      }),
+      {
+        status: 200,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+  } catch (error) {
+    console.error('Upload error:', error);
+    return new Response(
+      JSON.stringify({
+        error: error.message || 'Failed to upload file',
+      }),
+      {
+        status: 500,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+  }
 };
 
 // Helper function to parse multipart form data
 async function parseMultipartForm(event) {
-    const boundary = event.headers['content-type'].split('boundary=')[1];
-    const body = Buffer.from(event.body, 'base64');
-    const parts = body.toString().split(`--${boundary}`);
-    
-    const formData = {};
-    
-    for (const part of parts) {
-        if (part.includes('Content-Disposition: form-data')) {
-            const [header, ...content] = part.split('\r\n\r\n');
-            const name = header.match(/name="([^"]+)"/)[1];
-            
-            if (header.includes('filename=')) {
-                const filename = header.match(/filename="([^"]+)"/)[1];
-                const contentType = header.match(/Content-Type: ([^\r\n]+)/)[1];
-                const buffer = Buffer.from(content.join('\r\n\r\n').trim());
-                
-                formData[name] = {
-                    filename,
-                    contentType,
-                    buffer
-                };
-            } else {
-                formData[name] = content.join('\r\n\r\n').trim();
-            }
-        }
+  const boundary = event.headers['content-type'].split('boundary=')[1];
+  const body = Buffer.from(event.body, 'base64');
+  const parts = body.toString().split(`--${boundary}`);
+
+  const formData = {};
+
+  for (const part of parts) {
+    if (part.includes('Content-Disposition: form-data')) {
+      const [header, ...content] = part.split('\r\n\r\n');
+      const name = header.match(/name="([^"]+)"/)[1];
+
+      if (header.includes('filename=')) {
+        const filename = header.match(/filename="([^"]+)"/)[1];
+        const contentType = header.match(/Content-Type: ([^\r\n]+)/)[1];
+        const buffer = Buffer.from(content.join('\r\n\r\n').trim());
+
+        formData[name] = {
+          filename,
+          contentType,
+          buffer,
+        };
+      } else {
+        formData[name] = content.join('\r\n\r\n').trim();
+      }
     }
-    
-    return formData;
-} 
+  }
+
+  return formData;
+}
