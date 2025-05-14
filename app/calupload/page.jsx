@@ -96,7 +96,7 @@ export default function CalendarUpload() {
                                 required
                             />
                         </div>
-                        <button type="submit">Login</button>
+                        <button type="submit" className={styles.submitButton}>Login</button>
                     </form>
                 </div>
             </div>
