@@ -1,7 +1,7 @@
-import { getStore } from '@netlify/blobs';
-import { v4 as uuid } from 'uuid';
+const { getStore } = require('@netlify/blobs');
+const { v4: uuid } = require('uuid');
 
-export const handler = async (request, context) => {
+exports.handler = async (request, context) => {
   // Only allow POST requests
   if (request.method !== 'POST') {
     return new Response('Method not allowed', { status: 405 });
