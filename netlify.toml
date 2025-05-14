@@ -3,16 +3,27 @@
   publish = ".next"
   functions = "netlify/functions"
 
+[build.environment]
+  NEXT_TELEMETRY_DISABLED = "1"
+  NODE_VERSION = "18"
+
 [functions]
   node_bundler = "esbuild"
   node_version = "18"
 
 [[redirects]]
   from = "/calupload"
-  to = "/calupload"
+  to = "/calupload.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/cal"
-  to = "/cal"
+  to = "/cal.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
   status = 200 
