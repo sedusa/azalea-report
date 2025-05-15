@@ -4,8 +4,8 @@ exports.handler = async (event, context) => {
   try {
     // Get the blob store using the context
     const store = getStore('calendar-uploads', {
-      siteID: context.clientContext.siteID,
-      token: context.clientContext.token
+      siteID: process.env.NETLIFY_SITE_ID,
+      token: process.env.NETLIFY_API_TOKEN
     });
 
     // Get the latest upload metadata
