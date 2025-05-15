@@ -1,9 +1,9 @@
-const { Blobs } = require('@netlify/blobs');
+const { getStore } = require('@netlify/blobs');
 
 exports.handler = async (event, context) => {
   try {
-    // Get the blob store using the new API
-    const store = Blobs.store('calendar-uploads');
+    // Get the blob store using the correct API for version 9.x
+    const store = getStore('calendar-uploads');
 
     // Get the latest upload metadata
     const metadataBlob = await store.get('latest-upload');

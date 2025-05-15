@@ -1,4 +1,4 @@
-const { Blobs } = require('@netlify/blobs');
+const { getStore } = require('@netlify/blobs');
 const { v4: uuid } = require('uuid');
 
 exports.handler = async (event, context) => {
@@ -11,8 +11,8 @@ exports.handler = async (event, context) => {
   }
 
   try {
-    // Get the blob store using the new API
-    const store = Blobs.store('calendar-uploads');
+    // Get the blob store using the correct API for version 9.x
+    const store = getStore('calendar-uploads');
 
     // Parse the multipart form data
     const formData = await parseMultipartForm(event);
