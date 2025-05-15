@@ -11,8 +11,11 @@ exports.handler = async (event, context) => {
   }
 
   try {
-    // Get the blob store using the correct API for version 9.x
-    const store = getStore('calendar-uploads');
+    // Get the blob store with required configuration
+    const store = getStore('calendar-uploads', {
+      siteID: process.env.NETLIFY_SITE_ID,
+      token: process.env.NETLIFY_ACCESS_TOKEN
+    });
 
     // Parse the multipart form data
     const formData = await parseMultipartForm(event);
