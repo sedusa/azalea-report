@@ -2,10 +2,10 @@ const { getStore } = require('@netlify/blobs');
 
 exports.handler = async (event, context) => {
   try {
-    // Get the blob store with required configuration
+    // Get the blob store using the context
     const store = getStore('calendar-uploads', {
-      siteID: process.env.NETLIFY_SITE_ID,
-      token: process.env.NETLIFY_ACCESS_TOKEN
+      siteID: context.clientContext.siteID,
+      token: context.clientContext.token
     });
 
     // Get the latest upload metadata
