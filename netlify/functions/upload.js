@@ -1,6 +1,14 @@
 const { getStore } = require('@netlify/blobs');
 const { v4: uuid } = require('uuid');
 
+const store = getStore('calendar-uploads', {
+  siteID: process.env.NETLIFY_SITE_ID,
+  token: process.env.NETLIFY_API_TOKEN
+});
+
+console.log('Site ID:', process.env.NETLIFY_SITE_ID);
+console.log('Token:', process.env.NETLIFY_API_TOKEN);
+
 exports.handler = async (event, context) => {
   // Only allow POST requests
   if (event.httpMethod !== 'POST') {
