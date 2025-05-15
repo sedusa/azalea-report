@@ -17,6 +17,9 @@ exports.handler = async (event, context) => {
       token: process.env.NETLIFY_API_TOKEN
     });
 
+    console.log('Site ID:', process.env.NETLIFY_SITE_ID);
+    console.log('Token:', process.env.NETLIFY_API_TOKEN);
+
     // Parse the multipart form data
     const formData = await parseMultipartForm(event);
     const file = formData.file;
