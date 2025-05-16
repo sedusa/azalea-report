@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useEffect } from 'react';
 import { useDropzone } from 'react-dropzone';
-import styles from './CalendarUpload.module.css';
+import styles from './upload.module.css';
 
 export default function CalendarUpload() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
