@@ -2,9 +2,8 @@ const { getStore } = require('@netlify/blobs');
 
 exports.handler = async (event, context) => {
   try {
-    // Initialize the blob store with the namespace
-    const store = getStore({
-      name: 'calendar-uploads',
+    // Get the blob store using the context with older format
+    const store = getStore('calendar-uploads', {
       siteID: process.env.NETLIFY_SITE_ID,
       token: process.env.NETLIFY_API_TOKEN
     });
@@ -26,8 +25,10 @@ exports.handler = async (event, context) => {
 
     const metadata = JSON.parse(metadataBlob);
     
-    // Generate a fresh URL for the file that will be valid for the next hour
-    const freshUrl = await store.getURL(metadata.fileKey, { expiresIn: 3600 });
+    // Generate a fresh URL for the file
+    // Check if fileKey is available, if not use filename (for backward compatibility)
+    const fileKey = metadata.fileKey || metadata.filename;
+    const freshUrl = await store.getURL(fileKey);
     
     // Update the metadata with the fresh URL
     metadata.fileUrl = freshUrl;
