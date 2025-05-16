@@ -1,5 +1,25 @@
-const { getStore } = require('@netlify/blobs');
+// Alternative upload.js that uses Netlify Functions built-in storage
+// This avoids the need for Netlify Blobs and its environment variables
+
+const { writeFileSync, mkdirSync, existsSync } = require('fs');
+const { join } = require('path');
 const { v4: uuid } = require('uuid');
+
+// Set up the storage directory in the Netlify Functions tmp folder
+const STORAGE_DIR = join('/tmp', 'calendar-uploads');
+
+// Ensure the storage directory exists
+if (!existsSync(STORAGE_DIR)) {
+  try {
+    mkdirSync(STORAGE_DIR, { recursive: true });
+  } catch (err) {
+    console.error('Failed to create storage directory:', err);
+  }
+}
+
+// Helper to get file paths
+const getFilePath = (key) => join(STORAGE_DIR, `${key}`);
+const getMetadataPath = () => join(STORAGE_DIR, 'latest-upload.json');
 
 exports.handler = async (event, context) => {
   // Only allow POST requests
@@ -11,16 +31,6 @@ exports.handler = async (event, context) => {
   }
 
   try {
-    // Get the blob store using the context
-    // Using the older format for backward compatibility
-    const store = getStore('calendar-uploads', {
-      siteID: process.env.NETLIFY_SITE_ID,
-      token: process.env.NETLIFY_API_TOKEN
-    });
-
-    console.log('Site ID:', process.env.NETLIFY_SITE_ID);
-    console.log('Token:', process.env.NETLIFY_API_TOKEN ? 'Set' : 'Not set');
-
     // Parse the multipart form data
     const formData = await parseMultipartForm(event);
     const file = formData.file;
@@ -39,31 +49,26 @@ exports.handler = async (event, context) => {
 
     // Generate a unique key for the file
     const key = uuid();
+    const filePath = getFilePath(key);
 
-    // Upload file to Netlify Blobs using set (not setStream which may not be available)
-    await store.set(key, file.buffer, {
-      metadata: {
-        contentType: file.contentType,
-        monthYear: monthYear,
-        originalFilename: file.filename,
-        uploadedAt: new Date().toISOString(),
-      },
-    });
+    // Save the file
+    writeFileSync(filePath, file.buffer);
 
-    // Get the URL for the uploaded file
-    const url = await store.getURL(key);
+    // Create a URL (this will be a function URL that serves the file)
+    const url = `/.netlify/functions/serve-file/${key}`;
 
-    // Store metadata in a separate blob
+    // Create metadata
     const metadata = {
       monthYear,
       fileUrl: url,
       fileKey: key,
+      contentType: file.contentType,
       originalFilename: file.filename,
       uploadedAt: new Date().toISOString(),
     };
 
-    // Store the latest upload metadata
-    await store.set('latest-upload', JSON.stringify(metadata));
+    // Save metadata as the latest upload
+    writeFileSync(getMetadataPath(), JSON.stringify(metadata));
 
     return {
       statusCode: 200,
@@ -73,7 +78,7 @@ exports.handler = async (event, context) => {
       body: JSON.stringify({
         message: 'File uploaded successfully',
         monthYear,
-        url: url,
+        url,
       })
     };
   } catch (error) {

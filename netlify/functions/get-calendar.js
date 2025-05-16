@@ -1,17 +1,18 @@
-const { getStore } = require('@netlify/blobs');
+// get-calendar.js - Alternative that doesn't use Netlify Blobs
+
+const { readFileSync, existsSync } = require('fs');
+const { join } = require('path');
+
+// Set up the storage directory in the Netlify Functions tmp folder
+const STORAGE_DIR = join('/tmp', 'calendar-uploads');
+const getMetadataPath = () => join(STORAGE_DIR, 'latest-upload.json');
 
 exports.handler = async (event, context) => {
   try {
-    // Get the blob store using the context with older format
-    const store = getStore('calendar-uploads', {
-      siteID: process.env.NETLIFY_SITE_ID,
-      token: process.env.NETLIFY_API_TOKEN
-    });
-
-    // Get the latest upload metadata
-    const metadataBlob = await store.get('latest-upload');
-
-    if (!metadataBlob) {
+    const metadataPath = getMetadataPath();
+    
+    // Check if metadata exists
+    if (!existsSync(metadataPath)) {
       return {
         statusCode: 404,
         headers: {
@@ -22,17 +23,11 @@ exports.handler = async (event, context) => {
         })
       };
     }
-
-    const metadata = JSON.parse(metadataBlob);
     
-    // Generate a fresh URL for the file
-    // Check if fileKey is available, if not use filename (for backward compatibility)
-    const fileKey = metadata.fileKey || metadata.filename;
-    const freshUrl = await store.getURL(fileKey);
+    // Read metadata
+    const metadataStr = readFileSync(metadataPath, 'utf8');
+    const metadata = JSON.parse(metadataStr);
     
-    // Update the metadata with the fresh URL
-    metadata.fileUrl = freshUrl;
-
     return {
       statusCode: 200,
       headers: {
@@ -40,7 +35,7 @@ exports.handler = async (event, context) => {
       },
       body: JSON.stringify({
         monthYear: metadata.monthYear,
-        url: freshUrl,
+        url: metadata.fileUrl,
         filename: metadata.originalFilename
       })
     };
