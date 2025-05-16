@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useEffect } from 'react';
 import { useDropzone } from 'react-dropzone';
-import styles from './upload.module.css';
+import styles from './CalendarUpload.module.css';
 
 export default function CalendarUpload() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -93,6 +93,16 @@ export default function CalendarUpload() {
         }
     }, [isLoggedIn]);
 
+    // Clear success message after 5 seconds
+    useEffect(() => {
+        if (success) {
+            const timer = setTimeout(() => {
+                setSuccess('');
+            }, 5000);
+            return () => clearTimeout(timer);
+        }
+    }, [success]);
+
     const onDrop = useCallback(async (acceptedFiles) => {
         const file = acceptedFiles[0];
         if (!file) return;
@@ -158,6 +168,11 @@ export default function CalendarUpload() {
         setPassword('');
     };
 
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        return date.toLocaleString();
+    };
+
     if (!isLoggedIn) {
         return (
             <div className={styles.container}>
@@ -204,7 +219,10 @@ export default function CalendarUpload() {
                     </button>
                     <button
                         className={`${styles.tabButton} ${activeView === 'list' ? styles.activeTab : ''}`}
-                        onClick={() => setActiveView('list')}
+                        onClick={() => {
+                            setActiveView('list');
+                            fetchCalendars(); // Refresh calendars when tab is clicked
+                        }}
                     >
                         View Calendars
                     </button>
@@ -230,6 +248,12 @@ export default function CalendarUpload() {
                                     className={styles.viewButton}
                                 >
                                     View Calendar
+                                </a>
+                                <a
+                                    href={`${latestCalendar.url}?download=true`}
+                                    className={styles.downloadButton}
+                                >
+                                    Download
                                 </a>
                             </div>
                         </div>
@@ -277,21 +301,27 @@ export default function CalendarUpload() {
                                 </thead>
                                 <tbody>
                                     {calendars.map((calendar) => (
-                                        <tr key={calendar.key}>
+                                        <tr key={calendar.fileKey}>
                                             <td>{calendar.monthYear}</td>
                                             <td>{calendar.originalFilename}</td>
-                                            <td>{new Date(calendar.uploadedAt).toLocaleString()}</td>
+                                            <td>{formatDate(calendar.uploadedAt)}</td>
                                             <td>
                                                 <a
-                                                    href={calendar.url}
+                                                    href={calendar.fileUrl}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className={styles.viewButton}
                                                 >
                                                     View
                                                 </a>
+                                                <a
+                                                    href={calendar.downloadUrl}
+                                                    className={styles.downloadButton}
+                                                >
+                                                    Download
+                                                </a>
                                                 <button
-                                                    onClick={() => deleteCalendar(calendar.key)}
+                                                    onClick={() => deleteCalendar(calendar.fileKey)}
                                                     className={styles.deleteButton}
                                                 >
                                                     Delete

@@ -1,4 +1,4 @@
-// get-calendar.js - Alternative that doesn't use Netlify Blobs
+// get-calendar.js - Get the latest calendar
 
 const { readFileSync, existsSync } = require('fs');
 const { join } = require('path');

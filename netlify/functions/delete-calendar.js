@@ -1,4 +1,13 @@
-const { getStore } = require('@netlify/blobs');
+// delete-calendar.js - Delete a calendar
+
+const { readFileSync, writeFileSync, existsSync, unlinkSync } = require('fs');
+const { join } = require('path');
+
+// Set up the storage directory in the Netlify Functions tmp folder
+const STORAGE_DIR = join('/tmp', 'calendar-uploads');
+const getFilePath = (key) => join(STORAGE_DIR, `${key}`);
+const getMetadataPath = () => join(STORAGE_DIR, 'latest-upload.json');
+const getAllCalendarsPath = () => join(STORAGE_DIR, 'all-calendars.json');
 
 exports.handler = async (event, context) => {
   // Only allow DELETE requests
@@ -24,30 +33,11 @@ exports.handler = async (event, context) => {
         })
       };
     }
-
-    // Get the blob store using the context
-    const store = getStore('calendar-uploads', {
-      siteID: process.env.NETLIFY_SITE_ID,
-      token: process.env.NETLIFY_API_TOKEN
-    });
-
-    // Check if the blob exists first
-    // Use get instead of head which might not be available
-    try {
-      const exists = await store.get(key);
-      if (!exists) {
-        return {
-          statusCode: 404,
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ 
-            error: 'Calendar not found' 
-          })
-        };
-      }
-    } catch (err) {
-      // If error, assume not found
+    
+    const filePath = getFilePath(key);
+    
+    // Check if the file exists
+    if (!existsSync(filePath)) {
       return {
         statusCode: 404,
         headers: {
@@ -58,22 +48,59 @@ exports.handler = async (event, context) => {
         })
       };
     }
-
-    // Delete the blob
-    await store.delete(key);
-
-    // Check if this was the latest calendar
-    const latestMetadata = await store.get('latest-upload');
     
-    if (latestMetadata) {
-      const metadata = JSON.parse(latestMetadata);
-      
-      // Check if fileKey is available, if not use filename (for backward compatibility)
-      const fileKey = metadata.fileKey || metadata.filename;
-      
-      // If this was the latest calendar, remove the latest-upload blob
-      if (fileKey === key) {
-        await store.delete('latest-upload');
+    // Delete the file
+    unlinkSync(filePath);
+    
+    // Update all calendars list
+    const allCalendarsPath = getAllCalendarsPath();
+    if (existsSync(allCalendarsPath)) {
+      try {
+        const allCalendarsStr = readFileSync(allCalendarsPath, 'utf8');
+        let allCalendars = JSON.parse(allCalendarsStr);
+        
+        // Remove this calendar from the list
+        allCalendars = allCalendars.filter(cal => cal.fileKey !== key);
+        
+        // Save the updated list
+        writeFileSync(allCalendarsPath, JSON.stringify(allCalendars));
+        
+        // If there are no more calendars, delete the file
+        if (allCalendars.length === 0) {
+          unlinkSync(allCalendarsPath);
+        }
+      } catch (err) {
+        console.error('Error updating all calendars list:', err);
+      }
+    }
+    
+    // Check if this was the latest calendar
+    const metadataPath = getMetadataPath();
+    if (existsSync(metadataPath)) {
+      try {
+        const metadataStr = readFileSync(metadataPath, 'utf8');
+        const metadata = JSON.parse(metadataStr);
+        
+        if (metadata.fileKey === key) {
+          // This was the latest calendar, get the next latest from all calendars
+          if (existsSync(allCalendarsPath)) {
+            const allCalendarsStr = readFileSync(allCalendarsPath, 'utf8');
+            const allCalendars = JSON.parse(allCalendarsStr);
+            
+            if (allCalendars.length > 0) {
+              // The first calendar in the list is the most recent
+              writeFileSync(metadataPath, JSON.stringify(allCalendars[0]));
+            } else {
+              // No more calendars, delete the latest-upload.json
+              unlinkSync(metadataPath);
+            }
+          } else {
+            // No more calendars, delete the latest-upload.json
+            unlinkSync(metadataPath);
+          }
+        }
+      } catch (err) {
+        console.error('Error updating latest calendar metadata:', err);
       }
     }
 

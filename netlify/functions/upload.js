@@ -1,7 +1,6 @@
-// Alternative upload.js that uses Netlify Functions built-in storage
-// This avoids the need for Netlify Blobs and its environment variables
+// upload.js - Upload a calendar file
 
-const { writeFileSync, mkdirSync, existsSync } = require('fs');
+const { writeFileSync, mkdirSync, existsSync, readFileSync } = require('fs');
 const { join } = require('path');
 const { v4: uuid } = require('uuid');
 
@@ -20,6 +19,7 @@ if (!existsSync(STORAGE_DIR)) {
 // Helper to get file paths
 const getFilePath = (key) => join(STORAGE_DIR, `${key}`);
 const getMetadataPath = () => join(STORAGE_DIR, 'latest-upload.json');
+const getAllCalendarsPath = () => join(STORAGE_DIR, 'all-calendars.json');
 
 exports.handler = async (event, context) => {
   // Only allow POST requests
@@ -69,6 +69,28 @@ exports.handler = async (event, context) => {
 
     // Save metadata as the latest upload
     writeFileSync(getMetadataPath(), JSON.stringify(metadata));
+
+    // Add to all calendars list
+    let allCalendars = [];
+    const allCalendarsPath = getAllCalendarsPath();
+    
+    if (existsSync(allCalendarsPath)) {
+      try {
+        const allCalendarsData = readFileSync(allCalendarsPath, 'utf8');
+        allCalendars = JSON.parse(allCalendarsData);
+      } catch (err) {
+        console.error('Error reading all calendars:', err);
+      }
+    }
+    
+    // Add the new calendar to the list
+    allCalendars.push(metadata);
+    
+    // Sort by uploadedAt in descending order (newest first)
+    allCalendars.sort((a, b) => new Date(b.uploadedAt) - new Date(a.uploadedAt));
+    
+    // Save the updated list
+    writeFileSync(allCalendarsPath, JSON.stringify(allCalendars));
 
     return {
       statusCode: 200,
