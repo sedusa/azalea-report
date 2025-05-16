@@ -15,21 +15,32 @@ export default function CalendarUpload() {
     const [isLoading, setIsLoading] = useState(false);
     const [activeView, setActiveView] = useState('upload'); // 'upload' or 'list'
     const [latestCalendar, setLatestCalendar] = useState(null);
+    const [debugInfo, setDebugInfo] = useState(null);
 
     // Function to fetch calendars
     const fetchCalendars = async () => {
         setIsLoading(true);
+        setError('');
         try {
+            console.log('Fetching calendars...');
             const response = await fetch('/.netlify/functions/list-calendars');
             const data = await response.json();
-
+            
+            console.log('Calendar data received:', data);
+            
             if (response.ok) {
                 setCalendars(data.calendars || []);
+                setDebugInfo(
+                    `Found ${data.calendars?.length || 0} calendars. ` +
+                    (data.message ? `Message: ${data.message}` : '')
+                );
             } else {
                 throw new Error(data.error || 'Failed to fetch calendars');
             }
         } catch (err) {
+            console.error('Error fetching calendars:', err);
             setError(err.message || 'Failed to fetch calendars');
+            setDebugInfo(`Error: ${err.message}`);
         } finally {
             setIsLoading(false);
         }
@@ -38,9 +49,12 @@ export default function CalendarUpload() {
     // Function to fetch latest calendar
     const fetchLatestCalendar = async () => {
         try {
+            console.log('Fetching latest calendar...');
             const response = await fetch('/.netlify/functions/get-calendar');
             const data = await response.json();
-
+            
+            console.log('Latest calendar data:', data);
+            
             if (response.ok) {
                 setLatestCalendar(data);
             } else {
@@ -52,20 +66,22 @@ export default function CalendarUpload() {
             setLatestCalendar(null);
         }
     };
-
+    
     // Function to delete a calendar
     const deleteCalendar = async (key) => {
         if (!window.confirm('Are you sure you want to delete this calendar?')) {
             return;
         }
-
+        
         try {
+            console.log(`Deleting calendar with key: ${key}`);
             const response = await fetch(`/.netlify/functions/delete-calendar/${key}`, {
                 method: 'DELETE'
             });
-
+            
             const data = await response.json();
-
+            console.log('Delete response:', data);
+            
             if (response.ok) {
                 setSuccess('Calendar deleted successfully');
                 // Refresh the calendars list
@@ -75,6 +91,7 @@ export default function CalendarUpload() {
                 throw new Error(data.error || 'Failed to delete calendar');
             }
         } catch (err) {
+            console.error('Error deleting calendar:', err);
             setError(err.message || 'Failed to delete calendar');
         }
     };
@@ -121,26 +138,34 @@ export default function CalendarUpload() {
         formData.append('file', file);
 
         try {
+            console.log(`Uploading file: ${file.name}, type: ${file.type}, size: ${file.size} bytes`);
             const response = await fetch('/.netlify/functions/upload', {
                 method: 'POST',
                 body: formData
             });
 
             const data = await response.json();
+            console.log('Upload response:', data);
 
             if (response.ok) {
                 setSuccess(`File uploaded successfully for ${data.monthYear}`);
                 // Update latest calendar after successful upload
                 fetchLatestCalendar();
+                
+                // If we're in the list view, refresh the list
+                if (activeView === 'list') {
+                    fetchCalendars();
+                }
             } else {
                 throw new Error(data.error || 'Upload failed');
             }
         } catch (err) {
+            console.error('Error uploading file:', err);
             setError(err.message || 'Failed to upload file');
         } finally {
             setIsUploading(false);
         }
-    }, []);
+    }, [activeView]);
 
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
         onDrop,
@@ -211,13 +236,13 @@ export default function CalendarUpload() {
         <div className={styles.container}>
             <div className={styles.header}>
                 <div className={styles.tabs}>
-                    <button
+                    <button 
                         className={`${styles.tabButton} ${activeView === 'upload' ? styles.activeTab : ''}`}
                         onClick={() => setActiveView('upload')}
                     >
                         Upload Calendar
                     </button>
-                    <button
+                    <button 
                         className={`${styles.tabButton} ${activeView === 'list' ? styles.activeTab : ''}`}
                         onClick={() => {
                             setActiveView('list');
@@ -232,25 +257,25 @@ export default function CalendarUpload() {
 
             {error && <div className={styles.error}>{error}</div>}
             {success && <div className={styles.success}>{success}</div>}
-
+            
             {activeView === 'upload' && (
                 <div className={styles.uploadBox}>
                     <h2>Upload Calendar</h2>
-
+                    
                     {latestCalendar && (
                         <div className={styles.latestCalendar}>
                             <h3>Current Calendar: {latestCalendar.monthYear}</h3>
                             <div className={styles.previewContainer}>
-                                <a
-                                    href={latestCalendar.url}
-                                    target="_blank"
+                                <a 
+                                    href={latestCalendar.url} 
+                                    target="_blank" 
                                     rel="noopener noreferrer"
                                     className={styles.viewButton}
                                 >
                                     View Calendar
                                 </a>
-                                <a
-                                    href={`${latestCalendar.url}?download=true`}
+                                <a 
+                                    href={`${latestCalendar.url}?download=true`} 
                                     className={styles.downloadButton}
                                 >
                                     Download
@@ -258,9 +283,9 @@ export default function CalendarUpload() {
                             </div>
                         </div>
                     )}
-
-                    <div
-                        {...getRootProps()}
+                    
+                    <div 
+                        {...getRootProps()} 
                         className={`${styles.dropzone} ${isDragActive ? styles.active : ''}`}
                     >
                         <input {...getInputProps()} />
@@ -279,15 +304,28 @@ export default function CalendarUpload() {
                     </div>
                 </div>
             )}
-
+            
             {activeView === 'list' && (
                 <div className={styles.calendarList}>
                     <h2>All Calendars</h2>
-
+                    
                     {isLoading ? (
                         <div className={styles.loading}>Loading calendars...</div>
                     ) : calendars.length === 0 ? (
-                        <div className={styles.noCalendars}>No calendars found</div>
+                        <div className={styles.noCalendars}>
+                            No calendars found
+                            {debugInfo && (
+                                <div className={styles.debugInfo}>
+                                    <p>{debugInfo}</p>
+                                    <button 
+                                        onClick={fetchCalendars}
+                                        className={styles.refreshButton}
+                                    >
+                                        Refresh
+                                    </button>
+                                </div>
+                            )}
+                        </div>
                     ) : (
                         <div className={styles.calendarsGrid}>
                             <table className={styles.calendarsTable}>
@@ -306,21 +344,21 @@ export default function CalendarUpload() {
                                             <td>{calendar.originalFilename}</td>
                                             <td>{formatDate(calendar.uploadedAt)}</td>
                                             <td>
-                                                <a
-                                                    href={calendar.fileUrl}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
+                                                <a 
+                                                    href={calendar.fileUrl} 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer" 
                                                     className={styles.viewButton}
                                                 >
                                                     View
                                                 </a>
-                                                <a
-                                                    href={calendar.downloadUrl}
+                                                <a 
+                                                    href={calendar.downloadUrl} 
                                                     className={styles.downloadButton}
                                                 >
                                                     Download
                                                 </a>
-                                                <button
+                                                <button 
                                                     onClick={() => deleteCalendar(calendar.fileKey)}
                                                     className={styles.deleteButton}
                                                 >
