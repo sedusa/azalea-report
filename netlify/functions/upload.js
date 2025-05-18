@@ -112,7 +112,7 @@ async function parseMultipartForm(event) {
     if (!contentType || !contentType.includes('multipart/form-data')) {
       return reject(new Error('Invalid content type, expected multipart/form-data'));
     }
-    const busboy = new Busboy({ headers: { 'content-type': contentType } });
+    const busboy = Busboy({ headers: { 'content-type': contentType } });
     const formData = {};
     busboy.on('file', (fieldname, file, filename, encoding, mimetype) => {
       const buffers = [];
