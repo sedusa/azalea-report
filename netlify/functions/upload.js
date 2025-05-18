@@ -39,10 +39,13 @@ exports.handler = async (event, context) => {
     const fileExt = file.filename.split('.').pop();
     const storagePath = `${key}.${fileExt}`;
 
+    // Convert Node.js Buffer to Uint8Array before upload
+    const uint8Array = new Uint8Array(file.buffer);
+
     // Upload file to Supabase Storage
     const { error: uploadError } = await supabase.storage
       .from('calendars')
-      .upload(storagePath, file.buffer, {
+      .upload(storagePath, uint8Array, {
         contentType: file.contentType,
         upsert: false
       });
