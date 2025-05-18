@@ -1,26 +1,7 @@
 // upload.js - Fixed version with better debugging
 
-const { writeFileSync, mkdirSync, existsSync, readFileSync } = require('fs');
-const { join } = require('path');
+const { supabase } = require('../../utils/supabaseClient');
 const { v4: uuid } = require('uuid');
-
-// Set up the storage directory in the Netlify Functions tmp folder
-const STORAGE_DIR = join('/tmp', 'calendar-uploads');
-
-// Ensure the storage directory exists
-if (!existsSync(STORAGE_DIR)) {
-  try {
-    console.log(`Creating directory: ${STORAGE_DIR}`);
-    mkdirSync(STORAGE_DIR, { recursive: true });
-  } catch (err) {
-    console.error('Failed to create storage directory:', err);
-  }
-}
-
-// Helper to get file paths
-const getFilePath = (key) => join(STORAGE_DIR, `${key}`);
-const getMetadataPath = () => join(STORAGE_DIR, 'latest-upload.json');
-const getAllCalendarsPath = () => join(STORAGE_DIR, 'all-calendars.json');
 
 exports.handler = async (event, context) => {
   console.log("Upload function called");
@@ -54,64 +35,45 @@ exports.handler = async (event, context) => {
       year: 'numeric',
     });
 
-    // Generate a unique key for the file
     const key = uuid();
-    const filePath = getFilePath(key);
-    console.log(`Saving file to: ${filePath}`);
+    const fileExt = file.filename.split('.').pop();
+    const storagePath = `${key}.${fileExt}`;
 
-    // Save the file
-    writeFileSync(filePath, file.buffer);
-    console.log("File saved successfully");
-
-    // Create a URL (this will be a function URL that serves the file)
-    const url = `/.netlify/functions/serve-file/${key}`;
-
-    // Create metadata
-    const metadata = {
-      monthYear,
-      fileUrl: url,
-      fileKey: key,
-      contentType: file.contentType,
-      originalFilename: file.filename,
-      uploadedAt: new Date().toISOString(),
-    };
-
-    // Save metadata as the latest upload
-    const metadataPath = getMetadataPath();
-    console.log(`Saving latest metadata to: ${metadataPath}`);
-    writeFileSync(metadataPath, JSON.stringify(metadata));
-    console.log("Latest metadata saved");
-
-    // Add to all calendars list
-    let allCalendars = [];
-    const allCalendarsPath = getAllCalendarsPath();
-    
-    if (existsSync(allCalendarsPath)) {
-      console.log("all-calendars.json exists, reading it");
-      try {
-        const allCalendarsData = readFileSync(allCalendarsPath, 'utf8');
-        allCalendars = JSON.parse(allCalendarsData);
-        console.log(`Found ${allCalendars.length} existing calendars`);
-      } catch (err) {
-        console.error('Error reading all calendars:', err);
-        // Start fresh if the file is corrupted
-        allCalendars = [];
-      }
-    } else {
-      console.log("all-calendars.json doesn't exist, creating new list");
+    // Upload file to Supabase Storage
+    const { error: uploadError } = await supabase.storage
+      .from('calendars')
+      .upload(storagePath, file.buffer, {
+        contentType: file.contentType,
+        upsert: false
+      });
+    if (uploadError) {
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ error: 'Failed to upload file to storage', details: uploadError.message })
+      };
     }
-    
-    // Add the new calendar to the list
-    allCalendars.push(metadata);
-    console.log(`Now have ${allCalendars.length} calendars total`);
-    
-    // Sort by uploadedAt in descending order (newest first)
-    allCalendars.sort((a, b) => new Date(b.uploadedAt) - new Date(a.uploadedAt));
-    
-    // Save the updated list
-    console.log(`Saving updated calendar list to: ${allCalendarsPath}`);
-    writeFileSync(allCalendarsPath, JSON.stringify(allCalendars));
-    console.log("Calendar list saved");
+
+    // Get public URL
+    const { data: publicUrlData } = supabase.storage.from('calendars').getPublicUrl(storagePath);
+    const fileUrl = publicUrlData.publicUrl;
+
+    // Insert metadata into Supabase DB
+    const { error: dbError } = await supabase.from('calendars').insert([
+      {
+        id: key,
+        month_year: monthYear,
+        file_url: fileUrl,
+        content_type: file.contentType,
+        original_filename: file.filename,
+        uploaded_at: new Date().toISOString(),
+      }
+    ]);
+    if (dbError) {
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ error: 'Failed to save metadata', details: dbError.message })
+      };
+    }
 
     return {
       statusCode: 200,
@@ -121,7 +83,7 @@ exports.handler = async (event, context) => {
       body: JSON.stringify({
         message: 'File uploaded successfully',
         monthYear,
-        url,
+        url: fileUrl,
       })
     };
   } catch (error) {

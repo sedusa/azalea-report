@@ -1,54 +1,44 @@
 // get-calendar.js - Get the latest calendar
 
-const { readFileSync, existsSync } = require('fs');
-const { join } = require('path');
-
-// Set up the storage directory in the Netlify Functions tmp folder
-const STORAGE_DIR = join('/tmp', 'calendar-uploads');
-const getMetadataPath = () => join(STORAGE_DIR, 'latest-upload.json');
+const { supabase } = require('../../utils/supabaseClient');
 
 exports.handler = async (event, context) => {
   try {
-    const metadataPath = getMetadataPath();
-    
-    // Check if metadata exists
-    if (!existsSync(metadataPath)) {
+    // Fetch the latest calendar from Supabase
+    const { data, error } = await supabase
+      .from('calendars')
+      .select('*')
+      .order('uploaded_at', { ascending: false })
+      .limit(1);
+    if (error) {
       return {
-        statusCode: 404,
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ 
-          error: 'No calendar found' 
-        })
+        statusCode: 500,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ error: 'Failed to fetch calendar', details: error.message })
       };
     }
-    
-    // Read metadata
-    const metadataStr = readFileSync(metadataPath, 'utf8');
-    const metadata = JSON.parse(metadataStr);
-    
+    if (!data || data.length === 0) {
+      return {
+        statusCode: 404,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ error: 'No calendar found' })
+      };
+    }
+    const calendar = data[0];
     return {
       statusCode: 200,
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        monthYear: metadata.monthYear,
-        url: metadata.fileUrl,
-        filename: metadata.originalFilename
+        monthYear: calendar.month_year,
+        url: calendar.file_url,
+        filename: calendar.original_filename
       })
     };
   } catch (error) {
-    console.error('Error fetching calendar:', error);
     return {
       statusCode: 500,
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ 
-        error: 'Failed to fetch calendar' 
-      })
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ error: 'Failed to fetch calendar', details: error.message })
     };
   }
 };

@@ -1,13 +1,6 @@
 // delete-calendar.js - Delete a calendar
 
-const { readFileSync, writeFileSync, existsSync, unlinkSync } = require('fs');
-const { join } = require('path');
-
-// Set up the storage directory in the Netlify Functions tmp folder
-const STORAGE_DIR = join('/tmp', 'calendar-uploads');
-const getFilePath = (key) => join(STORAGE_DIR, `${key}`);
-const getMetadataPath = () => join(STORAGE_DIR, 'latest-upload.json');
-const getAllCalendarsPath = () => join(STORAGE_DIR, 'all-calendars.json');
+const { supabase } = require('../../utils/supabaseClient');
 
 exports.handler = async (event, context) => {
   // Only allow DELETE requests
@@ -34,10 +27,13 @@ exports.handler = async (event, context) => {
       };
     }
     
-    const filePath = getFilePath(key);
-    
-    // Check if the file exists
-    if (!existsSync(filePath)) {
+    // Get the calendar metadata from Supabase
+    const { data, error: fetchError } = await supabase
+      .from('calendars')
+      .select('*')
+      .eq('id', key)
+      .single();
+    if (fetchError || !data) {
       return {
         statusCode: 404,
         headers: {
@@ -49,59 +45,32 @@ exports.handler = async (event, context) => {
       };
     }
     
-    // Delete the file
-    unlinkSync(filePath);
-    
-    // Update all calendars list
-    const allCalendarsPath = getAllCalendarsPath();
-    if (existsSync(allCalendarsPath)) {
-      try {
-        const allCalendarsStr = readFileSync(allCalendarsPath, 'utf8');
-        let allCalendars = JSON.parse(allCalendarsStr);
-        
-        // Remove this calendar from the list
-        allCalendars = allCalendars.filter(cal => cal.fileKey !== key);
-        
-        // Save the updated list
-        writeFileSync(allCalendarsPath, JSON.stringify(allCalendars));
-        
-        // If there are no more calendars, delete the file
-        if (allCalendars.length === 0) {
-          unlinkSync(allCalendarsPath);
-        }
-      } catch (err) {
-        console.error('Error updating all calendars list:', err);
+    // Delete the file from Supabase Storage
+    const fileUrl = data.file_url;
+    const storagePath = fileUrl.split('/calendars/')[1];
+    if (storagePath) {
+      const { error: storageError } = await supabase.storage.from('calendars').remove([storagePath]);
+      if (storageError) {
+        return {
+          statusCode: 500,
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ error: 'Failed to delete file from storage', details: storageError.message })
+        };
       }
     }
     
-    // Check if this was the latest calendar
-    const metadataPath = getMetadataPath();
-    if (existsSync(metadataPath)) {
-      try {
-        const metadataStr = readFileSync(metadataPath, 'utf8');
-        const metadata = JSON.parse(metadataStr);
-        
-        if (metadata.fileKey === key) {
-          // This was the latest calendar, get the next latest from all calendars
-          if (existsSync(allCalendarsPath)) {
-            const allCalendarsStr = readFileSync(allCalendarsPath, 'utf8');
-            const allCalendars = JSON.parse(allCalendarsStr);
-            
-            if (allCalendars.length > 0) {
-              // The first calendar in the list is the most recent
-              writeFileSync(metadataPath, JSON.stringify(allCalendars[0]));
-            } else {
-              // No more calendars, delete the latest-upload.json
-              unlinkSync(metadataPath);
-            }
-          } else {
-            // No more calendars, delete the latest-upload.json
-            unlinkSync(metadataPath);
-          }
-        }
-      } catch (err) {
-        console.error('Error updating latest calendar metadata:', err);
-      }
+    // Delete the metadata from Supabase DB
+    const { error: dbError } = await supabase.from('calendars').delete().eq('id', key);
+    if (dbError) {
+      return {
+        statusCode: 500,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ error: 'Failed to delete calendar metadata', details: dbError.message })
+      };
     }
 
     return {
@@ -121,7 +90,8 @@ exports.handler = async (event, context) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ 
-        error: 'Failed to delete calendar' 
+        error: 'Failed to delete calendar',
+        details: error.message
       })
     };
   }
