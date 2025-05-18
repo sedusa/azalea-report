@@ -339,13 +339,13 @@ export default function CalendarUpload() {
                                 </thead>
                                 <tbody>
                                     {calendars.map((calendar) => (
-                                        <tr key={calendar.fileKey}>
-                                            <td>{calendar.monthYear}</td>
-                                            <td>{calendar.originalFilename}</td>
-                                            <td>{formatDate(calendar.uploadedAt)}</td>
+                                        <tr key={calendar.id}>
+                                            <td>{calendar.month_year}</td>
+                                            <td>{calendar.original_filename}</td>
+                                            <td>{formatDate(calendar.uploaded_at)}</td>
                                             <td>
                                                 <a 
-                                                    href={calendar.fileUrl} 
+                                                    href={calendar.file_url} 
                                                     target="_blank" 
                                                     rel="noopener noreferrer" 
                                                     className={styles.viewButton}
@@ -359,7 +359,7 @@ export default function CalendarUpload() {
                                                     Download
                                                 </a>
                                                 <button 
-                                                    onClick={() => deleteCalendar(calendar.fileKey)}
+                                                    onClick={() => deleteCalendar(calendar.id)}
                                                     className={styles.deleteButton}
                                                 >
                                                     Delete
