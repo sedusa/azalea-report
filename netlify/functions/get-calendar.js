@@ -25,12 +25,20 @@ exports.handler = async (event, context) => {
       };
     }
     const calendar = data[0];
+    let fileUrl = calendar.file_url;
+    // If fileUrl is just a path (does not start with http), generate a public URL
+    if (fileUrl && !fileUrl.startsWith('http')) {
+      const { data: publicUrlData, error: publicUrlError } = supabase.storage.from('calendars').getPublicUrl(fileUrl);
+      if (!publicUrlError && publicUrlData && publicUrlData.publicUrl) {
+        fileUrl = publicUrlData.publicUrl;
+      }
+    }
     return {
       statusCode: 200,
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         monthYear: calendar.month_year,
-        url: calendar.file_url,
+        url: fileUrl,
         filename: calendar.original_filename
       })
     };

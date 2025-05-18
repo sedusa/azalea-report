@@ -17,10 +17,20 @@ exports.handler = async (event, context) => {
         body: JSON.stringify({ error: 'Failed to fetch calendars', details: error.message })
       };
     }
-    // Add downloadUrl for each calendar
-    const calendarsWithDownload = calendars.map(calendar => ({
-      ...calendar,
-      downloadUrl: `${calendar.file_url}?download=true`
+    // Add downloadUrl for each calendar, ensuring file_url is a public URL
+    const calendarsWithDownload = await Promise.all(calendars.map(async calendar => {
+      let fileUrl = calendar.file_url;
+      if (fileUrl && !fileUrl.startsWith('http')) {
+        const { data: publicUrlData, error: publicUrlError } = supabase.storage.from('calendars').getPublicUrl(fileUrl);
+        if (!publicUrlError && publicUrlData && publicUrlData.publicUrl) {
+          fileUrl = publicUrlData.publicUrl;
+        }
+      }
+      return {
+        ...calendar,
+        file_url: fileUrl,
+        downloadUrl: `${fileUrl}?download=true`
+      };
     }));
     return {
       statusCode: 200,
