@@ -206,35 +206,43 @@ export default function CalendarUpload() {
 
   if (!isLoggedIn) {
     return (
-      <div className={styles.container}>
-        <div className={styles.loginBox}>
-          <h2>Login</h2>
-          {error && <div className={styles.error}>{error}</div>}
-          <form onSubmit={handleLogin}>
-            <div className={styles.formGroup}>
-              <label htmlFor='username'>Username:</label>
-              <input
-                type='text'
-                id='username'
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                required
-              />
-            </div>
-            <div className={styles.formGroup}>
-              <label htmlFor='password'>Password:</label>
-              <input
-                type='password'
-                id='password'
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
-            <button type='submit' className={styles.submitButton}>
-              Login
-            </button>
-          </form>
+      <div className={styles.loginSplitContainer}>
+        <div className={styles.loginImageSection}>
+          <img src="/valdosta-mural.jpeg" alt="Greetings from Downtown Valdosta mural" className={styles.loginImage} />
+        </div>
+        <div className={styles.loginFormSection}>
+          <div className={styles.loginFormBox}>
+            <h2 className={styles.loginTitle}>Login</h2>
+            <p className={styles.loginSubtitle}>Enter your credentials to access your account</p>
+            {error && <div className={styles.error}>{error}</div>}
+            <form onSubmit={handleLogin}>
+              <div className={styles.formGroup}>
+                <label htmlFor="username" className={styles.loginLabel}>Email</label>
+                <input
+                  type="text"
+                  id="username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  required
+                  className={styles.loginInput}
+                  autoComplete="username"
+                />
+              </div>
+              <div className={styles.formGroup}>
+                <label htmlFor="password" className={styles.loginLabel}>Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  className={styles.loginInput}
+                  autoComplete="current-password"
+                />
+              </div>
+              <button type="submit" className={styles.loginButton}>Login</button>
+            </form>
+          </div>
         </div>
       </div>
     );

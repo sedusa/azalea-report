@@ -300,3 +300,131 @@
 .setCurrentButton:hover {
   background-color: #d6e4ff;
 }
+
+.loginSplitContainer {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.loginImageSection {
+  flex: 1.2;
+  background: #222;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  min-width: 0;
+}
+
+.loginImage {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+}
+
+.loginFormSection {
+  flex: 1;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.loginFormBox {
+  width: 100%;
+  max-width: 370px;
+  margin: 0 auto;
+  background: none;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0 2rem;
+}
+
+.loginTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #f5f5f5;
+  text-align: left;
+}
+
+.loginSubtitle {
+  font-size: 1.05rem;
+  color: #bdbdbd;
+  margin-bottom: 2.2rem;
+  text-align: left;
+}
+
+.loginLabel {
+  font-size: 1rem;
+  color: #e0e0e0;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  display: block;
+}
+
+.loginInput {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #181818;
+  color: #fff;
+  font-size: 1.05rem;
+  margin-bottom: 1.3rem;
+  outline: none;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  transition: border 0.2s;
+}
+
+.loginInput:focus {
+  border: 1.5px solid #ffc32b;
+}
+
+.loginButton {
+  width: 100%;
+  padding: 1rem 0;
+  background: #ffc32b;
+  color: #181818;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
+}
+
+.loginButton:hover {
+  background: #ffb300;
+}
+
+@media (max-width: 900px) {
+  .loginSplitContainer {
+    flex-direction: column;
+  }
+  .loginImageSection {
+    height: 220px;
+    min-height: 180px;
+    max-height: 260px;
+    flex: none;
+  }
+  .loginImage {
+    height: 100%;
+    width: 100vw;
+    object-fit: cover;
+  }
+  .loginFormSection {
+    min-height: 60vh;
+    flex: none;
+    padding: 2.5rem 0 2rem 0;
+  }
+  .loginFormBox {
+    padding: 0 1rem;
+  }
+}
