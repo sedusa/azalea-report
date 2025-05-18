@@ -2,6 +2,8 @@
 
 const { supabase } = require('../../utils/supabaseClient');
 const { v4: uuid } = require('uuid');
+const Busboy = require('busboy');
+const { Readable } = require('stream');
 
 exports.handler = async (event, context) => {
   console.log("Upload function called");
@@ -103,70 +105,33 @@ exports.handler = async (event, context) => {
   }
 };
 
-// Helper function to parse multipart form data
+// Helper function to parse multipart form data using busboy
 async function parseMultipartForm(event) {
-  console.log("Starting to parse multipart form data");
-  
-  const contentType = event.headers['content-type'] || '';
-  if (!contentType.includes('multipart/form-data')) {
-    console.error(`Invalid content type: ${contentType}`);
-    throw new Error('Invalid content type, expected multipart/form-data');
-  }
-  
-  const boundaryMatch = contentType.match(/boundary=(?:"([^"]+)"|([^;]+))/);
-  if (!boundaryMatch) {
-    console.error('No boundary found in content-type');
-    throw new Error('No boundary found in content-type');
-  }
-  
-  const boundary = boundaryMatch[1] || boundaryMatch[2];
-  console.log(`Found boundary: ${boundary}`);
-  
-  const body = Buffer.from(event.body, 'base64');
-  console.log(`Body length: ${body.length} bytes`);
-  
-  const parts = body.toString().split(`--${boundary}`);
-  console.log(`Found ${parts.length} parts`);
-
-  const formData = {};
-
-  for (const part of parts) {
-    if (part.includes('Content-Disposition: form-data')) {
-      const [header, ...content] = part.split('\r\n\r\n');
-      const nameMatch = header.match(/name="([^"]+)"/);
-      
-      if (!nameMatch) {
-        console.log('Part has no name, skipping');
-        continue;
-      }
-      
-      const name = nameMatch[1];
-      console.log(`Processing part with name: ${name}`);
-
-      if (header.includes('filename=')) {
-        const filenameMatch = header.match(/filename="([^"]+)"/);
-        const filename = filenameMatch ? filenameMatch[1] : 'unnamed_file';
-        
-        const contentTypeMatch = header.match(/Content-Type: ([^\r\n]+)/);
-        const contentType = contentTypeMatch ? contentTypeMatch[1] : 'application/octet-stream';
-        
-        const buffer = Buffer.from(content.join('\r\n\r\n').trim());
-        
-        console.log(`File part: ${filename}, type: ${contentType}, size: ${buffer.length} bytes`);
-
-        formData[name] = {
-          filename,
-          contentType,
-          buffer,
-        };
-      } else {
-        const value = content.join('\r\n\r\n').trim();
-        console.log(`Field part: ${name}=${value}`);
-        formData[name] = value;
-      }
+  return new Promise((resolve, reject) => {
+    const contentType = event.headers['content-type'] || event.headers['Content-Type'];
+    if (!contentType || !contentType.includes('multipart/form-data')) {
+      return reject(new Error('Invalid content type, expected multipart/form-data'));
     }
-  }
-
-  console.log(`Parsed ${Object.keys(formData).length} form fields`);
-  return formData;
+    const busboy = new Busboy({ headers: { 'content-type': contentType } });
+    const formData = {};
+    busboy.on('file', (fieldname, file, filename, encoding, mimetype) => {
+      const buffers = [];
+      file.on('data', (data) => buffers.push(data));
+      file.on('end', () => {
+        formData[fieldname] = {
+          filename,
+          contentType: mimetype,
+          buffer: Buffer.concat(buffers),
+        };
+      });
+    });
+    busboy.on('field', (fieldname, value) => {
+      formData[fieldname] = value;
+    });
+    busboy.on('finish', () => resolve(formData));
+    busboy.on('error', reject);
+    // Netlify provides the body as base64-encoded string
+    const body = Buffer.from(event.body, 'base64');
+    Readable.from(body).pipe(busboy);
+  });
 }
