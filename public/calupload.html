@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +21,7 @@
             background: white;
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 400px;
         }
@@ -81,6 +82,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div id="loginForm">
@@ -138,7 +140,7 @@
             const fileInput = document.getElementById('file');
             const uploadError = document.getElementById('uploadError');
             const uploadSuccess = document.getElementById('uploadSuccess');
-            
+
             if (!fileInput.files.length) {
                 uploadError.textContent = 'Please select a file';
                 uploadError.classList.remove('hidden');
@@ -172,7 +174,7 @@
         }
 
         // Check login status on page load
-        window.onload = function() {
+        window.onload = function () {
             if (localStorage.getItem('isLoggedIn') === 'true') {
                 document.getElementById('loginForm').classList.add('hidden');
                 document.getElementById('uploadForm').classList.remove('hidden');
@@ -180,4 +182,5 @@
         }
     </script>
 </body>
-</html> 
+
+</html>
