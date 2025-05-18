@@ -4,11 +4,11 @@ const { supabase } = require('../../utils/supabaseClient');
 
 exports.handler = async (event, context) => {
   try {
-    // Fetch the latest calendar from Supabase
-    const { data, error } = await supabase
+    // Try to fetch the current calendar first
+    let { data, error } = await supabase
       .from('calendars')
       .select('*')
-      .order('uploaded_at', { ascending: false })
+      .eq('is_current', true)
       .limit(1);
     if (error) {
       return {
@@ -16,6 +16,15 @@ exports.handler = async (event, context) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ error: 'Failed to fetch calendar', details: error.message })
       };
+    }
+    // If no current calendar, fall back to latest
+    if (!data || data.length === 0) {
+      const fallback = await supabase
+        .from('calendars')
+        .select('*')
+        .order('uploaded_at', { ascending: false })
+        .limit(1);
+      data = fallback.data;
     }
     if (!data || data.length === 0) {
       return {
