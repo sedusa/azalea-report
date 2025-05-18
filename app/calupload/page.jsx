@@ -364,6 +364,24 @@ export default function CalendarUpload() {
                                                 >
                                                     Delete
                                                 </button>
+                                                {calendar.is_current ? (
+                                                    <span className={styles.currentBadge}>Current</span>
+                                                ) : (
+                                                    <button
+                                                        onClick={async () => {
+                                                            await fetch('/.netlify/functions/set-current-calendar', {
+                                                                method: 'POST',
+                                                                headers: { 'Content-Type': 'application/json' },
+                                                                body: JSON.stringify({ id: calendar.id })
+                                                            });
+                                                            fetchCalendars();
+                                                            fetchLatestCalendar();
+                                                        }}
+                                                        className={styles.setCurrentButton}
+                                                    >
+                                                        Set as Current
+                                                    </button>
+                                                )}
                                             </td>
                                         </tr>
                                     ))}

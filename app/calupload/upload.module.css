@@ -271,3 +271,32 @@
   justify-content: flex-start;
   margin-top: 1rem;
 }
+
+.currentBadge {
+  display: inline-block;
+  background-color: #e6fffb;
+  color: #13c2c2;
+  border: 1px solid #87e8de;
+  border-radius: 4px;
+  padding: 0.3rem 0.7rem;
+  margin-left: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.setCurrentButton {
+  background-color: #f0f5ff;
+  color: #2f54eb;
+  border: 1px solid #adc6ff;
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.setCurrentButton:hover {
+  background-color: #d6e4ff;
+}
