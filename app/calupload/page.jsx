@@ -4,12 +4,6 @@ import { useState, useCallback, useEffect } from 'react';
 import { useDropzone } from 'react-dropzone';
 import styles from './upload.module.css';
 
-function setHtmlDarkMode(isDark) {
-  if (typeof window !== 'undefined') {
-    document.documentElement.classList.toggle('dark', isDark);
-  }
-}
-
 export default function CalendarUpload() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
@@ -132,20 +126,15 @@ export default function CalendarUpload() {
     // Detect system preference on mount
     const mq = window.matchMedia('(prefers-color-scheme: dark)');
     setDarkMode(mq.matches);
-    setHtmlDarkMode(mq.matches);
     const handler = (e) => {
       setDarkMode(e.matches);
-      setHtmlDarkMode(e.matches);
     };
     mq.addEventListener('change', handler);
     return () => mq.removeEventListener('change', handler);
   }, []);
 
   const handleToggleDarkMode = () => {
-    setDarkMode((prev) => {
-      setHtmlDarkMode(!prev);
-      return !prev;
-    });
+    setDarkMode((prev) => !prev);
   };
 
   const onDrop = useCallback(
@@ -276,7 +265,7 @@ export default function CalendarUpload() {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.themeVars} ${darkMode ? styles.dark : ''} ${styles.container}`}>
       <div className={styles.header}>
         <div className={styles.tabs}>
           <button
