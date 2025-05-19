@@ -158,10 +158,8 @@ export default function CalendarUpload() {
           // Update latest calendar after successful upload
           fetchLatestCalendar();
 
-          // If we're in the list view, refresh the list
-          if (activeView === 'list') {
-            fetchCalendars();
-          }
+          // Always refresh the list after upload
+          fetchCalendars();
         } else {
           throw new Error(data.error || 'Upload failed');
         }
