@@ -428,3 +428,39 @@
     padding: 0 1rem;
   }
 }
+
+@media (max-width: 600px) {
+  .loginTitle {
+    font-size: 1.5rem;
+  }
+  .loginSubtitle {
+    font-size: 0.95rem;
+  }
+  .loginLabel {
+    font-size: 0.95rem;
+  }
+  .loginInput {
+    font-size: 0.95rem;
+  }
+  .loginButton {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .loginTitle {
+    font-size: 1.1rem;
+  }
+  .loginSubtitle {
+    font-size: 0.85rem;
+  }
+  .loginLabel {
+    font-size: 0.85rem;
+  }
+  .loginInput {
+    font-size: 0.85rem;
+  }
+  .loginButton {
+    font-size: 0.9rem;
+  }
+}

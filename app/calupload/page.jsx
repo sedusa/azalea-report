@@ -213,11 +213,11 @@ export default function CalendarUpload() {
         <div className={styles.loginFormSection}>
           <div className={styles.loginFormBox}>
             <h2 className={styles.loginTitle}>Login</h2>
-            <p className={styles.loginSubtitle}>Enter your credentials to access your account</p>
+            <p className={styles.loginSubtitle}>Enter your credentials to proceed</p>
             {error && <div className={styles.error}>{error}</div>}
             <form onSubmit={handleLogin}>
               <div className={styles.formGroup}>
-                <label htmlFor="username" className={styles.loginLabel}>Email</label>
+                <label htmlFor="username" className={styles.loginLabel}>Username</label>
                 <input
                   type="text"
                   id="username"
