@@ -353,27 +353,6 @@ export default function CalendarUpload() {
       {/* Upload Section */}
       <div className={styles.uploadBox}>
         <h2>Upload Calendar</h2>
-        {latestCalendar && (
-          <div className={styles.latestCalendar}>
-            <h3>Current Calendar: {latestCalendar.monthYear}</h3>
-            <div className={styles.previewContainer}>
-              <a
-                href={latestCalendar.url}
-                target='_blank'
-                rel='noopener noreferrer'
-                className={styles.viewButton}
-              >
-                View Calendar
-              </a>
-              <a
-                href={`${latestCalendar.url}?download=true`}
-                className={styles.downloadButton}
-              >
-                Download
-              </a>
-            </div>
-          </div>
-        )}
         <div
           {...getRootProps()}
           className={`${styles.dropzone} ${isDragActive ? styles.active : ''}`}
