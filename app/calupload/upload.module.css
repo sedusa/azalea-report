@@ -430,6 +430,15 @@
 }
 
 @media (max-width: 600px) {
+  .loginSplitContainer {
+    min-height: 100vh;
+    height: 100vh;
+  }
+  .loginFormSection {
+    min-height: 100vh;
+    height: 100vh;
+    padding: 0;
+  }
   .loginTitle {
     font-size: 1.5rem;
   }
@@ -448,6 +457,15 @@
 }
 
 @media (max-width: 400px) {
+  .loginSplitContainer {
+    min-height: 100vh;
+    height: 100vh;
+  }
+  .loginFormSection {
+    min-height: 100vh;
+    height: 100vh;
+    padding: 0;
+  }
   .loginTitle {
     font-size: 1.1rem;
   }
