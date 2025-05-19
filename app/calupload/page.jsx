@@ -4,6 +4,12 @@ import { useState, useCallback, useEffect } from 'react';
 import { useDropzone } from 'react-dropzone';
 import styles from './upload.module.css';
 
+function setHtmlDarkMode(isDark) {
+  if (typeof window !== 'undefined') {
+    document.documentElement.classList.toggle('dark', isDark);
+  }
+}
+
 export default function CalendarUpload() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
@@ -16,6 +22,7 @@ export default function CalendarUpload() {
   const [activeView, setActiveView] = useState('upload'); // 'upload' or 'list'
   const [latestCalendar, setLatestCalendar] = useState(null);
   const [debugInfo, setDebugInfo] = useState(null);
+  const [darkMode, setDarkMode] = useState(false);
 
   // Function to fetch calendars
   const fetchCalendars = async () => {
@@ -120,6 +127,26 @@ export default function CalendarUpload() {
       return () => clearTimeout(timer);
     }
   }, [success]);
+
+  useEffect(() => {
+    // Detect system preference on mount
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    setDarkMode(mq.matches);
+    setHtmlDarkMode(mq.matches);
+    const handler = (e) => {
+      setDarkMode(e.matches);
+      setHtmlDarkMode(e.matches);
+    };
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
+  const handleToggleDarkMode = () => {
+    setDarkMode((prev) => {
+      setHtmlDarkMode(!prev);
+      return !prev;
+    });
+  };
 
   const onDrop = useCallback(
     async (acceptedFiles) => {
@@ -272,9 +299,14 @@ export default function CalendarUpload() {
             View Calendars
           </button>
         </div>
-        <button onClick={handleLogout} className={styles.logoutButton}>
-          Logout
-        </button>
+        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+          <button onClick={handleToggleDarkMode} className={styles.logoutButton} title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}>
+            {darkMode ? '🌙 Dark' : '☀️ Light'}
+          </button>
+          <button onClick={handleLogout} className={styles.logoutButton}>
+            Logout
+          </button>
+        </div>
       </div>
 
       {error && <div className={styles.error}>{error}</div>}

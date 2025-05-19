@@ -3,17 +3,19 @@
   margin: 2rem auto;
   max-width: 900px;
   padding: 1.5rem;
-  background-color: #fff;
+  background-color: var(--color-bg);
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  color: var(--color-text);
 }
 
 .loginBox {
   max-width: 500px;
   margin: 0 auto;
   padding: 2rem;
-  background-color: #f9f9f9;
+  background-color: var(--color-bg-alt);
   border-radius: 8px;
+  color: var(--color-text);
 }
 
 .formGroup {
@@ -29,16 +31,18 @@
 .formGroup input {
   width: 100%;
   padding: 0.8rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-border);
   border-radius: 4px;
   font-size: 1rem;
+  background: var(--color-bg);
+  color: var(--color-text);
 }
 
 .submitButton {
   width: 100%;
   padding: 0.8rem;
-  background-color: #0070f3;
-  color: white;
+  background-color: var(--color-primary);
+  color: #fff;
   border: none;
   border-radius: 4px;
   font-size: 1rem;
@@ -48,7 +52,7 @@
 }
 
 .submitButton:hover {
-  background-color: #0060df;
+  background-color: var(--color-primary-hover);
 }
 
 .header {
@@ -56,11 +60,12 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.5rem;
+  color: var(--color-text);
 }
 
 .tabs {
   display: flex;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--color-tab-border);
 }
 
 .tabButton {
@@ -69,26 +74,26 @@
   border: none;
   font-size: 1rem;
   font-weight: 500;
-  color: #666;
+  color: var(--color-tab-inactive);
   cursor: pointer;
   border-bottom: 2px solid transparent;
   transition: all 0.2s;
 }
 
 .tabButton:hover {
-  color: #0070f3;
+  color: var(--color-primary);
 }
 
 .activeTab {
-  color: #0070f3;
-  border-bottom: 2px solid #0070f3;
+  color: var(--color-tab-active);
+  border-bottom: 2px solid var(--color-tab-active);
 }
 
 .logoutButton {
   padding: 0.5rem 1rem;
-  background-color: #f5f5f5;
-  color: #666;
-  border: 1px solid #ddd;
+  background-color: var(--color-logout-bg);
+  color: var(--color-logout-text);
+  border: 1px solid var(--color-logout-border);
   border-radius: 4px;
   font-size: 0.9rem;
   cursor: pointer;
@@ -96,89 +101,92 @@
 }
 
 .logoutButton:hover {
-  background-color: #e5e5e5;
+  background-color: var(--color-logout-hover);
 }
 
 .uploadBox {
   padding: 1.5rem;
-  background-color: #f9f9f9;
+  background-color: var(--color-bg-alt);
   border-radius: 8px;
+  color: var(--color-text);
 }
 
 .uploadBox h2 {
   margin-top: 0;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: var(--color-text);
 }
 
 .error {
   padding: 1rem;
   margin-bottom: 1rem;
-  background-color: #fff1f0;
-  border: 1px solid #ffa39e;
+  background-color: var(--color-error-bg);
+  border: 1px solid var(--color-error-border);
   border-radius: 4px;
-  color: #cf1322;
+  color: var(--color-error-text);
 }
 
 .success {
   padding: 1rem;
   margin-bottom: 1rem;
-  background-color: #f6ffed;
-  border: 1px solid #b7eb8f;
+  background-color: var(--color-success-bg);
+  border: 1px solid var(--color-success-border);
   border-radius: 4px;
-  color: #52c41a;
+  color: var(--color-success-text);
 }
 
 .dropzone {
   padding: 2rem;
-  border: 2px dashed #ddd;
+  border: 2px dashed var(--color-dropzone-border);
   border-radius: 8px;
   text-align: center;
   cursor: pointer;
   transition: border-color 0.2s;
+  color: var(--color-upload-prompt);
 }
 
 .dropzone:hover,
 .dropzone.active {
-  border-color: #0070f3;
+  border-color: var(--color-dropzone-active);
 }
 
 .uploadPrompt p {
   margin: 0.5rem 0;
-  color: #666;
+  color: var(--color-upload-prompt);
 }
 
 .supportedFormats {
   font-size: 0.9rem;
-  color: #999;
+  color: var(--color-upload-formats);
 }
 
 .calendarList {
   padding: 1.5rem;
-  background-color: #f9f9f9;
+  background-color: var(--color-bg-alt);
   border-radius: 8px;
+  color: var(--color-text);
 }
 
 .calendarList h2 {
   margin-top: 0;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: var(--color-text);
 }
 
 .loading {
   text-align: center;
   padding: 2rem;
-  color: #666;
+  color: var(--color-upload-prompt);
   font-style: italic;
 }
 
 .noCalendars {
   text-align: center;
   padding: 2rem;
-  color: #666;
-  background-color: #f9f9f9;
+  color: var(--color-upload-prompt);
+  background-color: var(--color-bg-alt);
   border-radius: 4px;
-  border: 1px dashed #ddd;
+  border: 1px dashed var(--color-border);
 }
 
 .calendarsGrid {
@@ -194,17 +202,18 @@
 .calendarsTable td {
   padding: 0.8rem;
   text-align: left;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
 }
 
 .calendarsTable th {
-  background-color: #f5f5f5;
+  background-color: var(--color-table-header-bg);
   font-weight: 600;
-  color: #555;
+  color: var(--color-table-header-text);
 }
 
 .calendarsTable tr:hover {
-  background-color: #f9f9f9;
+  background-color: var(--color-table-row-hover);
 }
 
 .viewButton,
@@ -223,7 +232,7 @@
 
 .viewButton {
   background-color: #e6f7ff;
-  color: #0070f3;
+  color: var(--color-primary);
   border: 1px solid #b3e0ff;
 }
 
@@ -234,9 +243,9 @@
 }
 
 .deleteButton {
-  background-color: #fff1f0;
-  color: #cf1322;
-  border: 1px solid #ffa39e;
+  background-color: var(--color-error-bg);
+  color: var(--color-error-text);
+  border: 1px solid var(--color-error-border);
 }
 
 .viewButton:hover {
@@ -257,12 +266,13 @@
   background-color: #f0f7ff;
   border: 1px solid #bae0ff;
   border-radius: 6px;
+  color: var(--color-text);
 }
 
 .latestCalendar h3 {
   margin-top: 0;
   margin-bottom: 1rem;
-  color: #0070f3;
+  color: var(--color-primary);
   font-size: 1.2rem;
 }
 
@@ -274,9 +284,9 @@
 
 .currentBadge {
   display: inline-block;
-  background-color: #e6fffb;
-  color: #13c2c2;
-  border: 1px solid #87e8de;
+  background-color: var(--color-badge-bg);
+  color: var(--color-badge-text);
+  border: 1px solid var(--color-badge-border);
   border-radius: 4px;
   padding: 0.3rem 0.7rem;
   margin-left: 0.5rem;
@@ -285,9 +295,9 @@
 }
 
 .setCurrentButton {
-  background-color: #f0f5ff;
-  color: #2f54eb;
-  border: 1px solid #adc6ff;
+  background-color: var(--color-set-current-bg);
+  color: var(--color-set-current-text);
+  border: 1px solid var(--color-set-current-border);
   border-radius: 4px;
   padding: 0.4rem 0.8rem;
   margin-right: 0.5rem;
@@ -306,6 +316,8 @@
   min-height: 100vh;
   width: 100vw;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
 }
 
 .loginImageSection {
@@ -331,6 +343,7 @@
   align-items: center;
   justify-content: center;
   min-width: 0;
+  color: var(--color-text);
 }
 
 .loginFormBox {
@@ -338,7 +351,7 @@
   max-width: 370px;
   margin: 0 auto;
   background: none;
-  color: #fff;
+  color: var(--color-text);
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -349,20 +362,20 @@
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  color: #f5f5f5;
+  color: var(--color-text);
   text-align: left;
 }
 
 .loginSubtitle {
   font-size: 1.05rem;
-  color: #bdbdbd;
+  color: var(--color-upload-prompt);
   margin-bottom: 2.2rem;
   text-align: left;
 }
 
 .loginLabel {
   font-size: 1rem;
-  color: #e0e0e0;
+  color: var(--color-upload-formats);
   margin-bottom: 0.4rem;
   font-weight: 500;
   display: block;
@@ -373,8 +386,8 @@
   padding: 0.9rem 1rem;
   border-radius: 8px;
   border: none;
-  background: #181818;
-  color: #fff;
+  background: var(--color-bg);
+  color: var(--color-text);
   font-size: 1.05rem;
   margin-bottom: 1.3rem;
   outline: none;
@@ -383,14 +396,14 @@
 }
 
 .loginInput:focus {
-  border: 1.5px solid #ffc32b;
+  border: 1.5px solid var(--color-primary);
 }
 
 .loginButton {
   width: 100%;
   padding: 1rem 0;
-  background: #ffc32b;
-  color: #181818;
+  background: var(--color-primary);
+  color: #fff;
   border: none;
   border-radius: 8px;
   font-size: 1.15rem;
@@ -401,7 +414,7 @@
 }
 
 .loginButton:hover {
-  background: #ffb300;
+  background: var(--color-primary-hover);
 }
 
 @media (max-width: 900px) {
@@ -481,4 +494,75 @@
   .loginButton {
     font-size: 0.9rem;
   }
+}
+
+/* Color variables for light and dark mode */
+:root {
+  --color-bg: #fff;
+  --color-bg-alt: #f9f9f9;
+  --color-text: #222;
+  --color-primary: #0070f3;
+  --color-primary-hover: #0060df;
+  --color-border: #ddd;
+  --color-error-bg: #fff1f0;
+  --color-error-border: #ffa39e;
+  --color-error-text: #cf1322;
+  --color-success-bg: #f6ffed;
+  --color-success-border: #b7eb8f;
+  --color-success-text: #52c41a;
+  --color-table-header-bg: #f5f5f5;
+  --color-table-header-text: #555;
+  --color-table-row-hover: #f9f9f9;
+  --color-tab-inactive: #666;
+  --color-tab-active: #0070f3;
+  --color-tab-border: #eee;
+  --color-badge-bg: #e6fffb;
+  --color-badge-text: #13c2c2;
+  --color-badge-border: #87e8de;
+  --color-set-current-bg: #f0f5ff;
+  --color-set-current-text: #2f54eb;
+  --color-set-current-border: #adc6ff;
+  --color-dropzone-border: #ddd;
+  --color-dropzone-active: #0070f3;
+  --color-upload-prompt: #666;
+  --color-upload-formats: #999;
+  --color-logout-bg: #f5f5f5;
+  --color-logout-hover: #e5e5e5;
+  --color-logout-text: #666;
+  --color-logout-border: #ddd;
+}
+
+.dark {
+  --color-bg: #181a1b;
+  --color-bg-alt: #23272a;
+  --color-text: #f5f5f5;
+  --color-primary: #4f8cff;
+  --color-primary-hover: #2563eb;
+  --color-border: #333a40;
+  --color-error-bg: #2d1a1a;
+  --color-error-border: #ff4d4f;
+  --color-error-text: #ff7875;
+  --color-success-bg: #1a2d1a;
+  --color-success-border: #52c41a;
+  --color-success-text: #b7eb8f;
+  --color-table-header-bg: #23272a;
+  --color-table-header-text: #bdbdbd;
+  --color-table-row-hover: #23272a;
+  --color-tab-inactive: #bdbdbd;
+  --color-tab-active: #4f8cff;
+  --color-tab-border: #333a40;
+  --color-badge-bg: #1a2d2d;
+  --color-badge-text: #36cfc9;
+  --color-badge-border: #13c2c2;
+  --color-set-current-bg: #232a3a;
+  --color-set-current-text: #4f8cff;
+  --color-set-current-border: #4f8cff;
+  --color-dropzone-border: #333a40;
+  --color-dropzone-active: #4f8cff;
+  --color-upload-prompt: #bdbdbd;
+  --color-upload-formats: #888;
+  --color-logout-bg: #23272a;
+  --color-logout-hover: #333a40;
+  --color-logout-text: #bdbdbd;
+  --color-logout-border: #333a40;
 }
