@@ -16,7 +16,6 @@ export default function CalendarUpload() {
   const [activeView, setActiveView] = useState('upload'); // 'upload' or 'list'
   const [latestCalendar, setLatestCalendar] = useState(null);
   const [debugInfo, setDebugInfo] = useState(null);
-  const [darkMode, setDarkMode] = useState(false);
 
   // Function to fetch calendars
   const fetchCalendars = async () => {
@@ -108,6 +107,7 @@ export default function CalendarUpload() {
   // Load latest calendar when logged in
   useEffect(() => {
     if (isLoggedIn) {
+      fetchCalendars();
       fetchLatestCalendar();
     }
   }, [isLoggedIn]);
@@ -121,21 +121,6 @@ export default function CalendarUpload() {
       return () => clearTimeout(timer);
     }
   }, [success]);
-
-  useEffect(() => {
-    // Detect system preference on mount
-    const mq = window.matchMedia('(prefers-color-scheme: dark)');
-    setDarkMode(mq.matches);
-    const handler = (e) => {
-      setDarkMode(e.matches);
-    };
-    mq.addEventListener('change', handler);
-    return () => mq.removeEventListener('change', handler);
-  }, []);
-
-  const handleToggleDarkMode = () => {
-    setDarkMode((prev) => !prev);
-  };
 
   const onDrop = useCallback(
     async (acceptedFiles) => {
@@ -265,184 +250,151 @@ export default function CalendarUpload() {
   }
 
   return (
-    <div className={`${styles.themeVars} ${darkMode ? styles.dark : ''} ${styles.container}`}>
-      <div className={styles.header}>
-        <div className={styles.tabs}>
-          <button
-            className={`${styles.tabButton} ${
-              activeView === 'upload' ? styles.activeTab : ''
-            }`}
-            onClick={() => setActiveView('upload')}
-          >
-            Upload Calendar
-          </button>
-          <button
-            className={`${styles.tabButton} ${
-              activeView === 'list' ? styles.activeTab : ''
-            }`}
-            onClick={() => {
-              setActiveView('list');
-              fetchCalendars(); // Refresh calendars when tab is clicked
-            }}
-          >
-            View Calendars
-          </button>
-        </div>
-        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-          <button onClick={handleToggleDarkMode} className={styles.logoutButton} title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}>
-            {darkMode ? '🌙 Dark' : '☀️ Light'}
-          </button>
-          <button onClick={handleLogout} className={styles.logoutButton}>
-            Logout
-          </button>
-        </div>
+    <div className={styles.container}>
+      <div className={styles.header} style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+        <button onClick={handleLogout} className={styles.logoutButton}>
+          Logout
+        </button>
       </div>
 
       {error && <div className={styles.error}>{error}</div>}
       {success && <div className={styles.success}>{success}</div>}
 
-      {activeView === 'upload' && (
-        <div className={styles.uploadBox}>
-          <h2>Upload Calendar</h2>
-
-          {latestCalendar && (
-            <div className={styles.latestCalendar}>
-              <h3>Current Calendar: {latestCalendar.monthYear}</h3>
-              <div className={styles.previewContainer}>
-                <a
-                  href={latestCalendar.url}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className={styles.viewButton}
+      {/* Calendar List Section */}
+      <div className={styles.calendarList}>
+        <h2>All Calendars</h2>
+        {isLoading ? (
+          <div className={styles.loading}>Loading calendars...</div>
+        ) : calendars.length === 0 ? (
+          <div className={styles.noCalendars}>
+            No calendars found
+            {debugInfo && (
+              <div className={styles.debugInfo}>
+                <p>{debugInfo}</p>
+                <button
+                  onClick={fetchCalendars}
+                  className={styles.refreshButton}
                 >
-                  View Calendar
-                </a>
-                <a
-                  href={`${latestCalendar.url}?download=true`}
-                  className={styles.downloadButton}
-                >
-                  Download
-                </a>
-              </div>
-            </div>
-          )}
-
-          <div
-            {...getRootProps()}
-            className={`${styles.dropzone} ${
-              isDragActive ? styles.active : ''
-            }`}
-          >
-            <input {...getInputProps()} />
-            {isUploading ? (
-              <p>Uploading...</p>
-            ) : isDragActive ? (
-              <p>Drop the file here...</p>
-            ) : (
-              <div className={styles.uploadPrompt}>
-                <p>
-                  Drag and drop a PDF or image file here, or click to select
-                </p>
-                <p className={styles.supportedFormats}>
-                  Supported formats: PDF, JPEG, PNG
-                </p>
+                  Refresh
+                </button>
               </div>
             )}
           </div>
-        </div>
-      )}
-
-      {activeView === 'list' && (
-        <div className={styles.calendarList}>
-          <h2>All Calendars</h2>
-
-          {isLoading ? (
-            <div className={styles.loading}>Loading calendars...</div>
-          ) : calendars.length === 0 ? (
-            <div className={styles.noCalendars}>
-              No calendars found
-              {debugInfo && (
-                <div className={styles.debugInfo}>
-                  <p>{debugInfo}</p>
-                  <button
-                    onClick={fetchCalendars}
-                    className={styles.refreshButton}
-                  >
-                    Refresh
-                  </button>
-                </div>
-              )}
-            </div>
-          ) : (
-            <div className={styles.calendarsGrid}>
-              <table className={styles.calendarsTable}>
-                <thead>
-                  <tr>
-                    <th>Month/Year</th>
-                    <th>Original Filename</th>
-                    <th>Uploaded</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {calendars.map((calendar) => (
-                    <tr key={calendar.id}>
-                      <td>{calendar.month_year}</td>
-                      <td>{calendar.original_filename}</td>
-                      <td>{formatDate(calendar.uploaded_at)}</td>
-                      <td>
-                        <a
-                          href={calendar.file_url}
-                          target='_blank'
-                          rel='noopener noreferrer'
-                          className={styles.viewButton}
-                        >
-                          View
-                        </a>
-                        <a
-                          href={calendar.downloadUrl}
-                          className={styles.downloadButton}
-                        >
-                          Download
-                        </a>
+        ) : (
+          <div className={styles.calendarsGrid}>
+            <table className={styles.calendarsTable}>
+              <thead>
+                <tr>
+                  <th>Month/Year</th>
+                  <th>Original Filename</th>
+                  <th>Uploaded</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {calendars.map((calendar) => (
+                  <tr key={calendar.id}>
+                    <td>{calendar.month_year}</td>
+                    <td>{calendar.original_filename}</td>
+                    <td>{formatDate(calendar.uploaded_at)}</td>
+                    <td>
+                      <a
+                        href={calendar.file_url}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className={styles.viewButton}
+                      >
+                        View
+                      </a>
+                      <a
+                        href={calendar.downloadUrl}
+                        className={styles.downloadButton}
+                      >
+                        Download
+                      </a>
+                      <button
+                        onClick={() => deleteCalendar(calendar.id)}
+                        className={styles.deleteButton}
+                      >
+                        Delete
+                      </button>
+                      {calendar.is_current ? (
+                        <span className={styles.currentBadge}>Current</span>
+                      ) : (
                         <button
-                          onClick={() => deleteCalendar(calendar.id)}
-                          className={styles.deleteButton}
+                          onClick={async () => {
+                            await fetch(
+                              '/.netlify/functions/set-current-calendar',
+                              {
+                                method: 'POST',
+                                headers: {
+                                  'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({ id: calendar.id }),
+                              }
+                            );
+                            fetchCalendars();
+                            fetchLatestCalendar();
+                          }}
+                          className={styles.setCurrentButton}
                         >
-                          Delete
+                          Set as Current
                         </button>
-                        {calendar.is_current ? (
-                          <span className={styles.currentBadge}>Current</span>
-                        ) : (
-                          <button
-                            onClick={async () => {
-                              await fetch(
-                                '/.netlify/functions/set-current-calendar',
-                                {
-                                  method: 'POST',
-                                  headers: {
-                                    'Content-Type': 'application/json',
-                                  },
-                                  body: JSON.stringify({ id: calendar.id }),
-                                }
-                              );
-                              fetchCalendars();
-                              fetchLatestCalendar();
-                            }}
-                            className={styles.setCurrentButton}
-                          >
-                            Set as Current
-                          </button>
-                        )}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
+
+      {/* Upload Section */}
+      <div className={styles.uploadBox}>
+        <h2>Upload Calendar</h2>
+        {latestCalendar && (
+          <div className={styles.latestCalendar}>
+            <h3>Current Calendar: {latestCalendar.monthYear}</h3>
+            <div className={styles.previewContainer}>
+              <a
+                href={latestCalendar.url}
+                target='_blank'
+                rel='noopener noreferrer'
+                className={styles.viewButton}
+              >
+                View Calendar
+              </a>
+              <a
+                href={`${latestCalendar.url}?download=true`}
+                className={styles.downloadButton}
+              >
+                Download
+              </a>
+            </div>
+          </div>
+        )}
+        <div
+          {...getRootProps()}
+          className={`${styles.dropzone} ${isDragActive ? styles.active : ''}`}
+        >
+          <input {...getInputProps()} />
+          {isUploading ? (
+            <p>Uploading...</p>
+          ) : isDragActive ? (
+            <p>Drop the file here...</p>
+          ) : (
+            <div className={styles.uploadPrompt}>
+              <p>
+                Drag and drop a PDF or image file here, or click to select
+              </p>
+              <p className={styles.supportedFormats}>
+                Supported formats: PDF, JPEG, PNG
+              </p>
             </div>
           )}
         </div>
-      )}
+      </div>
     </div>
   );
 }

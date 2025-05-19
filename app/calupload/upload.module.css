@@ -3,19 +3,19 @@
   margin: 2rem auto;
   max-width: 900px;
   padding: 1.5rem;
-  background-color: var(--color-bg);
+  background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  color: var(--color-text);
+  color: #222;
 }
 
 .loginBox {
   max-width: 500px;
   margin: 0 auto;
   padding: 2rem;
-  background-color: var(--color-bg-alt);
+  background-color: #f9f9f9;
   border-radius: 8px;
-  color: var(--color-text);
+  color: #222;
 }
 
 .formGroup {
@@ -31,17 +31,17 @@
 .formGroup input {
   width: 100%;
   padding: 0.8rem;
-  border: 1px solid var(--color-border);
+  border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 1rem;
-  background: var(--color-bg);
-  color: var(--color-text);
+  background: #fff;
+  color: #222;
 }
 
 .submitButton {
   width: 100%;
   padding: 0.8rem;
-  background-color: var(--color-primary);
+  background-color: #0070f3;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -52,7 +52,7 @@
 }
 
 .submitButton:hover {
-  background-color: var(--color-primary-hover);
+  background-color: #0060df;
 }
 
 .header {
@@ -60,12 +60,12 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.5rem;
-  color: var(--color-text);
+  color: #222;
 }
 
 .tabs {
   display: flex;
-  border-bottom: 1px solid var(--color-tab-border);
+  border-bottom: 1px solid #eee;
 }
 
 .tabButton {
@@ -74,26 +74,26 @@
   border: none;
   font-size: 1rem;
   font-weight: 500;
-  color: var(--color-tab-inactive);
+  color: #666;
   cursor: pointer;
   border-bottom: 2px solid transparent;
   transition: all 0.2s;
 }
 
 .tabButton:hover {
-  color: var(--color-primary);
+  color: #0070f3;
 }
 
 .activeTab {
-  color: var(--color-tab-active);
-  border-bottom: 2px solid var(--color-tab-active);
+  color: #0070f3;
+  border-bottom: 2px solid #0070f3;
 }
 
 .logoutButton {
   padding: 0.5rem 1rem;
-  background-color: var(--color-logout-bg);
-  color: var(--color-logout-text);
-  border: 1px solid var(--color-logout-border);
+  background-color: #f5f5f5;
+  color: #666;
+  border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 0.9rem;
   cursor: pointer;
@@ -101,92 +101,92 @@
 }
 
 .logoutButton:hover {
-  background-color: var(--color-logout-hover);
+  background-color: #e5e5e5;
 }
 
 .uploadBox {
   padding: 1.5rem;
-  background-color: var(--color-bg-alt);
+  background-color: #f9f9f9;
   border-radius: 8px;
-  color: var(--color-text);
+  color: #222;
 }
 
 .uploadBox h2 {
   margin-top: 0;
   margin-bottom: 1.5rem;
-  color: var(--color-text);
+  color: #222;
 }
 
 .error {
   padding: 1rem;
   margin-bottom: 1rem;
-  background-color: var(--color-error-bg);
-  border: 1px solid var(--color-error-border);
+  background-color: #fff1f0;
+  border: 1px solid #ffa39e;
   border-radius: 4px;
-  color: var(--color-error-text);
+  color: #cf1322;
 }
 
 .success {
   padding: 1rem;
   margin-bottom: 1rem;
-  background-color: var(--color-success-bg);
-  border: 1px solid var(--color-success-border);
+  background-color: #f6ffed;
+  border: 1px solid #b7eb8f;
   border-radius: 4px;
-  color: var(--color-success-text);
+  color: #52c41a;
 }
 
 .dropzone {
   padding: 2rem;
-  border: 2px dashed var(--color-dropzone-border);
+  border: 2px dashed #ddd;
   border-radius: 8px;
   text-align: center;
   cursor: pointer;
   transition: border-color 0.2s;
-  color: var(--color-upload-prompt);
+  color: #666;
 }
 
 .dropzone:hover,
 .dropzone.active {
-  border-color: var(--color-dropzone-active);
+  border-color: #0070f3;
 }
 
 .uploadPrompt p {
   margin: 0.5rem 0;
-  color: var(--color-upload-prompt);
+  color: #666;
 }
 
 .supportedFormats {
   font-size: 0.9rem;
-  color: var(--color-upload-formats);
+  color: #999;
 }
 
 .calendarList {
   padding: 1.5rem;
-  background-color: var(--color-bg-alt);
+  background-color: #f9f9f9;
   border-radius: 8px;
-  color: var(--color-text);
+  color: #222;
 }
 
 .calendarList h2 {
   margin-top: 0;
   margin-bottom: 1.5rem;
-  color: var(--color-text);
+  color: #222;
 }
 
 .loading {
   text-align: center;
   padding: 2rem;
-  color: var(--color-upload-prompt);
+  color: #666;
   font-style: italic;
 }
 
 .noCalendars {
   text-align: center;
   padding: 2rem;
-  color: var(--color-upload-prompt);
-  background-color: var(--color-bg-alt);
+  color: #666;
+  background-color: #f9f9f9;
   border-radius: 4px;
-  border: 1px dashed var(--color-border);
+  border: 1px dashed #ddd;
 }
 
 .calendarsGrid {
@@ -202,18 +202,18 @@
 .calendarsTable td {
   padding: 0.8rem;
   text-align: left;
-  border-bottom: 1px solid var(--color-border);
-  color: var(--color-text);
+  border-bottom: 1px solid #eee;
+  color: #222;
 }
 
 .calendarsTable th {
-  background-color: var(--color-table-header-bg);
+  background-color: #f5f5f5;
   font-weight: 600;
-  color: var(--color-table-header-text);
+  color: #555;
 }
 
 .calendarsTable tr:hover {
-  background-color: var(--color-table-row-hover);
+  background-color: #f9f9f9;
 }
 
 .viewButton,
@@ -232,7 +232,7 @@
 
 .viewButton {
   background-color: #e6f7ff;
-  color: var(--color-primary);
+  color: #0070f3;
   border: 1px solid #b3e0ff;
 }
 
@@ -243,9 +243,9 @@
 }
 
 .deleteButton {
-  background-color: var(--color-error-bg);
-  color: var(--color-error-text);
-  border: 1px solid var(--color-error-border);
+  background-color: #fff1f0;
+  color: #cf1322;
+  border: 1px solid #ffa39e;
 }
 
 .viewButton:hover {
@@ -266,13 +266,13 @@
   background-color: #f0f7ff;
   border: 1px solid #bae0ff;
   border-radius: 6px;
-  color: var(--color-text);
+  color: #222;
 }
 
 .latestCalendar h3 {
   margin-top: 0;
   margin-bottom: 1rem;
-  color: var(--color-primary);
+  color: #0070f3;
   font-size: 1.2rem;
 }
 
@@ -284,9 +284,9 @@
 
 .currentBadge {
   display: inline-block;
-  background-color: var(--color-badge-bg);
-  color: var(--color-badge-text);
-  border: 1px solid var(--color-badge-border);
+  background-color: #e6fffb;
+  color: #13c2c2;
+  border: 1px solid #87e8de;
   border-radius: 4px;
   padding: 0.3rem 0.7rem;
   margin-left: 0.5rem;
@@ -295,9 +295,9 @@
 }
 
 .setCurrentButton {
-  background-color: var(--color-set-current-bg);
-  color: var(--color-set-current-text);
-  border: 1px solid var(--color-set-current-border);
+  background-color: #f0f5ff;
+  color: #2f54eb;
+  border: 1px solid #adc6ff;
   border-radius: 4px;
   padding: 0.4rem 0.8rem;
   margin-right: 0.5rem;
@@ -316,8 +316,8 @@
   min-height: 100vh;
   width: 100vw;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background: var(--color-bg);
-  color: var(--color-text);
+  background: #000;
+  color: #fff;
 }
 
 .loginImageSection {
@@ -338,12 +338,12 @@
 
 .loginFormSection {
   flex: 1;
-  background: #0a0a0a;
+  background: #000;
   display: flex;
   align-items: center;
   justify-content: center;
   min-width: 0;
-  color: var(--color-text);
+  color: #fff;
 }
 
 .loginFormBox {
@@ -351,31 +351,31 @@
   max-width: 370px;
   margin: 0 auto;
   background: none;
-  color: var(--color-text);
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  padding: 0 2rem;
+  padding: 2rem;
 }
 
 .loginTitle {
-  font-size: 2.2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  color: var(--color-text);
+  color: #fff;
   text-align: left;
 }
 
 .loginSubtitle {
-  font-size: 1.05rem;
-  color: var(--color-upload-prompt);
-  margin-bottom: 2.2rem;
+  font-size: 1rem;
+  color: #bdbdbd;
+  margin-bottom: 1.5rem;
   text-align: left;
 }
 
 .loginLabel {
   font-size: 1rem;
-  color: var(--color-upload-formats);
+  color: #e0e0e0;
   margin-bottom: 0.4rem;
   font-weight: 500;
   display: block;
@@ -386,9 +386,9 @@
   padding: 0.9rem 1rem;
   border-radius: 8px;
   border: none;
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-size: 1.05rem;
+  background: #f5f7ff;
+  color: #181818;
+  font-size: 1rem;
   margin-bottom: 1.3rem;
   outline: none;
   box-shadow: 0 1px 2px rgba(0,0,0,0.03);
@@ -396,7 +396,7 @@
 }
 
 .loginInput:focus {
-  border: 1.5px solid var(--color-primary);
+  border: 1.5px solid #ffc32b;
 }
 
 .loginButton {
@@ -406,7 +406,7 @@
   color: #181818;
   border: none;
   border-radius: 8px;
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   margin-top: 0.5rem;
@@ -435,10 +435,9 @@
   .loginFormSection {
     min-height: 60vh;
     flex: none;
-    padding: 2.5rem 0 2rem 0;
   }
   .loginFormBox {
-    padding: 0 1rem;
+    padding: 1.5rem;
   }
 }
 
@@ -448,8 +447,6 @@
     height: 100vh;
   }
   .loginFormSection {
-    min-height: 100vh;
-    height: 100vh;
     padding: 0;
   }
   .loginTitle {
@@ -475,8 +472,6 @@
     height: 100vh;
   }
   .loginFormSection {
-    min-height: 100vh;
-    height: 100vh;
     padding: 0;
   }
   .loginTitle {
@@ -494,76 +489,4 @@
   .loginButton {
     font-size: 0.9rem;
   }
-}
-
-/* Color variables for light and dark mode */
-.themeVars {
-  /* Light mode variables */
-  --color-bg: #fff;
-  --color-bg-alt: #f9f9f9;
-  --color-text: #222;
-  --color-primary: #0070f3;
-  --color-primary-hover: #0060df;
-  --color-border: #ddd;
-  --color-error-bg: #fff1f0;
-  --color-error-border: #ffa39e;
-  --color-error-text: #cf1322;
-  --color-success-bg: #f6ffed;
-  --color-success-border: #b7eb8f;
-  --color-success-text: #52c41a;
-  --color-table-header-bg: #f5f5f5;
-  --color-table-header-text: #555;
-  --color-table-row-hover: #f9f9f9;
-  --color-tab-inactive: #666;
-  --color-tab-active: #0070f3;
-  --color-tab-border: #eee;
-  --color-badge-bg: #e6fffb;
-  --color-badge-text: #13c2c2;
-  --color-badge-border: #87e8de;
-  --color-set-current-bg: #f0f5ff;
-  --color-set-current-text: #2f54eb;
-  --color-set-current-border: #adc6ff;
-  --color-dropzone-border: #ddd;
-  --color-dropzone-active: #0070f3;
-  --color-upload-prompt: #666;
-  --color-upload-formats: #999;
-  --color-logout-bg: #f5f5f5;
-  --color-logout-hover: #e5e5e5;
-  --color-logout-text: #666;
-  --color-logout-border: #ddd;
-}
-.themeVars.dark {
-  /* Dark mode variables */
-  --color-bg: #181a1b;
-  --color-bg-alt: #23272a;
-  --color-text: #f5f5f5;
-  --color-primary: #4f8cff;
-  --color-primary-hover: #2563eb;
-  --color-border: #333a40;
-  --color-error-bg: #2d1a1a;
-  --color-error-border: #ff4d4f;
-  --color-error-text: #ff7875;
-  --color-success-bg: #1a2d1a;
-  --color-success-border: #52c41a;
-  --color-success-text: #b7eb8f;
-  --color-table-header-bg: #23272a;
-  --color-table-header-text: #bdbdbd;
-  --color-table-row-hover: #23272a;
-  --color-tab-inactive: #bdbdbd;
-  --color-tab-active: #4f8cff;
-  --color-tab-border: #333a40;
-  --color-badge-bg: #1a2d2d;
-  --color-badge-text: #36cfc9;
-  --color-badge-border: #13c2c2;
-  --color-set-current-bg: #232a3a;
-  --color-set-current-text: #4f8cff;
-  --color-set-current-border: #4f8cff;
-  --color-dropzone-border: #333a40;
-  --color-dropzone-active: #4f8cff;
-  --color-upload-prompt: #bdbdbd;
-  --color-upload-formats: #888;
-  --color-logout-bg: #23272a;
-  --color-logout-hover: #333a40;
-  --color-logout-text: #bdbdbd;
-  --color-logout-border: #333a40;
 }
