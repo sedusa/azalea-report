@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import { useDropzone } from 'react-dropzone';
 import styles from './upload.module.css';
+import { FaStar, FaRegStar, FaEye, FaDownload, FaTrash } from 'react-icons/fa';
 
 export default function CalendarUpload() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -285,7 +286,6 @@ export default function CalendarUpload() {
             <table className={styles.calendarsTable}>
               <thead>
                 <tr>
-                  <th>Month/Year</th>
                   <th>Original Filename</th>
                   <th>Uploaded</th>
                   <th>Actions</th>
@@ -294,53 +294,64 @@ export default function CalendarUpload() {
               <tbody>
                 {calendars.map((calendar) => (
                   <tr key={calendar.id}>
-                    <td>{calendar.month_year}</td>
                     <td>{calendar.original_filename}</td>
                     <td>{formatDate(calendar.uploaded_at)}</td>
                     <td>
-                      <a
-                        href={calendar.file_url}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className={styles.viewButton}
-                      >
-                        View
-                      </a>
-                      <a
-                        href={calendar.downloadUrl}
-                        className={styles.downloadButton}
-                      >
-                        Download
-                      </a>
-                      <button
-                        onClick={() => deleteCalendar(calendar.id)}
-                        className={styles.deleteButton}
-                      >
-                        Delete
-                      </button>
-                      {calendar.is_current ? (
-                        <span className={styles.currentBadge}>Current</span>
-                      ) : (
-                        <button
-                          onClick={async () => {
-                            await fetch(
-                              '/.netlify/functions/set-current-calendar',
-                              {
-                                method: 'POST',
-                                headers: {
-                                  'Content-Type': 'application/json',
-                                },
-                                body: JSON.stringify({ id: calendar.id }),
-                              }
-                            );
-                            fetchCalendars();
-                            fetchLatestCalendar();
-                          }}
-                          className={styles.setCurrentButton}
+                      <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                        {calendar.is_current ? (
+                          <span title="Current" className={styles.currentBadge} style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+                            <FaStar style={{ color: '#13c2c2' }} /> Current
+                          </span>
+                        ) : (
+                          <button
+                            title="Set as Current"
+                            onClick={async () => {
+                              await fetch(
+                                '/.netlify/functions/set-current-calendar',
+                                {
+                                  method: 'POST',
+                                  headers: {
+                                    'Content-Type': 'application/json',
+                                  },
+                                  body: JSON.stringify({ id: calendar.id }),
+                                }
+                              );
+                              fetchCalendars();
+                              fetchLatestCalendar();
+                            }}
+                            className={styles.setCurrentButton}
+                            style={{ padding: '0.3rem 0.5rem', display: 'flex', alignItems: 'center' }}
+                          >
+                            <FaRegStar style={{ color: '#2f54eb' }} />
+                          </button>
+                        )}
+                        <a
+                          href={calendar.file_url}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          title="View"
+                          className={styles.viewButton}
+                          style={{ padding: '0.3rem 0.5rem', display: 'flex', alignItems: 'center' }}
                         >
-                          Set as Current
+                          <FaEye style={{ color: '#40a9ff' }} />
+                        </a>
+                        <a
+                          href={calendar.downloadUrl}
+                          title="Download"
+                          className={styles.downloadButton}
+                          style={{ padding: '0.3rem 0.5rem', display: 'flex', alignItems: 'center' }}
+                        >
+                          <FaDownload style={{ color: '#52c41a' }} />
+                        </a>
+                        <button
+                          title="Delete"
+                          onClick={() => deleteCalendar(calendar.id)}
+                          className={styles.deleteButton}
+                          style={{ padding: '0.3rem 0.5rem', display: 'flex', alignItems: 'center' }}
+                        >
+                          <FaTrash style={{ color: '#ff7875' }} />
                         </button>
-                      )}
+                      </div>
                     </td>
                   </tr>
                 ))}
