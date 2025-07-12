@@ -23,22 +23,24 @@ const Carousel = ({ onBackground, images, interval = 8000, showCaption = true, s
     );
   };
 
-  // Remove aspect ratio padding for 1:1 and set fixed height
+  // Use a class for 1:1 aspect ratio instead of inline style
+  const isSquare = aspectRatio === '1:1';
   let containerStyle = {};
-  if (aspectRatio === '1:1') {
-    containerStyle = { height: '400px' };
-    // Responsive: smaller height on mobile
-    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
-      containerStyle.height = '220px';
-    }
-  } else {
+  if (!isSquare) {
     const [aspectRatioWidth, aspectRatioHeight] = aspectRatio.split(':').map(Number);
     containerStyle = { paddingBottom: `${(aspectRatioHeight / aspectRatioWidth) * 100}%` };
   }
 
   return (
     <div className={styles.carouselWrapper}>
-      <div className={styles.carouselContainer} style={containerStyle}>
+      <div
+        className={
+          isSquare
+            ? `${styles.carouselContainer} ${styles.squareCarousel}`
+            : styles.carouselContainer
+        }
+        style={containerStyle}
+      >
         <div className={styles.carouselContent}>
           {showArrows && (
             <button className={`${styles.carouselButton} ${styles.prevButton}`} onClick={prevSlide}>
