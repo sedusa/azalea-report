@@ -1,5 +1,5 @@
 .carouselWrapper {
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .carouselContainer {
@@ -67,7 +67,7 @@
   display: block;
   font-size: 1.0rem;
   line-height: 1.6;
-  margin: 10px 0 0;
+  margin: 4px 0 0;
   text-align: center;
 }
 

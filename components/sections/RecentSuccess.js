@@ -8,6 +8,7 @@ const RecentSuccess = ({
     image,
     imageCaption,
     content,
+    carouselTitle,
     posterImage,
   },
 }) => {
@@ -31,7 +32,7 @@ const RecentSuccess = ({
             dangerouslySetInnerHTML={{ __html: content }}
           />
           <h3 className={styles.recentSuccessTitle}>
-            Poster Presentation Highlights
+            {carouselTitle}
           </h3>
           <Carousel
             onBackground

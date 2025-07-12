@@ -11,7 +11,7 @@ about:
   signature: The Azalea Report team
 program: 
   title: About the Program
-  about: SGMC Health's Internal Medicine Residency Program, in partnership with Mercer University School of Medicine, combines academic excellence with hands-on experience, leveraging SGMC Health's highly capable healthcare delivery system to meet the primary care and healthcare needs of rural and medically underserved areas of Georgia.
+  about: SGMC Health's Internal Medicine Residency Program, partnering with Mercer University School of Medicine, delivers academic excellence and hands-on training to address primary care needs in rural and underserved Georgia communities.
   sgmcImage: /img/sgmc.jpg
   sgmcImageCaption: Aerial view of SGMC in Valdosta, GA
   statistics:
@@ -32,42 +32,70 @@ spotlight:
   interests: Solar panels, Diesel engines & Astronomy
   postResidencyPlans: Start a medical clinic with my wife. Start a farm 🚜.
   wordsOfWisdom: "Practice mindfulness during your daily tasks and you'll be surprised how much more you'll notice. Try to keep in mind the mantra 'Slow is steady and steady is fast' if you feel like you're struggling to maintain pace. 🧘🏻" 
+chiefsCorner:
+  title: The Chiefs' Corner
+  chiefs:
+    - name: Mariya Tom, MD
+      image: /img/mariya-tom-md.jpeg
+      content: >
+        Meet our Chief Resident, Dr. Mariya Tom, who brings the heart of Atlanta and a dancer's grace to our program. Her journey into medicine began with family—uncles and aunties whose tireless work in healthcare shaped her understanding of what it truly means to be a physician. Their stories of patient care and the fulfillment found in saving lives became the foundation of her medical calling.
+
+        A trained professional Indian classical dancer with a passion for Zumba, Dr. Tom embodies the balance between artistic expression and clinical excellence. When she's not in the hospital, you'll find her traveling, reading, or back home in Atlanta with her husband and family, often recharging with her go-to comfort food of chicken and rice after long shifts.
+
+        Dr. Tom's clinical interests center on endocrinology, with post-residency plans including fellowship training before returning to Atlanta to build both her practice and family life. Her guidance to incoming residents reflects hard-earned wisdom: "Give yourself grace. You'll make mistakes. Own them, learn from them, and forgive yourself. Progress, not perfection, is the goal."
+
+        The advice that has anchored her own journey continues to shape her leadership: "Be the doctor you would want for your own family." This principle has kept her grounded and compassionate through the most challenging days, reminding her to communicate clearly, stay present, and care deeply for every patient. Dr. Tom's blend of clinical expertise, cultural richness, and artistic soul represents the multifaceted nature of healers who bring their whole selves to the art of caring for others.
+    - name: Brandon Rockwell, MD
+      image: /img/brandon-rockwell-md.jpeg
+      content: >
+        Meet Dr. Brandon Rockwell, our Chief Resident from Warner Robins, Georgia, who discovered his calling at the intersection of his fascination with the natural world and desire to help others thrive. Internal medicine represents the perfect convergence of intellectual curiosity and meaningful human connection, allowing him to channel his analytical nature into creating positive change in patients' lives.
+
+        An avid sports enthusiast, Dr. Rockwell follows college athletics with passion while staying active through pickleball and regular gym sessions. His love for reading feeds his intellectual appetite, and he's developed a unique hobby of brewing his own kombucha. After demanding shifts, he unwinds with his favorite comfort meal: a hearty steak burrito loaded with queso.
+
+        Dr. Rockwell's professional aspirations center on primary care, where he envisions building lasting relationships with patients and serving as their advocate throughout their healthcare journey. His philosophy for succeeding in residency is refreshingly straightforward: "Trust your gut. Diligence outlasts intelligence and talent." The guidance that has shaped his own path emphasizes embracing challenges: "If deciding between two things, the right answer is likely whichever is more work."
+
+        Interestingly, if medicine hadn't captured his heart, Dr. Rockwell might have found himself in plumbing—a profession that, like medicine, requires problem-solving skills, attention to detail, and the satisfaction of fixing what's broken. His practical mindset and dedication to helping others showcase the versatile spirit he brings to our residency program.
 genericSingleImageTextSection:
   sectionTitle: GME Corner
   description: 
-  title: "SGMC Health GME Announces New Chief Residents for The Internal Medicine Residency Program" 
-  author: SGMC Health GME (posted originally on December 30th, 2024)
-  coverImage: /img/new-chiefs.jpeg
-  imageCaption: 2025 Chief Residents Mariya Tom, MD, and Brandon Rockwell, MD; GME Leadership Greg Beale, MD, and Leslie Lamptey, MD; Past Chief Residents Monica Kovuri, MD, and Venkata Gandi, MD
+  title: "SGMC Health Presents Annual Resident Awards" 
+  author: SGMC Health GME (posted originally on June 6th, 2025)
+  coverImage: /img/resident-awards-2025.jpeg
+  imageCaption: The 2025 recipients of SGMC Health’s Annual Resident Awards alongside Internal Medicine Residency Program Director Greg Beale, MD
   content: >
-    <p>SGMC Health's Graduate Medical Education (GME) program proudly announces the appointment of Brandon Rockwell, MD, and Mariya Tom, MD, as the new Chief Residents for the Internal Medicine Residency Program for 2025. These exemplary physicians were selected by their peers and approved by faculty and staff for their outstanding leadership skills, moral integrity, and clinical expertise.</p>
+    <p>SGMC Health's Graduate Medical Education (GME) program, in collaboration with Mercer University School of Medicine (MUSM), held its annual Residency Awards ceremony, honoring outstanding residents and faculty members for their clinical excellence, scholarly achievement, and dedication to patient care. The awards recognized individuals who demonstrated extraordinary performance and growth within the health system's rigorous residency training programs.</p>
 
-    <p>The role of Chief Resident represents a prestigious milestone in medical education, providing an opportunity to develop and refine clinical, teaching, and administrative skills. During their one-year term, Dr. Rockwell and Dr. Tom will serve as liaisons between residents and faculty, lead educational conferences, supervise trainees, coordinate schedules, and promote resident well-being.</p>
+    <p>The 2025 honorees exemplified the values of compassion, curiosity, teamwork, and professionalism that define SGMC Health's commitment to preparing tomorrow's physicians. Award recipients included:</p>
 
-    <p>Dr. Rockwell, who earned his medical degree from the Medical College of Georgia in Augusta, GA, has consistently demonstrated exceptional dedication to patient care and professional development. Dr. Tom, a graduate of Pushpagiri Institute of Medical Sciences and Research Centre in India, is widely admired for her compassionate leadership and clinical acumen.</p>
+    <ul>
+      <li>Samuel Edusa, MD (Intern of the Year), selected for his exceptional clinical acumen and patient-centered approach</li>
+      <li>Ornob Rahman, MD (Outstanding Ambulatory Intern), who excelled in outpatient care with strong diagnostic skills and compassionate bedside manner</li>
+      <li>Moriamo Fashugba, MD (Outstanding Inpatient Intern), recognized for excellence in managing complex inpatient cases and interdisciplinary collaboration</li>
+      <li>Nikolay Gogin, MD (Most Improved Clinical Practice), celebrated for remarkable clinical development and resilience</li>
+      <li>James McSweeney, MD (Resident Growth & Achievement), exemplifying perseverance and excellence in all aspects of training</li>
+      <li>Justin Owens, DO (Junior Resident of the Year), distinguished as a leader with sound clinical judgment and mentorship qualities</li>
+      <li>Hala Sharma, MD (Scholarly & Scientific Achievement), honored for contributions to academic medicine through research and evidence-based practice</li>
+      <li>Syed Hasan, MD (Faculty Member of the Year), voted by residents for inspirational teaching and mentorship</li>
+    </ul>
 
-    <p>Greg Beale, MD, Program Director of the Internal Medicine Residency Program, expressed his enthusiasm for the new Chief Residents. "I am incredibly proud of our first set of Chief Residents, Venkata Gandi, MD, and Monica Kovuri, MD, who set a high standard for leadership within our program," said Dr. Beale. "Dr. Rockwell and Dr. Tom embody the values and excellence we strive for at SGMC Health, and I am thrilled to see how they will lead and inspire their peers this year."</p>
+    <p>"These awards highlight the remarkable dedication, resilience, and talent within our program," said Gregory Beale, MD, Internal Medicine Program Director. "We are proud to celebrate our residents and faculty, whose hard work continues to elevate the quality of care we provide to our community. They are the future of healthcare, and their success is a testament to the strength of our GME mission."</p>
 
-    <p>The Chief Residency position stands as a vital component of SGMC Health's mission to cultivate future healthcare leaders. This distinguished role reflects the program's dedication to fostering professionalism, excellence, and innovation in medical education.</p>
-chiefsCorner:
+    <p>SGMC Health's GME program is a growing hub for clinical training and medical scholarship in South Georgia. Now in its fourth year, the GME program includes a robust Internal Medicine residency and a Transitional Year program that provides foundational clinical experience for physicians pursuing various specialties. In 2026, SGMC Health will launch a Family Medicine residency, further solidifying its role in developing the next generation of physicians.</p>
+internsCorner:
   title: The Intern's Corner
-  chiefs:
-    - name: Rabail Shaikh, MD
-      image: /img/rabail-shaikh-md.jpeg
+  interns:
+    - name: Zoha Allahuddin, MD
+      image: /img/zoha-allahuddin-md.jpeg
       content: >
-        Inspired by her father's work in medicine, Dr. Shaikh developed a passion for solving complex cases and helping patients heal. She enjoys the challenge of creating comprehensive treatment plans and seeing patients respond positively. She finds it a truly rewarding experience. 💙
-
-        Dr. Shaikh plans to become a hospitalist, drawn to the fast-paced, dynamic nature of internal medicine. She loves the variety of cases and the excitement of managing multiple systems in an acute hospital setting. 🏥
-
-        Outside of work, she enjoys relaxing with movie marathons or exploring her creative side with art projects. 🎬🎨
-    - name: Patrick Joseph, MD
-      image: /img/patrick-joseph-md.jpeg
+        Born in the beautiful city of Karachi, Pakistan, Dr. Allahuddin brings her unique blend of medical expertise and feline magnetism to residency. With an uncanny ability to befriend cats in under 30 seconds, she's proven that her healing touch extends beyond human patients. 🐱
+        Looking ahead, Dr. Allahuddin has a refreshingly honest dream: simply knowing what she's doing! Her humility and eagerness to learn make her a natural teacher, which is exactly the career path she'd pursue if medicine wasn't her calling. 📚
+        Outside of work, you'll find her unwinding in the coziest way possible—curled up in a corner, fast asleep with a cat in her lap, probably binge-watching The Office for the hundredth time. 📺😴
+    - name: Byron Reese, MD
+      image: /img/byron-reese-md.jpeg
       content: >
-        Dr. Joseph's journey into medicine was shaped by his early experiences witnessing the impact of healthcare disparities in his community. These moments fueled his commitment to making a difference through compassionate and skillful care. Every patient interaction reaffirms his passion for medicine and dedication to improving lives. 🩺
-
-        With aspirations to specialize in interventional cardiology, Dr. Joseph is excited about advancing his skills in a field that blends precision, innovation, and life-saving care. Transitioning from Haiti's healthcare system to practicing in the United States has been one of his greatest challenges, but also one of his most rewarding achievements. ❤️
-
-        Outside of the hospital, he enjoys playing basketball, joining his colleagues for a friendly game of pickleball, and cherishing time with his family. 🏀🏓
+        From the heart of Fitzgerald, Georgia, Dr. Byron Reese proves that Southern hospitality and medical excellence go hand in hand. His secret weapon? An Elvis impression so spot-on it could make the King himself jealous—talk about bedside manner with a twist! 👑
+        After residency, Dr. Reese dreams of returning to serve South Georgia, bringing specialized care to the communities that need it most. It's a calling that speaks to his roots and his commitment to making a difference close to home. 🏡
+        Between shifts, he's either chasing that perfect golf shot or pushing iron at the gym. When it's time to truly unwind, catch him with a bowl of ice cream, lost in the wholesome world of Mayberry watching The Andy Griffith Show. 🍦📺
 podcast:
   sectionTitle: Podcasts
   title: "What Brings You In Today? - Featured Podcasts"
@@ -133,24 +161,37 @@ communityServiceCorner:
 
     <p>Dr. Varn lives in Valdosta with his wife, Dr. Jessica Varn, a local dentist, and their four daughters. When not teaching or caring for patients, he enjoys fly fishing, programming, and spending time with family and friends.</p>
 recentSuccess:
-  sectionTitle: Recent Success
-  title: SGMC Residents Shine Bright at recent Georgia ACP Conference in Savannah, GA
-  image: /img/sgmc-team.jpeg
-  imageCaption: Residents, leadership and faculty at the Georgia ACP conference
+  sectionTitle: Farewell Class Of 2025
+  title: Celebrating Our Recent Graduates
+  image: /img/farewell.jpeg
+  imageCaption: The graduates-Rija Chaudhary, MD; Venkata Gandi, MD; Monica Kovuri, MD; Dwayne Mohan, MD; Rosaida Silverio-Lopez, MD; Anum Munir, MD and Shilpa Reddy, MD
+  carouselTitle: Gradduation Highlights
   posterImage:
-    - image: /img/acp/poster-1.jpeg
-      caption: "Dr. Sharma presents an intriguing HIV neuropathy case"
-    - image: /img/acp/poster-2.jpeg
-      caption: "Dr. Gandi presents an intriguing case of Renal Subcapsular Hematoma following transradial catheterization"
-    - image: /img/acp/poster-3.jpeg
-      caption: "Dr. Silverio presents case of Chagas cardiomyopathy in US resident from Central America"
-    - image: /img/acp/poster-4.jpeg
-      caption: "Dr. Munir presents a rare case of recurrent respiratory papillomatosis"
-    - image: /img/acp/poster-5.jpeg
-      caption: "Dr. Rockwell presents case of Sweet syndrome"
+    - image: /img/graduation/grad-1.jpeg
+      caption: "Drs. Kovuri & Gandi"
+    - image: /img/graduation/grad-2.jpeg
+      caption: "Dr. Rosaida Silverio-Lopez"
+    - image: /img/graduation/grad-3.jpeg
+      caption: "Dr. Anum Munir"
+    - image: /img/graduation/grad-4.jpeg
+      caption: "Dr. Shilpa Reddy"
+    - image: /img/graduation/grad-5.jpeg
+      caption: "Dr. Dwayne Mohan"
+    - image: /img/graduation/grad-6.jpeg
+      caption: "Drs. Chaudhary& Munir"
   content: >
-    <p>Our residents shone brightly at the Georgia ACP conference in Savannah! Poster presenters wowed audiences with their research and clinical insights, while our Jeopardy team - <strong>Drs. McSweeney, Silverio-Lopez, and Mohan</strong> - clinched an impressive 5th place out of 15, surpassing several highly-ranked programs.
-    The SGMC Internal Medicine Residency Program couldn't be prouder of all participants. Their outstanding performance has not only brought recognition to our program but also set a new benchmark for future residents. As we celebrate this year's achievements, we're already excited for an even stronger showing next year. Strong work 💪🏼 everyone!</p><br/>
+    <p>
+      On Saturday, May 31, we celebrated the graduation of our Class of 2025. As the inaugural Internal Medicine residency class at SGMC Health, Drs. Rija Chaudhary, Venkata Gandi, Monica Kovuri, Dwayne Mohan, Anum Munir, Shilpa Reddy, and Rosaida Silverio-Lopez became the foundation of something extraordinary, proving that when communities invest in the people who serve them, remarkable things happen.
+    </p>
+    <p>
+      Each graduate brought something unique to our halls during their three-year journey, navigating the challenges of rigorous medical training while simultaneously helping to build the very program that shaped them. Dr. Monica Kovuri's receipt of the Excellence in Residency Award speaks to more than just clinical skill—it reflects the compassionate leadership and unwavering dedication that defined her time with us. Alongside Dr. Venkata Gandi, she served as Chief Resident, mentoring peers and supporting program operations with the kind of grace and wisdom that transforms good doctors into great ones. Dr. Rosaida Silverio-Lopez's recognition with the Scholarly Excellence Award highlights her commitment to academic research and evidence-based medicine, exemplifying the intellectual curiosity and scientific rigor that will drive medical innovation in our region for years to come.
+    </p>
+    <p>
+      What made this graduation even more meaningful is the knowledge that Drs. Gandi, Silverio-Lopez, and Mohan have chosen to remain and join our GME program as teaching hospitalists. This decision speaks volumes about the residency program. When young physicians choose to stay, they're not just choosing a job—they're choosing to be part of something bigger, to plant roots in South Georgia soil and invest their careers in the communities that invested in their training.
+    </p>
+    <p>
+      Congratulations, and welcome to the next chapter of your remarkable journey in medicine.
+    </p><br/>
 musings:
   sectionTitle: "House Staff Diaries"
   title: Musings Of A Resident
@@ -373,13 +414,11 @@ newsFromClinic:
   sectionTitle: News From The Clinic
   employeeSpotlight:
     subSectionTitle: Employee Spotlight
-    name: Annette Robinson
-    image: /img/annette-robinson.jpeg
-    title: Family Nurse Practitioner (APRN-BC, FNP-BC)
+    name: Melissa Wilkerson
+    image: /img/employee-spotlight-09-24.jpeg
+    title: Medical Assistant
     profile: >
-      Meet Annette Robinson, APRN-BC, FNP-BC, a dedicated healthcare provider who recently joined Internal Medicine Park from Health Care South. Her remarkable journey in healthcare began as a nurse's aide, steadily advancing through LPN, RN BSN, Master's degree, and Post-Master's in Family Nurse Practice and Midwifery.
-      As the first college graduate among ten siblings raised by her maternal grandmother, Annette's determination led her through studies at Valdosta Technical School, Valdosta University, Albany State University, and the University of Florida—all while balancing full-time work and family responsibilities. Her perseverance and dedication to nursing have touched countless lives, including delivering over 1,400 newborns and assisting with C-sections throughout her career.
-      With a deep passion for patient care rooted in her own life experiences, Annette brings exceptional empathy and expertise to women's health and primary care services. Her commitment to serving others and genuine care for her patients make her an invaluable addition to our team. When you visit Internal Medicine Park, you'll find Annette ready to provide compassionate, skilled care with the same determination that has defined her inspiring career.
+      Meet Melissa Wilkerson, one of our devoted medical assistants who has been with our clinic since its opening in August 2022. Melissa is passionate about her work and equally dedicated to her family life. When not providing excellent care to our patients, she can often be found cheering on her daughter at softball games. Melissa also enjoys quality time with family and friends. Her long-standing commitment and experience make her an invaluable member of our team.
 wellnessCorner:
   sectionTitle: Wellness Corner
   title: "Finding Humor in the Hard Days: A Reminder About Emotional Well-being"

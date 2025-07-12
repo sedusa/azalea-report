@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { attributes } from '@content/home.md';
+import { attributes } from '@content/issue-3.md';
 import Layout from '@app/Layout';
 import birthdays from '@public/birthdays.json';
 import TwoColumnLayout from '@components/types/TwoColumnLayout';

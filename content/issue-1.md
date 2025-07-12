@@ -68,6 +68,7 @@ recentSuccess:
   title: SGMC Residents Shine Bright at recent Georgia ACP Conference in Savannah, GA
   image: /img/sgmc-team.jpeg
   imageCaption: Residents, leadership and faculty at the Georgia ACP conference
+  carouselTitle: Poster Presentation Highlights
   posterImage:
     - image: /img/acp/poster-1.jpeg
       caption: "Dr. Sharma presents an intriguing HIV neuropathy case"

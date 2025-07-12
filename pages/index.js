@@ -9,6 +9,7 @@ import AboutSection from '@/components/sections/AboutSection';
 import ResidentSpotlight from '@components/sections/ResidentSpotlight';
 import ProgramInfo from '@components/sections/ProgramInfo';
 import ChiefsCorner from '@components/sections/ChiefsCorner';
+import InternsCorner from '@components/sections/InternsCorner';
 import ProgramDirector from '@components/sections/ProgramDirector';
 import RecentSuccess from '@components/sections/RecentSuccess';
 import Musings from '@components/sections/Musings';
@@ -32,6 +33,7 @@ export default function Home() {
     spotlight,
     genericSingleImageTextSection,
     basicSection,
+    internsCorner,
     chiefsCorner,
     programDirector,
     recentSuccess,
@@ -67,12 +69,15 @@ export default function Home() {
         leftColumn={<ResidentSpotlight spotlight={spotlight} />}
         rightColumn={<ProgramInfo program={program} />}
       />
+      <SingleColumnLayout column={<RecentSuccess recentSuccess={recentSuccess} />} />
+      <SingleColumnLayout column={<ChiefsCorner chiefsCorner={chiefsCorner} />} />
       <SingleColumnLayout column={ <GenericSingleImageTextSection genericSingleImageTextSection={genericSingleImageTextSection} /> } />
+      <SingleColumnLayout column={<InternsCorner internsCorner={internsCorner} />} /> 
       {/* <SingleColumnLayout column={<ProgramDirector programDirector={programDirector} />} /> */}
       <SingleColumnLayout column={<CommunityService communityServiceCorner={communityServiceCorner} />} />
-      <SingleColumnLayout column={<ChiefsCorner chiefsCorner={chiefsCorner} />} />
-      <SingleColumnLayout column={<BasicSection basicSection={basicSection} />} />
-      {/* <SingleColumnLayout column={<RecentSuccess recentSuccess={recentSuccess} />} /> */}
+      
+      {/* <SingleColumnLayout column={<BasicSection basicSection={basicSection} />} /> */}
+      
       <SingleColumnLayout column={<Musings musings={musings} />} />
       
       <SingleColumnLayout column={<Podcast podcast={podcast} />} />
