@@ -1,13 +1,13 @@
 ---
 banner:
-  headerImage: /img/july-banner.jpeg
+  headerImage: /img/feb-banner.jpeg
   title: AZALEA REPORT
   subtitle: SGMC Health Internal Medicine Residency Newsletter
-  edition: 4
-  date: July 2025
+  edition: 3
+  date: February 2025
 about:
   sectionTitle: 
-  content: Welcome 👋🏼 to the Azalea Report - where the blooms of South Georgia Health's Internal Medicine Residency program come to life! Like the vibrant azaleas that paint Valdosta in stunning color each spring, this resident-led newsletter showcases the brilliant minds and inspiring stories flourishing in our program. From celebrating resident achievements to sharing the latest program updates, we're here to bring you all the buzz from the Azalea City. Get ready to discover the stories of excellence, growth, and community that make our residency program truly blossom! 🌸<br/><br/> Sincerely,
+  content: Welcome 👋🏼 to the Azalea Report - the digital newsletter of South Georgia Health's Internal Medicine Residency program in Valdosta, Georgia. Named after our city's beloved azaleas, this resident-led publication aims to showcase our program's achievements, spotlight outstanding residents, and share updates from our residency program. We look forward to bringing you stories of excellence in medical education from the Azalea City.<br/><br/> Sincerely,
   signature: The Azalea Report team
 program: 
   title: About the Program
@@ -16,22 +16,21 @@ program:
   sgmcImageCaption: Aerial view of SGMC in Valdosta, GA
   statistics:
     sectionTitle: Interesting Facts
-    residentCount: 37
-    countryCount: more than 10
-    languageCount: more than 12
+    residentCount: 24
+    countryCount: 10
+    languageCount: 12
     partnership: "SGMC's internal medicine residency program is a partnership with Mercer University School of Medicine (MUSM)"
-    continuityClinic: The program operates a continuity clinic at SGMC Internal Medicine on Park Avenue in Valdosta. 
-    advancedTraining: Residents have access to SGMC Health's State Of The Art Simulation Lab, extensive board preparation support, and teaching opportunities with medical students
+    continuityClinic: The program operates a continuity clinic at SGMC Internal Medicine on Park Avenue in Valdosta. This clinic allows residents to learn how to manage outpatient conditions and follow patients over time.
 spotlight:
   sectionTitle: Resident Spotlight
-  name: Taylor Martin, DO
-  image: /img/taylor-martin-do.jpeg
-  birthplace: Central Florida
-  funFact: Have driven 🚗 Route 66
-  favoriteDish: Beef stroganoff 😋
-  interests: Solar panels, Diesel engines & Astronomy
-  postResidencyPlans: Start a medical clinic with my wife. Start a farm 🚜.
-  wordsOfWisdom: "Practice mindfulness during your daily tasks and you'll be surprised how much more you'll notice. Try to keep in mind the mantra 'Slow is steady and steady is fast' if you feel like you're struggling to maintain pace. 🧘🏻" 
+  name: Rija Chaudhary, MD
+  image: /img/rija-chaudhary-md.jpeg
+  birthplace: Rawalpindi, Pakistan
+  funFact: I was a Bollywood dance teacher 💃🏽 once upon a time
+  favoriteDish: Biryani
+  interests: Yoga, trying new desserts, being chronically online
+  postResidencyPlans: Fellowship in Geriatric Medicine
+  wordsOfWisdom: "'Humility is fundamental to your growth during residency—embrace every opportunity to learn with an open mind. It will not only make you a more knowledgeable physician but also a more empathetic and collaborative one.'"
 genericSingleImageTextSection:
   sectionTitle: GME Corner
   description: 
