@@ -165,7 +165,7 @@ recentSuccess:
   title: Celebrating Our Recent Graduates
   image: /img/farewell.jpeg
   imageCaption: The graduates-Rija Chaudhary, MD; Venkata Gandi, MD; Monica Kovuri, MD; Dwayne Mohan, MD; Rosaida Silverio-Lopez, MD; Anum Munir, MD and Shilpa Reddy, MD
-  carouselTitle: Gradduation Highlights
+  carouselTitle: Graduation Highlights
   posterImage:
     - image: /img/graduation/grad-1.jpeg
       caption: "Drs. Kovuri & Gandi 🎉🎉"
