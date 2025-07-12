@@ -27,6 +27,10 @@ const Carousel = ({ onBackground, images, interval = 8000, showCaption = true, s
   let containerStyle = {};
   if (aspectRatio === '1:1') {
     containerStyle = { height: '400px' };
+    // Responsive: smaller height on mobile
+    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+      containerStyle.height = '220px';
+    }
   } else {
     const [aspectRatioWidth, aspectRatioHeight] = aspectRatio.split(':').map(Number);
     containerStyle = { paddingBottom: `${(aspectRatioHeight / aspectRatioWidth) * 100}%` };

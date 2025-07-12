@@ -184,7 +184,7 @@ recentSuccess:
       On Saturday, May 31, we celebrated the graduation of our Class of 2025. As the inaugural Internal Medicine residency class at SGMC Health, Drs. Rija Chaudhary, Venkata Gandi, Monica Kovuri, Dwayne Mohan, Anum Munir, Shilpa Reddy, and Rosaida Silverio-Lopez became the foundation of something extraordinary, proving that when communities invest in the people who serve them, remarkable things happen.
     </p>
     <p>
-      Each graduate brought something unique to our halls during their three-year journey, navigating the challenges of rigorous medical training while simultaneously helping to build the very program that shaped them. Dr. Monica Kovuri's receipt of the Excellence in Residency Award speaks to more than just clinical skill—it reflects the compassionate leadership and unwavering dedication that defined her time with us. Alongside Dr. Venkata Gandi, she served as Chief Resident, mentoring peers and supporting program operations with the kind of grace and wisdom that transforms good doctors into great ones. Dr. Rosaida Silverio-Lopez's recognition with the Scholarly Excellence Award highlights her commitment to academic research and evidence-based medicine, exemplifying the intellectual curiosity and scientific rigor that will drive medical innovation in our region for years to come.
+      Each graduate brought something unique during their three-year journey, navigating rigorous training while helping build the program that shaped them. Dr. Monica Kovuri's Excellence in Residency Award reflects the compassionate leadership she demonstrated as Chief Resident alongside Dr. Venkata Gandi, mentoring peers with grace and wisdom. Dr. Rosaida Silverio-Lopez's Scholarly Excellence Award highlights her commitment to research and evidence-based medicine, exemplifying the intellectual curiosity that will drive regional medical innovation.
     </p>
     <p>
       What made this graduation even more meaningful is the knowledge that Drs. Gandi, Silverio-Lopez, and Mohan have chosen to remain and join our GME program as teaching hospitalists. This decision speaks volumes about the residency program. When young physicians choose to stay, they're not just choosing a job—they're choosing to be part of something bigger, to plant roots in South Georgia soil and invest their careers in the communities that invested in their training.
@@ -202,7 +202,7 @@ musings:
 
     <h3>Learning to Walk Before You Run</h3>
 
-    <p>Medicine is not a sprint—it's learning to walk before you run. Right now, everything feels overwhelming. EPIC seems impossible, lab values blur together, and the responsibility feels immense. This is not just normal; it's necessary. Every uncertain moment, every question you're afraid to ask—these aren't signs of inadequacy. They're the building blocks of the physician you're becoming.</p>
+    <p>Medicine is not a sprint—it's learning to walk before you run. Right now, everything feels overwhelming. Epic seems impossible, lab values blur together, and the responsibility feels immense. This is not just normal; it's necessary. Every uncertain moment, every question you're afraid to ask—these aren't signs of inadequacy. They're the building blocks of the physician you're becoming.</p>
 
     <p>Think of a child learning to walk. They don't start by running. They pull themselves up, take tentative steps, fall, and get back up. Each wobble teaches balance. Each fall builds resilience. Your intern year is your time to find your footing, and we expect you to wobble.</p>
 
