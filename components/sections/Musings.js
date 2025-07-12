@@ -39,7 +39,7 @@ const Musings = ({
         <div className={styles.musingsText}>
           <div
             dangerouslySetInnerHTML={{
-              __html: expandedMusings ? content : truncateText(content, 645),
+              __html: expandedMusings ? content : truncateText(content, 620),
             }}
           />
           {shouldTruncate && (

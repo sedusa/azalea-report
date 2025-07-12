@@ -23,12 +23,18 @@ const Carousel = ({ onBackground, images, interval = 8000, showCaption = true, s
     );
   };
 
-  const [aspectRatioWidth, aspectRatioHeight] = aspectRatio.split(':').map(Number);
-  const paddingBottom = `${(aspectRatioHeight / aspectRatioWidth) * 100}%`;
+  // Remove aspect ratio padding for 1:1 and set fixed height
+  let containerStyle = {};
+  if (aspectRatio === '1:1') {
+    containerStyle = { height: '400px' };
+  } else {
+    const [aspectRatioWidth, aspectRatioHeight] = aspectRatio.split(':').map(Number);
+    containerStyle = { paddingBottom: `${(aspectRatioHeight / aspectRatioWidth) * 100}%` };
+  }
 
   return (
     <div className={styles.carouselWrapper}>
-      <div className={styles.carouselContainer} style={{ paddingBottom }}>
+      <div className={styles.carouselContainer} style={containerStyle}>
         <div className={styles.carouselContent}>
           {showArrows && (
             <button className={`${styles.carouselButton} ${styles.prevButton}`} onClick={prevSlide}>

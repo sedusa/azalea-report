@@ -168,17 +168,17 @@ recentSuccess:
   carouselTitle: Gradduation Highlights
   posterImage:
     - image: /img/graduation/grad-1.jpeg
-      caption: "Drs. Kovuri & Gandi"
+      caption: "Drs. Kovuri & Gandi 🎉🎉"
     - image: /img/graduation/grad-2.jpeg
-      caption: "Dr. Rosaida Silverio-Lopez"
+      caption: "Dr. Rosaida Silverio-Lopez 🎉"
     - image: /img/graduation/grad-3.jpeg
-      caption: "Dr. Anum Munir"
+      caption: "Dr. Anum Munir 🎉"
     - image: /img/graduation/grad-4.jpeg
-      caption: "Dr. Shilpa Reddy"
+      caption: "Dr. Shilpa Reddy 🎉"
     - image: /img/graduation/grad-5.jpeg
-      caption: "Dr. Dwayne Mohan"
+      caption: "Dr. Dwayne Mohan 🎉"
     - image: /img/graduation/grad-6.jpeg
-      caption: "Drs. Chaudhary& Munir"
+      caption: "Drs. Chaudhary& Munir 🎉🎉"
   content: >
     <p>
       On Saturday, May 31, we celebrated the graduation of our Class of 2025. As the inaugural Internal Medicine residency class at SGMC Health, Drs. Rija Chaudhary, Venkata Gandi, Monica Kovuri, Dwayne Mohan, Anum Munir, Shilpa Reddy, and Rosaida Silverio-Lopez became the foundation of something extraordinary, proving that when communities invest in the people who serve them, remarkable things happen.
@@ -194,15 +194,51 @@ recentSuccess:
     </p><br/>
 musings:
   sectionTitle: "House Staff Diaries"
-  title: Musings Of A Resident
-  image: /img/musings-december-2024.jpeg
-  author: Hala Sharma, MD PGY-2
+  title: Finding Your Footing - A Message to Our Interns
+  image: /img/intern-year.jpeg
+  author: Samuel Edusa, MD PGY-2
   content: >
-    <p>Amidst the hustle and bustle of residency, never-ending labs, vitals, nursing requests, seminars, and lengthy note-writing, the bigger picture may become obscured. The why can fall to the wayside while working through the details and minutiae. My most important realization during my intern year while learning what to do was remembering why I was doing it. I wanted to learn and become more efficient and interpreting labs, remembering medications, and improving my presentations during rounds. Yet, some moments would ground and swing me back to reality.</p>
+    <p>Welcome to the beginning of an extraordinary journey. As you start your year, remember that every expert was once a beginner, and every mentor around you was once exactly where you are today.</p>
 
-    <p>I would walk into the room of my patient and see the scared, confused pained look in their eyes as they tried to observe the myriad of medical information hurtling their way. Their lives were about to change or transform before my eyes. In times like this, I needed to stop and take a breath as well. This was my eighth patient, but it was their whole world. I would need to remind myself to sit down and give this person, who has a whole life outside of this room, the moment they needed to understand and tell me how they felt. They needed to be heard. Sometimes I felt helpless and confused because I did not have many of the answers to their questions immediately. Or perhaps at other moments, I lacked the confidence to clarify their confusion. This would become my splash of cold-water clarity that there was a human life sitting before me. This was not a textbook module or an exam question I could repeat if I was wrong. Thankfully, I observed humanistic qualities among my peers and sought advice from great mentors. I recalled times when I was the person sitting on the bed waiting for a doctor to come by to answer all my questions and reassure me from my fears. The waiting is painful and terrifying when sick and in pain. There is the hope that this suffering will be temporary and will end. This requires trust in those caring for you. In my day, this may mean spending an extra ten minutes in a patient room talking with them but for them, it will shape the rest of their day.</p>
+    <h3>Learning to Walk Before You Run</h3>
 
-    <p>Another important realization that washed over me was how much of a team effort it is to care for a patient. So many cogs are required to run this machine, which becomes painfully noticeable when one is not working. The nucleus of each is the patient. This line of work requires a lot of patience and emotional maturity. Learning this is an integral part of our training. It is not necessarily perfection that is the goal of medicine but the ability to learn and adapt. At the heart of the matter is kindness and empathy for the suffering and patience when it may be the hardest to give.</p>
+    <p>Medicine is not a sprint—it's learning to walk before you run. Right now, everything feels overwhelming. EPIC seems impossible, lab values blur together, and the responsibility feels immense. This is not just normal; it's necessary. Every uncertain moment, every question you're afraid to ask—these aren't signs of inadequacy. They're the building blocks of the physician you're becoming.</p>
+
+    <p>Think of a child learning to walk. They don't start by running. They pull themselves up, take tentative steps, fall, and get back up. Each wobble teaches balance. Each fall builds resilience. Your intern year is your time to find your footing, and we expect you to wobble.</p>
+
+    <h3>The Power of "I Don't Know"</h3>
+
+    <p>One of the hardest lessons: it's okay to say "I don't know." The most dangerous physician isn't the one who lacks knowledge, but the one who pretends to have it. Your uncertainty isn't weakness—it's wisdom. When you're stumped, when a patient asks something you can't answer, remember that "I don't know, but I'll find out" is one of your most powerful tools.</p>
+
+    <h3>You Are Not Alone</h3>
+
+    <p>Here's what I want you to remember every day: you are surrounded by people invested in your success. Your attendings were once interns who felt exactly as you do. Your senior residents remember their own first days and fears. The nurses have seen countless interns grow into confident physicians.</p>
+
+    <p>We're not here to judge your questions or critique your uncertainties. We're here to guide you through them. When you call at 2 AM with a question, we don't see incompetence—we see diligence. When you ask us to double-check your assessment, we don't see insecurity—we see responsibility.</p>
+
+    <h3>The Patient at the Center</h3>
+
+    <p>In the midst of learning procedures and protocols, never forget the human being at the center of it all. Your patients don't expect you to have all the answers immediately. They expect you to care, to listen, and to be honest. While this might be your fifth admission of the day, it's their first time being this sick, this scared, this vulnerable.</p>
+
+    <h3>Trust the Process</h3>
+
+    <p>There will be days when nothing goes according to plan, when you feel like you're drowning, when you question your abilities. These difficult days aren't detours from your path—they are the path itself. Every challenging case teaches you something new. Every difficult conversation builds your skills. Every long night strengthens your endurance.</p>
+
+    <p>The journey from medical student to competent physician isn't a straight line. It's a spiral where you'll revisit concepts at deeper levels, where complexity gradually becomes manageable. Trust that the process works. Trust that today's confusion will become tomorrow's clarity.</p>
+
+    <h3>Our Promise to You</h3>
+
+    <p>We will be patient with your learning process. We will answer your questions without judgment. We will provide guidance when you're lost and celebrate your victories. We will support you through setbacks and help you find your footing so that one day, you can run with confidence.</p>
+
+    <p>Remember, we were all beginners once. What got us through wasn't perfection—it was persistence, curiosity, and the support of those around us.</p>
+
+    <h3>Moving Forward</h3>
+
+    <p>Be kind to yourself. Be patient with your learning curve. Ask questions freely. Seek help readily. And never forget that every day you show up, you're making a difference in someone's life.</p>
+
+    <p>You chose medicine to heal, to help, to make a difference. That calling hasn't changed because the learning curve is steep. You are exactly where you need to be, learning exactly what you need to learn, becoming exactly who you need to become.</p>
+
+    <p>Welcome to your intern year. We believe in you. Now it's time to believe in yourself. 💪🏽</p>
   photosTitle: Highlights from the Expo
   photos:
     - image: /img/moultrie/grounds.jpeg
@@ -265,14 +301,30 @@ photosOfMonth:
   sectionTitle: "Through the Lens: Residency Highlights"
   subTitle: Capturing the Smiles, Milestones, and Unforgettable Moments
   photos:
+    - image: /img/carousel/georgia-beer-outing.jpeg
+      caption: "Socializing at Georgia Beer"
+    - image: /img/carousel/last-day-intern-year.jpeg
+      caption: "Last day of the academic year!"
+    - image: /img/carousel/intern-year-clinic.jpeg
+      caption: "Last day of the academic year!"
+    - image: /img/carousel/second-year.jpeg
+      caption: "PGY-2 baby!"
+    - image: /img/carousel/happy-birthday-brandon.jpeg
+      caption: "Happy birthday Brandon 🎂"
+    - image: /img/carousel/mohan-brown-baby.jpeg
+      caption: "Attending Dr. Dwayne Mohan 💪🏽"
+    - image: /img/carousel/welcome-party.jpeg
+      caption: "New resident welcome party"
+    - image: /img/carousel/ty-welcome.jpeg
+      caption: "Welcome party - TY Class"
+    - image: /img/carousel/class-of-2028.jpeg
+      caption: "Welcome party - class of 2028"
+    - image: /img/carousel/signout.jpeg
+      caption: "Signout 🤣"
+    - image: /img/carousel/matching-scrubs.jpeg
+      caption: "Matching scrubs 👨🏽‍⚕️👩🏻‍⚕️👩🏽‍⚕️🩺"
     - image: /img/carousel/ornob-bag.jpeg
       caption: "Dr. Rahman sporting his SGMC weekender bag. Happy Doctors Day!👨🏽‍⚕️👩🏻‍⚕️👩🏽‍⚕️🩺"
-    - image: /img/carousel/match-day-1.jpeg
-      caption: "Match Day 2025 🎉"
-    - image: /img/carousel/match-day-2.jpeg
-      caption: "Incoming IM Residents 2025 🎉"
-    - image: /img/carousel/match-day-3.jpeg
-      caption: "Incoming TY Residents 2025 🎉"
     - image: /img/carousel/gallagher-baby-shower.jpeg
       caption: "Dr. Gallaghers baby shower"
     - image: /img/carousel/val-team-1.jpeg
@@ -370,14 +422,10 @@ photosOfMonth:
 events:
   sectionTitle: Upcoming Events
   eventsList:
-    - date: May 31st, 2025
-      description: Graduation
-    - date: Apr 26th, 2025
-      description: Walk with a doc
-    - date: Mar 31, 2025
-      description: Retired Physicians' Breakfast (9 - 10:30 am)
-    - date: Mar 21, 2025
-      description: Match Day
+    - date: Oct 14-16, 2025
+      description: Sunbelt AG Expo (Moultrie, GA)
+    - date: October 24-26, 2025
+      description: ACP Conference (Atlanta, GA)
 thingsToDo:
   sectionTitle: Things To Do In Valdosta
   images:
