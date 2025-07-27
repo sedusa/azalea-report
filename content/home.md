@@ -301,6 +301,14 @@ photosOfMonth:
   sectionTitle: "Through the Lens: Residency Highlights"
   subTitle: Capturing the Smiles, Milestones, and Unforgettable Moments
   photos:
+    - image: /img/carousel/martin-is-slow.jpeg
+      caption: "ICU team with Dr. Martin 🤪"
+    - image: /img/carousel/park-avenue-posse.jpeg
+      caption: "The Park Avenue Posse"
+    - image: /img/carousel/matchy-matchy.jpeg
+      caption: "Impromptu matching"
+    - image: /img/carousel/radio-show.jpeg
+      caption: "Local celebrities - radio talk show"
     - image: /img/carousel/georgia-beer-outing.jpeg
       caption: "Socializing at Georgia Beer"
     - image: /img/carousel/last-day-intern-year.jpeg
