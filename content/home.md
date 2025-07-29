@@ -301,6 +301,8 @@ photosOfMonth:
   sectionTitle: "Through the Lens: Residency Highlights"
   subTitle: Capturing the Smiles, Milestones, and Unforgettable Moments
   photos:
+    - image: /img/carousel/amal-birthday.jpeg
+      caption: "Happy Birthday Dr. Akhtar 🎈"
     - image: /img/carousel/martin-is-slow.jpeg
       caption: "ICU team with Dr. Martin 🤪"
     - image: /img/carousel/park-avenue-posse.jpeg
