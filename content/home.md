@@ -432,10 +432,14 @@ photosOfMonth:
 events:
   sectionTitle: Upcoming Events
   eventsList:
+    - date: Aug 1st, 2025
+      description: Journal Club EM
+    - date: Aug 30th, 2025
+      description: Medical Education Mixer from 6:00-9:00 PM (Ocean Pond in Lake Park)
     - date: Oct 14-16, 2025
       description: Sunbelt AG Expo (Moultrie, GA)
     - date: October 24-26, 2025
-      description: ACP Conference (Atlanta, GA)
+      description: GA ACP Conference (Atlanta, GA)
 thingsToDo:
   sectionTitle: Things To Do In Valdosta
   images:
