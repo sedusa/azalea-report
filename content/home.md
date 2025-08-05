@@ -148,18 +148,22 @@ basicSection:
     <p>GHA President and CEO Caylee Noggle praised SGMC Health's contributions: "We are proud to recognize SGMC Health for their outstanding work to enhance patient safety and quality. Their projects support GHA's strategic initiatives and demonstrate our shared commitment to improving patient outcomes across Georgia."</p>
 communityServiceCorner:
   sectionTitle: Faculty Update
-  title: SGMC Health Welcomes Matthew Varn, MD, to the Internal Medicine Residency Program Faculty
+  title: Meet Our Newest Internal Medicine Faculty - Dr. Roberta Baah-Sackey
   author: 
-  image: /img/matthew-varn-md.jpeg
-  imageCaption: "Matthew Varn, MD, (Internal Medicine Residency Core Faculty)"
+  image: /img/roberta-sackey-md.jpeg
+  imageCaption: "Roberta Baah-Sackey, MD, (Internal Medicine Residency Core Faculty)"
   content: >
-    <p>SGMC Health welcomes Matthew Varn, MD, to its Graduate Medical Education Internal Medicine Residency program as teaching faculty. A board-certified internal medicine physician with deep local roots, Dr. Varn was born at SGMC Health and raised in Valdosta.</p>
+    <p>We're thrilled to welcome Roberta Baah-Sackey, MD, to SGMC Health's Internal Medicine team as our newest Graduate Medical Education faculty member. She's bringing her passion for hospital medicine and dedication to both patient care and teaching to South Georgia.</p>
     
-    <p>Having provided outpatient and inpatient care in the community for the past four years, Dr. Varn brings valuable experience to his new role. He earned his Bachelor of Science from Valdosta State University and medical degree from Mercer University School of Medicine before completing his internal medicine residency at Mercer University's Navicent Health program in Macon, where he served as Chief Resident.</p>
+    <p>What drew Dr. Baah-Sackey to internal medicine? "I love solving complex medical puzzles and building lasting relationships with patients," she explains. As a board-certified physician specializing in hospital medicine, she focuses on wellness and preventive care with an approach rooted in empathy.</p>
 
-    <p>"Everyone deserves the best care, and I take great pride in knowing that I do everything possible to make this happen," says Dr. Varn. Program Director Dr. Greg Beale adds, "His expertise, dedication to patient care, and passion for academic medicine align perfectly with our mission to train the next generation of outstanding physicians."</p>
+    <p>"Listening to patients' concerns is my priority," Dr. Baah-Sackey says. "Patients can expect compassionate, thoughtful care when they're under my watch."</p>
 
-    <p>Dr. Varn lives in Valdosta with his wife, Dr. Jessica Varn, a local dentist, and their four daughters. When not teaching or caring for patients, he enjoys fly fishing, programming, and spending time with family and friends.</p>
+    <p>At SGMC Health, she'll mentor internal medicine residents while serving our community. "I'm excited to be part of a mission-driven team and help shape the next generation of physicians," she shares.</p>
+
+    <p>Dr. Baah-Sackey earned her medical degree from Ross University School of Medicine and completed residency at the University of Connecticut. When she's not at the hospital, you'll find her swimming or cheering on her favorite soccer teams.</p>
+
+    <p>Welcome to South Georgia, Dr. Baah-Sackey!</p>
 recentSuccess:
   sectionTitle: Farewell Class Of 2025
   title: Celebrating Our Recent Graduates
@@ -432,8 +436,6 @@ photosOfMonth:
 events:
   sectionTitle: Upcoming Events
   eventsList:
-    - date: Aug 1st, 2025
-      description: Journal Club EM
     - date: Aug 30th, 2025
       description: Medical Education Mixer from 6:00-9:00 PM (Ocean Pond in Lake Park)
     - date: Oct 14-16, 2025
