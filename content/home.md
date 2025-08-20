@@ -305,6 +305,8 @@ photosOfMonth:
   sectionTitle: "Through the Lens: Residency Highlights"
   subTitle: Capturing the Smiles, Milestones, and Unforgettable Moments
   photos:
+    - image: /img/crousel/shaikh-central-line.jpeg
+      caption: "Dr. Shaik going maverick on the central line"
     - image: /img/carousel/patrick-rawa.jpeg
       caption: "Drs. Joseph & Salih status post rounds"
     - image: /img/carousel/amal-birthday.jpeg
