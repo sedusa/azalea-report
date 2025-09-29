@@ -34,9 +34,11 @@ const ResidentSpotlight = ({
         <p className={styles.spotlightText}>
           <strong>Post-residency plans:</strong> {postResidencyPlans}
         </p>
-        <p className={styles.spotlightText}>
-          <strong>Advice to the incoming class:</strong> {wordsOfWisdom}
-        </p>
+        {wordsOfWisdom && (
+          <p className={styles.spotlightText}>
+            <strong>Advice to the incoming class:</strong> {wordsOfWisdom}
+          </p>
+        )}
       </div>
     </>
   );

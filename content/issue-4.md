@@ -1,13 +1,13 @@
 ---
 banner:
-  headerImage: /img/sept-banner.jpeg
+  headerImage: /img/july-banner.jpeg
   title: AZALEA REPORT
   subtitle: SGMC Health Internal Medicine Residency Newsletter
-  edition: 5
-  date: September 2025
+  edition: 4
+  date: July 2025
 about:
   sectionTitle: 
-  content: Welcome 👋🏼 to the Azalea Report - where the blooms of South Georgia Health's Internal Medicine Residency program come to life! Like the vibrant azaleas that paint Valdosta in stunning color each spring, this resident-led newsletter showcases the brilliant minds and inspiring stories flourishing in our program.  This issue is blooming with excitement as we bring you highlights from our inaugural South Georgia Regional Conference, celebrate beautiful weddings within our residency family, spotlight our featured residents, and share a whole lot more! From program milestones to personal celebrations, we're here to bring you all the buzz from the Azalea City. Get ready to discover the stories of excellence, growth, and community that make our residency program truly blossom! 🌸 🌸<br/><br/> Sincerely,
+  content: Welcome 👋🏼 to the Azalea Report - where the blooms of South Georgia Health's Internal Medicine Residency program come to life! Like the vibrant azaleas that paint Valdosta in stunning color each spring, this resident-led newsletter showcases the brilliant minds and inspiring stories flourishing in our program. From celebrating resident achievements to sharing the latest program updates, we're here to bring you all the buzz from the Azalea City. Get ready to discover the stories of excellence, growth, and community that make our residency program truly blossom! 🌸<br/><br/> Sincerely,
   signature: The Azalea Report team
 program: 
   title: About the Program
@@ -24,13 +24,14 @@ program:
     advancedTraining: Residents have access to SGMC Health's State Of The Art Simulation Lab, extensive board preparation support, and teaching opportunities with medical students
 spotlight:
   sectionTitle: Resident Spotlight
-  name: Kinley Shook-Chacon, MD
-  image: /img/resident-spotlight/shook-chacon-md.jpeg
-  birthplace: Georgia, USA 🇺🇸
-  funFact: As a resident physician, I’ve learned that coffee has become one of my essential food groups.
-  favoriteDish: Paneer Makhani with Garlic Naan and top it off with Masala Chai afterward ☕️
-  interests: Attending church, spending time with my family and our dogs, exploring self-sustainability (gardening, housing, food), enjoying nature, maintaining fitness, Korean beauty products (new obsession), and investing.
-  postResidencyPlans: I plan to dedicate time to my family, travel, and work as a PRN/locum hospitalist for one year while I explore my long-term career direction.
+  name: Taylor Martin, DO
+  image: /img/taylor-martin-do.jpeg
+  birthplace: Central Florida
+  funFact: Have driven 🚗 Route 66
+  favoriteDish: Beef stroganoff 😋
+  interests: Solar panels, Diesel engines & Astronomy
+  postResidencyPlans: Start a medical clinic with my wife. Start a farm 🚜.
+  wordsOfWisdom: "Practice mindfulness during your daily tasks and you'll be surprised how much more you'll notice. Try to keep in mind the mantra 'Slow is steady and steady is fast' if you feel like you're struggling to maintain pace. 🧘🏻" 
 chiefsCorner:
   title: The Chiefs' Corner
   chiefs:
