@@ -69,8 +69,9 @@ export default function Home() {
         leftColumn={<ResidentSpotlight spotlight={spotlight} />}
         rightColumn={<ProgramInfo program={program} />}
       />
-      <SingleColumnLayout column={<RecentSuccess recentSuccess={recentSuccess} />} />
       <SingleColumnLayout column={<ChiefsCorner chiefsCorner={chiefsCorner} />} />
+      <SingleColumnLayout column={<RecentSuccess recentSuccess={recentSuccess} />} />
+      
       <SingleColumnLayout column={ <GenericSingleImageTextSection genericSingleImageTextSection={genericSingleImageTextSection} /> } />
       <SingleColumnLayout column={<InternsCorner internsCorner={internsCorner} />} /> 
       {/* <SingleColumnLayout column={<ProgramDirector programDirector={programDirector} />} /> */}

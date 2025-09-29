@@ -31,15 +31,19 @@ const RecentSuccess = ({
             className={styles.recentSuccessText}
             dangerouslySetInnerHTML={{ __html: content }}
           />
-          <h3 className={styles.recentSuccessTitle}>
-            {carouselTitle}
-          </h3>
-          <Carousel
-            onBackground
-            images={posterImage}
-            interval={12000}
-            aspectRatio='1:1'
-          />
+          {carouselTitle && posterImage && (
+            <>
+              <h3 className={styles.recentSuccessTitle}>
+                {carouselTitle}
+              </h3>
+              <Carousel
+                onBackground
+                images={posterImage}
+                interval={12000}
+                aspectRatio='1:1'
+              />
+            </>
+          )}
         </div>
     </>
   );

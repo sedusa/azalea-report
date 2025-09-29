@@ -81,20 +81,16 @@ genericSingleImageTextSection:
 
     <p>SGMC Health's GME program is a growing hub for clinical training and medical scholarship in South Georgia. Now in its fourth year, the GME program includes a robust Internal Medicine residency and a Transitional Year program that provides foundational clinical experience for physicians pursuing various specialties. In 2026, SGMC Health will launch a Family Medicine residency, further solidifying its role in developing the next generation of physicians.</p>
 internsCorner:
-  title: The Intern's Corner
+  title: Intern Spotlight
   interns:
-    - name: Zoha Allahuddin, MD
-      image: /img/zoha-allahuddin-md.jpeg
+    - name: Genesis Muñoz, MD
+      image: /img/intern-corner/genesis-munoz-md.jpeg
       content: >
-        Born in the beautiful city of Karachi, Pakistan, Dr. Allahuddin brings her unique blend of medical expertise and feline magnetism to residency. With an uncanny ability to befriend cats in under 30 seconds, she's proven that her healing touch extends beyond human patients. 🐱
-        Looking ahead, Dr. Allahuddin has a refreshingly honest dream: simply knowing what she's doing! Her humility and eagerness to learn make her a natural teacher, which is exactly the career path she'd pursue if medicine wasn't her calling. 📚
-        Outside of work, you'll find her unwinding in the coziest way possible—curled up in a corner, fast asleep with a cat in her lap, probably binge-watching The Office for the hundredth time. 📺😴
-    - name: Byron Reese, MD
-      image: /img/byron-reese-md.jpeg
+        Straight outta Miami, Dr. Muñoz is equal parts beach girl and budding artist — recently bitten by the pottery bug and fully committed to mastering the wheel. 🏺 Her game plan for the year ahead? Keep it real: survive intern year! But if the white coat life hadn't chosen her, she'd be out in the field as an anthropologist, diving deep into different cultures and probably living her best Indiana Jones-adjacent life. 🗺️ When the shift finally ends, she's got one move: hit up her favorite sushi spot with a crisp glass of wine in hand. Pure bliss. And on those rare days off? You'll find her out on the water, sun-kissed and carefree, doing what Miami natives do best — boating and soaking up every ray. ⛵☀️ Get her started on travel stories and suddenly you're three hours deep in conversation, nodding along to tales from her adventures across continents and through hidden gems most people have never heard of. She's also that person who genuinely loves a good hike, always down for a trail with a view and the kind of summit selfie that makes you want to lace up your own boots. But come evening, she's cozied up with Nat Geo documentaries, feeding her curiosity about the world one episode at a time. 🌍📺 Her perfect day off? Morning on the boat, afternoon hike, evening wine and sushi, topped off with a documentary. She's collecting experiences and passport stamps like they're going out of style. ✈️
+    - name: Jay Patel, DO
+      image: /img/intern-corner/jay-patel-do.jpeg
       content: >
-        From the heart of Fitzgerald, Georgia, Dr. Byron Reese proves that Southern hospitality and medical excellence go hand in hand. His secret weapon? An Elvis impression so spot-on it could make the King himself jealous—talk about bedside manner with a twist! 👑
-        After residency, Dr. Reese dreams of returning to serve South Georgia, bringing specialized care to the communities that need it most. It's a calling that speaks to his roots and his commitment to making a difference close to home. 🏡
-        Between shifts, he's either chasing that perfect golf shot or pushing iron at the gym. When it's time to truly unwind, catch him with a bowl of ice cream, lost in the wholesome world of Mayberry watching The Andy Griffith Show. 🍦📺
+        A small-town Georgia kid at heart (Clayton, population: tiny), Dr. Patel was technically born in Dothan, Alabama before his family settled in the Northeast Georgia mountains when he was just one. Fast forward to residency, and he's become a self-taught chef out of pure necessity and passion. When you're a serious foodie, mediocre meals just won't cut it. 🍳👨‍🍳 Right now he's laser-focused on matching into Anesthesiology, with the ultimate goal of working alongside his wife—a pediatric resident who's currently doing her thing up in Long Island, NY. Long distance is tough, but they're making it work until they can finally be in the same hospital (or better yet, the same state). 💑 Before medicine took over, he was actually all-in on Computer Science. The tech love is still there, which explains why you'll find him gaming with friends or geeking out over the latest gadgets when he's not at the hospital. His post-shift wind-down routine? Talking to his wife, hitting golf balls at the range, or jumping into a gaming session. 🎮⛳ He just finished season 4 of The Bear (chef shows hit different when you cook). His perfect evening off involves getting a solid workout in, cooking something delicious at home, and FaceTiming his wife to catch up on everything. When he needs to truly recharge, it's pretty simple: gaming, watching sports, or just lying in bed doing absolutely nothing. 😴 Start a conversation about his wife, his friends, or traveling and suddenly two hours have passed. Oh, and somewhere along the way he picked up photography—now he's the guy capturing all those candid portraits of friends and family, turning moments into memories. 📸✨
 podcast:
   sectionTitle: Podcasts
   title: "What Brings You In Today? - Featured Podcasts"
@@ -164,37 +160,20 @@ communityServiceCorner:
 
     <p>Welcome to South Georgia, Dr. Baah-Sackey!</p>
 recentSuccess:
-  sectionTitle: Farewell Class Of 2025
-  title: Celebrating Our Recent Graduates
-  image: /img/farewell.jpeg
-  imageCaption: The graduates-Rija Chaudhary, MD; Venkata Gandi, MD; Monica Kovuri, MD; Dwayne Mohan, MD; Rosaida Silverio-Lopez, MD; Anum Munir, MD and Shilpa Reddy, MD
-  carouselTitle: Graduation Highlights
-  posterImage:
-    - image: /img/graduation/grad-1.jpeg
-      caption: "Drs. Kovuri & Gandi 🎉🎉"
-    - image: /img/graduation/grad-2.jpeg
-      caption: "Dr. Rosaida Silverio-Lopez 🎉"
-    - image: /img/graduation/grad-3.jpeg
-      caption: "Dr. Anum Munir 🎉"
-    - image: /img/graduation/grad-4.jpeg
-      caption: "Dr. Shilpa Reddy 🎉"
-    - image: /img/graduation/grad-5.jpeg
-      caption: "Dr. Dwayne Mohan 🎉"
-    - image: /img/graduation/grad-6.jpeg
-      caption: "Drs. Chaudhary& Munir 🎉🎉"
+  sectionTitle: "Rounds To Vows"
+  title: Two Ceremonies, One Community Celebration
+  image: /img/rounds-to-vows.jpeg
+  imageCaption: "Left: Dr. Brandon Rockwell and his wife Kara Hope Hanson. Right: Dr. Sandhya Lakkireddy and her husband Dr. Vinod Solipuram."
   content: >
     <p>
-      On Saturday, May 31, we celebrated the graduation of our Class of 2025. As the inaugural Internal Medicine residency class at SGMC Health, Drs. Rija Chaudhary, Venkata Gandi, Monica Kovuri, Dwayne Mohan, Anum Munir, Shilpa Reddy, and Rosaida Silverio-Lopez became the foundation of something extraordinary, proving that when communities invest in the people who serve them, remarkable things happen.
+      This past month brought double the joy as we celebrated two beautiful weddings within our residency family! Dr. Brandon Rockwell and his lovely bride Kara Hope Hanson tied the knot in an elegant celebration stateside, while Dr. Sandyia Lakkireddy's traditional Indian wedding brought vibrant color and rich cultural traditions to life across the globe in India.
     </p>
     <p>
-      Each graduate brought something unique during their three-year journey, navigating rigorous training while helping build the program that shaped them. Dr. Monica Kovuri's Excellence in Residency Award reflects the compassionate leadership she demonstrated as Chief Resident alongside Dr. Venkata Gandi, mentoring peers with grace and wisdom. Dr. Rosaida Silverio-Lopez's Scholarly Excellence Award highlights her commitment to research and evidence-based medicine, exemplifying the intellectual curiosity that will drive regional medical innovation.
+      From classic Western elegance to stunning South Asian ceremonies complete with intricate garlands and golden décor, these celebrations remind us that love transcends borders and brings people together in the most beautiful ways. Both couples radiated pure happiness on their special days, surrounded by friends, family, and the promise of bright futures ahead. 
     </p>
     <p>
-      What made this graduation even more meaningful is the knowledge that Drs. Gandi, Silverio-Lopez, and Mohan have chosen to remain and join our GME program as teaching hospitalists. This decision speaks volumes about the residency program. When young physicians choose to stay, they're not just choosing a job—they're choosing to be part of something bigger, to plant roots in South Georgia soil and invest their careers in the communities that invested in their training.
+      Congratulations to both couples! We're thrilled to see our residents beginning this exciting new chapter of their lives. Here's to love, partnership, and many years of happiness! 🥂
     </p>
-    <p>
-      Congratulations, and welcome to the next chapter of your remarkable journey in medicine.
-    </p><br/>
 musings:
   sectionTitle: "House Staff Diaries"
   title: Finding Your Footing - A Message to Our Interns
