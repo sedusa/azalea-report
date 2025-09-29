@@ -6,10 +6,10 @@ banner:
   edition: 5
   date: September 2025
 about:
-  sectionTitle: 
+  sectionTitle:
   content: Welcome 👋🏼 to the Azalea Report - where the blooms of South Georgia Health's Internal Medicine Residency program come to life! Like the vibrant azaleas that paint Valdosta in stunning color each spring, this resident-led newsletter showcases the brilliant minds and inspiring stories flourishing in our program.  This issue is blooming with excitement as we bring you highlights from our inaugural South Georgia Regional Conference, celebrate beautiful weddings within our residency family, spotlight our featured residents, and share a whole lot more! From program milestones to personal celebrations, we're here to bring you all the buzz from the Azalea City. Get ready to discover the stories of excellence, growth, and community that make our residency program truly blossom! 🌸 🌸<br/><br/> Sincerely,
   signature: The Azalea Report team
-program: 
+program:
   title: About the Program
   about: SGMC Health's Internal Medicine Residency Program, partnering with Mercer University School of Medicine, delivers academic excellence and hands-on training to address primary care needs in rural and underserved Georgia communities.
   sgmcImage: /img/sgmc.jpg
@@ -20,7 +20,7 @@ program:
     countryCount: more than 10
     languageCount: more than 12
     partnership: "SGMC's internal medicine residency program is a partnership with Mercer University School of Medicine (MUSM)"
-    continuityClinic: The program operates a continuity clinic at SGMC Internal Medicine on Park Avenue in Valdosta. 
+    continuityClinic: The program operates a continuity clinic at SGMC Internal Medicine on Park Avenue in Valdosta.
     advancedTraining: Residents have access to SGMC Health's State Of The Art Simulation Lab, extensive board preparation support, and teaching opportunities with medical students
 spotlight:
   sectionTitle: Resident Spotlight
@@ -54,32 +54,87 @@ chiefsCorner:
         Dr. Rockwell's professional aspirations center on primary care, where he envisions building lasting relationships with patients and serving as their advocate throughout their healthcare journey. His philosophy for succeeding in residency is refreshingly straightforward: "Trust your gut. Diligence outlasts intelligence and talent." The guidance that has shaped his own path emphasizes embracing challenges: "If deciding between two things, the right answer is likely whichever is more work."
 
         Interestingly, if medicine hadn't captured his heart, Dr. Rockwell might have found himself in plumbing—a profession that, like medicine, requires problem-solving skills, attention to detail, and the satisfaction of fixing what's broken. His practical mindset and dedication to helping others showcase the versatile spirit he brings to our residency program.
-genericSingleImageTextSection:
+genericSingleImageCarouselTextSection:
   sectionTitle: GME Corner
-  description: 
-  title: "SGMC Health Presents Annual Resident Awards" 
-  author: SGMC Health GME (posted originally on June 6th, 2025)
-  coverImage: /img/resident-awards-2025.jpeg
-  imageCaption: The 2025 recipients of SGMC Health’s Annual Resident Awards alongside Internal Medicine Residency Program Director Greg Beale, MD
+  title: 'Third Annual South Georgia Regional GME Conference'
+  author: SGMC Health (posted originally on September 16th, 2025)
+  coverImage: /img/reg-conf-25/group-picture.jpeg
+  imageCaption: Members of SGMC Health’s Residency Programs at the 3rd Annual South Georgia Regional GME Conference
   content: >
-    <p>SGMC Health's Graduate Medical Education (GME) program, in collaboration with Mercer University School of Medicine (MUSM), held its annual Residency Awards ceremony, honoring outstanding residents and faculty members for their clinical excellence, scholarly achievement, and dedication to patient care. The awards recognized individuals who demonstrated extraordinary performance and growth within the health system's rigorous residency training programs.</p>
+    <p>SGMC Health hosted its 3rd Annual South Georgia Regional GME Conference on September 13, bringing together resident physicians and medical educators from five regional programs across Internal Medicine, Family Medicine, Psychiatry, and Transitional Year specialties.</p>
 
-    <p>The 2025 honorees exemplified the values of compassion, curiosity, teamwork, and professionalism that define SGMC Health's commitment to preparing tomorrow's physicians. Award recipients included:</p>
+    <p>The conference featured a keynote by Will Kemp, Chairman of the Georgia Board of Healthcare Workers, on innovation in medical education, followed by twelve physician-led lectures on topics including AI in medicine, infectious disease, and mentorship.</p>
 
-    <ul>
-      <li>Samuel Edusa, MD (Intern of the Year), selected for his exceptional clinical acumen and patient-centered approach</li>
-      <li>Ornob Rahman, MD (Outstanding Ambulatory Intern), who excelled in outpatient care with strong diagnostic skills and compassionate bedside manner</li>
-      <li>Moriamo Fashugba, MD (Outstanding Inpatient Intern), recognized for excellence in managing complex inpatient cases and interdisciplinary collaboration</li>
-      <li>Nikolay Gogin, MD (Most Improved Clinical Practice), celebrated for remarkable clinical development and resilience</li>
-      <li>James McSweeney, MD (Resident Growth & Achievement), exemplifying perseverance and excellence in all aspects of training</li>
-      <li>Justin Owens, DO (Junior Resident of the Year), distinguished as a leader with sound clinical judgment and mentorship qualities</li>
-      <li>Hala Sharma, MD (Scholarly & Scientific Achievement), honored for contributions to academic medicine through research and evidence-based practice</li>
-      <li>Syed Hasan, MD (Faculty Member of the Year), voted by residents for inspirational teaching and mentorship</li>
-    </ul>
+    <p>Highlights included 39 research poster presentations. Dr. Sarah Sabol (SGMC Health) won 1st place for her poster on metabolic pseudolocked-in syndrome, with runners-up including Dr. Asma Yasin (SGMC Health) for "Malignant Cardiac Tamponade as a Complication of Primary Lung Adenocarcinoma." 👏🏽 
+     Congratulations to everyone who participated! 🎉🎉</p>
 
-    <p>"These awards highlight the remarkable dedication, resilience, and talent within our program," said Gregory Beale, MD, Internal Medicine Program Director. "We are proud to celebrate our residents and faculty, whose hard work continues to elevate the quality of care we provide to our community. They are the future of healthcare, and their success is a testament to the strength of our GME mission."</p>
-
-    <p>SGMC Health's GME program is a growing hub for clinical training and medical scholarship in South Georgia. Now in its fourth year, the GME program includes a robust Internal Medicine residency and a Transitional Year program that provides foundational clinical experience for physicians pursuing various specialties. In 2026, SGMC Health will launch a Family Medicine residency, further solidifying its role in developing the next generation of physicians.</p>
+  carouselTitle: Conference Highlights
+  posterImage:
+    - image: /img/reg-conf-25/conf-1.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-2.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-3.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-4.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-5.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-6.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-7.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-8.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-9.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-10.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-11.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-12.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-13.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-14.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-15.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-16.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-17.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-18.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-19.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-20.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-21.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-22.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-23.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-24.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-25.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-26.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-27.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-28.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-29.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-30.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-31.jpeg
+      caption: ''
+    - image: /img/reg-conf-25/conf-32.jpeg
+      caption: ''
+    
 internsCorner:
   title: Intern Spotlight
   interns:
@@ -93,20 +148,20 @@ internsCorner:
         A small-town Georgia kid at heart (Clayton, population: tiny), Dr. Patel was technically born in Dothan, Alabama before his family settled in the Northeast Georgia mountains when he was just one. Fast forward to residency, and he's become a self-taught chef out of pure necessity and passion. When you're a serious foodie, mediocre meals just won't cut it. 🍳👨‍🍳 Right now he's laser-focused on matching into Anesthesiology, with the ultimate goal of working alongside his wife—a pediatric resident who's currently doing her thing up in Long Island, NY. Long distance is tough, but they're making it work until they can finally be in the same hospital (or better yet, the same state). 💑 Before medicine took over, he was actually all-in on Computer Science. The tech love is still there, which explains why you'll find him gaming with friends or geeking out over the latest gadgets when he's not at the hospital. His post-shift wind-down routine? Talking to his wife, hitting golf balls at the range, or jumping into a gaming session. 🎮⛳ He just finished season 4 of The Bear (chef shows hit different when you cook). His perfect evening off involves getting a solid workout in, cooking something delicious at home, and FaceTiming his wife to catch up on everything. When he needs to truly recharge, it's pretty simple: gaming, watching sports, or just lying in bed doing absolutely nothing. 😴 Start a conversation about his wife, his friends, or traveling and suddenly two hours have passed. Oh, and somewhere along the way he picked up photography—now he's the guy capturing all those candid portraits of friends and family, turning moments into memories. 📸✨
 podcast:
   sectionTitle: Podcasts
-  title: "What Brings You In Today? - Featured Podcasts"
+  title: 'What Brings You In Today? - Featured Podcasts'
   subtitle: A Podcast from SGMC Health
   episodes:
-    - name: "Episode #5 - Joseph Hayes, MD"
+    - name: 'Episode #5 - Joseph Hayes, MD'
       synopsis: This episode of the podcast features Dr. Hayes, Medical Director at SGMC  Internal Medicine and Assistant Professor at Mercer Medical School. From chief resident to program architect, he now leads South Georgia's newest medical residency program, training the next generation of physicians.
       iframeUrl: https://open.spotify.com/embed/episode/68KNFYvib3spPv0rqB56aB?utm_source=generator&theme=0
       noPlayerLink: https://open.spotify.com/episode/68KNFYvib3spPv0rqB56aB?si=YyhvygV2T9G3jpyiQG0OJg
       noPlayerLinkText: Listen to Episode 5 with Dr. Joseph Hayes on Spotify
-    - name: "Episode #23 - Anna Ledford, MD & Samuel Edusa, MD"
-      synopsis: This episode of the podcast features Dr. Anna Ledford and Dr. Samuel Edusa, internal medicine resident physicians at SGMC Health. These dedicated physicians share their unique paths to medicine, provide insight into the daily rhythms of residency training, and discuss the vital importance of primary care relationships. 
+    - name: 'Episode #23 - Anna Ledford, MD & Samuel Edusa, MD'
+      synopsis: This episode of the podcast features Dr. Anna Ledford and Dr. Samuel Edusa, internal medicine resident physicians at SGMC Health. These dedicated physicians share their unique paths to medicine, provide insight into the daily rhythms of residency training, and discuss the vital importance of primary care relationships.
       iframeUrl: https://open.spotify.com/embed/episode/4lCMsGHz2YIvevCzMVwxvw??utm_source=generator&theme=0
       noPlayerLink: https://open.spotify.com/episode/4lCMsGHz2YIvevCzMVwxvw?si=aAvDCs23Rl2Xtn0lXTSA8g
       noPlayerLinkText: Listen to Episode 23 with Dr. Anna and Dr. Samuel on Spotify
-    - name: "Episode #26 - Joseph Hayes, MD"
+    - name: 'Episode #26 - Joseph Hayes, MD'
       synopsis: This episode of the podcast welcomes back Dr. Joseph Hayes, Medical Director at SGMC Internal Medicine and Assistant Professor at Mercer Medical School, for an engaging exploration of 2024's most searched health topics. From common phenomena like motion sickness and hiccups to popular medical myths, Dr. Hayes brings his expertise to answer pressing health questions and debunk widespread misconceptions with both scientific insight and humor.
       iframeUrl: https://open.spotify.com/embed/episode/7aaDfIN16pms2nx5D22anB?utm_source=generator&theme=0
       noPlayerLink: https://open.spotify.com/episode/7aaDfIN16pms2nx5D22anB?si=LpT8tewbQuC6WQd8m-EyWQ
@@ -144,12 +199,12 @@ basicSection:
 communityServiceCorner:
   sectionTitle: Faculty Update
   title: Meet Our Newest Internal Medicine Faculty - Dr. Roberta Baah-Sackey
-  author: 
+  author:
   image: /img/roberta-sackey-md.jpeg
-  imageCaption: "Roberta Baah-Sackey, MD, (Internal Medicine Residency Core Faculty)"
+  imageCaption: 'Roberta Baah-Sackey, MD, (Internal Medicine Residency Core Faculty)'
   content: >
     <p>We're thrilled to welcome Roberta Baah-Sackey, MD, to SGMC Health's Internal Medicine team as our newest Graduate Medical Education faculty member. She's bringing her passion for hospital medicine and dedication to both patient care and teaching to South Georgia.</p>
-    
+
     <p>What drew Dr. Baah-Sackey to internal medicine? "I love solving complex medical puzzles and building lasting relationships with patients," she explains. As a board-certified physician specializing in hospital medicine, she focuses on wellness and preventive care with an approach rooted in empathy.</p>
 
     <p>"Listening to patients' concerns is my priority," Dr. Baah-Sackey says. "Patients can expect compassionate, thoughtful care when they're under my watch."</p>
@@ -160,10 +215,10 @@ communityServiceCorner:
 
     <p>Welcome to South Georgia, Dr. Baah-Sackey!</p>
 recentSuccess:
-  sectionTitle: "Rounds To Vows"
+  sectionTitle: 'Rounds To Vows'
   title: Two Ceremonies, One Community Celebration
   image: /img/rounds-to-vows.jpeg
-  imageCaption: "Left: Dr. Brandon Rockwell and his wife Kara Hope Hanson. Right: Dr. Sandhya Lakkireddy and her husband Dr. Vinod Solipuram."
+  imageCaption: 'Left: Dr. Brandon Rockwell and his wife Kara Hope Hanson. Right: Dr. Sandhya Lakkireddy and her husband Dr. Vinod Solipuram.'
   content: >
     <p>
       This past month brought double the joy as we celebrated two beautiful weddings within our residency family! Dr. Brandon Rockwell and his lovely bride Kara Hope Hanson tied the knot in an elegant celebration stateside, while Dr. Sandyia Lakkireddy's traditional Indian wedding brought vibrant color and rich cultural traditions to life across the globe in India.
@@ -175,7 +230,7 @@ recentSuccess:
       Congratulations to both couples! We're thrilled to see our residents beginning this exciting new chapter of their lives. Here's to love, partnership, and many years of happiness! 🥂
     </p>
 musings:
-  sectionTitle: "House Staff Diaries"
+  sectionTitle: 'House Staff Diaries'
   title: Finding Your Footing - A Message to Our Interns
   image: /img/intern-year.jpeg
   author: Samuel Edusa, MD PGY-2
@@ -224,25 +279,25 @@ musings:
   photosTitle: Highlights from the Expo
   photos:
     - image: /img/moultrie/grounds.jpeg
-      caption: "Expo grounds"
+      caption: 'Expo grounds'
     - image: /img/moultrie/cows.jpeg
-      caption: "Exhibit showcasing cows"
+      caption: 'Exhibit showcasing cows'
     - image: /img/moultrie/mariya.jpeg
-      caption: "Dr. Mariya Tom"
+      caption: 'Dr. Mariya Tom'
     - image: /img/moultrie/rose.jpeg
-      caption: "Dr. Silverio-Lopez presenting on cardiovascular disease prevention"
+      caption: 'Dr. Silverio-Lopez presenting on cardiovascular disease prevention'
     - image: /img/moultrie/edusa.jpeg
-      caption: "Dr. Edusa presenting on 'Skin cancer: What every farmer should know'"  
+      caption: "Dr. Edusa presenting on 'Skin cancer: What every farmer should know'"
     - image: /img/moultrie/mariya-presenting.jpeg
-      caption: "Dr. Tom presenting on complications of Diabetes mellitus"
-  content2: > 
+      caption: 'Dr. Tom presenting on complications of Diabetes mellitus'
+  content2: >
     <p>Participating in the Sunbelt Agricultural Exposition was an eye-opening experience. It highlighted the intricate connection between agriculture and healthcare, particularly in areas like skin cancer prevention for farmers. Events like these provide a unique opportunity to bridge the gap between these two vital sectors, ensuring that those who feed the world are also taking care of their health.</p> 
-    <p>See you all at next year's event!</p> 
+    <p>See you all at next year's event!</p>
 culturosity:
   sectionTitle: Culturosity
   description: Culturosity is a bite-sized journey through our residency community's cultures, one story at a time. This weekly column spotlights diverse traditions, celebrations, and daily lives, revealing the rich cultural tapestry that fosters growth within our community.
-  title: "Ghana 🇬🇭 vs Nigeria 🇳🇬: A Feast Of Two Nations" 
-  author: Samuel Edusa, MD 
+  title: 'Ghana 🇬🇭 vs Nigeria 🇳🇬: A Feast Of Two Nations'
+  author: Samuel Edusa, MD
   coverImage: /img/culturosity/food.jpeg
   imageCaption: Traditional Ghanaian and Nigerian dishes
   content: >
@@ -280,77 +335,77 @@ culturosity:
     <p>The event exemplified how food serves as a universal language, breaking down barriers and fostering genuine connections that transcend professional and cultural boundaries. As one resident was overheard saying while reaching for seconds, "Understanding each other's cultures makes us better doctors." </p>
 
 photosOfMonth:
-  sectionTitle: "Through the Lens: Residency Highlights"
+  sectionTitle: 'Through the Lens: Residency Highlights'
   subTitle: Capturing the Smiles, Milestones, and Unforgettable Moments
   photos:
     - image: /img/carousel/shaikh-central-line.jpeg
-      caption: "Dr. Shaik going maverick on the central line"
+      caption: 'Dr. Shaik going maverick on the central line'
     - image: /img/carousel/patrick-rawa.jpeg
-      caption: "Drs. Joseph & Salih status post rounds"
+      caption: 'Drs. Joseph & Salih status post rounds'
     - image: /img/carousel/amal-birthday.jpeg
-      caption: "Happy Birthday Dr. Akhtar 🎈"
+      caption: 'Happy Birthday Dr. Akhtar 🎈'
     - image: /img/carousel/martin-is-slow.jpeg
-      caption: "ICU team with Dr. Martin 🤪"
+      caption: 'ICU team with Dr. Martin 🤪'
     - image: /img/carousel/park-avenue-posse.jpeg
-      caption: "The Park Avenue Posse"
+      caption: 'The Park Avenue Posse'
     - image: /img/carousel/matchy-matchy.jpeg
-      caption: "Impromptu matching"
+      caption: 'Impromptu matching'
     - image: /img/carousel/radio-show.jpeg
-      caption: "Local celebrities - radio talk show"
+      caption: 'Local celebrities - radio talk show'
     - image: /img/carousel/georgia-beer-outing.jpeg
-      caption: "Socializing at Georgia Beer"
+      caption: 'Socializing at Georgia Beer'
     - image: /img/carousel/last-day-intern-year.jpeg
-      caption: "Last day of the academic year!"
+      caption: 'Last day of the academic year!'
     - image: /img/carousel/intern-year-clinic.jpeg
-      caption: "Last day of the academic year!"
+      caption: 'Last day of the academic year!'
     - image: /img/carousel/second-year.jpeg
-      caption: "PGY-2 baby!"
+      caption: 'PGY-2 baby!'
     - image: /img/carousel/happy-birthday-brandon.jpeg
-      caption: "Happy birthday Brandon 🎂"
+      caption: 'Happy birthday Brandon 🎂'
     - image: /img/carousel/mohan-brown-baby.jpeg
-      caption: "Attending Dr. Dwayne Mohan 💪🏽"
+      caption: 'Attending Dr. Dwayne Mohan 💪🏽'
     - image: /img/carousel/welcome-party.jpeg
-      caption: "New resident welcome party"
+      caption: 'New resident welcome party'
     - image: /img/carousel/ty-welcome.jpeg
-      caption: "Welcome party - TY Class"
+      caption: 'Welcome party - TY Class'
     - image: /img/carousel/class-of-2028.jpeg
-      caption: "Welcome party - class of 2028"
+      caption: 'Welcome party - class of 2028'
     - image: /img/carousel/signout.jpeg
-      caption: "Signout 🤣"
+      caption: 'Signout 🤣'
     - image: /img/carousel/matching-scrubs.jpeg
-      caption: "Matching scrubs 👨🏽‍⚕️👩🏻‍⚕️👩🏽‍⚕️🩺"
+      caption: 'Matching scrubs 👨🏽‍⚕️👩🏻‍⚕️👩🏽‍⚕️🩺'
     - image: /img/carousel/ornob-bag.jpeg
-      caption: "Dr. Rahman sporting his SGMC weekender bag. Happy Doctors Day!👨🏽‍⚕️👩🏻‍⚕️👩🏽‍⚕️🩺"
+      caption: 'Dr. Rahman sporting his SGMC weekender bag. Happy Doctors Day!👨🏽‍⚕️👩🏻‍⚕️👩🏽‍⚕️🩺'
     - image: /img/carousel/gallagher-baby-shower.jpeg
-      caption: "Dr. Gallaghers baby shower"
+      caption: 'Dr. Gallaghers baby shower'
     - image: /img/carousel/val-team-1.jpeg
       caption: "Valentine's Day team pose"
     - image: /img/carousel/val-team-2.jpeg
       caption: "Valentine's Day team pose"
     - image: /img/carousel/team-pose-3.jpeg
-      caption: "Rocking Red For CHD - Brexton Foundation"
+      caption: 'Rocking Red For CHD - Brexton Foundation'
     - image: /img/carousel/intern-hangout.jpeg
       caption: "Intern hangout: Cookout at Asma's house"
     - image: /img/carousel/women-in-medicine-1.jpeg
-      caption: "Women in Medicine"
+      caption: 'Women in Medicine'
     - image: /img/carousel/women-in-medicine-2.jpeg
-      caption: "Women in Medicine"
+      caption: 'Women in Medicine'
     - image: /img/carousel/grand-rounds-1.jpeg
       caption: "Drs. Silverio-Lopez & Chaudhary's Grand Rounds"
     - image: /img/carousel/grand-rounds-2.jpeg
       caption: "Drs. Silverio-Lopez & Chaudhary's Grand Rounds"
     - image: /img/carousel/lamptey-cake.jpeg
-      caption: "Happy Birthday Dr. Lamptey"
+      caption: 'Happy Birthday Dr. Lamptey'
     - image: /img/carousel/enzo-1.jpeg
-      caption: "Winter Storm Enzo at SGMC"
+      caption: 'Winter Storm Enzo at SGMC'
     - image: /img/carousel/enzo-2.jpeg
       caption: "Outside Dwayne's house"
     - image: /img/carousel/enzo-3.jpeg
-      caption: "Snowed in at SGMC"
+      caption: 'Snowed in at SGMC'
     - image: /img/carousel/christmas-party-brown.jpeg
-      caption: "Dr. Brown on the guitar"
+      caption: 'Dr. Brown on the guitar'
     - image: /img/carousel/christmas-party-beale.jpeg
-      caption: "Candid camera moment"
+      caption: 'Candid camera moment'
     - image: /img/carousel/christmas-party-women.jpeg
       caption: "Physicians's Christmas Party"
     - image: /img/carousel/christmas-party-2.jpeg
@@ -358,72 +413,72 @@ photosOfMonth:
     - image: /img/carousel/christmas-party-1.jpeg
       caption: "Physicians's Christmas Party"
     - image: /img/carousel/chook-baby.jpeg
-      caption: "Welcoming baby Alejandro - congratulations Dr. Shook-Chacon!"
+      caption: 'Welcoming baby Alejandro - congratulations Dr. Shook-Chacon!'
     - image: /img/carousel/halloween-1.jpeg
       caption: "Guess who's behind the mask?"
     - image: /img/carousel/halloween-2.jpeg
       caption: "Halloween at Dr. Bias' house"
     - image: /img/carousel/halloween-3.jpeg
-      caption: "Gotta love those costumes"
+      caption: 'Gotta love those costumes'
     - image: /img/carousel/beale-balloon.jpeg
-      caption: "Dr. Beale trying to pop a balloon 🤣"
+      caption: 'Dr. Beale trying to pop a balloon 🤣'
     - image: /img/carousel/brandon-karen-hope.jpeg
-      caption: "Loofah & Soap"
+      caption: 'Loofah & Soap'
     - image: /img/carousel/halloween-boxer.jpeg
-      caption: "Drs. Silverio-Lopez & Lakkireddy showing off their amazing costumes"
+      caption: 'Drs. Silverio-Lopez & Lakkireddy showing off their amazing costumes'
     - image: /img/carousel/halloween-count-cat.jpeg
-      caption: "Very cool costumes guys"
+      caption: 'Very cool costumes guys'
     - image: /img/carousel/halloween-security.jpeg
-      caption: "Halloween security"
+      caption: 'Halloween security'
     - image: /img/carousel/halloween-taylor.jpeg
-      caption: "Drs. White & Martin! Nice costumes!"
+      caption: 'Drs. White & Martin! Nice costumes!'
     - image: /img/carousel/halloween-witches.jpeg
-      caption: "Awesome customes 🎃🧙‍♀️"
+      caption: 'Awesome customes 🎃🧙‍♀️'
     - image: /img/carousel/kinley-baby-shower-1.jpeg
       caption: "Dr. Shook-Chacon's baby shower"
     - image: /img/carousel/kinley-food.jpeg
       caption: "Dr. Shook-Chacon's baby shower - All that food! 🍲 Yum!"
     - image: /img/carousel/patrick-skeleton.jpeg
-      caption: "Dr. Joseph discharging his patient"
+      caption: 'Dr. Joseph discharging his patient'
     - image: /img/carousel/trunk-treat-1.jpeg
-      caption: "Handing out candy at the SGMC Health employee trunk or treat! 👻🎃"
+      caption: 'Handing out candy at the SGMC Health employee trunk or treat! 👻🎃'
     - image: /img/carousel/trunk-treat-2.jpeg
-      caption: "SGMC Health Employee Trunk or Treat Group Photo! 👻🎃"
+      caption: 'SGMC Health Employee Trunk or Treat Group Photo! 👻🎃'
     - image: /img/carousel/trunk-treat-3.jpeg
-      caption: "Dr. Beale at the SGMC Health Employee Trunk or Treat! 👻🎃"
+      caption: 'Dr. Beale at the SGMC Health Employee Trunk or Treat! 👻🎃'
     - image: /img/carousel/happy-birthday-rija.jpeg
-      caption: "Happy Birthday Dr. Chaudhary"
+      caption: 'Happy Birthday Dr. Chaudhary'
     - image: /img/carousel/jeopardy-team.jpeg
-      caption: "Jeopardy team at Georgia ACP conference, Savannah"
+      caption: 'Jeopardy team at Georgia ACP conference, Savannah'
     - image: /img/carousel/escape-room.jpeg
-      caption: "Code Blue averted: Docs escape (the escape room) without a consult! (Georgia ACP 2024, Savannah)"
+      caption: 'Code Blue averted: Docs escape (the escape room) without a consult! (Georgia ACP 2024, Savannah)'
     - image: /img/carousel/brandons-hand.jpeg
       caption: "Brandons' hand (an expression of how to seize the moment) (Georgia ACP 2024, Savannah) "
     - image: /img/carousel/faculty-cheering.jpeg
-      caption: "Leadership & faculty cheer residents on at Georgia ACP, Savannah"
+      caption: 'Leadership & faculty cheer residents on at Georgia ACP, Savannah'
     - image: /img/carousel/twinning.jpeg
-      caption: "Impromptu twinning"
+      caption: 'Impromptu twinning'
     - image: /img/carousel/dodge-ball.jpeg
-      caption: "Dodgeball tournament"
+      caption: 'Dodgeball tournament'
     - image: /img/carousel/partnership-health-gala.jpeg
-      caption: "Partnership for Health Gala"
+      caption: 'Partnership for Health Gala'
     - image: /img/carousel/trivia-night.jpeg
-      caption: "Monday night trivia"
+      caption: 'Monday night trivia'
     - image: /img/carousel/baby-shower.jpeg
-      caption: "Baby Shower for Dr. and Mrs. Brown"
+      caption: 'Baby Shower for Dr. and Mrs. Brown'
     - image: /img/carousel/winter-is-coming.jpeg
-      caption: "Nik pre-charting"
+      caption: 'Nik pre-charting'
     - image: /img/carousel/pickle-ball.jpeg
-      caption: "Pickleball with Dr. Hasan"
+      caption: 'Pickleball with Dr. Hasan'
 events:
   sectionTitle: Upcoming Events
   eventsList:
-    - date: Aug 30th, 2025
-      description: Medical Education Mixer from 6:00-9:00 PM (Ocean Pond in Lake Park)
     - date: Oct 14-16, 2025
       description: Sunbelt AG Expo (Moultrie, GA)
     - date: October 24-26, 2025
       description: GA ACP Conference (Atlanta, GA)
+    - date: October 28th, 2025
+      description: Trunk Or Treat (SGMC Health, Main Campus)
 thingsToDo:
   sectionTitle: Things To Do In Valdosta
   images:
@@ -467,7 +522,7 @@ newsFromClinic:
       Meet Melissa Wilkerson, one of our devoted medical assistants who has been with our clinic since its opening in August 2022. Melissa is passionate about her work and equally dedicated to her family life. When not providing excellent care to our patients, she can often be found cheering on her daughter at softball games. Melissa also enjoys quality time with family and friends. Her long-standing commitment and experience make her an invaluable member of our team.
 wellnessCorner:
   sectionTitle: Wellness Corner
-  title: "Finding Humor in the Hard Days: A Reminder About Emotional Well-being"
+  title: 'Finding Humor in the Hard Days: A Reminder About Emotional Well-being'
   altImageText: Emotional well-being
   image: /img/emotional-plushie.jpeg
   content: >

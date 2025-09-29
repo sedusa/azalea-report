@@ -1,0 +1,131 @@
+.sectionTitle {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.4;
+  margin: 1rem auto;
+}
+
+.genericContent {
+  background-color: #FFE6D6;
+  color: #333333;
+  border-radius: 15px;
+  padding: 30px;
+  overflow: visible;
+}
+
+.genericDescription {
+  color: #333;
+  font-size: 1.3rem;
+  font-style: italic;
+  line-height: 1.6;
+  margin-top: 4rem;
+}
+
+.genericTitle {
+  color: #016f53;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: bold;
+  margin: 0;
+}
+
+.genericAuthor {
+  font-family: 'Montserrat', sans-serif;
+  color: #333333;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.4;
+  margin: 0.2rem 0 1.3rem;
+}
+
+.genericImageWrapper {
+  margin: 2rem 0 1rem;
+  width: 100%;
+}
+
+.genericCoverImage {
+  border-radius: 8px;
+  height: auto;
+  width: 100%;
+}
+
+.genericCoverImageCaption {
+  display: block;
+  color: #666;
+  font-size: 1.0rem;
+  text-align: left;
+}
+
+.genericText {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.genericText :global(.imageGrid) {
+  display: flex;
+  gap: 24px;
+  margin: 24px 0;
+}
+
+.genericText :global(.imageColumn) {
+  flex: 1;
+}
+
+.genericText :global(.imageColumn img) {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.genericText :global(.imageCaption) {
+  display: block;
+  color: #666;
+  font-size: 1rem;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .genericText, {
+    font-size: 1.2rem;
+  }
+
+  .genericDescription {
+    font-size: 1.2rem;
+  }
+
+  .genericText :global(.imageGrid) {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .genericToggleButton {
+    display: inline-block;
+    font-size: 1rem;
+    margin: 1rem 0 0;
+  }
+}
+
+.genericToggleButton {
+  background-color: #016f53;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Georgia', serif;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  transition: background-color 0.01s ease;
+}
+
+.genericToggleButton:hover {
+  background-color: #014d3a;
+}
