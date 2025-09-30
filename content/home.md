@@ -331,7 +331,9 @@ culturosity:
 photosOfMonth:
   sectionTitle: 'Through the Lens: Residency Highlights'
   subTitle: Capturing the Smiles, Milestones, and Unforgettable Moments
-  photos:
+  photos: 
+    - image: /img/carousel/mafaz-working.jpeg
+      caption: 'Regular ICU day! We fix more than people 🔨'
     - image: /img/carousel/graduation-girls.jpeg
       caption: 'Graduation pose'
     - image: /img/carousel/clinic-dressup.jpeg
@@ -463,7 +465,7 @@ photosOfMonth:
     - image: /img/carousel/escape-room.jpeg
       caption: 'Code Blue averted: Docs escape (the escape room) without a consult! (Georgia ACP 2024, Savannah)'
     - image: /img/carousel/brandons-hand.jpeg
-      caption: "Brandons' hand (an expression of how to seize the moment) (Georgia ACP 2024, Savannah) "
+      caption: "Brandons' hand (an expression of how to seize the moment) (Georgia ACP 2024, Savannah)"
     - image: /img/carousel/faculty-cheering.jpeg
       caption: 'Leadership & faculty cheer residents on at Georgia ACP, Savannah'
     - image: /img/carousel/twinning.jpeg
