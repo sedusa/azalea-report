@@ -10,10 +10,10 @@ import ResidentSpotlight from '@components/sections/ResidentSpotlight';
 import ProgramInfo from '@components/sections/ProgramInfo';
 import ChiefsCorner from '@components/sections/ChiefsCorner';
 import InternsCorner from '@components/sections/InternsCorner';
-import ProgramDirector from '@components/sections/ProgramDirector';
+// import ProgramDirector from '@components/sections/ProgramDirector';
 import RecentSuccess from '@components/sections/RecentSuccess';
 import Musings from '@components/sections/Musings';
-import CommunityService from '@components/sections/CommunityService';
+// import CommunityService from '@components/sections/CommunityService';
 import PhotosOfTheMonth from '@components/sections/PhotosOfMonth';
 import UpcomingEvents from '@components/sections/UpcomingEvents';
 import BirthdaySection from '@components/sections/BirthdaySection';
@@ -23,7 +23,7 @@ import WellnessCorner from '@components/sections/WellnessCorner';
 import Podcast from '@/components/sections/Podcast';
 import Culturosity from '@/components/sections/Culturosity';
 import GenericSingleImageCarouselTextSection from '@/components/sections/GenericSingleImageCarouselTextSection';
-import BasicSection from '@/components/sections/BasicSection';
+// import BasicSection from '@/components/sections/BasicSection';
 
 export default function Home() {
   const {
@@ -74,7 +74,7 @@ export default function Home() {
       <SingleColumnLayout column={<InternsCorner internsCorner={internsCorner} />} /> 
       <SingleColumnLayout column={ <GenericSingleImageCarouselTextSection genericSingleImageCarouselTextSection={genericSingleImageCarouselTextSection} /> } />
       {/* <SingleColumnLayout column={<ProgramDirector programDirector={programDirector} />} /> */}
-      <SingleColumnLayout column={<CommunityService communityServiceCorner={communityServiceCorner} />} />
+      {/* <SingleColumnLayout column={<CommunityService communityServiceCorner={communityServiceCorner} />} /> */}
       {/* <SingleColumnLayout column={<BasicSection basicSection={basicSection} />} /> */}
       <SingleColumnLayout column={<Musings musings={musings} />} />  
       <SingleColumnLayout column={<Podcast podcast={podcast} />} />
