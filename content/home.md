@@ -525,11 +525,11 @@ newsFromClinic:
   sectionTitle: News From The Clinic
   employeeSpotlight:
     subSectionTitle: Employee Spotlight
-    name: Melissa Wilkerson
-    image: /img/employee-spotlight-09-24.jpeg
-    title: Medical Assistant
+    name: Tameshia Footman
+    image: /img/tameshia-footman.jpeg
+    title: Licensed Practical Nurse
     profile: >
-      Meet Melissa Wilkerson, one of our devoted medical assistants who has been with our clinic since its opening in August 2022. Melissa is passionate about her work and equally dedicated to her family life. When not providing excellent care to our patients, she can often be found cheering on her daughter at softball games. Melissa also enjoys quality time with family and friends. Her long-standing commitment and experience make her an invaluable member of our team.
+      Tameshia Footman has been an integral clinical team member at SGMC Internal Medicine - Park Avenue for four years, bringing compassion and dedication to her role as a Licensed Practical Nurse. What drives her is simple yet profound: making a genuine difference in patients' lives through attentive care and a listening ear. Away from the clinic, Tameshia's world revolves around her children, who inspire and energize her daily. She's also an avid bargain hunter with a knack for discovering hidden gems on clearance racks. While Tameshia describes herself as an introvert who values quiet moments, she has a special gift for forming deep, meaningful relationships with patients, families, and colleagues alike. Her blend of thoughtful professionalism and genuine warmth makes her an essential part of our compassionate care team.
 wellnessCorner:
   sectionTitle: Wellness Corner
   title: 'Finding Humor in the Hard Days: A Reminder About Emotional Well-being'
