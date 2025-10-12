@@ -332,6 +332,8 @@ photosOfMonth:
   sectionTitle: 'Through the Lens: Residency Highlights'
   subTitle: Capturing the Smiles, Milestones, and Unforgettable Moments
   photos: 
+    - image: /img/carousel/anesthesia-folks.jpeg
+      caption: 'Drs. Oraee, Akhtar and Patel holding it down at the Anesthesiology conference in San Antonio, Oct 2025'
     - image: /img/carousel/mafaz-working.jpeg
       caption: 'Regular ICU day! We fix more than people 🔨'
     - image: /img/carousel/graduation-girls.jpeg
