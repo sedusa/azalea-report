@@ -43,6 +43,87 @@
   );
 }
 
+.halloweenOverlay {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  animation: float 3s ease-in-out infinite;
+}
+
+.halloweenText {
+  background: linear-gradient(135deg, rgba(139, 0, 0, 0.9), rgba(255, 69, 0, 0.9));
+  color: #FFD700;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Courier New', monospace;
+  box-shadow: 
+    0 0 10px rgba(255, 215, 0, 0.6),
+    0 0 20px rgba(255, 140, 0, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.8),
+    0 0 8px rgba(255, 140, 0, 0.8);
+  animation: shimmer 3s ease-in-out infinite;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pumpkin {
+  font-size: 2rem;
+  filter: drop-shadow(0 0 10px rgba(255, 140, 0, 0.8))
+          drop-shadow(0 0 20px rgba(255, 69, 0, 0.6))
+          drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+  animation: pulse 2s ease-in-out infinite;
+  display: inline-block;
+  transform-origin: center;
+  line-height: 1;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px rgba(255, 140, 0, 0.8))
+            drop-shadow(0 0 20px rgba(255, 69, 0, 0.6));
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(255, 140, 0, 1))
+            drop-shadow(0 0 30px rgba(255, 69, 0, 0.8));
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    box-shadow: 
+      0 0 10px rgba(255, 215, 0, 0.6),
+      0 0 20px rgba(255, 140, 0, 0.4),
+      0 4px 12px rgba(0, 0, 0, 0.7);
+  }
+  50% {
+    box-shadow: 
+      0 0 20px rgba(255, 215, 0, 0.9),
+      0 0 40px rgba(255, 140, 0, 0.7),
+      0 4px 12px rgba(0, 0, 0, 0.7);
+  }
+}
+
 .bannerText {
   position: absolute;
   bottom: 32px;
@@ -124,6 +205,22 @@
   .bannerMetadata {
     font-size: 1.2rem;
   }
+
+  .halloweenOverlay {
+    top: 12px;
+    right: 12px;
+  }
+
+  .halloweenText {
+    font-size: 0.9rem;
+    padding: 3px 10px;
+    letter-spacing: 1px;
+    gap: 8px;
+  }
+
+  .pumpkin {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -149,5 +246,21 @@
 
   .bannerContainer {
     border-radius: 6px;
+  }
+
+  .halloweenOverlay {
+    top: 8px;
+    right: 8px;
+  }
+
+  .halloweenText {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    letter-spacing: 0.5px;
+    gap: 6px;
+  }
+
+  .pumpkin {
+    font-size: 1.2rem;
   }
 }

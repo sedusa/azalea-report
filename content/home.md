@@ -5,6 +5,11 @@ banner:
   subtitle: SGMC Health Internal Medicine Residency Newsletter
   edition: 6
   date: November 2025
+  overlay:
+    show: true
+    type: halloween
+    text: Halloween edition
+    showPumpkin: true
 about:
   sectionTitle:
   content: Welcome 👋🏼 to the Azalea Report - where the blooms of South Georgia Health's Internal Medicine Residency program come to life! Like the vibrant azaleas that paint Valdosta in stunning color each spring, this resident-led newsletter showcases the brilliant minds and inspiring stories flourishing in our program.  This issue is blooming with excitement as we bring you highlights from our inaugural South Georgia Regional Conference, celebrate beautiful weddings within our residency family, spotlight our featured residents, and share a whole lot more! From program milestones to personal celebrations, we're here to bring you all the buzz from the Azalea City. Get ready to discover the stories of excellence, growth, and community that make our residency program truly blossom! 🌸 🌸<br/><br/> Sincerely,
@@ -24,13 +29,13 @@ program:
     advancedTraining: Residents have access to SGMC Health's State Of The Art Simulation Lab, extensive board preparation support, and teaching opportunities with medical students
 spotlight:
   sectionTitle: Resident Spotlight
-  name: Kinley Shook-Chacon, MD
-  image: /img/resident-spotlight/shook-chacon-md.jpeg
-  birthplace: Georgia, USA 🇺🇸
-  funFact: As a resident physician, I’ve learned that coffee has become one of my essential food groups.
-  favoriteDish: Paneer Makhani with Garlic Naan and top it off with Masala Chai afterward ☕️
-  interests: Attending church, spending time with my family and our dogs, exploring self-sustainability (gardening, housing, food), enjoying nature, maintaining fitness, Korean beauty products (new obsession), and investing.
-  postResidencyPlans: I plan to dedicate time to my family, travel, and work as a PRN/locum hospitalist for one year while I explore my long-term career direction.
+  name: Anna Ledford, MD
+  image: /img/resident-spotlight/anna-ledford-md.jpeg
+  birthplace: Cleveland, GA. USA 🇺🇸
+  funFact: Before donning the white coat, I was crushing it as a nurse practitioner!
+  favoriteDish: My husband's buttermilk biscuits — they're so good, they should be illegal 🍞✨
+  interests: When I'm not saving lives, you'll find me strategizing at the Mahjong table (those tiles don't know what hit 'em), perfecting my swing on the golf course, or reeling in the big one while fishing ⛳🎣
+  postResidencyPlans: I'll be staying right here at SGMC Health as an attending in the resident clinic. 
 chiefsCorner:
   title: The Chiefs' Corner
   chiefs:
@@ -54,6 +59,33 @@ chiefsCorner:
         Dr. Rockwell's professional aspirations center on primary care, where he envisions building lasting relationships with patients and serving as their advocate throughout their healthcare journey. His philosophy for succeeding in residency is refreshingly straightforward: "Trust your gut. Diligence outlasts intelligence and talent." The guidance that has shaped his own path emphasizes embracing challenges: "If deciding between two things, the right answer is likely whichever is more work."
 
         Interestingly, if medicine hadn't captured his heart, Dr. Rockwell might have found himself in plumbing—a profession that, like medicine, requires problem-solving skills, attention to detail, and the satisfaction of fixing what's broken. His practical mindset and dedication to helping others showcase the versatile spirit he brings to our residency program.
+recentSuccess:
+  sectionTitle: Recent Success
+  title: SGMC Residents Shine Bright at recent Georgia ACP Conference in Atlanta, GA
+  image: /img/acp-team.jpeg
+  imageCaption: Residents with Dr. Sobukonla at the Georgia ACP conference in Atlant
+  carouselTitle: Poster/Podium Presentation Highlights
+  posterImage:
+    - image: /img/acp25/group.jpeg
+      caption: "Residents with Dr. Hayes"
+    - image: /img/acp25/jeopardy-team.jpeg
+      caption: "Jeopardy team: Drs. Tom, Lakkireddy & Rockwell"
+    - image: /img/acp25/poster-1.jpeg
+      caption: "Drs. Salih & Mansoor"
+    - image: /img/acp25/poster-2.jpeg
+      caption: "Dr. Shook-Chacon"
+    - image: /img/acp25/poster-3.jpeg
+      caption: "Dr. Tom"
+    - image: /img/acp25/poster-4.jpeg
+      caption: "Drs. Shook-Chacon & Joseph"
+    - image: /img/acp25/poster-5.jpeg
+      caption: "Dr. Joseph"
+    - image: /img/acp25/poster-6.jpeg
+      caption: "Dr. Fashugba"
+    - image: /img/acp25/poster-7.jpeg
+      caption: "Dr. Edusa"
+  content: >
+    <p>Our residents shone brightly at the Georgia ACP conference in Atlanta! They presented compelling posters, delivered captivating oral podium presentations, and competed in the always-intense Jeopardy competition. The SGMC Internal Medicine Residency Program couldn't be prouder. Their outstanding performance brought recognition to our program and set a new benchmark for future residents. As we celebrate this year's achievements, we're already excited for an even stronger showing next year. Strong work 💪🏼 everyone!</p><br/>
 genericSingleImageCarouselTextSection:
   sectionTitle: GME Corner
   title: 'Third Annual South Georgia Regional GME Conference'
@@ -138,14 +170,14 @@ genericSingleImageCarouselTextSection:
 internsCorner:
   title: Intern Spotlight
   interns:
-    - name: Genesis Muñoz, MD
-      image: /img/intern-corner/genesis-munoz-md.jpeg
+    - name: Amal Akhtar, DO
+      image: /img/intern-corner/amal-akhtar-do.jpeg
       content: >
-        Straight outta Miami, Dr. Muñoz is equal parts beach girl and budding artist — recently bitten by the pottery bug and fully committed to mastering the wheel. 🏺 Her game plan for the year ahead? Keep it real: survive intern year! But if the white coat life hadn't chosen her, she'd be out in the field as an anthropologist, diving deep into different cultures and probably living her best Indiana Jones-adjacent life. 🗺️ When the shift finally ends, she's got one move: hit up her favorite sushi spot with a crisp glass of wine in hand. Pure bliss. And on those rare days off? You'll find her out on the water, sun-kissed and carefree, doing what Miami natives do best — boating and soaking up every ray. ⛵☀️ Get her started on travel stories and suddenly you're three hours deep in conversation, nodding along to tales from her adventures across continents and through hidden gems most people have never heard of. She's also that person who genuinely loves a good hike, always down for a trail with a view and the kind of summit selfie that makes you want to lace up your own boots. But come evening, she's cozied up with Nat Geo documentaries, feeding her curiosity about the world one episode at a time. 🌍📺 Her perfect day off? Morning on the boat, afternoon hike, evening wine and sushi, topped off with a documentary. She's collecting experiences and passport stamps like they're going out of style. ✈️
-    - name: Jay Patel, DO
-      image: /img/intern-corner/jay-patel-do.jpeg
+        Miami raised with Pakistani roots running deep, she's fluent in multiple languages and even more fluent in staying connected — FaceTime with family is non-negotiable. This year's mission? Survive intern year and match into anesthesia, with her eyes on cardiac and critical care where the patients are the sickest and the stakes are highest. That's her kind of medicine. 🩺 If the stethoscope hadn't happened, she'd probably be running her own interior design business — she's got that eye for making spaces beautiful, and decorating is where her creative side really shines. Her sacred wind-down routine: light a candle 🕯️, throw on Bridgerton or a classic Bollywood film, and let the world slow down. Sometimes it's a Netflix binge of 'You', other times it's those comfort films her parents introduced her to.  When she actually gets time off, she's either hiking a new trail or meeting friends at their favorite restaurant — good company, good food, that's the formula. She's not big on small talk, but ask her about her dad and watch her light up. She could talk for hours, and honestly, you'd want to listen. Volleyball was her thing back in the day, and you can still catch that competitive energy when she's locked into a tough case or powering through a shift. Her ideal day? Trail in the morning, lunch with her crew, candle and a movie at night, with FaceTime calls sprinkled throughout to keep her people close. She's carving her path in medicine while keeping her heart rooted in family and faith. 💛
+    - name: Rawa Salih, DO
+      image: /img/intern-corner/rawa-salih-md.jpeg
       content: >
-        A small-town Georgia kid at heart (Clayton, population: tiny), Dr. Patel was technically born in Dothan, Alabama before his family settled in the Northeast Georgia mountains when he was just one. Fast forward to residency, and he's become a self-taught chef out of pure necessity and passion. When you're a serious foodie, mediocre meals just won't cut it. 🍳👨‍🍳 Right now he's laser-focused on matching into Anesthesiology, with the ultimate goal of working alongside his wife—a pediatric resident who's currently doing her thing up in Long Island, NY. Long distance is tough, but they're making it work until they can finally be in the same hospital (or better yet, the same state). 💑 Before medicine took over, he was actually all-in on Computer Science. The tech love is still there, which explains why you'll find him gaming with friends or geeking out over the latest gadgets when he's not at the hospital. His post-shift wind-down routine? Talking to his wife, hitting golf balls at the range, or jumping into a gaming session. 🎮⛳ He just finished season 4 of The Bear (chef shows hit different when you cook). His perfect evening off involves getting a solid workout in, cooking something delicious at home, and FaceTiming his wife to catch up on everything. When he needs to truly recharge, it's pretty simple: gaming, watching sports, or just lying in bed doing absolutely nothing. 😴 Start a conversation about his wife, his friends, or traveling and suddenly two hours have passed. Oh, and somewhere along the way he picked up photography—now he's the guy capturing all those candid portraits of friends and family, turning moments into memories. 📸✨
+        Born in Germany with Kurdish roots, this future cardiologist somehow fits piano playing into his residency schedule — not your typical resident hobby, but he makes it work. He's laser-focused on matching into Cardiology, though his life philosophy is surprisingly zen. Just chill. Keep it balanced, stay grounded, don't overthink it. If medicine hadn't panned out, he's convinced politics would've been his calling—turns out he's got a real talent for the art of conversation and persuasion. Democracy's loss is cardiology's gain. After long hospital shifts, you'll find him cooking actual meals from scratch. It's therapeutic. Movies though? Hard pass. He's never been into them and he's fully committed to that stance at this point. His ideal evening off sounds wild—pulling an all-nighter exploring a big city. There's something about that 3 AM urban energy, the streets, the spontaneous moments that just hits different when everyone else is asleep. When he needs to reset, any sport will do. Hand him a ball and point him toward something active and that's his decompression method. ⚽🏀 Fair warning though—he's not into marathon phone conversations. They literally give him a headache, so he keeps communication concise. Quality over quantity. As for the deeper stuff like his stories, quirks, and what really makes him tick, he keeps that close. Some things are better discovered through actual conversation than spelled out online. Consider it an open invitation to be curious.✨
 podcast:
   sectionTitle: Podcasts
   title: 'What Brings You In Today? - Featured Podcasts'
@@ -208,21 +240,6 @@ communityServiceCorner:
     <p>Dr. Mohan treats diabetes, hypertension, heart and lung diseases, and autoimmune disorders, using humor and empathy to connect with patients while mentoring the next generation of physicians. Dr. Silverio-Lopez manages conditions including hypertension, diabetes, asthma, COPD, and kidney disease, emphasizing compassionate listening in her patient care with a particular interest in cardiology. Dr. Gandi provides hospital-based care for acute medical conditions, focusing on helping patients return safely to their families.</p>
 
     <p>Welcome on board!</p>
-recentSuccess:
-  sectionTitle: 'Rounds To Vows'
-  title: Two Ceremonies, One Community Celebration
-  image: /img/rounds-to-vows.jpeg
-  imageCaption: 'Left: Dr. Brandon Rockwell and his wife Kara Hope Hanson. Right: Dr. Sandhya Lakkireddy and her husband Dr. Vinod Solipuram.'
-  content: >
-    <p>
-      This past month brought double the joy as we celebrated two beautiful weddings within our residency family! Dr. Brandon Rockwell and his lovely bride Kara Hope Hanson tied the knot in an elegant celebration stateside, while Dr. Sandyia Lakkireddy's traditional Indian wedding brought vibrant color and rich cultural traditions to life across the globe in India.
-    </p>
-    <p>
-      From classic Western elegance to stunning South Asian ceremonies complete with intricate garlands and golden décor, these celebrations remind us that love transcends borders and brings people together in the most beautiful ways. Both couples radiated pure happiness on their special days, surrounded by friends, family, and the promise of bright futures ahead. 
-    </p>
-    <p>
-      Congratulations to both couples! We're thrilled to see our residents beginning this exciting new chapter of their lives. Here's to love, partnership, and many years of happiness! 🥂
-    </p>
 musings:
   sectionTitle: 'House Staff Diaries'
   title: Finding Your Footing - A Message to Our Interns
