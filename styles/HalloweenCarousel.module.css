@@ -1,0 +1,512 @@
+.halloweenWrapper {
+  margin: 2rem 0;
+  position: relative;
+}
+
+.halloweenTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #FF7F3F;
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.4),
+    0 0 10px rgba(255, 127, 63, 0.6),
+    0 0 20px rgba(255, 140, 66, 0.4),
+    0 0 30px rgba(255, 127, 63, 0.3);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+/* Theme-aware text color */
+[data-theme="dark"] .halloweenTitle {
+  color: #FF8C42;
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.6),
+    0 0 15px rgba(255, 140, 66, 0.8),
+    0 0 25px rgba(255, 165, 79, 0.6),
+    0 0 35px rgba(255, 140, 66, 0.4);
+}
+
+/* Dripping effect on title - changed from blood to orange */
+.halloweenTitle::before,
+.halloweenTitle::after {
+  content: '🎃';
+  position: absolute;
+  font-size: 0.9rem;
+  animation: drip 3s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+.halloweenTitle::before {
+  left: 10%;
+  top: 100%;
+  animation-delay: 0s;
+}
+
+.halloweenTitle::after {
+  right: 10%;
+  top: 100%;
+  animation-delay: 1.5s;
+}
+
+.halloweenContainer {
+  position: relative;
+  padding: 30px 40px;
+  background: 
+    linear-gradient(135deg, 
+      rgba(255, 127, 63, 0.12) 0%, 
+      rgba(255, 140, 66, 0.15) 50%, 
+      rgba(255, 127, 63, 0.12) 100%),
+    radial-gradient(circle at top left, rgba(255, 140, 66, 0.08), transparent 50%),
+    radial-gradient(circle at bottom right, rgba(255, 127, 63, 0.08), transparent 50%);
+  border: 4px solid #FF7F3F;
+  border-radius: 15px;
+  box-shadow: 
+    0 0 20px rgba(255, 127, 63, 0.5),
+    0 0 40px rgba(255, 140, 66, 0.3),
+    inset 0 0 20px rgba(0, 0, 0, 0.1),
+    0 4px 15px rgba(0, 0, 0, 0.2);
+  margin: 20px 0;
+  transition: all 0.3s ease;
+  overflow: visible;
+}
+
+/* Theme-aware container */
+[data-theme="dark"] .halloweenContainer {
+  background: 
+    linear-gradient(135deg, 
+      rgba(255, 140, 66, 0.15) 0%, 
+      rgba(255, 165, 79, 0.18) 50%, 
+      rgba(255, 140, 66, 0.15) 100%),
+    radial-gradient(circle at top left, rgba(255, 165, 79, 0.1), transparent 50%),
+    radial-gradient(circle at bottom right, rgba(255, 140, 66, 0.1), transparent 50%);
+  border-color: #FF8C42;
+  box-shadow: 
+    0 0 25px rgba(255, 140, 66, 0.6),
+    0 0 50px rgba(255, 165, 79, 0.4),
+    inset 0 0 20px rgba(0, 0, 0, 0.3),
+    0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Dripping blood effect on container */
+.halloweenContainer::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 15%;
+  width: 8px;
+  height: 8px;
+  background: #8B0000;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: bloodDrip 4s ease-in-out infinite;
+  z-index: 50;
+  box-shadow: 0 0 10px rgba(139, 0, 0, 0.8);
+  pointer-events: none;
+}
+
+.halloweenContainer::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  right: 25%;
+  width: 6px;
+  height: 6px;
+  background: #CC0000;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: bloodDrip 5s ease-in-out infinite 1s;
+  z-index: 50;
+  box-shadow: 0 0 10px rgba(204, 0, 0, 0.8);
+  pointer-events: none;
+}
+
+[data-theme="dark"] .halloweenContainer::before {
+  background: #8B0000;
+  box-shadow: 0 0 12px rgba(139, 0, 0, 0.9);
+}
+
+[data-theme="dark"] .halloweenContainer::after {
+  background: #CC0000;
+  box-shadow: 0 0 12px rgba(204, 0, 0, 0.9);
+}
+
+/* Additional blood drips using pseudo-elements */
+.halloweenContainer {
+  counter-reset: bloodDrips;
+}
+
+.bloodDrip {
+  position: absolute;
+  top: -4px;
+  width: 8px;
+  height: 25px;
+  background: linear-gradient(to bottom, #8B0000 0%, #CC0000 50%, #8B0000 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: bloodDrip 3s ease-in-out infinite;
+  z-index: 50;
+  box-shadow: 
+    0 0 10px rgba(139, 0, 0, 0.8),
+    0 0 5px rgba(204, 0, 0, 0.6);
+  transform-origin: top center;
+  pointer-events: none;
+}
+
+[data-theme="dark"] .bloodDrip {
+  background: linear-gradient(to bottom, #8B0000 0%, #CC0000 50%, #8B0000 100%);
+  box-shadow: 
+    0 0 12px rgba(139, 0, 0, 0.9),
+    0 0 6px rgba(204, 0, 0, 0.7);
+}
+
+.bloodDrip:nth-of-type(1) {
+  left: 12%;
+  animation-delay: 0s;
+  height: 20px;
+}
+
+.bloodDrip:nth-of-type(2) {
+  left: 28%;
+  animation-delay: 0.8s;
+  height: 28px;
+  width: 7px;
+}
+
+.bloodDrip:nth-of-type(3) {
+  left: 48%;
+  animation-delay: 1.6s;
+  height: 32px;
+  width: 9px;
+}
+
+.bloodDrip:nth-of-type(4) {
+  left: 68%;
+  animation-delay: 0.4s;
+  height: 24px;
+  width: 7px;
+}
+
+.bloodDrip:nth-of-type(5) {
+  left: 88%;
+  animation-delay: 1.2s;
+  height: 26px;
+}
+
+.carouselInner {
+  position: relative;
+  z-index: 20;
+  isolation: isolate;
+}
+
+/* Ensure carousel buttons are clickable above decorative elements */
+.carouselInner :global(.carouselButton) {
+  z-index: 100 !important;
+  pointer-events: auto !important;
+  position: relative;
+}
+
+/* Skeleton corner decorations */
+.skeletonCorner {
+  position: absolute;
+  font-size: 2rem;
+  z-index: 2;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 5px rgba(255, 127, 63, 0.8));
+  pointer-events: none;
+}
+
+[data-theme="dark"] .skeletonCorner {
+  filter: drop-shadow(0 0 6px rgba(255, 140, 66, 0.9));
+}
+
+.skeletonCorner:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.skeletonCorner:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.skeletonCorner:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.skeletonCorner:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+/* Skeleton side decorations */
+.skeletonSide {
+  position: absolute;
+  font-size: 1.5rem;
+  z-index: 2;
+  animation: float 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 3px rgba(255, 127, 63, 0.6));
+  pointer-events: none;
+}
+
+[data-theme="dark"] .skeletonSide {
+  filter: drop-shadow(0 0 4px rgba(255, 140, 66, 0.8));
+}
+
+.skeletonSide:nth-of-type(1) {
+  animation-delay: 0.2s;
+}
+
+.skeletonSide:nth-of-type(2) {
+  animation-delay: 0.7s;
+}
+
+.skeletonSide:nth-of-type(3) {
+  animation-delay: 1.2s;
+}
+
+.skeletonSide:nth-of-type(4) {
+  animation-delay: 0.4s;
+}
+
+.skeletonSide:nth-of-type(5) {
+  animation-delay: 0.9s;
+}
+
+.skeletonSide:nth-of-type(6) {
+  animation-delay: 1.4s;
+}
+
+/* Skeleton top/bottom decorations */
+.skeletonTop {
+  position: absolute;
+  font-size: 1.8rem;
+  z-index: 2;
+  animation: float 3.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 4px rgba(255, 127, 63, 0.7));
+  pointer-events: none;
+}
+
+[data-theme="dark"] .skeletonTop {
+  filter: drop-shadow(0 0 5px rgba(255, 140, 66, 0.9));
+}
+
+/* Pumpkin decorations */
+.pumpkin {
+  position: absolute;
+  font-size: 1.8rem;
+  z-index: 2;
+  animation: float 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(255, 127, 63, 0.8));
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+[data-theme="dark"] .pumpkin {
+  filter: drop-shadow(0 0 8px rgba(255, 140, 66, 1));
+}
+
+.pumpkin:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.pumpkin:nth-of-type(1) {
+  animation-delay: 0s;
+}
+
+.pumpkin:nth-of-type(2) {
+  animation-delay: 0.5s;
+}
+
+.pumpkin:nth-of-type(3) {
+  animation-delay: 1s;
+}
+
+.pumpkin:nth-of-type(4) {
+  animation-delay: 1.5s;
+}
+
+.pumpkin:nth-of-type(5) {
+  animation-delay: 0.2s;
+}
+
+.pumpkin:nth-of-type(6) {
+  animation-delay: 0.7s;
+}
+
+.pumpkin:nth-of-type(7) {
+  animation-delay: 1.2s;
+}
+
+.pumpkin:nth-of-type(8) {
+  animation-delay: 1.7s;
+}
+
+.pumpkin:nth-of-type(9) {
+  animation-delay: 0.3s;
+}
+
+.pumpkin:nth-of-type(10) {
+  animation-delay: 0.8s;
+}
+
+.pumpkin:nth-of-type(11) {
+  animation-delay: 1.3s;
+}
+
+.pumpkin:nth-of-type(12) {
+  animation-delay: 0.4s;
+}
+
+.pumpkin:nth-of-type(13) {
+  animation-delay: 0.9s;
+}
+
+.pumpkin:nth-of-type(14) {
+  animation-delay: 1.4s;
+}
+
+.skeletonTop:nth-of-type(1) {
+  animation-delay: 0.1s;
+}
+
+.skeletonTop:nth-of-type(2) {
+  animation-delay: 0.6s;
+}
+
+.skeletonTop:nth-of-type(3) {
+  animation-delay: 1.1s;
+}
+
+.skeletonTop:nth-of-type(4) {
+  animation-delay: 0.3s;
+}
+
+.skeletonTop:nth-of-type(5) {
+  animation-delay: 0.8s;
+}
+
+.skeletonTop:nth-of-type(6) {
+  animation-delay: 1.3s;
+}
+
+/* Floating animation for skeleton decorations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+    opacity: 0.9;
+  }
+}
+
+/* Blood dripping animation */
+@keyframes bloodDrip {
+  0% {
+    transform: translateY(0) scaleY(1);
+    opacity: 0.8;
+    height: var(--drip-height, 25px);
+  }
+  20% {
+    transform: translateY(5px) scaleY(1.1);
+    opacity: 1;
+  }
+  40% {
+    transform: translateY(10px) scaleY(1.2);
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(18px) scaleY(1.3);
+    opacity: 0.9;
+  }
+  80% {
+    transform: translateY(25px) scaleY(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(35px) scaleY(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes drip {
+  0% {
+    transform: translateY(0) scaleY(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(10px) scaleY(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(20px) scaleY(0.8);
+    opacity: 0.6;
+  }
+}
+
+/* Glow effect on hover */
+.halloweenContainer:hover {
+  box-shadow: 
+    0 0 30px rgba(255, 127, 63, 0.7),
+    0 0 60px rgba(255, 140, 66, 0.4),
+    inset 0 0 30px rgba(0, 0, 0, 0.15);
+  border-color: #FF8C42;
+}
+
+[data-theme="dark"] .halloweenContainer:hover {
+  box-shadow: 
+    0 0 35px rgba(255, 140, 66, 0.8),
+    0 0 70px rgba(255, 165, 79, 0.5),
+    inset 0 0 30px rgba(0, 0, 0, 0.3);
+  border-color: #FFA857;
+}
+
+.halloweenContainer:hover .skeletonCorner,
+.halloweenContainer:hover .skeletonSide,
+.halloweenContainer:hover .skeletonTop,
+.halloweenContainer:hover .pumpkin {
+  filter: drop-shadow(0 0 10px rgba(255, 140, 66, 1));
+}
+
+[data-theme="dark"] .halloweenContainer:hover .skeletonCorner,
+[data-theme="dark"] .halloweenContainer:hover .skeletonSide,
+[data-theme="dark"] .halloweenContainer:hover .skeletonTop,
+[data-theme="dark"] .halloweenContainer:hover .pumpkin {
+  filter: drop-shadow(0 0 12px rgba(255, 165, 79, 1));
+}
+
+@media (max-width: 768px) {
+  .halloweenTitle {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .halloweenContainer {
+    padding: 20px 15px;
+    margin: 15px 0;
+  }
+
+  .skeletonCorner {
+    font-size: 1.5rem;
+    top: -8px !important;
+    left: -8px !important;
+    right: -8px !important;
+    bottom: -8px !important;
+  }
+
+  .skeletonSide {
+    font-size: 1.2rem;
+    left: -10px !important;
+    right: -10px !important;
+  }
+
+  .skeletonTop {
+    font-size: 1.4rem;
+    top: -15px !important;
+    bottom: -15px !important;
+  }
+
+  .pumpkin {
+    font-size: 1.4rem;
+  }
+}
+

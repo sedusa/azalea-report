@@ -23,6 +23,7 @@ import NewsFromClinic from '@components/sections/NewsFromClinic';
 import Podcast from '@/components/sections/Podcast';
 import Culturosity from '@/components/sections/Culturosity';
 import GenericSingleImageCarouselTextSection from '@/components/sections/GenericSingleImageCarouselTextSection';
+import HalloweenCarousel from '@/components/sections/HalloweenCarousel';
 // import BasicSection from '@/components/sections/BasicSection';
 
 export default function Home() {
@@ -40,6 +41,7 @@ export default function Home() {
     musings,
     communityServiceCorner,
     photosOfMonth,
+    halloweenCarousel,
     events,
     thingsToDo,
     newsFromClinic,
@@ -73,6 +75,7 @@ export default function Home() {
       <SingleColumnLayout column={<RecentSuccess recentSuccess={recentSuccess} />} />
       <SingleColumnLayout column={<InternsCorner internsCorner={internsCorner} />} /> 
       <SingleColumnLayout column={<CommunityService communityServiceCorner={communityServiceCorner} />} />
+      {halloweenCarousel && <SingleColumnLayout column={<HalloweenCarousel halloweenCarousel={halloweenCarousel} />} />}
       <SingleColumnLayout column={ <GenericSingleImageCarouselTextSection genericSingleImageCarouselTextSection={genericSingleImageCarouselTextSection} /> } />
       {/* <SingleColumnLayout column={<ProgramDirector programDirector={programDirector} />} /> */}
 

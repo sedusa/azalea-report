@@ -6,7 +6,7 @@ banner:
   edition: 6
   date: November 2025
   overlay:
-    show: true
+    show: false
     type: halloween
     text: Halloween edition
     showPumpkin: true
@@ -186,51 +186,75 @@ basicSection:
 
 musings:
   sectionTitle: 'House Staff Diaries'
-  title: Finding Your Footing - A Message to Our Interns
-  image: /img/intern-year.jpeg
+  title: A Mid-Year Reflection for Our Interns
+  image: /img/intern-mid-year.jpeg
   author: Samuel Edusa, MD PGY-2
   content: >
-    <p>Welcome to the beginning of an extraordinary journey. As you start your year, remember that every expert was once a beginner, and every mentor around you was once exactly where you are today.</p>
+    <p>Look how far you've come.</p>
 
-    <h3>Learning to Walk Before You Run</h3>
+    <p>Four months ago, I wrote to you about finding your footing—about those tentative first steps, the wobbles, and the falls that would teach you balance. Today, I'm writing to celebrate the progress you've made and to help you navigate what many call "intern winter" — that challenging middle stretch where the initial excitement has faded, but the finish line still feels distant.</p>
 
-    <p>Medicine is not a sprint—it's learning to walk before you run. Right now, everything feels overwhelming. Epic seems impossible, lab values blur together, and the responsibility feels immense. This is not just normal; it's necessary. Every uncertain moment, every question you're afraid to ask—these aren't signs of inadequacy. They're the building blocks of the physician you're becoming.</p>
+    <h3>You're No Longer Walking — You're Stepping Forward</h3>
 
-    <p>Think of a child learning to walk. They don't start by running. They pull themselves up, take tentative steps, fall, and get back up. Each wobble teaches balance. Each fall builds resilience. Your intern year is your time to find your footing, and we expect you to wobble.</p>
+    <p>Remember when Epic seemed like an impossible maze? Now you navigate it with muscle memory. Remember when every lab value required frantic Googling? Now you're recognizing patterns. Remember when a simple admission felt overwhelming? Now you're managing multiple complex patients with growing confidence.</p>
 
-    <h3>The Power of "I Don't Know"</h3>
+    <p>These aren't small victories — they're monumental shifts. The fact that you're aware of what you don't know shows you know enough to recognize the gaps. That's progress, not failure.</p>
 
-    <p>One of the hardest lessons: it's okay to say "I don't know." The most dangerous physician isn't the one who lacks knowledge, but the one who pretends to have it. Your uncertainty isn't weakness—it's wisdom. When you're stumped, when a patient asks something you can't answer, remember that "I don't know, but I'll find out" is one of your most powerful tools.</p>
+    <h3>The Mid-Year Slump Is Real—And Normal</h3>
 
-    <h3>You Are Not Alone</h3>
+    <p>Right now, you might be feeling tired in a way that's different from those first exhausting months. The novelty has worn off. The adrenaline that fueled your early days has settled. You're deep enough to see how much you still don't know, but not far enough to feel like you've truly mastered anything.</p>
 
-    <p>Here's what I want you to remember every day: you are surrounded by people invested in your success. Your attendings were once interns who felt exactly as you do. Your senior residents remember their own first days and fears. The nurses have seen countless interns grow into confident physicians.</p>
+    <p>This is the hardest part—the middle ground between "I have no idea what I'm doing" and "I've got this." It's the place where imposter syndrome whispers loudest, where fatigue feels permanent, and where the path ahead still seems long.</p>
 
-    <p>We're not here to judge your questions or critique your uncertainties. We're here to guide you through them. When you call at 2 AM with a question, we don't see incompetence—we see diligence. When you ask us to double-check your assessment, we don't see insecurity—we see responsibility.</p>
+    <p>I want you to know: this is exactly where you're supposed to be. The mid-year slump doesn't mean you're failing. It means you're growing.</p>
 
-    <h3>The Patient at the Center</h3>
+    <h3>Reflecting on Your Growth</h3>
 
-    <p>In the midst of learning procedures and protocols, never forget the human being at the center of it all. Your patients don't expect you to have all the answers immediately. They expect you to care, to listen, and to be honest. While this might be your fifth admission of the day, it's their first time being this sick, this scared, this vulnerable.</p>
+    <p>Think back to July. Remember that intern who needed help with every note, who hesitated before calling an attending, who second-guessed every decision? That person is still you, but transformed. You write notes faster now. You make clinical decisions with more confidence. You've learned when to call for help and when you can handle it yourself.</p>
 
-    <h3>Trust the Process</h3>
+    <p>You've helped manage codes. You've broken bad news. You've stayed calm when everything felt chaotic. You've built relationships with patients who now ask for you by name. You've earned the trust of nurses who've seen you grow. These aren't small accomplishments—they're evidence that you're becoming the physician you set out to be.</p>
 
-    <p>There will be days when nothing goes according to plan, when you feel like you're drowning, when you question your abilities. These difficult days aren't detours from your path—they are the path itself. Every challenging case teaches you something new. Every difficult conversation builds your skills. Every long night strengthens your endurance.</p>
+    <h3>Building on Your Foundation</h3>
 
-    <p>The journey from medical student to competent physician isn't a straight line. It's a spiral where you'll revisit concepts at deeper levels, where complexity gradually becomes manageable. Trust that the process works. Trust that today's confusion will become tomorrow's clarity.</p>
+    <p>The remaining months aren't about starting over—they're about building. You've laid the foundation. Now it's time to construct the framework. Every rotation becomes an opportunity to deepen your knowledge. Every complex case becomes a chance to integrate what you've learned.</p>
 
-    <h3>Our Promise to You</h3>
+    <p>This is when you'll start to see connections you missed before. That patient with the strange presentation? You'll remember a similar case from September. That medication interaction? You'll recall learning about it in November. The knowledge is stacking, compounding, becoming part of your clinical intuition.</p>
 
-    <p>We will be patient with your learning process. We will answer your questions without judgment. We will provide guidance when you're lost and celebrate your victories. We will support you through setbacks and help you find your footing so that one day, you can run with confidence.</p>
+    <h3>Managing the Fatigue</h3>
 
-    <p>Remember, we were all beginners once. What got us through wasn't perfection—it was persistence, curiosity, and the support of those around us.</p>
+    <p>Let's talk about the exhaustion. It's real. Four months of long hours, emotional weight, and constant learning takes a toll. Sustainable medicine isn't about never being tired—it's about recognizing when you need rest and giving yourself permission to take it.</p>
 
-    <h3>Moving Forward</h3>
+    <p>Your days off aren't optional extras—they're essential maintenance. That book you've been meaning to read? Read it. That friend you haven't seen? See them. That hobby you've abandoned? Pick it back up. Medicine is a marathon, and you're only at the halfway point. You need to pace yourself.</p>
 
-    <p>Be kind to yourself. Be patient with your learning curve. Ask questions freely. Seek help readily. And never forget that every day you show up, you're making a difference in someone's life.</p>
+    <h3>Questions Are Still Your Superpower</h3>
 
-    <p>You chose medicine to heal, to help, to make a difference. That calling hasn't changed because the learning curve is steep. You are exactly where you need to be, learning exactly what you need to learn, becoming exactly who you need to become.</p>
+    <p>Don't let mid-year confidence make you hesitant to ask questions. The best residents aren't those who stop asking—they're those who ask better questions. As you grow, your inquiries should evolve from "What do I do?" to "Why do we do it this way?" from "Is this right?" to "What if we tried this?"</p>
 
-    <p>Welcome to your intern year. We believe in you. Now it's time to believe in yourself. 💪🏽</p>
+    <p>Curiosity isn't a sign of weakness—it's the engine of expertise. Keep questioning. Keep learning. Keep that beginner's mind that makes every case a teaching opportunity.</p>
+
+    <h3>You're Not Just Surviving—You're Thriving</h3>
+
+    <p>We see you now: managing your list with efficiency, teaching medical students, supporting each other through difficult shifts. You're not just surviving intern year—you're actively shaping it into a transformative experience.</p>
+
+    <p>Look around at your classmates. They've grown too. You're not the only one feeling the weight and seeing the progress. Lean on each other. Celebrate each other's wins. Support each other through the hard days. This journey is individual, but you don't have to walk it alone.</p>
+
+    <h3>The Finish Line Is Closer Than It Feels</h3>
+
+    <p>Eight months remain. Eight months to solidify everything you've learned. Eight months to build the confidence that will carry you into PGY-2. Eight months to finish what you started.</p>
+
+    <p>But here's the thing—this isn't really about finishing. It's about continuing. Because when July comes and you become PGY-2s, you'll realize that intern year was just the first chapter. There's so much more learning ahead, more challenges to embrace, more growth to experience.</p>
+
+    <h3>Our Continued Commitment</h3>
+
+    <p>We're still here for you. The support hasn't changed just because you've grown. We're still celebrating your victories. We're still here to answer your questions. We're still invested in your success, now more than ever, because we've seen how much you've already achieved.</p>
+
+    <p>As you enter the second half, remember: you've proven you can do hard things. You've shown resilience, dedication, and growth. You've earned your place here.</p>
+
+    <h3>Moving Forward Together</h3>
+
+    <p>So keep stepping forward. Keep asking questions. Keep learning. Keep caring. And most importantly, keep believing in the physician you're becoming—because we believe in you.</p>
+
+    <p>You've made it almost halfway. You've got this. Now let's finish strong. 💪🏽</p>
   photosTitle: Highlights from the Expo
   photos:
     - image: /img/moultrie/grounds.jpeg
@@ -449,6 +473,51 @@ photosOfMonth:
       caption: 'Nik pre-charting'
     - image: /img/carousel/pickle-ball.jpeg
       caption: 'Pickleball with Dr. Hasan'
+halloweenCarousel:
+  photos:
+    - image: /img/halloween25/party-1.jpeg
+      caption: ""
+    - image: /img/halloween25/party-2.jpeg
+      caption: ""
+    - image: /img/halloween25/party-3.jpeg
+      caption: ""
+    - image: /img/halloween25/party-4.jpeg
+      caption: ""
+    - image: /img/halloween25/party-5.jpeg
+      caption: ""
+    - image: /img/halloween25/party-6.jpeg
+      caption: ""
+    - image: /img/halloween25/party-7.jpeg
+      caption: ""
+    - image: /img/halloween25/party-8.jpeg
+      caption: ""
+    - image: /img/halloween25/party-9.jpeg
+      caption: ""
+    - image: /img/halloween25/party-10.jpeg
+      caption: ""
+    - image: /img/halloween25/party-11.jpeg
+      caption: ""
+    - image: /img/halloween25/party-12.jpeg
+      caption: ""
+    - image: /img/halloween25/party-13.jpeg
+      caption: ""
+    - image: /img/halloween25/party-14.jpeg
+      caption: ""
+    - image: /img/halloween25/party-15.jpeg
+      caption: ""
+    - image: /img/halloween25/party-16.jpeg
+      caption: ""
+    - image: /img/halloween25/party-17.jpeg
+      caption: ""
+    - image: /img/halloween25/party-18.jpeg
+      caption: ""
+    - image: /img/halloween25/party-19.jpeg
+      caption: ""
+    - image: /img/halloween25/party-20.jpeg
+      caption: ""
+    - image: /img/halloween25/party-21.jpeg
+      caption: ""
+    
 events:
   sectionTitle: Upcoming Events
   eventsList:
