@@ -80,6 +80,11 @@
 }
 
 @media (max-width: 768px) {
+  .carouselWrapper {
+    margin-top: -1.5rem;
+    margin-bottom: -1.25rem;
+  }
+
   .carouselButton {
     font-size: 2rem;
     height: 60px;
@@ -105,9 +110,12 @@
 
   .photoCaption {
     font-size: 1rem;
+    margin: 0;
+    padding-top: 0.5rem;
   }
 
   .squareCarousel {
-    height: 400px;
+    height: 85vw;
+    max-height: 600px;
   }
 }
