@@ -63,7 +63,7 @@ recentSuccess:
   sectionTitle: Recent Success
   title: SGMC Residents Shine Bright at recent Georgia ACP Conference in Atlanta, GA
   image: /img/acp-team.jpeg
-  imageCaption: Residents with Dr. Sobukonla at the Georgia ACP conference in Atlant
+  imageCaption: Residents with Dr. Sobukonla at the Georgia ACP conference in Atlanta
   carouselTitle: Poster/Podium Presentation Highlights
   posterImage:
     - image: /img/acp25/group.jpeg
