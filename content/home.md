@@ -86,86 +86,41 @@ recentSuccess:
       caption: "Dr. Edusa"
   content: >
     <p>Our residents shone brightly at the Georgia ACP conference in Atlanta! They presented compelling posters, delivered captivating oral podium presentations, and competed in the always-intense Jeopardy competition. The SGMC Internal Medicine Residency Program couldn't be prouder. Their outstanding performance brought recognition to our program and set a new benchmark for future residents. As we celebrate this year's achievements, we're already excited for an even stronger showing next year. Strong work 💪🏼 everyone!</p><br/>
-genericSingleImageCarouselTextSection:
-  sectionTitle: GME Corner
-  title: 'Third Annual South Georgia Regional GME Conference'
-  author: SGMC Health (posted originally on September 16th, 2025)
-  coverImage: /img/reg-conf-25/group-picture.jpeg
-  imageCaption: Members of SGMC Health’s Residency Programs at the 3rd Annual South Georgia Regional GME Conference
+
+communityServiceCorner:
+  sectionTitle: Community Service Corner
+  title: Addressing Farmer Health at the 47th Sunbelt Agricultural Exposition
+  author: 
+  image: /img/agexpo25/beale-ag-expo.jpeg
+  imageCaption: "Drs. Shaikh and Yasin with Dr. Beale at the Expo"
   content: >
-    <p>SGMC Health hosted its 3rd Annual South Georgia Regional GME Conference on September 13, bringing together resident physicians and medical educators from five regional programs across Internal Medicine, Family Medicine, Psychiatry, and Transitional Year specialties.</p>
-
-    <p>The conference featured a keynote by Will Kemp, Chairman of the Georgia Board of Healthcare Workers, on innovation in medical education, followed by twelve physician-led lectures on topics including AI in medicine, infectious disease, and mentorship.</p>
-
-    <p>Highlights included 39 research poster presentations. Dr. Sarah Sabol (SGMC Health) won 1st place for her poster on metabolic pseudolocked-in syndrome, with runners-up including Dr. Asma Yasin (SGMC Health) for "Malignant Cardiac Tamponade as a Complication of Primary Lung Adenocarcinoma." 👏🏽 
-     Congratulations to everyone who participated! 🎉🎉</p>
-
-  carouselTitle: Conference Highlights
-  posterImage:
-    - image: /img/reg-conf-25/conf-1.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-2.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-3.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-4.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-5.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-6.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-7.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-8.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-9.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-10.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-11.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-12.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-13.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-14.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-15.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-16.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-17.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-18.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-19.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-20.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-21.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-22.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-23.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-24.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-25.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-26.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-27.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-28.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-29.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-30.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-31.jpeg
-      caption: ''
-    - image: /img/reg-conf-25/conf-32.jpeg
-      caption: ''
+    <p>This year, SGMC Health had excellent representation at the Sunbelt Agricultural Exposition in Moultrie, Georgia. The Sunbelt Ag Expo is truly a spectacle to behold — rightfully crowned as "North America's Premier Farm Show." It's a melting pot of farmers, educators, policymakers, and ag-enthusiasts, all gathered to witness the latest innovations in agriculture. From cutting-edge technology demonstrations to the naming of the Southeastern Farmer of the Year, the expo is a celebration of all things agriculture.</p>
+    
+    <p>As part of the healthcare initiatives at this year's expo, SGMC Health residents delivered presentations on pertinent health topics. Drs. Ledford, Yakubu, Randhawa, and Akram represented our program, sharing their expertise with the agricultural community and contributing to the important work of bringing healthcare education to farmers and their families.</p>
+  photosTitle: Highlights from the Expo
+  photos:
+    - image: /img/agexpo25/expo-1.jpeg
+      caption: "Drs. Ledford, Tom & Edusa"
+    - image: /img/agexpo25/expo-2.jpeg
+      caption: "Dr. Patel manning our table"
+    - image: /img/agexpo25/expo-3.jpeg
+      caption: "Dr. Ledford speaking to attendees about skin cancer prevention"
+    - image: /img/agexpo25/expo-4.jpeg
+      caption: "Dr. Akram speaking about hyperlipidemia"
+    - image: /img/agexpo25/expo-5.jpeg
+      caption: "Dr. Yasin measuring a participant's blood pressure"  
+    - image: /img/agexpo25/expo-6.jpeg
+      caption: "Ms. Dillard with Drs. Fashugba, Yakubu and Randhawa"
+    - image: /img/agexpo25/expo-7.jpeg
+      caption: "Dr. Shaikh handing out some merch"
+    - image: /img/agexpo25/expo-8.jpeg
+      caption: "Dr. Shaikh"
+    - image: /img/agexpo25/expo-9.jpeg
+      caption: "Drs. Yakubu and Randhawa speaking to attendees"
+    - image: /img/agexpo25/expo-10.jpeg
+      caption: "Dr. Yakubu"
+  content2: > 
+    <p>Participating in the Sunbelt Agricultural Exposition is an eye-opening experience because it highlights the intricate connection between agriculture and healthcare, particularly in areas like skin cancer prevention for farmers. Events like these provide a unique opportunity to bridge the gap between these two vital sectors, ensuring that those who feed the world are also taking care of their health.</p> 
     
 internsCorner:
   title: Intern Spotlight
@@ -228,18 +183,7 @@ basicSection:
     <p>"These award-winning initiatives highlight SGMC Health's role in advancing medical education and research to enhance patient safety and quality," said Senior Vice President and Chief Medical Officer Pankaj Agrawal, MD. "The clinical acumen, collaboration, and innovation of our team deserves this recognition."</p>
 
     <p>GHA President and CEO Caylee Noggle praised SGMC Health's contributions: "We are proud to recognize SGMC Health for their outstanding work to enhance patient safety and quality. Their projects support GHA's strategic initiatives and demonstrate our shared commitment to improving patient outcomes across Georgia."</p>
-communityServiceCorner:
-  sectionTitle: Faculty Update
-  title: Meet Our Newest Internal Medicine Faculty Members 
-  author:
-  image: /img/dwayne-rose-gandi.jpeg
-  imageCaption: 'Dwayne Mohan, MD; Rosaida Silverio-Lopez, MD; and Venkata Gandi, MD (Internal Medicine Residency Core Faculty)'
-  content: >
-    <p>SGMC Health recently appointed Dwayne Mohan, MD; Rosaida Silverio-Lopez, MD; and Venkata Gandi, MD as Internal Medicine Teaching Faculty. All three graduated from SGMC's inaugural Internal Medicine residency class and now will now train future residents.</p>
 
-    <p>Dr. Mohan treats diabetes, hypertension, heart and lung diseases, and autoimmune disorders, using humor and empathy to connect with patients while mentoring the next generation of physicians. Dr. Silverio-Lopez manages conditions including hypertension, diabetes, asthma, COPD, and kidney disease, emphasizing compassionate listening in her patient care with a particular interest in cardiology. Dr. Gandi provides hospital-based care for acute medical conditions, focusing on helping patients return safely to their families.</p>
-
-    <p>Welcome on board!</p>
 musings:
   sectionTitle: 'House Staff Diaries'
   title: Finding Your Footing - A Message to Our Interns

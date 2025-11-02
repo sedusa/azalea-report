@@ -13,7 +13,7 @@ import InternsCorner from '@components/sections/InternsCorner';
 // import ProgramDirector from '@components/sections/ProgramDirector';
 import RecentSuccess from '@components/sections/RecentSuccess';
 import Musings from '@components/sections/Musings';
-// import CommunityService from '@components/sections/CommunityService';
+import CommunityService from '@components/sections/CommunityService';
 import PhotosOfTheMonth from '@components/sections/PhotosOfMonth';
 import UpcomingEvents from '@components/sections/UpcomingEvents';
 import BirthdaySection from '@components/sections/BirthdaySection';
@@ -72,9 +72,10 @@ export default function Home() {
       <SingleColumnLayout column={<ChiefsCorner chiefsCorner={chiefsCorner} />} />
       <SingleColumnLayout column={<RecentSuccess recentSuccess={recentSuccess} />} />
       <SingleColumnLayout column={<InternsCorner internsCorner={internsCorner} />} /> 
+      <SingleColumnLayout column={<CommunityService communityServiceCorner={communityServiceCorner} />} />
       <SingleColumnLayout column={ <GenericSingleImageCarouselTextSection genericSingleImageCarouselTextSection={genericSingleImageCarouselTextSection} /> } />
       {/* <SingleColumnLayout column={<ProgramDirector programDirector={programDirector} />} /> */}
-      {/* <SingleColumnLayout column={<CommunityService communityServiceCorner={communityServiceCorner} />} /> */}
+
       {/* <SingleColumnLayout column={<BasicSection basicSection={basicSection} />} /> */}
       <SingleColumnLayout column={<Musings musings={musings} />} />  
       <SingleColumnLayout column={<Podcast podcast={podcast} />} />

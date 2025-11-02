@@ -2,7 +2,9 @@ import styles from '@styles/GenericSingleImageCarouselTextSection.module.css';
 import Carousel from '@components/Carousel';
 
 const GenericSingleImageCarouselTextSection = ({
-  genericSingleImageCarouselTextSection: {
+  genericSingleImageCarouselTextSection = {},
+}) => {
+  const {
     sectionTitle,
     description,
     title,
@@ -12,8 +14,12 @@ const GenericSingleImageCarouselTextSection = ({
     content,
     carouselTitle,
     posterImage,
-  },
-}) => {
+  } = genericSingleImageCarouselTextSection;
+
+  // Return null if no data is provided
+  if (!sectionTitle && !title) {
+    return null;
+  }
 
   return (
     <>

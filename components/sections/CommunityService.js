@@ -1,10 +1,12 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import Carousel from '@components/Carousel';
 import styles from '@styles/CommunityService.module.css';
 import { truncateText } from '@utils/truncateText';
 
 const CommunityService = ({
-  communityServiceCorner: {
+  communityServiceCorner = {},
+}) => {
+  const {
     sectionTitle,
     title,
     author,
@@ -14,13 +16,18 @@ const CommunityService = ({
     content2,
     photosTitle,
     photos,
-  },
-}) => {
+  } = communityServiceCorner;
+
   const [expandedCommunityService, setExpandedCommunityService] =
     useState(false);
   const buttonRef = useRef(null);
 
-  const shouldTruncate = content.length > 645;
+  // Return null if no data is provided
+  if (!sectionTitle && !title) {
+    return null;
+  }
+
+  const shouldTruncate = content && content.length > 645;
 
   const handleToggle = () => {
     setExpandedCommunityService(!expandedCommunityService);
@@ -55,13 +62,15 @@ const CommunityService = ({
           </small>
         </div>
         <div className={styles.communityServiceCornerText}>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: expandedCommunityService
-                ? content
-                : truncateText(content, 645),
-            }}
-          />
+          {content && (
+            <div
+              dangerouslySetInnerHTML={{
+                __html: expandedCommunityService
+                  ? content
+                  : truncateText(content, 645),
+              }}
+            />
+          )}
           {(!shouldTruncate || expandedCommunityService) && (
             <>
               <h3 className={styles.communityServiceCarouselTitle}>
