@@ -48,6 +48,27 @@
   opacity: 0.8;
 }
 
+.errorLink {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  border: 2px solid #016f53;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.errorLink a {
+  color: #016f53;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.errorLink a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
 .toggleButton {
   background-color: #016f53;
   border-radius: 4px;

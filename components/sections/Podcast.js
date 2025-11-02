@@ -30,18 +30,7 @@ const Podcast = ({
         <div key={index} className={styles.episodeContainer}>
           <h4 className={styles.episodeTitle}>{episode.name}</h4>
           <div className={styles.text}>{episode.synopsis}</div>
-          <iframe
-            style={{ borderRadius: '12px', marginTop: '10px' }}
-            src={episode.iframeUrl}
-            width='100%'
-            height='352'
-            frameBorder='0'
-            allowFullScreen=''
-            allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
-            loading='lazy'
-          />
-          <div className={styles.fallbackLink}>
-            Can&apos;t see the player?
+          <div className={styles.errorLink}>
             <a
               href={episode.noPlayerLink}
               target='_blank'

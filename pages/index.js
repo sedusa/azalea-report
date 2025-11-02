@@ -19,7 +19,7 @@ import UpcomingEvents from '@components/sections/UpcomingEvents';
 import BirthdaySection from '@components/sections/BirthdaySection';
 import ThingsToDo from '@components/sections/ThingsToDo';
 import NewsFromClinic from '@components/sections/NewsFromClinic';
-import WellnessCorner from '@components/sections/WellnessCorner';
+// import WellnessCorner from '@components/sections/WellnessCorner';
 import Podcast from '@/components/sections/Podcast';
 import Culturosity from '@/components/sections/Culturosity';
 import GenericSingleImageCarouselTextSection from '@/components/sections/GenericSingleImageCarouselTextSection';
@@ -87,7 +87,7 @@ export default function Home() {
       />
       <SingleColumnLayout column={<ThingsToDo thingsToDo={thingsToDo} />} />
       <SingleColumnLayout column={<NewsFromClinic newsFromClinic={newsFromClinic} />} />
-      <SingleColumnLayout column={<WellnessCorner wellnessCorner={wellnessCorner} />} />
+      {/* <SingleColumnLayout column={<WellnessCorner wellnessCorner={wellnessCorner} />} /> */}
     </Layout>
   );
 }

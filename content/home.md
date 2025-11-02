@@ -293,6 +293,10 @@ photosOfMonth:
   sectionTitle: 'Through the Lens: Residency Highlights'
   subTitle: Capturing the Smiles, Milestones, and Unforgettable Moments
   photos: 
+    - image: /img/carousel/night-squad.jpeg
+      caption: 'Night medicine: After Hour Heroes'
+    - image: /img/carousel/skeleton-joseph.jpeg
+      caption: 'All bones and Dr. "Chill" Joseph 💀'
     - image: /img/carousel/anesthesia-folks.jpeg
       caption: 'Drs. Oraee, Akhtar and Patel holding it down at the Anesthesiology conference in San Antonio, Oct 2025'
     - image: /img/carousel/mafaz-working.jpeg
@@ -448,12 +452,8 @@ photosOfMonth:
 events:
   sectionTitle: Upcoming Events
   eventsList:
-    - date: Oct 14-16, 2025
-      description: Sunbelt AG Expo (Moultrie, GA)
-    - date: October 24-26, 2025
-      description: GA ACP Conference (Atlanta, GA)
-    - date: October 28th, 2025
-      description: Trunk Or Treat (SGMC Health, Main Campus)
+    - date: Nov 27th, 2025
+      description: Thanksgiving
 thingsToDo:
   sectionTitle: Things To Do In Valdosta
   images:
