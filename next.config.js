@@ -16,10 +16,5 @@ const nextConfig = {
   }
 }
 
-// Add experimental configuration for path aliases
-nextConfig.experimental = {
-  appDir: true,
-}
-
 // Change this line
 module.exports = nextConfig

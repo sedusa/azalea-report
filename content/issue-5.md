@@ -1,10 +1,10 @@
 ---
 banner:
-  headerImage: /img/nov-banner.jpeg
+  headerImage: /img/sept-banner.jpeg
   title: AZALEA REPORT
   subtitle: SGMC Health Internal Medicine Residency Newsletter
-  edition: 6
-  date: November 2025
+  edition: 5
+  date: September 2025
 about:
   sectionTitle:
   content: Welcome 👋🏼 to the Azalea Report - where the blooms of South Georgia Health's Internal Medicine Residency program come to life! Like the vibrant azaleas that paint Valdosta in stunning color each spring, this resident-led newsletter showcases the brilliant minds and inspiring stories flourishing in our program.  This issue is blooming with excitement as we bring you highlights from our inaugural South Georgia Regional Conference, celebrate beautiful weddings within our residency family, spotlight our featured residents, and share a whole lot more! From program milestones to personal celebrations, we're here to bring you all the buzz from the Azalea City. Get ready to discover the stories of excellence, growth, and community that make our residency program truly blossom! 🌸 🌸<br/><br/> Sincerely,

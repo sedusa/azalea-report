@@ -1,26 +1,64 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import styles from '../styles/Carousel.module.css';
 
 const Carousel = ({ onBackground, images, interval = 8000, showCaption = true, showArrows = true, aspectRatio = '16:9' }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
+
+  // Minimum swipe distance (in pixels)
+  const minSwipeDistance = 50;
 
   useEffect(() => {
+    if (!isAutoPlaying) return;
+    
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, interval);
 
     return () => clearInterval(timer);
-  }, [images.length, interval]);
+  }, [images.length, interval, isAutoPlaying]);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setIsAutoPlaying(false);
+    // Resume auto-play after 5 seconds of inactivity
+    setTimeout(() => setIsAutoPlaying(true), 5000);
   };
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
       (prevIndex - 1 + images.length) % images.length
     );
+    setIsAutoPlaying(false);
+    // Resume auto-play after 5 seconds of inactivity
+    setTimeout(() => setIsAutoPlaying(true), 5000);
+  };
+
+  const onTouchStart = (e) => {
+    touchEndX.current = null;
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    
+    const distance = touchStartX.current - touchEndX.current;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    }
+    if (isRightSwipe) {
+      prevSlide();
+    }
   };
 
   // Use a class for 1:1 aspect ratio instead of inline style
@@ -40,10 +78,18 @@ const Carousel = ({ onBackground, images, interval = 8000, showCaption = true, s
             : styles.carouselContainer
         }
         style={containerStyle}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
       >
         <div className={styles.carouselContent}>
           {showArrows && (
-            <button className={`${styles.carouselButton} ${styles.prevButton}`} onClick={prevSlide}>
+            <button 
+              className={`${styles.carouselButton} ${styles.prevButton}`} 
+              onClick={prevSlide}
+              aria-label="Previous image"
+              type="button"
+            >
               ‹
             </button>
           )}
@@ -62,7 +108,12 @@ const Carousel = ({ onBackground, images, interval = 8000, showCaption = true, s
             ))}
           </div>
           {showArrows && (
-            <button className={`${styles.carouselButton} ${styles.nextButton}`} onClick={nextSlide}>
+            <button 
+              className={`${styles.carouselButton} ${styles.nextButton}`} 
+              onClick={nextSlide}
+              aria-label="Next image"
+              type="button"
+            >
               ›
             </button>
           )}

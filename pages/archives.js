@@ -24,6 +24,11 @@ const Archives = () => {
       date: 'July 2025',
       title: 'Issue 4',
       link: '/archives/issue-4'
+    },
+    {
+      date: 'September 2025',
+      title: 'Issue 5',
+      link: '/archives/issue-5'
     }
   ];
 

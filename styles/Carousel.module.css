@@ -81,8 +81,26 @@
 
 @media (max-width: 768px) {
   .carouselButton {
-    font-size: 1.5rem;
-    padding: 5px;
+    font-size: 2rem;
+    height: 60px;
+    width: 60px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Ensure buttons are easily tappable on mobile */
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .carouselButton:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .prevButton {
+    left: 5px;
+  }
+
+  .nextButton {
+    right: 5px;
   }
 
   .photoCaption {
@@ -90,6 +108,6 @@
   }
 
   .squareCarousel {
-    height: 220px;
+    height: 400px;
   }
 }
