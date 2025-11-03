@@ -314,7 +314,7 @@ culturosity:
     <p>The event exemplified how food serves as a universal language, breaking down barriers and fostering genuine connections that transcend professional and cultural boundaries. As one resident was overheard saying while reaching for seconds, "Understanding each other's cultures makes us better doctors." </p>
 
 photosOfMonth:
-  sectionTitle: 'Through the Lens: Residency Highlights'
+  sectionTitle: 'Residency Highlights'
   subTitle: Capturing the Smiles, Milestones, and Unforgettable Moments
   photos: 
     - image: /img/carousel/night-squad.jpeg

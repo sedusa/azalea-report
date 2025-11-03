@@ -1,18 +1,24 @@
 .lensSectionTitle {
   font-family: 'Montserrat', sans-serif;
   line-height: 1.4;
-  margin: 1rem auto;
+  margin: 0 auto 0.5rem;
 }
 
 .lensSectionSubTitle {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.1rem; 
+  font-size: 1.1rem;
   line-height: 1.4;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.5rem 0;
 }
 
 @media (max-width: 768px) {
   .lensSectionTitle {
     font-size: 1.5rem;
+    margin: 0 auto 0.5rem;
+  }
+
+  .lensSectionSubTitle {
+    font-size: 1rem;
+    margin: 0 0 1.25rem 0;
   }
 }

@@ -1,4 +1,10 @@
 .fullWidth {
   background-color: transparent;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
+}
+
+@media (max-width: 768px) {
+  .fullWidth {
+    padding: 1.25rem 1rem;
+  }
 }
