@@ -4,6 +4,10 @@
   margin: 1rem auto;
 }
 
+.carouselContainer {
+  margin-bottom: 2rem;
+}
+
 .thingsToDoContainer {
   background-color: #f0f8ff;
   border-radius: 15px;
@@ -40,7 +44,7 @@
   flex-wrap: wrap;
   gap: 15px;
   list-style-type: none;
-  margin: 0;
+  margin: 2rem 0 0;
   padding: 0;
 }
 
@@ -87,7 +91,12 @@
 @media (max-width: 768px) {
   .sectionTitle {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .carouselContainer {
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
   }
   
   .thingsToDoContainer {
@@ -100,6 +109,7 @@
 
   .thingsToDoList {
     flex-direction: column;
+    margin-top: 1.5rem;
   }
 
   .thingsToDoItem {

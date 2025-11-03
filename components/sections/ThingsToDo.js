@@ -5,12 +5,14 @@ const ThingsToDo = ({ thingsToDo: { sectionTitle, images, items } }) => {
   return (
     <>
       <h2 className={styles.sectionTitle}>{sectionTitle}</h2>
-      <Carousel
-        images={images.map((image) => ({ image }))}
-        interval={8000}
-        showCaption={false}
-        showArrows={false}
-      />
+      <div className={styles.carouselContainer}>
+        <Carousel
+          images={images.map((image) => ({ image }))}
+          interval={8000}
+          showCaption={false}
+          showArrows={false}
+        />
+      </div>
       <ul className={styles.thingsToDoList}>
         {items.map((item, index) => (
           <li key={index} className={styles.thingsToDoItem}>
