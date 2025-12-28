@@ -59,11 +59,13 @@ export default function Home() {
         <meta property="og:image" content="https://azaleareport.com/img/og.jpeg" />
         <meta property="og:url" content="https://azaleareport.com" />
         <meta property="og:type" content="website" />
-      
+
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Azalea Report" />
         <meta name="twitter:description" content="SGMC Health IM Residency Newsletter" />
         <meta name="twitter:image" content="https://azaleareport.com/img/og-twitter.jpeg" />
+
+        <script defer data-domain="azaleareport.com" src="https://plausible.io/js/script.js"></script>
       </Head>
       <Banner banner={banner} />
       <SingleColumnLayout column={<AboutSection about={about} />} />

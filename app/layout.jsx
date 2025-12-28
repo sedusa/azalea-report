@@ -8,9 +8,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <script defer data-domain="azaleareport.com" src="https://plausible.io/js/script.js"></script>
-      </head>
+      <head></head>
       <body>
         <main>{children}</main>
       </body>
