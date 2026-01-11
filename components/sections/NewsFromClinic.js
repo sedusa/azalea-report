@@ -20,18 +20,18 @@ const NewsFromClinic = ({
         <h2 className={styles.newsFromClinic}>{sectionTitle}</h2>
       </div>
       <div className={styles.employeeSpotlightContainer}>
-        <div className={styles.employeeSpotlightImageContainer}>
-          <img
-            src={image || '/img/employee-placeholder.jpg'}
-            alt={name}
-            className={styles.employeeSpotlightImage}
-          />
-          <h3 className={styles.employeeName}>{name}</h3>
-          <p className={styles.employeeTitle}>{title}</p>
-        </div>
-        <div className={styles.employeeSpotlightText}>
-          <h3 className={styles.employeeSpotlightHeader}>{subSectionTitle}</h3>
-          <div className={styles.employeeSpotlightDivider}></div>
+        <h3 className={styles.employeeSpotlightHeader}>{subSectionTitle}</h3>
+        <div className={styles.employeeSpotlightDivider}></div>
+        <div className={styles.employeeSpotlightContent}>
+          <div className={styles.employeeImageWrapper}>
+            <img
+              src={image || '/img/employee-placeholder.jpg'}
+              alt={name}
+              className={styles.employeeSpotlightImage}
+            />
+            <h3 className={styles.employeeName}>{name}</h3>
+            <p className={styles.employeeTitle}>{title}</p>
+          </div>
           <p className={styles.employeeSpotlightDescription}>
             {profile}
           </p>

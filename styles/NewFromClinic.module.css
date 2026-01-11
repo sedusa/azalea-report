@@ -22,52 +22,10 @@
 }
 
 .employeeSpotlightContainer {
-  align-items: flex-start;
   background-color: #f5e6c6;
   border-radius: 15px;
-  display: flex;
   height: auto;
-  min-height: 200px;
   padding: 30px;
-}
-
-.employeeSpotlightImageContainer {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  margin-right: 30px;
-  width: 160px;
-}
-
-.employeeSpotlightImage {
-  border-radius: 8px;
-  height: 160px;
-  margin-bottom: 10px;
-  object-fit: cover;
-  width: 160px;
-}
-
-.employeeName {
-  color: #016f53;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  font-weight: bold;
-  margin: 0;
-  text-align: left;
-}
-
-.employeeTitle {
-  color: #333;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  margin: 0;
-  text-align: left;
-}
-
-.employeeSpotlightText {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
 }
 
 .employeeSpotlightHeader {
@@ -76,22 +34,61 @@
   font-size: 1.8rem;
   font-weight: bold;
   margin: 0 0 10px;
-  text-align: left;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .employeeSpotlightDivider {
   background-color: #016f53;
   height: 2px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   width: 100%;
+}
+
+.employeeSpotlightContent {
+  display: block;
+  text-align: justify;
+}
+
+.employeeImageWrapper {
+  float: left;
+  margin-bottom: 20px;
+  margin-right: 25px;
+  width: 200px;
+}
+
+.employeeSpotlightImage {
+  border-radius: 8px;
+  height: auto;
+  margin-bottom: 10px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.employeeName {
+  color: #016f53;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+  text-align: center;
+}
+
+.employeeTitle {
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  text-align: center;
 }
 
 .employeeSpotlightDescription {
   color: #333;
-  flex: 1;
+  display: block;
   font-size: 1.3rem;
-  line-height: 1.6;
-  overflow: hidden;
+  line-height: 1.8;
+  margin: 0;
+  text-align: justify;
 }
 
 @media (max-width: 768px) {
@@ -110,48 +107,36 @@
   }
 
   .employeeSpotlightContainer {
-    align-items: center;
-    flex-direction: column;
     padding: 20px;
-    text-align: left;
-  }
-
-  .employeeSpotlightImageContainer {
-    margin-bottom: 20px;
-    margin-right: 0;
-    order: 2;
-    width: 100%;
-  }
-
-  .employeeSpotlightImage {
-    border-radius: 50%;
-    height: 200px;
-    width: 200px;
-  }
-
-  .employeeName {
-    font-size: 1.3rem;
-    margin-top: 10px;
-  }
-
-  .employeeTitle {
-    font-size: 1rem;
-  }
-
-  .employeeSpotlightText {
-    margin-bottom: 20px;
-    order: 1;
-    text-align: left;
   }
 
   .employeeSpotlightHeader {
     font-size: 1.5rem;
-    margin-bottom: 15px;
-    text-align: left;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .employeeImageWrapper {
+    float: none;
+    margin: 0 auto 20px;
+    width: 150px;
+  }
+
+  .employeeSpotlightImage {
+    margin-bottom: 10px;
+  }
+
+  .employeeName {
+    font-size: 1.3rem;
+  }
+
+  .employeeTitle {
+    font-size: 0.85rem;
   }
 
   .employeeSpotlightDescription {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.7;
+    text-align: left;
   }
 }
