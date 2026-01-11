@@ -140,7 +140,7 @@ internsCorner:
     - name: Julio Cesar Morciego, MD
       image: /img/intern-corner/julio-morciego-md.jpeg
       content: >
-        Born in Cuba with a head for numbers and a green thumb for aquascaping, this future infectious disease specialist has a fascinating side obsession. Finding creative ways to invest and grow wealth. He's laser focused on matching into an ID fellowship, though if medicine hadn't panned out, he's convinced coding would've been his calling. Turns out he's got a real talent for building apps and programs that could genuinely make people's lives easier. Software development's loss is infectious disease's gain.
+        Born in Cuba with a head for numbers and a green thumb for aquascaping, this future infectious disease specialist has a fascinating side obsession. Finding creative ways to invest and grow wealth. He's laser focused on matching into an Infectious Disease fellowship, though if medicine hadn't panned out, he's convinced coding would've been his calling. Turns out he's got a real talent for building apps and programs that could genuinely make people's lives easier. Software development's loss is infectious disease's gain.
         After brutal hospital shifts, his recharge methods are pretty straightforward. Movies, preferably horror, gore, mystery, or anything that'll make him laugh. Maybe some pickleball if he's feeling active. TV shows though? Dangerous territory. Once he starts, it's full binge mode, so he's strategically avoiding new series for his own protection at this point. His ideal evening off sounds perfect. Hit the movie theater with friends, grab food and drinks after, then cap it all off with competitive card or board games. There's something about that combination of screen time, good food, and friendly competition that just hits different.
         When he really needs to reset, hiking will do. Hand him a trail and point him toward elevation and that's his decompression method. Topics he could discuss endlessly? Finance strategies and wealth management (naturally), the intricacies of aquascaping, and deep dives into Biblical scripture. Fair warning though, his hobbies run deeper. Fishing, gardening, learning to grow his own food. The man's preparing for something.
         Here's the unexpected part. He's got serious craftsmanship skills from years of woodworking and home improvement projects with his father. The kind of hands on expertise where he could legitimately build a small house if needed. He's got that rare spatial awareness where he can visualize the finished product before the first nail gets hammered. Not your typical medical resident skillset, but incredibly practical. 🔨🌱
@@ -540,8 +540,8 @@ halloweenCarousel:
 events:
   sectionTitle: Upcoming Events
   eventsList:
-    - date: Nov 27th, 2025
-      description: Thanksgiving
+    - date: Jan 27th, 2026
+      description: Meet & Greet
 thingsToDo:
   sectionTitle: Things To Do In Valdosta
   images:
@@ -578,11 +578,11 @@ newsFromClinic:
   sectionTitle: News From The Clinic
   employeeSpotlight:
     subSectionTitle: Employee Spotlight
-    name: Tameshia Footman
-    image: /img/tameshia-footman.jpeg
-    title: RN
+    name: Felicia Farrell
+    image: /img/clinic/felicia-farrell.jpeg
+    title: Practice Manager
     profile: >
-      Tameshia Footman has been an integral clinical team member at SGMC Internal Medicine - Park Avenue for four years, bringing compassion and dedication to her role as a registered nurse. What drives her is simple yet profound: making a genuine difference in patients' lives through attentive care and a listening ear. Away from the clinic, Tameshia's world revolves around her children, who inspire and energize her daily. She's also an avid bargain hunter with a knack for discovering hidden gems on clearance racks. While Tameshia describes herself as an introvert who values quiet moments, she has a special gift for forming deep, meaningful relationships with patients, families, and colleagues alike. Her blend of thoughtful professionalism and genuine warmth makes her an essential part of our compassionate care team.
+      For the past eleven years, our Internal Medicine team has thrived under the steady leadership of Felicia Farrell, who brings both strategic vision and heartfelt dedication to her role as Practice Manager. What energizes her most is the collaborative spirit flowing through the practice, working alongside providers and nurses to build an environment where everyone feels supported. She finds deep satisfaction knowing that behind every compliance review and budget decision lies a tangible impact on community health and the lives of patients who walk through our doors.Family time anchors Felicia's life outside these walls, providing the balance that fuels her professional passion. When asked what makes her proud to serve here, she points to our unwavering commitment to patient-centered care and the team culture that puts collaboration first. She takes genuine pride in creating conditions that allow providers and staff to focus on what matters most: improving lives every day.Those who work with Felicia know she possesses a creative problem-solving streak that surfaces in unexpected moments, whether tackling workplace challenges or navigating everyday life. That same grounded approach, nurtured by her family connections, keeps her motivated and focused on what truly counts. Her eleven-year journey here reflects not just longevity but a deepening commitment to excellence and community health.
 wellnessCorner:
   sectionTitle: Wellness Corner
   title: 'Finding Humor in the Hard Days: A Reminder About Emotional Well-being'
