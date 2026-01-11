@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { attributes } from '@content/home.md';
+import { attributes } from '@content/issue-6.md';
 import Layout from '@app/Layout';
 import birthdays from '@public/birthdays.json';
 import TwoColumnLayout from '@components/types/TwoColumnLayout';
@@ -22,7 +22,6 @@ import NewsFromClinic from '@components/sections/NewsFromClinic';
 // import WellnessCorner from '@components/sections/WellnessCorner';
 import Podcast from '@/components/sections/Podcast';
 import Culturosity from '@/components/sections/Culturosity';
-import GenericSingleImageTextSection from '@/components/sections/GenericSingleImageTextSection';
 import GenericSingleImageCarouselTextSection from '@/components/sections/GenericSingleImageCarouselTextSection';
 import HalloweenCarousel from '@/components/sections/HalloweenCarousel';
 // import BasicSection from '@/components/sections/BasicSection';
@@ -34,7 +33,6 @@ export default function Home() {
     program,
     spotlight,
     genericSingleImageCarouselTextSection,
-    genericSingleImageTextSection,
     basicSection,
     internsCorner,
     chiefsCorner,
@@ -75,10 +73,9 @@ export default function Home() {
         leftColumn={<ResidentSpotlight spotlight={spotlight} />}
         rightColumn={<ProgramInfo program={program} />}
       />
-      <SingleColumnLayout column={ <GenericSingleImageTextSection genericSingleImageTextSection={genericSingleImageTextSection} /> } />
-      {/* <SingleColumnLayout column={<ChiefsCorner chiefsCorner={chiefsCorner} />} /> */}
-      <SingleColumnLayout column={<InternsCorner internsCorner={internsCorner} />} /> 
+      <SingleColumnLayout column={<ChiefsCorner chiefsCorner={chiefsCorner} />} />
       <SingleColumnLayout column={<RecentSuccess recentSuccess={recentSuccess} />} />
+      <SingleColumnLayout column={<InternsCorner internsCorner={internsCorner} />} /> 
       <SingleColumnLayout column={<CommunityService communityServiceCorner={communityServiceCorner} />} />
       {halloweenCarousel && <SingleColumnLayout column={<HalloweenCarousel halloweenCarousel={halloweenCarousel} />} />}
       <SingleColumnLayout column={ <GenericSingleImageCarouselTextSection genericSingleImageCarouselTextSection={genericSingleImageCarouselTextSection} /> } />

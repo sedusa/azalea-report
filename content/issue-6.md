@@ -1,13 +1,18 @@
 ---
 banner:
-  headerImage: /img/jan-26-banner.jpeg
+  headerImage: /img/nov-banner.jpeg
   title: AZALEA REPORT
   subtitle: SGMC Health Internal Medicine Residency Newsletter
-  edition: 7
-  date: January 2026
+  edition: 6
+  date: November 2025
+  overlay:
+    show: false
+    type: halloween
+    text: Halloween edition
+    showPumpkin: true
 about:
   sectionTitle:
-  content: Welcome 👋🏼 to the Azalea Report - where the blooms of South Georgia Health's Internal Medicine Residency program come to life! As we step into 2026, we're excited to continue cultivating the brilliant minds and inspiring stories flourishing in our program. Like the azaleas that will soon paint Valdosta in stunning color this spring, our residents are preparing to bloom with new opportunities, fresh perspectives, and renewed dedication. From program milestones to personal celebrations, we're here to bring you all the buzz from the Azalea City. Join us as we plant the seeds for another year of excellence, growth, and community! 🌸 🌸 🌸<br/><br/> Sincerely,
+  content: Welcome 👋🏼 to the Azalea Report - where the blooms of South Georgia Health's Internal Medicine Residency program come to life! Like the vibrant azaleas that paint Valdosta in stunning color each spring, this resident-led newsletter showcases the brilliant minds and inspiring stories flourishing in our program.  From program milestones to personal celebrations, we're here to bring you all the buzz from the Azalea City. Get ready to discover the stories of excellence, growth, and community that make our residency program truly blossom! 🌸 🌸<br/><br/> Sincerely,
   signature: The Azalea Report team
 program:
   title: About the Program
@@ -16,7 +21,7 @@ program:
   sgmcImageCaption: Aerial view of SGMC in Valdosta, GA
   statistics:
     sectionTitle: Interesting Facts
-    residentCount: 36
+    residentCount: 37
     countryCount: more than 10
     languageCount: more than 12
     partnership: "SGMC's internal medicine residency program is a partnership with Mercer University School of Medicine (MUSM)"
@@ -24,30 +29,13 @@ program:
     advancedTraining: Residents have access to SGMC Health's State Of The Art Simulation Lab, extensive board preparation support, and teaching opportunities with medical students
 spotlight:
   sectionTitle: Resident Spotlight
-  name: James McSweeney, MD
-  image: /img/resident-spotlight/james-mcsweeney-md.jpeg
-  birthplace: SoCal, CA. USA 🇺🇸
-  funFact: I can explain an acute GI bleed algorithm faster than most people can explain their coffee order.
-  favoriteDish: I love a good salad - the only thing I'm more passionate about than GI pathophysiology.
-  interests: I love to talk film - discussing, critiquing, and defending hot takes on Marvel vs. Scorsese. When I'm not doing that, I'm fishing and boating, applying the same dramatic analysis to every splash in the water.
-  postResidencyPlans: Transplant hepatology year then GI fellowship 🤞. 
-genericSingleImageTextSection:
-  sectionTitle: GME Corner
-  description: 
-  title: "SGMC Health GME Announces New Chief Residents for The Internal Medicine Residency Program" 
-  author: SGMC Health GME (posted originally on December 30th, 2024)
-  coverImage: /img/new-chiefs-2026.jpeg
-  imageCaption: Outgoing Chief Residents Mariya Tom, MD, and Brandon Rockwell, MD; Internal Medicine Program Director Greg Beale, MD, and Associate Program Director Leslie Lamptey, MD; 2026 Chief Residents Ornob Rahman, MD, and Samuel Edusa, MD
-  content: >
-    <p>SGMC Health's Graduate Medical Education program announced the appointment of Samuel Edusa, MD and Ornob Rahman, MD as Chief Residents for the Internal Medicine Residency Program beginning in March 2026. Selected by their peers and approved by faculty, both physicians were recognized for exceptional leadership, professionalism, and clinical excellence.</p>
-
-    <p>During their one-year term, Dr. Edusa and Dr. Rahman will serve as liaisons between residents and faculty, lead educational conferences, coordinate schedules, supervise trainees, and champion resident well-being while overseeing both Internal Medicine and Transitional Year residents.</p>
-
-    <p>Dr. Edusa graduated from the University of Ghana Medical School, where he developed a reputation for clinical excellence and compassionate mentorship. Dr. Rahman earned his medical degree from the University of Medicine and Health Sciences in St. Kitts.</p>
-
-    <p>"Dr. Edusa and Dr. Rahman represent the future of medicine," said Greg Beale, MD, Program Director of the Internal Medicine Residency Program. "Their dedication to education and patient care will strengthen our residency program and inspire the next generation of physicians."</p>
-
-    <p>SGMC Health's Medical Education program continues to expand. In addition to Internal Medicine and Transitional Year residencies, the system will launch a Family Medicine residency program in summer 2026. SGMC Health also serves as a clinical campus for Mercer University School of Medicine, providing third- and fourth-year medical students with hands-on clinical training.</p>
+  name: Anna Ledford, MD
+  image: /img/resident-spotlight/anna-ledford-md.jpeg
+  birthplace: Cleveland, GA. USA 🇺🇸
+  funFact: Before donning the white coat, I was crushing it as a nurse practitioner!
+  favoriteDish: My husband's buttermilk biscuits — they're so good, they should be illegal 🍞✨
+  interests: When I'm not saving lives, you'll find me strategizing at the Mahjong table (those tiles don't know what hit 'em), perfecting my swing on the golf course, or reeling in the big one while fishing ⛳🎣
+  postResidencyPlans: I'll be staying right here at SGMC Health as an attending in the resident clinic. 
 chiefsCorner:
   title: The Chiefs' Corner
   chiefs:
@@ -137,21 +125,14 @@ communityServiceCorner:
 internsCorner:
   title: Intern Spotlight
   interns:
-    - name: Julio Cesar Morciego, MD
-      image: /img/intern-corner/julio-morciego-md.jpeg
+    - name: Amal Akhtar, DO
+      image: /img/intern-corner/amal-akhtar-do.jpeg
       content: >
-        Born in Cuba with a head for numbers and a green thumb for aquascaping, this future infectious disease specialist has a fascinating side obsession. Finding creative ways to invest and grow wealth. He's laser focused on matching into an ID fellowship, though if medicine hadn't panned out, he's convinced coding would've been his calling. Turns out he's got a real talent for building apps and programs that could genuinely make people's lives easier. Software development's loss is infectious disease's gain.
-        After brutal hospital shifts, his recharge methods are pretty straightforward. Movies, preferably horror, gore, mystery, or anything that'll make him laugh. Maybe some pickleball if he's feeling active. TV shows though? Dangerous territory. Once he starts, it's full binge mode, so he's strategically avoiding new series for his own protection at this point. His ideal evening off sounds perfect. Hit the movie theater with friends, grab food and drinks after, then cap it all off with competitive card or board games. There's something about that combination of screen time, good food, and friendly competition that just hits different.
-        When he really needs to reset, hiking will do. Hand him a trail and point him toward elevation and that's his decompression method. Topics he could discuss endlessly? Finance strategies and wealth management (naturally), the intricacies of aquascaping, and deep dives into Biblical scripture. Fair warning though, his hobbies run deeper. Fishing, gardening, learning to grow his own food. The man's preparing for something.
-        Here's the unexpected part. He's got serious craftsmanship skills from years of woodworking and home improvement projects with his father. The kind of hands on expertise where he could legitimately build a small house if needed. He's got that rare spatial awareness where he can visualize the finished product before the first nail gets hammered. Not your typical medical resident skillset, but incredibly practical. 🔨🌱
-    - name: Sarah Sabol, MD
-      image: /img/intern-corner/sarah-sabol-md.jpeg
+        Miami raised with Pakistani roots running deep, she's fluent in multiple languages and even more fluent in staying connected — FaceTime with family is non-negotiable. This year's mission? Survive intern year and match into anesthesia, with her eyes on cardiac and critical care where the patients are the sickest and the stakes are highest. That's her kind of medicine. 🩺 If the stethoscope hadn't happened, she'd probably be running her own interior design business — she's got that eye for making spaces beautiful, and decorating is where her creative side really shines. Her sacred wind-down routine: light a candle 🕯️, throw on Bridgerton or a classic Bollywood film, and let the world slow down. Sometimes it's a Netflix binge of 'You', other times it's those comfort films her parents introduced her to.  When she actually gets time off, she's either hiking a new trail or meeting friends at their favorite restaurant — good company, good food, that's the formula. She's not big on small talk, but ask her about her dad and watch her light up. She could talk for hours, and honestly, you'd want to listen. Volleyball was her thing back in the day, and you can still catch that competitive energy when she's locked into a tough case or powering through a shift. Her ideal day? Trail in the morning, lunch with her crew, candle and a movie at night, with FaceTime calls sprinkled throughout to keep her people close. She's carving her path in medicine while keeping her heart rooted in family and faith. 💛
+    - name: Rawa Salih, MD
+      image: /img/intern-corner/rawa-salih-md.jpeg
       content: >
-        Palm Beach, Florida is home now, though she started life in Washington State. This PM&R resident heading to Shands in Gainesville has what most people would call an extreme relationship with physical limits. She competes in Ironman triathlons and doesn't just finish them. She podiums in her age group. Consistently. Her fellowship plans are already mapped out too. Multidisciplinary Pain Medicine with an interventional spine subspecialty track. The kind of career path that makes sense when you spend your free time exploring what happens when the human body gets pushed past comfortable.
-        Ask her what she'd be doing if medicine wasn't the plan and the answer comes quick. General contractor. She actually enjoys the physical work, the problem solving, the satisfaction of building and fixing things with her hands. There's a throughline there if you look for it.
-        Her version of unwinding after exhausting hospital days? Going for an even longer run than necessary. Most residents would find that absolutely unhinged, but for her it works. She consumes David Goggins content like it's a lifestyle requirement. Athletic performance books, sports inspiration stories, the latest research on human capability. It all feeds the same engine. Her perfect evening off involves completing a full triathlon distance just for fun, then demolishing an enormous Italian meal. The reward has to match the effort.
-        What people might not expect is the yoga practice. Deep, committed, avid yoga. She also does modern dance, which creates this fascinating contrast with the Ironman intensity. Both require body awareness but in completely opposite ways. Get her talking about any of it and hours disappear. Triathlon pacing strategies, yoga breathing techniques, contemporary choreography. She moves between all three like they're the same language.
-        Then there's the music thing. She sings and can read and write it too. Not exactly what you'd guess about someone whose idea of relaxation is voluntary suffering, but it rounds out the picture. Builder, endurance athlete, movement artist, musician. She's figured out more ways to use a body than most people consider possible. 🎶💪
+        Born in Germany with Kurdish roots, this future cardiologist somehow fits piano playing into his residency schedule — not your typical resident hobby, but he makes it work. He's laser-focused on matching into Cardiology, though his life philosophy is surprisingly zen. Just chill. Keep it balanced, stay grounded, don't overthink it. If medicine hadn't panned out, he's convinced politics would've been his calling—turns out he's got a real talent for the art of conversation and persuasion. Democracy's loss is cardiology's gain. After long hospital shifts, you'll find him cooking actual meals from scratch. It's therapeutic. Movies though? Hard pass. He's never been into them and he's fully committed to that stance at this point. His ideal evening off sounds wild—pulling an all-nighter exploring a big city. There's something about that 3 AM urban energy, the streets, the spontaneous moments that just hits different when everyone else is asleep. When he needs to reset, any sport will do. Hand him a ball and point him toward something active and that's his decompression method. ⚽🏀 Fair warning though—he's not into marathon phone conversations. They literally give him a headache, so he keeps communication concise. Quality over quantity. As for the deeper stuff like his stories, quirks, and what really makes him tick, he keeps that close. Some things are better discovered through actual conversation than spelled out online. Consider it an open invitation to be curious.✨
 podcast:
   sectionTitle: Podcasts
   title: 'What Brings You In Today? - Featured Podcasts'
