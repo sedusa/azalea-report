@@ -294,23 +294,19 @@ musings:
 culturosity:
   sectionTitle: Culturosity
   description: Culturosity is a bite-sized journey through our residency community's cultures, one story at a time. This weekly column spotlights diverse traditions, celebrations, and daily lives, revealing the rich cultural tapestry that fosters growth within our community.
-  title: 'Ghana 🇬🇭 vs Nigeria 🇳🇬: A Feast Of Two Nations'
+  title: 'Caribbean Soul Feast 🇯🇲🇭🇹'
   author: Samuel Edusa, MD
-  coverImage: /img/culturosity/food.jpeg
-  imageCaption: Traditional Ghanaian and Nigerian dishes
+  coverImage: /img/culturosity/jan-26/spread.jpeg
+  imageCaption: Savory dishes from Jamaica and Haiti
   content: >
-    <p>In the basement classrooms of SGMC Health, an extraordinary cultural exchange unfolded as medical residents gathered for "Culturosity: Ghana vs. Nigeria," transforming a typical lunch hour into a vibrant celebration of West African heritage. The event, far from being a competition as its playful title might suggest, showcased the rich culinary traditions that bind these two influential African nations.</p>
-
-    <p>The spread was a visual and aromatic testament to the depth of both cultures' cuisines. Traditional Ghanaian and Nigerian dishes filled the serving tables, from aromatic jollof rice displaying its characteristic orange-red hue to tender khebab skewers seasoned with complex spice blends. Plates of grilled chicken, prepared in distinctly different but equally mouthwatering styles, sat alongside pots of rich stews studded with fish and vegetables. The centerpiece was a variety of rice dishes, each telling its own story of regional preferences and cooking techniques.</p>
+    <p>Our Culturosity wellness program brought the vibrant tastes of the Caribbean to life as residents Michael Heron, MD and Patrick Joseph, MD transformed our gathering into an island feast! Dr. Heron treated us to authentic Jamaican comfort food with tender, fall off the bone oxtail paired with perfectly seasoned rice and peas, steamed cabbage, and sweet fried plantains that transported taste buds straight to Kingston. Not to be outdone, Dr. Patrick Joseph shared the rich culinary traditions of Haiti with his flavorful rice and chicken that had everyone coming back for seconds. Between bites, both doctors shared stories of their homelands, painting pictures of island life, family traditions, and the deep cultural roots that make Caribbean cuisine so special. It's moments like these that remind us how food brings us together, breaks down barriers, and turns colleagues into family, one delicious plate at a time!</p>
 
     <div class="imageGrid">
       <div class="imageColumn">
-        <img src="/img/culturosity/presentation.jpeg" alt="Dr. Fashugba presenting on Nigerian cuisine">
-        <span class="imageCaption">Dr. Fashugba's presentation on Nigerian history and culture</span>
+        <img src="/img/culturosity/jan-26/patrick-michael.jpeg" alt="Drs. Heron and Joseph proudly holding their flags, representing Jamaica and Haiti">
+        <span class="imageCaption">Drs. Heron and Joseph proudly holding their flags, representing Jamaica and Haiti</span>
       </div>
     </div>
-
-    <p>But this gathering transcended the dining experience, evolving into a masterclass in cultural exchange. The event artfully wove together culinary traditions with deeper insights into West African heritage. While the aromas of spiced dishes filled the air, conversations flowed naturally between residents and students, bridging gaps in cultural understanding. The long-standing playful debate over jollof rice supremacy between Ghana and Nigeria sparked animated discussions, while first-time tastings of traditional dishes created moments of discovery and connection. Through these shared experiences, the medical community demonstrated how food can serve as a powerful catalyst for cultural appreciation and understanding.</p>
 
     <div class="imageGrid">
       <div class="imageColumn">
@@ -330,7 +326,7 @@ culturosity:
       </div>
     </div>
 
-    <p>The event exemplified how food serves as a universal language, breaking down barriers and fostering genuine connections that transcend professional and cultural boundaries. As one resident was overheard saying while reaching for seconds, "Understanding each other's cultures makes us better doctors." </p>
+    <p>The event showed how food really does bring people together, creating connections that go beyond the hospital walls. As the Jamaican saying goes, "One one coco full basket," and the Haitian proverb reminds us, "Men anpil, chay pa lou" (Many hands make the load lighter). Both doctors proved these truths as residents gathered around their dishes, sharing stories and laughter. One resident, plate piled high with seconds, put it perfectly: "When we understand where each other comes from, it makes us better at taking care of our patients." </p>
 
 photosOfMonth:
   sectionTitle: 'Residency Highlights'
