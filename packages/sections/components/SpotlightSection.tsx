@@ -5,13 +5,14 @@ import { ShowMore } from './ShowMore';
 
 interface SpotlightSectionProps {
   data: SpotlightSectionData;
+  backgroundColor?: string;
 }
 
 /**
  * SpotlightSection - Two-column layout matching ResidentSpotlight.module.css
  * Image on left, details on right (stacks on mobile)
  */
-export function SpotlightSection({ data }: SpotlightSectionProps) {
+export function SpotlightSection({ data, backgroundColor }: SpotlightSectionProps) {
   const {
     sectionTitle = 'Resident Spotlight',
     name,
@@ -34,8 +35,19 @@ export function SpotlightSection({ data }: SpotlightSectionProps) {
     postResidencyPlans && `<p style="margin-bottom: 0.75rem;"><strong>Post-residency plans:</strong> ${postResidencyPlans}</p>`,
   ].filter(Boolean).join('');
 
+  // When no backgroundColor is set, use transparent class for proper dark mode text colors
+  const hasBackground = !!backgroundColor;
+
   return (
-    <section className="spotlight-container" style={{ marginBottom: '2rem' }}>
+    <section
+      className={hasBackground ? 'spotlight-container section-with-bg' : 'section-transparent'}
+      style={{
+        marginBottom: '2rem',
+        backgroundColor: backgroundColor || 'transparent',
+        borderRadius: hasBackground ? 'var(--radius, 0.75rem)' : undefined,
+        padding: hasBackground ? '2rem' : undefined,
+      }}
+    >
       {/* Section Title */}
       {sectionTitle && (
         <h2 className="section-title">

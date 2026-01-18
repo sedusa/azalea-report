@@ -46,6 +46,7 @@ export default defineSchema({
     ),
     order: v.number(),
     visible: v.boolean(),
+    backgroundColor: v.optional(v.string()), // Pastel background color
     data: v.any(), // Section-specific data, validated by section validators
     createdAt: v.number(),
     updatedAt: v.number(),

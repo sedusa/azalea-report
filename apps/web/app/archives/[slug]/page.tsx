@@ -5,6 +5,7 @@ import { useQuery } from 'convex/react';
 import { api } from '@convex/_generated/api';
 import { SectionRenderer } from '@azalea/sections';
 import type { Section } from '@azalea/shared/types';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { notFound } from 'next/navigation';
 
 interface ArchivePageProps {
@@ -30,35 +31,92 @@ export default function ArchivePage({ params }: ArchivePageProps) {
     notFound();
   }
 
+  // Format edition and date
+  const formatEditionDate = () => {
+    if (!issue) return '';
+    const date = issue.bannerDate
+      ? new Date(issue.bannerDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+      : '';
+    return `Edition ${issue.edition} | ${date}`;
+  };
+
   return (
-    <main className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-azalea-green text-white py-6 shadow-md">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold hover:text-azalea-peach transition-colors">
-              Azalea Report
-            </Link>
-            <nav className="flex gap-6">
-              <Link href="/archives" className="hover:text-azalea-peach transition-colors">
-                Archives
-              </Link>
-              <Link href="/about" className="hover:text-azalea-peach transition-colors">
-                About
-              </Link>
-            </nav>
-          </div>
+    <div className="page-background">
+      {/* Fixed Header - same as main page */}
+      <header className="site-header">
+        <div className="header-content">
+          <Link href="/" className="header-left">
+            <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" style={{ color: 'var(--primary-color)' }}>
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+            </svg>
+            <span className="header-title">Azalea Report</span>
+          </Link>
+          <nav className="desktop-nav">
+            <Link href="/archives">Previous Issues</Link>
+          </nav>
         </div>
       </header>
 
-      {/* Banner Section */}
-      {issue ? (
-        <section className="bg-azalea-peach py-12 border-b-4 border-azalea-green">
-          <div className="container mx-auto px-4">
+      {/* Header spacer for fixed header */}
+      <div className="header-spacer">
+        <div className="newsletter-container">
+          {/* Banner Section */}
+          <div className="banner-section">
+            <div className="banner-content">
+              <div className="banner-image-container">
+                {(issue as any)?.bannerImageUrl ? (
+                  <img
+                    src={(issue as any).bannerImageUrl}
+                    alt={issue?.title || 'Newsletter banner'}
+                    className="banner-image"
+                  />
+                ) : (
+                  <div
+                    className="banner-image"
+                    style={{
+                      backgroundColor: 'var(--card)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <span style={{ color: 'var(--muted-foreground)' }}>Banner Image</span>
+                  </div>
+                )}
+              </div>
+              <div className="banner-overlay"></div>
+              <div className="banner-text">
+                <h1 className="banner-title">
+                  {issue?.bannerTitle || 'AZALEA REPORT'}
+                </h1>
+                <p className="banner-subtitle">
+                  SGMC Health Internal Medicine Residency Newsletter
+                </p>
+                {issue && (
+                  <p className="banner-date">
+                    {formatEditionDate()}
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Main Content */}
+          <main className="main-content">
             {/* Back to Archives Link */}
             <Link
               href="/archives"
-              className="inline-flex items-center gap-2 text-azalea-green hover:text-azalea-green-hover font-medium mb-6 transition-colors"
+              className="back-link"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                color: 'var(--foreground)',
+                textDecoration: 'none',
+                fontFamily: "'Montserrat', sans-serif",
+                fontSize: '1rem',
+                marginBottom: '2rem',
+              }}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
@@ -71,84 +129,48 @@ export default function ArchivePage({ params }: ArchivePageProps) {
               Back to Archives
             </Link>
 
-            <div className="text-center">
-              <h1 className="text-5xl font-bold text-gray-900 mb-2">
-                {issue.bannerTitle || 'AZALEA REPORT'}
-              </h1>
-              <p className="text-xl text-gray-700 mb-2">
-                {issue.title}
-              </p>
-              {issue.bannerDate && (
-                <p className="text-md text-gray-600">
-                  {new Date(issue.bannerDate).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                  })}
+            {!issue ? (
+              <div className="section-card" style={{ textAlign: 'center', padding: '3rem' }}>
+                <div className="animate-pulse">
+                  <div className="h-8 rounded w-1/2 mx-auto mb-4" style={{ backgroundColor: 'var(--border)' }}></div>
+                  <div className="h-4 rounded w-3/4 mx-auto" style={{ backgroundColor: 'var(--border)' }}></div>
+                </div>
+                <p className="mt-6" style={{ color: 'var(--muted-foreground)' }}>
+                  Loading issue...
                 </p>
-              )}
-              <div className="mt-4">
-                <span className="inline-block px-4 py-2 bg-azalea-green text-white font-semibold rounded-full">
-                  Edition {issue.edition}
-                </span>
               </div>
-            </div>
-          </div>
-        </section>
-      ) : (
-        <section className="bg-azalea-peach py-16 border-b-4 border-azalea-green">
-          <div className="container mx-auto px-4 text-center">
-            <div className="animate-pulse">
-              <div className="h-12 bg-gray-200 rounded w-1/2 mx-auto mb-4"></div>
-              <div className="h-6 bg-gray-200 rounded w-1/3 mx-auto"></div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Issue Content */}
-      <section className="py-12">
-        <div className="container mx-auto px-4 max-w-5xl">
-          {!issue ? (
-            <div className="bg-white rounded-lg shadow-md p-12 text-center">
-              <div className="animate-pulse">
-                <div className="h-8 bg-gray-200 rounded w-1/2 mx-auto mb-4"></div>
-                <div className="h-4 bg-gray-200 rounded w-3/4 mx-auto"></div>
+            ) : sections.length === 0 ? (
+              <div className="section-card" style={{ textAlign: 'center', padding: '3rem' }}>
+                <p style={{ fontSize: '1.3rem', color: 'var(--card-text)' }}>
+                  No content available for this issue.
+                </p>
               </div>
-              <p className="text-gray-600 mt-6">
-                Loading issue...
-              </p>
-            </div>
-          ) : sections.length === 0 ? (
-            <div className="bg-white rounded-lg shadow-md p-12 text-center">
-              <p className="text-gray-600 text-lg">
-                No content available for this issue.
-              </p>
-            </div>
-          ) : (
-            <div className="space-y-8">
-              {sections.map((section) => (
-                <SectionRenderer
-                  key={section._id}
-                  section={section as Section}
-                />
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
+            ) : (
+              <div>
+                {sections.map((section) => (
+                  <SectionRenderer
+                    key={section._id}
+                    section={section as Section}
+                  />
+                ))}
+              </div>
+            )}
+          </main>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8 mt-12">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-400">
-            &copy; {new Date().getFullYear()} SGMC Internal Medicine Residency Program
-          </p>
-          <p className="text-sm text-gray-500 mt-2">
-            Azalea Report Newsletter
-          </p>
+          {/* Footer */}
+          <footer className="site-footer">
+            <p>
+              &copy; {new Date().getFullYear()} SGMC Internal Medicine Residency Program
+            </p>
+            <p style={{ marginTop: '0.25rem', opacity: 0.7 }}>
+              Azalea Report Newsletter
+            </p>
+          </footer>
         </div>
-      </footer>
-    </main>
+      </div>
+
+      {/* Theme Toggle */}
+      <ThemeToggle />
+    </div>
   );
 }

@@ -324,9 +324,10 @@
   }
 
   /* Section card - cream/beige background with dark text */
+  /* Always has pastel background so text must always be dark */
   .section-card {
     background-color: var(--card-bg);
-    color: var(--card-text);
+    color: #333333 !important;
     border-radius: 8px;
     padding: 2rem;
     margin-bottom: 2rem;
@@ -347,7 +348,7 @@
   .section-card h2,
   .section-card h3,
   .section-card h4 {
-    color: var(--card-heading);
+    color: #016f53 !important;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 1rem;
   }
@@ -365,19 +366,23 @@
   }
 
   .section-card p {
-    color: var(--card-text);
+    color: #333333 !important;
     font-size: 1.3rem;
     line-height: 1.6;
   }
 
+  .section-card strong {
+    color: #016f53 !important;
+  }
+
   .section-card a {
-    color: var(--primary);
+    color: #016f53 !important;
     text-decoration: underline;
     text-underline-offset: 2px;
   }
 
   .section-card a:hover {
-    color: var(--accent-green-hover);
+    color: #014d3a !important;
   }
 
   .section-title {
@@ -386,7 +391,110 @@
     margin: 1rem auto;
   }
 
+  /* Section with background - always dark text for readability on pastel backgrounds */
+  .section-with-bg,
+  .section-with-bg p,
+  .section-with-bg .basic-text,
+  .section-with-bg .spotlight-text,
+  .section-with-bg .spotlightText,
+  .section-with-bg .chief-text,
+  .section-with-bg .intern-text,
+  .section-with-bg .featureBullets,
+  .section-with-bg .basic-author,
+  .section-with-bg .basic-description {
+    color: #333333 !important;
+  }
+
+  .section-with-bg .basic-title,
+  .section-with-bg .section-title,
+  .section-with-bg .spotlight-name,
+  .section-with-bg .spotlightName,
+  .section-with-bg .chief-name,
+  .section-with-bg .intern-name,
+  .section-with-bg .featureSubtitle,
+  .section-with-bg .sectionTitle,
+  .section-with-bg .spotlight-label,
+  .section-with-bg h2,
+  .section-with-bg h3,
+  .section-with-bg h4,
+  .section-with-bg strong {
+    color: #016f53 !important;
+  }
+
+  .section-with-bg .featureCaption,
+  .section-with-bg .basic-cover-image-caption {
+    color: #666666 !important;
+  }
+
+  .section-with-bg a {
+    color: #016f53 !important;
+  }
+
+  .section-with-bg a:hover {
+    color: #014d3a !important;
+  }
+
+  /* Transparent section - no background, uses theme-aware text colors */
+  /* Dark mode: white text on dark background */
+  /* Light mode: dark text on light background */
+  .section-transparent {
+    background-color: transparent !important;
+  }
+
+  .section-transparent,
+  .section-transparent p,
+  .section-transparent div,
+  .section-transparent span,
+  .section-transparent li,
+  .section-transparent .basic-text,
+  .section-transparent .basic-text *,
+  .section-transparent .spotlight-text,
+  .section-transparent .spotlight-text *,
+  .section-transparent .spotlightText,
+  .section-transparent .spotlightText *,
+  .section-transparent .chief-text,
+  .section-transparent .chief-text *,
+  .section-transparent .intern-text,
+  .section-transparent .intern-text *,
+  .section-transparent .featureBullets,
+  .section-transparent .featureBullets li,
+  .section-transparent .basic-author,
+  .section-transparent .basic-description,
+  .section-transparent .spotlight-detail {
+    color: var(--foreground) !important;
+  }
+
+  .section-transparent .basic-title,
+  .section-transparent .section-title,
+  .section-transparent .spotlight-name,
+  .section-transparent .spotlightName,
+  .section-transparent .chief-name,
+  .section-transparent .intern-name,
+  .section-transparent .featureSubtitle,
+  .section-transparent .sectionTitle,
+  .section-transparent .spotlight-label,
+  .section-transparent h2,
+  .section-transparent h3,
+  .section-transparent h4,
+  .section-transparent strong {
+    color: var(--primary) !important;
+  }
+
+  .section-transparent .featureCaption,
+  .section-transparent .basic-cover-image-caption {
+    color: var(--muted-foreground) !important;
+  }
+
+  .section-transparent a {
+    color: var(--primary) !important;
+  }
+
+  .section-transparent a:hover {
+    color: var(--accent-green-hover) !important;
+  }
+
   /* Spotlight section - matches ResidentSpotlight.module.css */
+  /* Always has pastel background so text must always be dark */
   .spotlight-container {
     background-color: #f7f3e8;
     border-radius: 8px;
@@ -402,19 +510,26 @@
   }
 
   .spotlight-name {
-    color: #016f53;
+    color: #016f53 !important;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
   }
 
-  .spotlight-text {
-    color: #333333;
+  .spotlight-text,
+  .spotlight-text p,
+  .spotlight-container p {
+    color: #333333 !important;
     font-size: 1.3rem;
     line-height: 1.6;
   }
 
+  .spotlight-container strong {
+    color: #016f53 !important;
+  }
+
   /* Chiefs section - matches ChiefsCorner.module.css */
+  /* Always has pastel background so text must always be dark */
   .chiefs-section {
     background-color: #e6f0ed;
     border-radius: 8px;
@@ -441,20 +556,23 @@
   }
 
   .chief-name {
-    color: #016f53;
+    color: #016f53 !important;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
   }
 
-  .chief-text {
-    color: #333333;
+  .chief-text,
+  .chief-text p,
+  .chiefs-section p {
+    color: #333333 !important;
     font-size: 1.3rem;
     line-height: 1.6;
     margin-bottom: 1rem;
   }
 
   /* Interns section - matches InternsCorner.module.css */
+  /* Always has pastel background so text must always be dark */
   .interns-section {
     background-color: rgb(221, 254, 233);
     border-radius: 8px;
@@ -481,30 +599,37 @@
   }
 
   .intern-name {
-    color: #016f53;
+    color: #016f53 !important;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
   }
 
-  .intern-text {
-    color: #333333;
+  .intern-text,
+  .intern-text p,
+  .interns-section p {
+    color: #333333 !important;
     font-size: 1.3rem;
     line-height: 1.6;
     margin-bottom: 1rem;
   }
 
   /* Basic section - matches BasicSection.module.css */
+  /* Always has pastel background so text must always be dark */
   .basic-content {
     background-color: #FFE6D6;
-    color: #333333;
+    color: #333333 !important;
     border-radius: 15px;
     padding: 30px;
     overflow: visible;
   }
 
+  .basic-content p {
+    color: #333333 !important;
+  }
+
   .basic-description {
-    color: #333;
+    color: #333333 !important;
     font-size: 1.3rem;
     font-style: italic;
     line-height: 1.6;
@@ -512,7 +637,7 @@
   }
 
   .basic-title {
-    color: #016f53;
+    color: #016f53 !important;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     line-height: 1.4;
@@ -522,11 +647,11 @@
 
   .basic-author {
     font-family: 'Montserrat', sans-serif;
-    color: #333333;
     font-size: 1rem;
     font-style: italic;
     line-height: 1.4;
     margin: 0.2rem 0 1.3rem;
+    /* Color set by parent context: section-with-bg or section-transparent */
   }
 
   .basic-image-wrapper {
@@ -542,15 +667,19 @@
 
   .basic-cover-image-caption {
     display: block;
-    color: #666;
     font-size: 1.0rem;
     text-align: left;
+    /* Color set by parent context: section-with-bg uses muted, section-transparent uses var(--muted-foreground) */
   }
 
   .basic-text {
     font-size: 1.3rem;
     line-height: 1.6;
-    color: #333;
+    /* Color set by parent context: section-with-bg or section-transparent */
+  }
+
+  .basic-content strong {
+    color: #016f53 !important;
   }
 
   /* Toggle button - matches module.css */
@@ -584,6 +713,56 @@
     font-size: 1rem;
     padding: 2rem 0 0.5rem;
     text-align: center;
+  }
+
+  /* Archives Page - matches Archives.module.css */
+  .archives-content {
+    padding: 3rem 0;
+    flex: 1;
+  }
+
+  .archives-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.4;
+    margin: 0 0 0.5rem 0;
+    color: var(--foreground);
+  }
+
+  .archives-divider {
+    border: none;
+    border-top: 2px dotted var(--foreground);
+    width: 50%;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .archives-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .archives-list li {
+    margin-bottom: 0.5rem;
+  }
+
+  .archives-link {
+    font-family: 'Georgia', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--foreground);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .archives-link:hover {
+    color: var(--muted-foreground);
+  }
+
+  .archives-empty {
+    color: var(--muted-foreground);
+    font-size: 1.2rem;
   }
 
   /* Button styling */
@@ -740,7 +919,6 @@
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
   /* Two Column Layout - matches TwoColumnLayout.module.css */
@@ -770,6 +948,8 @@
   }
 
   /* Spotlight Container - cream card background */
+  /* Spotlight Container - cream card background */
+  /* Always has pastel background so text must always be dark */
   .spotlightContainer {
     background-color: #f7f3e8;
     border-radius: 8px;
@@ -782,30 +962,37 @@
     margin-bottom: 1rem;
     object-fit: cover;
     width: 100%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
   .spotlightName {
-    color: #016f53;
+    color: #016f53 !important;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 0.75rem;
   }
 
-  .spotlightText {
-    color: #333333;
+  .spotlightText,
+  .spotlightText p,
+  .spotlightContainer p {
+    color: #333333 !important;
     font-size: 1.3rem;
     line-height: 1.6;
+  }
+
+  .spotlightContainer strong,
+  .spotlightContainer .spotlight-label {
+    color: #016f53 !important;
   }
 
   /* Spotlight detail styling */
   .spotlight-detail {
     margin-bottom: 0.75rem;
+    /* Color set by parent context: section-with-bg or section-transparent */
   }
 
   .spotlight-label {
-    color: #016f53;
+    color: #016f53 !important;
   }
 
   /* Feature image styling for right column */
@@ -817,27 +1004,27 @@
     width: 100%;
     height: auto;
     border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
   .featureCaption {
-    color: #666666;
     font-size: 1rem;
     font-style: italic;
     margin-top: 0.5rem;
     text-align: left;
+    /* Color set by parent context: section-with-bg or section-transparent */
   }
 
   .featureSubtitle {
-    color: #016f53;
+    color: #016f53 !important;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.3rem;
     font-weight: bold;
     margin: 1rem 0 0.75rem 0;
   }
 
-  .featureBullets {
-    color: #333333;
+  .featureBullets,
+  .featureBullets li {
+    color: #333333 !important;
     font-size: 1.3rem;
     line-height: 1.6;
     margin: 0;

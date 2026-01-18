@@ -3,133 +3,79 @@
 import Link from 'next/link';
 import { useQuery } from 'convex/react';
 import { api } from '@convex/_generated/api';
-import type { Issue } from '@azalea/shared/types';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 export default function ArchivesPage() {
   // Fetch all published issues
   const allIssues = useQuery(api.issues.list, { status: 'published' }) || [];
 
-  // Sort by edition (newest first)
-  const sortedIssues = [...allIssues].sort((a, b) => b.edition - a.edition);
+  // Sort by edition (oldest first for display)
+  const sortedIssues = [...allIssues].sort((a, b) => a.edition - b.edition);
+
+  // Format issue display text
+  const formatIssueText = (issue: typeof allIssues[0]) => {
+    if (issue.bannerDate) {
+      const date = new Date(issue.bannerDate);
+      const month = date.toLocaleDateString('en-US', { month: 'long' });
+      const year = date.getFullYear();
+      return `Issue ${issue.edition} - ${month} ${year}`;
+    }
+    return `Issue ${issue.edition}`;
+  };
 
   return (
-    <main className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-azalea-green text-white py-6 shadow-md">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold hover:text-azalea-peach transition-colors">
-              Azalea Report
-            </Link>
-            <nav className="flex gap-6">
-              <Link href="/archives" className="text-azalea-peach font-semibold">
-                Archives
-              </Link>
-              <Link href="/about" className="hover:text-azalea-peach transition-colors">
-                About
-              </Link>
-            </nav>
-          </div>
+    <div className="page-background">
+      {/* Fixed Header - same as main page */}
+      <header className="site-header">
+        <div className="header-content">
+          <Link href="/" className="header-left">
+            <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" style={{ color: 'var(--primary-color)' }}>
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+            </svg>
+            <span className="header-title">Azalea Report</span>
+          </Link>
+          <nav className="desktop-nav">
+            <Link href="/archives">Previous Issues</Link>
+          </nav>
         </div>
       </header>
 
-      {/* Page Header */}
-      <section className="bg-azalea-peach py-12 border-b-4 border-azalea-green">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
-            Archives
-          </h1>
-          <p className="text-lg text-gray-700">
-            Browse all published issues of the Azalea Report
-          </p>
-        </div>
-      </section>
+      {/* Header spacer for fixed header */}
+      <div className="header-spacer">
+        <div className="newsletter-container">
+          {/* Archives Content */}
+          <main className="archives-content">
+            <h1 className="archives-title">Newsletter Archives</h1>
+            <hr className="archives-divider" />
 
-      {/* Archives List */}
-      <section className="py-12">
-        <div className="container mx-auto px-4 max-w-4xl">
-          {sortedIssues.length === 0 ? (
-            <div className="bg-white rounded-lg shadow-md p-12 text-center">
-              <p className="text-gray-600 text-lg">
-                No published issues yet.
+            {sortedIssues.length === 0 ? (
+              <p className="archives-empty">
+                No published issues yet. Check back soon!
               </p>
-              <p className="text-sm text-gray-500 mt-2">
-                Check back soon for updates!
-              </p>
-            </div>
-          ) : (
-            <div className="space-y-6">
-              {sortedIssues.map((issue) => (
-                <Link
-                  key={issue._id}
-                  href={`/archives/${issue.slug}`}
-                  className="block bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow overflow-hidden group"
-                >
-                  <div className="p-6">
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
-                          <span className="inline-block px-3 py-1 bg-azalea-green text-white text-sm font-semibold rounded">
-                            Edition {issue.edition}
-                          </span>
-                          <span className="text-sm text-gray-500">
-                            {new Date(issue.publishedAt || issue.createdAt).toLocaleDateString('en-US', {
-                              year: 'numeric',
-                              month: 'long',
-                              day: 'numeric',
-                            })}
-                          </span>
-                        </div>
+            ) : (
+              <ul className="archives-list">
+                {sortedIssues.map((issue) => (
+                  <li key={issue._id}>
+                    <Link href={`/archives/${issue.slug}`} className="archives-link">
+                      {formatIssueText(issue)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </main>
 
-                        <h2 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-azalea-green transition-colors">
-                          {issue.title}
-                        </h2>
-
-                        {issue.bannerDate && (
-                          <p className="text-sm text-gray-600">
-                            Published: {new Date(issue.bannerDate).toLocaleDateString('en-US', {
-                              year: 'numeric',
-                              month: 'long',
-                            })}
-                          </p>
-                        )}
-                      </div>
-
-                      <div className="ml-4">
-                        <svg
-                          className="w-6 h-6 text-gray-400 group-hover:text-azalea-green transition-colors"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 5l7 7-7 7"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          )}
+          {/* Footer - same as main page */}
+          <footer className="site-footer">
+            <p>
+              &copy; {new Date().getFullYear()} Azalea Report - SGMC Health Internal Medicine Residency Newsletter
+            </p>
+          </footer>
         </div>
-      </section>
+      </div>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8 mt-12">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-400">
-            &copy; {new Date().getFullYear()} SGMC Internal Medicine Residency Program
-          </p>
-          <p className="text-sm text-gray-500 mt-2">
-            Azalea Report Newsletter
-          </p>
-        </div>
-      </footer>
-    </main>
+      {/* Theme Toggle */}
+      <ThemeToggle />
+    </div>
   );
 }

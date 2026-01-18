@@ -5,6 +5,7 @@ import { ShowMore } from './ShowMore';
 
 interface ChiefsCornerSectionProps {
   data: ChiefsCornerSectionData;
+  backgroundColor?: string;
 }
 
 /**
@@ -12,7 +13,7 @@ interface ChiefsCornerSectionProps {
  * Displays multiple chiefs side-by-side (2 columns on desktop)
  * Each chief has their circular image and bio
  */
-export function ChiefsCornerSection({ data }: ChiefsCornerSectionProps) {
+export function ChiefsCornerSection({ data, backgroundColor }: ChiefsCornerSectionProps) {
   const { sectionTitle = "The Chiefs' Corner" } = data;
 
   // Handle both new array format and legacy single chief format
@@ -33,8 +34,18 @@ export function ChiefsCornerSection({ data }: ChiefsCornerSectionProps) {
     return null;
   }
 
+  // When no backgroundColor is set, use transparent class for proper dark mode text colors
+  const hasBackground = !!backgroundColor;
+
   return (
-    <section className="section-card section-card-green" style={{ padding: 0, marginBottom: '2rem' }}>
+    <section
+      className={hasBackground ? 'section-card section-with-bg' : 'section-transparent'}
+      style={{
+        padding: 0,
+        marginBottom: '2rem',
+        backgroundColor: backgroundColor || 'transparent',
+      }}
+    >
       {/* Section Title */}
       {sectionTitle && (
         <h2 className="section-title" style={{ padding: '2rem 2rem 0 2rem' }}>

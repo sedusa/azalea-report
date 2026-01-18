@@ -4,13 +4,15 @@ import { SECTION_REGISTRY } from '@azalea/shared/constants';
 import type { Section } from '@azalea/shared/types';
 import { Input, Textarea } from '@azalea/ui';
 import { PropertyField } from './PropertyField';
+import { ColorPicker } from './ColorPicker';
 
 interface PropertyPanelProps {
   section: Section | null;
   onUpdate: (data: Record<string, unknown>) => void;
+  onBackgroundColorChange?: (color: string | undefined) => void;
 }
 
-export function PropertyPanel({ section, onUpdate }: PropertyPanelProps) {
+export function PropertyPanel({ section, onUpdate, onBackgroundColorChange }: PropertyPanelProps) {
   if (!section) {
     return (
       <div className="flex flex-col items-center justify-center h-full text-center p-8">
@@ -65,6 +67,36 @@ export function PropertyPanel({ section, onUpdate }: PropertyPanelProps) {
       </div>
 
       <div className="p-6 space-y-6">
+        {/* Background Color Pickers */}
+        {onBackgroundColorChange && section.type === 'twoColumn' ? (
+          /* Two Column Section - Show two color pickers for each column */
+          <div className="space-y-3">
+            <ColorPicker
+              label="Left Column Color"
+              value={(section.data as Record<string, unknown>).leftBackgroundColor as string | undefined}
+              onChange={(color) => handleFieldChange('leftBackgroundColor', color)}
+            />
+            <ColorPicker
+              label="Right Column Color"
+              value={(section.data as Record<string, unknown>).rightBackgroundColor as string | undefined}
+              onChange={(color) => handleFieldChange('rightBackgroundColor', color)}
+            />
+          </div>
+        ) : onBackgroundColorChange && (
+          /* Other sections - Single background color */
+          <ColorPicker
+            label="Background Color"
+            value={section.backgroundColor}
+            onChange={onBackgroundColorChange}
+          />
+        )}
+
+        {/* Divider */}
+        {onBackgroundColorChange && (
+          <hr style={{ borderColor: 'rgb(var(--border-primary))' }} />
+        )}
+
+        {/* Section Fields */}
         {sectionDef.fields.map((field) => (
           <PropertyField
             key={field.name}

@@ -5,6 +5,7 @@ import { ShowMore } from './ShowMore';
 
 interface InternsCornerSectionProps {
   data: InternsCornerSectionData;
+  backgroundColor?: string;
 }
 
 /**
@@ -12,7 +13,7 @@ interface InternsCornerSectionProps {
  * Displays multiple interns side-by-side (2 columns on desktop)
  * Each intern has their circular image and bio
  */
-export function InternsCornerSection({ data }: InternsCornerSectionProps) {
+export function InternsCornerSection({ data, backgroundColor }: InternsCornerSectionProps) {
   const { sectionTitle = "Interns' Corner" } = data;
 
   // Handle both new array format and legacy single intern format
@@ -33,8 +34,18 @@ export function InternsCornerSection({ data }: InternsCornerSectionProps) {
     return null;
   }
 
+  // When no backgroundColor is set, use transparent class for proper dark mode text colors
+  const hasBackground = !!backgroundColor;
+
   return (
-    <section className="section-card section-card-interns" style={{ padding: 0, marginBottom: '2rem' }}>
+    <section
+      className={hasBackground ? 'section-card section-with-bg' : 'section-transparent'}
+      style={{
+        padding: 0,
+        marginBottom: '2rem',
+        backgroundColor: backgroundColor || 'transparent',
+      }}
+    >
       {/* Section Title */}
       {sectionTitle && (
         <h2 className="section-title" style={{ padding: '2rem 2rem 0 2rem' }}>

@@ -291,6 +291,35 @@ export const toggleVisibility = mutation({
   },
 });
 
+// Update section background color
+export const updateBackgroundColor = mutation({
+  args: {
+    id: v.id("sections"),
+    backgroundColor: v.optional(v.string()),
+    userId: v.id("users"),
+  },
+  handler: async (ctx, args) => {
+    const section = await ctx.db.get(args.id);
+    if (!section) throw new Error("Section not found");
+
+    const now = Date.now();
+
+    await ctx.db.patch(args.id, {
+      backgroundColor: args.backgroundColor,
+      updatedAt: now,
+    });
+
+    // Update issue version
+    const issue = await ctx.db.get(section.issueId);
+    if (issue) {
+      await ctx.db.patch(section.issueId, {
+        updatedAt: now,
+        version: issue.version + 1,
+      });
+    }
+  },
+});
+
 // Reorder sections
 export const reorder = mutation({
   args: {

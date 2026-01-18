@@ -87,6 +87,7 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
   const deleteSection = useMutation(api.sections.remove);
   const duplicateSection = useMutation(api.sections.duplicate);
   const toggleVisibility = useMutation(api.sections.toggleVisibility);
+  const updateBackgroundColor = useMutation(api.sections.updateBackgroundColor);
   const reorderSections = useMutation(api.sections.reorder);
   const updateIssue = useMutation(api.issues.update);
   const publishIssue = useMutation(api.issues.publish);
@@ -245,6 +246,19 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
       }
     } catch (error) {
       toast.error('Failed to update section');
+      console.error(error);
+    }
+  };
+
+  const handleBackgroundColorChange = async (sectionId: string, color: string | undefined) => {
+    try {
+      await updateBackgroundColor({
+        id: sectionId as Id<'sections'>,
+        backgroundColor: color,
+        userId: issue?.createdBy as Id<'users'>,
+      });
+    } catch (error) {
+      toast.error('Failed to update background color');
       console.error(error);
     }
   };
@@ -650,6 +664,11 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
               onUpdate={(data) => {
                 if (selectedSectionId) {
                   handleSectionUpdate(selectedSectionId, data);
+                }
+              }}
+              onBackgroundColorChange={(color) => {
+                if (selectedSectionId) {
+                  handleBackgroundColorChange(selectedSectionId, color);
                 }
               }}
             />

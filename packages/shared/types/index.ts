@@ -42,6 +42,7 @@ export interface Section {
   type: SectionType;
   order: number;
   visible: boolean;
+  backgroundColor?: string; // Pastel background color for the section
   data: Record<string, unknown>;
   createdAt: number;
   updatedAt: number;
@@ -267,6 +268,7 @@ export interface TwoColumnSectionData {
     label: string;
     value: string;
   }>;
+  leftBackgroundColor?: string; // Background color for left column card
   // Right column - About style
   rightTitle?: string;
   rightImage?: string;
@@ -274,6 +276,7 @@ export interface TwoColumnSectionData {
   rightContent: string;
   rightSubtitle?: string;
   rightBullets?: string[];
+  rightBackgroundColor?: string; // Background color for right column card
 }
 
 // Union type for all section data

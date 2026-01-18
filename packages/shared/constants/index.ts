@@ -10,10 +10,30 @@ export type FieldType =
   | 'date'
   | 'select'
   | 'number'
+  | 'color'
   | 'chiefArray'
   | 'internArray'
   | 'detailsArray'
   | 'bulletsArray';
+
+// Pastel Color Palette for Section Backgrounds
+// All colors have good contrast with dark text (#333333)
+export const SECTION_BACKGROUND_COLORS = [
+  { value: '#f7f3e8', label: 'Warm Cream', name: 'cream' },
+  { value: '#FFE6D6', label: 'Peach', name: 'peach' },
+  { value: '#e6f0ed', label: 'Mint Green', name: 'mint' },
+  { value: '#ddfee9', label: 'Light Green', name: 'lightGreen' },
+  { value: '#e8f4f8', label: 'Light Blue', name: 'lightBlue' },
+  { value: '#f0e6f6', label: 'Lavender', name: 'lavender' },
+  { value: '#fff9e6', label: 'Lemon', name: 'lemon' },
+  { value: '#fce4ec', label: 'Pink', name: 'pink' },
+  { value: '#e0f2f1', label: 'Teal', name: 'teal' },
+  { value: '#fff3e0', label: 'Orange Cream', name: 'orangeCream' },
+  { value: '#f3e5f5', label: 'Light Purple', name: 'lightPurple' },
+  { value: '#e8eaf6', label: 'Indigo', name: 'indigo' },
+] as const;
+
+export type SectionBackgroundColor = typeof SECTION_BACKGROUND_COLORS[number]['value'];
 
 export interface FieldDefinition {
   name: string;

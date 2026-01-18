@@ -5,19 +5,23 @@ import { ShowMore } from './ShowMore';
 
 interface TextImageSectionProps {
   data: TextImageSectionData;
+  backgroundColor?: string;
 }
 
 /**
  * TextImageSection - Two-column layout with text and image
  * Image can be positioned left or right based on imagePosition prop
  */
-export function TextImageSection({ data }: TextImageSectionProps) {
+export function TextImageSection({ data, backgroundColor }: TextImageSectionProps) {
   const { sectionTitle, content, image, imagePosition = 'right', imageCaption } = data;
 
   // Don't render if no content
   if (!content && !image) {
     return null;
   }
+
+  // When no backgroundColor is set, use transparent class for proper dark mode text colors
+  const hasBackground = !!backgroundColor;
 
   const imageElement = image && (
     <div style={{ width: '100%' }}>
@@ -28,19 +32,10 @@ export function TextImageSection({ data }: TextImageSectionProps) {
           width: '100%',
           height: 'auto',
           borderRadius: '8px',
-          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
         }}
       />
       {imageCaption && (
-        <p
-          style={{
-            color: '#666666',
-            fontSize: '1rem',
-            fontStyle: 'italic',
-            marginTop: '0.5rem',
-            textAlign: 'left',
-          }}
-        >
+        <p className="featureCaption">
           {imageCaption}
         </p>
       )}
@@ -48,19 +43,21 @@ export function TextImageSection({ data }: TextImageSectionProps) {
   );
 
   const textElement = (
-    <div
-      style={{
-        color: '#333333',
-        fontSize: '1.3rem',
-        lineHeight: '1.6',
-      }}
-    >
+    <div className="basic-text">
       <ShowMore content={content} maxHeight={300} />
     </div>
   );
 
   return (
-    <section className="section-card" style={{ marginBottom: '2rem' }}>
+    <section
+      className={hasBackground ? 'section-card section-with-bg' : 'section-transparent'}
+      style={{
+        marginBottom: '2rem',
+        backgroundColor: backgroundColor || 'transparent',
+        borderRadius: hasBackground ? '8px' : undefined,
+        padding: hasBackground ? '2rem' : undefined,
+      }}
+    >
       {sectionTitle && (
         <h2 className="section-title" style={{ marginTop: 0 }}>
           {sectionTitle}

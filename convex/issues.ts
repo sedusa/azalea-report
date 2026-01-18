@@ -21,14 +21,33 @@ export const list = query({
   },
 });
 
-// Get issue by slug
+// Get issue by slug (with resolved banner image URL)
 export const getBySlug = query({
   args: { slug: v.string() },
   handler: async (ctx, args) => {
-    return await ctx.db
+    const issue = await ctx.db
       .query("issues")
       .withIndex("by_slug", (q) => q.eq("slug", args.slug))
       .unique();
+
+    if (!issue) return null;
+
+    // Resolve banner image URL if present
+    let bannerImageUrl: string | null = null;
+    if (issue.bannerImage) {
+      const media = await ctx.db.get(issue.bannerImage);
+      if (media?.storageId) {
+        bannerImageUrl = await ctx.storage.getUrl(media.storageId);
+      }
+    }
+
+    return {
+      ...issue,
+      // Keep the original media ID for consistency
+      bannerImageId: issue.bannerImage,
+      // Also provide the resolved URL for display
+      bannerImageUrl: bannerImageUrl ?? undefined,
+    };
   },
 });
 
