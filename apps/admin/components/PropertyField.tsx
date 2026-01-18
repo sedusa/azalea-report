@@ -1,0 +1,132 @@
+'use client';
+
+import type { FieldDefinition } from '@azalea/shared/constants';
+import type { Id } from '@convex/_generated/dataModel';
+import { Input, Textarea } from '@azalea/ui';
+import { TiptapEditor } from './TiptapEditor';
+import { ImagePicker, MultiImagePicker } from './ImagePicker';
+
+interface PropertyFieldProps {
+  field: FieldDefinition;
+  value: unknown;
+  onChange: (value: unknown) => void;
+}
+
+export function PropertyField({ field, value, onChange }: PropertyFieldProps) {
+  const stringValue = value as string | undefined;
+  const numberValue = value as number | undefined;
+
+  switch (field.type) {
+    case 'text':
+      return (
+        <Input
+          label={field.label}
+          placeholder={field.placeholder}
+          value={stringValue || ''}
+          onChange={(e) => onChange(e.target.value)}
+          required={field.required}
+        />
+      );
+
+    case 'textarea':
+      return (
+        <Textarea
+          label={field.label}
+          placeholder={field.placeholder}
+          value={stringValue || ''}
+          onChange={(e) => onChange(e.target.value)}
+          required={field.required}
+          rows={4}
+        />
+      );
+
+    case 'number':
+      return (
+        <Input
+          type="number"
+          label={field.label}
+          placeholder={field.placeholder}
+          value={numberValue || ''}
+          onChange={(e) => onChange(Number(e.target.value))}
+          required={field.required}
+        />
+      );
+
+    case 'date':
+      return (
+        <Input
+          type="date"
+          label={field.label}
+          value={stringValue || ''}
+          onChange={(e) => onChange(e.target.value)}
+          required={field.required}
+        />
+      );
+
+    case 'select':
+      return (
+        <div>
+          <label className="block text-sm font-semibold mb-2" style={{ color: 'rgb(var(--text-primary))' }}>
+            {field.label}
+            {field.required && <span className="text-red-500 ml-1">*</span>}
+          </label>
+          <select
+            value={stringValue || ''}
+            onChange={(e) => onChange(e.target.value)}
+            required={field.required}
+            className="input-field"
+          >
+            {!field.required && <option value="">Select...</option>}
+            {field.options?.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </div>
+      );
+
+    case 'richtext':
+      return (
+        <div>
+          <label className="block text-sm font-semibold mb-2" style={{ color: 'rgb(var(--text-primary))' }}>
+            {field.label}
+            {field.required && <span className="text-red-500 ml-1">*</span>}
+          </label>
+          <TiptapEditor
+            content={stringValue || ''}
+            onChange={onChange}
+            placeholder={field.placeholder}
+          />
+        </div>
+      );
+
+    case 'image':
+      return (
+        <ImagePicker
+          label={field.label}
+          value={value as Id<'media'> | null}
+          onChange={onChange}
+          required={field.required}
+        />
+      );
+
+    case 'images':
+      return (
+        <MultiImagePicker
+          label={field.label}
+          value={value as Id<'media'>[] | undefined}
+          onChange={onChange}
+          required={field.required}
+          maxImages={10}
+        />
+      );
+
+    default:
+      return (
+        <div className="text-sm" style={{ color: 'rgb(var(--text-secondary))' }}>
+          Unsupported field type: {field.type}
+        </div>
+      );
+  }
+}

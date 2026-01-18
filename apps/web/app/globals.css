@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  .prose-azalea {
+    @apply prose prose-lg max-w-none;
+    @apply prose-headings:text-gray-900 prose-headings:font-semibold;
+    @apply prose-p:text-gray-700 prose-p:leading-relaxed;
+    @apply prose-a:text-azalea-green prose-a:no-underline hover:prose-a:underline;
+    @apply prose-strong:text-gray-900;
+  }
+}

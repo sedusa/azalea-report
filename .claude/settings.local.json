@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /Users/samueledusa/Desktop/code/my-projects/azalear-report show --name-only 807e496)",
+      "Bash(npm uninstall:*)",
+      "Bash(npx convex dev --once)",
+      "Bash(lsof:*)",
+      "Bash(xargs grep:*)",
+      "Bash(xargs kill -9)",
+      "Bash(npm run dev:web:*)",
+      "Bash(pkill:*)",
+      "Bash(curl:*)",
+      "Bash(npx next dev -p 3000)",
+      "Bash(npm run dev:admin:*)",
+      "Bash(grep:*)",
+      "Bash(npx convex deploy:*)",
+      "Bash(npx convex run:*)",
+      "Bash(ls:*)",
+      "Bash(npm install:*)",
+      "Bash(npx tsx:*)",
+      "Bash(tee:*)",
+      "Skill(frontend-design)"
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+// @azalea/sections - Shared section renderer components
+// These components are used by both the public website and admin preview
+
+// Section components will be migrated from existing components/
+// Export them here as they are converted to Tailwind
+
+// export { AboutSection } from './AboutSection';
+// export { SpotlightSection } from './SpotlightSection';
+// export { CarouselSection } from './CarouselSection';
+// export { ChiefsCornerSection } from './ChiefsCornerSection';
+// export { InternsCornerSection } from './InternsCornerSection';
+// export { TextImageSection } from './TextImageSection';
+// export { EventsSection } from './EventsSection';
+// export { PodcastSection } from './PodcastSection';
+// export { BirthdaysSection } from './BirthdaysSection';
+// export { CulturositySection } from './CulturositySection';
+// export { CommunityServiceSection } from './CommunityServiceSection';
+// export { RecentSuccessSection } from './RecentSuccessSection';
+// export { MusingsSection } from './MusingsSection';
+// export { PhotosOfMonthSection } from './PhotosOfMonthSection';
+// export { TextCarouselSection } from './TextCarouselSection';
+// export { GenericTextSection } from './GenericTextSection';
+// export { CustomSection } from './CustomSection';
+
+// Main section renderer
+// export { SectionRenderer } from './SectionRenderer';
+
+// Export section components (migrated to TypeScript + Tailwind)
+export { SectionRenderer } from './components/SectionRenderer';
+export { SpotlightSection } from './components/SpotlightSection';
+export { AboutSection } from './components/AboutSection';
+export { ChiefsCornerSection } from './components/ChiefsCornerSection';
+export { InternsCornerSection } from './components/InternsCornerSection';
+export { GenericTextSection } from './components/GenericTextSection';
+
+// Ready status
+export const SECTIONS_READY = true;

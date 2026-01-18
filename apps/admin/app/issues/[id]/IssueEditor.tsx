@@ -1,0 +1,536 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { useQuery, useMutation } from 'convex/react';
+import { api } from '@convex/_generated/api';
+import type { Id } from '@convex/_generated/dataModel';
+import { SectionPalette } from '@/components/SectionPalette';
+import { DragDropCanvas } from '@/components/DragDropCanvas';
+import { PropertyPanel } from '@/components/PropertyPanel';
+import { PreviewPane } from '@/components/PreviewPane';
+import { SaveIndicator } from '@/components/SaveIndicator';
+import { ThemeToggle } from '@/components/ThemeToggle';
+import { Button } from '@azalea/ui';
+import { Modal } from '@azalea/ui';
+import { useAutosave } from '@/hooks/useAutosave';
+import { useUndoRedo } from '@/hooks/useUndoRedo';
+import { SECTION_REGISTRY } from '@azalea/shared/constants';
+import type { SectionType, Section, Issue } from '@azalea/shared/types';
+import { toast } from 'sonner';
+import { LuEye, LuUndo2, LuRedo2, LuArrowLeft, LuMenu, LuX } from 'react-icons/lu';
+import Link from 'next/link';
+
+interface IssueEditorProps {
+  issueId: string;
+}
+
+export function IssueEditor({ issueId }: IssueEditorProps) {
+  const [selectedSectionId, setSelectedSectionId] = useState<string | null>(null);
+  const [showPreview, setShowPreview] = useState(false);
+  const [showMobileDrawer, setShowMobileDrawer] = useState(false);
+  const [bannerData, setBannerData] = useState({
+    title: '',
+    bannerTitle: '',
+    bannerDate: '',
+  });
+
+  // Undo/redo system
+  const { canUndo, canRedo, undo, redo, addOperation } = useUndoRedo();
+
+  // Fetch data from Convex
+  const issue = useQuery(api.issues.get, { id: issueId as Id<'issues'> });
+  const sections = useQuery(api.sections.listByIssue, {
+    issueId: issueId as Id<'issues'>
+  }) || [];
+
+  // Mutations
+  const createSection = useMutation(api.sections.create);
+  const updateSection = useMutation(api.sections.update);
+  const deleteSection = useMutation(api.sections.remove);
+  const duplicateSection = useMutation(api.sections.duplicate);
+  const toggleVisibility = useMutation(api.sections.toggleVisibility);
+  const reorderSections = useMutation(api.sections.reorder);
+  const updateIssue = useMutation(api.issues.update);
+  const publishIssue = useMutation(api.issues.publish);
+
+  // Autosave for banner data
+  const { status, lastSavedAt } = useAutosave({
+    data: bannerData,
+    onSave: async (data) => {
+      if (!issue) return;
+      await updateIssue({
+        id: issueId as Id<'issues'>,
+        title: data.title,
+        bannerTitle: data.bannerTitle,
+        bannerDate: data.bannerDate,
+        userId: issue.createdBy,
+      });
+    },
+  });
+
+  // Warn user when leaving with unsaved changes
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      if (status === 'saving') {
+        e.preventDefault();
+        e.returnValue = '';
+      }
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+  }, [status]);
+
+  // Handle mobile drawer - prevent body scroll and handle ESC key
+  useEffect(() => {
+    if (showMobileDrawer) {
+      document.body.classList.add('drawer-open');
+
+      const handleEscape = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') {
+          setShowMobileDrawer(false);
+        }
+      };
+
+      window.addEventListener('keydown', handleEscape);
+
+      return () => {
+        document.body.classList.remove('drawer-open');
+        window.removeEventListener('keydown', handleEscape);
+      };
+    } else {
+      document.body.classList.remove('drawer-open');
+    }
+  }, [showMobileDrawer]);
+
+  // Initialize banner data when issue loads
+  if (issue && bannerData.title === '') {
+    setBannerData({
+      title: issue.title,
+      bannerTitle: issue.bannerTitle,
+      bannerDate: issue.bannerDate,
+    });
+  }
+
+  const selectedSection = sections.find((s) => s._id === selectedSectionId);
+
+  const handleAddSection = async (type: SectionType) => {
+    try {
+      const sectionDef = SECTION_REGISTRY[type];
+      const newSectionId = await createSection({
+        issueId: issueId as Id<'issues'>,
+        type,
+        data: sectionDef.exampleData(),
+        userId: issue?.createdBy as Id<'users'>,
+      });
+
+      addOperation({
+        type: 'section',
+        action: 'add',
+        undo: async () => {
+          await deleteSection({
+            id: newSectionId as Id<'sections'>,
+            userId: issue?.createdBy as Id<'users'>,
+          });
+          toast.success('Undid add section');
+        },
+        redo: async () => {
+          toast.info('Redo not fully implemented for add operations');
+        },
+      });
+
+      setSelectedSectionId(newSectionId);
+      toast.success(`${sectionDef.label} added`);
+    } catch (error) {
+      toast.error('Failed to add section');
+      console.error(error);
+    }
+  };
+
+  const handleSectionUpdate = async (sectionId: string, data: Record<string, unknown>) => {
+    try {
+      const previousSection = sections.find(s => s._id === sectionId);
+      const previousData = previousSection?.data;
+
+      await updateSection({
+        id: sectionId as Id<'sections'>,
+        data,
+        userId: issue?.createdBy as Id<'users'>,
+      });
+
+      if (previousData) {
+        addOperation({
+          type: 'section',
+          action: 'update',
+          undo: async () => {
+            await updateSection({
+              id: sectionId as Id<'sections'>,
+              data: previousData,
+              userId: issue?.createdBy as Id<'users'>,
+            });
+            toast.success('Undid update');
+          },
+          redo: async () => {
+            await updateSection({
+              id: sectionId as Id<'sections'>,
+              data,
+              userId: issue?.createdBy as Id<'users'>,
+            });
+            toast.success('Redid update');
+          },
+        });
+      }
+    } catch (error) {
+      toast.error('Failed to update section');
+      console.error(error);
+    }
+  };
+
+  const handleSectionDelete = async (sectionId: string) => {
+    try {
+      const section = sections.find(s => s._id === sectionId);
+      if (!section) return;
+
+      await deleteSection({
+        id: sectionId as Id<'sections'>,
+        userId: issue?.createdBy as Id<'users'>,
+      });
+
+      addOperation({
+        type: 'section',
+        action: 'delete',
+        undo: async () => {
+          await createSection({
+            issueId: issueId as Id<'issues'>,
+            type: section.type,
+            data: section.data,
+            userId: issue?.createdBy as Id<'users'>,
+          });
+          toast.success('Undid delete');
+        },
+        redo: async () => {
+          await deleteSection({
+            id: sectionId as Id<'sections'>,
+            userId: issue?.createdBy as Id<'users'>,
+          });
+          toast.success('Redid delete');
+        },
+      });
+
+      if (selectedSectionId === sectionId) {
+        setSelectedSectionId(null);
+      }
+
+      toast.success('Section deleted');
+    } catch (error) {
+      toast.error('Failed to delete section');
+      console.error(error);
+    }
+  };
+
+  const handleSectionDuplicate = async (sectionId: string) => {
+    try {
+      const newSectionId = await duplicateSection({
+        id: sectionId as Id<'sections'>,
+        userId: issue?.createdBy as Id<'users'>,
+      });
+
+      setSelectedSectionId(newSectionId);
+      toast.success('Section duplicated');
+    } catch (error) {
+      toast.error('Failed to duplicate section');
+      console.error(error);
+    }
+  };
+
+  const handleToggleVisibility = async (sectionId: string) => {
+    try {
+      await toggleVisibility({
+        id: sectionId as Id<'sections'>,
+        userId: issue?.createdBy as Id<'users'>,
+      });
+    } catch (error) {
+      toast.error('Failed to toggle visibility');
+      console.error(error);
+    }
+  };
+
+  const handleReorder = async (newOrder: Section[]) => {
+    try {
+      await reorderSections({
+        issueId: issueId as Id<'issues'>,
+        sectionIds: newOrder.map(s => s._id) as Id<'sections'>[],
+        userId: issue?.createdBy as Id<'users'>,
+      });
+    } catch (error) {
+      toast.error('Failed to reorder sections');
+      console.error(error);
+    }
+  };
+
+  const handlePublish = async () => {
+    try {
+      await publishIssue({
+        id: issueId as Id<'issues'>,
+        userId: issue?.createdBy as Id<'users'>,
+      });
+      toast.success('Issue published!');
+    } catch (error) {
+      toast.error('Failed to publish issue');
+      console.error(error);
+    }
+  };
+
+  if (!issue) {
+    return (
+      <div className="h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="skeleton w-12 h-12 rounded-full mx-auto mb-4"></div>
+          <p style={{ color: 'rgb(var(--text-secondary))' }}>Loading issue...</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="h-screen flex flex-col" style={{ backgroundColor: 'rgb(var(--bg-primary))' }}>
+      {/* Mobile Drawer Overlay */}
+      <div
+        className={`mobile-drawer-overlay ${showMobileDrawer ? 'visible' : 'hidden'}`}
+        onClick={() => setShowMobileDrawer(false)}
+      />
+
+      {/* Mobile Drawer */}
+      <div className={`mobile-drawer ${showMobileDrawer ? 'open' : 'closed'}`}>
+        <div className="p-4 border-b" style={{ borderColor: 'rgb(var(--border-primary))' }}>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg font-bold" style={{ color: 'rgb(var(--text-primary))' }}>
+              Sections
+            </h2>
+            <button
+              onClick={() => setShowMobileDrawer(false)}
+              className="hamburger-btn"
+              aria-label="Close menu"
+            >
+              <LuX className="w-5 h-5" style={{ color: 'rgb(var(--text-primary))' }} />
+            </button>
+          </div>
+        </div>
+        <SectionPalette onAddSection={(type) => {
+          handleAddSection(type);
+          setShowMobileDrawer(false);
+        }} />
+      </div>
+
+      {/* Header */}
+      <header className="admin-header flex-shrink-0">
+        {/* Mobile Hamburger Button */}
+        <button
+          className="lg:hidden hamburger-btn mr-4"
+          onClick={() => setShowMobileDrawer(true)}
+          aria-label="Open menu"
+        >
+          <LuMenu className="w-5 h-5" style={{ color: 'rgb(var(--text-primary))' }} />
+        </button>
+
+        <div className="flex items-center gap-4 flex-1">
+          <Link href="/issues" className="btn-ghost flex items-center gap-2">
+            <LuArrowLeft className="w-4 h-4" />
+            <span className="hidden sm:inline">Back</span>
+          </Link>
+
+          <div className="border-l border-r px-4" style={{ borderColor: 'rgb(var(--border-primary))' }}>
+            <h1 className="text-lg font-bold truncate max-w-xs">
+              {issue.title || 'Untitled Issue'}
+            </h1>
+            <div className="flex items-center gap-2 mt-1">
+              <span className={`status-badge ${issue.status}`}>
+                {issue.status.charAt(0).toUpperCase() + issue.status.slice(1)}
+              </span>
+              <SaveIndicator status={status} lastSavedAt={lastSavedAt} />
+            </div>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-3">
+          {/* Undo/Redo Buttons */}
+          <div className="hidden md:flex items-center gap-1 mr-2 pr-3 border-r" style={{ borderColor: 'rgb(var(--border-primary))' }}>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={undo}
+              disabled={!canUndo}
+              title="Undo (Ctrl+Z)"
+              className="btn-ghost"
+            >
+              <LuUndo2 className="w-4 h-4" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={redo}
+              disabled={!canRedo}
+              title="Redo (Ctrl+Shift+Z)"
+              className="btn-ghost"
+            >
+              <LuRedo2 className="w-4 h-4" />
+            </Button>
+          </div>
+
+          <ThemeToggle />
+
+          <Button
+            variant="secondary"
+            size="sm"
+            onClick={() => setShowPreview(true)}
+            className="btn-secondary hidden sm:flex items-center gap-2"
+          >
+            <LuEye className="w-4 h-4" />
+            <span>Preview</span>
+          </Button>
+
+          <Button
+            variant="primary"
+            size="sm"
+            onClick={handlePublish}
+            disabled={issue.status === 'published'}
+            className="btn-primary"
+          >
+            {issue.status === 'published' ? 'Published' : 'Publish'}
+          </Button>
+        </div>
+      </header>
+
+      {/* Main Editor */}
+      <div className="flex-1 flex overflow-hidden">
+        {/* Section Palette - 25% on desktop, hidden on mobile */}
+        <div className="hidden lg:flex lg:w-[25%] border-r overflow-hidden" style={{
+          backgroundColor: 'rgb(var(--bg-secondary))',
+          borderColor: 'rgb(var(--border-primary))'
+        }}>
+          <SectionPalette onAddSection={handleAddSection} />
+        </div>
+
+        {/* Canvas & Property Panel Container - 75% combined */}
+        <div className="flex-1 lg:flex-none lg:w-[75%] flex flex-col lg:flex-row overflow-hidden">
+          {/* Drag & Drop Canvas - 35% of total width on desktop (46.67% of 75%), full width on mobile */}
+          <div className="w-full lg:w-[46.67%] overflow-y-auto" style={{ backgroundColor: 'rgb(var(--bg-tertiary))' }}>
+            <div className="p-4 sm:p-6 lg:p-8">
+              <div className="max-w-4xl mx-auto space-y-4">
+                {/* Banner Section */}
+                <div className="section-card">
+                  <h3 className="font-bold text-lg mb-4">Banner</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium mb-2" style={{ color: 'rgb(var(--text-secondary))' }}>
+                        Issue Title
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="January 2026 Edition"
+                        value={bannerData.title}
+                        onChange={(e) => setBannerData({ ...bannerData, title: e.target.value })}
+                        className="input-field"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2" style={{ color: 'rgb(var(--text-secondary))' }}>
+                        Banner Title
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="AZALEA REPORT"
+                        value={bannerData.bannerTitle}
+                        onChange={(e) => setBannerData({ ...bannerData, bannerTitle: e.target.value })}
+                        className="input-field"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2" style={{ color: 'rgb(var(--text-secondary))' }}>
+                        Date
+                      </label>
+                      <input
+                        type="date"
+                        value={bannerData.bannerDate}
+                        onChange={(e) => setBannerData({ ...bannerData, bannerDate: e.target.value })}
+                        className="input-field"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Sections */}
+                {sections.length > 0 ? (
+                  <DragDropCanvas
+                    sections={sections as Section[]}
+                    selectedSectionId={selectedSectionId}
+                    onSectionSelect={setSelectedSectionId}
+                    onSectionReorder={handleReorder}
+                    onSectionDelete={handleSectionDelete}
+                    onSectionDuplicate={handleSectionDuplicate}
+                    onSectionToggleVisibility={handleToggleVisibility}
+                  />
+                ) : (
+                  <div className="text-center py-12 section-card border-dashed" style={{ borderWidth: '2px' }}>
+                    <svg
+                      className="mx-auto h-12 w-12 mb-4"
+                      style={{ color: 'rgb(var(--text-tertiary))' }}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                      />
+                    </svg>
+                    <h3 className="text-sm font-medium mb-2">No sections</h3>
+                    <p className="text-sm" style={{ color: 'rgb(var(--text-secondary))' }}>
+                      Add sections from the palette
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Property Panel - 40% of total width on desktop (53.33% of 75%), full width on mobile when section selected */}
+          <div
+            className={`
+              w-full lg:w-[53.33%] border-l overflow-hidden
+              ${selectedSection ? 'block' : 'hidden lg:block'}
+            `}
+            style={{
+              backgroundColor: 'rgb(var(--bg-secondary))',
+              borderColor: 'rgb(var(--border-primary))'
+            }}
+          >
+            <PropertyPanel
+              section={selectedSection as Section | null}
+              onUpdate={(data) => {
+                if (selectedSectionId) {
+                  handleSectionUpdate(selectedSectionId, data);
+                }
+              }}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Preview Modal */}
+      <Modal
+        isOpen={showPreview}
+        onClose={() => setShowPreview(false)}
+        title="Preview"
+        size="full"
+      >
+        <PreviewPane
+          issue={issue as Issue}
+          sections={sections as Section[]}
+        />
+      </Modal>
+    </div>
+  );
+}

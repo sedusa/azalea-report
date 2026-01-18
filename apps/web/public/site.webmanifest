@@ -1,0 +1,19 @@
+{
+  "name": "Azalea Report",
+  "short_name": "Azalea Report",
+  "icons": [
+    {
+      "src": "azalea-192.jpg",
+      "sizes": "192x192",
+      "type": "image/jpg"
+    },
+    {
+      "src": "azalea-512.jpg",
+      "sizes": "512x512",
+      "type": "image/jpg"
+    }
+  ],
+  "theme_color": "#016F53",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
