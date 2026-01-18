@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { ConvexClientProvider } from '../convex/ConvexClientProvider';
+import { ThemeProvider } from '@/contexts/ThemeContext';
 
 export const metadata: Metadata = {
   title: 'Azalea Report',
@@ -13,9 +14,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-white">
-        <ConvexClientProvider>{children}</ConvexClientProvider>
+    <html lang="en" className="dark">
+      <body className="min-h-screen">
+        <ConvexClientProvider>
+          <ThemeProvider>{children}</ThemeProvider>
+        </ConvexClientProvider>
       </body>
     </html>
   );

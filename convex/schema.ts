@@ -41,6 +41,7 @@ export default defineSchema({
       v.literal("musings"),
       v.literal("photosOfMonth"),
       v.literal("genericText"),
+      v.literal("twoColumn"),
       v.literal("custom")
     ),
     order: v.number(),

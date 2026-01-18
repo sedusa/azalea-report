@@ -3,13 +3,14 @@
 import { SECTION_REGISTRY } from '@azalea/shared/constants';
 import type { SectionType } from '@azalea/shared/types';
 import * as LucideIcons from 'react-icons/lu';
+import { DraggablePaletteItem } from './DraggablePaletteItem';
 
 interface SectionPaletteProps {
   onAddSection: (type: SectionType) => void;
 }
 
 // Map icon names from registry to Lucide React icons
-const getIcon = (iconName: string) => {
+export const getIcon = (iconName: string) => {
   // Convert icon name to PascalCase for Lucide
   const pascalName = iconName
     .split(/[-_]/)
@@ -32,7 +33,7 @@ export function SectionPalette({ onAddSection }: SectionPaletteProps) {
           Add Section
         </h3>
         <p className="text-sm" style={{ color: 'rgb(var(--text-secondary))' }}>
-          Click to add a section to your issue
+          Drag or click to add a section
         </p>
       </div>
 
@@ -41,23 +42,12 @@ export function SectionPalette({ onAddSection }: SectionPaletteProps) {
           const Icon = getIcon(section.icon);
 
           return (
-            <button
+            <DraggablePaletteItem
               key={section.type}
+              section={section}
+              icon={Icon}
               onClick={() => onAddSection(section.type)}
-              className="palette-item text-left"
-            >
-              <div className="palette-icon-wrapper">
-                <Icon className="palette-icon" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold mb-0.5" style={{ color: 'rgb(var(--text-primary))' }}>
-                  {section.label}
-                </p>
-                <p className="text-xs line-clamp-2" style={{ color: 'rgb(var(--text-secondary))' }}>
-                  {section.description}
-                </p>
-              </div>
-            </button>
+            />
           );
         })}
       </div>

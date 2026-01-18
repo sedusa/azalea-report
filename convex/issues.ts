@@ -32,23 +32,60 @@ export const getBySlug = query({
   },
 });
 
-// Get issue by ID
+// Get issue by ID (with resolved banner image URL)
 export const get = query({
   args: { id: v.id("issues") },
   handler: async (ctx, args) => {
-    return await ctx.db.get(args.id);
+    const issue = await ctx.db.get(args.id);
+    if (!issue) return null;
+
+    // Resolve banner image URL if present
+    let bannerImageUrl: string | null = null;
+    if (issue.bannerImage) {
+      const media = await ctx.db.get(issue.bannerImage);
+      if (media?.storageId) {
+        bannerImageUrl = await ctx.storage.getUrl(media.storageId);
+      }
+    }
+
+    return {
+      ...issue,
+      // Keep the original media ID for editing
+      bannerImageId: issue.bannerImage,
+      // Also provide the resolved URL for display
+      bannerImageUrl: bannerImageUrl ?? undefined,
+    };
   },
 });
 
-// Get latest published issue
+// Get latest published issue (with resolved banner image URL)
 export const getLatestPublished = query({
   args: {},
   handler: async (ctx) => {
-    return await ctx.db
+    const issue = await ctx.db
       .query("issues")
       .withIndex("by_status", (q) => q.eq("status", "published"))
       .order("desc")
       .first();
+
+    if (!issue) return null;
+
+    // Resolve banner image URL if present
+    let bannerImageUrl: string | null = null;
+    if (issue.bannerImage) {
+      const media = await ctx.db.get(issue.bannerImage);
+      if (media?.storageId) {
+        bannerImageUrl = await ctx.storage.getUrl(media.storageId);
+      }
+    }
+
+    return {
+      ...issue,
+      // Keep the original media ID for consistency
+      bannerImageId: issue.bannerImage,
+      // Also provide the resolved URL for display
+      bannerImageUrl: bannerImageUrl ?? undefined,
+    };
   },
 });
 
@@ -59,11 +96,18 @@ export const create = mutation({
     edition: v.number(),
     bannerTitle: v.string(),
     bannerDate: v.string(),
-    userId: v.id("users"),
+    // Accept either userId or createdBy for backwards compatibility
+    userId: v.optional(v.id("users")),
+    createdBy: v.optional(v.id("users")),
   },
   handler: async (ctx, args) => {
     const now = Date.now();
     const slug = `edition-${args.edition}`;
+    // Support both userId and createdBy params
+    const userIdValue = args.userId || args.createdBy;
+    if (!userIdValue) {
+      throw new Error("Either userId or createdBy is required");
+    }
 
     const issueId = await ctx.db.insert("issues", {
       title: args.title,
@@ -75,17 +119,19 @@ export const create = mutation({
       createdAt: now,
       updatedAt: now,
       version: 1,
-      createdBy: args.userId,
+      createdBy: userIdValue,
     });
 
     // Log the action
-    await ctx.db.insert("auditLog", {
-      userId: args.userId,
-      action: "issue.create",
-      resourceType: "issue",
-      resourceId: issueId,
-      timestamp: now,
-    });
+    if (userIdValue) {
+      await ctx.db.insert("auditLog", {
+        userId: userIdValue,
+        action: "issue.create",
+        resourceType: "issue",
+        resourceId: issueId,
+        timestamp: now,
+      });
+    }
 
     return issueId;
   },

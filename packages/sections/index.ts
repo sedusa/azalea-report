@@ -32,6 +32,11 @@ export { AboutSection } from './components/AboutSection';
 export { ChiefsCornerSection } from './components/ChiefsCornerSection';
 export { InternsCornerSection } from './components/InternsCornerSection';
 export { GenericTextSection } from './components/GenericTextSection';
+export { TwoColumnSection } from './components/TwoColumnSection';
+export { TextImageSection } from './components/TextImageSection';
+
+// Export utility components
+export { ShowMore } from './components/ShowMore';
 
 // Ready status
 export const SECTIONS_READY = true;

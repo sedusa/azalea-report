@@ -9,7 +9,11 @@ export type FieldType =
   | 'images'
   | 'date'
   | 'select'
-  | 'number';
+  | 'number'
+  | 'chiefArray'
+  | 'internArray'
+  | 'detailsArray'
+  | 'bulletsArray';
 
 export interface FieldDefinition {
   name: string;
@@ -78,37 +82,48 @@ export const SECTION_REGISTRY: Record<SectionType, SectionDefinition> = {
 
   chiefsCorner: {
     type: 'chiefsCorner',
-    label: 'Chief\'s Corner',
-    description: 'Message from the chief resident',
+    label: "Chiefs' Corner",
+    description: 'Feature chief residents with photos and bios (supports multiple chiefs in two-column layout)',
     icon: 'crown',
     fields: [
-      { name: 'sectionTitle', label: 'Section Title', type: 'text', required: false, placeholder: 'Chief\'s Corner' },
-      { name: 'name', label: 'Chief\'s Name', type: 'text', required: true },
-      { name: 'image', label: 'Photo', type: 'image', required: false },
-      { name: 'content', label: 'Message', type: 'richtext', required: true },
+      { name: 'sectionTitle', label: 'Section Title', type: 'text', required: false, placeholder: "The Chiefs' Corner" },
+      { name: 'chiefs', label: 'Chief Residents', type: 'chiefArray', required: true },
     ],
     exampleData: () => ({
-      sectionTitle: 'Chief\'s Corner',
-      name: 'Dr. John Doe',
-      content: '<p>Hello fellow residents! This month has been filled with exciting developments...</p>',
+      sectionTitle: "The Chiefs' Corner",
+      chiefs: [
+        {
+          name: 'Dr. Mariya Tom',
+          image: '',
+          content: '<p>Meet our Chief Resident who brings dedication and leadership to our program...</p>',
+        },
+        {
+          name: 'Dr. Brandon Rockwell',
+          image: '',
+          content: '<p>Our Chief Resident is passionate about medical education and patient care...</p>',
+        },
+      ],
     }),
   },
 
   internsCorner: {
     type: 'internsCorner',
-    label: 'Intern\'s Corner',
-    description: 'Message from an intern',
+    label: "Interns' Corner",
+    description: 'Feature interns with photos and bios (supports multiple interns in two-column layout)',
     icon: 'graduationCap',
     fields: [
-      { name: 'sectionTitle', label: 'Section Title', type: 'text', required: false, placeholder: 'Intern\'s Corner' },
-      { name: 'name', label: 'Intern\'s Name', type: 'text', required: true },
-      { name: 'image', label: 'Photo', type: 'image', required: false },
-      { name: 'content', label: 'Message', type: 'richtext', required: true },
+      { name: 'sectionTitle', label: 'Section Title', type: 'text', required: false, placeholder: "Interns' Corner" },
+      { name: 'interns', label: 'Interns', type: 'internArray', required: true },
     ],
     exampleData: () => ({
-      sectionTitle: 'Intern\'s Corner',
-      name: 'Dr. Sarah Johnson',
-      content: '<p>Starting internship has been an incredible journey. Here are some reflections...</p>',
+      sectionTitle: "Interns' Corner",
+      interns: [
+        {
+          name: 'Dr. Sarah Johnson',
+          image: '',
+          content: '<p>Starting internship has been an incredible journey. Here are some reflections...</p>',
+        },
+      ],
     }),
   },
 
@@ -350,6 +365,47 @@ export const SECTION_REGISTRY: Record<SectionType, SectionDefinition> = {
     exampleData: () => ({
       sectionTitle: 'Announcements',
       content: '<p>Important announcements for this month...</p>',
+    }),
+  },
+
+  twoColumn: {
+    type: 'twoColumn',
+    label: 'Two Column Layout',
+    description: 'Side-by-side spotlight and about sections',
+    icon: 'columns',
+    fields: [
+      // Left column (Spotlight style)
+      { name: 'leftTitle', label: 'Left Title', type: 'text', required: false, placeholder: 'Resident Spotlight' },
+      { name: 'leftName', label: 'Name', type: 'text', required: true, placeholder: 'Dr. Jane Smith' },
+      { name: 'leftImage', label: 'Portrait Photo', type: 'image', required: false },
+      { name: 'leftDetails', label: 'Details', type: 'detailsArray', required: false },
+      // Right column (About style)
+      { name: 'rightTitle', label: 'Right Title', type: 'text', required: false, placeholder: 'About the Program' },
+      { name: 'rightImage', label: 'Feature Image', type: 'image', required: false },
+      { name: 'rightImageCaption', label: 'Image Caption', type: 'text', required: false },
+      { name: 'rightContent', label: 'Content', type: 'richtext', required: true },
+      { name: 'rightSubtitle', label: 'Subtitle', type: 'text', required: false, placeholder: 'Interesting Facts' },
+      { name: 'rightBullets', label: 'Bullet Points', type: 'bulletsArray', required: false },
+    ],
+    exampleData: () => ({
+      leftTitle: 'Resident Spotlight',
+      leftName: 'Anna Ledford, MD',
+      leftDetails: [
+        { label: 'Birth place', value: 'Valdosta, GA' },
+        { label: 'Fun fact', value: 'Once met the President!' },
+        { label: 'Favorite dish', value: 'Shrimp and grits' },
+        { label: 'Interests', value: 'Hiking, reading, cooking' },
+        { label: 'Post-residency plans', value: 'Hospitalist medicine' },
+      ],
+      rightTitle: 'About the Program',
+      rightImageCaption: 'Our residents at work',
+      rightContent: '<p>The Internal Medicine Residency Program at SGMC Health prepares physicians to practice medicine at its highest level...</p>',
+      rightSubtitle: 'Interesting Facts',
+      rightBullets: [
+        'Established in 2018',
+        '36 categorical residents',
+        'High board pass rate',
+      ],
     }),
   },
 

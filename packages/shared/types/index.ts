@@ -16,6 +16,7 @@ export type SectionType =
   | 'musings'
   | 'photosOfMonth'
   | 'genericText'
+  | 'twoColumn'
   | 'custom';
 
 // Issue Types
@@ -188,8 +189,18 @@ export interface GenericTextSectionData {
   content: string;
 }
 
+export interface ChiefData {
+  name: string;
+  image?: string;
+  content: string;
+}
+
 export interface ChiefsCornerSectionData {
   sectionTitle?: string;
+  chiefs: ChiefData[];
+}
+
+export interface InternData {
   name: string;
   image?: string;
   content: string;
@@ -197,9 +208,7 @@ export interface ChiefsCornerSectionData {
 
 export interface InternsCornerSectionData {
   sectionTitle?: string;
-  name: string;
-  image?: string;
-  content: string;
+  interns: InternData[];
 }
 
 export interface CommunityServiceSectionData {
@@ -249,6 +258,24 @@ export interface CustomSectionData {
   html: string;
 }
 
+export interface TwoColumnSectionData {
+  // Left column - Spotlight style
+  leftTitle?: string;
+  leftName: string;
+  leftImage?: string;
+  leftDetails: Array<{
+    label: string;
+    value: string;
+  }>;
+  // Right column - About style
+  rightTitle?: string;
+  rightImage?: string;
+  rightImageCaption?: string;
+  rightContent: string;
+  rightSubtitle?: string;
+  rightBullets?: string[];
+}
+
 // Union type for all section data
 export type SectionData =
   | AboutSectionData
@@ -267,4 +294,5 @@ export type SectionData =
   | MusingsSectionData
   | PhotosOfMonthSectionData
   | TextCarouselSectionData
+  | TwoColumnSectionData
   | CustomSectionData;

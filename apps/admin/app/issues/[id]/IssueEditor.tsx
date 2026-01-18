@@ -4,12 +4,28 @@ import { useState, useEffect } from 'react';
 import { useQuery, useMutation } from 'convex/react';
 import { api } from '@convex/_generated/api';
 import type { Id } from '@convex/_generated/dataModel';
-import { SectionPalette } from '@/components/SectionPalette';
+import {
+  DndContext,
+  closestCenter,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+  DragEndEvent,
+  DragStartEvent,
+  DragOverlay,
+} from '@dnd-kit/core';
+import {
+  arrayMove,
+  sortableKeyboardCoordinates,
+} from '@dnd-kit/sortable';
+import { SectionPalette, getIcon } from '@/components/SectionPalette';
 import { DragDropCanvas } from '@/components/DragDropCanvas';
 import { PropertyPanel } from '@/components/PropertyPanel';
 import { PreviewPane } from '@/components/PreviewPane';
 import { SaveIndicator } from '@/components/SaveIndicator';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import { SectionCard } from '@/components/SectionCard';
 import { Button } from '@azalea/ui';
 import { Modal } from '@azalea/ui';
 import { useAutosave } from '@/hooks/useAutosave';
@@ -19,6 +35,7 @@ import type { SectionType, Section, Issue } from '@azalea/shared/types';
 import { toast } from 'sonner';
 import { LuEye, LuUndo2, LuRedo2, LuArrowLeft, LuMenu, LuX, LuSave } from 'react-icons/lu';
 import Link from 'next/link';
+import { ImagePicker } from '@/components/ImagePicker';
 
 interface IssueEditorProps {
   issueId: string;
@@ -28,14 +45,35 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
   const [selectedSectionId, setSelectedSectionId] = useState<string | null>(null);
   const [showPreview, setShowPreview] = useState(false);
   const [showMobileDrawer, setShowMobileDrawer] = useState(false);
-  const [bannerData, setBannerData] = useState({
+  const [activeId, setActiveId] = useState<string | null>(null);
+  const [activePaletteType, setActivePaletteType] = useState<SectionType | null>(null);
+  const [bannerData, setBannerData] = useState<{
+    title: string;
+    bannerTitle: string;
+    bannerDate: string;
+    bannerImage: Id<'media'> | null;
+  }>({
     title: '',
     bannerTitle: '',
     bannerDate: '',
+    bannerImage: null,
   });
+  const [initializedIssueId, setInitializedIssueId] = useState<string | null>(null);
 
   // Undo/redo system
   const { canUndo, canRedo, undo, redo, addOperation } = useUndoRedo();
+
+  // DnD sensors
+  const sensors = useSensors(
+    useSensor(PointerSensor, {
+      activationConstraint: {
+        distance: 8,
+      },
+    }),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
 
   // Fetch data from Convex
   const issue = useQuery(api.issues.get, { id: issueId as Id<'issues'> });
@@ -63,6 +101,7 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
         title: data.title,
         bannerTitle: data.bannerTitle,
         bannerDate: data.bannerDate,
+        bannerImage: data.bannerImage || undefined,
         userId: issue.createdBy,
       });
     },
@@ -122,14 +161,19 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
     }
   }, [showMobileDrawer]);
 
-  // Initialize banner data when issue loads
-  if (issue && bannerData.title === '') {
-    setBannerData({
-      title: issue.title,
-      bannerTitle: issue.bannerTitle,
-      bannerDate: issue.bannerDate,
-    });
-  }
+  // Initialize banner data when issue loads (only once per issue)
+  useEffect(() => {
+    if (issue && initializedIssueId !== issue._id) {
+      setBannerData({
+        title: issue.title,
+        bannerTitle: issue.bannerTitle,
+        bannerDate: issue.bannerDate,
+        // Use bannerImageId (the media ID) for saving, not the resolved URL
+        bannerImage: (issue as any).bannerImageId || null,
+      });
+      setInitializedIssueId(issue._id);
+    }
+  }, [issue, initializedIssueId]);
 
   const selectedSection = sections.find((s) => s._id === selectedSectionId);
 
@@ -287,6 +331,56 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
     }
   };
 
+  // DnD event handlers
+  const handleDragStart = (event: DragStartEvent) => {
+    const { active } = event;
+    const activeIdStr = active.id as string;
+
+    if (activeIdStr.startsWith('palette-')) {
+      // Dragging from palette
+      const sectionType = active.data.current?.sectionType as SectionType;
+      setActivePaletteType(sectionType);
+      setActiveId(null);
+    } else {
+      // Dragging existing section
+      setActiveId(activeIdStr);
+      setActivePaletteType(null);
+    }
+  };
+
+  const handleDragEnd = async (event: DragEndEvent) => {
+    const { active, over } = event;
+
+    setActiveId(null);
+    setActivePaletteType(null);
+
+    if (!over) return;
+
+    const activeIdStr = active.id as string;
+    const overIdStr = over.id as string;
+
+    // Check if we're dragging from palette
+    if (activeIdStr.startsWith('palette-') && active.data.current?.type === 'palette-item') {
+      const sectionType = active.data.current.sectionType as SectionType;
+      // Add new section
+      await handleAddSection(sectionType);
+      return;
+    }
+
+    // Otherwise, we're reordering sections
+    if (activeIdStr !== overIdStr) {
+      const oldIndex = sections.findIndex((s) => s._id === activeIdStr);
+      const newIndex = sections.findIndex((s) => s._id === overIdStr);
+
+      if (oldIndex !== -1 && newIndex !== -1) {
+        const newSections = arrayMove(sections, oldIndex, newIndex);
+        await handleReorder(newSections.map((s) => s._id));
+      }
+    }
+  };
+
+  const activeSectionForOverlay = sections.find((s) => s._id === activeId);
+
   const handlePublish = async () => {
     try {
       await publishIssue({
@@ -312,6 +406,12 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
   }
 
   return (
+    <DndContext
+      sensors={sensors}
+      collisionDetection={closestCenter}
+      onDragStart={handleDragStart}
+      onDragEnd={handleDragEnd}
+    >
     <div className="h-screen flex flex-col" style={{ backgroundColor: 'rgb(var(--bg-primary))' }}>
       {/* Mobile Drawer Overlay */}
       <div
@@ -487,6 +587,14 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
                         className="input-field"
                       />
                     </div>
+                    <div>
+                      <ImagePicker
+                        label="Banner Image"
+                        value={bannerData.bannerImage}
+                        onChange={(mediaId) => setBannerData({ ...bannerData, bannerImage: mediaId })}
+                        required={false}
+                      />
+                    </div>
                   </div>
                 </div>
 
@@ -496,7 +604,6 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
                     sections={sections as Section[]}
                     selectedSectionId={selectedSectionId}
                     onSectionSelect={setSelectedSectionId}
-                    onSectionReorder={handleReorder}
                     onSectionDelete={handleSectionDelete}
                     onSectionDuplicate={handleSectionDuplicate}
                     onSectionToggleVisibility={handleToggleVisibility}
@@ -563,5 +670,39 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
         />
       </Modal>
     </div>
+
+      {/* Drag Overlay */}
+      <DragOverlay>
+        {activeSectionForOverlay ? (
+          <div className="opacity-70">
+            <SectionCard
+              section={activeSectionForOverlay}
+              isSelected={false}
+              onSelect={() => {}}
+              onDelete={() => {}}
+              onDuplicate={() => {}}
+              onToggleVisibility={() => {}}
+            />
+          </div>
+        ) : activePaletteType ? (
+          <div
+            className="palette-item opacity-70"
+            style={{ width: '240px' }}
+          >
+            <div className="palette-icon-wrapper">
+              {(() => {
+                const Icon = getIcon(SECTION_REGISTRY[activePaletteType].icon);
+                return <Icon className="palette-icon" />;
+              })()}
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-semibold" style={{ color: 'rgb(var(--text-primary))' }}>
+                {SECTION_REGISTRY[activePaletteType].label}
+              </p>
+            </div>
+          </div>
+        ) : null}
+      </DragOverlay>
+    </DndContext>
   );
 }

@@ -1,40 +1,87 @@
-import type { ChiefsCornerSectionData } from '@azalea/shared/types';
+'use client';
+
+import type { ChiefsCornerSectionData, ChiefData } from '@azalea/shared/types';
+import { ShowMore } from './ShowMore';
 
 interface ChiefsCornerSectionProps {
   data: ChiefsCornerSectionData;
 }
 
+/**
+ * ChiefsCornerSection - Two-column flex layout matching ChiefsCorner.module.css
+ * Displays multiple chiefs side-by-side (2 columns on desktop)
+ * Each chief has their circular image and bio
+ */
 export function ChiefsCornerSection({ data }: ChiefsCornerSectionProps) {
-  const {
-    sectionTitle = "Chief's Corner",
-    title,
-    author,
-    content,
-  } = data;
+  const { sectionTitle = "The Chiefs' Corner" } = data;
+
+  // Handle both new array format and legacy single chief format
+  let chiefs: ChiefData[] = [];
+  if (data.chiefs && Array.isArray(data.chiefs)) {
+    chiefs = data.chiefs;
+  } else if ((data as any).name) {
+    // Legacy format: single chief with name, image, content at top level
+    chiefs = [{
+      name: (data as any).name,
+      image: (data as any).image,
+      content: (data as any).content,
+    }];
+  }
+
+  // Don't render if no chiefs
+  if (chiefs.length === 0) {
+    return null;
+  }
 
   return (
-    <section className="mb-12">
-      <h2 className="text-2xl font-bold text-azalea-green mb-6 text-center">
-        {sectionTitle}
-      </h2>
-      <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-8">
-        {title && (
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">
-            {title}
-          </h3>
-        )}
+    <section className="section-card section-card-green" style={{ padding: 0, marginBottom: '2rem' }}>
+      {/* Section Title */}
+      {sectionTitle && (
+        <h2 className="section-title" style={{ padding: '2rem 2rem 0 2rem' }}>
+          {sectionTitle}
+        </h2>
+      )}
 
-        {author && (
-          <div className="text-sm text-gray-600 italic mb-4">
-            By: {author}
-          </div>
-        )}
-
-        <div
-          className="prose prose-lg max-w-none text-gray-700"
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
+      {/* Chiefs Grid - matches ChiefsCorner.module.css */}
+      <div className="chiefs-section">
+        {chiefs.map((chief, index) => (
+          <ChiefCard key={index} chief={chief} />
+        ))}
       </div>
     </section>
+  );
+}
+
+/**
+ * Individual chief card component - matches ChiefsCorner.module.css
+ */
+function ChiefCard({ chief }: { chief: ChiefData }) {
+  const { name, image, content } = chief;
+
+  return (
+    <div className="chief-column">
+      {/* Circular Image */}
+      {image && (
+        <img
+          src={image}
+          alt={name}
+          className="chief-image"
+        />
+      )}
+
+      {/* Name */}
+      {name && (
+        <h3 className="chief-name">
+          {name}
+        </h3>
+      )}
+
+      {/* Bio Content with ShowMore */}
+      {content && (
+        <div className="chief-text">
+          <ShowMore content={content} maxHeight={150} />
+        </div>
+      )}
+    </div>
   );
 }

@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { useQuery } from 'convex/react';
 import { api } from '@convex/_generated/api';
 import { SectionRenderer } from '@azalea/sections';
-import type { Section, Issue } from '@azalea/shared/types';
+import type { Section } from '@azalea/shared/types';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 export default function HomePage() {
   // Fetch latest published issue
@@ -16,129 +17,124 @@ export default function HomePage() {
     latestIssue?._id ? { issueId: latestIssue._id } : 'skip'
   ) || [];
 
+  // Format edition and date
+  const formatEditionDate = (issue: typeof latestIssue) => {
+    if (!issue) return '';
+    const date = issue.bannerDate
+      ? new Date(issue.bannerDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+      : '';
+    return `Edition ${issue.edition} | ${date}`;
+  };
+
   return (
-    <main className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-azalea-green text-white py-6 shadow-md sticky top-0 z-50">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold hover:text-azalea-peach transition-colors">
-              Azalea Report
-            </Link>
-            <nav className="flex gap-6">
-              <Link href="/archives" className="hover:text-azalea-peach transition-colors">
-                Archives
-              </Link>
-              <Link href="/about" className="hover:text-azalea-peach transition-colors">
-                About
-              </Link>
-            </nav>
-          </div>
+    <div className="page-background">
+      {/* Fixed Header - matches Header.module.css */}
+      <header className="site-header">
+        <div className="header-content">
+          <Link href="/" className="header-left">
+            <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" style={{ color: 'var(--primary-color)' }}>
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+            </svg>
+            <span className="header-title">Azalea Report</span>
+          </Link>
+          <nav className="desktop-nav">
+            <Link href="/archives">Previous Issues</Link>
+          </nav>
         </div>
       </header>
 
-      {/* Banner Section */}
-      {latestIssue ? (
-        <section className="bg-azalea-peach py-12 border-b-4 border-azalea-green">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-5xl font-bold text-gray-900 mb-2">
-              {latestIssue.bannerTitle || 'AZALEA REPORT'}
-            </h1>
-            <p className="text-xl text-gray-700 mb-2">
-              {latestIssue.title}
-            </p>
-            {latestIssue.bannerDate && (
-              <p className="text-md text-gray-600">
-                {new Date(latestIssue.bannerDate).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
-              </p>
-            )}
-          </div>
-        </section>
-      ) : (
-        <section className="bg-azalea-peach py-16 border-b-4 border-azalea-green">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-5xl font-bold text-gray-900 mb-4">
-              AZALEA REPORT
-            </h1>
-            <p className="text-xl text-gray-700">
-              The official newsletter of the SGMC Internal Medicine Residency Program
-            </p>
-          </div>
-        </section>
-      )}
-
-      {/* Issue Content */}
-      <section className="py-12">
-        <div className="container mx-auto px-4 max-w-5xl">
-          {!latestIssue ? (
-            <div className="bg-white rounded-lg shadow-md p-12 text-center">
-              <div className="animate-pulse">
-                <div className="h-8 bg-gray-200 rounded w-1/2 mx-auto mb-4"></div>
-                <div className="h-4 bg-gray-200 rounded w-3/4 mx-auto"></div>
+      {/* Header spacer for fixed header */}
+      <div className="header-spacer">
+        {/* Newsletter container - matches header width */}
+        <div className="newsletter-container">
+          {/* Banner Section - matches Banner.module.css structure */}
+          <div className="banner-section">
+            <div className="banner-content">
+              <div className="banner-image-container">
+                {(latestIssue as any)?.bannerImageUrl ? (
+                  <img
+                    src={(latestIssue as any).bannerImageUrl}
+                    alt={latestIssue.title || 'Newsletter banner'}
+                    className="banner-image"
+                  />
+                ) : (
+                  <div
+                    className="banner-image"
+                    style={{
+                      backgroundColor: 'var(--card)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <span style={{ color: 'var(--muted-foreground)' }}>Banner Image</span>
+                  </div>
+                )}
               </div>
-              <p className="text-gray-600 mt-6">
-                Loading latest issue...
-              </p>
+              <div className="banner-overlay"></div>
+              <div className="banner-text">
+                <h1 className="banner-title">
+                  {latestIssue?.bannerTitle || 'AZALEA REPORT'}
+                </h1>
+                <p className="banner-subtitle">
+                  SGMC Health Internal Medicine Residency Newsletter
+                </p>
+                {latestIssue && (
+                  <p className="banner-date">
+                    {formatEditionDate(latestIssue)}
+                  </p>
+                )}
+              </div>
             </div>
-          ) : sections.length === 0 ? (
-            <div className="bg-white rounded-lg shadow-md p-12 text-center">
-              <p className="text-gray-600 text-lg">
-                No content available yet.
-              </p>
-              <p className="text-sm text-gray-500 mt-2">
-                Check back soon for updates!
-              </p>
-            </div>
-          ) : (
-            <div className="space-y-8">
-              {sections.map((section) => (
-                <SectionRenderer
-                  key={section._id}
-                  section={section as Section}
-                />
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Archives Link */}
-      {latestIssue && (
-        <section className="py-8 bg-white border-t border-gray-200">
-          <div className="container mx-auto px-4 text-center">
-            <Link
-              href="/archives"
-              className="inline-flex items-center gap-2 text-azalea-green hover:text-azalea-green-hover font-semibold text-lg transition-colors"
-            >
-              View All Issues
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </Link>
           </div>
-        </section>
-      )}
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8 mt-12">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-400">
-            &copy; {new Date().getFullYear()} SGMC Internal Medicine Residency Program
-          </p>
-          <p className="text-sm text-gray-500 mt-2">
-            Azalea Report Newsletter
-          </p>
+          {/* Main Content - matches Layout.module.css */}
+          <main className="main-content">
+            {!latestIssue ? (
+              <div className="section-card" style={{ textAlign: 'center', padding: '3rem' }}>
+                <div className="animate-pulse">
+                  <div className="h-8 rounded w-1/2 mx-auto mb-4" style={{ backgroundColor: 'var(--border)' }}></div>
+                  <div className="h-4 rounded w-3/4 mx-auto" style={{ backgroundColor: 'var(--border)' }}></div>
+                </div>
+                <p className="mt-6" style={{ color: 'var(--muted-foreground)' }}>
+                  Loading latest issue...
+                </p>
+              </div>
+            ) : sections.length === 0 ? (
+              <div className="section-card" style={{ textAlign: 'center', padding: '3rem' }}>
+                <p style={{ fontSize: '1.3rem', color: 'var(--card-text)' }}>
+                  No content available yet.
+                </p>
+                <p style={{ fontSize: '1rem', marginTop: '0.5rem', color: 'var(--muted)' }}>
+                  Check back soon for updates!
+                </p>
+              </div>
+            ) : (
+              <div>
+                {sections.map((section) => (
+                  <SectionRenderer
+                    key={section._id}
+                    section={section as Section}
+                  />
+                ))}
+              </div>
+            )}
+          </main>
+
+          {/* Footer - matches Footer.module.css */}
+          <footer className="site-footer">
+            <p>
+              &copy; {new Date().getFullYear()} SGMC Internal Medicine Residency Program
+            </p>
+            <p style={{ marginTop: '0.25rem', opacity: 0.7 }}>
+              Azalea Report Newsletter
+            </p>
+          </footer>
         </div>
-      </footer>
-    </main>
+      </div>
+
+      {/* Theme Toggle - Sun/Moon icons like CMS */}
+      <ThemeToggle />
+    </div>
   );
 }

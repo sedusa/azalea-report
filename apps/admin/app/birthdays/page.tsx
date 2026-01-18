@@ -40,7 +40,7 @@ export default function BirthdaysPage() {
   }, []);
 
   // Queries
-  const allBirthdays = useQuery(api.birthdays.list) || [];
+  const allBirthdays = useQuery(api.birthdays.list, {}) || [];
 
   // Mutations
   const createBirthday = useMutation(api.birthdays.create);

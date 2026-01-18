@@ -1,9 +1,16 @@
+'use client';
+
 import type { SpotlightSectionData } from '@azalea/shared/types';
+import { ShowMore } from './ShowMore';
 
 interface SpotlightSectionProps {
   data: SpotlightSectionData;
 }
 
+/**
+ * SpotlightSection - Two-column layout matching ResidentSpotlight.module.css
+ * Image on left, details on right (stacks on mobile)
+ */
 export function SpotlightSection({ data }: SpotlightSectionProps) {
   const {
     sectionTitle = 'Resident Spotlight',
@@ -17,70 +24,49 @@ export function SpotlightSection({ data }: SpotlightSectionProps) {
     postResidencyPlans,
   } = data;
 
+  // Build content for ShowMore
+  const detailsContent = [
+    birthplace && `<p style="margin-bottom: 0.75rem;"><strong>Birth place:</strong> ${birthplace}</p>`,
+    medicalSchool && `<p style="margin-bottom: 0.75rem;"><strong>Medical School:</strong> ${medicalSchool}</p>`,
+    funFact && `<p style="margin-bottom: 0.75rem;"><strong>Fun fact:</strong> ${funFact}</p>`,
+    favoriteDish && `<p style="margin-bottom: 0.75rem;"><strong>Favorite dish:</strong> ${favoriteDish}</p>`,
+    interests && `<p style="margin-bottom: 0.75rem;"><strong>Interests:</strong> ${interests}</p>`,
+    postResidencyPlans && `<p style="margin-bottom: 0.75rem;"><strong>Post-residency plans:</strong> ${postResidencyPlans}</p>`,
+  ].filter(Boolean).join('');
+
   return (
-    <section className="mb-12">
-      <h2 className="text-2xl font-bold text-azalea-green mb-6 text-center">
-        {sectionTitle}
-      </h2>
-      <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-8">
+    <section className="spotlight-container" style={{ marginBottom: '2rem' }}>
+      {/* Section Title */}
+      {sectionTitle && (
+        <h2 className="section-title">
+          {sectionTitle}
+        </h2>
+      )}
+
+      {/* Two-Column Layout: Image Left, Details Right */}
+      <div className="spotlight-grid">
+        {/* Left Column - Image */}
         {image && (
-          <div className="mb-6 flex justify-center">
+          <div>
             <img
               src={image}
               alt={name}
-              className="w-48 h-48 rounded-full object-cover shadow-lg"
+              className="spotlight-image"
             />
           </div>
         )}
 
-        <h3 className="text-xl font-semibold text-gray-900 text-center mb-6">
-          {name}
-        </h3>
+        {/* Right Column - Details */}
+        <div>
+          {/* Name */}
+          <h3 className="spotlight-name">
+            {name}
+          </h3>
 
-        <div className="space-y-4 text-gray-700">
-          {birthplace && (
-            <div>
-              <span className="font-semibold text-gray-900">Birth place:</span>{' '}
-              {birthplace}
-            </div>
-          )}
-
-          {medicalSchool && (
-            <div>
-              <span className="font-semibold text-gray-900">Medical School:</span>{' '}
-              {medicalSchool}
-            </div>
-          )}
-
-          {funFact && (
-            <div>
-              <span className="font-semibold text-gray-900">Fun fact:</span>{' '}
-              {funFact}
-            </div>
-          )}
-
-          {favoriteDish && (
-            <div>
-              <span className="font-semibold text-gray-900">Favorite dish:</span>{' '}
-              {favoriteDish}
-            </div>
-          )}
-
-          {interests && (
-            <div>
-              <span className="font-semibold text-gray-900">Interests:</span>{' '}
-              {interests}
-            </div>
-          )}
-
-          {postResidencyPlans && (
-            <div>
-              <span className="font-semibold text-gray-900">
-                Post-residency plans:
-              </span>{' '}
-              {postResidencyPlans}
-            </div>
-          )}
+          {/* Details with ShowMore */}
+          <div className="spotlight-text">
+            <ShowMore content={detailsContent} maxHeight={200} />
+          </div>
         </div>
       </div>
     </section>

@@ -1,0 +1,1307 @@
+{
+  "/img/acp/poster-1.jpeg": {
+    "mediaId": "jn77yp3c5b8h80njbjq72j0qtx7zfr7e",
+    "filename": "poster-1.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/3d93ab5b-e6ed-4d2b-ae3f-184301b45d66"
+  },
+  "/img/acp/poster-2.jpeg": {
+    "mediaId": "jn79hcfgh28jgdfjfsyn0crxnh7ze4fe",
+    "filename": "poster-2.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/bb0e7014-1f84-4ef0-b845-d1ab25c7adfa"
+  },
+  "/img/acp/poster-3.jpeg": {
+    "mediaId": "jn75t0gt8f7xjet3v2pa1vav757zfc4t",
+    "filename": "poster-3.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/574a7e71-c97d-45c2-a860-c97f2bdc92c5"
+  },
+  "/img/acp/poster-4.jpeg": {
+    "mediaId": "jn74rbvhjh4f6hj3zx40753cgx7zefm3",
+    "filename": "poster-4.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/01f6e318-f622-4318-bd8c-a007db4fbf8b"
+  },
+  "/img/acp/poster-5.jpeg": {
+    "mediaId": "jn75dwfkv6rpmk1z73j93sm2b17zekr4",
+    "filename": "poster-5.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/2867765a-7271-40a5-8def-3e8aa85c1c4a"
+  },
+  "/img/acp-team.jpeg": {
+    "mediaId": "jn797dpxm79qgccdja027fs8xx7ze12f",
+    "filename": "acp-team.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/1ae8d184-e54e-43d8-85d5-c82ab488cd26"
+  },
+  "/img/acp25/group.jpeg": {
+    "mediaId": "jn7f24pw0vv9z7cvsxye7dm0k97zfp9d",
+    "filename": "group.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/46fbcc46-185a-4134-9350-b443c97eb7ca"
+  },
+  "/img/acp25/jeopardy-team.jpeg": {
+    "mediaId": "jn7czrrtsbxs19f882fb4fw5yh7ze7tz",
+    "filename": "jeopardy-team.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/5f99be45-5863-49db-bed4-d4c067522a10"
+  },
+  "/img/acp25/poster-1.jpeg": {
+    "mediaId": "jn7187g87xbqtzyb5b7msg2v017ze82v",
+    "filename": "poster-1.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/bf8c6b53-974f-45fa-8112-1c2034dbe6c2"
+  },
+  "/img/acp25/poster-2.jpeg": {
+    "mediaId": "jn7cpwj6vjqvvembtywfp69tdx7zf1b9",
+    "filename": "poster-2.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/b6acbeeb-349c-4122-94f9-250d2617947b"
+  },
+  "/img/acp25/poster-3.jpeg": {
+    "mediaId": "jn78cmsths9wwx1x2fpq0fph257zeb57",
+    "filename": "poster-3.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/39d8541e-3d6a-4576-a788-d0b16a17a0d4"
+  },
+  "/img/acp25/poster-4.jpeg": {
+    "mediaId": "jn752e4cgc3g9shbs1j4f1hg1x7ze58m",
+    "filename": "poster-4.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/7db0b7df-a1bf-49f3-9b4f-01180a5bce42"
+  },
+  "/img/acp25/poster-5.jpeg": {
+    "mediaId": "jn77k4s0j19b7x8zn033fme4r97zeepb",
+    "filename": "poster-5.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/1af26234-2aa9-497f-9859-5dd78b76453b"
+  },
+  "/img/acp25/poster-6.jpeg": {
+    "mediaId": "jn7f429fqke761kfj46qpf0p9d7zf2cg",
+    "filename": "poster-6.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/25d8c55c-c4b5-4a33-8faa-8b9a2b28e30c"
+  },
+  "/img/acp25/poster-7.jpeg": {
+    "mediaId": "jn7eh1w20shr0tkng95r0js1657zfk10",
+    "filename": "poster-7.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/cff98f18-fac7-45b1-aaa9-d0f4f7856513"
+  },
+  "/img/ag-expo-aerial.jpeg": {
+    "mediaId": "jn79m4amqt4br9swek4pge88ss7zegb6",
+    "filename": "ag-expo-aerial.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/b2c5078d-1793-4672-8832-fea48a79edce"
+  },
+  "/img/agexpo25/beale-ag-expo.jpeg": {
+    "mediaId": "jn726b5dayp2v6n17ry8v73r2h7zffwr",
+    "filename": "beale-ag-expo.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/b9054910-e7e2-4840-b99f-18a75fa85846"
+  },
+  "/img/agexpo25/expo-1.jpeg": {
+    "mediaId": "jn7ehjexgxpxmmj03f6f9kbjzx7zec2d",
+    "filename": "expo-1.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/5c04c91d-c390-4d73-a2a7-98431b18f009"
+  },
+  "/img/agexpo25/expo-10.jpeg": {
+    "mediaId": "jn72qdk6e0gn64stgp41354g3n7ze041",
+    "filename": "expo-10.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/94a0ba98-9678-42bb-b9a3-9a077f201627"
+  },
+  "/img/agexpo25/expo-2.jpeg": {
+    "mediaId": "jn7bxbd9gq149d50te2pvtvnts7ze5x1",
+    "filename": "expo-2.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/7fe7c6f5-2c24-4814-a183-15f61dbe575e"
+  },
+  "/img/agexpo25/expo-3.jpeg": {
+    "mediaId": "jn7d7g03ycxwv58xzm8pm8z01d7zfwp3",
+    "filename": "expo-3.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/5e04416a-084a-44e5-b74d-d4210e27b2dc"
+  },
+  "/img/agexpo25/expo-4.jpeg": {
+    "mediaId": "jn76rx1yqtyfhq4frze1wzgq8d7zffbn",
+    "filename": "expo-4.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/0bdadeff-620b-4aa2-b970-4249d79eef76"
+  },
+  "/img/agexpo25/expo-5.jpeg": {
+    "mediaId": "jn7c3y9da2cqyvf53dgv6b3fbd7zfvxm",
+    "filename": "expo-5.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/4fedce9d-c9d8-4950-acc8-8bce32d7be8b"
+  },
+  "/img/agexpo25/expo-6.jpeg": {
+    "mediaId": "jn753qt5y9t2jjz3jtsnvh17mh7zf459",
+    "filename": "expo-6.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/bd7054c4-afdf-46f0-9c9f-b7932a0fd01f"
+  },
+  "/img/agexpo25/expo-7.jpeg": {
+    "mediaId": "jn76hzp0qrt9s2nc14dghqe1w57zffm6",
+    "filename": "expo-7.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/d3b7b572-adae-4315-aeb6-5cdd55500d9a"
+  },
+  "/img/agexpo25/expo-8.jpeg": {
+    "mediaId": "jn789n04cbhe0bk8vvagggntex7zevah",
+    "filename": "expo-8.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/6ce94606-ee16-4a1f-af76-65c0e0fef5cf"
+  },
+  "/img/agexpo25/expo-9.jpeg": {
+    "mediaId": "jn71tnh1y170mbraepwh9b2ssh7zemde",
+    "filename": "expo-9.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/9c6a6660-cb74-444c-8459-2855a8f04237"
+  },
+  "/img/akwaaba.jpeg": {
+    "mediaId": "jn73fwvbgmtz7m4sgczc8qqahn7zebkt",
+    "filename": "akwaaba.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/e8dd6cdb-f44a-413b-b11e-29c5c92c9002"
+  },
+  "/img/annette-robinson.jpeg": {
+    "mediaId": "jn7bg1anrq1rdpsyxggbwpjx5x7ze4p8",
+    "filename": "annette-robinson.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/23b3317c-b1d1-4ce2-8b01-e710c2a8615a"
+  },
+  "/img/azalea.svg": {
+    "mediaId": "jn73ndzrrz7n3yt5dfyyv8sdtn7zecyy",
+    "filename": "azalea.svg",
+    "url": "http://127.0.0.1:3210/api/storage/72e0deb6-3c11-4879-af92-e16e40995efd"
+  },
+  "/img/beale.jpeg": {
+    "mediaId": "jn70ksg3vdxagdbg84pvjr1jvd7zemam",
+    "filename": "beale.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/e5d51aac-5ea4-4bef-8d18-c9bde9252e48"
+  },
+  "/img/brandon-rockwell-md.jpeg": {
+    "mediaId": "jn71v531wz096z2hyjmg4pmd3d7zfrtp",
+    "filename": "brandon-rockwell-md.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/01e1cfd8-1136-4401-8d00-39ca291d6ec6"
+  },
+  "/img/burnout.jpeg": {
+    "mediaId": "jn713g89g467a3hqtvefap0rkn7zfzrt",
+    "filename": "burnout.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/6cec9c86-fe1e-4a4c-9174-23c61168587e"
+  },
+  "/img/byron-reese-md.jpeg": {
+    "mediaId": "jn71rpca9ftkgepcp76k0e01g17ze3e2",
+    "filename": "byron-reese-md.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/300f5875-c7e6-4a3f-bef5-3d099dfd72ab"
+  },
+  "/img/carousel/amal-birthday.jpeg": {
+    "mediaId": "jn7a8xhhz1v4ktcxkgev8stq697ze3pf",
+    "filename": "amal-birthday.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/cc4efdec-58e6-4d0f-bd3e-edfe1c41b002"
+  },
+  "/img/carousel/anesthesia-folks.jpeg": {
+    "mediaId": "jn78z8yn5wrfcq6kaab6ek1s1x7zf5ss",
+    "filename": "anesthesia-folks.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/c193afe4-530c-4a57-999a-14bac5f01b84"
+  },
+  "/img/carousel/baby-shower.jpeg": {
+    "mediaId": "jn7egvdd52nzqcpmt06awrv1rh7zf4bt",
+    "filename": "baby-shower.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/2fe37f99-65e9-4a48-84ad-d5296e6d6d98"
+  },
+  "/img/carousel/beale-balloon.jpeg": {
+    "mediaId": "jn7e0bdf47tzq3fvjcswmeh6j97ze072",
+    "filename": "beale-balloon.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/1eabf05e-ccb9-409f-aa76-5e4a5d59ff31"
+  },
+  "/img/carousel/birthday-celebration.jpeg": {
+    "mediaId": "jn74wrkh8taksbfe4ep7z629ex7zf8me",
+    "filename": "birthday-celebration.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/6c10dcfa-ccd6-4669-9389-2b2c09da5873"
+  },
+  "/img/carousel/brandon-karen-hope.jpeg": {
+    "mediaId": "jn771xjmxfgy8v3j94hw5jjx6n7zfywe",
+    "filename": "brandon-karen-hope.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/b027b4ea-ddbc-4091-99ae-81a571e0003d"
+  },
+  "/img/carousel/brandons-hand.jpeg": {
+    "mediaId": "jn78pta04tfrpay1ets3dmk1zh7ze9pa",
+    "filename": "brandons-hand.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/e0d69a56-456c-4414-80bd-0368ca5b1f1e"
+  },
+  "/img/carousel/chook-baby.jpeg": {
+    "mediaId": "jn7255ph2r95qy0a8kr2emapc57zf6h8",
+    "filename": "chook-baby.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/6a13f83a-0ed6-4042-b163-a506ee642e41"
+  },
+  "/img/carousel/christmas-party-1.jpeg": {
+    "mediaId": "jn71cd440xdxrntphkb0fxj8hx7ze62z",
+    "filename": "christmas-party-1.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/124a6ed8-3f10-49dc-b428-a76100ca0f8c"
+  },
+  "/img/carousel/christmas-party-2.jpeg": {
+    "mediaId": "jn763kwk6g0dmdbxgv50asxjax7zewcn",
+    "filename": "christmas-party-2.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/71a1ac03-0cb0-4627-8e20-41381e39d7a3"
+  },
+  "/img/carousel/christmas-party-beale.jpeg": {
+    "mediaId": "jn7cc6qbxz8p738wpjtc6pp9fn7zf2s6",
+    "filename": "christmas-party-beale.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/a8377e50-7020-4976-8b15-76c4b1af6ba3"
+  },
+  "/img/carousel/christmas-party-brown.jpeg": {
+    "mediaId": "jn7324bs38ca08x2jj0ej040d57zer8x",
+    "filename": "christmas-party-brown.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/e786949d-ef52-4306-a645-ff95aaa5108d"
+  },
+  "/img/carousel/christmas-party-women.jpeg": {
+    "mediaId": "jn7bm9raesqc3mwwngnmbebxfs7zfy0k",
+    "filename": "christmas-party-women.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/4013920a-6e91-4821-9521-4e44cc369e25"
+  },
+  "/img/carousel/class-of-2028.jpeg": {
+    "mediaId": "jn7ehwv5fnh1s8m2p1srpqpftd7zedqx",
+    "filename": "class-of-2028.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/06a7cd67-d35b-499a-9b08-54c695123873"
+  },
+  "/img/carousel/clinic-dressup.jpeg": {
+    "mediaId": "jn77gmfnf80manma1xkc5gn58x7zev2e",
+    "filename": "clinic-dressup.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/e49082b1-ed45-4090-8320-2707815c45fb"
+  },
+  "/img/carousel/dodge-ball.jpeg": {
+    "mediaId": "jn708ggj812jggvapkcc7095997ze6qm",
+    "filename": "dodge-ball.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/0f314ea0-2cc6-4cac-81aa-e4c13b6344fe"
+  },
+  "/img/carousel/dr-lamptey-office.jpeg": {
+    "mediaId": "jn72thy3ht5q5ernnmvbsa7tg97zezmb",
+    "filename": "dr-lamptey-office.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/36423645-6932-4b07-8da4-71f58df04c17"
+  },
+  "/img/carousel/enzo-1.jpeg": {
+    "mediaId": "jn7cce4ry01bgg99sc608tfk697zef4k",
+    "filename": "enzo-1.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/b94aefb5-df88-4490-8fb9-e55b8d6aad42"
+  },
+  "/img/carousel/enzo-2.jpeg": {
+    "mediaId": "jn7ecbgkews6ba0ky2xrkmbm6d7zfhcz",
+    "filename": "enzo-2.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/2d23f517-2800-4daa-9435-cdda1abbd36b"
+  },
+  "/img/carousel/enzo-3.jpeg": {
+    "mediaId": "jn73a2mzxbp5cwwr0xj98cz95x7zf27b",
+    "filename": "enzo-3.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/0a2aaf09-a3a8-4626-aeb3-38d1fb4bfddf"
+  },
+  "/img/carousel/escape-room.jpeg": {
+    "mediaId": "jn768dtcgt5wxsrbcwx9knh48n7zepk4",
+    "filename": "escape-room.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/9448169e-a6e9-4ad9-8f30-78e03cda4a63"
+  },
+  "/img/carousel/faculty-cheering.jpeg": {
+    "mediaId": "jn707w9pj07d2e2ekrccfbmqeh7zezp1",
+    "filename": "faculty-cheering.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/ebeed5b2-e06b-456b-93a5-a663b9ebaccd"
+  },
+  "/img/carousel/gallagher-baby-shower.jpeg": {
+    "mediaId": "jn762ddja06yh6cyx31qqjkfbs7zfamf",
+    "filename": "gallagher-baby-shower.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/d22dbac0-96a2-426e-9bf9-57156399a7b7"
+  },
+  "/img/carousel/georgia-beer-outing.jpeg": {
+    "mediaId": "jn751qe4yrxhms14zdnv2bvp457zfjm5",
+    "filename": "georgia-beer-outing.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/041c0a8c-9dfc-47fc-83c3-1c06f272bf8f"
+  },
+  "/img/carousel/georgia-beer.jpeg": {
+    "mediaId": "jn7bqx8yregprqmdryfrvxszys7zfm9m",
+    "filename": "georgia-beer.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/5d40f3a5-7324-44b2-b5e1-53244ccf49c5"
+  },
+  "/img/carousel/graduation-girls.jpeg": {
+    "mediaId": "jn7fhs637gf511x5re041qgabh7zesb4",
+    "filename": "graduation-girls.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/aac46ef6-8e42-45ce-8155-e1f7a75c4da8"
+  },
+  "/img/carousel/grand-rounds-1.jpeg": {
+    "mediaId": "jn7f8vnpd967xpmn9ey89y37657zfzwv",
+    "filename": "grand-rounds-1.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/dab12cce-f2aa-4a31-a369-bdaa5c1d0d42"
+  },
+  "/img/carousel/grand-rounds-2.jpeg": {
+    "mediaId": "jn7fm798dbmd44z4rtea0z51zh7zf7q2",
+    "filename": "grand-rounds-2.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/70d9bd4e-2c4f-4c96-a2d1-efb8afc3646f"
+  },
+  "/img/carousel/halloween-1.jpeg": {
+    "mediaId": "jn71dy0e4qyrh3gbajrb5w4m5h7zfvmd",
+    "filename": "halloween-1.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/e287f5e6-5cbe-48b2-9e14-b409b0f03a6d"
+  },
+  "/img/carousel/halloween-2.jpeg": {
+    "mediaId": "jn7fxz62v5fcvyk2h4e77kwbk97zemdj",
+    "filename": "halloween-2.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/f321cc02-19f4-468e-a94a-fc0b7fca375a"
+  },
+  "/img/carousel/halloween-3.jpeg": {
+    "mediaId": "jn7dpzxdahwgk25j90enr2pejx7zew0v",
+    "filename": "halloween-3.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/88d8ba3a-17a6-4e7d-a15b-5f96392f7ead"
+  },
+  "/img/carousel/halloween-boxer.jpeg": {
+    "mediaId": "jn7e4t8343jczm93g3jjgsy2c57zend9",
+    "filename": "halloween-boxer.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/1b29449e-1eaa-4437-9322-cd19bdb882e5"
+  },
+  "/img/carousel/halloween-count-cat.jpeg": {
+    "mediaId": "jn763t3gps4swzg6dq9am6n2n17zem5z",
+    "filename": "halloween-count-cat.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/89807c99-c934-4a68-aca2-dfa9d8784921"
+  },
+  "/img/carousel/halloween-security.jpeg": {
+    "mediaId": "jn76vfgjetfp4r11jxeq0s11ax7zf7gw",
+    "filename": "halloween-security.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/04dee928-190f-4349-a049-c4ae5ab9b775"
+  },
+  "/img/carousel/halloween-taylor.jpeg": {
+    "mediaId": "jn7218pa1wv3ajatk68p3dzac97zer63",
+    "filename": "halloween-taylor.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/ab133c89-0bf4-4d04-836c-933416c83069"
+  },
+  "/img/carousel/halloween-witches.jpeg": {
+    "mediaId": "jn7f3dk4z1kk9phwf4k3n9e9c97zf1k8",
+    "filename": "halloween-witches.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/58b247e6-7edd-4cd7-8f31-6dc7a2029461"
+  },
+  "/img/carousel/happy-birthday-brandon.jpeg": {
+    "mediaId": "jn782rwv4kw4v0np844jbbt1rs7zevnq",
+    "filename": "happy-birthday-brandon.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/6dce8d94-bfae-4748-9f79-7eeac91674d6"
+  },
+  "/img/carousel/happy-birthday-rija.jpeg": {
+    "mediaId": "jn72n63s9qpb1czgz30dt9nv4d7zf2cv",
+    "filename": "happy-birthday-rija.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/c3bb7b1f-0636-4949-97cb-501e3f7d33b2"
+  },
+  "/img/carousel/intern-hangout.jpeg": {
+    "mediaId": "jn7952rk34jkay06fbk4j8mcr17zerd4",
+    "filename": "intern-hangout.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/9ded46b2-ed17-49ed-b13d-aab14717a574"
+  },
+  "/img/carousel/intern-year-clinic.jpeg": {
+    "mediaId": "jn7ajwzn2ms8m8enrzq47ft5qn7zfek0",
+    "filename": "intern-year-clinic.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/c5544c77-e0db-4124-9666-d3fb0e60aafb"
+  },
+  "/img/carousel/jeopardy-team.jpeg": {
+    "mediaId": "jn7f89pr7pdde6dq4szqqmxb0d7zeepx",
+    "filename": "jeopardy-team.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/cb36a6f2-84dd-409d-a713-cfe0e6b22dd2"
+  },
+  "/img/carousel/kinley-baby-shower-1.jpeg": {
+    "mediaId": "jn70m0t14d22xrdekjx6vcprhs7zexks",
+    "filename": "kinley-baby-shower-1.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/fc312b96-ce85-4b9d-b589-12f03b4a0f49"
+  },
+  "/img/carousel/kinley-food.jpeg": {
+    "mediaId": "jn70n9h2q103d9amw7k1r0mmex7ze4hw",
+    "filename": "kinley-food.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/6edfbeef-25e2-4e5e-9acd-ffdb772048eb"
+  },
+  "/img/carousel/lamptey-cake.jpeg": {
+    "mediaId": "jn72x52ceenpj73hhzvg7rhxgd7zexmj",
+    "filename": "lamptey-cake.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/63f82d76-18b6-4716-b79a-d3a56cedabbd"
+  },
+  "/img/carousel/last-day-intern-year.jpeg": {
+    "mediaId": "jn79vkyjxn7zw1pxwe8bbj8tw97zewck",
+    "filename": "last-day-intern-year.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/5b563b20-f0a3-4bb6-be50-a3b3c878f04c"
+  },
+  "/img/carousel/lucky-draw.jpeg": {
+    "mediaId": "jn71k2ygvkrpbgrp1075rnajgs7zehyj",
+    "filename": "lucky-draw.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/6b391fbd-9a08-43b0-a49a-e89d2dee4b49"
+  },
+  "/img/carousel/mafaz-working.jpeg": {
+    "mediaId": "jn7ej18xnzpjqw0abg138w87zd7zfyn8",
+    "filename": "mafaz-working.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/565cfdd2-2201-44b1-be87-ed9787936c22"
+  },
+  "/img/carousel/martin-is-slow.jpeg": {
+    "mediaId": "jn7e848z26a96vx7gr3kex50k17zfyxr",
+    "filename": "martin-is-slow.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/f4bf3c4a-c719-4e0c-8a3d-3530bf5b7e95"
+  },
+  "/img/carousel/match-day-1.jpeg": {
+    "mediaId": "jn750gdpde2gf3tyx01fbbntsn7zet4x",
+    "filename": "match-day-1.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/4a52d2a2-b03b-439c-a407-907a41d20c83"
+  },
+  "/img/carousel/match-day-2.jpeg": {
+    "mediaId": "jn76e5ezbsx1naqh83m9stjqys7ze353",
+    "filename": "match-day-2.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/6d5d063a-c9e3-46bd-b3f0-4461f72bc46b"
+  },
+  "/img/carousel/match-day-3.jpeg": {
+    "mediaId": "jn7c67k541seggdd0hsaz0knk57zf365",
+    "filename": "match-day-3.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/cbed5960-4a80-4fe3-aa10-10f61faf4b8a"
+  },
+  "/img/carousel/matching-scrubs.jpeg": {
+    "mediaId": "jn708phjjc2b35zt5jm2gz6has7zec8b",
+    "filename": "matching-scrubs.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/c2128664-087b-4bd4-8774-1b5df72c9526"
+  },
+  "/img/carousel/matchy-matchy.jpeg": {
+    "mediaId": "jn7c1k0qr80am0gbc1cqa0wn9s7zepcc",
+    "filename": "matchy-matchy.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/7517cfaf-32ca-4f77-ad3f-f20a62f75985"
+  },
+  "/img/carousel/mohan-brown-baby.jpeg": {
+    "mediaId": "jn7cnsr57pkqmzcs259mv87zfd7ze7j2",
+    "filename": "mohan-brown-baby.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/dbbcaf91-5321-49c3-8938-88011b437767"
+  },
+  "/img/carousel/night-squad.jpeg": {
+    "mediaId": "jn71j15sk38mnzgzr1q34n3yfd7zez0q",
+    "filename": "night-squad.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/6c5fb04e-90b2-45cc-a31b-ff83d817becf"
+  },
+  "/img/carousel/ornob-bag.jpeg": {
+    "mediaId": "jn7esap2xjqzr5knyby3pcg1fx7zezpx",
+    "filename": "ornob-bag.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/6e8db0b1-001a-46e5-a3c2-22ac189cb5a9"
+  },
+  "/img/carousel/park-avenue-posse.jpeg": {
+    "mediaId": "jn76zmedzp3e6agy9ad7f1j45n7zednv",
+    "filename": "park-avenue-posse.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/3a418428-835e-4d98-9037-8559d8975bf6"
+  },
+  "/img/carousel/partnership-health-gala.jpeg": {
+    "mediaId": "jn74jv2czqp508n6n908c0fc9h7zfn4s",
+    "filename": "partnership-health-gala.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/711a4916-3db2-4906-8b0b-80d014cb7fe2"
+  },
+  "/img/carousel/patrick-rawa.jpeg": {
+    "mediaId": "jn77a8y6ff1th0knxnrbkc5s0x7zftkh",
+    "filename": "patrick-rawa.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/242e26b8-56b2-4b41-9b60-ba03885dcc14"
+  },
+  "/img/carousel/patrick-skeleton.jpeg": {
+    "mediaId": "jn757g1hxe9ezyb9256h1yvkmx7zffkx",
+    "filename": "patrick-skeleton.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/38ff9706-39df-47c0-bdf7-8ea49a66bd1d"
+  },
+  "/img/carousel/patrick-squirrel.jpeg": {
+    "mediaId": "jn78vnnqt8cym4g6wyvpvnpt417ze2s4",
+    "filename": "patrick-squirrel.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/2f7afb27-555f-462e-a1d7-5bb3eae9edf6"
+  },
+  "/img/carousel/pickle-ball.jpeg": {
+    "mediaId": "jn79r3jmxvyfa2pgyzyq5pamyx7zetj9",
+    "filename": "pickle-ball.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/d7ebd405-a010-4584-8a7c-c1984c7b8a84"
+  },
+  "/img/carousel/radio-show.jpeg": {
+    "mediaId": "jn79hdnd3kham2vcr2n3kaprcs7zfkj9",
+    "filename": "radio-show.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/3656c418-0608-48c2-9224-517d2cf66043"
+  },
+  "/img/carousel/rockwell-tom.jpeg": {
+    "mediaId": "jn71cdcv207q4dp01r5setf7nh7zegkc",
+    "filename": "rockwell-tom.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/809205b5-599d-4346-9540-c35edaba7d12"
+  },
+  "/img/carousel/second-year.jpeg": {
+    "mediaId": "jn7bye4ebm9834sb7p23249mc57zfx48",
+    "filename": "second-year.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/575eeedc-2a25-49bd-99d2-cb0831b204be"
+  },
+  "/img/carousel/shaikh-central-line.jpeg": {
+    "mediaId": "jn7d1n91gvxd02k3z1kw5jy4ad7zfbzr",
+    "filename": "shaikh-central-line.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/2f89f16e-d323-4897-b926-edcd46f8f7a3"
+  },
+  "/img/carousel/signout.jpeg": {
+    "mediaId": "jn7e20p29fdehbfhvr8paq4hm97zeq7w",
+    "filename": "signout.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/4d4365e3-0148-48fa-b5a5-3794a2352ce2"
+  },
+  "/img/carousel/sim-lab.jpeg": {
+    "mediaId": "jn75pdzb055py6x8jyxrr5dnh17zen1y",
+    "filename": "sim-lab.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/f2ce7b1f-f4c7-49e8-9b70-ff7719b4f6be"
+  },
+  "/img/carousel/skeleton-joseph.jpeg": {
+    "mediaId": "jn760312px689f2jpkjpd56r3x7zfnkp",
+    "filename": "skeleton-joseph.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/2c52b222-7be8-4d20-a036-472108501efa"
+  },
+  "/img/carousel/team-pose-3.jpeg": {
+    "mediaId": "jn7f8mrca7pjzrdtd5atg2av1n7zepyz",
+    "filename": "team-pose-3.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/922e5bb0-1794-4c12-bf90-481ab538a4ee"
+  },
+  "/img/carousel/trivia-night.jpeg": {
+    "mediaId": "jn714gvng74x9v498mkdt669f57zea1n",
+    "filename": "trivia-night.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/75b4bdaa-0969-4d26-ad00-545f945ca538"
+  },
+  "/img/carousel/trunk-treat-1.jpeg": {
+    "mediaId": "jn7917ssbs010e906d8pzcewms7zffnw",
+    "filename": "trunk-treat-1.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/1e09ec92-f9e3-4347-8d48-0d482205b426"
+  },
+  "/img/carousel/trunk-treat-2.jpeg": {
+    "mediaId": "jn7dwqdzapzt9ar449ncbxy1s17zepz8",
+    "filename": "trunk-treat-2.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/d74872b1-4d48-4751-b1ef-170d84cc0280"
+  },
+  "/img/carousel/trunk-treat-3.jpeg": {
+    "mediaId": "jn7fx5yy6cbavcy0rcxqhzg5jx7ze59t",
+    "filename": "trunk-treat-3.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/7421bbde-9e29-4ce2-8d8d-6552b5a54401"
+  },
+  "/img/carousel/twinning.jpeg": {
+    "mediaId": "jn7cgr8a72dhmfs829tvh3zv8d7zff53",
+    "filename": "twinning.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/e21914d5-7f70-4176-910a-def2a5ce1e74"
+  },
+  "/img/carousel/ty-welcome.jpeg": {
+    "mediaId": "jn7fjdct81tzm3bevz2gwcawps7ze434",
+    "filename": "ty-welcome.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/a51c960f-5756-404b-bf4e-d2fd47b08663"
+  },
+  "/img/carousel/val-team-1.jpeg": {
+    "mediaId": "jn7a7f6x3whq2ge242dqc33n1x7zfq1k",
+    "filename": "val-team-1.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/701cefa6-e9ac-4210-bde4-163d6c95a03d"
+  },
+  "/img/carousel/val-team-2.jpeg": {
+    "mediaId": "jn77qzt65ny85v0qpkdhswk3hs7zf9cx",
+    "filename": "val-team-2.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/ed130729-6a63-4ed4-80ba-4a39dd24d75b"
+  },
+  "/img/carousel/welcome-party.jpeg": {
+    "mediaId": "jn7ftd14f6y6deh6mas4y61dyh7zfnej",
+    "filename": "welcome-party.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/580e32f1-7083-47e9-aa2f-d697caad9ec1"
+  },
+  "/img/carousel/winter-is-coming.jpeg": {
+    "mediaId": "jn7c8p6bsh1nyp6mkn234vz0q17zfh7v",
+    "filename": "winter-is-coming.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/31248e10-5cc8-493b-af3f-1548ef039cdd"
+  },
+  "/img/carousel/women-in-medicine-1.jpeg": {
+    "mediaId": "jn73esg7m5exchm4trvy8g2z4x7ze8py",
+    "filename": "women-in-medicine-1.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/fdb12f94-7717-4fad-828d-7a31db8f48b3"
+  },
+  "/img/carousel/women-in-medicine-2.jpeg": {
+    "mediaId": "jn79xtegp7gddt2ep5bwfrd8n17ze79h",
+    "filename": "women-in-medicine-2.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/c06c3dbb-8348-401f-ac6e-71559348f859"
+  },
+  "/img/cathy-dean.jpeg": {
+    "mediaId": "jn7ac27vn828fn9a78507e57j97zefjc",
+    "filename": "cathy-dean.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/a6a7b61a-5e99-4d12-85d8-9c810343d47a"
+  },
+  "/img/clinic/felicia-farrell.jpeg": {
+    "mediaId": "jn741s80x1rk1ageyddehhh4dd7ze68v",
+    "filename": "felicia-farrell.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/e4fb5730-5fc9-4f3c-a11c-81f620a2ce76"
+  },
+  "/img/culturosity/akwaaba.jpeg": {
+    "mediaId": "jn76ry72n6qmczj4tnvqza84257zfp7f",
+    "filename": "akwaaba.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/a5084687-0e81-4c36-9835-8a313e98385e"
+  },
+  "/img/culturosity/ampe.jpeg": {
+    "mediaId": "jn71d2nj23qeawrf9ngjj934rx7ze1q1",
+    "filename": "ampe.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/43def2a4-91f2-4a5e-b469-23d9836bda47"
+  },
+  "/img/culturosity/castle.jpeg": {
+    "mediaId": "jn7aq5s5saks193n1mtxecbxzs7zevtz",
+    "filename": "castle.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/3957a3a6-b7d6-46de-83d5-862cb707f87f"
+  },
+  "/img/culturosity/fabric-seller.jpeg": {
+    "mediaId": "jn7dvc2gsvz57sqcj95gkb3ht97zfk2x",
+    "filename": "fabric-seller.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/b1c94b54-e7ae-4bd6-868d-ba2434a17bd5"
+  },
+  "/img/culturosity/food.jpeg": {
+    "mediaId": "jn766x8ztmvkdd68900qt44pfd7zfh8f",
+    "filename": "food.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/d0b30369-e63c-4962-b5dc-133fed875ab5"
+  },
+  "/img/culturosity/gandi-rockwell-eating.jpeg": {
+    "mediaId": "jn7bn5cjz4842y6dmmjp90x0qs7zfa3n",
+    "filename": "gandi-rockwell-eating.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/a409b99b-f406-4812-8282-8c60fbacb959"
+  },
+  "/img/culturosity/ghana-vs-nigeria.jpeg": {
+    "mediaId": "jn73cpf3036x5q59m4ssz4hpgn7zezyh",
+    "filename": "ghana-vs-nigeria.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/f09bf6a4-128b-4c4c-962d-4eb096cd93ef"
+  },
+  "/img/culturosity/jan-26/patrick-michael.jpeg": {
+    "mediaId": "jn79nxh3b89p34rrybfqy6h9257zfyb4",
+    "filename": "patrick-michael.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/37514c23-8b2f-4af1-bbec-4537db254e36"
+  },
+  "/img/culturosity/jan-26/spread.jpeg": {
+    "mediaId": "jn7d11dr8vkfacfph81reysvb17zf83f",
+    "filename": "spread.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/8f302412-697c-402a-86ec-3427bc94dc8d"
+  },
+  "/img/culturosity/jollof.jpeg": {
+    "mediaId": "jn74cqswtcbeap4973zwf26g757zej23",
+    "filename": "jollof.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/1fbb7f5f-13d6-41a2-b8b5-1b4c5615ca9d"
+  },
+  "/img/culturosity/kente-weaving.jpeg": {
+    "mediaId": "jn7csrca1tf0s7mzjf4508vwk97zeebt",
+    "filename": "kente-weaving.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/1b76d406-7c3e-43b9-91b9-9472d6a4ee10"
+  },
+  "/img/culturosity/labadi-beach.jpeg": {
+    "mediaId": "jn79t2m6efbm973ss4vwv4bv957ze6tt",
+    "filename": "labadi-beach.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/015a8fb5-72d3-4bef-9d75-5356af862395"
+  },
+  "/img/culturosity/more-food.jpeg": {
+    "mediaId": "jn78wxwpz9qbj2t9xzerjp1zwh7ze29f",
+    "filename": "more-food.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/fcb51f82-2c81-4343-867e-5a1b021cb461"
+  },
+  "/img/culturosity/presentation.jpeg": {
+    "mediaId": "jn76t4n598wg5zr5g5s38fw3ex7zedpj",
+    "filename": "presentation.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/4cf43653-f2c9-44c3-b5b6-67f671352f91"
+  },
+  "/img/dwayne-mohan-md.jpeg": {
+    "mediaId": "jn70vtq7twktkbxk1ctgc9djws7ze4xa",
+    "filename": "dwayne-mohan-md.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/a147fc03-d84d-4ee4-adb7-3cd508172c9b"
+  },
+  "/img/dwayne-rose-gandi.jpeg": {
+    "mediaId": "jn7cdrstjphrnq4896cwq0398n7ze3e5",
+    "filename": "dwayne-rose-gandi.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/27fc3263-f7aa-4283-b607-de3990721a1a"
+  },
+  "/img/eating-healthy.jpeg": {
+    "mediaId": "jn7bqvk2f3jqrybhw1tt9vcqqs7zecjr",
+    "filename": "eating-healthy.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/7e7b4c3c-4868-47e8-a0c3-15b9e644955b"
+  },
+  "/img/emotional-plushie.jpeg": {
+    "mediaId": "jn78xmpzrqshpvem18dwca39mh7zf77a",
+    "filename": "emotional-plushie.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/539682a0-dd80-4a14-8cf3-26ce7a46d840"
+  },
+  "/img/employee-spotlight-09-24.jpeg": {
+    "mediaId": "jn7bdxfyvkhm0mfx4gbyxj5nwd7zfa1n",
+    "filename": "employee-spotlight-09-24.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/546460b8-77ff-4308-9119-0a953a8eba26"
+  },
+  "/img/farewell.jpeg": {
+    "mediaId": "jn70yw77zgzznhmp6avaxpprzx7zesrw",
+    "filename": "farewell.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/00410351-77d4-477e-bec8-d53df8f3b833"
+  },
+  "/img/feb-banner.jpeg": {
+    "mediaId": "jn767gczdst1v0dvhnqt0jvrah7zfppm",
+    "filename": "feb-banner.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/f8a6f980-deb0-40d4-b279-d60908145a3b"
+  },
+  "/img/graduation/grad-1.jpeg": {
+    "mediaId": "jn7dceg8rvcbg5y0tnr0b3ezb57zezad",
+    "filename": "grad-1.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/357eff20-6c71-4f45-be43-555c960d47ff"
+  },
+  "/img/graduation/grad-2.jpeg": {
+    "mediaId": "jn7705rbtnb81d9j34tg8enke17zfz7e",
+    "filename": "grad-2.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/c6fb8a07-e050-4d7d-80c6-84b1c3166361"
+  },
+  "/img/graduation/grad-3.jpeg": {
+    "mediaId": "jn7a0npq5wpnh06p4zgw0skdc17zfyw7",
+    "filename": "grad-3.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/1ac0cb30-0971-4131-81a6-14272b74039f"
+  },
+  "/img/graduation/grad-4.jpeg": {
+    "mediaId": "jn76yetkjf3f1x73crje9zjsk97zf9ba",
+    "filename": "grad-4.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/d7ed6a05-d3c8-453f-bb62-ce8af301a4bb"
+  },
+  "/img/graduation/grad-5.jpeg": {
+    "mediaId": "jn76ecgc74jeh3dsqwk3mzym517zfwvm",
+    "filename": "grad-5.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/7d045347-e131-470e-879a-a470f78f2c50"
+  },
+  "/img/graduation/grad-6.jpeg": {
+    "mediaId": "jn747z6kt8vjmffn3zfnz5wy9d7zezax",
+    "filename": "grad-6.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/65ed470f-1f6a-4f58-afce-3de7e5c1418a"
+  },
+  "/img/hala-poster.jpeg": {
+    "mediaId": "jn744jgkya9g57880s58x5rpm57ze813",
+    "filename": "hala-poster.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/76b74630-be75-42dc-b23a-d223a0dd3d6d"
+  },
+  "/img/halloween25/party-1.jpeg": {
+    "mediaId": "jn73fwa9t8acp0x10efka6r2px7zf6j7",
+    "filename": "party-1.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/b3277397-3812-470f-8573-922b03c65996"
+  },
+  "/img/halloween25/party-10.jpeg": {
+    "mediaId": "jn768rzc1h8gkg8cspe3t92m517zenc9",
+    "filename": "party-10.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/9a60d0c2-c5c0-4a9f-b2ac-d5db83dbc853"
+  },
+  "/img/halloween25/party-11.jpeg": {
+    "mediaId": "jn78gbp1dacbvxt6j7a1cfj5x57zf0wq",
+    "filename": "party-11.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/05b8521e-6c03-4d5a-9a2b-a12a862201f2"
+  },
+  "/img/halloween25/party-12.jpeg": {
+    "mediaId": "jn75w2ayqvmwdqtzns0yvn4y4n7ze35s",
+    "filename": "party-12.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/fcd55355-7d9e-4a49-afd6-1ae6048a8fc8"
+  },
+  "/img/halloween25/party-13.jpeg": {
+    "mediaId": "jn725pyh12b10k1698wmh11py97zf3pz",
+    "filename": "party-13.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/d41747cb-5248-4d82-9158-2f60a950d9d4"
+  },
+  "/img/halloween25/party-14.jpeg": {
+    "mediaId": "jn7a5b1wpt8x1y8yncmsyfmh417zegw6",
+    "filename": "party-14.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/e90707b0-32d1-459e-83e2-c4031c4656ce"
+  },
+  "/img/halloween25/party-15.jpeg": {
+    "mediaId": "jn70zph42bbrtyfx0gk0kjkc8h7zfkv5",
+    "filename": "party-15.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/95c5beb9-22ee-4c83-a3bd-9ba056d44503"
+  },
+  "/img/halloween25/party-16.jpeg": {
+    "mediaId": "jn7ddpz0pa4fsf9yebje79w6pd7ze10j",
+    "filename": "party-16.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/dab63316-7450-4a28-84e6-ede113e037bb"
+  },
+  "/img/halloween25/party-17.jpeg": {
+    "mediaId": "jn7ezcf1bfrhpz1n9f399v2s517zfn2n",
+    "filename": "party-17.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/416494ec-2c9d-4be2-9115-6c6559c861ce"
+  },
+  "/img/halloween25/party-18.jpeg": {
+    "mediaId": "jn7b9byvef165w5hs16vyx9d097ze5te",
+    "filename": "party-18.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/38a8bcb8-2631-429b-9728-1ea998755f1d"
+  },
+  "/img/halloween25/party-19.jpeg": {
+    "mediaId": "jn72gv3v5hzpvfg0b9kqgmkj197ze587",
+    "filename": "party-19.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/34034171-c215-43b4-88a3-42131faa94b1"
+  },
+  "/img/halloween25/party-2.jpeg": {
+    "mediaId": "jn7227ve4byn9djteh13vjk8sx7zekkn",
+    "filename": "party-2.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/5c8f9253-d0e5-4183-946b-cac26a895a83"
+  },
+  "/img/halloween25/party-20.jpeg": {
+    "mediaId": "jn73s92v2svcygnsr84gsr5zws7ze5pr",
+    "filename": "party-20.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/0854ae2b-d78b-4ab9-b8f3-faf92f43d225"
+  },
+  "/img/halloween25/party-21.jpeg": {
+    "mediaId": "jn7dbmfaaj30bfyawkd0e352157zf78a",
+    "filename": "party-21.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/246f6d07-8342-4d28-ab16-3dc76889ae73"
+  },
+  "/img/halloween25/party-3.jpeg": {
+    "mediaId": "jn7428mpbeyj05gcnqn7mxv1517zf3cv",
+    "filename": "party-3.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/57974940-1fa4-42d1-a618-87d45b5ae8f8"
+  },
+  "/img/halloween25/party-4.jpeg": {
+    "mediaId": "jn70mmv7t66rybxvpmyny38pyd7zeas2",
+    "filename": "party-4.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/cc661d2d-389f-411d-bd54-9015d71285a8"
+  },
+  "/img/halloween25/party-5.jpeg": {
+    "mediaId": "jn71cveka40mc5x27ztf9d33an7zerxr",
+    "filename": "party-5.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/2f9b1854-2aed-4255-8eae-12aa012a5f6a"
+  },
+  "/img/halloween25/party-6.jpeg": {
+    "mediaId": "jn77xg5yd3tp2wdacm1hz9f7r17zfm90",
+    "filename": "party-6.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/61ded7d6-3011-451e-8562-d1f4a63378e2"
+  },
+  "/img/halloween25/party-7.jpeg": {
+    "mediaId": "jn70mmaej8vbhm1xwp80ch99j97zfpqe",
+    "filename": "party-7.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/a5877578-ca2c-4677-a76f-72a80ef28fd6"
+  },
+  "/img/halloween25/party-8.jpeg": {
+    "mediaId": "jn7fh4aywr1sv22vt21y95mqnn7zf2hj",
+    "filename": "party-8.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/8973b676-ac03-4877-a4c5-3f5baec19d07"
+  },
+  "/img/halloween25/party-9.jpeg": {
+    "mediaId": "jn71tantkz4dv5dpvsp8xhqv197zeq7s",
+    "filename": "party-9.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/c9181ff7-d345-4bdd-8c11-25207907c876"
+  },
+  "/img/inside-church.jpeg": {
+    "mediaId": "jn7bfpjp00p3x729tk2m75ye217zfc3t",
+    "filename": "inside-church.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/a1f7a86c-e89c-4f12-84fb-675534fcbad7"
+  },
+  "/img/intern-corner/amal-akhtar-do.jpeg": {
+    "mediaId": "jn7cy0hcj8sjkbef4wgxr0fa597zfjdz",
+    "filename": "amal-akhtar-do.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/81d8e7bc-a07a-478c-95cb-5dfe5c61a958"
+  },
+  "/img/intern-corner/genesis-munoz-md.jpeg": {
+    "mediaId": "jn7cmdj54k6rn6jh8ch0m3t1z97zf3c7",
+    "filename": "genesis-munoz-md.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/7a572e6f-db94-4421-8a6a-3e24660e6c83"
+  },
+  "/img/intern-corner/jay-patel-do.jpeg": {
+    "mediaId": "jn73my4wvjdrmgstez686w01e57zf7ar",
+    "filename": "jay-patel-do.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/6add61cf-2caf-4b12-8556-1050656d41f5"
+  },
+  "/img/intern-corner/julio-morciego-md.jpeg": {
+    "mediaId": "jn71355wmb4p2k9rpt2mbfqrcx7zey68",
+    "filename": "julio-morciego-md.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/64b6aed0-b230-42fe-a080-2a23f29a5e81"
+  },
+  "/img/intern-corner/rawa-salih-md.jpeg": {
+    "mediaId": "jn70wf4ggkwah6agj1yfmf16md7ze6t4",
+    "filename": "rawa-salih-md.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/7fb2b298-7a6d-4e80-a219-b1678bb18886"
+  },
+  "/img/intern-corner/sarah-sabol-md.jpeg": {
+    "mediaId": "jn712bazr401vsr3b2zb06qw817zfamk",
+    "filename": "sarah-sabol-md.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/83a4bf64-fe3f-42ce-90e5-02f0732ba0a0"
+  },
+  "/img/intern-mid-year.jpeg": {
+    "mediaId": "jn78k42wqbjsmwg14x1bmt7fk57zeqbz",
+    "filename": "intern-mid-year.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/5a981b89-f645-460f-b5fb-23b99a3e38df"
+  },
+  "/img/intern-year.jpeg": {
+    "mediaId": "jn734v8zg83h4fhzqp3d5yfgv17zfnbc",
+    "filename": "intern-year.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/b87b294d-7469-45cc-a56d-b224f3e819ff"
+  },
+  "/img/jan-26-banner.jpeg": {
+    "mediaId": "jn75yr3zbsv1hfv8pec70c3prn7zf85a",
+    "filename": "jan-26-banner.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/b0520439-0451-439e-9ea2-6875508c9b18"
+  },
+  "/img/july-banner.jpeg": {
+    "mediaId": "jn70td55bmn7mfyewtr16b599h7zfswr",
+    "filename": "july-banner.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/ecded552-6be6-4c97-954e-573db29ded29"
+  },
+  "/img/kevin-farewell.jpg": {
+    "mediaId": "jn7db97jmy8511av28zm5xxeys7zeadq",
+    "filename": "kevin-farewell.jpg",
+    "url": "http://127.0.0.1:3210/api/storage/c7d8c967-6a35-44bb-8c8a-0a099cbf66e7"
+  },
+  "/img/lamptey.jpeg": {
+    "mediaId": "jn783pb4gk217wmaf7zx3hyedd7ze1w2",
+    "filename": "lamptey.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/b75b61fe-abdb-494a-bb62-aa5f3460751a"
+  },
+  "/img/mariya-tom-md.jpeg": {
+    "mediaId": "jn7f26m1evj2ss0vdsxysrda8d7zfqbs",
+    "filename": "mariya-tom-md.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/9e1b74a7-1cc4-4823-94aa-321f4ff4acb3"
+  },
+  "/img/matthew-varn-md.jpeg": {
+    "mediaId": "jn7c7dhja477vp8m9k31xfv2k17zf1ne",
+    "filename": "matthew-varn-md.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/bd4e3f38-828f-44a4-a12a-bc72adfa4f15"
+  },
+  "/img/michael-heron-md.jpeg": {
+    "mediaId": "jn7f9xaknme5s0st4mtkv1n6jh7zf7mj",
+    "filename": "michael-heron-md.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/6c4bc597-4d8a-4182-aaa7-a4c1eb4ae228"
+  },
+  "/img/moultrie/cows.jpeg": {
+    "mediaId": "jn738wksawn3gkqygekzd4pwm97zez9b",
+    "filename": "cows.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/964e32d5-d46d-4d56-8791-daa843991ff0"
+  },
+  "/img/moultrie/edusa.jpeg": {
+    "mediaId": "jn71qg9r5sf5vftghkf71y9cdd7zf7sf",
+    "filename": "edusa.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/8c76b895-a659-4fcd-b355-4357847dc266"
+  },
+  "/img/moultrie/grounds.jpeg": {
+    "mediaId": "jn76zxj6t3168qmvrs4artfn3n7zfy76",
+    "filename": "grounds.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/8afdcdad-9116-4b3c-80d5-d435a75cef6b"
+  },
+  "/img/moultrie/mariya-presenting.jpeg": {
+    "mediaId": "jn73m3dkwna8gvy26j6g4tt4e17zfxzs",
+    "filename": "mariya-presenting.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/8b1d4931-ef77-4a8c-9646-c6e228d65c99"
+  },
+  "/img/moultrie/mariya.jpeg": {
+    "mediaId": "jn7dh3k5a80h0nwfjhmd7nrrsx7zfjjj",
+    "filename": "mariya.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/97415f37-a782-4a06-aa70-64fa778122f0"
+  },
+  "/img/moultrie/rose.jpeg": {
+    "mediaId": "jn7cxykh4ht90r1jrjbc38r11n7zft01",
+    "filename": "rose.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/73ac8d03-b059-4e33-898f-ca8247ad53c5"
+  },
+  "/img/musings-december-2024.jpeg": {
+    "mediaId": "jn73kkgdjrrwr20k77c9j4298x7zeded",
+    "filename": "musings-december-2024.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/c011d629-fefa-44bf-8265-b3c1ce670a70"
+  },
+  "/img/musings-november.jpeg": {
+    "mediaId": "jn72qgep25615kfhsn1v33thhs7zehxt",
+    "filename": "musings-november.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/7c43dcdc-523c-4c7f-957e-e1f2ae62b6ce"
+  },
+  "/img/new-chiefs-2026.jpeg": {
+    "mediaId": "jn7bw5a06sgbzbffr3xsz1wyw57zf3e9",
+    "filename": "new-chiefs-2026.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/dcd2fae1-ebdd-4f8a-adf9-9fcdcea711f7"
+  },
+  "/img/new-chiefs.jpeg": {
+    "mediaId": "jn71vapty61bdwdtf9awvxve7x7zfqj3",
+    "filename": "new-chiefs.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/7bab549d-0733-44a9-9956-0ac50fc963bf"
+  },
+  "/img/nov-banner.jpeg": {
+    "mediaId": "jn71vfr7c0288bjejn9k8e6gn97zefk1",
+    "filename": "nov-banner.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/2cc8ed67-c0cd-4082-a976-a30ffeeec778"
+  },
+  "/img/november-banner.jpeg": {
+    "mediaId": "jn77599g97s3ynmrfkmpzed8x97zfxzj",
+    "filename": "november-banner.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/432b4ec1-2c38-47d2-aed4-04251d6666b4"
+  },
+  "/img/october-banner.jpeg": {
+    "mediaId": "jn70d2b7ndp98mmwgxg5mb95g17zfjzt",
+    "filename": "october-banner.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/15e9681f-653e-4a1d-b400-b3a134bdcd88"
+  },
+  "/img/og-twitter.jpeg": {
+    "mediaId": "jn72njrcxzqgwv56j47t9jd4zh7zfnd3",
+    "filename": "og-twitter.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/7f94aaa7-8322-47b3-9c4d-d650ad2e339b"
+  },
+  "/img/og.jpeg": {
+    "mediaId": "jn73p3wgb6v6a2gafr2j6t01n97zeh5z",
+    "filename": "og.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/a5fc1540-9ef0-4d15-97d0-8e1645b15a12"
+  },
+  "/img/outside-church.jpeg": {
+    "mediaId": "jn71xrewvmg0e3br527mwse0bd7ze4gv",
+    "filename": "outside-church.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/73895e0e-eac8-4880-aede-873ad8f8b883"
+  },
+  "/img/patient-safety/award-1.jpeg": {
+    "mediaId": "jn77znpammhq7f8dgvsky7rxhx7zfm4v",
+    "filename": "award-1.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/6cde878e-2818-4127-9bb7-9d7842d17750"
+  },
+  "/img/patient-safety/award-2.jpeg": {
+    "mediaId": "jn78c54643np7mbkxw1ts7fx0d7zedpt",
+    "filename": "award-2.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/24b5ea77-3b2f-412a-a7cb-a9a5727df4d9"
+  },
+  "/img/patrick-joseph-md.jpeg": {
+    "mediaId": "jn74ccjyxf7r9gmzpk7fe3myen7zee2j",
+    "filename": "patrick-joseph-md.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/2daee8b2-433e-4f85-849d-120b2afede8f"
+  },
+  "/img/place.jpeg": {
+    "mediaId": "jn7eehq8xg8ezweahr1834g6hs7ze6rw",
+    "filename": "place.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/e7ba9fd1-5067-4a7f-a2a3-6afc08b1653a"
+  },
+  "/img/rabail-shaikh-md.jpeg": {
+    "mediaId": "jn7efrp73mcz7wnfw3dvf8cvjx7zfj0v",
+    "filename": "rabail-shaikh-md.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/8e25a064-1fb0-46c5-b0e0-67a43a6dca91"
+  },
+  "/img/reg-conf-25/conf-1.jpeg": {
+    "mediaId": "jn797hq7aq0adbs30ft89bnat17zf6c7",
+    "filename": "conf-1.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/824b70ea-612d-4251-b1c0-40edc7898e0a"
+  },
+  "/img/reg-conf-25/conf-10.jpeg": {
+    "mediaId": "jn70ykhrfw7f0avw09ph0efd0x7zf3mn",
+    "filename": "conf-10.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/33724698-75c0-43bb-aac2-5c9e18c3979b"
+  },
+  "/img/reg-conf-25/conf-11.jpeg": {
+    "mediaId": "jn7an9xrrsxnhqazt10bzeey4x7zf54d",
+    "filename": "conf-11.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/d77ff457-23c0-44fb-a4de-29d509814ea7"
+  },
+  "/img/reg-conf-25/conf-12.jpeg": {
+    "mediaId": "jn7aj983w3wmy6t7mabbfan1ax7ze5bf",
+    "filename": "conf-12.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/ba367245-631a-4af7-a41b-24385557a901"
+  },
+  "/img/reg-conf-25/conf-13.jpeg": {
+    "mediaId": "jn76nd4nmcf25y32pftaabe64x7zezv6",
+    "filename": "conf-13.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/b57087b2-1d72-4649-902a-aaeeba21b646"
+  },
+  "/img/reg-conf-25/conf-14.jpeg": {
+    "mediaId": "jn75j30ydb3tyag5274qpbgq1h7zerc0",
+    "filename": "conf-14.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/433e1ff3-c123-4f3e-aad1-bb6eed37217c"
+  },
+  "/img/reg-conf-25/conf-15.jpeg": {
+    "mediaId": "jn7eg4f90rrwzs6smwt1w7g92x7ze1es",
+    "filename": "conf-15.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/ca100815-fa13-4f02-846d-4262ffabb951"
+  },
+  "/img/reg-conf-25/conf-16.jpeg": {
+    "mediaId": "jn7dm2q35q636xj96jgvsex4nd7zexnv",
+    "filename": "conf-16.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/0fd81976-1a2d-456d-adec-f5b7c5795a16"
+  },
+  "/img/reg-conf-25/conf-17.jpeg": {
+    "mediaId": "jn77p4nbebhqbqryw3genaxh5x7zeqej",
+    "filename": "conf-17.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/51a896d9-3f49-403e-a683-61a0ad6db7d6"
+  },
+  "/img/reg-conf-25/conf-18.jpeg": {
+    "mediaId": "jn7bnaqafgb0remkjehgf1dqp57ze355",
+    "filename": "conf-18.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/287b1d19-616b-4a90-8c68-b98bb03d2714"
+  },
+  "/img/reg-conf-25/conf-19.jpeg": {
+    "mediaId": "jn70emzk0qde3nc9s9vk2crv297zeskk",
+    "filename": "conf-19.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/ec184fb5-f148-4b18-b08c-7b16d79a5c31"
+  },
+  "/img/reg-conf-25/conf-2.jpeg": {
+    "mediaId": "jn770tttstjaj7zgszh4cd8v8d7ze4g5",
+    "filename": "conf-2.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/303bfe02-592a-4c7d-9f03-4225f92b8e0c"
+  },
+  "/img/reg-conf-25/conf-20.jpeg": {
+    "mediaId": "jn716hexbfjahn50j8v20vqad57zerpg",
+    "filename": "conf-20.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/bdc8de3b-6e43-4e2f-a2a7-cf4ce9b92763"
+  },
+  "/img/reg-conf-25/conf-21.jpeg": {
+    "mediaId": "jn70p0x5fm0wvmp4250hyj926d7zfk03",
+    "filename": "conf-21.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/62dfb7bd-11ce-4bdb-b5d3-8bdf52fb00e7"
+  },
+  "/img/reg-conf-25/conf-22.jpeg": {
+    "mediaId": "jn7be5s80tss1r2g5kf82gzwcn7zfhwe",
+    "filename": "conf-22.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/f856b279-7b5c-4253-b5ff-4c22a59f1271"
+  },
+  "/img/reg-conf-25/conf-23.jpeg": {
+    "mediaId": "jn7bpfwm411djwfqr9668a05297ze2v8",
+    "filename": "conf-23.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/cb3a805c-0e41-4bbe-ab4a-c4520c197206"
+  },
+  "/img/reg-conf-25/conf-24.jpeg": {
+    "mediaId": "jn75w8ffgb9yzgye4sqgx8jbg97zezh6",
+    "filename": "conf-24.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/fc9dcb91-611f-4cc9-966a-834aa03ded8d"
+  },
+  "/img/reg-conf-25/conf-25.jpeg": {
+    "mediaId": "jn717974md11d12zgg0ad3kpyx7zfhyr",
+    "filename": "conf-25.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/a5dd65c0-5040-4c94-8cd4-c7f72c809e59"
+  },
+  "/img/reg-conf-25/conf-26.jpeg": {
+    "mediaId": "jn7avwy8qm810r5axt1n01nn5d7ze7tn",
+    "filename": "conf-26.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/bc919319-2743-4cab-b066-c2fa434f7099"
+  },
+  "/img/reg-conf-25/conf-27.jpeg": {
+    "mediaId": "jn70gee1xsmct2g3s0xwnjy3ex7zebf7",
+    "filename": "conf-27.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/18f58f59-fa08-47f6-b70e-9cd2f6a316af"
+  },
+  "/img/reg-conf-25/conf-28.jpeg": {
+    "mediaId": "jn7196e0snwhqnygf4ty5gj1ds7zf7w7",
+    "filename": "conf-28.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/92dc0af0-aaa9-4278-a3a6-38ac6f47a3c1"
+  },
+  "/img/reg-conf-25/conf-29.jpeg": {
+    "mediaId": "jn7fv3vdzzhn8scd5btam1tdqn7ze8r4",
+    "filename": "conf-29.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/507061d6-1985-4c07-81c6-869526af4e1c"
+  },
+  "/img/reg-conf-25/conf-3.jpeg": {
+    "mediaId": "jn7e8rjsme086t2jseb4p82gs17ze32z",
+    "filename": "conf-3.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/f0a5d493-5b54-41be-813f-14f07929fa54"
+  },
+  "/img/reg-conf-25/conf-30.jpeg": {
+    "mediaId": "jn77nsazh3armeswtk4fnbx0bd7zf1d6",
+    "filename": "conf-30.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/f9a59449-3f51-4d67-adf6-6319f7ccdda6"
+  },
+  "/img/reg-conf-25/conf-31.jpeg": {
+    "mediaId": "jn7f73ve88sznrt8fb052nn5957zf0p7",
+    "filename": "conf-31.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/4cb8b308-14ab-47b5-9acf-2af4f4d0d981"
+  },
+  "/img/reg-conf-25/conf-32.jpeg": {
+    "mediaId": "jn7e00n9jgnsz1fb1wnqgvapv57zfm74",
+    "filename": "conf-32.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/efa1a6cf-f767-425d-99c4-b4277a43d588"
+  },
+  "/img/reg-conf-25/conf-4.jpeg": {
+    "mediaId": "jn72z21hdjbvdvtqe9143z253s7zes6r",
+    "filename": "conf-4.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/39c1c696-dbf1-4dfa-8d77-3074a9003ba7"
+  },
+  "/img/reg-conf-25/conf-5.jpeg": {
+    "mediaId": "jn75hqv5y4b1v085xx1fgwb9b17zfjg6",
+    "filename": "conf-5.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/6efa03d0-a6a3-4533-a302-c3082ff1c4ed"
+  },
+  "/img/reg-conf-25/conf-6.jpeg": {
+    "mediaId": "jn71x0yqnr74yjwwpefkvvs6h17zffrk",
+    "filename": "conf-6.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/05680f84-f435-4ecf-bd7a-2d96bb29fc80"
+  },
+  "/img/reg-conf-25/conf-7.jpeg": {
+    "mediaId": "jn787k17bmbmteqqk5xs8q4s8h7zewhb",
+    "filename": "conf-7.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/eccdc78e-7325-45c0-bdd1-a290f62af90f"
+  },
+  "/img/reg-conf-25/conf-8.jpeg": {
+    "mediaId": "jn7dfnrzmgqb72m56xthy1hzw17zeymn",
+    "filename": "conf-8.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/b153254e-3c9b-43a2-b402-b44fdf7fdcb1"
+  },
+  "/img/reg-conf-25/conf-9.jpeg": {
+    "mediaId": "jn77zbrv3xfpfh3e8g2qh4v9257zenxb",
+    "filename": "conf-9.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/16b6316f-f68d-4d23-a779-23cc7a0a89f4"
+  },
+  "/img/reg-conf-25/group-picture.jpeg": {
+    "mediaId": "jn736fd0x4k7e7739jabq1mgkx7ze3gp",
+    "filename": "group-picture.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/f9040a26-1ddd-4136-b167-9d0aa056990c"
+  },
+  "/img/resident-awards-2025.jpeg": {
+    "mediaId": "jn7bmywne0n3sh9ngr7xkp9r1x7zemfw",
+    "filename": "resident-awards-2025.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/949ab16f-2ca4-4757-b5a7-73fb746f4d5f"
+  },
+  "/img/resident-spotlight/anna-ledford-md.jpeg": {
+    "mediaId": "jn714evek9dvsat4xvdnt6k3zs7ze9dn",
+    "filename": "anna-ledford-md.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/19b336d0-5186-46cf-8d7c-bba65e2858e4"
+  },
+  "/img/resident-spotlight/james-mcsweeney-md.jpeg": {
+    "mediaId": "jn77g6fjmz3ndemvy0qaqzyekx7zfykw",
+    "filename": "james-mcsweeney-md.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/5e0d6f8e-71f1-4774-9637-18a3930434f2"
+  },
+  "/img/resident-spotlight/shook-chacon-md.jpeg": {
+    "mediaId": "jn79fyf5qxj8sgdfbqhmrr9d7d7ze4gh",
+    "filename": "shook-chacon-md.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/cc172c2d-73f8-4a55-9919-9e8d41caecd7"
+  },
+  "/img/rija-chaudhary-md.jpeg": {
+    "mediaId": "jn77sx6dz0w1w2gm272ktth25x7zf84s",
+    "filename": "rija-chaudhary-md.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/2937b640-0021-4aa6-854c-70f645f45df5"
+  },
+  "/img/roberta-sackey-md.jpeg": {
+    "mediaId": "jn7d1zk4qawa91fpajjzwryg1n7ze8zt",
+    "filename": "roberta-sackey-md.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/85b7a61c-6611-4eba-822c-556b0d113d4d"
+  },
+  "/img/rounds-to-vows.jpeg": {
+    "mediaId": "jn7fya391smap3g5a81rkm73017zezk2",
+    "filename": "rounds-to-vows.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/fcee8331-6da2-483e-b983-407168ee870c"
+  },
+  "/img/savannah.jpeg": {
+    "mediaId": "jn701v5khrq70panvpv9sd9ccn7ze5vj",
+    "filename": "savannah.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/95770e80-441b-498d-83c8-2f6498ebdc9d"
+  },
+  "/img/sept-banner.jpeg": {
+    "mediaId": "jn7ba46fykgzzzcq3cnggnvr0h7zehns",
+    "filename": "sept-banner.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/8fb099ba-d945-4e85-b0b8-7fb1c396a0a7"
+  },
+  "/img/sgmc-team.jpeg": {
+    "mediaId": "jn70r2pvtzkxftfek4tcyhnxad7zey2t",
+    "filename": "sgmc-team.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/7aa36bb4-7222-4410-aa2a-93f4d5cd434f"
+  },
+  "/img/sgmc.jpg": {
+    "mediaId": "jn7e3py9qd9webgdk0tcq6js397zerqk",
+    "filename": "sgmc.jpg",
+    "url": "http://127.0.0.1:3210/api/storage/4f8d93ac-61e6-4c85-84e0-e49882978f19"
+  },
+  "/img/sgmchealth.jpeg": {
+    "mediaId": "jn79wqf9j8h8skk6z1mt4g7yy57zfcvc",
+    "filename": "sgmchealth.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/420fe891-10c7-42c2-872c-5c0529e584a4"
+  },
+  "/img/spotlight.svg": {
+    "mediaId": "jn76btt64ebs62kga8cd3d4bvn7zfq8b",
+    "filename": "spotlight.svg",
+    "url": "http://127.0.0.1:3210/api/storage/18f5be00-0ecf-4bdd-93df-2ac9f82a4124"
+  },
+  "/img/tameshia-footman.jpeg": {
+    "mediaId": "jn78pc9j3eqz7e9bks1zh41wwd7zeg27",
+    "filename": "tameshia-footman.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/f74b3654-9f7a-45b3-9e50-b410c7b7be37"
+  },
+  "/img/taylor-martin-do.jpeg": {
+    "mediaId": "jn7e96d86h5q6vfqday6pj9yh17zeh51",
+    "filename": "taylor-martin-do.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/b71e23fc-0ce9-4df8-b622-e8ea8ccbb4f2"
+  },
+  "/img/things-to-do/valdosta-1.jpeg": {
+    "mediaId": "jn7camn18dtpcv1h2c0n8wswgx7zeent",
+    "filename": "valdosta-1.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/5ffbdf8a-f4cb-404c-b827-a9b801094171"
+  },
+  "/img/things-to-do/valdosta-2.jpeg": {
+    "mediaId": "jn7989edegz2408z1xftdrj2qn7zf66z",
+    "filename": "valdosta-2.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/1059c63f-4bf8-4b42-ad41-ca3704814468"
+  },
+  "/img/things-to-do/valdosta-3.jpeg": {
+    "mediaId": "jn761fjjxsaezdgfb4wc1ptsw97zfxqa",
+    "filename": "valdosta-3.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/7ebe4bf0-92aa-4770-9e0b-8cb6e0cbfd1a"
+  },
+  "/img/things-to-do/valdosta-4.jpeg": {
+    "mediaId": "jn7eqxyvjpssgsb8nxqe799jts7zeg66",
+    "filename": "valdosta-4.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/aeabe454-81fd-4c5b-b22f-5826975650ae"
+  },
+  "/img/things-to-do/valdosta-5.jpeg": {
+    "mediaId": "jn74fj4m8akc0xfw0pphq6fnhx7zfktg",
+    "filename": "valdosta-5.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/7ae30f28-2028-4b41-b5ea-364d97c35324"
+  },
+  "/img/things-to-do/valdosta-6.jpeg": {
+    "mediaId": "jn71cmtha1k1474km7ceknfpr97zejbp",
+    "filename": "valdosta-6.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/7b2e9914-f3f7-4502-bd7a-da508b71eb2c"
+  },
+  "/img/things-to-do/valdosta-7.jpeg": {
+    "mediaId": "jn77zqmwyfq1g5mcpmx41tthw57ze2a2",
+    "filename": "valdosta-7.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/5c4cbd01-6fdf-472a-b02e-0811ba3cc010"
+  },
+  "/img/things-to-do/valdosta-8.jpeg": {
+    "mediaId": "jn7cm8bf1v0m4er6w93mjmq75s7zfbkh",
+    "filename": "valdosta-8.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/ab78cbe3-d201-491e-8a90-4858150d550c"
+  },
+  "/img/zoha-allahuddin-md.jpeg": {
+    "mediaId": "jn7ffzb5b7syh98pz420cc22xn7zfmz6",
+    "filename": "zoha-allahuddin-md.jpeg",
+    "url": "http://127.0.0.1:3210/api/storage/8b02e337-0673-4783-b283-d9a6b202a3c3"
+  }
+}

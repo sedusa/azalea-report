@@ -19,7 +19,12 @@
       "Bash(npm install:*)",
       "Bash(npx tsx:*)",
       "Bash(tee:*)",
-      "Skill(frontend-design)"
+      "Skill(frontend-design)",
+      "Bash(npm run build:*)",
+      "Bash(npx convex:*)",
+      "Bash(npx tsc:*)",
+      "Bash(find:*)",
+      "Bash(wc:*)"
     ]
   }
 }

@@ -31,7 +31,7 @@ export function MediaLibrary({
   const [uploading, setUploading] = useState(false);
 
   // Queries
-  const allMedia = useQuery(api.media.list) || [];
+  const allMedia = useQuery(api.media.list, {}) || [];
   const canDeleteMedia = useQuery(
     api.media.canDelete,
     selectedForDelete ? { mediaId: selectedForDelete } : 'skip'
@@ -46,7 +46,7 @@ export function MediaLibrary({
   const filteredMedia = searchQuery
     ? allMedia.filter((media) =>
         media.filename.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        media.altText?.toLowerCase().includes(searchQuery.toLowerCase())
+        media.filename?.toLowerCase().includes(searchQuery.toLowerCase())
       )
     : allMedia;
 
@@ -96,7 +96,6 @@ export function MediaLibrary({
         filename: file.name,
         mimeType: file.type,
         size: file.size,
-        altText: '',
         userId: 'temp-user-id' as Id<'users'>, // TODO: Replace with real user ID
       });
 
@@ -152,15 +151,16 @@ export function MediaLibrary({
                 disabled={uploading}
                 className="hidden"
               />
-              <Button
-                as="span"
-                variant="primary"
-                size="sm"
-                disabled={uploading}
+              <span
+                className={`inline-flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                  uploading
+                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    : 'bg-emerald-700 text-white hover:bg-emerald-800 cursor-pointer'
+                }`}
               >
                 <LuUpload className="w-4 h-4 mr-2" />
                 {uploading ? 'Uploading...' : 'Upload Image'}
-              </Button>
+              </span>
             </label>
           )}
         </div>
@@ -241,7 +241,7 @@ export function MediaLibrary({
                   {media.url ? (
                     <img
                       src={media.url}
-                      alt={media.altText || media.filename}
+                      alt={media.filename}
                       className="w-full h-full object-cover"
                     />
                   ) : (

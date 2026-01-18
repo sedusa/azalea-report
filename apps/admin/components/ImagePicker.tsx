@@ -27,17 +27,16 @@ export function ImagePicker({
 }: ImagePickerProps) {
   const [showBrowser, setShowBrowser] = useState(false);
 
+  // Get all media
+  const allMedia = useQuery(api.media.list, {}) || [];
+
   // Get recent media (first 8)
-  const recentMedia = useQuery(api.media.list) || [];
-  const recentMediaSlice = recentMedia
+  const recentMediaSlice = [...allMedia]
     .sort((a, b) => b.uploadedAt - a.uploadedAt)
     .slice(0, 8);
 
-  // Get selected media details
-  const selectedMedia = useQuery(
-    api.media.get,
-    value ? { id: value } : 'skip'
-  );
+  // Find selected media from the loaded list
+  const selectedMedia = value ? allMedia.find((m) => m._id === value) : null;
 
   const handleSelect = (mediaId: Id<'media'>) => {
     onChange(mediaId);
@@ -63,7 +62,7 @@ export function ImagePicker({
               {selectedMedia.url ? (
                 <img
                   src={selectedMedia.url}
-                  alt={selectedMedia.altText || selectedMedia.filename}
+                  alt={selectedMedia.filename}
                   className="w-full h-full object-cover"
                 />
               ) : (
@@ -109,7 +108,7 @@ export function ImagePicker({
                 {media.url ? (
                   <img
                     src={media.url}
-                    alt={media.altText || media.filename}
+                    alt={media.filename}
                     className="w-full h-full object-cover"
                   />
                 ) : (
@@ -177,7 +176,7 @@ export function MultiImagePicker({
 
   // Get all selected media details
   const selectedMediaIds = value;
-  const allMedia = useQuery(api.media.list) || [];
+  const allMedia = useQuery(api.media.list, {}) || [];
   const selectedMedia = allMedia.filter((m) => selectedMediaIds.includes(m._id));
 
   const handleAdd = (mediaId: Id<'media'>) => {
@@ -220,7 +219,7 @@ export function MultiImagePicker({
                 {media.url ? (
                   <img
                     src={media.url}
-                    alt={media.altText || media.filename}
+                    alt={media.filename}
                     className="w-full h-full object-cover"
                   />
                 ) : (

@@ -57,6 +57,7 @@ const sectionTypeValidator = v.union(
   v.literal("musings"),
   v.literal("photosOfMonth"),
   v.literal("genericText"),
+  v.literal("twoColumn"),
   v.literal("custom")
 );
 
@@ -71,7 +72,29 @@ export const listByIssue = query({
   },
 });
 
+// Helper function to resolve media ID to URL
+async function resolveMediaUrl(ctx: any, mediaId: string | undefined): Promise<string | undefined> {
+  if (!mediaId) return undefined;
+
+  // Check if it's already a URL
+  if (mediaId.startsWith('http://') || mediaId.startsWith('https://')) {
+    return mediaId;
+  }
+
+  try {
+    const media = await ctx.db.get(mediaId as any);
+    if (media?.storageId) {
+      const url = await ctx.storage.getUrl(media.storageId);
+      return url ?? undefined;
+    }
+  } catch {
+    // If lookup fails, return undefined
+  }
+  return undefined;
+}
+
 // Get visible sections for an issue (for public display)
+// Resolves all media IDs to URLs for chiefs/interns arrays
 export const listVisibleByIssue = query({
   args: { issueId: v.id("issues") },
   handler: async (ctx, args) => {
@@ -80,7 +103,53 @@ export const listVisibleByIssue = query({
       .withIndex("by_issue_order", (q) => q.eq("issueId", args.issueId))
       .collect();
 
-    return sections.filter((section) => section.visible);
+    const visibleSections = sections.filter((section) => section.visible);
+
+    // Resolve image URLs in section data
+    const resolvedSections = await Promise.all(
+      visibleSections.map(async (section) => {
+        const data = { ...section.data };
+
+        // Resolve chiefs array images
+        if (section.type === 'chiefsCorner' && data.chiefs && Array.isArray(data.chiefs)) {
+          data.chiefs = await Promise.all(
+            data.chiefs.map(async (chief: any) => ({
+              ...chief,
+              image: await resolveMediaUrl(ctx, chief.image),
+            }))
+          );
+        }
+
+        // Resolve interns array images
+        if (section.type === 'internsCorner' && data.interns && Array.isArray(data.interns)) {
+          data.interns = await Promise.all(
+            data.interns.map(async (intern: any) => ({
+              ...intern,
+              image: await resolveMediaUrl(ctx, intern.image),
+            }))
+          );
+        }
+
+        // Resolve top-level image field (for spotlight, legacy formats, etc.)
+        if (data.image) {
+          data.image = await resolveMediaUrl(ctx, data.image);
+        }
+
+        // Resolve twoColumn images
+        if (section.type === 'twoColumn') {
+          if (data.leftImage) {
+            data.leftImage = await resolveMediaUrl(ctx, data.leftImage);
+          }
+          if (data.rightImage) {
+            data.rightImage = await resolveMediaUrl(ctx, data.rightImage);
+          }
+        }
+
+        return { ...section, data };
+      })
+    );
+
+    return resolvedSections;
   },
 });
 
@@ -99,11 +168,14 @@ export const create = mutation({
     type: sectionTypeValidator,
     data: v.any(),
     userId: v.id("users"),
+    // Optional fields for backwards compatibility (ignored - calculated automatically)
+    order: v.optional(v.number()),
+    visible: v.optional(v.boolean()),
   },
   handler: async (ctx, args) => {
     const now = Date.now();
 
-    // Get the current max order for this issue
+    // Get the current max order for this issue (ignore passed order, calculate fresh)
     const existingSections = await ctx.db
       .query("sections")
       .withIndex("by_issue", (q) => q.eq("issueId", args.issueId))
@@ -121,7 +193,7 @@ export const create = mutation({
       issueId: args.issueId,
       type: args.type,
       order: maxOrder + 1,
-      visible: true,
+      visible: args.visible !== undefined ? args.visible : true,
       data: sanitizedData,
       createdAt: now,
       updatedAt: now,

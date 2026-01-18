@@ -5,6 +5,9 @@ import type { Id } from '@convex/_generated/dataModel';
 import { Input, Textarea } from '@azalea/ui';
 import { TiptapEditor } from './TiptapEditor';
 import { ImagePicker, MultiImagePicker } from './ImagePicker';
+import { PersonArrayEditor } from './PersonArrayEditor';
+import { DetailsArrayEditor } from './DetailsArrayEditor';
+import { BulletsArrayEditor } from './BulletsArrayEditor';
 
 interface PropertyFieldProps {
   field: FieldDefinition;
@@ -119,6 +122,48 @@ export function PropertyField({ field, value, onChange }: PropertyFieldProps) {
           onChange={onChange}
           required={field.required}
           maxImages={10}
+        />
+      );
+
+    case 'chiefArray':
+      return (
+        <PersonArrayEditor
+          label={field.label}
+          value={value as { name: string; image?: string; content: string }[] | undefined}
+          onChange={onChange}
+          personLabel="Chief"
+          maxItems={4}
+        />
+      );
+
+    case 'internArray':
+      return (
+        <PersonArrayEditor
+          label={field.label}
+          value={value as { name: string; image?: string; content: string }[] | undefined}
+          onChange={onChange}
+          personLabel="Intern"
+          maxItems={4}
+        />
+      );
+
+    case 'detailsArray':
+      return (
+        <DetailsArrayEditor
+          label={field.label}
+          value={value as { label: string; value: string }[] | undefined}
+          onChange={onChange}
+          maxItems={10}
+        />
+      );
+
+    case 'bulletsArray':
+      return (
+        <BulletsArrayEditor
+          label={field.label}
+          value={value as string[] | undefined}
+          onChange={onChange}
+          maxItems={10}
         />
       );
 

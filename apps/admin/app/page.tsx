@@ -15,7 +15,7 @@ export default function AdminDashboard() {
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
 
   // Fetch recent issues
-  const allIssues = useQuery(api.issues.list) || [];
+  const allIssues = useQuery(api.issues.list, {}) || [];
 
   // Close mobile menu on escape key
   useEffect(() => {

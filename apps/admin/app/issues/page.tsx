@@ -27,7 +27,7 @@ export default function IssuesPage() {
   }, []);
 
   // Queries
-  const allIssues = useQuery(api.issues.list) || [];
+  const allIssues = useQuery(api.issues.list, {}) || [];
 
   // Mutations
   const createIssue = useMutation(api.issues.create);
@@ -53,7 +53,6 @@ export default function IssuesPage() {
 
       const newIssueId = await createIssue({
         title: `Edition ${nextEdition}`,
-        slug: `edition-${nextEdition}`,
         edition: nextEdition,
         bannerTitle: 'AZALEA REPORT',
         bannerDate: new Date().toISOString().split('T')[0],
