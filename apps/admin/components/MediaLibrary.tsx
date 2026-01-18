@@ -130,11 +130,19 @@ export function MediaLibrary({
   };
 
   return (
-    <div className="h-full flex flex-col">
+    <div className="h-full flex flex-col" style={{ backgroundColor: 'rgb(var(--bg-primary))' }}>
       {/* Header */}
-      <div className="p-6 border-b border-gray-200 bg-white">
+      <div
+        className="p-6 border-b"
+        style={{
+          backgroundColor: 'rgb(var(--bg-secondary))',
+          borderColor: 'rgb(var(--border-primary))'
+        }}
+      >
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold text-gray-900">Media Library</h2>
+          <h2 className="text-xl font-semibold" style={{ color: 'rgb(var(--text-primary))' }}>
+            Media Library
+          </h2>
           {mode === 'manage' && (
             <label className="cursor-pointer">
               <input
@@ -159,7 +167,10 @@ export function MediaLibrary({
 
         {/* Search */}
         <div className="relative">
-          <LuSearch className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+          <LuSearch
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5"
+            style={{ color: 'rgb(var(--text-tertiary))' }}
+          />
           <Input
             type="text"
             placeholder="Search by filename or alt text..."
@@ -170,10 +181,10 @@ export function MediaLibrary({
         </div>
 
         {/* Stats */}
-        <div className="mt-4 flex items-center gap-4 text-sm text-gray-600">
+        <div className="mt-4 flex items-center gap-4 text-sm" style={{ color: 'rgb(var(--text-secondary))' }}>
           <span>{sortedMedia.length} images</span>
           {searchQuery && (
-            <span className="text-azalea-green">
+            <span style={{ color: 'rgb(var(--accent-primary))' }}>
               Filtered from {allMedia.length} total
             </span>
           )}
@@ -181,14 +192,23 @@ export function MediaLibrary({
       </div>
 
       {/* Grid */}
-      <div className="flex-1 overflow-y-auto p-6 bg-gray-50">
+      <div
+        className="flex-1 overflow-y-auto p-6"
+        style={{ backgroundColor: 'rgb(var(--bg-tertiary))' }}
+      >
         {sortedMedia.length === 0 ? (
           <div className="text-center py-12">
-            <LuFileImage className="mx-auto h-12 w-12 text-gray-400" />
-            <h3 className="mt-2 text-sm font-medium text-gray-900">
+            <LuFileImage
+              className="mx-auto h-12 w-12"
+              style={{ color: 'rgb(var(--text-tertiary))' }}
+            />
+            <h3
+              className="mt-2 text-sm font-medium"
+              style={{ color: 'rgb(var(--text-primary))' }}
+            >
               {searchQuery ? 'No images found' : 'No images yet'}
             </h3>
-            <p className="mt-1 text-sm text-gray-500">
+            <p className="mt-1 text-sm" style={{ color: 'rgb(var(--text-secondary))' }}>
               {searchQuery
                 ? 'Try a different search term'
                 : 'Get started by uploading an image'}
@@ -197,16 +217,27 @@ export function MediaLibrary({
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {sortedMedia.map((media) => (
-              <Card
+              <div
                 key={media._id}
-                className={`relative group cursor-pointer transition-all ${
+                className={`relative group cursor-pointer transition-all rounded-xl overflow-hidden ${
                   selectedMediaId === media._id
-                    ? 'ring-2 ring-azalea-green'
-                    : 'hover:shadow-md'
+                    ? 'ring-2'
+                    : ''
                 }`}
+                style={{
+                  backgroundColor: 'rgb(var(--bg-secondary))',
+                  borderColor: 'rgb(var(--border-primary))',
+                  border: '1px solid rgb(var(--border-primary))',
+                  ...(selectedMediaId === media._id && {
+                    ringColor: 'rgb(var(--accent-primary))'
+                  })
+                }}
                 onClick={() => onSelect?.(media._id)}
               >
-                <div className="aspect-square relative bg-gray-100 rounded-lg overflow-hidden">
+                <div
+                  className="aspect-square relative rounded-t-xl overflow-hidden"
+                  style={{ backgroundColor: 'rgb(var(--bg-accent))' }}
+                >
                   {media.url ? (
                     <img
                       src={media.url}
@@ -215,7 +246,10 @@ export function MediaLibrary({
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center">
-                      <LuImage className="w-12 h-12 text-gray-400" />
+                      <LuImage
+                        className="w-12 h-12"
+                        style={{ color: 'rgb(var(--text-tertiary))' }}
+                      />
                     </div>
                   )}
 
@@ -237,7 +271,10 @@ export function MediaLibrary({
 
                   {/* Selected indicator */}
                   {selectedMediaId === media._id && (
-                    <div className="absolute top-2 right-2 bg-azalea-green text-white rounded-full p-1">
+                    <div
+                      className="absolute top-2 right-2 text-white rounded-full p-1"
+                      style={{ backgroundColor: 'rgb(var(--accent-primary))' }}
+                    >
                       <svg
                         className="w-4 h-4"
                         fill="currentColor"
@@ -255,14 +292,20 @@ export function MediaLibrary({
 
                 {/* Info */}
                 <div className="p-2">
-                  <p className="text-xs text-gray-700 truncate font-medium">
+                  <p
+                    className="text-xs truncate font-medium"
+                    style={{ color: 'rgb(var(--text-primary))' }}
+                  >
                     {media.filename}
                   </p>
-                  <p className="text-xs text-gray-500 mt-0.5">
+                  <p
+                    className="text-xs mt-0.5"
+                    style={{ color: 'rgb(var(--text-secondary))' }}
+                  >
                     {(media.size / 1024).toFixed(1)} KB
                   </p>
                 </div>
-              </Card>
+              </div>
             ))}
           </div>
         )}
@@ -270,18 +313,29 @@ export function MediaLibrary({
 
       {/* Delete Confirmation Modal */}
       {selectedForDelete && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+        <div
+          className="fixed inset-0 flex items-center justify-center z-50"
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', backdropFilter: 'blur(4px)' }}
+          onClick={() => setSelectedForDelete(null)}
+        >
+          <div
+            className="rounded-2xl p-6 max-w-md w-full mx-4 shadow-xl"
+            style={{ backgroundColor: 'rgb(var(--bg-secondary))' }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h3
+              className="text-lg font-semibold mb-2"
+              style={{ color: 'rgb(var(--text-primary))' }}
+            >
               Delete Image
             </h3>
-            <p className="text-sm text-gray-600 mb-4">
+            <p className="text-sm mb-4" style={{ color: 'rgb(var(--text-secondary))' }}>
               {canDeleteMedia?.canDelete
                 ? 'Are you sure you want to delete this image?'
                 : 'This image is being used in sections and cannot be deleted.'}
             </p>
             {!canDeleteMedia?.canDelete && canDeleteMedia?.usageCount && (
-              <p className="text-sm text-red-600 mb-4">
+              <p className="text-sm mb-4" style={{ color: 'rgb(239 68 68)' }}>
                 Used in {canDeleteMedia.usageCount} section(s)
               </p>
             )}

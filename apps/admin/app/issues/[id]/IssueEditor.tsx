@@ -17,7 +17,7 @@ import { useUndoRedo } from '@/hooks/useUndoRedo';
 import { SECTION_REGISTRY } from '@azalea/shared/constants';
 import type { SectionType, Section, Issue } from '@azalea/shared/types';
 import { toast } from 'sonner';
-import { LuEye, LuUndo2, LuRedo2, LuArrowLeft, LuMenu, LuX } from 'react-icons/lu';
+import { LuEye, LuUndo2, LuRedo2, LuArrowLeft, LuMenu, LuX, LuSave } from 'react-icons/lu';
 import Link from 'next/link';
 
 interface IssueEditorProps {
@@ -54,7 +54,7 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
   const publishIssue = useMutation(api.issues.publish);
 
   // Autosave for banner data
-  const { status, lastSavedAt } = useAutosave({
+  const { status, lastSavedAt, saveNow } = useAutosave({
     data: bannerData,
     onSave: async (data) => {
       if (!issue) return;
@@ -67,6 +67,25 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
       });
     },
   });
+
+  // Manual save handler with toast notification
+  const handleManualSave = async () => {
+    await saveNow();
+    toast.success('Changes saved');
+  };
+
+  // Keyboard shortcut for Ctrl+S
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+        e.preventDefault();
+        handleManualSave();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [saveNow]);
 
   // Warn user when leaving with unsaved changes
   useEffect(() => {
@@ -255,11 +274,11 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
     }
   };
 
-  const handleReorder = async (newOrder: Section[]) => {
+  const handleReorder = async (sectionIds: string[]) => {
     try {
       await reorderSections({
         issueId: issueId as Id<'issues'>,
-        sectionIds: newOrder.map(s => s._id) as Id<'sections'>[],
+        sectionIds: sectionIds as Id<'sections'>[],
         userId: issue?.createdBy as Id<'users'>,
       });
     } catch (error) {
@@ -378,6 +397,18 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
           </div>
 
           <ThemeToggle />
+
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={handleManualSave}
+            disabled={status === 'saving'}
+            title="Save (Ctrl+S)"
+            className="btn-ghost hidden sm:flex items-center gap-2"
+          >
+            <LuSave className="w-4 h-4" />
+            <span>{status === 'saving' ? 'Saving...' : 'Save'}</span>
+          </Button>
 
           <Button
             variant="secondary"
