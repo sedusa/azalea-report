@@ -8,6 +8,7 @@ import type {
   TwoColumnSectionData,
   TextImageSectionData,
   BirthdaysSectionData,
+  RecentSuccessSectionData,
 } from '@azalea/shared/types';
 import { SpotlightSection } from './SpotlightSection';
 import { ChiefsCornerSection } from './ChiefsCornerSection';
@@ -17,6 +18,7 @@ import { AboutSection } from './AboutSection';
 import { TwoColumnSection } from './TwoColumnSection';
 import { TextImageSection } from './TextImageSection';
 import { BirthdaysSection } from './BirthdaysSection';
+import { RecentSuccessSection } from './RecentSuccessSection';
 
 interface SectionRendererProps {
   section: Section;
@@ -60,6 +62,9 @@ export function SectionRenderer({ section }: SectionRendererProps) {
       case 'birthdays':
         return <BirthdaysSection data={section.data as unknown as BirthdaysSectionData} backgroundColor={section.backgroundColor} />;
 
+      case 'recentSuccess':
+        return <RecentSuccessSection data={section.data as unknown as RecentSuccessSectionData} backgroundColor={section.backgroundColor} />;
+
       // TODO: Add remaining section types as they're migrated
       case 'carousel':
       case 'textCarousel':
@@ -67,7 +72,6 @@ export function SectionRenderer({ section }: SectionRendererProps) {
       case 'podcast':
       case 'culturosity':
       case 'communityService':
-      case 'recentSuccess':
       case 'musings':
       case 'photosOfMonth':
       case 'custom':

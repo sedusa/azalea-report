@@ -316,18 +316,22 @@ export const SECTION_REGISTRY: Record<SectionType, SectionDefinition> = {
   recentSuccess: {
     type: 'recentSuccess',
     label: 'Recent Success',
-    description: 'Highlight achievements and accomplishments',
+    description: 'Highlight achievements and accomplishments with optional image carousel',
     icon: 'award',
     fields: [
       { name: 'sectionTitle', label: 'Section Title', type: 'text', required: false, placeholder: 'Recent Success' },
       { name: 'title', label: 'Title', type: 'text', required: true },
       { name: 'content', label: 'Content', type: 'richtext', required: true },
-      { name: 'image', label: 'Image', type: 'image', required: false },
+      { name: 'image', label: 'Main Image', type: 'image', required: false },
+      { name: 'imageCaption', label: 'Image Caption', type: 'text', required: false, placeholder: 'Photo caption' },
+      { name: 'images', label: 'Additional Photos (Carousel)', type: 'images', required: false },
     ],
     exampleData: () => ({
       sectionTitle: 'Recent Success',
       title: 'Research Publication',
       content: '<p>Congratulations to Dr. Smith on publishing their research in JAMA...</p>',
+      imageCaption: 'Dr. Smith presenting their research',
+      images: [],
     }),
   },
 

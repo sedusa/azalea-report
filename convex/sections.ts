@@ -113,6 +113,16 @@ export const listByIssue = query({
           }
         }
 
+        // Resolve images array (for recentSuccess, photosOfMonth, carousel, communityService, textCarousel)
+        if (data.images && Array.isArray(data.images)) {
+          data.images = await Promise.all(
+            data.images.map(async (img: any) => ({
+              ...img,
+              mediaId: await resolveMediaUrl(ctx, img.mediaId) || img.mediaId,
+            }))
+          );
+        }
+
         // Populate birthdays for birthday sections
         if (section.type === 'birthdays') {
           data.birthdays = allBirthdays.map(b => ({
@@ -205,6 +215,16 @@ export const listVisibleByIssue = query({
           if (data.rightImage) {
             data.rightImage = await resolveMediaUrl(ctx, data.rightImage);
           }
+        }
+
+        // Resolve images array (for recentSuccess, photosOfMonth, carousel, communityService, textCarousel)
+        if (data.images && Array.isArray(data.images)) {
+          data.images = await Promise.all(
+            data.images.map(async (img: any) => ({
+              ...img,
+              mediaId: await resolveMediaUrl(ctx, img.mediaId) || img.mediaId,
+            }))
+          );
         }
 
         // Populate birthdays for birthday sections

@@ -233,6 +233,12 @@ export interface RecentSuccessSectionData {
   title: string;
   content: string;
   image?: string;
+  imageCaption?: string;
+  /** Optional carousel images below the main content */
+  images?: Array<{
+    mediaId: string;
+    caption?: string;
+  }>;
 }
 
 export interface MusingsSectionData {
