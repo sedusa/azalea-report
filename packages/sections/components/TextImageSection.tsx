@@ -44,7 +44,7 @@ export function TextImageSection({ data, backgroundColor }: TextImageSectionProp
 
   const textElement = (
     <div className="basic-text">
-      <ShowMore content={content} maxHeight={300} />
+      <ShowMore content={content} maxHeight={300} forceDarkText={hasBackground} />
     </div>
   );
 

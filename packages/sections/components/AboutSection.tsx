@@ -32,6 +32,7 @@ export function AboutSection({ data, backgroundColor }: AboutSectionProps) {
       )}
       <div
         className="basic-text"
+        style={hasBackground ? { color: '#333333' } : {}}
         dangerouslySetInnerHTML={{ __html: content }}
       />
       {signature && (

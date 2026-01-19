@@ -34,21 +34,19 @@ export function ChiefsCornerSection({ data, backgroundColor }: ChiefsCornerSecti
     return null;
   }
 
-  // When no backgroundColor is set, use transparent class for proper dark mode text colors
-  const hasBackground = !!backgroundColor;
-
+  // Chiefs section ALWAYS has a pastel background via CSS (.chiefs-section)
+  // So we never use section-transparent - text must always be dark
   return (
     <section
-      className={hasBackground ? 'section-card section-with-bg' : 'section-transparent'}
       style={{
         padding: 0,
         marginBottom: '2rem',
         backgroundColor: backgroundColor || 'transparent',
       }}
     >
-      {/* Section Title */}
+      {/* Section Title - always green regardless of theme */}
       {sectionTitle && (
-        <h2 className="section-title" style={{ padding: '2rem 2rem 0 2rem' }}>
+        <h2 className="section-title" style={{ padding: '2rem 2rem 0 2rem', color: '#016f53' }}>
           {sectionTitle}
         </h2>
       )}
@@ -80,17 +78,17 @@ function ChiefCard({ chief }: { chief: ChiefData }) {
         />
       )}
 
-      {/* Name */}
+      {/* Name - always green */}
       {name && (
-        <h3 className="chief-name">
+        <h3 className="chief-name" style={{ color: '#016f53' }}>
           {name}
         </h3>
       )}
 
-      {/* Bio Content with ShowMore */}
+      {/* Bio Content with ShowMore - force dark text on pastel background */}
       {content && (
         <div className="chief-text">
-          <ShowMore content={content} maxHeight={150} />
+          <ShowMore content={content} maxHeight={150} forceDarkText={true} />
         </div>
       )}
     </div>

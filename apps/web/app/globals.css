@@ -179,14 +179,14 @@
     transform: scale(6.0);
     display: flex;
     align-items: center;
-    color: var(--primary-color);
+    color: var(--foreground);
   }
 
   .header-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.3rem;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--foreground);
   }
 
   .desktop-nav {
@@ -333,6 +333,11 @@
     margin-bottom: 2rem;
   }
 
+  /* Ensure all descendants of section-card get dark text */
+  .section-card *:not(.toggle-button) {
+    color: #333333;
+  }
+
   .section-card-alt {
     background-color: var(--card-bg-alt);
   }
@@ -392,14 +397,25 @@
   }
 
   /* Section with background - always dark text for readability on pastel backgrounds */
+  /* Use * selector to catch ALL descendants including innerHTML content */
   .section-with-bg,
+  .section-with-bg *,
   .section-with-bg p,
+  .section-with-bg div,
+  .section-with-bg span,
+  .section-with-bg li,
   .section-with-bg .basic-text,
+  .section-with-bg .basic-text *,
   .section-with-bg .spotlight-text,
+  .section-with-bg .spotlight-text *,
   .section-with-bg .spotlightText,
+  .section-with-bg .spotlightText *,
   .section-with-bg .chief-text,
+  .section-with-bg .chief-text *,
   .section-with-bg .intern-text,
+  .section-with-bg .intern-text *,
   .section-with-bg .featureBullets,
+  .section-with-bg .featureBullets *,
   .section-with-bg .basic-author,
   .section-with-bg .basic-description {
     color: #333333 !important;
@@ -501,6 +517,28 @@
     padding: 1.5rem;
   }
 
+  /* Force dark text on ALL descendants of spotlight-container (always has pastel bg) */
+  .spotlight-container,
+  .spotlight-container * {
+    color: #333333 !important;
+  }
+
+  /* But override for toggle button which needs white text */
+  .spotlight-container .toggle-button {
+    color: #ffffff !important;
+    background-color: #016f53 !important;
+  }
+
+  /* Override for green headings and labels */
+  .spotlight-container .spotlight-name,
+  .spotlight-container .section-title,
+  .spotlight-container .spotlight-label,
+  .spotlight-container h2,
+  .spotlight-container h3,
+  .spotlight-container strong {
+    color: #016f53 !important;
+  }
+
   .spotlight-image {
     border-radius: 4px;
     height: auto;
@@ -517,8 +555,13 @@
   }
 
   .spotlight-text,
+  .spotlight-text *,
   .spotlight-text p,
-  .spotlight-container p {
+  .spotlight-text div,
+  .spotlight-text span,
+  .spotlight-container p,
+  .spotlight-container div,
+  .spotlight-container span {
     color: #333333 !important;
     font-size: 1.3rem;
     line-height: 1.6;
@@ -538,6 +581,27 @@
     gap: 2rem;
     justify-content: space-between;
     padding: 2rem;
+  }
+
+  /* Force dark text on ALL descendants of chiefs-section (always has pastel bg) */
+  .chiefs-section,
+  .chiefs-section * {
+    color: #333333 !important;
+  }
+
+  /* But override for toggle button which needs white text */
+  .chiefs-section .toggle-button {
+    color: #ffffff !important;
+    background-color: #016f53 !important;
+  }
+
+  /* Override for green headings and labels */
+  .chiefs-section .chief-name,
+  .chiefs-section .section-title,
+  .chiefs-section h2,
+  .chiefs-section h3,
+  .chiefs-section strong {
+    color: #016f53 !important;
   }
 
   .chief-column {
@@ -563,8 +627,13 @@
   }
 
   .chief-text,
+  .chief-text *,
   .chief-text p,
-  .chiefs-section p {
+  .chief-text div,
+  .chief-text span,
+  .chiefs-section p,
+  .chiefs-section div,
+  .chiefs-section span {
     color: #333333 !important;
     font-size: 1.3rem;
     line-height: 1.6;
@@ -581,6 +650,27 @@
     gap: 2rem;
     justify-content: space-between;
     padding: 2rem;
+  }
+
+  /* Force dark text on ALL descendants of interns-section (always has pastel bg) */
+  .interns-section,
+  .interns-section * {
+    color: #333333 !important;
+  }
+
+  /* But override for toggle button which needs white text */
+  .interns-section .toggle-button {
+    color: #ffffff !important;
+    background-color: #016f53 !important;
+  }
+
+  /* Override for green headings and labels */
+  .interns-section .intern-name,
+  .interns-section .section-title,
+  .interns-section h2,
+  .interns-section h3,
+  .interns-section strong {
+    color: #016f53 !important;
   }
 
   .intern-column {
@@ -606,8 +696,13 @@
   }
 
   .intern-text,
+  .intern-text *,
   .intern-text p,
-  .interns-section p {
+  .intern-text div,
+  .intern-text span,
+  .interns-section p,
+  .interns-section div,
+  .interns-section span {
     color: #333333 !important;
     font-size: 1.3rem;
     line-height: 1.6;
@@ -624,8 +719,25 @@
     overflow: visible;
   }
 
-  .basic-content p {
+  /* Force dark text on ALL descendants of basic-content (always has pastel bg) */
+  .basic-content,
+  .basic-content * {
     color: #333333 !important;
+  }
+
+  /* But override for toggle button which needs white text */
+  .basic-content .toggle-button {
+    color: #ffffff !important;
+    background-color: #016f53 !important;
+  }
+
+  /* Override for green headings and labels */
+  .basic-content .basic-title,
+  .basic-content .section-title,
+  .basic-content h2,
+  .basic-content h3,
+  .basic-content strong {
+    color: #016f53 !important;
   }
 
   .basic-description {
@@ -672,10 +784,22 @@
     /* Color set by parent context: section-with-bg uses muted, section-transparent uses var(--muted-foreground) */
   }
 
-  .basic-text {
+  .basic-text,
+  .basic-text * {
     font-size: 1.3rem;
     line-height: 1.6;
     /* Color set by parent context: section-with-bg or section-transparent */
+  }
+
+  /* Basic text within section-with-bg needs explicit dark text */
+  .section-with-bg .basic-text,
+  .section-with-bg .basic-text * {
+    color: #333333 !important;
+  }
+
+  .basic-content .basic-text,
+  .basic-content .basic-text * {
+    color: #333333 !important;
   }
 
   .basic-content strong {
@@ -683,11 +807,17 @@
   }
 
   /* Toggle button - matches module.css */
-  .toggle-button {
-    background-color: #016f53;
+  /* IMPORTANT: Always white text on green background, regardless of parent context or theme */
+  .toggle-button,
+  button.toggle-button,
+  .section-with-bg .toggle-button,
+  .section-transparent .toggle-button,
+  .section-card .toggle-button,
+  * .toggle-button {
+    background-color: #016f53 !important;
     border-radius: 4px;
     border: none;
-    color: #ffffff;
+    color: #ffffff !important;
     cursor: pointer;
     font-family: 'Georgia', serif;
     font-size: 1.3rem;
@@ -696,8 +826,10 @@
     transition: background-color 0.01s ease;
   }
 
-  .toggle-button:hover {
-    background-color: #014d3a;
+  .toggle-button:hover,
+  button.toggle-button:hover {
+    background-color: #014d3a !important;
+    color: #ffffff !important;
   }
 
   /* Image styling */
@@ -948,12 +1080,33 @@
   }
 
   /* Spotlight Container - cream card background */
-  /* Spotlight Container - cream card background */
   /* Always has pastel background so text must always be dark */
   .spotlightContainer {
     background-color: #f7f3e8;
     border-radius: 8px;
     padding: 1.5rem;
+  }
+
+  /* Force dark text on ALL descendants of spotlightContainer (always has pastel bg) */
+  .spotlightContainer,
+  .spotlightContainer * {
+    color: #333333 !important;
+  }
+
+  /* But override for toggle button which needs white text */
+  .spotlightContainer .toggle-button {
+    color: #ffffff !important;
+    background-color: #016f53 !important;
+  }
+
+  /* Override for green headings and labels */
+  .spotlightContainer .spotlightName,
+  .spotlightContainer .sectionTitle,
+  .spotlightContainer .spotlight-label,
+  .spotlightContainer h2,
+  .spotlightContainer h3,
+  .spotlightContainer strong {
+    color: #016f53 !important;
   }
 
   .spotlightImage {
@@ -973,8 +1126,13 @@
   }
 
   .spotlightText,
+  .spotlightText *,
   .spotlightText p,
-  .spotlightContainer p {
+  .spotlightText div,
+  .spotlightText span,
+  .spotlightContainer p,
+  .spotlightContainer div,
+  .spotlightContainer span {
     color: #333333 !important;
     font-size: 1.3rem;
     line-height: 1.6;

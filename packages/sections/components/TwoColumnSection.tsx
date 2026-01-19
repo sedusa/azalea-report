@@ -67,7 +67,7 @@ export function TwoColumnSection({ data, backgroundColor }: TwoColumnSectionProp
 
           {leftDetails.length > 0 && (
             <div className="spotlightText">
-              <ShowMore content={detailsContent} maxHeight={400} />
+              <ShowMore content={detailsContent} maxHeight={400} forceDarkText={hasLeftBackground} />
             </div>
           )}
         </div>

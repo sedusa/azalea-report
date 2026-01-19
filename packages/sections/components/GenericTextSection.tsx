@@ -34,7 +34,7 @@ export function GenericTextSection({ data, backgroundColor }: GenericTextSection
         </h2>
       )}
       <div className="basic-text">
-        <ShowMore content={content} maxHeight={300} />
+        <ShowMore content={content} maxHeight={300} forceDarkText={hasBackground} />
       </div>
     </section>
   );
