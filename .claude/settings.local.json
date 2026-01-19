@@ -25,7 +25,9 @@
       "Bash(npx tsc:*)",
       "Bash(find:*)",
       "Bash(wc:*)",
-      "Bash(NEXT_PUBLIC_CONVEX_URL=http://127.0.0.1:3210 npx tsx:*)"
+      "Bash(NEXT_PUBLIC_CONVEX_URL=http://127.0.0.1:3210 npx tsx:*)",
+      "Bash(npx next build:*)",
+      "Bash(npm run lint:*)"
     ]
   }
 }

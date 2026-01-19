@@ -155,7 +155,7 @@ export function PropertyField({ field, value, onChange }: PropertyFieldProps) {
           value={value as { name: string; image?: string; content: string }[] | undefined}
           onChange={onChange}
           personLabel="Intern"
-          maxItems={4}
+          maxItems={2}
         />
       );
 

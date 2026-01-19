@@ -54,7 +54,7 @@ export default function HomePage() {
                 {(latestIssue as any)?.bannerImageUrl ? (
                   <img
                     src={(latestIssue as any).bannerImageUrl}
-                    alt={latestIssue.title || 'Newsletter banner'}
+                    alt={latestIssue?.title || 'Newsletter banner'}
                     className="banner-image"
                   />
                 ) : (

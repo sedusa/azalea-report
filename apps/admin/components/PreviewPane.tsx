@@ -430,15 +430,19 @@ export function PreviewPane({ issue, sections }: PreviewPaneProps) {
           background-color: rgb(221, 254, 233);
         }
 
-        .chief-column,
-        .intern-column {
+        .chief-column {
           flex: 1;
           min-width: 250px;
           text-align: center;
         }
 
-        .chief-image,
-        .intern-image {
+        .intern-column {
+          flex: 1;
+          min-width: 250px;
+          text-align: left; /* Left-align content */
+        }
+
+        .chief-image {
           width: 200px;
           height: 200px;
           border-radius: 50%;
@@ -446,8 +450,16 @@ export function PreviewPane({ issue, sections }: PreviewPaneProps) {
           margin-bottom: 1rem;
         }
 
-        .chief-name,
-        .intern-name {
+        .intern-image {
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin: 0 0 1rem 0; /* Left aligned */
+          display: block;
+        }
+
+        .chief-name {
           color: #016f53 !important;
           font-family: 'Montserrat', sans-serif;
           font-size: 1.3rem;
@@ -455,12 +467,28 @@ export function PreviewPane({ issue, sections }: PreviewPaneProps) {
           margin-bottom: 0.5rem;
         }
 
-        .chief-text,
+        .intern-name {
+          color: #016f53 !important;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 1.3rem;
+          font-weight: bold;
+          margin-bottom: 0.5rem;
+          text-align: left;
+        }
+
+        .chief-text {
+          font-family: 'Georgia', serif;
+          font-size: 1.1rem;
+          line-height: 1.6;
+          color: #333333 !important;
+        }
+
         .intern-text {
           font-family: 'Georgia', serif;
           font-size: 1.1rem;
           line-height: 1.6;
           color: #333333 !important;
+          text-align: left;
         }
 
         /* Spotlight grid */

@@ -678,21 +678,25 @@
     box-sizing: border-box;
     flex-basis: calc(50% - 1rem);
     padding: 1.5rem;
+    text-align: left; /* Left-align content by default */
   }
 
   .intern-image {
     border-radius: 50%;
     height: 250px;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem 0; /* Left aligned */
     object-fit: cover;
     width: 250px;
+    display: block;
   }
 
   .intern-name {
     color: #016f53 !important;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
+    font-weight: bold;
     margin-bottom: 0.5rem;
+    text-align: left;
   }
 
   .intern-text,
@@ -707,6 +711,7 @@
     font-size: 1.3rem;
     line-height: 1.6;
     margin-bottom: 1rem;
+    text-align: left;
   }
 
   /* Basic section - matches BasicSection.module.css */

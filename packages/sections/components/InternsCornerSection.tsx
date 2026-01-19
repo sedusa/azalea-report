@@ -63,13 +63,14 @@ export function InternsCornerSection({ data, backgroundColor }: InternsCornerSec
 
 /**
  * Individual intern card component - matches InternsCorner.module.css
+ * Layout: Left-aligned circular image, left-aligned name and content below
  */
 function InternCard({ intern }: { intern: InternData }) {
   const { name, image, content } = intern;
 
   return (
     <div className="intern-column">
-      {/* Circular Image */}
+      {/* Circular Image - Left aligned */}
       {image && (
         <img
           src={image}
@@ -78,16 +79,16 @@ function InternCard({ intern }: { intern: InternData }) {
         />
       )}
 
-      {/* Name - always green */}
+      {/* Name - Left aligned, always green */}
       {name && (
-        <h3 className="intern-name" style={{ color: '#016f53' }}>
+        <h3 className="intern-name" style={{ color: '#016f53', textAlign: 'left' }}>
           {name}
         </h3>
       )}
 
-      {/* Bio Content with ShowMore - force dark text on pastel background */}
+      {/* Bio Content with ShowMore - Left aligned, force dark text on pastel background */}
       {content && (
-        <div className="intern-text">
+        <div className="intern-text" style={{ textAlign: 'left' }}>
           <ShowMore content={content} maxHeight={150} forceDarkText={true} />
         </div>
       )}
