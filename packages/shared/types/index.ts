@@ -221,8 +221,18 @@ export interface InternsCornerSectionData {
 export interface CommunityServiceSectionData {
   sectionTitle?: string;
   title: string;
+  /** Main image that text wraps around */
+  image?: string;
+  /** Caption for the main image */
+  imageCaption?: string;
+  /** Image position: left or right (text wraps on opposite side) */
+  imagePosition?: 'left' | 'right';
+  /** Rich text content for the section */
   content: string;
-  images: Array<{
+  /** Title for the photo gallery section */
+  photosTitle?: string;
+  /** Carousel images with individual captions */
+  images?: Array<{
     mediaId: string;
     caption?: string;
   }>;

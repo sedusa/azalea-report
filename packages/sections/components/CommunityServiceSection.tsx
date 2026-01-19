@@ -1,29 +1,60 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
-import type { RecentSuccessSectionData } from '@azalea/shared/types';
-import { ShowMore } from './ShowMore';
+import { useState, useCallback, useEffect, useRef } from 'react';
+import type { CommunityServiceSectionData } from '@azalea/shared/types';
 
-interface RecentSuccessSectionProps {
-  data: RecentSuccessSectionData;
+interface CommunityServiceSectionProps {
+  data: CommunityServiceSectionData;
   backgroundColor?: string;
 }
 
 /**
- * RecentSuccessSection - Displays achievements and accomplishments
- * Features main image with caption, rich text content, and optional image carousel
- * Matches the styling on azaleareport.com
+ * CommunityServiceSection - Displays community service activities
+ * Layout:
+ * - Section title at top (centered, optional underline)
+ * - Title for specific content
+ * - Image floated left or right with text wrapping around
+ * - Full-width content continuation below
+ * - Image carousel with captions at bottom (arrows outside image)
+ *
+ * Follows the same background color rules as other sections:
+ * - If backgroundColor is set, uses dark text (#333333) for readability on pastel backgrounds
+ * - If no backgroundColor, uses theme-aware text colors (light/dark mode)
+ *
+ * Note: This component renders content directly (not with ShowMore) to allow
+ * proper CSS float text wrapping around the image. ShowMore's overflow:hidden
+ * creates a new block formatting context that prevents text wrapping.
  */
-export function RecentSuccessSection({ data, backgroundColor }: RecentSuccessSectionProps) {
-  const { sectionTitle = 'Recent Success', title, content, image, imageCaption, images = [] } = data;
+export function CommunityServiceSection({ data, backgroundColor }: CommunityServiceSectionProps) {
+  const {
+    sectionTitle,
+    title,
+    image,
+    imageCaption,
+    imagePosition = 'left',
+    content,
+    photosTitle = 'Photo Gallery',
+    images = []
+  } = data;
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [needsTruncation, setNeedsTruncation] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const maxHeight = 400; // Max height before showing "Show More"
 
-  // When no backgroundColor is set, use transparent class for proper dark mode text colors
+  // When backgroundColor is set, use dark text for readability on pastel backgrounds
   const hasBackground = !!backgroundColor;
 
   // Filter out empty images
   const carouselImages = images.filter(img => img.mediaId);
+
+  // Check if content needs truncation (only when collapsed)
+  useEffect(() => {
+    if (contentRef.current && !isExpanded) {
+      setNeedsTruncation(contentRef.current.scrollHeight > maxHeight);
+    }
+  }, [content, isExpanded]);
 
   const goToPrevious = useCallback(() => {
     if (isTransitioning) return;
@@ -57,6 +88,14 @@ export function RecentSuccessSection({ data, backgroundColor }: RecentSuccessSec
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [goToNext, goToPrevious, carouselImages.length]);
 
+  // Text colors based on background
+  const textColor = hasBackground ? '#333333' : 'var(--foreground)';
+  const headingColor = '#016f53';
+  const mutedColor = hasBackground ? '#666666' : 'var(--muted-foreground)';
+
+  // Float class based on imagePosition
+  const floatClass = imagePosition === 'right' ? 'float-right' : 'float-left';
+
   return (
     <section
       className={hasBackground ? 'section-card section-with-bg' : 'section-transparent'}
@@ -67,73 +106,121 @@ export function RecentSuccessSection({ data, backgroundColor }: RecentSuccessSec
         padding: hasBackground ? '2rem' : undefined,
       }}
     >
-      {/* Section Title */}
+      {/* Section Title - Only show if provided */}
       {sectionTitle && (
         <h2
           className="section-title"
           style={{
-            color: '#016f53',
+            color: headingColor,
             fontFamily: "'Montserrat', sans-serif",
             fontSize: '1.5rem',
             fontWeight: 'bold',
-            marginBottom: '1rem',
+            marginBottom: '1.5rem',
           }}
         >
           {sectionTitle}
         </h2>
       )}
 
-      {/* Title - above the image */}
+      {/* Title */}
       {title && (
         <h3
           style={{
-            color: '#016f53',
+            color: headingColor,
             fontFamily: "'Montserrat', sans-serif",
             fontSize: '1.3rem',
             fontWeight: 'bold',
-            marginBottom: '1rem',
+            marginBottom: '1.5rem',
           }}
         >
           {title}
         </h3>
       )}
 
-      {/* Main Image with Caption */}
-      {image && (
-        <div style={{ marginBottom: '1.5rem' }}>
-          <img
-            src={image}
-            alt={imageCaption || title}
+      {/* Content with image floated (text wraps around) */}
+      <div
+        ref={contentRef}
+        className="basic-text community-service-content"
+        style={{
+          color: textColor,
+          position: 'relative',
+          maxHeight: isExpanded ? 'none' : (needsTruncation ? `${maxHeight}px` : 'none'),
+          overflow: isExpanded ? 'visible' : (needsTruncation ? 'hidden' : 'visible'),
+        }}
+      >
+        {/* Floated Image - uses CSS class for responsive behavior */}
+        {image && (
+          <div className={`community-service-image ${floatClass}`}>
+            <img
+              src={image}
+              alt={imageCaption || title}
+            />
+            {imageCaption && (
+              <p
+                style={{
+                  fontSize: '0.95rem',
+                  fontStyle: 'normal',
+                  marginTop: '0.5rem',
+                  color: textColor,
+                }}
+              >
+                {imageCaption}
+              </p>
+            )}
+          </div>
+        )}
+
+        {/* Content - rendered directly for proper float text wrapping */}
+        {content && (
+          <div
+            style={{ color: textColor }}
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
+        )}
+
+        {/* Gradient fade overlay when truncated */}
+        {needsTruncation && !isExpanded && (
+          <div
             style={{
-              width: '100%',
-              height: 'auto',
-              borderRadius: '8px',
-              objectFit: 'cover',
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              right: 0,
+              height: '80px',
+              background: hasBackground
+                ? `linear-gradient(to bottom, transparent, ${backgroundColor || '#ffffff'})`
+                : 'linear-gradient(to bottom, transparent, var(--background, #1a1a1a))',
+              pointerEvents: 'none',
             }}
           />
-          {imageCaption && (
-            <p
-              style={{
-                fontSize: '1rem',
-                fontStyle: 'italic',
-                marginTop: '0.5rem',
-                color: hasBackground ? '#666666' : 'var(--muted-foreground)',
-              }}
-            >
-              {imageCaption}
-            </p>
-          )}
-        </div>
+        )}
+      </div>
+
+      {/* Show More/Less toggle button */}
+      {needsTruncation && (
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="toggle-button"
+          style={{
+            backgroundColor: '#016f53',
+            color: '#ffffff',
+            border: 'none',
+            padding: '0.5rem 1rem',
+            borderRadius: '4px',
+            cursor: 'pointer',
+            fontSize: '0.9rem',
+            marginTop: '0.5rem',
+            clear: 'both',
+          }}
+        >
+          {isExpanded ? 'Show Less' : 'Show More'}
+        </button>
       )}
 
-      {/* Content with ShowMore */}
-      {content && (
-        <div className="basic-text">
-          <ShowMore content={content} maxHeight={300} forceDarkText={hasBackground} />
-        </div>
-      )}
+      {/* Clear float before carousel */}
+      <div style={{ clear: 'both', marginTop: needsTruncation ? '0' : '0' }} />
 
-      {/* Image Carousel */}
+      {/* Image Carousel - Styled to match azaleareport.com */}
       {carouselImages.length > 0 && (
         <div
           style={{
@@ -144,14 +231,14 @@ export function RecentSuccessSection({ data, backgroundColor }: RecentSuccessSec
           {/* Carousel Title */}
           <h4
             style={{
-              color: '#016f53',
+              color: headingColor,
               fontFamily: "'Montserrat', sans-serif",
               fontSize: '1.1rem',
               fontWeight: 'bold',
               marginBottom: '1rem',
             }}
           >
-            Photo Gallery
+            {photosTitle}
           </h4>
 
           {/* Carousel Container - arrows outside image */}
@@ -280,7 +367,7 @@ export function RecentSuccessSection({ data, backgroundColor }: RecentSuccessSec
                 fontSize: '1rem',
                 fontStyle: 'italic',
                 marginTop: '0.75rem',
-                color: hasBackground ? '#666666' : 'var(--muted-foreground)',
+                color: mutedColor,
                 textAlign: 'center',
                 transition: 'opacity 0.3s ease',
               }}

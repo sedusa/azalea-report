@@ -8,6 +8,7 @@ import { ImagePicker, MultiImagePicker } from './ImagePicker';
 import { PersonArrayEditor } from './PersonArrayEditor';
 import { DetailsArrayEditor } from './DetailsArrayEditor';
 import { BulletsArrayEditor } from './BulletsArrayEditor';
+import { ImagesWithCaptionsEditor } from './ImagesWithCaptionsEditor';
 
 interface PropertyFieldProps {
   field: FieldDefinition;
@@ -119,6 +120,17 @@ export function PropertyField({ field, value, onChange }: PropertyFieldProps) {
         <MultiImagePicker
           label={field.label}
           value={value as Id<'media'>[] | undefined}
+          onChange={onChange}
+          required={field.required}
+          maxImages={10}
+        />
+      );
+
+    case 'imagesWithCaptions':
+      return (
+        <ImagesWithCaptionsEditor
+          label={field.label}
+          value={value as { mediaId: string; caption?: string }[] | undefined}
           onChange={onChange}
           required={field.required}
           maxImages={10}

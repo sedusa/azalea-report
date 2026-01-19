@@ -7,6 +7,7 @@ export type FieldType =
   | 'richtext'
   | 'image'
   | 'images'
+  | 'imagesWithCaptions'  // Array of images with individual captions (for carousels)
   | 'date'
   | 'select'
   | 'number'
@@ -297,18 +298,28 @@ export const SECTION_REGISTRY: Record<SectionType, SectionDefinition> = {
   communityService: {
     type: 'communityService',
     label: 'Community Service',
-    description: 'Community service activities and highlights',
+    description: 'Community service activities with text wrapping around image and photo carousel',
     icon: 'heart',
     fields: [
-      { name: 'sectionTitle', label: 'Section Title', type: 'text', required: false, placeholder: 'Community Service' },
-      { name: 'title', label: 'Title', type: 'text', required: true },
+      { name: 'sectionTitle', label: 'Section Title', type: 'text', required: false, placeholder: 'Community Service Corner' },
+      { name: 'title', label: 'Title', type: 'text', required: true, placeholder: 'Event or Activity Title' },
+      { name: 'image', label: 'Main Image', type: 'image', required: false },
+      { name: 'imageCaption', label: 'Image Caption', type: 'text', required: false, placeholder: 'Photo caption' },
+      { name: 'imagePosition', label: 'Image Position', type: 'select', required: false, options: [
+        { value: 'left', label: 'Left (text wraps right)' },
+        { value: 'right', label: 'Right (text wraps left)' },
+      ]},
       { name: 'content', label: 'Content', type: 'richtext', required: true },
-      { name: 'images', label: 'Photos', type: 'images', required: false },
+      { name: 'photosTitle', label: 'Photo Gallery Title', type: 'text', required: false, placeholder: 'Highlights from the Event' },
+      { name: 'images', label: 'Photo Gallery (Carousel)', type: 'imagesWithCaptions', required: false },
     ],
     exampleData: () => ({
-      sectionTitle: 'Community Service',
+      sectionTitle: 'Community Service Corner',
       title: 'Health Fair Volunteers',
-      content: '<p>Our residents participated in the annual community health fair...</p>',
+      imageCaption: 'Residents at the health fair',
+      imagePosition: 'left',
+      content: '<p>Our residents participated in the annual community health fair, providing essential health screenings and education to over 500 community members...</p>',
+      photosTitle: 'Highlights from the Event',
       images: [],
     }),
   },
@@ -324,7 +335,7 @@ export const SECTION_REGISTRY: Record<SectionType, SectionDefinition> = {
       { name: 'content', label: 'Content', type: 'richtext', required: true },
       { name: 'image', label: 'Main Image', type: 'image', required: false },
       { name: 'imageCaption', label: 'Image Caption', type: 'text', required: false, placeholder: 'Photo caption' },
-      { name: 'images', label: 'Additional Photos (Carousel)', type: 'images', required: false },
+      { name: 'images', label: 'Additional Photos (Carousel)', type: 'imagesWithCaptions', required: false },
     ],
     exampleData: () => ({
       sectionTitle: 'Recent Success',

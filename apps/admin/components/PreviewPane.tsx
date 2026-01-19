@@ -528,6 +528,26 @@ export function PreviewPane({ issue, sections }: PreviewPaneProps) {
           margin-bottom: 1rem;
         }
 
+        /* Community Service section - float layout for text wrapping */
+        .community-service-image {
+          margin-bottom: 1rem;
+          max-width: 45%;
+        }
+        .community-service-image.float-left {
+          float: left;
+          margin-right: 1.5rem;
+        }
+        .community-service-image.float-right {
+          float: right;
+          margin-left: 1.5rem;
+        }
+        .community-service-image img {
+          width: 100%;
+          height: auto;
+          border-radius: 8px;
+          object-fit: cover;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
           .twoColumns {
@@ -540,6 +560,17 @@ export function PreviewPane({ issue, sections }: PreviewPaneProps) {
 
           .text-image-grid {
             grid-template-columns: 1fr;
+          }
+
+          /* Community Service image stacks on mobile */
+          .community-service-image,
+          .community-service-image.float-left,
+          .community-service-image.float-right {
+            float: none;
+            max-width: 100%;
+            margin-right: 0;
+            margin-left: 0;
+            margin-bottom: 1.5rem;
           }
         }
       `}</style>
