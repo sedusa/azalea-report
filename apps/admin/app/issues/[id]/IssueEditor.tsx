@@ -33,8 +33,9 @@ import { useUndoRedo } from '@/hooks/useUndoRedo';
 import { SECTION_REGISTRY } from '@azalea/shared/constants';
 import type { SectionType, Section, Issue } from '@azalea/shared/types';
 import { toast } from 'sonner';
-import { LuEye, LuUndo2, LuRedo2, LuArrowLeft, LuMenu, LuX, LuSave } from 'react-icons/lu';
+import { LuEye, LuUndo2, LuRedo2, LuArrowLeft, LuMenu, LuX, LuSave, LuTrash2 } from 'react-icons/lu';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { ImagePicker } from '@/components/ImagePicker';
 
 interface IssueEditorProps {
@@ -42,9 +43,11 @@ interface IssueEditorProps {
 }
 
 export function IssueEditor({ issueId }: IssueEditorProps) {
+  const router = useRouter();
   const [selectedSectionId, setSelectedSectionId] = useState<string | null>(null);
   const [showPreview, setShowPreview] = useState(false);
   const [showMobileDrawer, setShowMobileDrawer] = useState(false);
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [activeId, setActiveId] = useState<string | null>(null);
   const [activePaletteType, setActivePaletteType] = useState<SectionType | null>(null);
   const [bannerData, setBannerData] = useState<{
@@ -75,11 +78,18 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
     })
   );
 
-  // Fetch data from Convex
-  const issue = useQuery(api.issues.get, { id: issueId as Id<'issues'> });
-  const sections = useQuery(api.sections.listByIssue, {
-    issueId: issueId as Id<'issues'>
-  }) || [];
+  // Check if issueId is a valid Convex ID (not "new" or other invalid values)
+  const isValidId = issueId && issueId !== 'new' && issueId.length > 10;
+
+  // Fetch data from Convex (skip if invalid ID)
+  const issue = useQuery(
+    api.issues.get,
+    isValidId ? { id: issueId as Id<'issues'> } : 'skip'
+  );
+  const sections = useQuery(
+    api.sections.listByIssue,
+    isValidId ? { issueId: issueId as Id<'issues'> } : 'skip'
+  ) || [];
 
   // Mutations
   const createSection = useMutation(api.sections.create);
@@ -91,6 +101,7 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
   const reorderSections = useMutation(api.sections.reorder);
   const updateIssue = useMutation(api.issues.update);
   const publishIssue = useMutation(api.issues.publish);
+  const deleteIssue = useMutation(api.issues.remove);
 
   // Autosave for banner data
   const { status, lastSavedAt, saveNow } = useAutosave({
@@ -162,6 +173,19 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
     }
   }, [showMobileDrawer]);
 
+  // Close delete confirm modal on Escape
+  useEffect(() => {
+    if (showDeleteConfirm) {
+      const handleEscape = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') {
+          setShowDeleteConfirm(false);
+        }
+      };
+      window.addEventListener('keydown', handleEscape);
+      return () => window.removeEventListener('keydown', handleEscape);
+    }
+  }, [showDeleteConfirm]);
+
   // Initialize banner data when issue loads (only once per issue)
   useEffect(() => {
     if (issue && initializedIssueId !== issue._id) {
@@ -178,7 +202,7 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
 
   const selectedSection = sections.find((s) => s._id === selectedSectionId);
 
-  const handleAddSection = async (type: SectionType) => {
+  const handleAddSection = async (type: SectionType, insertAtIndex?: number) => {
     try {
       const sectionDef = SECTION_REGISTRY[type];
       const newSectionId = await createSection({
@@ -187,6 +211,21 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
         data: sectionDef.exampleData(),
         userId: issue?.createdBy as Id<'users'>,
       });
+
+      // If insertAtIndex is specified, reorder to put the new section in the right position
+      if (insertAtIndex !== undefined && insertAtIndex < sections.length) {
+        // Build new order: insert new section at the specified index
+        const currentIds = sections.map((s) => s._id);
+        const newOrder = [
+          ...currentIds.slice(0, insertAtIndex),
+          newSectionId,
+          ...currentIds.slice(insertAtIndex),
+        ];
+        await reorderSections({
+          issueId: issueId as Id<'issues'>,
+          sectionIds: newOrder as Id<'sections'>[],
+        });
+      }
 
       addOperation({
         type: 'section',
@@ -376,17 +415,43 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
     // Check if we're dragging from palette
     if (activeIdStr.startsWith('palette-') && active.data.current?.type === 'palette-item') {
       const sectionType = active.data.current.sectionType as SectionType;
-      // Add new section
-      await handleAddSection(sectionType);
+
+      // Determine insertion index based on where we're dropping
+      let insertAtIndex: number | undefined;
+
+      if (overIdStr === 'canvas-droppable') {
+        // Dropped on empty canvas or at the end
+        insertAtIndex = undefined; // Add at end
+      } else if (overIdStr.startsWith('drop-zone-')) {
+        // Dropped on a drop zone between sections
+        insertAtIndex = parseInt(overIdStr.replace('drop-zone-', ''), 10);
+      } else {
+        // Dropped on an existing section - insert before it
+        const overIndex = sections.findIndex((s) => s._id === overIdStr);
+        if (overIndex !== -1) {
+          insertAtIndex = overIndex;
+        }
+      }
+
+      await handleAddSection(sectionType, insertAtIndex);
       return;
     }
 
     // Otherwise, we're reordering sections
     if (activeIdStr !== overIdStr) {
       const oldIndex = sections.findIndex((s) => s._id === activeIdStr);
-      const newIndex = sections.findIndex((s) => s._id === overIdStr);
+      let newIndex = sections.findIndex((s) => s._id === overIdStr);
 
-      if (oldIndex !== -1 && newIndex !== -1) {
+      // Handle drop zones
+      if (overIdStr.startsWith('drop-zone-')) {
+        newIndex = parseInt(overIdStr.replace('drop-zone-', ''), 10);
+        // Adjust if moving down
+        if (oldIndex < newIndex) {
+          newIndex = newIndex - 1;
+        }
+      }
+
+      if (oldIndex !== -1 && newIndex !== -1 && oldIndex !== newIndex) {
         const newSections = arrayMove(sections, oldIndex, newIndex);
         await handleReorder(newSections.map((s) => s._id));
       }
@@ -406,6 +471,20 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
       toast.error('Failed to publish issue');
       console.error(error);
     }
+  };
+
+  const handleDelete = async () => {
+    try {
+      await deleteIssue({
+        id: issueId as Id<'issues'>,
+      });
+      toast.success('Issue deleted');
+      router.push('/issues');
+    } catch (error) {
+      toast.error('Failed to delete issue. Only draft issues can be deleted.');
+      console.error(error);
+    }
+    setShowDeleteConfirm(false);
   };
 
   if (!issue) {
@@ -543,8 +622,64 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
           >
             {issue.status === 'published' ? 'Published' : 'Publish'}
           </Button>
+
+          <button
+            onClick={() => setShowDeleteConfirm(true)}
+            className="p-2 rounded-lg transition-colors hover:bg-red-500/10"
+            title="Delete Issue"
+            aria-label="Delete Issue"
+          >
+            <LuTrash2 className="w-5 h-5 text-red-500" />
+          </button>
         </div>
       </header>
+
+      {/* Delete Confirmation Modal */}
+      {showDeleteConfirm && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center"
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', backdropFilter: 'blur(4px)' }}
+          onClick={() => setShowDeleteConfirm(false)}
+        >
+          <div
+            className="rounded-2xl p-6 max-w-sm w-full mx-4 shadow-xl"
+            style={{ backgroundColor: 'rgb(var(--bg-secondary))' }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center gap-4 mb-4">
+              <div
+                className="w-12 h-12 rounded-full flex items-center justify-center"
+                style={{ backgroundColor: 'rgba(239, 68, 68, 0.15)' }}
+              >
+                <LuTrash2 className="w-6 h-6" style={{ color: 'rgb(239 68 68)' }} />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold" style={{ color: 'rgb(var(--text-primary))' }}>
+                  Delete Issue?
+                </h3>
+                <p className="text-sm" style={{ color: 'rgb(var(--text-secondary))' }}>
+                  This action cannot be undone.
+                </p>
+              </div>
+            </div>
+            <p className="text-sm mb-4" style={{ color: 'rgb(var(--text-secondary))' }}>
+              Are you sure you want to delete "{issue.title}"? All sections will be permanently removed.
+            </p>
+            <div className="flex gap-3 justify-end">
+              <Button variant="secondary" size="sm" onClick={() => setShowDeleteConfirm(false)}>
+                Cancel
+              </Button>
+              <button
+                onClick={handleDelete}
+                className="px-5 py-2.5 rounded-xl font-semibold transition-all duration-200 text-sm"
+                style={{ backgroundColor: 'rgb(239 68 68)', color: 'white' }}
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Main Editor */}
       <div className="flex-1 flex overflow-hidden">

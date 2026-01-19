@@ -30,7 +30,7 @@ export default function IssuesPage() {
   const allIssues = useQuery(api.issues.list, {}) || [];
 
   // Mutations
-  const createIssue = useMutation(api.issues.create);
+  const createFromLatest = useMutation(api.issues.createFromLatest);
 
   // Filter issues
   const filteredIssues = allIssues.filter((issue) => {
@@ -47,19 +47,10 @@ export default function IssuesPage() {
 
   const handleCreateIssue = async () => {
     try {
-      // Get next edition number
-      const maxEdition = allIssues.reduce((max, issue) => Math.max(max, issue.edition), 0);
-      const nextEdition = maxEdition + 1;
+      // Create new issue cloned from the latest one
+      const newIssueId = await createFromLatest({});
 
-      const newIssueId = await createIssue({
-        title: `Edition ${nextEdition}`,
-        edition: nextEdition,
-        bannerTitle: 'AZALEA REPORT',
-        bannerDate: new Date().toISOString().split('T')[0],
-        userId: 'temp-user-id' as Id<'users'>, // TODO: Replace with real user ID
-      });
-
-      toast.success('Issue created');
+      toast.success('Issue created from previous edition');
       router.push(`/issues/${newIssueId}`);
     } catch (error) {
       console.error('Create error:', error);

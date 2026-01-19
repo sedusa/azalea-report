@@ -86,7 +86,6 @@ export default function BirthdaysPage() {
           name: formData.name.trim(),
           month: formData.month,
           day: formData.day,
-          userId: 'temp-user-id' as Id<'users'>,
         });
         toast.success('Birthday updated');
         setEditingId(null);
@@ -95,7 +94,6 @@ export default function BirthdaysPage() {
           name: formData.name.trim(),
           month: formData.month,
           day: formData.day,
-          userId: 'temp-user-id' as Id<'users'>,
         });
         toast.success('Birthday added');
         setShowAddForm(false);
@@ -124,10 +122,7 @@ export default function BirthdaysPage() {
     }
 
     try {
-      await deleteBirthday({
-        id,
-        userId: 'temp-user-id' as Id<'users'>,
-      });
+      await deleteBirthday({ id });
       toast.success('Birthday deleted');
     } catch (error) {
       console.error('Error:', error);

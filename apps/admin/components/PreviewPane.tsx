@@ -167,9 +167,9 @@ export function PreviewPane({ issue, sections }: PreviewPaneProps) {
               className="relative rounded-xl overflow-hidden my-6"
               style={{ minHeight: '400px' }}
             >
-              {issue.bannerImage ? (
+              {(issue as any).bannerImageUrl ? (
                 <img
-                  src={issue.bannerImage}
+                  src={(issue as any).bannerImageUrl}
                   alt={issue.title || 'Newsletter banner'}
                   className="w-full h-auto object-cover"
                   style={{ minHeight: '400px' }}
@@ -276,7 +276,7 @@ export function PreviewPane({ issue, sections }: PreviewPaneProps) {
         </div>
       </div>
 
-      {/* Add Google Fonts for preview */}
+      {/* Add Google Fonts and section styles for preview */}
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
@@ -286,24 +286,261 @@ export function PreviewPane({ issue, sections }: PreviewPaneProps) {
           padding: 0 1rem;
         }
 
-        .section-card h2 {
+        /* Section with background - always dark text */
+        .section-with-bg,
+        .section-with-bg p,
+        .section-with-bg .basic-text,
+        .section-with-bg .spotlight-text,
+        .section-with-bg .spotlightText {
+          color: #333333 !important;
+        }
+
+        .section-with-bg .basic-title,
+        .section-with-bg .section-title,
+        .section-with-bg h2,
+        .section-with-bg h3,
+        .section-with-bg strong {
+          color: #016f53 !important;
+        }
+
+        /* Transparent section - white text in preview (dark bg) */
+        .section-transparent,
+        .section-transparent p,
+        .section-transparent .basic-text,
+        .section-transparent .basic-text * {
+          color: #ffffff !important;
+        }
+
+        .section-transparent .basic-title,
+        .section-transparent h2,
+        .section-transparent strong {
+          color: #016f53 !important;
+        }
+
+        /* Basic content section */
+        .basic-content {
+          background-color: #FFE6D6;
+          border-radius: 15px;
+          padding: 30px;
+          margin-bottom: 2rem;
+        }
+
+        .basic-title {
+          color: #016f53;
           font-family: 'Montserrat', sans-serif;
-          color: var(--card-heading, #016f53);
           font-size: 1.5rem;
-          line-height: 1.4;
+          font-weight: bold;
           margin-bottom: 1rem;
         }
 
-        .section-card p,
-        .section-card div {
+        .basic-text {
           font-family: 'Georgia', serif;
           font-size: 1.3rem;
           line-height: 1.6;
-          color: var(--card-text, #333333);
         }
 
-        .section-card a {
-          color: var(--accent-green, #016f53);
+        .basic-author {
+          font-style: italic;
+          margin-top: 1.5rem;
+        }
+
+        /* Two column layout */
+        .twoColumns {
+          display: flex;
+          gap: 2rem;
+          margin-bottom: 2rem;
+        }
+
+        .twoColumns .column {
+          flex: 1;
+        }
+
+        .sectionTitle {
+          color: #016f53;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 1.5rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+        }
+
+        .spotlightImage {
+          width: 100%;
+          max-width: 300px;
+          border-radius: 8px;
+          margin-bottom: 1rem;
+        }
+
+        .spotlightName {
+          color: #016f53;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 1.3rem;
+          font-weight: bold;
+          margin-bottom: 0.5rem;
+        }
+
+        .spotlightText {
+          font-family: 'Georgia', serif;
+          font-size: 1.1rem;
+          line-height: 1.6;
+        }
+
+        .spotlightContainer {
+          padding: 1.5rem;
+          border-radius: 8px;
+        }
+
+        .featureImage {
+          width: 100%;
+          border-radius: 8px;
+          margin-bottom: 0.5rem;
+        }
+
+        .featureCaption {
+          font-size: 0.9rem;
+          font-style: italic;
+          color: #666666;
+        }
+
+        .featureBullets {
+          list-style-type: disc;
+          padding-left: 1.5rem;
+          margin-top: 1rem;
+        }
+
+        .featureBullets li {
+          margin-bottom: 0.5rem;
+          font-family: 'Georgia', serif;
+        }
+
+        /* Chiefs/Interns sections */
+        .chiefs-section,
+        .interns-section {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 2rem;
+          padding: 2rem;
+          border-radius: 8px;
+        }
+
+        .chiefs-section {
+          background-color: #f7f3e8;
+        }
+
+        .interns-section {
+          background-color: rgb(221, 254, 233);
+        }
+
+        .chief-column,
+        .intern-column {
+          flex: 1;
+          min-width: 250px;
+          text-align: center;
+        }
+
+        .chief-image,
+        .intern-image {
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-bottom: 1rem;
+        }
+
+        .chief-name,
+        .intern-name {
+          color: #016f53 !important;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 1.3rem;
+          font-weight: bold;
+          margin-bottom: 0.5rem;
+        }
+
+        .chief-text,
+        .intern-text {
+          font-family: 'Georgia', serif;
+          font-size: 1.1rem;
+          line-height: 1.6;
+          color: #333333 !important;
+        }
+
+        /* Spotlight grid */
+        .spotlight-grid {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          gap: 2rem;
+          align-items: start;
+        }
+
+        .spotlight-image {
+          width: 250px;
+          border-radius: 8px;
+        }
+
+        .spotlight-name {
+          color: #016f53;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 1.3rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+        }
+
+        .spotlight-text {
+          font-family: 'Georgia', serif;
+          font-size: 1.1rem;
+          line-height: 1.6;
+        }
+
+        /* Section title */
+        .section-title {
+          color: #016f53;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 1.5rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+        }
+
+        /* Text image grid */
+        .text-image-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
+          align-items: start;
+        }
+
+        /* Toggle button for ShowMore */
+        .toggle-button {
+          background-color: #016f53;
+          color: white;
+          border: none;
+          padding: 0.5rem 1rem;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 0.9rem;
+          margin-top: 1rem;
+        }
+
+        .toggle-button:hover {
+          background-color: #014d3a;
+        }
+
+        /* Feature image container */
+        .featureImageContainer {
+          margin-bottom: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+          .twoColumns {
+            flex-direction: column;
+          }
+
+          .spotlight-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .text-image-grid {
+            grid-template-columns: 1fr;
+          }
         }
       `}</style>
     </div>

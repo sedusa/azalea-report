@@ -61,14 +61,60 @@ const sectionTypeValidator = v.union(
   v.literal("custom")
 );
 
-// Get all sections for an issue (ordered)
+// Get all sections for an issue (ordered) with resolved media URLs
 export const listByIssue = query({
   args: { issueId: v.id("issues") },
   handler: async (ctx, args) => {
-    return await ctx.db
+    const sections = await ctx.db
       .query("sections")
       .withIndex("by_issue_order", (q) => q.eq("issueId", args.issueId))
       .collect();
+
+    // Resolve image URLs in section data for preview
+    const resolvedSections = await Promise.all(
+      sections.map(async (section) => {
+        const data = { ...section.data };
+
+        // Resolve chiefs array images
+        if (section.type === 'chiefsCorner' && data.chiefs && Array.isArray(data.chiefs)) {
+          data.chiefs = await Promise.all(
+            data.chiefs.map(async (chief: any) => ({
+              ...chief,
+              image: await resolveMediaUrl(ctx, chief.image),
+            }))
+          );
+        }
+
+        // Resolve interns array images
+        if (section.type === 'internsCorner' && data.interns && Array.isArray(data.interns)) {
+          data.interns = await Promise.all(
+            data.interns.map(async (intern: any) => ({
+              ...intern,
+              image: await resolveMediaUrl(ctx, intern.image),
+            }))
+          );
+        }
+
+        // Resolve top-level image field (for spotlight, textImage, etc.)
+        if (data.image) {
+          data.image = await resolveMediaUrl(ctx, data.image);
+        }
+
+        // Resolve twoColumn images
+        if (section.type === 'twoColumn') {
+          if (data.leftImage) {
+            data.leftImage = await resolveMediaUrl(ctx, data.leftImage);
+          }
+          if (data.rightImage) {
+            data.rightImage = await resolveMediaUrl(ctx, data.rightImage);
+          }
+        }
+
+        return { ...section, data };
+      })
+    );
+
+    return resolvedSections;
   },
 });
 
@@ -167,7 +213,7 @@ export const create = mutation({
     issueId: v.id("issues"),
     type: sectionTypeValidator,
     data: v.any(),
-    userId: v.id("users"),
+    userId: v.optional(v.id("users")),
     // Optional fields for backwards compatibility (ignored - calculated automatically)
     order: v.optional(v.number()),
     visible: v.optional(v.boolean()),
@@ -208,15 +254,17 @@ export const create = mutation({
       });
     }
 
-    // Log the action
-    await ctx.db.insert("auditLog", {
-      userId: args.userId,
-      action: "section.create",
-      resourceType: "section",
-      resourceId: sectionId,
-      details: { issueId: args.issueId, type: args.type },
-      timestamp: now,
-    });
+    // Log the action (only if user is authenticated)
+    if (args.userId) {
+      await ctx.db.insert("auditLog", {
+        userId: args.userId,
+        action: "section.create",
+        resourceType: "section",
+        resourceId: sectionId,
+        details: { issueId: args.issueId, type: args.type },
+        timestamp: now,
+      });
+    }
 
     return sectionId;
   },
@@ -227,7 +275,7 @@ export const update = mutation({
   args: {
     id: v.id("sections"),
     data: v.any(),
-    userId: v.id("users"),
+    userId: v.optional(v.id("users")),
   },
   handler: async (ctx, args) => {
     const section = await ctx.db.get(args.id);
@@ -252,14 +300,16 @@ export const update = mutation({
       });
     }
 
-    // Log the action
-    await ctx.db.insert("auditLog", {
-      userId: args.userId,
-      action: "section.update",
-      resourceType: "section",
-      resourceId: args.id,
-      timestamp: now,
-    });
+    // Log the action (only if user is authenticated)
+    if (args.userId) {
+      await ctx.db.insert("auditLog", {
+        userId: args.userId,
+        action: "section.update",
+        resourceType: "section",
+        resourceId: args.id,
+        timestamp: now,
+      });
+    }
   },
 });
 
@@ -267,7 +317,7 @@ export const update = mutation({
 export const toggleVisibility = mutation({
   args: {
     id: v.id("sections"),
-    userId: v.id("users"),
+    userId: v.optional(v.id("users")),
   },
   handler: async (ctx, args) => {
     const section = await ctx.db.get(args.id);
@@ -296,7 +346,7 @@ export const updateBackgroundColor = mutation({
   args: {
     id: v.id("sections"),
     backgroundColor: v.optional(v.string()),
-    userId: v.id("users"),
+    userId: v.optional(v.id("users")),
   },
   handler: async (ctx, args) => {
     const section = await ctx.db.get(args.id);
@@ -325,7 +375,7 @@ export const reorder = mutation({
   args: {
     issueId: v.id("issues"),
     sectionIds: v.array(v.id("sections")),
-    userId: v.id("users"),
+    userId: v.optional(v.id("users")),
   },
   handler: async (ctx, args) => {
     const now = Date.now();
@@ -347,15 +397,17 @@ export const reorder = mutation({
       });
     }
 
-    // Log the action
-    await ctx.db.insert("auditLog", {
-      userId: args.userId,
-      action: "section.reorder",
-      resourceType: "section",
-      resourceId: args.issueId,
-      details: { newOrder: args.sectionIds },
-      timestamp: now,
-    });
+    // Log the action (only if user is authenticated)
+    if (args.userId) {
+      await ctx.db.insert("auditLog", {
+        userId: args.userId,
+        action: "section.reorder",
+        resourceType: "section",
+        resourceId: args.issueId,
+        details: { newOrder: args.sectionIds },
+        timestamp: now,
+      });
+    }
   },
 });
 
@@ -363,7 +415,7 @@ export const reorder = mutation({
 export const remove = mutation({
   args: {
     id: v.id("sections"),
-    userId: v.id("users"),
+    userId: v.optional(v.id("users")),
   },
   handler: async (ctx, args) => {
     const section = await ctx.db.get(args.id);
@@ -383,15 +435,17 @@ export const remove = mutation({
       });
     }
 
-    // Log the action
-    await ctx.db.insert("auditLog", {
-      userId: args.userId,
-      action: "section.delete",
-      resourceType: "section",
-      resourceId: args.id,
-      details: { issueId: section.issueId, type: section.type },
-      timestamp: now,
-    });
+    // Log the action (only if user is authenticated)
+    if (args.userId) {
+      await ctx.db.insert("auditLog", {
+        userId: args.userId,
+        action: "section.delete",
+        resourceType: "section",
+        resourceId: args.id,
+        details: { issueId: section.issueId, type: section.type },
+        timestamp: now,
+      });
+    }
   },
 });
 
@@ -399,7 +453,7 @@ export const remove = mutation({
 export const duplicate = mutation({
   args: {
     id: v.id("sections"),
-    userId: v.id("users"),
+    userId: v.optional(v.id("users")),
   },
   handler: async (ctx, args) => {
     const section = await ctx.db.get(args.id);
@@ -438,15 +492,17 @@ export const duplicate = mutation({
       });
     }
 
-    // Log the action
-    await ctx.db.insert("auditLog", {
-      userId: args.userId,
-      action: "section.create",
-      resourceType: "section",
-      resourceId: newSectionId,
-      details: { issueId: section.issueId, type: section.type, duplicatedFrom: args.id },
-      timestamp: now,
-    });
+    // Log the action (only if user is authenticated)
+    if (args.userId) {
+      await ctx.db.insert("auditLog", {
+        userId: args.userId,
+        action: "section.create",
+        resourceType: "section",
+        resourceId: newSectionId,
+        details: { issueId: section.issueId, type: section.type, duplicatedFrom: args.id },
+        timestamp: now,
+      });
+    }
 
     return newSectionId;
   },

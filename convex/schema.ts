@@ -15,7 +15,7 @@ export default defineSchema({
     updatedAt: v.number(),
     publishedAt: v.optional(v.number()),
     version: v.number(),
-    createdBy: v.id("users"),
+    createdBy: v.optional(v.id("users")),
   })
     .index("by_slug", ["slug"])
     .index("by_status", ["status"])

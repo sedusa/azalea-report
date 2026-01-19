@@ -115,18 +115,15 @@ export const create = mutation({
     edition: v.number(),
     bannerTitle: v.string(),
     bannerDate: v.string(),
-    // Accept either userId or createdBy for backwards compatibility
+    // Accept either userId or createdBy for backwards compatibility (both optional for dev)
     userId: v.optional(v.id("users")),
     createdBy: v.optional(v.id("users")),
   },
   handler: async (ctx, args) => {
     const now = Date.now();
     const slug = `edition-${args.edition}`;
-    // Support both userId and createdBy params
+    // Support both userId and createdBy params (optional for development)
     const userIdValue = args.userId || args.createdBy;
-    if (!userIdValue) {
-      throw new Error("Either userId or createdBy is required");
-    }
 
     const issueId = await ctx.db.insert("issues", {
       title: args.title,
@@ -141,7 +138,7 @@ export const create = mutation({
       createdBy: userIdValue,
     });
 
-    // Log the action
+    // Log the action (only if user is authenticated)
     if (userIdValue) {
       await ctx.db.insert("auditLog", {
         userId: userIdValue,
@@ -164,7 +161,7 @@ export const update = mutation({
     bannerTitle: v.optional(v.string()),
     bannerDate: v.optional(v.string()),
     bannerImage: v.optional(v.id("media")),
-    userId: v.id("users"),
+    userId: v.optional(v.id("users")),
   },
   handler: async (ctx, args) => {
     const issue = await ctx.db.get(args.id);
@@ -183,15 +180,17 @@ export const update = mutation({
 
     await ctx.db.patch(args.id, updates);
 
-    // Log the action
-    await ctx.db.insert("auditLog", {
-      userId: args.userId,
-      action: "issue.update",
-      resourceType: "issue",
-      resourceId: args.id,
-      details: { updates: Object.keys(updates) },
-      timestamp: now,
-    });
+    // Log the action (only if user is authenticated)
+    if (args.userId) {
+      await ctx.db.insert("auditLog", {
+        userId: args.userId,
+        action: "issue.update",
+        resourceType: "issue",
+        resourceId: args.id,
+        details: { updates: Object.keys(updates) },
+        timestamp: now,
+      });
+    }
   },
 });
 
@@ -199,7 +198,7 @@ export const update = mutation({
 export const publish = mutation({
   args: {
     id: v.id("issues"),
-    userId: v.id("users"),
+    userId: v.optional(v.id("users")),
   },
   handler: async (ctx, args) => {
     const issue = await ctx.db.get(args.id);
@@ -214,14 +213,16 @@ export const publish = mutation({
       version: issue.version + 1,
     });
 
-    // Log the action
-    await ctx.db.insert("auditLog", {
-      userId: args.userId,
-      action: "issue.publish",
-      resourceType: "issue",
-      resourceId: args.id,
-      timestamp: now,
-    });
+    // Log the action (only if user is authenticated)
+    if (args.userId) {
+      await ctx.db.insert("auditLog", {
+        userId: args.userId,
+        action: "issue.publish",
+        resourceType: "issue",
+        resourceId: args.id,
+        timestamp: now,
+      });
+    }
 
     // TODO: Trigger Netlify webhook for rebuild
   },
@@ -231,7 +232,7 @@ export const publish = mutation({
 export const unpublish = mutation({
   args: {
     id: v.id("issues"),
-    userId: v.id("users"),
+    userId: v.optional(v.id("users")),
   },
   handler: async (ctx, args) => {
     const issue = await ctx.db.get(args.id);
@@ -245,14 +246,16 @@ export const unpublish = mutation({
       version: issue.version + 1,
     });
 
-    // Log the action
-    await ctx.db.insert("auditLog", {
-      userId: args.userId,
-      action: "issue.unpublish",
-      resourceType: "issue",
-      resourceId: args.id,
-      timestamp: now,
-    });
+    // Log the action (only if user is authenticated)
+    if (args.userId) {
+      await ctx.db.insert("auditLog", {
+        userId: args.userId,
+        action: "issue.unpublish",
+        resourceType: "issue",
+        resourceId: args.id,
+        timestamp: now,
+      });
+    }
   },
 });
 
@@ -260,7 +263,7 @@ export const unpublish = mutation({
 export const archive = mutation({
   args: {
     id: v.id("issues"),
-    userId: v.id("users"),
+    userId: v.optional(v.id("users")),
   },
   handler: async (ctx, args) => {
     const issue = await ctx.db.get(args.id);
@@ -274,14 +277,16 @@ export const archive = mutation({
       version: issue.version + 1,
     });
 
-    // Log the action
-    await ctx.db.insert("auditLog", {
-      userId: args.userId,
-      action: "issue.archive",
-      resourceType: "issue",
-      resourceId: args.id,
-      timestamp: now,
-    });
+    // Log the action (only if user is authenticated)
+    if (args.userId) {
+      await ctx.db.insert("auditLog", {
+        userId: args.userId,
+        action: "issue.archive",
+        resourceType: "issue",
+        resourceId: args.id,
+        timestamp: now,
+      });
+    }
   },
 });
 
@@ -289,7 +294,7 @@ export const archive = mutation({
 export const remove = mutation({
   args: {
     id: v.id("issues"),
-    userId: v.id("users"),
+    userId: v.optional(v.id("users")),
   },
   handler: async (ctx, args) => {
     const issue = await ctx.db.get(args.id);
@@ -310,5 +315,88 @@ export const remove = mutation({
 
     // Delete the issue
     await ctx.db.delete(args.id);
+  },
+});
+
+// Create new issue by cloning from the latest issue
+export const createFromLatest = mutation({
+  args: {
+    userId: v.optional(v.id("users")),
+  },
+  handler: async (ctx, args) => {
+    const now = Date.now();
+
+    // Get all issues to find the latest by edition
+    const allIssues = await ctx.db.query("issues").collect();
+
+    // Find the latest issue by edition number
+    const latestIssue = allIssues.reduce((latest, issue) => {
+      if (!latest || issue.edition > latest.edition) {
+        return issue;
+      }
+      return latest;
+    }, null as typeof allIssues[0] | null);
+
+    // Calculate next edition number
+    const maxEdition = latestIssue?.edition || 0;
+    const nextEdition = maxEdition + 1;
+
+    // Format current date as "Month Year" (e.g., "January 2026")
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleDateString('en-US', {
+      month: 'long',
+      year: 'numeric',
+    });
+
+    // Create the new issue
+    const newIssueId = await ctx.db.insert("issues", {
+      title: `Edition ${nextEdition}`,
+      slug: `edition-${nextEdition}`,
+      edition: nextEdition,
+      status: "draft",
+      bannerTitle: latestIssue?.bannerTitle || 'AZALEA REPORT',
+      bannerDate: formattedDate,
+      bannerImage: latestIssue?.bannerImage, // Copy banner image reference
+      createdAt: now,
+      updatedAt: now,
+      version: 1,
+      createdBy: args.userId,
+    });
+
+    // If there's a latest issue, clone all its sections
+    if (latestIssue) {
+      const sections = await ctx.db
+        .query("sections")
+        .withIndex("by_issue_order", (q) => q.eq("issueId", latestIssue._id))
+        .collect();
+
+      // Clone each section to the new issue
+      for (const section of sections) {
+        await ctx.db.insert("sections", {
+          issueId: newIssueId,
+          type: section.type,
+          order: section.order,
+          visible: section.visible,
+          backgroundColor: section.backgroundColor,
+          data: section.data, // Copy section data (includes media references)
+          createdAt: now,
+          updatedAt: now,
+        });
+      }
+    }
+
+    // Log the action (only if user is authenticated)
+    if (args.userId) {
+      await ctx.db.insert("auditLog", {
+        userId: args.userId,
+        action: "issue.create",
+        resourceType: "issue",
+        resourceId: newIssueId,
+        details: { clonedFrom: latestIssue?._id },
+        timestamp: now,
+      });
+    }
+
+    return newIssueId;
   },
 });

@@ -19,7 +19,19 @@ export default function RootLayout({
       <body>
         <ThemeProvider>
           <ConvexClientProvider>
-            {children}
+            <div className="min-h-screen flex flex-col">
+              <div className="flex-1">{children}</div>
+              <footer
+                className="py-3 text-center text-xs border-t"
+                style={{
+                  backgroundColor: 'rgb(var(--bg-secondary))',
+                  borderColor: 'rgb(var(--border-primary))',
+                  color: 'rgb(var(--text-tertiary))',
+                }}
+              >
+                Maintained by Samuel Edusa, MD
+              </footer>
+            </div>
             <Toaster position="bottom-right" richColors />
           </ConvexClientProvider>
         </ThemeProvider>

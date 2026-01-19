@@ -39,13 +39,15 @@ export const create = mutation({
     month: v.number(),
     day: v.number(),
     role: v.optional(v.string()),
-    userId: v.id("users"),
+    userId: v.optional(v.id("users")),
   },
   handler: async (ctx, args) => {
-    // Verify admin role
-    const user = await ctx.db.get(args.userId);
-    if (!user || user.role !== "admin") {
-      throw new Error("Only admins can manage birthdays");
+    // Verify admin role (only if userId provided)
+    if (args.userId) {
+      const user = await ctx.db.get(args.userId);
+      if (!user || user.role !== "admin") {
+        throw new Error("Only admins can manage birthdays");
+      }
     }
 
     const now = Date.now();
@@ -69,13 +71,15 @@ export const update = mutation({
     month: v.optional(v.number()),
     day: v.optional(v.number()),
     role: v.optional(v.string()),
-    userId: v.id("users"),
+    userId: v.optional(v.id("users")),
   },
   handler: async (ctx, args) => {
-    // Verify admin role
-    const user = await ctx.db.get(args.userId);
-    if (!user || user.role !== "admin") {
-      throw new Error("Only admins can manage birthdays");
+    // Verify admin role (only if userId provided)
+    if (args.userId) {
+      const user = await ctx.db.get(args.userId);
+      if (!user || user.role !== "admin") {
+        throw new Error("Only admins can manage birthdays");
+      }
     }
 
     const birthday = await ctx.db.get(args.id);
@@ -98,15 +102,70 @@ export const update = mutation({
 export const remove = mutation({
   args: {
     id: v.id("birthdays"),
-    userId: v.id("users"),
+    userId: v.optional(v.id("users")),
   },
   handler: async (ctx, args) => {
-    // Verify admin role
-    const user = await ctx.db.get(args.userId);
-    if (!user || user.role !== "admin") {
-      throw new Error("Only admins can manage birthdays");
+    // Verify admin role (only if userId provided)
+    if (args.userId) {
+      const user = await ctx.db.get(args.userId);
+      if (!user || user.role !== "admin") {
+        throw new Error("Only admins can manage birthdays");
+      }
     }
 
     await ctx.db.delete(args.id);
+  },
+});
+
+// Month abbreviation to number mapping
+const monthMap: Record<string, number> = {
+  Jan: 1, Feb: 2, Mar: 3, Apr: 4, May: 5, Jun: 6,
+  Jul: 7, Aug: 8, Sep: 9, Oct: 10, Nov: 11, Dec: 12,
+};
+
+// Seed birthdays from JSON data (one-time migration)
+export const seed = mutation({
+  args: {
+    birthdays: v.array(
+      v.object({
+        name: v.string(),
+        day: v.number(),
+        month: v.string(), // Accepts abbreviation like "Jan", "Feb", etc.
+      })
+    ),
+    clearExisting: v.optional(v.boolean()),
+  },
+  handler: async (ctx, args) => {
+    const now = Date.now();
+
+    // Optionally clear existing birthdays
+    if (args.clearExisting) {
+      const existing = await ctx.db.query("birthdays").collect();
+      for (const birthday of existing) {
+        await ctx.db.delete(birthday._id);
+      }
+    }
+
+    // Insert new birthdays
+    let inserted = 0;
+    const skipped: string[] = [];
+    for (const birthday of args.birthdays) {
+      const monthNum = monthMap[birthday.month];
+      if (!monthNum) {
+        skipped.push(`${birthday.name} (invalid month: ${birthday.month})`);
+        continue;
+      }
+
+      await ctx.db.insert("birthdays", {
+        name: birthday.name,
+        month: monthNum,
+        day: birthday.day,
+        createdAt: now,
+        updatedAt: now,
+      });
+      inserted++;
+    }
+
+    return { inserted, total: args.birthdays.length, skipped };
   },
 });

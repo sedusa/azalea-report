@@ -24,7 +24,8 @@
       "Bash(npx convex:*)",
       "Bash(npx tsc:*)",
       "Bash(find:*)",
-      "Bash(wc:*)"
+      "Bash(wc:*)",
+      "Bash(NEXT_PUBLIC_CONVEX_URL=http://127.0.0.1:3210 npx tsx:*)"
     ]
   }
 }
