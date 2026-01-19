@@ -576,6 +576,31 @@ export function PreviewPane({ issue, sections }: PreviewPaneProps) {
           object-fit: cover;
         }
 
+        /* Podcast Section */
+        .podcast-episode {
+          position: relative;
+        }
+
+        .podcast-listen-button {
+          display: block;
+          padding: 1rem 1.5rem;
+          border-radius: 8px;
+          border: 2px solid #016f53;
+          background-color: var(--card-bg);
+          color: #016f53;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 1rem;
+          font-weight: 600;
+          text-align: center;
+          text-decoration: none;
+          transition: all 0.2s ease;
+        }
+
+        .podcast-listen-button:hover {
+          background-color: #016f53;
+          color: #ffffff;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
           .twoColumns {

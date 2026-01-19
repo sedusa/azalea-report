@@ -1234,6 +1234,40 @@
     display: block;
   }
 
+  /* Podcast Section */
+  .podcast-episode {
+    position: relative;
+  }
+
+  .podcast-listen-button {
+    display: block;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    border: 2px solid #016f53;
+    background-color: var(--card);
+    color: #016f53;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .podcast-listen-button:hover {
+    background-color: #016f53;
+    color: #ffffff;
+  }
+
+  .section-with-bg .podcast-listen-button {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .section-with-bg .podcast-listen-button:hover {
+    background-color: #016f53;
+    color: #ffffff;
+  }
+
   /* Responsive adjustments - matches module.css media queries */
   @media (max-width: 1024px) {
     .banner-title {

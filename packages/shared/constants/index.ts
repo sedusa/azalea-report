@@ -15,7 +15,8 @@ export type FieldType =
   | 'chiefArray'
   | 'internArray'
   | 'detailsArray'
-  | 'bulletsArray';
+  | 'bulletsArray'
+  | 'podcastArray';  // Array of podcast episodes
 
 // Pastel Color Palette for Section Backgrounds
 // All colors have good contrast with dark text (#333333)
@@ -238,20 +239,27 @@ export const SECTION_REGISTRY: Record<SectionType, SectionDefinition> = {
 
   podcast: {
     type: 'podcast',
-    label: 'Podcast',
-    description: 'Embedded podcast episode',
+    label: 'Podcasts',
+    description: 'Featured podcast episodes with links to listen',
     icon: 'mic',
     fields: [
-      { name: 'sectionTitle', label: 'Section Title', type: 'text', required: false, placeholder: 'Podcast' },
-      { name: 'title', label: 'Episode Title', type: 'text', required: true },
-      { name: 'description', label: 'Description', type: 'textarea', required: false },
-      { name: 'embedUrl', label: 'Embed URL', type: 'text', required: true, placeholder: 'https://...' },
+      { name: 'sectionTitle', label: 'Section Title', type: 'text', required: false, placeholder: 'Podcasts' },
+      { name: 'title', label: 'Podcast Series Title', type: 'text', required: true, placeholder: 'What Brings You In Today? - Featured Podcasts' },
+      { name: 'subtitle', label: 'Subtitle', type: 'text', required: false, placeholder: 'A Podcast from SGMC Health' },
+      { name: 'episodes', label: 'Episodes', type: 'podcastArray', required: true },
     ],
     exampleData: () => ({
-      sectionTitle: 'Podcast',
-      title: 'Episode 10: Resident Wellness',
-      description: 'In this episode, we discuss strategies for maintaining wellness during residency.',
-      embedUrl: 'https://open.spotify.com/embed/episode/...',
+      sectionTitle: 'Podcasts',
+      title: 'What Brings You In Today? - Featured Podcasts',
+      subtitle: 'A Podcast from SGMC Health',
+      episodes: [
+        {
+          title: 'Episode #5 - Joseph Hayes, MD',
+          description: 'This episode of the podcast features Dr. Hayes, Medical Director at SGMC Internal Medicine and Assistant Professor at Mercer Medical School.',
+          buttonUrl: 'https://open.spotify.com/episode/...',
+          buttonText: 'Listen to Episode 5 with Dr. Joseph Hayes on Spotify',
+        },
+      ],
     }),
   },
 

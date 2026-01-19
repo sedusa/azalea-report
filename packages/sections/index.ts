@@ -37,6 +37,7 @@ export { TextImageSection } from './components/TextImageSection';
 export { BirthdaysSection } from './components/BirthdaysSection';
 export { RecentSuccessSection } from './components/RecentSuccessSection';
 export { CommunityServiceSection } from './components/CommunityServiceSection';
+export { PodcastSection } from './components/PodcastSection';
 
 // Export utility components
 export { ShowMore } from './components/ShowMore';

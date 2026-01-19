@@ -9,6 +9,7 @@ import { PersonArrayEditor } from './PersonArrayEditor';
 import { DetailsArrayEditor } from './DetailsArrayEditor';
 import { BulletsArrayEditor } from './BulletsArrayEditor';
 import { ImagesWithCaptionsEditor } from './ImagesWithCaptionsEditor';
+import { PodcastArrayEditor } from './PodcastArrayEditor';
 
 interface PropertyFieldProps {
   field: FieldDefinition;
@@ -176,6 +177,16 @@ export function PropertyField({ field, value, onChange }: PropertyFieldProps) {
           value={value as string[] | undefined}
           onChange={onChange}
           maxItems={10}
+        />
+      );
+
+    case 'podcastArray':
+      return (
+        <PodcastArrayEditor
+          label={field.label}
+          value={value as { title: string; description: string; buttonUrl: string; buttonText: string }[] | undefined}
+          onChange={onChange}
+          maxItems={5}
         />
       );
 

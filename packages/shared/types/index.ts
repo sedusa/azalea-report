@@ -165,11 +165,21 @@ export interface EventsSectionData {
   }>;
 }
 
+export interface PodcastEpisode {
+  title: string;
+  description: string;
+  buttonUrl: string;
+  buttonText: string;
+}
+
 export interface PodcastSectionData {
   sectionTitle?: string;
+  /** Podcast series title */
   title: string;
-  description?: string;
-  embedUrl: string;
+  /** Subtitle like "A Podcast from SGMC Health" */
+  subtitle?: string;
+  /** Array of podcast episodes */
+  episodes: PodcastEpisode[];
 }
 
 export interface BirthdaysSectionData {
