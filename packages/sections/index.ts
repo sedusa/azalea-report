@@ -34,6 +34,7 @@ export { InternsCornerSection } from './components/InternsCornerSection';
 export { GenericTextSection } from './components/GenericTextSection';
 export { TwoColumnSection } from './components/TwoColumnSection';
 export { TextImageSection } from './components/TextImageSection';
+export { BirthdaysSection } from './components/BirthdaysSection';
 
 // Export utility components
 export { ShowMore } from './components/ShowMore';

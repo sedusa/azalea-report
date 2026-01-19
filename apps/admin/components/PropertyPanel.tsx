@@ -105,6 +105,19 @@ export function PropertyPanel({ section, onUpdate, onBackgroundColorChange }: Pr
             onChange={(value) => handleFieldChange(field.name, value)}
           />
         ))}
+
+        {/* Help Text */}
+        {sectionDef.helpText && (
+          <div
+            className="p-3 rounded-lg text-sm"
+            style={{
+              backgroundColor: 'rgb(var(--bg-accent))',
+              color: 'rgb(var(--text-secondary))',
+            }}
+          >
+            {sectionDef.helpText}
+          </div>
+        )}
       </div>
     </div>
   );

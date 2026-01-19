@@ -210,6 +210,7 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
         type,
         data: sectionDef.exampleData(),
         userId: issue?.createdBy as Id<'users'>,
+        backgroundColor: sectionDef.defaultBackgroundColor,
       });
 
       // If insertAtIndex is specified, reorder to put the new section in the right position

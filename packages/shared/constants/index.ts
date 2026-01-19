@@ -26,6 +26,7 @@ export const SECTION_BACKGROUND_COLORS = [
   { value: '#e8f4f8', label: 'Light Blue', name: 'lightBlue' },
   { value: '#f0e6f6', label: 'Lavender', name: 'lavender' },
   { value: '#fff9e6', label: 'Lemon', name: 'lemon' },
+  { value: '#E8C840', label: 'Golden Yellow', name: 'golden' },
   { value: '#fce4ec', label: 'Pink', name: 'pink' },
   { value: '#e0f2f1', label: 'Teal', name: 'teal' },
   { value: '#fff3e0', label: 'Orange Cream', name: 'orangeCream' },
@@ -49,6 +50,8 @@ export interface SectionDefinition {
   label: string;
   description: string;
   icon: string; // Lucide icon name
+  defaultBackgroundColor?: string; // Optional default background color for new sections
+  helpText?: string; // Optional help text shown below the fields
   fields: FieldDefinition[];
   exampleData: () => Record<string, unknown>;
 }
@@ -256,28 +259,19 @@ export const SECTION_REGISTRY: Record<SectionType, SectionDefinition> = {
     label: 'Birthdays',
     description: 'Birthday celebrations for the month',
     icon: 'cake',
+    defaultBackgroundColor: '#E8C840', // Golden yellow for birthdays
+    helpText: 'Birthdays will be auto-populated based on the current month. You can add more birthdays in the Birthdays section.',
     fields: [
-      { name: 'sectionTitle', label: 'Section Title', type: 'text', required: false, placeholder: 'Birthday Celebrations' },
-      { name: 'month', label: 'Month', type: 'select', required: false, options: [
-        { value: '', label: 'Current Month' },
-        { value: '1', label: 'January' },
-        { value: '2', label: 'February' },
-        { value: '3', label: 'March' },
-        { value: '4', label: 'April' },
-        { value: '5', label: 'May' },
-        { value: '6', label: 'June' },
-        { value: '7', label: 'July' },
-        { value: '8', label: 'August' },
-        { value: '9', label: 'September' },
-        { value: '10', label: 'October' },
-        { value: '11', label: 'November' },
-        { value: '12', label: 'December' },
-      ]},
+      { name: 'sectionTitle', label: 'Section Title', type: 'text', required: false, placeholder: 'January Birthdays' },
     ],
-    exampleData: () => ({
-      sectionTitle: 'Birthday Celebrations',
-      month: undefined, // Uses current month
-    }),
+    exampleData: () => {
+      const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'];
+      const currentMonth = new Date().getMonth() + 1; // 1-12
+      return {
+        sectionTitle: `${monthNames[currentMonth - 1]} Birthdays`,
+      };
+    },
   },
 
   culturosity: {

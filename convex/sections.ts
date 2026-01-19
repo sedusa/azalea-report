@@ -70,6 +70,9 @@ export const listByIssue = query({
       .withIndex("by_issue_order", (q) => q.eq("issueId", args.issueId))
       .collect();
 
+    // Pre-fetch all birthdays for birthday sections
+    const allBirthdays = await ctx.db.query("birthdays").collect();
+
     // Resolve image URLs in section data for preview
     const resolvedSections = await Promise.all(
       sections.map(async (section) => {
@@ -108,6 +111,16 @@ export const listByIssue = query({
           if (data.rightImage) {
             data.rightImage = await resolveMediaUrl(ctx, data.rightImage);
           }
+        }
+
+        // Populate birthdays for birthday sections
+        if (section.type === 'birthdays') {
+          data.birthdays = allBirthdays.map(b => ({
+            _id: b._id,
+            name: b.name,
+            day: b.day,
+            month: b.month,
+          }));
         }
 
         return { ...section, data };
@@ -151,6 +164,9 @@ export const listVisibleByIssue = query({
 
     const visibleSections = sections.filter((section) => section.visible);
 
+    // Pre-fetch all birthdays for birthday sections
+    const allBirthdays = await ctx.db.query("birthdays").collect();
+
     // Resolve image URLs in section data
     const resolvedSections = await Promise.all(
       visibleSections.map(async (section) => {
@@ -191,6 +207,16 @@ export const listVisibleByIssue = query({
           }
         }
 
+        // Populate birthdays for birthday sections
+        if (section.type === 'birthdays') {
+          data.birthdays = allBirthdays.map(b => ({
+            _id: b._id,
+            name: b.name,
+            day: b.day,
+            month: b.month,
+          }));
+        }
+
         return { ...section, data };
       })
     );
@@ -217,6 +243,7 @@ export const create = mutation({
     // Optional fields for backwards compatibility (ignored - calculated automatically)
     order: v.optional(v.number()),
     visible: v.optional(v.boolean()),
+    backgroundColor: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
     const now = Date.now();
@@ -240,6 +267,7 @@ export const create = mutation({
       type: args.type,
       order: maxOrder + 1,
       visible: args.visible !== undefined ? args.visible : true,
+      backgroundColor: args.backgroundColor,
       data: sanitizedData,
       createdAt: now,
       updatedAt: now,

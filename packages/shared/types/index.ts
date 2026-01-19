@@ -174,7 +174,13 @@ export interface PodcastSectionData {
 
 export interface BirthdaysSectionData {
   sectionTitle?: string;
-  month?: number; // If not set, uses current month
+  // Birthdays are auto-populated based on current month from Convex
+  birthdays?: Array<{
+    _id: string;
+    name: string;
+    day: number;
+    month: number;
+  }>;
 }
 
 export interface CulturostySectionData {
