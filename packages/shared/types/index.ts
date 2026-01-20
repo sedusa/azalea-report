@@ -288,7 +288,19 @@ export interface TextCarouselSectionData {
 
 export interface CustomSectionData {
   sectionTitle?: string;
+  /** Article/content title */
+  title?: string;
+  /** Brief description or intro text */
+  description?: string;
+  /** Author name */
+  author?: string;
+  /** Custom HTML content - can reference images using {{image-0}}, {{image-1}}, etc. */
   html: string;
+  /** Images that can be referenced in HTML using placeholders */
+  images?: Array<{
+    mediaId: string;
+    caption?: string;
+  }>;
 }
 
 export interface TwoColumnSectionData {

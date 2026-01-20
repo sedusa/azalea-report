@@ -448,16 +448,25 @@ export const SECTION_REGISTRY: Record<SectionType, SectionDefinition> = {
 
   custom: {
     type: 'custom',
-    label: 'Custom Section',
-    description: 'Custom HTML section (admin only)',
+    label: 'Custom Article',
+    description: 'Custom HTML article with title, description, author, and images',
     icon: 'code',
+    helpText: 'Use {{image-0}}, {{image-1}}, etc. in HTML to reference uploaded images',
     fields: [
-      { name: 'sectionTitle', label: 'Section Title', type: 'text', required: false },
-      { name: 'html', label: 'HTML Content', type: 'textarea', required: true },
+      { name: 'sectionTitle', label: 'Section Title', type: 'text', required: false, placeholder: 'News & Updates' },
+      { name: 'title', label: 'Article Title', type: 'text', required: false, placeholder: 'SGMC Health Receives Statewide Awards' },
+      { name: 'description', label: 'Description/Intro', type: 'richtext', required: false },
+      { name: 'author', label: 'Author', type: 'text', required: false, placeholder: 'SGMC Health' },
+      { name: 'images', label: 'Images (Reference as {{image-0}}, {{image-1}}, etc.)', type: 'imagesWithCaptions', required: false },
+      { name: 'html', label: 'Custom HTML Content', type: 'textarea', required: false },
     ],
     exampleData: () => ({
-      sectionTitle: 'Custom Content',
-      html: '<div class="custom-section"><p>Custom HTML content here...</p></div>',
+      sectionTitle: 'News & Updates',
+      title: 'SGMC Health Receives Statewide Awards for Patient Safety',
+      description: '<p>SGMC Health has been recognized for its commitment to patient safety and quality care.</p>',
+      author: 'SGMC Health',
+      images: [],
+      html: '',
     }),
   },
 };

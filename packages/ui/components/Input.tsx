@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useId } from 'react';
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
@@ -14,7 +16,8 @@ export function Input({
   id,
   ...props
 }: InputProps) {
-  const inputId = id || `input-${Math.random().toString(36).substr(2, 9)}`;
+  const generatedId = useId();
+  const inputId = id || generatedId;
 
   return (
     <div className="w-full">
@@ -48,6 +51,7 @@ export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextArea
   label?: string;
   error?: string;
   helperText?: string;
+  resizable?: boolean;
 }
 
 export function Textarea({
@@ -56,9 +60,12 @@ export function Textarea({
   helperText,
   className = '',
   id,
+  resizable = true,
+  style,
   ...props
 }: TextareaProps) {
-  const textareaId = id || `textarea-${Math.random().toString(36).substr(2, 9)}`;
+  const generatedId = useId();
+  const textareaId = id || generatedId;
 
   return (
     <div className="w-full">
@@ -74,6 +81,11 @@ export function Textarea({
       <textarea
         id={textareaId}
         className={`input-field ${error ? 'border-red-500' : ''} ${className}`}
+        style={{
+          resize: resizable ? 'vertical' : 'none',
+          minHeight: '100px',
+          ...style,
+        }}
         {...props}
       />
       {error && (

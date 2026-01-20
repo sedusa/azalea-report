@@ -1268,6 +1268,99 @@
     color: #ffffff;
   }
 
+  /* Custom Section - Custom HTML articles */
+  .custom-article-title {
+    color: #016f53 !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .custom-article-author {
+    color: #666666;
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-transparent .custom-article-author {
+    color: var(--muted-foreground) !important;
+  }
+
+  .custom-description {
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .custom-html-content {
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .custom-html-content p {
+    margin-bottom: 1rem;
+  }
+
+  .custom-html-content h1,
+  .custom-html-content h2,
+  .custom-html-content h3,
+  .custom-html-content h4 {
+    color: #016f53 !important;
+    font-family: 'Montserrat', sans-serif;
+    margin: 1.5rem 0 1rem;
+  }
+
+  .custom-html-content ul,
+  .custom-html-content ol {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .custom-html-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .custom-html-content blockquote {
+    border-left: 4px solid #016f53;
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+    font-style: italic;
+  }
+
+  /* Custom section images */
+  .custom-image-figure {
+    margin: 1.5rem 0;
+  }
+
+  .custom-inline-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .custom-image-caption {
+    color: #666666;
+    font-family: 'Georgia', serif;
+    font-size: 0.95rem;
+    font-style: italic;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+
+  .section-transparent .custom-image-caption {
+    color: var(--muted-foreground) !important;
+  }
+
+  .custom-image-gallery {
+    margin-top: 1.5rem;
+  }
+
   /* Responsive adjustments - matches module.css media queries */
   @media (max-width: 1024px) {
     .banner-title {
