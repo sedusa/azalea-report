@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useQuery } from 'convex/react';
 import { api } from '@convex/_generated/api';
 import type { Id } from '@convex/_generated/dataModel';
@@ -26,9 +26,12 @@ export function ImagePicker({
   required = false,
 }: ImagePickerProps) {
   const [showBrowser, setShowBrowser] = useState(false);
+  const [selectedFilename, setSelectedFilename] = useState<string | null>(null);
 
   // Get all media
-  const allMedia = useQuery(api.media.list, {}) || [];
+  const allMediaQuery = useQuery(api.media.list, {});
+  const isLoading = allMediaQuery === undefined;
+  const allMedia = allMediaQuery || [];
 
   // Get recent media (first 8)
   const recentMediaSlice = [...allMedia]
@@ -38,12 +41,25 @@ export function ImagePicker({
   // Find selected media from the loaded list
   const selectedMedia = value ? allMedia.find((m) => m._id === value) : null;
 
+  // Sync filename when selectedMedia loads (e.g., on initial mount with existing value)
+  useEffect(() => {
+    if (selectedMedia && selectedMedia.filename !== selectedFilename) {
+      setSelectedFilename(selectedMedia.filename);
+    }
+  }, [selectedMedia, selectedFilename]);
+
   const handleSelect = (mediaId: Id<'media'>) => {
+    // Capture the filename when selecting
+    const media = allMedia.find((m) => m._id === mediaId);
+    if (media) {
+      setSelectedFilename(media.filename);
+    }
     onChange(mediaId);
     setShowBrowser(false);
   };
 
   const handleClear = () => {
+    setSelectedFilename(null);
     onChange(null);
   };
 
@@ -55,35 +71,41 @@ export function ImagePicker({
       </label>
 
       {/* Selected Image Preview */}
-      {value && selectedMedia ? (
-        <div className="mb-3">
-          <div className="relative inline-block">
-            <div className="w-32 h-32 rounded-lg overflow-hidden bg-gray-100 border-2 border-azalea-green">
-              {selectedMedia.url ? (
-                <img
-                  src={selectedMedia.url}
-                  alt={selectedMedia.filename}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center">
-                  <LuImage className="w-8 h-8 text-gray-400" />
-                </div>
-              )}
+      {value ? (
+        selectedMedia ? (
+          <div className="mb-3">
+            <div className="relative inline-block">
+              <div className="w-32 h-32 rounded-lg overflow-hidden bg-gray-100 border-2 border-azalea-green">
+                {selectedMedia.url ? (
+                  <img
+                    src={selectedMedia.url}
+                    alt={selectedMedia.filename}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <LuImage className="w-8 h-8 text-gray-400" />
+                  </div>
+                )}
+              </div>
+              <button
+                type="button"
+                onClick={handleClear}
+                className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1 hover:bg-red-600 transition-colors"
+                title="Remove image"
+              >
+                <LuX className="w-4 h-4" />
+              </button>
             </div>
-            <button
-              type="button"
-              onClick={handleClear}
-              className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1 hover:bg-red-600 transition-colors"
-              title="Remove image"
-            >
-              <LuX className="w-4 h-4" />
-            </button>
+            <p className="text-xs text-gray-600 mt-2">
+              {selectedMedia.filename}
+            </p>
           </div>
-          <p className="text-xs text-gray-600 mt-2">
-            {selectedMedia.filename}
-          </p>
-        </div>
+        ) : (
+          <div className="mb-3 text-sm text-gray-500">
+            {isLoading ? 'Loading...' : selectedFilename || 'Image selected'}
+          </div>
+        )
       ) : (
         <div className="mb-3 text-sm text-gray-500">No image selected</div>
       )}
@@ -176,7 +198,9 @@ export function MultiImagePicker({
 
   // Get all selected media details
   const selectedMediaIds = value;
-  const allMedia = useQuery(api.media.list, {}) || [];
+  const allMediaQuery = useQuery(api.media.list, {});
+  const isLoading = allMediaQuery === undefined;
+  const allMedia = allMediaQuery || [];
   const selectedMedia = allMedia.filter((m) => selectedMediaIds.includes(m._id));
 
   const handleAdd = (mediaId: Id<'media'>) => {
@@ -241,6 +265,10 @@ export function MultiImagePicker({
               </div>
             </div>
           ))}
+        </div>
+      ) : value.length > 0 ? (
+        <div className="mb-3 text-sm text-gray-500">
+          {isLoading ? `Loading ${value.length} selected image${value.length > 1 ? 's' : ''}...` : `${value.length} image${value.length > 1 ? 's' : ''} selected`}
         </div>
       ) : (
         <div className="mb-3 text-sm text-gray-500">No images selected</div>

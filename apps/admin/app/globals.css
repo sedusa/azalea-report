@@ -729,4 +729,71 @@
     height: 0;
     pointer-events: none;
   }
+
+  /* ===== Preview Section Styles ===== */
+  /* These styles match the web app for WYSIWYG preview */
+
+  /* Text Image Section - Float image with text wrapping */
+  .text-image-float {
+    margin-bottom: 1rem;
+    max-width: 45%;
+  }
+
+  .text-image-float.float-left {
+    float: left;
+    margin-right: 1.5rem;
+  }
+
+  .text-image-float.float-right {
+    float: right;
+    margin-left: 1.5rem;
+  }
+
+  .text-image-float img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Community Service Section - Float image with text wrapping */
+  .community-service-image {
+    margin-bottom: 1rem;
+    max-width: 45%;
+  }
+
+  .community-service-image.float-left {
+    float: left;
+    margin-right: 1.5rem;
+  }
+
+  .community-service-image.float-right {
+    float: right;
+    margin-left: 1.5rem;
+  }
+
+  .community-service-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Mobile responsive - stack images on small screens */
+  @media (max-width: 768px) {
+    .text-image-float,
+    .text-image-float.float-left,
+    .text-image-float.float-right,
+    .community-service-image,
+    .community-service-image.float-left,
+    .community-service-image.float-right {
+      float: none;
+      max-width: 100%;
+      margin-right: 0;
+      margin-left: 0;
+      margin-bottom: 1.5rem;
+    }
+  }
 }
