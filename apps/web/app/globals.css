@@ -179,14 +179,14 @@
     transform: scale(6.0);
     display: flex;
     align-items: center;
-    color: var(--foreground);
+    color: var(--primary-color);
   }
 
   .header-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.3rem;
     font-weight: bold;
-    color: var(--foreground);
+    color: var(--primary-color);
   }
 
   .desktop-nav {

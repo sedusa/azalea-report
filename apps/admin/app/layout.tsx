@@ -5,8 +5,19 @@ import { ThemeProvider } from '@/contexts/ThemeContext';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Azalea Report Admin',
+  title: 'Azalea Report Admin - CMS',
   description: 'Content Management System for the Azalea Report',
+  openGraph: {
+    title: 'Azalea Report Admin',
+    description: 'Content Management System for the SGMC Health IM Residency Newsletter',
+    url: 'https://admin.azaleareport.com',
+    siteName: 'Azalea Report Admin',
+    type: 'website',
+  },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({
