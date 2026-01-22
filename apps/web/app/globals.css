@@ -27,6 +27,7 @@
   --background-color: var(--background);
   --text-color: var(--foreground);
   --header-bg: var(--card);
+  --header-text-color: #ffffff; /* White in dark mode */
   --border-color: var(--border);
   --link-color: var(--foreground);
   --link-hover-color: var(--secondary);
@@ -69,8 +70,9 @@
   --background-color: var(--background);
   --text-color: var(--foreground);
   --header-bg: #ffffff;
+  --header-text-color: var(--primary); /* Green in light mode */
   --border-color: var(--border);
-  --link-color: var(--foreground);
+  --link-color: var(--primary); /* Green links in light mode */
 
   /* Lighter shadow for light theme */
   --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -179,14 +181,14 @@
     transform: scale(6.0);
     display: flex;
     align-items: center;
-    color: var(--primary-color);
+    color: var(--header-text-color);
   }
 
   .header-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.3rem;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--header-text-color);
   }
 
   .desktop-nav {
@@ -195,7 +197,7 @@
   }
 
   .desktop-nav a {
-    color: var(--link-color);
+    color: var(--header-text-color);
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;

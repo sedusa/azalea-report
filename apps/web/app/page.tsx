@@ -34,7 +34,7 @@ export default function HomePage() {
         <div className="header-content">
           <Link href="/" className="header-left">
             <div className="header-logo">
-              <Logo color="var(--primary-color)" />
+              <Logo color="currentColor" />
             </div>
             <span className="header-title">Azalea Report</span>
           </Link>
