@@ -60,6 +60,33 @@ export default function ArchivePage({ params }: ArchivePageProps) {
       {/* Header spacer for fixed header */}
       <div className="header-spacer">
         <div className="newsletter-container">
+          {/* Back to Archives Link - Above Banner */}
+          <Link
+            href="/archives"
+            className="back-link"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              color: 'var(--foreground)',
+              textDecoration: 'none',
+              fontFamily: "'Montserrat', sans-serif",
+              fontSize: '1rem',
+              marginBottom: '1rem',
+              padding: '0.5rem 0',
+            }}
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+            Back to Archives
+          </Link>
+
           {/* Banner Section */}
           <div className="banner-section">
             <div className="banner-content">
@@ -103,32 +130,6 @@ export default function ArchivePage({ params }: ArchivePageProps) {
 
           {/* Main Content */}
           <main className="main-content">
-            {/* Back to Archives Link */}
-            <Link
-              href="/archives"
-              className="back-link"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                color: 'var(--foreground)',
-                textDecoration: 'none',
-                fontFamily: "'Montserrat', sans-serif",
-                fontSize: '1rem',
-                marginBottom: '2rem',
-              }}
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-              Back to Archives
-            </Link>
-
             {!issue ? (
               <div className="section-card" style={{ textAlign: 'center', padding: '3rem' }}>
                 <div className="animate-pulse">
