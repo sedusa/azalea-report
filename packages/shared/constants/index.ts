@@ -449,6 +449,51 @@ export const SECTION_REGISTRY: Record<SectionType, SectionDefinition> = {
       html: '',
     }),
   },
+
+  eventsBirthdays: {
+    type: 'eventsBirthdays',
+    label: 'Events & Birthdays',
+    description: 'Side-by-side display of upcoming events and birthdays',
+    icon: 'calendarHeart',
+    fields: [
+      { name: 'eventsTitle', label: 'Events Title', type: 'text', required: false, placeholder: 'Upcoming Events' },
+      { name: 'events', label: 'Events', type: 'eventsArray', required: false },
+      { name: 'eventsBackgroundColor', label: 'Events Background Color', type: 'select', required: false, options: [
+        { value: '#f7f3e8', label: 'Warm Cream' },
+        { value: '#FFE6D6', label: 'Peach' },
+        { value: '#e6f0ed', label: 'Mint Green' },
+        { value: '#e8f4f8', label: 'Light Blue' },
+        { value: '#f0e6f6', label: 'Lavender' },
+        { value: '#fce4ec', label: 'Pink' },
+        { value: '#E8C840', label: 'Golden Yellow' },
+      ]},
+      { name: 'birthdaysTitle', label: 'Birthdays Title', type: 'text', required: false, placeholder: 'January Birthdays' },
+      { name: 'birthdaysBackgroundColor', label: 'Birthdays Background Color', type: 'select', required: false, options: [
+        { value: '#E8C840', label: 'Golden Yellow' },
+        { value: '#FFE6D6', label: 'Peach' },
+        { value: '#e6f0ed', label: 'Mint Green' },
+        { value: '#e8f4f8', label: 'Light Blue' },
+        { value: '#f0e6f6', label: 'Lavender' },
+        { value: '#fce4ec', label: 'Pink' },
+      ]},
+    ],
+    helpText: 'Birthdays will be auto-populated based on the current month.',
+    exampleData: () => {
+      const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'];
+      const currentMonth = new Date().getMonth() + 1;
+      return {
+        eventsTitle: 'Upcoming Events',
+        events: [
+          { date: '2026-02-15', title: 'Grand Rounds' },
+          { date: '2026-02-20', title: 'Resident Social' },
+        ],
+        eventsBackgroundColor: '#f7f3e8',
+        birthdaysTitle: `${monthNames[currentMonth - 1]} Birthdays`,
+        birthdaysBackgroundColor: '#E8C840',
+      };
+    },
+  },
 };
 
 // Brand Colors

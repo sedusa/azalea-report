@@ -17,6 +17,10 @@
     --text-secondary: 55 65 81;
     --text-tertiary: 107 114 128;
 
+    /* Preview compatibility - matches web app CSS variables */
+    --foreground: #1a1a1a;
+    --background: #f5f5f5;
+
     --border-primary: 229 231 235;
     --border-secondary: 243 244 246;
     --border-accent: 209 213 219;
@@ -44,6 +48,10 @@
     --text-primary: 255 255 255;
     --text-secondary: 212 212 212;
     --text-tertiary: 163 163 163;
+
+    /* Preview compatibility - matches web app CSS variables */
+    --foreground: #ffffff;
+    --background: #1a1a1a;
 
     --border-primary: 51 51 51;
     --border-secondary: 64 64 64;
@@ -794,6 +802,11 @@
       margin-right: 0;
       margin-left: 0;
       margin-bottom: 1.5rem;
+    }
+
+    /* Events & Birthdays section - stack columns on mobile */
+    .events-birthdays-grid {
+      grid-template-columns: 1fr !important;
     }
   }
 }

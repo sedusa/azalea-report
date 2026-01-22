@@ -57,7 +57,8 @@ const sectionTypeValidator = v.union(
   v.literal("photosOfMonth"),
   v.literal("genericText"),
   v.literal("twoColumn"),
-  v.literal("custom")
+  v.literal("custom"),
+  v.literal("eventsBirthdays")
 );
 
 // Get all sections for an issue (ordered) with resolved media URLs
@@ -124,6 +125,16 @@ export const listByIssue = query({
 
         // Populate birthdays for birthday sections
         if (section.type === 'birthdays') {
+          data.birthdays = allBirthdays.map(b => ({
+            _id: b._id,
+            name: b.name,
+            day: b.day,
+            month: b.month,
+          }));
+        }
+
+        // Populate birthdays for eventsBirthdays sections
+        if (section.type === 'eventsBirthdays') {
           data.birthdays = allBirthdays.map(b => ({
             _id: b._id,
             name: b.name,
@@ -228,6 +239,16 @@ export const listVisibleByIssue = query({
 
         // Populate birthdays for birthday sections
         if (section.type === 'birthdays') {
+          data.birthdays = allBirthdays.map(b => ({
+            _id: b._id,
+            name: b.name,
+            day: b.day,
+            month: b.month,
+          }));
+        }
+
+        // Populate birthdays for eventsBirthdays sections
+        if (section.type === 'eventsBirthdays') {
           data.birthdays = allBirthdays.map(b => ({
             _id: b._id,
             name: b.name,

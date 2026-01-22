@@ -138,6 +138,20 @@ export const customValidator = v.object({
   html: v.string(),
 });
 
+// Events & Birthdays Section Validator
+const eventItemValidator = v.object({
+  date: v.string(),
+  title: v.string(),
+});
+
+export const eventsBirthdaysValidator = v.object({
+  eventsTitle: v.optional(v.string()),
+  events: v.optional(v.array(eventItemValidator)),
+  eventsBackgroundColor: v.optional(v.string()),
+  birthdaysTitle: v.optional(v.string()),
+  birthdaysBackgroundColor: v.optional(v.string()),
+});
+
 // Section Type to Validator Map
 export const sectionValidators = {
   about: aboutValidator,
@@ -156,6 +170,7 @@ export const sectionValidators = {
   photosOfMonth: photosOfMonthValidator,
   genericText: genericTextValidator,
   custom: customValidator,
+  eventsBirthdays: eventsBirthdaysValidator,
 } as const;
 
 // Helper to get validator for a section type

@@ -1586,6 +1586,11 @@
       margin-bottom: 1.5rem;
     }
 
+    /* Events & Birthdays section - stack columns on mobile */
+    .events-birthdays-grid {
+      grid-template-columns: 1fr !important;
+    }
+
     .theme-toggle,
     .settings-button {
       -webkit-tap-highlight-color: transparent;

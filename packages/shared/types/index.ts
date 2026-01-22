@@ -16,7 +16,8 @@ export type SectionType =
   | 'photosOfMonth'
   | 'genericText'
   | 'twoColumn'
-  | 'custom';
+  | 'custom'
+  | 'eventsBirthdays';
 
 // Issue Types
 export interface Issue {
@@ -295,6 +296,23 @@ export interface CustomSectionData {
   }>;
 }
 
+export interface EventsBirthdaysSectionData {
+  eventsTitle?: string;
+  events?: Array<{
+    date: string;
+    title: string;
+  }>;
+  eventsBackgroundColor?: string;
+  birthdaysTitle?: string;
+  birthdays?: Array<{
+    _id: string;
+    name: string;
+    day: number;
+    month: number;
+  }>;
+  birthdaysBackgroundColor?: string;
+}
+
 export interface TwoColumnSectionData {
   // Left column - Spotlight style
   leftTitle?: string;
@@ -333,4 +351,5 @@ export type SectionData =
   | PhotosOfMonthSectionData
   | TextCarouselSectionData
   | TwoColumnSectionData
-  | CustomSectionData;
+  | CustomSectionData
+  | EventsBirthdaysSectionData;

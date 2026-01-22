@@ -40,6 +40,7 @@ export { PodcastSection } from './components/PodcastSection';
 export { CustomSection } from './components/CustomSection';
 export { PhotosOfMonthSection } from './components/PhotosOfMonthSection';
 export { EventsSection } from './components/EventsSection';
+export { EventsBirthdaysSection } from './components/EventsBirthdaysSection';
 
 // Export utility components
 export { ShowMore } from './components/ShowMore';
