@@ -7,7 +7,7 @@ import { api } from '@convex/_generated/api';
 import type { Id } from '@convex/_generated/dataModel';
 import { Button, Input, Card } from '@azalea/ui';
 import { toast } from 'sonner';
-import { LuPlus, LuFileText, LuClock, LuCheckCircle, LuArchive, LuSearch, LuArrowLeft, LuLogOut } from 'react-icons/lu';
+import { LuPlus, LuFileText, LuClock, LuCheckCircle, LuArchive, LuSearch, LuArrowLeft, LuLogOut, LuStar } from 'react-icons/lu';
 import { useRouter } from 'next/navigation';
 import { ThemeToggle } from '@/components/ThemeToggle';
 
@@ -28,6 +28,7 @@ export default function IssuesPage() {
 
   // Queries
   const allIssues = useQuery(api.issues.list, {}) || [];
+  const activeIssue = useQuery(api.issues.getLatestPublished, {});
 
   // Mutations
   const createFromLatest = useMutation(api.issues.createFromLatest);
@@ -282,6 +283,18 @@ export default function IssuesPage() {
                           <span className={`status-badge ${issue.status}`}>
                             {issue.status.charAt(0).toUpperCase() + issue.status.slice(1)}
                           </span>
+                          {activeIssue && activeIssue._id === issue._id && (
+                            <span
+                              className="px-2 py-1 text-xs font-bold rounded-full flex items-center gap-1"
+                              style={{
+                                backgroundColor: 'rgba(234, 179, 8, 0.15)',
+                                color: 'rgb(202, 138, 4)',
+                              }}
+                            >
+                              <LuStar className="w-3 h-3" />
+                              ACTIVE
+                            </span>
+                          )}
                         </div>
 
                         <div className="flex items-center gap-4 text-sm" style={{ color: 'rgb(var(--text-secondary))' }}>

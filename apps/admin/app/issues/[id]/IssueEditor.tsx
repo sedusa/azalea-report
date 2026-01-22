@@ -33,7 +33,7 @@ import { useUndoRedo } from '@/hooks/useUndoRedo';
 import { SECTION_REGISTRY } from '@azalea/shared/constants';
 import type { SectionType, Section, Issue } from '@azalea/shared/types';
 import { toast } from 'sonner';
-import { LuEye, LuUndo2, LuRedo2, LuArrowLeft, LuMenu, LuX, LuSave, LuTrash2 } from 'react-icons/lu';
+import { LuEye, LuUndo2, LuRedo2, LuArrowLeft, LuMenu, LuX, LuSave, LuTrash2, LuStar } from 'react-icons/lu';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ImagePicker } from '@/components/ImagePicker';
@@ -90,6 +90,8 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
     api.sections.listByIssue,
     isValidId ? { issueId: issueId as Id<'issues'> } : 'skip'
   ) || [];
+  const activeIssue = useQuery(api.issues.getLatestPublished, {});
+  const isActiveIssue = activeIssue && issue && activeIssue._id === issue._id;
 
   // Mutations
   const createSection = useMutation(api.sections.create);
@@ -101,6 +103,7 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
   const reorderSections = useMutation(api.sections.reorder);
   const updateIssue = useMutation(api.issues.update);
   const publishIssue = useMutation(api.issues.publish);
+  const unpublishIssue = useMutation(api.issues.unpublish);
   const deleteIssue = useMutation(api.issues.remove);
 
   // Autosave for banner data
@@ -474,6 +477,19 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
     }
   };
 
+  const handleUnpublish = async () => {
+    try {
+      await unpublishIssue({
+        id: issueId as Id<'issues'>,
+        userId: issue?.createdBy as Id<'users'>,
+      });
+      toast.success('Issue reverted to draft. The previous issue is now active.');
+    } catch (error) {
+      toast.error('Failed to unpublish issue');
+      console.error(error);
+    }
+  };
+
   const handleDelete = async () => {
     try {
       await deleteIssue({
@@ -560,6 +576,18 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
               <span className={`status-badge ${issue.status}`}>
                 {issue.status.charAt(0).toUpperCase() + issue.status.slice(1)}
               </span>
+              {isActiveIssue && (
+                <span
+                  className="px-2 py-0.5 text-xs font-bold rounded-full flex items-center gap-1"
+                  style={{
+                    backgroundColor: 'rgba(234, 179, 8, 0.15)',
+                    color: 'rgb(202, 138, 4)',
+                  }}
+                >
+                  <LuStar className="w-3 h-3" />
+                  ACTIVE
+                </span>
+              )}
               <SaveIndicator status={status} lastSavedAt={lastSavedAt} />
             </div>
           </div>
@@ -614,15 +642,25 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
             <span>Preview</span>
           </Button>
 
-          <Button
-            variant="primary"
-            size="sm"
-            onClick={handlePublish}
-            disabled={issue.status === 'published'}
-            className="btn-primary"
-          >
-            {issue.status === 'published' ? 'Published' : 'Publish'}
-          </Button>
+          {issue.status === 'published' ? (
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={handleUnpublish}
+              className="btn-secondary"
+            >
+              Revert to Draft
+            </Button>
+          ) : (
+            <Button
+              variant="primary"
+              size="sm"
+              onClick={handlePublish}
+              className="btn-primary"
+            >
+              Publish
+            </Button>
+          )}
 
           <button
             onClick={() => setShowDeleteConfirm(true)}
