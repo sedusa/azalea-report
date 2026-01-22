@@ -1,5 +1,5 @@
 [build]
-  command = "npm install && npm run build:admin"
+  command = "npm install && npx convex codegen && npm run build:admin"
   publish = "apps/admin/.next"
 
 [build.environment]
