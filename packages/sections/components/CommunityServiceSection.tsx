@@ -241,123 +241,41 @@ export function CommunityServiceSection({ data, backgroundColor }: CommunityServ
             {photosTitle}
           </h4>
 
-          {/* Carousel Container - arrows outside image */}
+          {/* Image Container - Full width */}
           <div
             style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '1rem',
+              position: 'relative',
+              overflow: 'hidden',
+              borderRadius: '8px',
+              backgroundColor: hasBackground ? '#f0f0f0' : 'var(--card)',
             }}
           >
-            {/* Previous Button - Outside image, left side */}
-            {carouselImages.length > 1 && (
-              <button
-                onClick={goToPrevious}
-                disabled={isTransitioning}
-                style={{
-                  flexShrink: 0,
-                  backgroundColor: 'rgba(128, 128, 128, 0.5)',
-                  color: '#ffffff',
-                  border: 'none',
-                  borderRadius: '50%',
-                  width: '48px',
-                  height: '48px',
-                  cursor: isTransitioning ? 'default' : 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '1.5rem',
-                  fontWeight: 'bold',
-                  transition: 'all 0.2s ease',
-                  opacity: isTransitioning ? 0.5 : 1,
-                }}
-                onMouseEnter={(e) => {
-                  if (!isTransitioning) {
-                    e.currentTarget.style.backgroundColor = 'rgba(128, 128, 128, 0.7)';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'rgba(128, 128, 128, 0.5)';
-                }}
-                aria-label="Previous image"
-              >
-                ‹
-              </button>
-            )}
-
-            {/* Image Container */}
+            {/* Images with Fade Transition */}
             <div
               style={{
-                flex: 1,
                 position: 'relative',
-                overflow: 'hidden',
-                borderRadius: '8px',
-                backgroundColor: hasBackground ? '#f0f0f0' : 'var(--card)',
+                width: '100%',
+                paddingBottom: '66.67%', // 3:2 aspect ratio
               }}
             >
-              {/* Images with Fade Transition */}
-              <div
-                style={{
-                  position: 'relative',
-                  width: '100%',
-                  paddingBottom: '66.67%', // 3:2 aspect ratio
-                }}
-              >
-                {carouselImages.map((img, index) => (
-                  <img
-                    key={`${img.mediaId}-${index}`}
-                    src={img.mediaId}
-                    alt={img.caption || `Photo ${index + 1}`}
-                    style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      opacity: index === currentImageIndex ? 1 : 0,
-                      transition: 'opacity 0.4s ease-in-out',
-                    }}
-                  />
-                ))}
-              </div>
+              {carouselImages.map((img, index) => (
+                <img
+                  key={`${img.mediaId}-${index}`}
+                  src={img.mediaId}
+                  alt={img.caption || `Photo ${index + 1}`}
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    opacity: index === currentImageIndex ? 1 : 0,
+                    transition: 'opacity 0.4s ease-in-out',
+                  }}
+                />
+              ))}
             </div>
-
-            {/* Next Button - Outside image, right side */}
-            {carouselImages.length > 1 && (
-              <button
-                onClick={goToNext}
-                disabled={isTransitioning}
-                style={{
-                  flexShrink: 0,
-                  backgroundColor: 'rgba(128, 128, 128, 0.5)',
-                  color: '#ffffff',
-                  border: 'none',
-                  borderRadius: '50%',
-                  width: '48px',
-                  height: '48px',
-                  cursor: isTransitioning ? 'default' : 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '1.5rem',
-                  fontWeight: 'bold',
-                  transition: 'all 0.2s ease',
-                  opacity: isTransitioning ? 0.5 : 1,
-                }}
-                onMouseEnter={(e) => {
-                  if (!isTransitioning) {
-                    e.currentTarget.style.backgroundColor = 'rgba(128, 128, 128, 0.7)';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'rgba(128, 128, 128, 0.5)';
-                }}
-                aria-label="Next image"
-              >
-                ›
-              </button>
-            )}
           </div>
 
           {/* Caption Below Image */}
@@ -376,34 +294,113 @@ export function CommunityServiceSection({ data, backgroundColor }: CommunityServ
             </p>
           )}
 
-          {/* Dots Indicator */}
+          {/* Navigation Buttons - Below image */}
           {carouselImages.length > 1 && (
             <div
               style={{
                 display: 'flex',
                 justifyContent: 'center',
-                gap: '8px',
+                alignItems: 'center',
+                gap: '1rem',
                 marginTop: '1rem',
               }}
             >
-              {carouselImages.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  disabled={isTransitioning}
+              {/* Previous Button */}
+              <button
+                onClick={goToPrevious}
+                disabled={isTransitioning}
+                style={{
+                  backgroundColor: 'rgba(128, 128, 128, 0.5)',
+                  color: '#ffffff',
+                  border: 'none',
+                  borderRadius: '50%',
+                  width: '44px',
+                  height: '44px',
+                  cursor: isTransitioning ? 'default' : 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '1.25rem',
+                  fontWeight: 'bold',
+                  transition: 'all 0.2s ease',
+                  opacity: isTransitioning ? 0.5 : 1,
+                }}
+                onMouseEnter={(e) => {
+                  if (!isTransitioning) {
+                    e.currentTarget.style.backgroundColor = 'rgba(128, 128, 128, 0.7)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(128, 128, 128, 0.5)';
+                }}
+                aria-label="Previous image"
+              >
+                ‹
+              </button>
+
+              {/* Dots Indicator - Between buttons */}
+              {carouselImages.length <= 20 && (
+                <div
                   style={{
-                    width: '10px',
-                    height: '10px',
-                    borderRadius: '50%',
-                    border: 'none',
-                    backgroundColor: index === currentImageIndex ? '#016f53' : '#cccccc',
-                    cursor: isTransitioning ? 'default' : 'pointer',
-                    transition: 'all 0.3s ease',
-                    opacity: isTransitioning ? 0.7 : 1,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    gap: '8px',
+                    flexWrap: 'wrap',
                   }}
-                  aria-label={`Go to image ${index + 1}`}
-                />
-              ))}
+                >
+                  {carouselImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => goToSlide(index)}
+                      disabled={isTransitioning}
+                      style={{
+                        width: '10px',
+                        height: '10px',
+                        borderRadius: '50%',
+                        border: 'none',
+                        backgroundColor: index === currentImageIndex ? '#016f53' : '#cccccc',
+                        cursor: isTransitioning ? 'default' : 'pointer',
+                        transition: 'all 0.3s ease',
+                        opacity: isTransitioning ? 0.7 : 1,
+                      }}
+                      aria-label={`Go to image ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
+
+              {/* Next Button */}
+              <button
+                onClick={goToNext}
+                disabled={isTransitioning}
+                style={{
+                  backgroundColor: 'rgba(128, 128, 128, 0.5)',
+                  color: '#ffffff',
+                  border: 'none',
+                  borderRadius: '50%',
+                  width: '44px',
+                  height: '44px',
+                  cursor: isTransitioning ? 'default' : 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '1.25rem',
+                  fontWeight: 'bold',
+                  transition: 'all 0.2s ease',
+                  opacity: isTransitioning ? 0.5 : 1,
+                }}
+                onMouseEnter={(e) => {
+                  if (!isTransitioning) {
+                    e.currentTarget.style.backgroundColor = 'rgba(128, 128, 128, 0.7)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(128, 128, 128, 0.5)';
+                }}
+                aria-label="Next image"
+              >
+                ›
+              </button>
             </div>
           )}
         </div>
