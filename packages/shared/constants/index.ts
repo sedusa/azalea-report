@@ -16,7 +16,8 @@ export type FieldType =
   | 'internArray'
   | 'detailsArray'
   | 'bulletsArray'
-  | 'podcastArray';  // Array of podcast episodes
+  | 'podcastArray'  // Array of podcast episodes
+  | 'eventsArray';  // Array of events with date and title
 
 // Pastel Color Palette for Section Backgrounds
 // All colors have good contrast with dark text (#333333)
@@ -214,24 +215,22 @@ export const SECTION_REGISTRY: Record<SectionType, SectionDefinition> = {
   events: {
     type: 'events',
     label: 'Upcoming Events',
-    description: 'List of upcoming events',
+    description: 'List of upcoming events with dates',
     icon: 'calendar',
     fields: [
       { name: 'sectionTitle', label: 'Section Title', type: 'text', required: false, placeholder: 'Upcoming Events' },
-      // Events array handled specially in property panel
+      { name: 'events', label: 'Events', type: 'eventsArray', required: true },
     ],
     exampleData: () => ({
       sectionTitle: 'Upcoming Events',
       events: [
         {
-          title: 'Grand Rounds',
           date: '2026-02-15',
-          description: 'Monthly grand rounds presentation',
+          title: 'Grand Rounds',
         },
         {
-          title: 'Resident Social',
           date: '2026-02-20',
-          description: 'Monthly social gathering for residents',
+          title: 'Resident Social',
         },
       ],
     }),

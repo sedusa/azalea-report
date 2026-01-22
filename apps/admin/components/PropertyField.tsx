@@ -10,6 +10,7 @@ import { DetailsArrayEditor } from './DetailsArrayEditor';
 import { BulletsArrayEditor } from './BulletsArrayEditor';
 import { ImagesWithCaptionsEditor } from './ImagesWithCaptionsEditor';
 import { PodcastArrayEditor } from './PodcastArrayEditor';
+import { EventsArrayEditor } from './EventsArrayEditor';
 
 interface PropertyFieldProps {
   field: FieldDefinition;
@@ -187,6 +188,17 @@ export function PropertyField({ field, value, onChange }: PropertyFieldProps) {
           value={value as { title: string; description: string; buttonUrl: string; buttonText: string }[] | undefined}
           onChange={onChange}
           maxItems={5}
+        />
+      );
+
+    case 'eventsArray':
+      return (
+        <EventsArrayEditor
+          label={field.label}
+          value={value as { date: string; title: string }[] | undefined}
+          onChange={onChange}
+          required={field.required}
+          maxItems={20}
         />
       );
 
