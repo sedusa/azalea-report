@@ -1172,12 +1172,22 @@
     border-radius: 4px;
   }
 
-  .featureCaption {
-    font-size: 0.9rem;
+  .featureCaption,
+  .spotlightContainer .featureCaption,
+  .section-with-bg .featureCaption {
+    font-size: 0.9rem !important;
     font-style: italic;
     margin-top: 0.5rem;
     text-align: left;
-    /* Color set by parent context: section-with-bg or section-transparent */
+    color: #666666 !important;
+  }
+
+  .section-transparent .featureCaption {
+    font-size: 0.9rem !important;
+    font-style: italic;
+    margin-top: 0.5rem;
+    text-align: left;
+    color: var(--muted-foreground) !important;
   }
 
   .featureSubtitle {
