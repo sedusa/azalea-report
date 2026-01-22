@@ -1,5 +1,5 @@
 [build]
-  command = "cd ../.. && npm install && npm run build:admin"
+  command = "cd ../.. && npm ci && npm run build:admin"
   publish = ".next"
 
 [build.environment]
@@ -8,13 +8,6 @@
 # Next.js requires the Next.js Runtime
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-
-# Redirect all requests to Next.js
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/___netlify-handler"
-  status = 200
-  conditions = {Role = ["admin"]}
 
 # Headers for security
 [[headers]]
