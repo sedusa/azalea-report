@@ -28,7 +28,7 @@ import { ThemeToggle } from '@/components/ThemeToggle';
 import { SectionCard } from '@/components/SectionCard';
 import { Button } from '@azalea/ui';
 import { Modal } from '@azalea/ui';
-import { useAutosave } from '@/hooks/useAutosave';
+import { usePendingChanges } from '@/hooks/usePendingChanges';
 import { useUndoRedo } from '@/hooks/useUndoRedo';
 import { SECTION_REGISTRY } from '@azalea/shared/constants';
 import type { SectionType, Section, Issue } from '@azalea/shared/types';
@@ -106,11 +106,24 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
   const unpublishIssue = useMutation(api.issues.unpublish);
   const deleteIssue = useMutation(api.issues.remove);
 
-  // Autosave for banner data
-  const { status, lastSavedAt, saveNow } = useAutosave({
-    data: bannerData,
-    onSave: async (data) => {
+  // Pending changes tracking - saves only on button click
+  const {
+    localData: localBannerData,
+    updateLocalData: updateBannerData,
+    queueSectionUpdate,
+    queueBackgroundColorUpdate,
+    saveNow,
+    status,
+    lastSavedAt,
+    hasUnsavedChanges,
+    getPendingSectionData,
+    getPendingBackgroundColor,
+  } = usePendingChanges({
+    initialData: bannerData,
+    onSave: async (data, sectionUpdates, backgroundUpdates) => {
       if (!issue) return;
+
+      // Save banner data
       await updateIssue({
         id: issueId as Id<'issues'>,
         title: data.title,
@@ -119,11 +132,33 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
         bannerImage: data.bannerImage || undefined,
         userId: issue.createdBy,
       });
+
+      // Save all pending section updates
+      for (const update of sectionUpdates) {
+        await updateSection({
+          id: update.sectionId as Id<'sections'>,
+          data: update.data,
+          userId: issue.createdBy as Id<'users'>,
+        });
+      }
+
+      // Save all pending background color updates
+      for (const update of backgroundUpdates) {
+        await updateBackgroundColor({
+          id: update.sectionId as Id<'sections'>,
+          backgroundColor: update.color,
+          userId: issue.createdBy as Id<'users'>,
+        });
+      }
     },
   });
 
   // Manual save handler with toast notification
   const handleManualSave = async () => {
+    if (!hasUnsavedChanges) {
+      toast.info('No changes to save');
+      return;
+    }
     await saveNow();
     toast.success('Changes saved');
   };
@@ -144,7 +179,7 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
   // Warn user when leaving with unsaved changes
   useEffect(() => {
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
-      if (status === 'saving') {
+      if (hasUnsavedChanges || status === 'saving') {
         e.preventDefault();
         e.returnValue = '';
       }
@@ -152,7 +187,7 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
 
     window.addEventListener('beforeunload', handleBeforeUnload);
     return () => window.removeEventListener('beforeunload', handleBeforeUnload);
-  }, [status]);
+  }, [hasUnsavedChanges, status]);
 
   // Handle mobile drawer - prevent body scroll and handle ESC key
   useEffect(() => {
@@ -203,7 +238,21 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
     }
   }, [issue, initializedIssueId]);
 
-  const selectedSection = sections.find((s) => s._id === selectedSectionId);
+  // Get the selected section with any pending changes merged in
+  const selectedSection = (() => {
+    const section = sections.find((s) => s._id === selectedSectionId);
+    if (!section) return null;
+
+    // Merge any pending data changes
+    const pendingData = getPendingSectionData(section._id);
+    const pendingBgColor = getPendingBackgroundColor(section._id);
+
+    return {
+      ...section,
+      data: pendingData ? { ...section.data, ...pendingData } : section.data,
+      backgroundColor: pendingBgColor !== undefined ? pendingBgColor : section.backgroundColor,
+    };
+  })();
 
   const handleAddSection = async (type: SectionType, insertAtIndex?: number) => {
     try {
@@ -254,56 +303,40 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
     }
   };
 
-  const handleSectionUpdate = async (sectionId: string, data: Record<string, unknown>) => {
-    try {
-      const previousSection = sections.find(s => s._id === sectionId);
-      const previousData = previousSection?.data;
+  const handleSectionUpdate = (sectionId: string, data: Record<string, unknown>) => {
+    const previousSection = sections.find(s => s._id === sectionId);
+    const previousData = previousSection?.data;
 
-      await updateSection({
-        id: sectionId as Id<'sections'>,
-        data,
-        userId: issue?.createdBy as Id<'users'>,
+    // Queue the update locally instead of saving to Convex immediately
+    queueSectionUpdate(sectionId, data, previousData);
+
+    if (previousData) {
+      addOperation({
+        type: 'section',
+        action: 'update',
+        undo: async () => {
+          await updateSection({
+            id: sectionId as Id<'sections'>,
+            data: previousData,
+            userId: issue?.createdBy as Id<'users'>,
+          });
+          toast.success('Undid update');
+        },
+        redo: async () => {
+          await updateSection({
+            id: sectionId as Id<'sections'>,
+            data,
+            userId: issue?.createdBy as Id<'users'>,
+          });
+          toast.success('Redid update');
+        },
       });
-
-      if (previousData) {
-        addOperation({
-          type: 'section',
-          action: 'update',
-          undo: async () => {
-            await updateSection({
-              id: sectionId as Id<'sections'>,
-              data: previousData,
-              userId: issue?.createdBy as Id<'users'>,
-            });
-            toast.success('Undid update');
-          },
-          redo: async () => {
-            await updateSection({
-              id: sectionId as Id<'sections'>,
-              data,
-              userId: issue?.createdBy as Id<'users'>,
-            });
-            toast.success('Redid update');
-          },
-        });
-      }
-    } catch (error) {
-      toast.error('Failed to update section');
-      console.error(error);
     }
   };
 
-  const handleBackgroundColorChange = async (sectionId: string, color: string | undefined) => {
-    try {
-      await updateBackgroundColor({
-        id: sectionId as Id<'sections'>,
-        backgroundColor: color,
-        userId: issue?.createdBy as Id<'users'>,
-      });
-    } catch (error) {
-      toast.error('Failed to update background color');
-      console.error(error);
-    }
+  const handleBackgroundColorChange = (sectionId: string, color: string | undefined) => {
+    // Queue the update locally instead of saving to Convex immediately
+    queueBackgroundColorUpdate(sectionId, color);
   };
 
   const handleSectionDelete = async (sectionId: string) => {
@@ -621,15 +654,15 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
           <ThemeToggle />
 
           <Button
-            variant="ghost"
+            variant={hasUnsavedChanges ? "primary" : "ghost"}
             size="sm"
             onClick={handleManualSave}
             disabled={status === 'saving'}
             title="Save (Ctrl+S)"
-            className="btn-ghost hidden sm:flex items-center gap-2"
+            className={`hidden sm:flex items-center gap-2 ${hasUnsavedChanges ? 'btn-primary' : 'btn-ghost'}`}
           >
             <LuSave className="w-4 h-4" />
-            <span>{status === 'saving' ? 'Saving...' : 'Save'}</span>
+            <span>{status === 'saving' ? 'Saving...' : hasUnsavedChanges ? 'Save Changes' : 'Saved'}</span>
           </Button>
 
           <Button
@@ -747,8 +780,8 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
                       <input
                         type="text"
                         placeholder="January 2026 Edition"
-                        value={bannerData.title}
-                        onChange={(e) => setBannerData({ ...bannerData, title: e.target.value })}
+                        value={localBannerData.title}
+                        onChange={(e) => updateBannerData({ title: e.target.value })}
                         className="input-field"
                       />
                     </div>
@@ -759,8 +792,8 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
                       <input
                         type="text"
                         placeholder="AZALEA REPORT"
-                        value={bannerData.bannerTitle}
-                        onChange={(e) => setBannerData({ ...bannerData, bannerTitle: e.target.value })}
+                        value={localBannerData.bannerTitle}
+                        onChange={(e) => updateBannerData({ bannerTitle: e.target.value })}
                         className="input-field"
                       />
                     </div>
@@ -770,16 +803,16 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
                       </label>
                       <input
                         type="date"
-                        value={bannerData.bannerDate}
-                        onChange={(e) => setBannerData({ ...bannerData, bannerDate: e.target.value })}
+                        value={localBannerData.bannerDate}
+                        onChange={(e) => updateBannerData({ bannerDate: e.target.value })}
                         className="input-field"
                       />
                     </div>
                     <div>
                       <ImagePicker
                         label="Banner Image"
-                        value={bannerData.bannerImage}
-                        onChange={(mediaId) => setBannerData({ ...bannerData, bannerImage: mediaId })}
+                        value={localBannerData.bannerImage}
+                        onChange={(mediaId) => updateBannerData({ bannerImage: mediaId })}
                         required={false}
                       />
                     </div>

@@ -62,7 +62,7 @@ export default defineSchema({
     size: v.number(),
     width: v.optional(v.number()),
     height: v.optional(v.number()),
-    uploadedBy: v.id("users"),
+    uploadedBy: v.optional(v.id("users")),
     uploadedAt: v.number(),
   })
     .index("by_uploaded_at", ["uploadedAt"])

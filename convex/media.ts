@@ -79,7 +79,7 @@ export const create = mutation({
     size: v.number(),
     width: v.optional(v.number()),
     height: v.optional(v.number()),
-    userId: v.id("users"),
+    userId: v.optional(v.id("users")),
   },
   handler: async (ctx, args) => {
     const now = Date.now();
@@ -95,15 +95,17 @@ export const create = mutation({
       uploadedAt: now,
     });
 
-    // Log the action
-    await ctx.db.insert("auditLog", {
-      userId: args.userId,
-      action: "media.upload",
-      resourceType: "media",
-      resourceId: mediaId,
-      details: { filename: args.filename },
-      timestamp: now,
-    });
+    // Log the action if userId is provided
+    if (args.userId) {
+      await ctx.db.insert("auditLog", {
+        userId: args.userId,
+        action: "media.upload",
+        resourceType: "media",
+        resourceId: mediaId,
+        details: { filename: args.filename },
+        timestamp: now,
+      });
+    }
 
     return mediaId;
   },
@@ -154,7 +156,7 @@ export const canDelete = query({
 export const remove = mutation({
   args: {
     id: v.id("media"),
-    userId: v.id("users"),
+    userId: v.optional(v.id("users")),
   },
   handler: async (ctx, args) => {
     const media = await ctx.db.get(args.id);
@@ -185,14 +187,16 @@ export const remove = mutation({
     // Delete record
     await ctx.db.delete(args.id);
 
-    // Log the action
-    await ctx.db.insert("auditLog", {
-      userId: args.userId,
-      action: "media.delete",
-      resourceType: "media",
-      resourceId: args.id,
-      details: { filename: media.filename },
-      timestamp: Date.now(),
-    });
+    // Log the action if userId is provided
+    if (args.userId) {
+      await ctx.db.insert("auditLog", {
+        userId: args.userId,
+        action: "media.delete",
+        resourceType: "media",
+        resourceId: args.id,
+        details: { filename: media.filename },
+        timestamp: Date.now(),
+      });
+    }
   },
 });

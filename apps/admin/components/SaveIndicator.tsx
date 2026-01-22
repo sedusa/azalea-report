@@ -1,7 +1,7 @@
 'use client';
 
-import { LuCheck, LuLoader2, LuAlertCircle } from 'react-icons/lu';
-import type { SaveStatus } from '../hooks/useAutosave';
+import { LuCheck, LuLoader2, LuAlertCircle, LuCircleDot } from 'react-icons/lu';
+import type { SaveStatus } from '../hooks/usePendingChanges';
 
 interface SaveIndicatorProps {
   status: SaveStatus;
@@ -35,6 +35,13 @@ export function SaveIndicator({ status, lastSavedAt }: SaveIndicatorProps) {
           <span className="text-gray-600">
             Saved at {formatTime(lastSavedAt)}
           </span>
+        </>
+      )}
+
+      {status === 'unsaved' && (
+        <>
+          <LuCircleDot className="w-4 h-4 text-amber-500" />
+          <span className="text-amber-600 font-medium">Unsaved changes</span>
         </>
       )}
 

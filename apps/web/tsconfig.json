@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "target": "ES2017",
     "lib": [
       "dom",
       "dom.iterable",
@@ -12,7 +13,7 @@
     "incremental": true,
     "module": "esnext",
     "esModuleInterop": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -20,7 +21,18 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+      "@/*": ["./*"],
+      "@azalea/shared": ["../../packages/shared"],
+      "@azalea/shared/*": ["../../packages/shared/*"],
+      "@azalea/ui": ["../../packages/ui"],
+      "@azalea/ui/*": ["../../packages/ui/*"],
+      "@azalea/sections": ["../../packages/sections"],
+      "@azalea/sections/*": ["../../packages/sections/*"],
+      "@convex": ["../../convex"],
+      "@convex/*": ["../../convex/*"]
+    }
   },
   "include": [
     "next-env.d.ts",

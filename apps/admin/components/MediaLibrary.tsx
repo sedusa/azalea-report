@@ -96,7 +96,6 @@ export function MediaLibrary({
         filename: file.name,
         mimeType: file.type,
         size: file.size,
-        userId: 'temp-user-id' as Id<'users'>, // TODO: Replace with real user ID
       });
 
       toast.success('Image uploaded successfully');
@@ -117,7 +116,6 @@ export function MediaLibrary({
     try {
       await deleteMedia({
         id: selectedForDelete,
-        userId: 'temp-user-id' as Id<'users'>, // TODO: Replace with real user ID
       });
 
       toast.success('Image deleted');
@@ -215,11 +213,11 @@ export function MediaLibrary({
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-2">
             {sortedMedia.map((media) => (
               <div
                 key={media._id}
-                className={`relative group cursor-pointer transition-all rounded-xl overflow-hidden ${
+                className={`relative group cursor-pointer transition-all rounded-lg overflow-hidden ${
                   selectedMediaId === media._id
                     ? 'ring-2'
                     : ''
@@ -235,7 +233,7 @@ export function MediaLibrary({
                 onClick={() => onSelect?.(media._id)}
               >
                 <div
-                  className="aspect-square relative rounded-t-xl overflow-hidden"
+                  className="aspect-square relative rounded-t-lg overflow-hidden"
                   style={{ backgroundColor: 'rgb(var(--bg-accent))' }}
                 >
                   {media.url ? (
@@ -247,7 +245,7 @@ export function MediaLibrary({
                   ) : (
                     <div className="w-full h-full flex items-center justify-center">
                       <LuImage
-                        className="w-12 h-12"
+                        className="w-8 h-8"
                         style={{ color: 'rgb(var(--text-tertiary))' }}
                       />
                     </div>
@@ -272,11 +270,11 @@ export function MediaLibrary({
                   {/* Selected indicator */}
                   {selectedMediaId === media._id && (
                     <div
-                      className="absolute top-2 right-2 text-white rounded-full p-1"
+                      className="absolute top-1 right-1 text-white rounded-full p-0.5"
                       style={{ backgroundColor: 'rgb(var(--accent-primary))' }}
                     >
                       <svg
-                        className="w-4 h-4"
+                        className="w-3 h-3"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >
@@ -291,18 +289,18 @@ export function MediaLibrary({
                 </div>
 
                 {/* Info */}
-                <div className="p-2">
+                <div className="p-1.5">
                   <p
-                    className="text-xs truncate font-medium"
+                    className="text-[10px] truncate font-medium"
                     style={{ color: 'rgb(var(--text-primary))' }}
                   >
                     {media.filename}
                   </p>
                   <p
-                    className="text-xs mt-0.5"
+                    className="text-[10px]"
                     style={{ color: 'rgb(var(--text-secondary))' }}
                   >
-                    {(media.size / 1024).toFixed(1)} KB
+                    {new Date(media.uploadedAt).toLocaleDateString()}
                   </p>
                 </div>
               </div>
