@@ -119,14 +119,6 @@ export const recentSuccessValidator = v.object({
   image: v.optional(v.id("media")),
 });
 
-// Musings Section Validator
-export const musingsValidator = v.object({
-  sectionTitle: v.optional(v.string()),
-  title: v.string(),
-  content: v.string(),
-  author: v.optional(v.string()),
-});
-
 // Photos of Month Section Validator
 export const photosOfMonthValidator = v.object({
   sectionTitle: v.optional(v.string()),
@@ -161,7 +153,6 @@ export const sectionValidators = {
   culturosity: culturosityValidator,
   communityService: communityServiceValidator,
   recentSuccess: recentSuccessValidator,
-  musings: musingsValidator,
   photosOfMonth: photosOfMonthValidator,
   genericText: genericTextValidator,
   custom: customValidator,

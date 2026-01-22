@@ -354,34 +354,15 @@ export const SECTION_REGISTRY: Record<SectionType, SectionDefinition> = {
     }),
   },
 
-  musings: {
-    type: 'musings',
-    label: 'Musings',
-    description: 'Reflections and personal stories',
-    icon: 'penTool',
-    fields: [
-      { name: 'sectionTitle', label: 'Section Title', type: 'text', required: false, placeholder: 'Musings' },
-      { name: 'title', label: 'Title', type: 'text', required: true },
-      { name: 'content', label: 'Content', type: 'richtext', required: true },
-      { name: 'author', label: 'Author', type: 'text', required: false },
-    ],
-    exampleData: () => ({
-      sectionTitle: 'Musings',
-      title: 'Reflections on Year One',
-      content: '<p>As I complete my first year of residency, I\'ve learned so much...</p>',
-      author: 'Dr. Anonymous',
-    }),
-  },
-
   photosOfMonth: {
     type: 'photosOfMonth',
     label: 'Photos of the Month',
-    description: 'Featured photos for the month',
+    description: 'Featured photos for the month with carousel display',
     icon: 'camera',
     fields: [
       { name: 'sectionTitle', label: 'Section Title', type: 'text', required: false, placeholder: 'Photos of the Month' },
       { name: 'title', label: 'Title', type: 'text', required: false },
-      { name: 'images', label: 'Photos', type: 'images', required: true },
+      { name: 'images', label: 'Photos', type: 'imagesWithCaptions', required: true },
     ],
     exampleData: () => ({
       sectionTitle: 'Photos of the Month',

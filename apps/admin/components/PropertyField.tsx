@@ -134,7 +134,7 @@ export function PropertyField({ field, value, onChange }: PropertyFieldProps) {
           value={value as { mediaId: string; caption?: string }[] | undefined}
           onChange={onChange}
           required={field.required}
-          maxImages={10}
+          maxImages={100}
         />
       );
 

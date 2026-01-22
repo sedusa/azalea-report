@@ -54,7 +54,6 @@ const sectionTypeValidator = v.union(
   v.literal("culturosity"),
   v.literal("communityService"),
   v.literal("recentSuccess"),
-  v.literal("musings"),
   v.literal("photosOfMonth"),
   v.literal("genericText"),
   v.literal("twoColumn"),

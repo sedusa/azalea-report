@@ -16,7 +16,6 @@
 // export { CulturositySection } from './CulturositySection';
 // export { CommunityServiceSection } from './CommunityServiceSection';
 // export { RecentSuccessSection } from './RecentSuccessSection';
-// export { MusingsSection } from './MusingsSection';
 // export { PhotosOfMonthSection } from './PhotosOfMonthSection';
 // export { TextCarouselSection } from './TextCarouselSection';
 // export { GenericTextSection } from './GenericTextSection';
@@ -39,6 +38,7 @@ export { RecentSuccessSection } from './components/RecentSuccessSection';
 export { CommunityServiceSection } from './components/CommunityServiceSection';
 export { PodcastSection } from './components/PodcastSection';
 export { CustomSection } from './components/CustomSection';
+export { PhotosOfMonthSection } from './components/PhotosOfMonthSection';
 
 // Export utility components
 export { ShowMore } from './components/ShowMore';

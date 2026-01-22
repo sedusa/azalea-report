@@ -13,7 +13,6 @@ export type SectionType =
   | 'culturosity'
   | 'communityService'
   | 'recentSuccess'
-  | 'musings'
   | 'photosOfMonth'
   | 'genericText'
   | 'twoColumn'
@@ -261,13 +260,6 @@ export interface RecentSuccessSectionData {
   }>;
 }
 
-export interface MusingsSectionData {
-  sectionTitle?: string;
-  title: string;
-  content: string;
-  author?: string;
-}
-
 export interface PhotosOfMonthSectionData {
   sectionTitle?: string;
   title?: string;
@@ -338,7 +330,6 @@ export type SectionData =
   | InternsCornerSectionData
   | CommunityServiceSectionData
   | RecentSuccessSectionData
-  | MusingsSectionData
   | PhotosOfMonthSectionData
   | TextCarouselSectionData
   | TwoColumnSectionData
