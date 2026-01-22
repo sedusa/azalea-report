@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect, useRef, useCallback } from 'react';
 import type { FieldDefinition } from '@azalea/shared/constants';
 import type { Id } from '@convex/_generated/dataModel';
 import { Input, Textarea } from '@azalea/ui';
@@ -18,29 +19,153 @@ interface PropertyFieldProps {
   onChange: (value: unknown) => void;
 }
 
+/**
+ * Hook for debounced input - maintains local state for immediate feedback
+ * and syncs to parent after user stops typing
+ */
+function useDebouncedInput<T>(
+  externalValue: T,
+  onExternalChange: (value: T) => void,
+  delay: number = 500
+) {
+  const [localValue, setLocalValue] = useState<T>(externalValue);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const isInternalChangeRef = useRef(false);
+
+  // Sync external value to local state (when parent changes value externally)
+  useEffect(() => {
+    if (!isInternalChangeRef.current) {
+      setLocalValue(externalValue);
+    }
+    isInternalChangeRef.current = false;
+  }, [externalValue]);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
+  const handleChange = useCallback((newValue: T) => {
+    // Update local state immediately for responsive UI
+    setLocalValue(newValue);
+    isInternalChangeRef.current = true;
+
+    // Clear existing timeout
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
+    // Debounce the external update
+    timeoutRef.current = setTimeout(() => {
+      onExternalChange(newValue);
+    }, delay);
+  }, [onExternalChange, delay]);
+
+  // Flush pending changes immediately (e.g., on blur)
+  const flush = useCallback(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+      onExternalChange(localValue);
+    }
+  }, [localValue, onExternalChange]);
+
+  return { localValue, handleChange, flush };
+}
+
+/**
+ * DebouncedInput - Text input with local state and debounced sync
+ */
+function DebouncedInput({
+  label,
+  placeholder,
+  value,
+  onChange,
+  required,
+  type = 'text',
+}: {
+  label: string;
+  placeholder?: string;
+  value: string;
+  onChange: (value: string) => void;
+  required?: boolean;
+  type?: 'text' | 'number' | 'date';
+}) {
+  const { localValue, handleChange, flush } = useDebouncedInput(value, onChange);
+
+  return (
+    <Input
+      type={type}
+      label={label}
+      placeholder={placeholder}
+      value={localValue}
+      onChange={(e) => handleChange(e.target.value)}
+      onBlur={flush}
+      required={required}
+    />
+  );
+}
+
+/**
+ * DebouncedTextarea - Textarea with local state and debounced sync
+ */
+function DebouncedTextarea({
+  label,
+  placeholder,
+  value,
+  onChange,
+  required,
+  rows = 4,
+}: {
+  label: string;
+  placeholder?: string;
+  value: string;
+  onChange: (value: string) => void;
+  required?: boolean;
+  rows?: number;
+}) {
+  const { localValue, handleChange, flush } = useDebouncedInput(value, onChange);
+
+  return (
+    <Textarea
+      label={label}
+      placeholder={placeholder}
+      value={localValue}
+      onChange={(e) => handleChange(e.target.value)}
+      onBlur={flush}
+      required={required}
+      rows={rows}
+    />
+  );
+}
+
 export function PropertyField({ field, value, onChange }: PropertyFieldProps) {
-  const stringValue = value as string | undefined;
+  const stringValue = (value as string) || '';
   const numberValue = value as number | undefined;
 
   switch (field.type) {
     case 'text':
       return (
-        <Input
+        <DebouncedInput
           label={field.label}
           placeholder={field.placeholder}
-          value={stringValue || ''}
-          onChange={(e) => onChange(e.target.value)}
+          value={stringValue}
+          onChange={onChange}
           required={field.required}
         />
       );
 
     case 'textarea':
       return (
-        <Textarea
+        <DebouncedTextarea
           label={field.label}
           placeholder={field.placeholder}
-          value={stringValue || ''}
-          onChange={(e) => onChange(e.target.value)}
+          value={stringValue}
+          onChange={onChange}
           required={field.required}
           rows={4}
         />
@@ -48,23 +173,23 @@ export function PropertyField({ field, value, onChange }: PropertyFieldProps) {
 
     case 'number':
       return (
-        <Input
+        <DebouncedInput
           type="number"
           label={field.label}
           placeholder={field.placeholder}
-          value={numberValue || ''}
-          onChange={(e) => onChange(Number(e.target.value))}
+          value={numberValue?.toString() || ''}
+          onChange={(val) => onChange(val ? Number(val) : undefined)}
           required={field.required}
         />
       );
 
     case 'date':
       return (
-        <Input
+        <DebouncedInput
           type="date"
           label={field.label}
-          value={stringValue || ''}
-          onChange={(e) => onChange(e.target.value)}
+          value={stringValue}
+          onChange={onChange}
           required={field.required}
         />
       );
@@ -77,7 +202,7 @@ export function PropertyField({ field, value, onChange }: PropertyFieldProps) {
             {field.required && <span className="text-red-500 ml-1">*</span>}
           </label>
           <select
-            value={stringValue || ''}
+            value={stringValue}
             onChange={(e) => onChange(e.target.value)}
             required={field.required}
             className="input-field"
@@ -100,7 +225,7 @@ export function PropertyField({ field, value, onChange }: PropertyFieldProps) {
             {field.required && <span className="text-red-500 ml-1">*</span>}
           </label>
           <TiptapEditor
-            content={stringValue || ''}
+            content={stringValue}
             onChange={onChange}
             placeholder={field.placeholder}
           />

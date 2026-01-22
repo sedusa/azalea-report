@@ -5,7 +5,7 @@ import StarterKit from '@tiptap/starter-kit';
 import Underline from '@tiptap/extension-underline';
 import Link from '@tiptap/extension-link';
 import Placeholder from '@tiptap/extension-placeholder';
-import { useEffect } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 import {
   LuBold,
   LuItalic,
@@ -29,6 +29,33 @@ interface TiptapEditorProps {
 }
 
 export function TiptapEditor({ content, onChange, placeholder }: TiptapEditorProps) {
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const onChangeRef = useRef(onChange);
+
+  // Keep onChange ref updated
+  useEffect(() => {
+    onChangeRef.current = onChange;
+  }, [onChange]);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
+  // Debounced onChange handler
+  const debouncedOnChange = useCallback((html: string) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    timeoutRef.current = setTimeout(() => {
+      onChangeRef.current(html);
+    }, 500);
+  }, []);
+
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
@@ -50,7 +77,7 @@ export function TiptapEditor({ content, onChange, placeholder }: TiptapEditorPro
     ],
     content,
     onUpdate: ({ editor }) => {
-      onChange(editor.getHTML());
+      debouncedOnChange(editor.getHTML());
     },
     editorProps: {
       attributes: {
