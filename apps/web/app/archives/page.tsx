@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useQuery } from 'convex/react';
 import { api } from '@convex/_generated/api';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import Logo from '@/components/Logo';
 
 export default function ArchivesPage() {
   // Fetch all published issues
@@ -29,9 +30,9 @@ export default function ArchivesPage() {
       <header className="site-header">
         <div className="header-content">
           <Link href="/" className="header-left">
-            <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" style={{ color: 'var(--primary-color)' }}>
-              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-            </svg>
+            <div className="header-logo">
+              <Logo color="currentColor" />
+            </div>
             <span className="header-title">Azalea Report</span>
           </Link>
           <nav className="desktop-nav">
