@@ -786,7 +786,8 @@
 
   .basic-cover-image-caption {
     display: block;
-    font-size: 1.0rem;
+    font-size: 0.9rem;
+    font-style: italic;
     text-align: left;
     /* Color set by parent context: section-with-bg uses muted, section-transparent uses var(--muted-foreground) */
   }
@@ -1172,7 +1173,7 @@
   }
 
   .featureCaption {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-style: italic;
     margin-top: 0.5rem;
     text-align: left;
@@ -1187,17 +1188,23 @@
     margin: 1rem 0 0.75rem 0;
   }
 
-  .featureBullets,
-  .featureBullets li {
+  .featureBullets {
     color: #333333 !important;
     font-size: 1.3rem;
     line-height: 1.6;
     margin: 0;
-    padding-left: 1.5rem;
+    padding-left: 0;
+    list-style-position: inside;
+    list-style-type: disc;
   }
 
   .featureBullets li {
+    color: #333333 !important;
+    font-size: 1.3rem;
+    line-height: 1.6;
     margin-bottom: 0.5rem;
+    padding-left: 0;
+    text-indent: 0;
   }
 
   .featureBullets li::marker {
@@ -1373,7 +1380,7 @@
   .custom-image-caption {
     color: #666666;
     font-family: 'Georgia', serif;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-style: italic;
     margin-top: 0.5rem;
     text-align: center;

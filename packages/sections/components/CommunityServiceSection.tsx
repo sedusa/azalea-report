@@ -158,10 +158,10 @@ export function CommunityServiceSection({ data, backgroundColor }: CommunityServ
             {imageCaption && (
               <p
                 style={{
-                  fontSize: '0.95rem',
-                  fontStyle: 'normal',
+                  fontSize: '0.9rem',
+                  fontStyle: 'italic',
                   marginTop: '0.5rem',
-                  color: textColor,
+                  color: mutedColor,
                 }}
               >
                 {imageCaption}
@@ -282,7 +282,7 @@ export function CommunityServiceSection({ data, backgroundColor }: CommunityServ
           {carouselImages[currentImageIndex]?.caption && (
             <p
               style={{
-                fontSize: '1rem',
+                fontSize: '0.9rem',
                 fontStyle: 'italic',
                 marginTop: '0.75rem',
                 color: mutedColor,

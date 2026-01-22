@@ -175,7 +175,7 @@ export function CustomSection({ data, backgroundColor }: CustomSectionProps) {
                   style={{
                     color: mutedColor,
                     fontFamily: "'Georgia', serif",
-                    fontSize: '0.95rem',
+                    fontSize: '0.9rem',
                     fontStyle: 'italic',
                     marginTop: '0.5rem',
                     textAlign: 'center',

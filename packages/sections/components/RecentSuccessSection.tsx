@@ -114,7 +114,7 @@ export function RecentSuccessSection({ data, backgroundColor }: RecentSuccessSec
           {imageCaption && (
             <p
               style={{
-                fontSize: '1rem',
+                fontSize: '0.9rem',
                 fontStyle: 'italic',
                 marginTop: '0.5rem',
                 color: hasBackground ? '#666666' : 'var(--muted-foreground)',
@@ -195,7 +195,7 @@ export function RecentSuccessSection({ data, backgroundColor }: RecentSuccessSec
           {carouselImages[currentImageIndex]?.caption && (
             <p
               style={{
-                fontSize: '1rem',
+                fontSize: '0.9rem',
                 fontStyle: 'italic',
                 marginTop: '0.75rem',
                 color: hasBackground ? '#666666' : 'var(--muted-foreground)',

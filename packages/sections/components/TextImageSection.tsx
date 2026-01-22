@@ -34,6 +34,7 @@ export function TextImageSection({ data, backgroundColor }: TextImageSectionProp
   // Text colors based on background
   const textColor = hasBackground ? '#333333' : 'var(--foreground)';
   const headingColor = '#016f53';
+  const mutedColor = hasBackground ? '#666666' : 'var(--muted-foreground)';
 
   // Float class based on imagePosition
   const floatClass = imagePosition === 'left' ? 'float-left' : 'float-right';
@@ -92,10 +93,10 @@ export function TextImageSection({ data, backgroundColor }: TextImageSectionProp
             {imageCaption && (
               <p
                 style={{
-                  fontSize: '0.95rem',
-                  fontStyle: 'normal',
+                  fontSize: '0.9rem',
+                  fontStyle: 'italic',
                   marginTop: '0.5rem',
-                  color: textColor,
+                  color: mutedColor,
                 }}
               >
                 {imageCaption}

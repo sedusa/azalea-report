@@ -163,7 +163,7 @@ export function PhotosOfMonthSection({ data, backgroundColor }: PhotosOfMonthSec
         {carouselImages[currentImageIndex]?.caption && (
           <p
             style={{
-              fontSize: '1rem',
+              fontSize: '0.9rem',
               fontStyle: 'italic',
               marginTop: '0.75rem',
               color: mutedColor,
