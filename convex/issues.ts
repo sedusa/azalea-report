@@ -318,6 +318,130 @@ export const remove = mutation({
   },
 });
 
+// Create a blank issue with no sections
+export const createBlank = mutation({
+  args: {
+    userId: v.optional(v.id("users")),
+  },
+  handler: async (ctx, args) => {
+    const now = Date.now();
+
+    // Calculate next edition number
+    const allIssues = await ctx.db.query("issues").collect();
+    const maxEdition = allIssues.reduce((max, issue) => Math.max(max, issue.edition), 0);
+    const nextEdition = maxEdition + 1;
+
+    // Format current date as "Month Year"
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleDateString('en-US', {
+      month: 'long',
+      year: 'numeric',
+    });
+
+    const newIssueId = await ctx.db.insert("issues", {
+      title: `Edition ${nextEdition}`,
+      slug: `edition-${nextEdition}`,
+      edition: nextEdition,
+      status: "draft",
+      bannerTitle: "AZALEA REPORT",
+      bannerDate: formattedDate,
+      createdAt: now,
+      updatedAt: now,
+      version: 1,
+      createdBy: args.userId,
+    });
+
+    // Log the action
+    if (args.userId) {
+      await ctx.db.insert("auditLog", {
+        userId: args.userId,
+        action: "issue.create",
+        resourceType: "issue",
+        resourceId: newIssueId,
+        details: { blank: true },
+        timestamp: now,
+      });
+    }
+
+    return newIssueId;
+  },
+});
+
+// Clone a specific issue by ID
+export const cloneFrom = mutation({
+  args: {
+    sourceIssueId: v.id("issues"),
+    userId: v.optional(v.id("users")),
+  },
+  handler: async (ctx, args) => {
+    const now = Date.now();
+
+    const sourceIssue = await ctx.db.get(args.sourceIssueId);
+    if (!sourceIssue) throw new Error("Source issue not found");
+
+    // Calculate next edition number
+    const allIssues = await ctx.db.query("issues").collect();
+    const maxEdition = allIssues.reduce((max, issue) => Math.max(max, issue.edition), 0);
+    const nextEdition = maxEdition + 1;
+
+    // Format current date as "Month Year"
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleDateString('en-US', {
+      month: 'long',
+      year: 'numeric',
+    });
+
+    const newIssueId = await ctx.db.insert("issues", {
+      title: `Edition ${nextEdition}`,
+      slug: `edition-${nextEdition}`,
+      edition: nextEdition,
+      status: "draft",
+      bannerTitle: sourceIssue.bannerTitle,
+      bannerDate: formattedDate,
+      bannerImage: sourceIssue.bannerImage,
+      createdAt: now,
+      updatedAt: now,
+      version: 1,
+      createdBy: args.userId,
+    });
+
+    // Clone all sections from source issue
+    const sections = await ctx.db
+      .query("sections")
+      .withIndex("by_issue_order", (q) => q.eq("issueId", args.sourceIssueId))
+      .collect();
+
+    for (const section of sections) {
+      await ctx.db.insert("sections", {
+        issueId: newIssueId,
+        type: section.type,
+        order: section.order,
+        visible: section.visible,
+        customLabel: section.customLabel,
+        customDescription: section.customDescription,
+        backgroundColor: section.backgroundColor,
+        data: section.data,
+        createdAt: now,
+        updatedAt: now,
+      });
+    }
+
+    // Log the action
+    if (args.userId) {
+      await ctx.db.insert("auditLog", {
+        userId: args.userId,
+        action: "issue.create",
+        resourceType: "issue",
+        resourceId: newIssueId,
+        details: { clonedFrom: args.sourceIssueId },
+        timestamp: now,
+      });
+    }
+
+    return newIssueId;
+  },
+});
+
 // Create new issue by cloning from the latest issue
 export const createFromLatest = mutation({
   args: {
@@ -377,6 +501,8 @@ export const createFromLatest = mutation({
           type: section.type,
           order: section.order,
           visible: section.visible,
+          customLabel: section.customLabel,
+          customDescription: section.customDescription,
           backgroundColor: section.backgroundColor,
           data: section.data, // Copy section data (includes media references)
           createdAt: now,

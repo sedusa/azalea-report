@@ -892,12 +892,14 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
       <Modal
         isOpen={showPreview}
         onClose={() => setShowPreview(false)}
-        title="Preview"
         size="full"
+        showCloseButton={false}
+        containerClassName="bg-[#111] overflow-hidden"
       >
         <PreviewPane
           issue={issue as Issue}
           sections={sections as Section[]}
+          onClose={() => setShowPreview(false)}
         />
       </Modal>
     </div>

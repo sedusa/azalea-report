@@ -8,6 +8,7 @@ export interface ModalProps {
   children: React.ReactNode;
   size?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
   showCloseButton?: boolean;
+  containerClassName?: string;
 }
 
 export function Modal({
@@ -17,6 +18,7 @@ export function Modal({
   children,
   size = 'md',
   showCloseButton = true,
+  containerClassName,
 }: ModalProps) {
   // Close on Escape key
   useEffect(() => {
@@ -59,9 +61,10 @@ export function Modal({
       <div className="flex min-h-full items-center justify-center p-4">
         <div
           className={`
-            relative bg-white rounded-lg shadow-xl
+            relative rounded-lg shadow-xl
             w-full ${sizeClasses[size]}
             transform transition-all
+            ${containerClassName || 'bg-white'}
           `}
           onClick={(e) => e.stopPropagation()}
         >
@@ -83,7 +86,7 @@ export function Modal({
           )}
 
           {/* Content */}
-          <div className={size === 'full' ? 'overflow-y-auto h-[calc(95vh-80px)]' : ''}>
+          <div className={size === 'full' ? `overflow-y-auto ${(title || showCloseButton) ? 'h-[calc(95vh-80px)]' : 'h-[95vh]'}` : ''}>
             {children}
           </div>
         </div>

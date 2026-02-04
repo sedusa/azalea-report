@@ -2,10 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useQuery, useMutation } from 'convex/react';
+import { useQuery } from 'convex/react';
 import { api } from '@convex/_generated/api';
-import type { Id } from '@convex/_generated/dataModel';
-import { Button, Input, Card } from '@azalea/ui';
+import { Button, Input } from '@azalea/ui';
 import { toast } from 'sonner';
 import { LuPlus, LuFileText, LuClock, LuCheckCircle, LuArchive, LuSearch, LuArrowLeft, LuLogOut, LuStar } from 'react-icons/lu';
 import { useRouter } from 'next/navigation';
@@ -30,9 +29,6 @@ export default function IssuesPage() {
   const allIssues = useQuery(api.issues.list, {}) || [];
   const activeIssue = useQuery(api.issues.getLatestPublished, {});
 
-  // Mutations
-  const createFromLatest = useMutation(api.issues.createFromLatest);
-
   // Filter issues
   const filteredIssues = allIssues.filter((issue) => {
     const matchesStatus = filterStatus === 'all' || issue.status === filterStatus;
@@ -43,20 +39,11 @@ export default function IssuesPage() {
     return matchesStatus && matchesSearch;
   });
 
-  // Sort by updated date (newest first)
-  const sortedIssues = [...filteredIssues].sort((a, b) => b.updatedAt - a.updatedAt);
+  // Sort by edition number (highest first)
+  const sortedIssues = [...filteredIssues].sort((a, b) => b.edition - a.edition);
 
-  const handleCreateIssue = async () => {
-    try {
-      // Create new issue cloned from the latest one
-      const newIssueId = await createFromLatest({});
-
-      toast.success('Issue created from previous edition');
-      router.push(`/issues/${newIssueId}`);
-    } catch (error) {
-      console.error('Create error:', error);
-      toast.error('Failed to create issue');
-    }
+  const handleCreateIssue = () => {
+    router.push('/issues/new');
   };
 
   const handleLogout = () => {

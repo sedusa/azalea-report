@@ -568,6 +568,9 @@ export const duplicate = mutation({
       type: section.type,
       order: maxOrder + 1,
       visible: section.visible,
+      customLabel: section.customLabel,
+      customDescription: section.customDescription,
+      backgroundColor: section.backgroundColor,
       data: section.data, // Reference same media, no deep copy
       createdAt: now,
       updatedAt: now,

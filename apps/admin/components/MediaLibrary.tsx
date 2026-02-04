@@ -40,6 +40,7 @@ export function MediaLibrary({
 }: MediaLibraryProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [uploading, setUploading] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState<{ current: number; total: number } | null>(null);
   const [isSelectionMode, setIsSelectionMode] = useState(false);
   const [selectedIds, setSelectedIds] = useState<Set<Id<'media'>>>(new Set());
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
@@ -67,58 +68,74 @@ export function MediaLibrary({
   );
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
 
-    // Validate file type
-    if (!file.type.startsWith('image/')) {
-      toast.error('Please select an image file');
-      return;
-    }
+    const allFiles = Array.from(files);
 
-    // Validate file size (max 10MB)
-    if (file.size > 10 * 1024 * 1024) {
-      toast.error('File size must be less than 10MB');
-      return;
-    }
-
-    try {
-      setUploading(true);
-
-      // Step 1: Get upload URL
-      const uploadUrl = await generateUploadUrl();
-
-      // Step 2: Upload file to Convex storage
-      const result = await fetch(uploadUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': file.type },
-        body: file,
-      });
-
-      if (!result.ok) {
-        throw new Error('Upload failed');
+    // Validate upfront: filter out non-images and >10MB files
+    const validFiles: File[] = [];
+    for (const file of allFiles) {
+      if (!file.type.startsWith('image/')) {
+        toast.error(`Skipped "${file.name}" — not an image`);
+      } else if (file.size > 10 * 1024 * 1024) {
+        toast.error(`Skipped "${file.name}" — exceeds 10MB`);
+      } else {
+        validFiles.push(file);
       }
-
-      const { storageId } = await result.json();
-
-      // Step 3: Create media record
-      await createMedia({
-        storageId,
-        filename: file.name,
-        mimeType: file.type,
-        size: file.size,
-      });
-
-      toast.success('Image uploaded successfully');
-
-      // Reset file input
-      e.target.value = '';
-    } catch (error) {
-      console.error('Upload error:', error);
-      toast.error('Failed to upload image');
-    } finally {
-      setUploading(false);
     }
+
+    if (validFiles.length === 0) return;
+
+    setUploading(true);
+    setUploadProgress({ current: 0, total: validFiles.length });
+
+    let successCount = 0;
+    let failCount = 0;
+
+    for (let i = 0; i < validFiles.length; i++) {
+      const file = validFiles[i];
+      setUploadProgress({ current: i + 1, total: validFiles.length });
+
+      try {
+        const uploadUrl = await generateUploadUrl();
+
+        const result = await fetch(uploadUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': file.type },
+          body: file,
+        });
+
+        if (!result.ok) {
+          throw new Error('Upload failed');
+        }
+
+        const { storageId } = await result.json();
+
+        await createMedia({
+          storageId,
+          filename: file.name,
+          mimeType: file.type,
+          size: file.size,
+        });
+
+        successCount++;
+      } catch (error) {
+        console.error(`Upload error for "${file.name}":`, error);
+        failCount++;
+      }
+    }
+
+    if (failCount === 0) {
+      toast.success(`${successCount} image${successCount > 1 ? 's' : ''} uploaded`);
+    } else {
+      toast.error(`Uploaded ${successCount}, failed ${failCount} of ${validFiles.length}`);
+    }
+
+    // Reset
+    e.target.value = '';
+    setUploading(false);
+    setUploadProgress(null);
   };
 
   const handleImageClick = (media: MediaItem) => {
@@ -226,6 +243,7 @@ export function MediaLibrary({
                   <input
                     type="file"
                     accept="image/*"
+                    multiple
                     onChange={handleFileUpload}
                     disabled={uploading}
                     className="hidden"
@@ -238,7 +256,11 @@ export function MediaLibrary({
                     }`}
                   >
                     <LuUpload className="w-4 h-4 mr-2" />
-                    {uploading ? 'Uploading...' : 'Upload'}
+                    {uploading && uploadProgress
+                      ? `Uploading ${uploadProgress.current}/${uploadProgress.total}...`
+                      : uploading
+                        ? 'Uploading...'
+                        : 'Upload'}
                   </span>
                 </label>
               </>
