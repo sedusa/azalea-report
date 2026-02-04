@@ -438,6 +438,28 @@ export const updateBackgroundColor = mutation({
   },
 });
 
+// Update section custom label and/or description (editor-only display name)
+export const updateLabel = mutation({
+  args: {
+    id: v.id("sections"),
+    customLabel: v.optional(v.string()),
+    customDescription: v.optional(v.string()),
+  },
+  handler: async (ctx, args) => {
+    const section = await ctx.db.get(args.id);
+    if (!section) throw new Error("Section not found");
+
+    const patch: Record<string, unknown> = { updatedAt: Date.now() };
+    if (args.customLabel !== undefined) {
+      patch.customLabel = args.customLabel || undefined;
+    }
+    if (args.customDescription !== undefined) {
+      patch.customDescription = args.customDescription || undefined;
+    }
+    await ctx.db.patch(args.id, patch);
+  },
+});
+
 // Reorder sections
 export const reorder = mutation({
   args: {

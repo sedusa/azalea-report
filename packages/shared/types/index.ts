@@ -42,6 +42,8 @@ export interface Section {
   type: SectionType;
   order: number;
   visible: boolean;
+  customLabel?: string; // Editor-only custom name for the section card
+  customDescription?: string; // Editor-only custom subtitle for the section card
   backgroundColor?: string; // Pastel background color for the section
   data: Record<string, unknown>;
   createdAt: number;

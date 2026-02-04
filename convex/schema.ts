@@ -46,6 +46,8 @@ export default defineSchema({
     ),
     order: v.number(),
     visible: v.boolean(),
+    customLabel: v.optional(v.string()), // Editor-only custom name for the section card
+    customDescription: v.optional(v.string()), // Editor-only custom subtitle for the section card
     backgroundColor: v.optional(v.string()), // Pastel background color
     data: v.any(), // Section-specific data, validated by section validators
     createdAt: v.number(),

@@ -320,6 +320,26 @@ export const canDelete = query({
 - Most sections have manageable field counts (8-10 max)
 - Can always add complexity later if needed
 
+### Section Card Renaming: Inline Editing for Organization
+
+**Decision:** Section cards on the drag-and-drop canvas support inline editing of both their title (label) and subtitle (description) for organizational tracking. These custom names are editor-only and do not affect the public site.
+
+**UX Flow:**
+1. Single-click on the section card title text → inline input to edit `customLabel`
+2. Single-click on the subtitle text → inline input to edit `customDescription`
+3. Click elsewhere on the card → selects the section (opens property panel)
+4. Hover on title/subtitle shows dotted underline as edit affordance
+5. Enter saves, Escape cancels, blur saves
+6. Clearing the field (or setting it to the default) resets to the original section type name
+
+**Implementation:**
+- `customLabel` and `customDescription` are optional string fields on the `sections` table in Convex
+- Saved immediately via the `updateLabel` mutation (no need for Save Changes button)
+- When no custom value is set, the card displays the default label/description from `SECTION_REGISTRY`
+- These fields are purely organizational metadata — they are not included in the public site rendering pipeline
+
+**Example:** An editor adds two "Two Column Layout" sections. They rename one to "Chief Residents" and the other to "Program Director" so they can tell them apart at a glance.
+
 ### Drag-and-Drop Behavior
 
 **Drop Behavior:** Direct positional drop
@@ -429,7 +449,7 @@ export const SECTION_REGISTRY = {
 
 **Rationale:** Trust editors. Low friction to publish. Editors can see preview before publishing.
 
-### Section Types: All 19 Available
+### Section Types: All 18 Available
 
 **Decision:** Migrate all existing section types to the new CMS.
 
@@ -913,6 +933,7 @@ export const SECTION_REGISTRY: Record<string, SectionDefinition> = {
 
 | Decision Area | Choice | Rationale |
 |--------------|--------|-----------|
+| Section types | 18 types | Full migration of all existing section types |
 | Type validation | Strict per-section | Catch errors early, better DX |
 | Concurrency | Lock-based, session lifecycle | Simple for 1-2 users |
 | Media deletion | Block if referenced | Prevent broken links |
@@ -939,6 +960,7 @@ export const SECTION_REGISTRY: Record<string, SectionDefinition> = {
 | Errors | Toast notifications | Non-disruptive |
 | Property panel | Single scrollable | Simple |
 | Admin deploy | Separate subdomain | Clean separation |
+| Section card renaming | Inline edit label + description | Organizational tracking without affecting public site |
 | Section duplication | Reference same media | No storage waste |
 | Team size | 1-2 editors | Informs simplicity choices |
 | **Cost strategy** | **Free tier only ($0/mo)** | **Primary constraint** |
