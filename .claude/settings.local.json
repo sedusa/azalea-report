@@ -27,7 +27,8 @@
       "Bash(wc:*)",
       "Bash(NEXT_PUBLIC_CONVEX_URL=http://127.0.0.1:3210 npx tsx:*)",
       "Bash(npx next build:*)",
-      "Bash(npm run lint:*)"
+      "Bash(npm run lint:*)",
+      "mcp__ide__getDiagnostics"
     ]
   }
 }

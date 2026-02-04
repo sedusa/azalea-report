@@ -143,7 +143,7 @@ export const listByIssue = query({
           }));
         }
 
-        return { ...section, data };
+        return { ...section, data, rawData: section.data };
       })
     );
 

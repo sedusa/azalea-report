@@ -14,7 +14,7 @@ interface ShowMoreProps {
  * ShowMore component with expandable text functionality
  * Matches the azaleareport.com "Show More" pattern and module.css toggle button styles
  */
-export function ShowMore({ content, maxHeight = 150, className = '', forceDarkText = false }: ShowMoreProps) {
+export function ShowMore({ content, maxHeight = 600, className = '', forceDarkText = false }: ShowMoreProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [needsTruncation, setNeedsTruncation] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);

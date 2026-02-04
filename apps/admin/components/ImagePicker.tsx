@@ -39,7 +39,17 @@ export function ImagePicker({
     .slice(0, 8);
 
   // Find selected media from the loaded list
-  const selectedMedia = value ? allMedia.find((m) => m._id === value) : null;
+  // Also match by URL as a fallback for previously corrupted data (URLs saved instead of IDs)
+  const selectedMedia = value
+    ? allMedia.find((m) => m._id === value) || allMedia.find((m) => m.url === value)
+    : null;
+
+  // Auto-heal: if the value is a URL but we found the media, update to use the correct ID
+  useEffect(() => {
+    if (value && selectedMedia && selectedMedia._id !== value) {
+      onChange(selectedMedia._id);
+    }
+  }, [selectedMedia, value]);
 
   // Sync filename when selectedMedia loads (e.g., on initial mount with existing value)
   useEffect(() => {
@@ -123,7 +133,7 @@ export function ImagePicker({
                 type="button"
                 onClick={() => handleSelect(media._id)}
                 className={`aspect-square rounded-lg overflow-hidden bg-gray-100 hover:ring-2 hover:ring-azalea-green transition-all ${
-                  value === media._id ? 'ring-2 ring-azalea-green' : ''
+                  value === media._id || value === media.url ? 'ring-2 ring-azalea-green' : ''
                 }`}
                 title={media.filename}
               >
@@ -201,7 +211,30 @@ export function MultiImagePicker({
   const allMediaQuery = useQuery(api.media.list, {});
   const isLoading = allMediaQuery === undefined;
   const allMedia = allMediaQuery || [];
-  const selectedMedia = allMedia.filter((m) => selectedMediaIds.includes(m._id));
+  // Match by both _id and URL to handle corrupted data
+  const selectedMedia = allMedia.filter(
+    (m) => selectedMediaIds.includes(m._id) || selectedMediaIds.some((id) => m.url === id)
+  );
+
+  // Auto-heal: if any value is a URL, replace with correct media ID
+  useEffect(() => {
+    if (allMedia.length > 0 && value.length > 0) {
+      let needsHeal = false;
+      const healed = value.map((id) => {
+        const byId = allMedia.find((m) => m._id === id);
+        if (byId) return id;
+        const byUrl = allMedia.find((m) => m.url === id);
+        if (byUrl) {
+          needsHeal = true;
+          return byUrl._id;
+        }
+        return id;
+      });
+      if (needsHeal) {
+        onChange(healed);
+      }
+    }
+  }, [allMedia, value]);
 
   const handleAdd = (mediaId: Id<'media'>) => {
     if (value.length >= maxImages) {

@@ -88,7 +88,7 @@ function ChiefCard({ chief }: { chief: ChiefData }) {
       {/* Bio Content with ShowMore - force dark text on pastel background */}
       {content && (
         <div className="chief-text">
-          <ShowMore content={content} maxHeight={150} forceDarkText={true} />
+          <ShowMore content={content} maxHeight={600} forceDarkText={true} />
         </div>
       )}
     </div>

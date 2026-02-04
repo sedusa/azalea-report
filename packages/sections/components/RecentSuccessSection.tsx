@@ -129,7 +129,7 @@ export function RecentSuccessSection({ data, backgroundColor }: RecentSuccessSec
       {/* Content with ShowMore */}
       {content && (
         <div className="basic-text">
-          <ShowMore content={content} maxHeight={300} forceDarkText={hasBackground} />
+          <ShowMore content={content} maxHeight={600} forceDarkText={hasBackground} />
         </div>
       )}
 

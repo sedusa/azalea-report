@@ -242,6 +242,8 @@ export const canDelete = query({
 3. "Browse all" button opens full media library modal
 4. Drag-and-drop upload zone for quick new uploads
 
+**Data Integrity:** The `listByIssue` query resolves media IDs to URLs for preview rendering but also returns `rawData` (the original unmodified section data with media IDs). The admin editor uses `rawData` for form state so that when fields are saved, media IDs are preserved rather than accidentally saving resolved URLs. The `ImagePicker`, `MultiImagePicker`, and `ImagesWithCaptionsEditor` components also include auto-heal logic: if they receive a URL instead of a media ID (from previously corrupted data), they look up the matching media by URL and replace the value with the correct `_id`.
+
 ### Section Duplication: Reference Same Media
 
 **Decision:** When duplicating a section, media references point to the same files (no deep copy).
@@ -427,36 +429,38 @@ export const SECTION_REGISTRY = {
 
 **Rationale:** Trust editors. Low friction to publish. Editors can see preview before publishing.
 
-### Section Types: All 16+ Available
+### Section Types: All 19 Available
 
 **Decision:** Migrate all existing section types to the new CMS.
 
 **Complete Section Type List:**
-1. `about`
-2. `spotlight`
-3. `chiefsCorner`
-4. `internsCorner`
-5. `textImage`
-6. `carousel`
-7. `textCarousel`
-8. `events`
-9. `podcast`
-10. `birthdays`
-11. `culturosity`
-12. `communityService`
-13. `recentSuccess`
-14. `musings`
-15. `photosOfMonth`
-16. `genericText`
-17. `custom`
+1. `about` — Introduction or about content with rich text
+2. `spotlight` — Feature a resident with photo and details
+3. `chiefsCorner` — Chiefs' messages with photos and bios
+4. `internsCorner` — Interns' messages with photos and bios
+5. `twoColumn` — Side-by-side spotlight and about sections
+6. `textImage` — Rich text with floating image and text wrapping
+7. `carousel` — Slideshow of multiple images
+8. `textCarousel` — Rich text content with image carousel
+9. `events` — Upcoming events list with dates
+10. `eventsBirthdays` — Combined events and birthdays section
+11. `podcast` — Podcast episodes with listen links
+12. `birthdays` — Dynamic birthday list (always live from birthdays table)
+13. `culturosity` — Cultural spotlight with inline image placeholders (`{{image-0}}`, `{{image-1}}`, etc.)
+14. `communityService` — Community service with text wrapping around image and photo carousel
+15. `recentSuccess` — Recent achievements with optional image carousel
+16. `photosOfMonth` — Photo gallery with captions
+17. `genericText` — Simple rich text content block
+18. `custom` — Custom HTML article with inline image placeholders (`{{image-0}}`, `{{image-1}}`, etc.)
+
+**Inline Image Placeholder Pattern:** The `culturosity` and `custom` section types support embedding images directly in content using `{{image-0}}`, `{{image-1}}`, etc. placeholders. Images are uploaded via the `imagesWithCaptions` editor field, and each placeholder is replaced at render time with a `<figure>` element containing the image and its optional caption. If no placeholders are used in the content, images display as a gallery below the text.
 
 Each type requires:
-- TypeScript interface
-- Convex validator
-- Section renderer component
-- Property panel field configuration
-- Example data factory
-- Icon for palette
+- TypeScript interface in `packages/shared/types/`
+- Registry entry in `packages/shared/constants/` with fields and `exampleData`
+- Section renderer component in `packages/sections/components/`
+- Wiring in `SectionRenderer` switch statement
+- Export from `packages/sections/index.ts`
 
 ### Rich Text: Tiptap (Free MIT Core) with Strict Sanitization
 
@@ -695,7 +699,7 @@ Complete registry definition for the section palette and property panel:
 export interface FieldDefinition {
   name: string;
   label: string;
-  type: 'text' | 'textarea' | 'richtext' | 'image' | 'images' | 'date' | 'select' | 'number';
+  type: 'text' | 'textarea' | 'richtext' | 'image' | 'images' | 'imagesWithCaptions' | 'date' | 'select' | 'number' | 'chiefArray' | 'internArray' | 'detailsArray' | 'bulletsArray' | 'podcastArray' | 'eventsArray';
   required: boolean;
   options?: { value: string; label: string }[]; // for select type
   placeholder?: string;
@@ -773,7 +777,53 @@ export const SECTION_REGISTRY: Record<string, SectionDefinition> = {
     }),
   },
 
-  // ... Define all 17 section types with full field definitions
+  culturosity: {
+    type: 'culturosity',
+    label: 'Culturosity',
+    description: 'Cultural spotlight or feature with inline images',
+    icon: 'globe',
+    helpText: 'Use {{image-0}}, {{image-1}}, etc. in content to place uploaded images inline',
+    fields: [
+      { name: 'sectionTitle', label: 'Section Title', type: 'text', required: false, placeholder: 'Culturosity' },
+      { name: 'title', label: 'Title', type: 'text', required: true },
+      { name: 'author', label: 'Author', type: 'text', required: false },
+      { name: 'images', label: 'Images (Reference as {{image-0}}, {{image-1}}, etc.)', type: 'imagesWithCaptions', required: false },
+      { name: 'content', label: 'Content', type: 'richtext', required: true },
+    ],
+    exampleData: () => ({
+      sectionTitle: 'Culturosity',
+      title: 'Celebrating Lunar New Year',
+      content: '<p>Learn about the traditions and celebrations of Lunar New Year...</p>',
+      images: [],
+      author: 'Dr. Wei Chen',
+    }),
+  },
+
+  custom: {
+    type: 'custom',
+    label: 'Custom Article',
+    description: 'Custom HTML article with title, description, author, and images',
+    icon: 'code',
+    helpText: 'Use {{image-0}}, {{image-1}}, etc. in HTML to reference uploaded images',
+    fields: [
+      { name: 'sectionTitle', label: 'Section Title', type: 'text', required: false },
+      { name: 'title', label: 'Article Title', type: 'text', required: false },
+      { name: 'description', label: 'Description/Intro', type: 'richtext', required: false },
+      { name: 'author', label: 'Author', type: 'text', required: false },
+      { name: 'images', label: 'Images (Reference as {{image-0}}, {{image-1}}, etc.)', type: 'imagesWithCaptions', required: false },
+      { name: 'html', label: 'Custom HTML Content', type: 'textarea', required: false },
+    ],
+    exampleData: () => ({
+      sectionTitle: 'News & Updates',
+      title: 'Article Title',
+      description: '<p>Article description...</p>',
+      author: 'Author Name',
+      images: [],
+      html: '',
+    }),
+  },
+
+  // ... remaining section types with full field definitions
 };
 ```
 
@@ -885,7 +935,7 @@ export const SECTION_REGISTRY: Record<string, SectionDefinition> = {
 | Deploy status | Fire and forget | Trust the pipeline |
 | Migration | Hard cutover | Clean break |
 | Dashboard | Content only | Tight scope |
-| Image picker | Inline grid + modal | Quick access |
+| Image picker | Inline grid + modal + auto-heal | Quick access, data integrity via rawData pattern |
 | Errors | Toast notifications | Non-disruptive |
 | Property panel | Single scrollable | Simple |
 | Admin deploy | Separate subdomain | Clean separation |

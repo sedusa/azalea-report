@@ -239,6 +239,7 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
   }, [issue, initializedIssueId]);
 
   // Get the selected section with any pending changes merged in
+  // Use rawData (original media IDs) for editing to prevent URL corruption
   const selectedSection = (() => {
     const section = sections.find((s) => s._id === selectedSectionId);
     if (!section) return null;
@@ -247,9 +248,13 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
     const pendingData = getPendingSectionData(section._id);
     const pendingBgColor = getPendingBackgroundColor(section._id);
 
+    // Use rawData (with media IDs) instead of data (with resolved URLs)
+    // to prevent URLs from being saved back to the database
+    const editingData = (section as any).rawData || section.data;
+
     return {
       ...section,
-      data: pendingData ? { ...section.data, ...pendingData } : section.data,
+      data: pendingData ? { ...editingData, ...pendingData } : editingData,
       backgroundColor: pendingBgColor !== undefined ? pendingBgColor : section.backgroundColor,
     };
   })();

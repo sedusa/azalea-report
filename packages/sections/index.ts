@@ -38,6 +38,7 @@ export { RecentSuccessSection } from './components/RecentSuccessSection';
 export { CommunityServiceSection } from './components/CommunityServiceSection';
 export { PodcastSection } from './components/PodcastSection';
 export { CustomSection } from './components/CustomSection';
+export { CulturositySection } from './components/CulturositySection';
 export { PhotosOfMonthSection } from './components/PhotosOfMonthSection';
 export { EventsSection } from './components/EventsSection';
 export { EventsBirthdaysSection } from './components/EventsBirthdaysSection';

@@ -52,6 +52,28 @@ export function ImagesWithCaptionsEditor({
     }
   }, []);
 
+  // Auto-heal: convert any URL-based mediaIds back to proper media IDs
+  const hasHealedUrls = useRef(false);
+  useEffect(() => {
+    if (!hasHealedUrls.current && allMedia.length > 0 && validImages.length > 0) {
+      let needsHeal = false;
+      const healed = validImages.map((img) => {
+        if (img.mediaId.startsWith('http://') || img.mediaId.startsWith('https://')) {
+          const media = allMedia.find((m) => m.url === img.mediaId);
+          if (media) {
+            needsHeal = true;
+            return { ...img, mediaId: media._id };
+          }
+        }
+        return img;
+      });
+      if (needsHeal) {
+        hasHealedUrls.current = true;
+        onChange(healed);
+      }
+    }
+  }, [allMedia, validImages]);
+
   // Get media details for selected images
   const getMediaDetails = (mediaId: string) => {
     return allMedia.find((m) => m._id === mediaId || m.url === mediaId);

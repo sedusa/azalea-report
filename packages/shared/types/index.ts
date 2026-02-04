@@ -197,7 +197,11 @@ export interface CulturostySectionData {
   sectionTitle?: string;
   title: string;
   content: string;
-  image?: string;
+  /** Images that can be referenced in content using {{image-0}}, {{image-1}}, etc. */
+  images?: Array<{
+    mediaId: string;
+    caption?: string;
+  }>;
   author?: string;
 }
 

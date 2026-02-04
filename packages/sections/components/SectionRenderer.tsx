@@ -10,6 +10,7 @@ import type {
   BirthdaysSectionData,
   RecentSuccessSectionData,
   CommunityServiceSectionData,
+  CulturostySectionData,
   PodcastSectionData,
   CustomSectionData,
   PhotosOfMonthSectionData,
@@ -31,6 +32,7 @@ import { CustomSection } from './CustomSection';
 import { PhotosOfMonthSection } from './PhotosOfMonthSection';
 import { EventsSection } from './EventsSection';
 import { EventsBirthdaysSection } from './EventsBirthdaysSection';
+import { CulturositySection } from './CulturositySection';
 
 interface SectionRendererProps {
   section: Section;
@@ -95,10 +97,12 @@ export function SectionRenderer({ section }: SectionRendererProps) {
       case 'eventsBirthdays':
         return <EventsBirthdaysSection data={section.data as unknown as EventsBirthdaysSectionData} backgroundColor={section.backgroundColor} />;
 
+      case 'culturosity':
+        return <CulturositySection data={section.data as unknown as CulturostySectionData} backgroundColor={section.backgroundColor} />;
+
       // TODO: Add remaining section types as they're migrated
       case 'carousel':
       case 'textCarousel':
-      case 'culturosity':
         return (
           <div
             className="section-card"

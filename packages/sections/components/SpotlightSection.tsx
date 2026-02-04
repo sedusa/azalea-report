@@ -77,7 +77,7 @@ export function SpotlightSection({ data, backgroundColor }: SpotlightSectionProp
 
           {/* Details with ShowMore */}
           <div className="spotlight-text">
-            <ShowMore content={detailsContent} maxHeight={200} forceDarkText={hasBackground} />
+            <ShowMore content={detailsContent} maxHeight={600} forceDarkText={hasBackground} />
           </div>
         </div>
       </div>

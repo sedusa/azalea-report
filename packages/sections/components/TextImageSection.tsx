@@ -21,7 +21,7 @@ export function TextImageSection({ data, backgroundColor }: TextImageSectionProp
   const [isExpanded, setIsExpanded] = useState(false);
   const [needsTruncation, setNeedsTruncation] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
-  const maxHeight = 400; // Max height before showing "Show More"
+  const maxHeight = 600; // Max height before showing "Show More"
 
   // Don't render if no content
   if (!content && !image) {

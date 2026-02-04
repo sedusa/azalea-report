@@ -89,7 +89,7 @@ function InternCard({ intern }: { intern: InternData }) {
       {/* Bio Content with ShowMore - Left aligned, force dark text on pastel background */}
       {content && (
         <div className="intern-text" style={{ textAlign: 'left' }}>
-          <ShowMore content={content} maxHeight={150} forceDarkText={true} />
+          <ShowMore content={content} maxHeight={600} forceDarkText={true} />
         </div>
       )}
     </div>

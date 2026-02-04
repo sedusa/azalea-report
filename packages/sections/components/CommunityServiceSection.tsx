@@ -41,7 +41,7 @@ export function CommunityServiceSection({ data, backgroundColor }: CommunityServ
   const [isExpanded, setIsExpanded] = useState(false);
   const [needsTruncation, setNeedsTruncation] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
-  const maxHeight = 400; // Max height before showing "Show More"
+  const maxHeight = 600; // Max height before showing "Show More"
 
   // When backgroundColor is set, use dark text for readability on pastel backgrounds
   const hasBackground = !!backgroundColor;
