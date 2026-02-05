@@ -1376,6 +1376,19 @@ export function PreviewPane({ issue, sections, onClose }: PreviewPaneProps) {
           gap: 2rem;
         }
 
+        /* Inner cards always have light backgrounds, so force dark text */
+        .website-preview .section-transparent .events-birthdays-grid p,
+        .website-preview .section-transparent .events-birthdays-grid span,
+        .website-preview .section-transparent .events-birthdays-grid li,
+        .website-preview .section-transparent .events-birthdays-grid div {
+          color: #333333 !important;
+        }
+
+        .website-preview .section-transparent .events-birthdays-grid h2,
+        .website-preview .section-transparent .events-birthdays-grid strong {
+          color: #016f53 !important;
+        }
+
         /* ===== CONTENT IMAGE ===== */
         .website-preview .content-image {
           border-radius: var(--radius);
