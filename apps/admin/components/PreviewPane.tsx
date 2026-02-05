@@ -1191,7 +1191,7 @@ export function PreviewPane({ issue, sections, onClose }: PreviewPaneProps) {
         /* ===== TEXT IMAGE SECTION ===== */
         .website-preview .text-image-float {
           margin-bottom: 1rem;
-          max-width: 45%;
+          max-width: 30%;
         }
 
         .website-preview .text-image-float.float-left {
