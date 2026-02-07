@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git log:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(python3:*)",
+      "WebFetch(domain:azalea-staging-web.netlify.app)",
+      "Bash(bun run:*)"
+    ]
+  }
+}

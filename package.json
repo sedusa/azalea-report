@@ -16,7 +16,10 @@
     "lint": "turbo lint",
     "type-check": "turbo type-check",
     "convex:dev": "convex dev",
-    "convex:deploy": "convex deploy"
+    "convex:deploy": "convex deploy",
+    "deploy:prod": "bun run scripts/deploy-to-prod.ts",
+    "deploy:prod:functions": "bun run scripts/deploy-to-prod.ts --functions-only",
+    "deploy:prod:data": "bun run scripts/deploy-to-prod.ts --data-only"
   },
   "devDependencies": {
     "@types/sanitize-html": "^2.16.0",
