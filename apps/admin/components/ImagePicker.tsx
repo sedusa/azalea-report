@@ -246,6 +246,16 @@ export function MultiImagePicker({
     setShowBrowser(false);
   };
 
+  const handleAddMultiple = (mediaIds: Id<'media'>[]) => {
+    const newIds = mediaIds
+      .filter((id) => !value.includes(id))
+      .slice(0, maxImages - value.length);
+    if (newIds.length > 0) {
+      onChange([...value, ...newIds]);
+    }
+    setShowBrowser(false);
+  };
+
   const handleRemove = (mediaId: Id<'media'>) => {
     onChange(value.filter((id) => id !== mediaId));
   };
@@ -330,7 +340,7 @@ export function MultiImagePicker({
         <div className="h-[600px]">
           <MediaLibrary
             mode="select"
-            onSelect={handleAdd}
+            onMultiSelect={handleAddMultiple}
           />
         </div>
       </Modal>

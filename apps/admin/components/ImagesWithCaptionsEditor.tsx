@@ -102,6 +102,17 @@ export function ImagesWithCaptionsEditor({
     setShowBrowser(false);
   };
 
+  const handleAddMultipleImages = (mediaIds: Id<'media'>[]) => {
+    const newImages = mediaIds
+      .filter((id) => !validImages.some((img) => img.mediaId === id))
+      .slice(0, maxImages - validImages.length)
+      .map((mediaId) => ({ mediaId, caption: '' }));
+    if (newImages.length > 0) {
+      onChange([...validImages, ...newImages]);
+    }
+    setShowBrowser(false);
+  };
+
   const handleRemoveImage = (index: number) => {
     const newValue = [...validImages];
     newValue.splice(index, 1);
@@ -296,13 +307,14 @@ export function ImagesWithCaptionsEditor({
       <Modal
         isOpen={showBrowser}
         onClose={handleCloseBrowser}
-        title={editingIndex !== null ? 'Change Image' : 'Select Image'}
+        title={editingIndex !== null ? 'Change Image' : 'Select Images'}
         size="xl"
       >
         <div className="h-[600px]">
           <MediaLibrary
             mode="select"
-            onSelect={handleAddImage}
+            onSelect={editingIndex !== null ? handleAddImage : undefined}
+            onMultiSelect={editingIndex === null ? handleAddMultipleImages : undefined}
           />
         </div>
       </Modal>

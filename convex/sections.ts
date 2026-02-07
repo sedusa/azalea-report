@@ -115,12 +115,29 @@ export const listByIssue = query({
 
         // Resolve images array (for recentSuccess, photosOfMonth, carousel, communityService, textCarousel)
         if (data.images && Array.isArray(data.images)) {
-          data.images = await Promise.all(
-            data.images.map(async (img: any) => ({
-              ...img,
-              mediaId: await resolveMediaUrl(ctx, img.mediaId) || img.mediaId,
-            }))
-          );
+          if (section.type === 'photosOfMonth') {
+            // For photosOfMonth, resolve with timestamps and sort most recent first
+            const imagesWithTimestamps = await Promise.all(
+              data.images.map(async (img: any) => {
+                const resolved = await resolveMediaWithTimestamp(ctx, img.mediaId);
+                return {
+                  ...img,
+                  mediaId: resolved.url || img.mediaId,
+                  _uploadedAt: resolved.uploadedAt,
+                };
+              })
+            );
+            data.images = imagesWithTimestamps
+              .sort((a: any, b: any) => b._uploadedAt - a._uploadedAt)
+              .map(({ _uploadedAt, ...img }: any) => img);
+          } else {
+            data.images = await Promise.all(
+              data.images.map(async (img: any) => ({
+                ...img,
+                mediaId: await resolveMediaUrl(ctx, img.mediaId) || img.mediaId,
+              }))
+            );
+          }
         }
 
         // Populate birthdays for birthday sections
@@ -170,6 +187,26 @@ async function resolveMediaUrl(ctx: any, mediaId: string | undefined): Promise<s
     // If lookup fails, return undefined
   }
   return undefined;
+}
+
+// Helper to resolve media ID to URL + uploadedAt (for sorting)
+async function resolveMediaWithTimestamp(ctx: any, mediaId: string | undefined): Promise<{ url: string | undefined; uploadedAt: number }> {
+  if (!mediaId) return { url: undefined, uploadedAt: 0 };
+
+  if (mediaId.startsWith('http://') || mediaId.startsWith('https://')) {
+    return { url: mediaId, uploadedAt: 0 };
+  }
+
+  try {
+    const media = await ctx.db.get(mediaId as any);
+    if (media?.storageId) {
+      const url = await ctx.storage.getUrl(media.storageId);
+      return { url: url ?? undefined, uploadedAt: media.uploadedAt ?? 0 };
+    }
+  } catch {
+    // If lookup fails, return defaults
+  }
+  return { url: undefined, uploadedAt: 0 };
 }
 
 // Get visible sections for an issue (for public display)
@@ -229,12 +266,29 @@ export const listVisibleByIssue = query({
 
         // Resolve images array (for recentSuccess, photosOfMonth, carousel, communityService, textCarousel)
         if (data.images && Array.isArray(data.images)) {
-          data.images = await Promise.all(
-            data.images.map(async (img: any) => ({
-              ...img,
-              mediaId: await resolveMediaUrl(ctx, img.mediaId) || img.mediaId,
-            }))
-          );
+          if (section.type === 'photosOfMonth') {
+            // For photosOfMonth, resolve with timestamps and sort most recent first
+            const imagesWithTimestamps = await Promise.all(
+              data.images.map(async (img: any) => {
+                const resolved = await resolveMediaWithTimestamp(ctx, img.mediaId);
+                return {
+                  ...img,
+                  mediaId: resolved.url || img.mediaId,
+                  _uploadedAt: resolved.uploadedAt,
+                };
+              })
+            );
+            data.images = imagesWithTimestamps
+              .sort((a: any, b: any) => b._uploadedAt - a._uploadedAt)
+              .map(({ _uploadedAt, ...img }: any) => img);
+          } else {
+            data.images = await Promise.all(
+              data.images.map(async (img: any) => ({
+                ...img,
+                mediaId: await resolveMediaUrl(ctx, img.mediaId) || img.mediaId,
+              }))
+            );
+          }
         }
 
         // Populate birthdays for birthday sections

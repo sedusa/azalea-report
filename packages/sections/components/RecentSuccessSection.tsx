@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
 import type { RecentSuccessSectionData } from '@azalea/shared/types';
 import { ShowMore } from './ShowMore';
+import { useAutoPlayCarousel } from './useAutoPlayCarousel';
 
 interface RecentSuccessSectionProps {
   data: RecentSuccessSectionData;
@@ -16,8 +16,6 @@ interface RecentSuccessSectionProps {
  */
 export function RecentSuccessSection({ data, backgroundColor }: RecentSuccessSectionProps) {
   const { sectionTitle = 'Recent Success', title, content, image, imageCaption, images = [] } = data;
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
 
   // When no backgroundColor is set, use transparent class for proper dark mode text colors
   const hasBackground = !!backgroundColor;
@@ -25,37 +23,14 @@ export function RecentSuccessSection({ data, backgroundColor }: RecentSuccessSec
   // Filter out empty images
   const carouselImages = images.filter(img => img.mediaId);
 
-  const goToPrevious = useCallback(() => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentImageIndex((prev) => (prev === 0 ? carouselImages.length - 1 : prev - 1));
-    setTimeout(() => setIsTransitioning(false), 400);
-  }, [carouselImages.length, isTransitioning]);
-
-  const goToNext = useCallback(() => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentImageIndex((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1));
-    setTimeout(() => setIsTransitioning(false), 400);
-  }, [carouselImages.length, isTransitioning]);
-
-  const goToSlide = useCallback((index: number) => {
-    if (isTransitioning || index === currentImageIndex) return;
-    setIsTransitioning(true);
-    setCurrentImageIndex(index);
-    setTimeout(() => setIsTransitioning(false), 400);
-  }, [currentImageIndex, isTransitioning]);
-
-  // Keyboard navigation
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (carouselImages.length <= 1) return;
-      if (e.key === 'ArrowLeft') goToPrevious();
-      if (e.key === 'ArrowRight') goToNext();
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [goToNext, goToPrevious, carouselImages.length]);
+  const {
+    currentIndex: currentImageIndex,
+    isTransitioning,
+    goToPrevious,
+    goToNext,
+    goToSlide,
+    hoverProps,
+  } = useAutoPlayCarousel({ totalSlides: carouselImages.length });
 
   return (
     <section
@@ -140,6 +115,7 @@ export function RecentSuccessSection({ data, backgroundColor }: RecentSuccessSec
             marginTop: '2rem',
             position: 'relative',
           }}
+          {...hoverProps}
         >
           {/* Carousel Title */}
           <h4

@@ -744,7 +744,7 @@
   /* Text Image Section - Float image with text wrapping */
   .text-image-float {
     margin-bottom: 1rem;
-    max-width: 45%;
+    max-width: 30%;
   }
 
   .text-image-float.float-left {

@@ -20,6 +20,7 @@ import {
 
 interface MediaLibraryProps {
   onSelect?: (mediaId: Id<'media'>) => void;
+  onMultiSelect?: (mediaIds: Id<'media'>[]) => void;
   selectedMediaId?: Id<'media'> | null;
   mode?: 'select' | 'manage';
 }
@@ -35,9 +36,11 @@ interface MediaItem {
 
 export function MediaLibrary({
   onSelect,
+  onMultiSelect,
   selectedMediaId = null,
   mode = 'manage'
 }: MediaLibraryProps) {
+  const isMultiSelectMode = mode === 'select' && !!onMultiSelect;
   const [searchQuery, setSearchQuery] = useState('');
   const [uploading, setUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState<{ current: number; total: number } | null>(null);
@@ -139,8 +142,18 @@ export function MediaLibrary({
   };
 
   const handleImageClick = (media: MediaItem) => {
-    if (mode === 'select') {
-      // In picker mode, select for the parent component
+    if (isMultiSelectMode) {
+      // In multi-select picker mode, toggle selection
+      const newSelected = new Set(selectedIds);
+      if (newSelected.has(media._id)) {
+        newSelected.delete(media._id);
+      } else {
+        newSelected.add(media._id);
+      }
+      setSelectedIds(newSelected);
+      return;
+    } else if (mode === 'select') {
+      // In single-select picker mode, select for the parent component
       onSelect?.(media._id);
     } else if (isSelectionMode) {
       // In selection mode, toggle selection
@@ -345,7 +358,7 @@ export function MediaLibrary({
         ) : (
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-2">
             {sortedMedia.map((media) => {
-              const isSelected = isSelectionMode && selectedIds.has(media._id);
+              const isSelected = (isSelectionMode || isMultiSelectMode) && selectedIds.has(media._id);
               const isPickerSelected = mode === 'select' && selectedMediaId === media._id;
 
               return (
@@ -380,7 +393,7 @@ export function MediaLibrary({
                     )}
 
                     {/* Selection checkbox */}
-                    {isSelectionMode && (
+                    {(isSelectionMode || isMultiSelectMode) && (
                       <div className="absolute top-1 left-1">
                         {isSelected ? (
                           <div className="w-5 h-5 rounded bg-emerald-500 flex items-center justify-center">
@@ -442,6 +455,32 @@ export function MediaLibrary({
           </div>
         )}
       </div>
+
+      {/* Multi-select footer */}
+      {isMultiSelectMode && (
+        <div
+          className="p-4 border-t flex items-center justify-between"
+          style={{
+            backgroundColor: 'rgb(var(--bg-secondary))',
+            borderColor: 'rgb(var(--border-primary))',
+          }}
+        >
+          <span className="text-sm font-medium" style={{ color: 'rgb(var(--text-primary))' }}>
+            {selectedIds.size} image{selectedIds.size !== 1 ? 's' : ''} selected
+          </span>
+          <Button
+            variant="primary"
+            size="sm"
+            disabled={selectedIds.size === 0}
+            onClick={() => {
+              onMultiSelect?.(Array.from(selectedIds));
+              setSelectedIds(new Set());
+            }}
+          >
+            Add {selectedIds.size > 0 ? selectedIds.size : ''} Image{selectedIds.size !== 1 ? 's' : ''}
+          </Button>
+        </div>
+      )}
 
       {/* Image Preview Modal */}
       {previewMedia && (

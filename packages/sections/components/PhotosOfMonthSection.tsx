@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
 import type { PhotosOfMonthSectionData } from '@azalea/shared/types';
+import { useAutoPlayCarousel } from './useAutoPlayCarousel';
 
 interface PhotosOfMonthSectionProps {
   data: PhotosOfMonthSectionData;
@@ -17,8 +17,6 @@ interface PhotosOfMonthSectionProps {
  */
 export function PhotosOfMonthSection({ data, backgroundColor }: PhotosOfMonthSectionProps) {
   const { sectionTitle, title, images = [] } = data;
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
 
   // When backgroundColor is set, use dark text for readability on pastel backgrounds
   const hasBackground = !!backgroundColor;
@@ -27,48 +25,17 @@ export function PhotosOfMonthSection({ data, backgroundColor }: PhotosOfMonthSec
   const carouselImages = images.filter(img => img.mediaId);
 
   // Text colors based on background
-  const textColor = hasBackground ? '#333333' : 'var(--foreground)';
   const headingColor = '#016f53';
   const mutedColor = hasBackground ? '#666666' : 'var(--muted-foreground)';
 
-  const goToPrevious = useCallback(() => {
-    if (isTransitioning || carouselImages.length <= 1) return;
-    setIsTransitioning(true);
-    setCurrentImageIndex((prev) => (prev === 0 ? carouselImages.length - 1 : prev - 1));
-    setTimeout(() => setIsTransitioning(false), 400);
-  }, [carouselImages.length, isTransitioning]);
-
-  const goToNext = useCallback(() => {
-    if (isTransitioning || carouselImages.length <= 1) return;
-    setIsTransitioning(true);
-    setCurrentImageIndex((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1));
-    setTimeout(() => setIsTransitioning(false), 400);
-  }, [carouselImages.length, isTransitioning]);
-
-  const goToSlide = useCallback((index: number) => {
-    if (isTransitioning || index === currentImageIndex) return;
-    setIsTransitioning(true);
-    setCurrentImageIndex(index);
-    setTimeout(() => setIsTransitioning(false), 400);
-  }, [currentImageIndex, isTransitioning]);
-
-  // Keyboard navigation
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (carouselImages.length <= 1) return;
-      if (e.key === 'ArrowLeft') goToPrevious();
-      if (e.key === 'ArrowRight') goToNext();
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [goToNext, goToPrevious, carouselImages.length]);
-
-  // Reset index if it's out of bounds
-  useEffect(() => {
-    if (currentImageIndex >= carouselImages.length && carouselImages.length > 0) {
-      setCurrentImageIndex(0);
-    }
-  }, [carouselImages.length, currentImageIndex]);
+  const {
+    currentIndex: currentImageIndex,
+    isTransitioning,
+    goToPrevious,
+    goToNext,
+    goToSlide,
+    hoverProps,
+  } = useAutoPlayCarousel({ totalSlides: carouselImages.length });
 
   // Don't render if no images
   if (carouselImages.length === 0) {
@@ -121,6 +88,7 @@ export function PhotosOfMonthSection({ data, backgroundColor }: PhotosOfMonthSec
         style={{
           position: 'relative',
         }}
+        {...hoverProps}
       >
         {/* Image Container - Full width */}
         <div
