@@ -3,14 +3,16 @@
  * Deploy local Convex functions and data to production.
  *
  * Usage:
- *   bun run deploy:prod            # deploy functions + migrate data
+ *   bun run deploy:prod            # deploy functions + migrate data + migrate storage
  *   bun run deploy:prod:functions   # deploy functions only
  *   bun run deploy:prod:data        # export local data & import to production
+ *   bun run migrate:storage         # migrate file storage (images) only
  *
  * What this script does:
  *   1. Deploys Convex functions (schema, queries, mutations) to production
  *   2. Exports a snapshot of the local Convex database
  *   3. Imports that snapshot into the production deployment (replaces all data)
+ *   4. Migrates file storage (images) from local to production
  *
  * Prerequisites:
  *   - Local Convex dev server running (`npx convex dev`)
@@ -63,6 +65,13 @@ async function migrateData() {
   console.log("✅ Data migrated to production.\n");
 }
 
+async function migrateStorage() {
+  console.log("\n🖼️  Migrating file storage to production...\n");
+  const result =
+    await $`cd ${ROOT} && bun run scripts/migrate-storage.ts`.text();
+  console.log(result);
+}
+
 async function main() {
   console.log("=".repeat(50));
   console.log("  Azalea Report — Deploy to Production");
@@ -76,6 +85,7 @@ async function main() {
     } else {
       await deployFunctions();
       await migrateData();
+      await migrateStorage();
     }
 
     console.log("🎉 Deployment complete!");

@@ -90,9 +90,9 @@ npm run dev              # Start all apps in dev mode
 npm run dev:web          # Start web app only
 npm run dev:admin        # Start admin app only
 
-# Convex
-npm run convex:dev       # Start Convex dev server
-npm run convex:deploy    # Deploy to production
+# Convex (local)
+npm run convex:dev       # Start Convex dev server (local)
+npm run convex:deploy    # Deploy functions to production
 
 # Building
 npm run build            # Build all apps
@@ -102,6 +102,66 @@ npm run build:admin      # Build admin app
 # Type checking
 npm run type-check       # Check types in all packages
 ```
+
+## 🚢 Deploying to Production
+
+The project uses two deployment targets:
+- **Convex** (`resolute-emu-262.convex.cloud`) — backend functions, database, and file storage
+- **Netlify** (`azalea-staging-web.netlify.app`) — frontend, deployed from the `staging` branch
+
+### Deploy Scripts (requires [Bun](https://bun.sh))
+
+```bash
+# Full deploy: functions + data + file storage (images)
+bun run deploy:prod
+
+# Deploy only Convex functions (schema, queries, mutations)
+bun run deploy:prod:functions
+
+# Export local database and import to production (no files)
+bun run deploy:prod:data
+
+# Migrate file storage (images) from local to production
+bun run migrate:storage
+```
+
+### What Each Script Does
+
+| Command | What it does |
+|---------|-------------|
+| `deploy:prod` | Runs all three steps below in order |
+| `deploy:prod:functions` | Pushes Convex functions (schema, queries, mutations) to production via `npx convex deploy` |
+| `deploy:prod:data` | Exports a snapshot of the local Convex database and imports it into production (replaces all data) |
+| `migrate:storage` | Downloads every file from local Convex storage, uploads to production storage, and updates media records with new storage IDs |
+
+### Step-by-Step Deploy Workflow
+
+1. **Make sure the local Convex dev server is running:**
+   ```bash
+   npx convex dev
+   ```
+
+2. **Run the full deploy:**
+   ```bash
+   bun run deploy:prod
+   ```
+
+3. **Trigger a rebuild on Netlify:**
+   - Go to Netlify dashboard → `azalea-staging-web` → Deploys
+   - Click **Trigger deploy** → **Clear cache and deploy site**
+
+> **Note:** The database snapshot export/import transfers document data but NOT file storage. That's why `deploy:prod` also runs the storage migration, which re-uploads all images to the production Convex deployment.
+
+### Environment Variables
+
+These must be set on **Netlify** (Site settings → Environment variables):
+
+| Variable | Value |
+|----------|-------|
+| `NEXT_PUBLIC_CONVEX_URL` | `https://resolute-emu-262.convex.cloud` |
+| `CONVEX_DEPLOYMENT` | Your production deployment name (for `npx convex codegen` during builds) |
+
+Local `.env.local` files point to `http://127.0.0.1:3210` for development and are not deployed.
 
 ## 📁 Project Structure
 
@@ -133,6 +193,11 @@ azalea-report/
 │   ├── media.ts                # Media management
 │   ├── locks.ts                # Editing locks
 │   └── birthdays.ts            # Birthday management
+├── scripts/                    # Deployment & migration scripts
+│   ├── deploy-to-prod.ts       # Full deploy (functions + data + storage)
+│   ├── migrate-storage.ts      # Migrate file storage to production
+│   ├── migrate-all.ts          # Content migration from markdown
+│   └── seed-birthdays.ts       # Seed birthday data
 ├── turbo.json                  # Turborepo config
 └── package.json                # Root package config
 ```
@@ -197,13 +262,14 @@ ISC
 
 ## 🚀 Deployment
 
-See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for complete deployment instructions.
+See the [Deploying to Production](#-deploying-to-production) section above for the deploy workflow, or [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for additional details.
 
 **Quick deployment:**
-1. Deploy Convex: `npx convex deploy`
-2. Deploy to Netlify (see deployment guide)
-3. Set environment variables
-4. Migrate content using admin panel
+```bash
+npx convex dev          # 1. Start local dev server
+bun run deploy:prod     # 2. Deploy functions + data + images
+                        # 3. Clear cache and redeploy on Netlify
+```
 
 ## 🔧 Troubleshooting
 
