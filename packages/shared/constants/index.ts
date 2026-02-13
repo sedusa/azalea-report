@@ -17,7 +17,9 @@ export type FieldType =
   | 'detailsArray'
   | 'bulletsArray'
   | 'podcastArray'  // Array of podcast episodes
-  | 'eventsArray';  // Array of events with date and title
+  | 'eventsArray'  // Array of events with date and title
+  | 'carouselSlidesArray'  // Array of carousel slides with title and image
+  | 'placesArray';  // Array of places with name, type, description, location, image, link
 
 // Pastel Color Palette for Section Backgrounds
 // All colors have good contrast with dark text (#333333)
@@ -449,6 +451,28 @@ export const SECTION_REGISTRY: Record<SectionType, SectionDefinition> = {
       author: 'SGMC Health',
       images: [],
       html: '',
+    }),
+  },
+
+  thingsToDoInValdosta: {
+    type: 'thingsToDoInValdosta',
+    label: 'Things To Do In Valdosta',
+    description: 'Places to visit in Valdosta with rotating carousel and place cards',
+    icon: 'mapPin',
+    fields: [
+      { name: 'sectionTitle', label: 'Section Title', type: 'text', required: false, placeholder: 'Things To Do In Valdosta' },
+      { name: 'carousel.slides', label: 'Carousel Slides', type: 'carouselSlidesArray', required: false },
+      { name: 'places', label: 'Places', type: 'placesArray', required: false },
+    ],
+    exampleData: () => ({
+      sectionTitle: '',
+      carousel: {
+        enabled: true,
+        autoplay: true,
+        intervalMs: 5000,
+        slides: [],
+      },
+      places: [],
     }),
   },
 

@@ -17,7 +17,8 @@ export type SectionType =
   | 'genericText'
   | 'twoColumn'
   | 'custom'
-  | 'eventsBirthdays';
+  | 'eventsBirthdays'
+  | 'thingsToDoInValdosta';
 
 // Issue Types
 export interface Issue {
@@ -302,6 +303,27 @@ export interface CustomSectionData {
   }>;
 }
 
+export interface ThingsToDoSectionData {
+  sectionTitle?: string;
+  carousel: {
+    enabled: boolean;
+    autoplay: boolean;
+    intervalMs: number;
+    slides: Array<{
+      title: string;
+      mediaId: string;
+    }>;
+  };
+  places: Array<{
+    name: string;
+    type: string;
+    description: string;
+    location: string;
+    mediaId?: string;
+    link?: string | null;
+  }>;
+}
+
 export interface EventsBirthdaysSectionData {
   eventsTitle?: string;
   events?: Array<{
@@ -358,4 +380,5 @@ export type SectionData =
   | TextCarouselSectionData
   | TwoColumnSectionData
   | CustomSectionData
-  | EventsBirthdaysSectionData;
+  | EventsBirthdaysSectionData
+  | ThingsToDoSectionData;

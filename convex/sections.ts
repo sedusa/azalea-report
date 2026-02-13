@@ -58,7 +58,8 @@ const sectionTypeValidator = v.union(
   v.literal("genericText"),
   v.literal("twoColumn"),
   v.literal("custom"),
-  v.literal("eventsBirthdays")
+  v.literal("eventsBirthdays"),
+  v.literal("thingsToDoInValdosta")
 );
 
 // Get all sections for an issue (ordered) with resolved media URLs
@@ -135,6 +136,29 @@ export const listByIssue = query({
               data.images.map(async (img: any) => ({
                 ...img,
                 mediaId: await resolveMediaUrl(ctx, img.mediaId) || img.mediaId,
+              }))
+            );
+          }
+        }
+
+        // Resolve thingsToDoInValdosta carousel slides and place images
+        if (section.type === 'thingsToDoInValdosta') {
+          if (data.carousel?.slides && Array.isArray(data.carousel.slides)) {
+            data.carousel = {
+              ...data.carousel,
+              slides: await Promise.all(
+                data.carousel.slides.map(async (slide: any) => ({
+                  ...slide,
+                  mediaId: await resolveMediaUrl(ctx, slide.mediaId) || slide.mediaId,
+                }))
+              ),
+            };
+          }
+          if (data.places && Array.isArray(data.places)) {
+            data.places = await Promise.all(
+              data.places.map(async (place: any) => ({
+                ...place,
+                mediaId: await resolveMediaUrl(ctx, place.mediaId) || place.mediaId,
               }))
             );
           }
@@ -286,6 +310,29 @@ export const listVisibleByIssue = query({
               data.images.map(async (img: any) => ({
                 ...img,
                 mediaId: await resolveMediaUrl(ctx, img.mediaId) || img.mediaId,
+              }))
+            );
+          }
+        }
+
+        // Resolve thingsToDoInValdosta carousel slides and place images
+        if (section.type === 'thingsToDoInValdosta') {
+          if (data.carousel?.slides && Array.isArray(data.carousel.slides)) {
+            data.carousel = {
+              ...data.carousel,
+              slides: await Promise.all(
+                data.carousel.slides.map(async (slide: any) => ({
+                  ...slide,
+                  mediaId: await resolveMediaUrl(ctx, slide.mediaId) || slide.mediaId,
+                }))
+              ),
+            };
+          }
+          if (data.places && Array.isArray(data.places)) {
+            data.places = await Promise.all(
+              data.places.map(async (place: any) => ({
+                ...place,
+                mediaId: await resolveMediaUrl(ctx, place.mediaId) || place.mediaId,
               }))
             );
           }

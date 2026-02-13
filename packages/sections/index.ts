@@ -42,6 +42,7 @@ export { CulturositySection } from './components/CulturositySection';
 export { PhotosOfMonthSection } from './components/PhotosOfMonthSection';
 export { EventsSection } from './components/EventsSection';
 export { EventsBirthdaysSection } from './components/EventsBirthdaysSection';
+export { ThingsToDoSection } from './components/ThingsToDoSection';
 
 // Export utility components
 export { ShowMore } from './components/ShowMore';

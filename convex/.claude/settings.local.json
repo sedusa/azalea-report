@@ -6,7 +6,9 @@
       "Bash(grep:*)",
       "Bash(python3:*)",
       "WebFetch(domain:azalea-staging-web.netlify.app)",
-      "Bash(bun run:*)"
+      "Bash(bun run:*)",
+      "Bash(npx tsc:*)",
+      "mcp__ide__getDiagnostics"
     ]
   }
 }

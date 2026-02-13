@@ -16,6 +16,7 @@ import type {
   PhotosOfMonthSectionData,
   EventsSectionData,
   EventsBirthdaysSectionData,
+  ThingsToDoSectionData,
 } from '@azalea/shared/types';
 import { SpotlightSection } from './SpotlightSection';
 import { ChiefsCornerSection } from './ChiefsCornerSection';
@@ -33,6 +34,7 @@ import { PhotosOfMonthSection } from './PhotosOfMonthSection';
 import { EventsSection } from './EventsSection';
 import { EventsBirthdaysSection } from './EventsBirthdaysSection';
 import { CulturositySection } from './CulturositySection';
+import { ThingsToDoSection } from './ThingsToDoSection';
 
 interface SectionRendererProps {
   section: Section;
@@ -99,6 +101,9 @@ export function SectionRenderer({ section }: SectionRendererProps) {
 
       case 'culturosity':
         return <CulturositySection data={section.data as unknown as CulturostySectionData} backgroundColor={section.backgroundColor} />;
+
+      case 'thingsToDoInValdosta':
+        return <ThingsToDoSection data={section.data as unknown as ThingsToDoSectionData} backgroundColor={section.backgroundColor} />;
 
       // TODO: Add remaining section types as they're migrated
       case 'carousel':
