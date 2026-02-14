@@ -26,7 +26,6 @@ yarn-error.log*
 
 # Convex
 .convex/
-convex/_generated/
 
 # OS
 .DS_Store
