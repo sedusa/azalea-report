@@ -1628,6 +1628,20 @@
       grid-template-columns: 1fr !important;
     }
 
+    /* Reduce inner card padding on mobile */
+    .events-birthdays-grid .section-with-bg {
+      padding: 1.5rem !important;
+    }
+
+    /* Consistent section padding on mobile for inline-styled sections */
+    .section-transparent {
+      padding: 0 !important;
+    }
+
+    .section-with-bg {
+      padding: 1.5rem !important;
+    }
+
     .theme-toggle,
     .settings-button {
       -webkit-tap-highlight-color: transparent;
@@ -1676,6 +1690,10 @@
 
     .section-card {
       padding: 1.25rem;
+    }
+
+    .section-with-bg {
+      padding: 1.25rem !important;
     }
 
     .basic-toggle-button {

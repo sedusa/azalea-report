@@ -155,7 +155,7 @@ export function EventsBirthdaysSection({ data, backgroundColor }: EventsBirthday
           <h2
             style={{
               fontFamily: "'Montserrat', sans-serif",
-              fontSize: '1.75rem',
+              fontSize: '1.5rem',
               fontWeight: 700,
               color: headingColor,
               marginBottom: '1.5rem',
@@ -167,8 +167,8 @@ export function EventsBirthdaysSection({ data, backgroundColor }: EventsBirthday
           {validEvents.length === 0 ? (
             <p
               style={{
-                fontFamily: "'Montserrat', sans-serif",
-                fontSize: '1.25rem',
+                fontFamily: "'Georgia', serif",
+                fontSize: '1.3rem',
                 color: '#333333',
               }}
             >
@@ -186,9 +186,9 @@ export function EventsBirthdaysSection({ data, backgroundColor }: EventsBirthday
                 <li
                   key={`${event.date}-${event.title}-${index}`}
                   style={{
-                    fontFamily: "'Montserrat', sans-serif",
-                    fontSize: '1.25rem',
-                    lineHeight: 1.4,
+                    fontFamily: "'Georgia', serif",
+                    fontSize: '1.3rem',
+                    lineHeight: 1.6,
                     marginBottom: '0.75rem',
                     color: '#333333',
                   }}
@@ -215,7 +215,7 @@ export function EventsBirthdaysSection({ data, backgroundColor }: EventsBirthday
           <h2
             style={{
               fontFamily: "'Lora', Georgia, serif",
-              fontSize: '1.75rem',
+              fontSize: '1.5rem',
               fontWeight: 700,
               fontStyle: 'italic',
               color: '#016f53',
@@ -229,8 +229,8 @@ export function EventsBirthdaysSection({ data, backgroundColor }: EventsBirthday
           {currentMonthBirthdays.length === 0 ? (
             <p
               style={{
-                fontFamily: "'Lora', Georgia, serif",
-                fontSize: '1.25rem',
+                fontFamily: "'Georgia', serif",
+                fontSize: '1.3rem',
                 color: '#333333',
               }}
             >
@@ -242,10 +242,10 @@ export function EventsBirthdaysSection({ data, backgroundColor }: EventsBirthday
                 <p
                   key={birthday._id}
                   style={{
-                    fontFamily: "'Lora', Georgia, serif",
-                    fontSize: '1.25rem',
+                    fontFamily: "'Georgia', serif",
+                    fontSize: '1.3rem',
                     margin: 0,
-                    lineHeight: 1.4,
+                    lineHeight: 1.6,
                   }}
                 >
                   <span style={{ fontWeight: 700, color: '#016f53' }}>{birthday.name}:</span>{' '}

@@ -53,7 +53,7 @@ export function BirthdaysSection({ data, backgroundColor }: BirthdaysSectionProp
       <h2
         style={{
           fontFamily: "'Lora', Georgia, serif",
-          fontSize: '1.75rem',
+          fontSize: '1.5rem',
           fontWeight: 700,
           fontStyle: 'italic',
           color: '#333333',
@@ -68,8 +68,8 @@ export function BirthdaysSection({ data, backgroundColor }: BirthdaysSectionProp
       {sortedBirthdays.length === 0 ? (
         <p
           style={{
-            fontFamily: "'Lora', Georgia, serif",
-            fontSize: '1.1rem',
+            fontFamily: "'Georgia', serif",
+            fontSize: '1.3rem',
             color: '#333333',
           }}
         >
@@ -81,11 +81,11 @@ export function BirthdaysSection({ data, backgroundColor }: BirthdaysSectionProp
             <p
               key={birthday._id}
               style={{
-                fontFamily: "'Lora', Georgia, serif",
-                fontSize: '1.25rem',
+                fontFamily: "'Georgia', serif",
+                fontSize: '1.3rem',
                 color: '#333333',
                 margin: 0,
-                lineHeight: 1.4,
+                lineHeight: 1.6,
               }}
             >
               <strong style={{ fontWeight: 700 }}>{birthday.name}:</strong>{' '}

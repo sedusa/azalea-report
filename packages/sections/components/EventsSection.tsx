@@ -95,8 +95,8 @@ export function EventsSection({ data, backgroundColor }: EventsSectionProps) {
             key={index}
             style={{
               color: textColor,
-              fontFamily: "'Montserrat', sans-serif",
-              fontSize: '1.1rem',
+              fontFamily: "'Georgia', serif",
+              fontSize: '1.3rem',
               lineHeight: 1.6,
               marginBottom: '0.5rem',
             }}

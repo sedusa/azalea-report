@@ -341,7 +341,7 @@ export function ThingsToDoSection({ data, backgroundColor }: ThingsToDoSectionPr
                     style={{
                       color: headingColor,
                       fontFamily: "'Montserrat', sans-serif",
-                      fontSize: '1.05rem',
+                      fontSize: '1.1rem',
                       fontWeight: 'bold',
                       margin: '0 0 0.25rem 0',
                     }}
@@ -353,8 +353,8 @@ export function ThingsToDoSection({ data, backgroundColor }: ThingsToDoSectionPr
                     <p
                       style={{
                         color: mutedColor,
-                        fontFamily: "'Montserrat', sans-serif",
-                        fontSize: '0.8rem',
+                        fontFamily: "'Georgia', serif",
+                        fontSize: '0.85rem',
                         margin: '0 0 0.5rem 0',
                         fontStyle: 'italic',
                       }}
@@ -381,9 +381,9 @@ export function ThingsToDoSection({ data, backgroundColor }: ThingsToDoSectionPr
                   <p
                     style={{
                       color: textColor,
-                      fontFamily: "'Montserrat', sans-serif",
-                      fontSize: '0.9rem',
-                      lineHeight: 1.5,
+                      fontFamily: "'Georgia', serif",
+                      fontSize: '1rem',
+                      lineHeight: 1.6,
                       margin: '0 0 0.75rem 0',
                     }}
                   >
@@ -397,8 +397,8 @@ export function ThingsToDoSection({ data, backgroundColor }: ThingsToDoSectionPr
                       rel="noopener noreferrer"
                       style={{
                         color: headingColor,
-                        fontFamily: "'Montserrat', sans-serif",
-                        fontSize: '0.9rem',
+                        fontFamily: "'Georgia', serif",
+                        fontSize: '0.95rem',
                         fontWeight: '600',
                         textDecoration: 'none',
                       }}
