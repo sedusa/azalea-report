@@ -1440,7 +1440,7 @@
 
   @media (max-width: 768px) {
     .newsletter-container {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       padding: 0 1rem;
     }
 
@@ -1491,12 +1491,12 @@
     .chief-text,
     .intern-text,
     .basic-text {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       line-height: 1.7;
     }
 
     .basic-description {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
 
     .chiefs-section,
@@ -1562,7 +1562,7 @@
     }
 
     .section-card p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
 
     /* Two Column Layout - Stack on mobile (matches TwoColumnLayout.module.css) */
@@ -1584,7 +1584,7 @@
     }
 
     .spotlightText {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       line-height: 1.7;
     }
 
@@ -1593,7 +1593,7 @@
     }
 
     .featureBullets {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
 
     /* Text Image Section - stack on mobile */
@@ -1630,7 +1630,7 @@
 
     /* Consistent section padding on mobile for inline-styled sections */
     .section-transparent {
-      padding: 0 !important;
+      padding: 0 1.25rem !important;
     }
 
     .section-with-bg {
