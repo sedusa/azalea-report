@@ -145,6 +145,7 @@ export function EventsBirthdaysSection({ data, backgroundColor }: EventsBirthday
       >
         {/* Left Column: Upcoming Events */}
         <div
+          className="section-with-bg"
           style={{
             backgroundColor: eventsBackgroundColor || '#f7f3e8',
             borderRadius: 'var(--radius, 0.75rem)',
@@ -204,6 +205,7 @@ export function EventsBirthdaysSection({ data, backgroundColor }: EventsBirthday
 
         {/* Right Column: Birthdays */}
         <div
+          className="section-with-bg"
           style={{
             backgroundColor: birthdaysBackgroundColor,
             borderRadius: 'var(--radius, 0.75rem)',
