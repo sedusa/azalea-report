@@ -10,7 +10,7 @@
     "dev": "turbo dev",
     "dev:web": "turbo dev --filter=@azalea/web",
     "dev:admin": "turbo dev --filter=@azalea/admin",
-    "build": "turbo build",
+    "build": "npx convex codegen && turbo build",
     "build:web": "turbo build --filter=@azalea/web",
     "build:admin": "turbo build --filter=@azalea/admin",
     "lint": "turbo lint",
