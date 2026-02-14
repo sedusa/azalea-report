@@ -16,7 +16,8 @@
       "Bash(gh repo view:*)",
       "Bash(gh api:*)",
       "Bash(npx convex:*)",
-      "Bash(CONVEX_DEPLOYMENT=prod:resolute-emu-262 npx convex codegen:*)"
+      "Bash(CONVEX_DEPLOYMENT=prod:resolute-emu-262 npx convex codegen:*)",
+      "Bash(npx next build)"
     ]
   }
 }

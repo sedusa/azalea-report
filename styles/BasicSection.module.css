@@ -87,16 +87,16 @@
 
 @media (max-width: 768px) {
   .sectionTitle {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
   }
 
   .basicText, {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .basicDescription {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .basicText :global(.imageGrid) {

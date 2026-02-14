@@ -46,7 +46,7 @@ export function InternsCornerSection({ data, backgroundColor }: InternsCornerSec
     >
       {/* Section Title - always green regardless of theme */}
       {sectionTitle && (
-        <h2 className="section-title" style={{ padding: '2rem 2rem 0 2rem', color: '#016f53' }}>
+        <h2 className="section-title" style={{ padding: '1rem 1.25rem 0', color: '#016f53' }}>
           {sectionTitle}
         </h2>
       )}

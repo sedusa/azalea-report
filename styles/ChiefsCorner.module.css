@@ -62,18 +62,18 @@
 
 @media (max-width: 768px) {
   .sectionTitle {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
   }
-  
+
   .chiefsSection {
     flex-direction: column;
-    padding: 1rem;
+    padding: 0.75rem 1.25rem;
   }
 
   .chiefColumn {
     flex-basis: 100%;
-    padding: 1rem;
+    padding: 0.75rem 0;
   }
   .chiefImage {
     width: 200px;
@@ -83,12 +83,12 @@
   }
 
   .chiefName {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     text-align: left;
   }
 
   .chiefText {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.7;
     padding: 0;
     text-align: left;
@@ -98,6 +98,6 @@
     display: block;
     font-family: 'Georgia', serif;
     margin: 1rem 0 0;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }

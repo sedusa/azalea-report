@@ -1440,7 +1440,7 @@
 
   @media (max-width: 768px) {
     .newsletter-container {
-      font-size: 1.1rem;
+      font-size: 1rem;
       padding: 0 1rem;
     }
 
@@ -1483,7 +1483,7 @@
     }
 
     .section-title {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       margin-bottom: 1rem;
     }
 
@@ -1491,24 +1491,24 @@
     .chief-text,
     .intern-text,
     .basic-text {
-      font-size: 1.1rem;
+      font-size: 1rem;
       line-height: 1.7;
     }
 
     .basic-description {
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
 
     .chiefs-section,
     .interns-section {
       flex-direction: column;
-      padding: 1rem;
+      padding: 0.75rem 1.25rem;
     }
 
     .chief-column,
     .intern-column {
       flex-basis: 100%;
-      padding: 1rem;
+      padding: 0.75rem 0;
     }
 
     .chief-image,
@@ -1521,7 +1521,7 @@
 
     .chief-name,
     .intern-name {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       text-align: left;
     }
 
@@ -1535,7 +1535,7 @@
       display: block;
       font-family: 'Georgia', serif;
       margin: 1rem 0 0;
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
 
     .spotlight-grid,
@@ -1562,7 +1562,7 @@
     }
 
     .section-card p {
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
 
     /* Two Column Layout - Stack on mobile (matches TwoColumnLayout.module.css) */
@@ -1579,21 +1579,21 @@
     }
 
     .sectionTitle {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       margin-bottom: 1rem;
     }
 
     .spotlightText {
-      font-size: 1.1rem;
+      font-size: 1rem;
       line-height: 1.7;
     }
 
     .featureSubtitle {
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
 
     .featureBullets {
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
 
     /* Text Image Section - stack on mobile */
@@ -1634,7 +1634,7 @@
     }
 
     .section-with-bg {
-      padding: 1.25rem !important;
+      padding: 0.75rem 1.25rem !important;
     }
 
     .theme-toggle,
@@ -1692,7 +1692,7 @@
     }
 
     .section-with-bg {
-      padding: 1rem !important;
+      padding: 0.5rem 1rem !important;
     }
 
     .basic-toggle-button {
