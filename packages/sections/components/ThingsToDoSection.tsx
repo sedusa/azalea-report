@@ -359,7 +359,22 @@ export function ThingsToDoSection({ data, backgroundColor }: ThingsToDoSectionPr
                         fontStyle: 'italic',
                       }}
                     >
-                      {place.type} &middot; {place.location}
+                      {place.type} &middot;{' '}
+                      {place.googleMapsUrl ? (
+                        <a
+                          href={place.googleMapsUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            color: headingColor,
+                            textDecoration: 'underline',
+                          }}
+                        >
+                          {place.location}
+                        </a>
+                      ) : (
+                        place.location
+                      )}
                     </p>
                   )}
 

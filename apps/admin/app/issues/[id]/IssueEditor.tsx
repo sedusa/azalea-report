@@ -33,10 +33,11 @@ import { useUndoRedo } from '@/hooks/useUndoRedo';
 import { SECTION_REGISTRY } from '@azalea/shared/constants';
 import type { SectionType, Section, Issue } from '@azalea/shared/types';
 import { toast } from 'sonner';
-import { LuEye, LuUndo2, LuRedo2, LuArrowLeft, LuMenu, LuX, LuSave, LuTrash2, LuStar } from 'react-icons/lu';
+import { LuEye, LuUndo2, LuRedo2, LuArrowLeft, LuMenu, LuX, LuSave, LuTrash2, LuStar, LuImage } from 'react-icons/lu';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ImagePicker } from '@/components/ImagePicker';
+import { MediaLibrary } from '@/components/MediaLibrary';
 
 interface IssueEditorProps {
   issueId: string;
@@ -48,6 +49,7 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
   const [showPreview, setShowPreview] = useState(false);
   const [showMobileDrawer, setShowMobileDrawer] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [showMediaLibrary, setShowMediaLibrary] = useState(false);
   const [activeId, setActiveId] = useState<string | null>(null);
   const [activePaletteType, setActivePaletteType] = useState<SectionType | null>(null);
   const [bannerData, setBannerData] = useState<{
@@ -632,6 +634,18 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
         </div>
 
         <div className="flex items-center gap-3">
+          {/* Media Library Button */}
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setShowMediaLibrary(true)}
+            title="Media Library"
+            className="btn-ghost flex items-center gap-2"
+          >
+            <LuImage className="w-4 h-4" />
+            <span className="hidden sm:inline">Media</span>
+          </Button>
+
           {/* Undo/Redo Buttons */}
           <div className="hidden md:flex items-center gap-1 mr-2 pr-3 border-r" style={{ borderColor: 'rgb(var(--border-primary))' }}>
             <Button
@@ -901,6 +915,18 @@ export function IssueEditor({ issueId }: IssueEditorProps) {
           sections={sections as Section[]}
           onClose={() => setShowPreview(false)}
         />
+      </Modal>
+
+      {/* Media Library Modal */}
+      <Modal
+        isOpen={showMediaLibrary}
+        onClose={() => setShowMediaLibrary(false)}
+        title="Media Library"
+        size="xl"
+      >
+        <div className="h-[600px]">
+          <MediaLibrary mode="manage" />
+        </div>
       </Modal>
     </div>
 

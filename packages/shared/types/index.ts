@@ -319,6 +319,7 @@ export interface ThingsToDoSectionData {
     type: string;
     description: string;
     location: string;
+    googleMapsUrl?: string | null;
     mediaId?: string;
     link?: string | null;
   }>;

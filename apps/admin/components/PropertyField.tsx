@@ -344,7 +344,7 @@ export function PropertyField({ field, value, onChange }: PropertyFieldProps) {
       return (
         <PlacesArrayEditor
           label={field.label}
-          value={value as { name: string; type: string; description: string; location: string; mediaId?: string; link?: string | null }[] | undefined}
+          value={value as { name: string; type: string; description: string; location: string; googleMapsUrl?: string | null; mediaId?: string; link?: string | null }[] | undefined}
           onChange={onChange}
           required={field.required}
           maxItems={20}
