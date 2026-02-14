@@ -42,11 +42,38 @@ export function PropertyPanel({ section, onUpdate, onBackgroundColorChange }: Pr
 
   const sectionDef = SECTION_REGISTRY[section.type];
 
+  const getNestedValue = (data: Record<string, unknown>, path: string): unknown => {
+    const keys = path.split('.');
+    let current: unknown = data;
+    for (const key of keys) {
+      if (current == null || typeof current !== 'object') return undefined;
+      current = (current as Record<string, unknown>)[key];
+    }
+    return current;
+  };
+
+  const setNestedValue = (data: Record<string, unknown>, path: string, value: unknown): Record<string, unknown> => {
+    const keys = path.split('.');
+    if (keys.length === 1) {
+      return { ...data, [keys[0]]: value };
+    }
+    const [first, ...rest] = keys;
+    const child = (data[first] as Record<string, unknown>) || {};
+    return {
+      ...data,
+      [first]: setNestedValue({ ...child }, rest.join('.'), value),
+    };
+  };
+
   const handleFieldChange = (fieldName: string, value: unknown) => {
-    onUpdate({
-      ...section.data,
-      [fieldName]: value,
-    });
+    if (fieldName.includes('.')) {
+      onUpdate(setNestedValue({ ...(section.data as Record<string, unknown>) }, fieldName, value));
+    } else {
+      onUpdate({
+        ...section.data,
+        [fieldName]: value,
+      });
+    }
   };
 
   return (
@@ -101,7 +128,7 @@ export function PropertyPanel({ section, onUpdate, onBackgroundColorChange }: Pr
           <PropertyField
             key={field.name}
             field={field}
-            value={(section.data as Record<string, unknown>)[field.name]}
+            value={field.name.includes('.') ? getNestedValue(section.data as Record<string, unknown>, field.name) : (section.data as Record<string, unknown>)[field.name]}
             onChange={(value) => handleFieldChange(field.name, value)}
           />
         ))}

@@ -12,6 +12,8 @@ import { BulletsArrayEditor } from './BulletsArrayEditor';
 import { ImagesWithCaptionsEditor } from './ImagesWithCaptionsEditor';
 import { PodcastArrayEditor } from './PodcastArrayEditor';
 import { EventsArrayEditor } from './EventsArrayEditor';
+import { CarouselSlidesArrayEditor } from './CarouselSlidesArrayEditor';
+import { PlacesArrayEditor } from './PlacesArrayEditor';
 
 interface PropertyFieldProps {
   field: FieldDefinition;
@@ -321,6 +323,28 @@ export function PropertyField({ field, value, onChange }: PropertyFieldProps) {
         <EventsArrayEditor
           label={field.label}
           value={value as { date: string; title: string }[] | undefined}
+          onChange={onChange}
+          required={field.required}
+          maxItems={20}
+        />
+      );
+
+    case 'carouselSlidesArray':
+      return (
+        <CarouselSlidesArrayEditor
+          label={field.label}
+          value={value as { title: string; mediaId: string }[] | undefined}
+          onChange={onChange}
+          required={field.required}
+          maxItems={20}
+        />
+      );
+
+    case 'placesArray':
+      return (
+        <PlacesArrayEditor
+          label={field.label}
+          value={value as { name: string; type: string; description: string; location: string; mediaId?: string; link?: string | null }[] | undefined}
           onChange={onChange}
           required={field.required}
           maxItems={20}
