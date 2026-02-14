@@ -8,7 +8,15 @@
       "WebFetch(domain:azalea-staging-web.netlify.app)",
       "Bash(bun run:*)",
       "Bash(npx tsc:*)",
-      "mcp__ide__getDiagnostics"
+      "mcp__ide__getDiagnostics",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git branch:*)",
+      "Bash(gh repo view:*)",
+      "Bash(gh api:*)",
+      "Bash(npx convex:*)",
+      "Bash(CONVEX_DEPLOYMENT=prod:resolute-emu-262 npx convex codegen:*)"
     ]
   }
 }
