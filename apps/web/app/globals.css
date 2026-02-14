@@ -511,6 +511,24 @@
     color: var(--accent-green-hover) !important;
   }
 
+  /* section-with-bg overrides section-transparent when nested inside it */
+  .section-with-bg,
+  .section-with-bg *,
+  .section-with-bg p,
+  .section-with-bg div,
+  .section-with-bg span,
+  .section-with-bg li {
+    color: #333333 !important;
+  }
+
+  .section-with-bg h2,
+  .section-with-bg h3,
+  .section-with-bg h4,
+  .section-with-bg strong,
+  .section-with-bg a {
+    color: #016f53 !important;
+  }
+
   /* Spotlight section - matches ResidentSpotlight.module.css */
   /* Always has pastel background so text must always be dark */
   .spotlight-container {
