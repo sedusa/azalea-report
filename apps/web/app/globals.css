@@ -1441,11 +1441,11 @@
   @media (max-width: 768px) {
     .newsletter-container {
       font-size: 1.2rem;
-      padding: 0 0.5rem;
+      padding: 0 1rem;
     }
 
     .main-content {
-      padding: 1.5rem 0;
+      padding: 1rem 0;
     }
 
     .header-title {
@@ -1553,7 +1553,7 @@
     }
 
     .section-card {
-      padding: 1.5rem;
+      padding: 1.25rem;
     }
 
     .section-card h2 {
@@ -1628,18 +1628,13 @@
       grid-template-columns: 1fr !important;
     }
 
-    /* Reduce inner card padding on mobile */
-    .events-birthdays-grid .section-with-bg {
-      padding: 1.5rem !important;
-    }
-
     /* Consistent section padding on mobile for inline-styled sections */
     .section-transparent {
       padding: 0 !important;
     }
 
     .section-with-bg {
-      padding: 1.5rem !important;
+      padding: 1.25rem !important;
     }
 
     .theme-toggle,
@@ -1663,6 +1658,10 @@
   }
 
   @media (max-width: 480px) {
+    .newsletter-container {
+      padding: 0 0.75rem;
+    }
+
     .banner-text {
       bottom: 16px;
       left: 16px;
@@ -1689,11 +1688,11 @@
     }
 
     .section-card {
-      padding: 1.25rem;
+      padding: 1rem;
     }
 
     .section-with-bg {
-      padding: 1.25rem !important;
+      padding: 1rem !important;
     }
 
     .basic-toggle-button {

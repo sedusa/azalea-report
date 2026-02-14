@@ -133,7 +133,7 @@ export function ThingsToDoSection({ data, backgroundColor }: ThingsToDoSectionPr
                     <p
                       style={{
                         color: '#ffffff',
-                        fontFamily: "'Montserrat', sans-serif",
+                        fontFamily: "'Georgia', serif",
                         fontSize: '1.1rem',
                         fontWeight: 'bold',
                         margin: 0,
@@ -326,7 +326,7 @@ export function ThingsToDoSection({ data, backgroundColor }: ThingsToDoSectionPr
                         alignItems: 'center',
                         justifyContent: 'center',
                         color: mutedColor,
-                        fontFamily: "'Montserrat', sans-serif",
+                        fontFamily: "'Georgia', serif",
                         fontSize: '0.85rem',
                       }}
                     >
@@ -382,7 +382,7 @@ export function ThingsToDoSection({ data, backgroundColor }: ThingsToDoSectionPr
                     style={{
                       color: textColor,
                       fontFamily: "'Georgia', serif",
-                      fontSize: '1rem',
+                      fontSize: '1.1rem',
                       lineHeight: 1.6,
                       margin: '0 0 0.75rem 0',
                     }}
