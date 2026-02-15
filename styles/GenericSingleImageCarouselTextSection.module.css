@@ -94,12 +94,18 @@
     margin-bottom: 1rem;
   }
 
+  .genericContent {
+    padding: 20px;
+  }
+
   .genericText {
     font-size: 18px;
+    line-height: 1.7;
   }
 
   .genericDescription {
     font-size: 18px;
+    line-height: 1.7;
   }
 
   .genericCoverImageCaption {

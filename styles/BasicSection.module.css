@@ -94,12 +94,18 @@
     margin-bottom: 1rem;
   }
 
+  .basicContent {
+    padding: 20px;
+  }
+
   .basicText {
     font-size: 18px;
+    line-height: 1.7;
   }
 
   .basicDescription {
     font-size: 18px;
+    line-height: 1.7;
   }
 
   .basicCoverImageCaption {

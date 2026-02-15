@@ -94,12 +94,18 @@
     margin-bottom: 1rem;
   }
 
+  .culturosityContent {
+    padding: 20px;
+  }
+
   .culturosityText {
     font-size: 18px;
+    line-height: 1.7;
   }
 
   .culturosityDescription {
     font-size: 18px;
+    line-height: 1.7;
   }
 
   .culturosityCoverImageCaption {
