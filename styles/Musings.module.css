@@ -71,7 +71,9 @@
     padding: 1.2rem;
   }
 
-  .musingsText {
+  .musingsText,
+  .musingsText p,
+  .musingsText div {
     font-size: 18px !important;
     line-height: 1.7 !important;
   }

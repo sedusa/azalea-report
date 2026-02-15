@@ -135,7 +135,9 @@
     font-size: 0.85rem;
   }
 
-  .employeeSpotlightDescription {
+  .employeeSpotlightDescription,
+  .employeeSpotlightDescription p,
+  .employeeSpotlightDescription div {
     font-size: 18px !important;
     line-height: 1.7 !important;
     text-align: left;

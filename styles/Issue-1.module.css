@@ -142,9 +142,15 @@
   }
 
   .text,
+  .text p,
+  .text div,
   .birthdayItem,
   .chiefText,
-  .recentSuccessText {
+  .chiefText p,
+  .chiefText div,
+  .recentSuccessText,
+  .recentSuccessText p,
+  .recentSuccessText div {
     font-size: 18px !important;
     line-height: 1.7 !important;
   }
@@ -203,7 +209,9 @@
     order: 1;
   }
 
-  .spotlightText {
+  .spotlightText,
+  .spotlightText p,
+  .spotlightText div {
     font-size: 18px !important;
     line-height: 1.7 !important;
   }
@@ -398,7 +406,9 @@
     width: 200px;
   }
 
-  .programDirectorMessage {
+  .programDirectorMessage,
+  .programDirectorMessage p,
+  .programDirectorMessage div {
     color: #333;
     font-size: 18px !important;
     line-height: 1.7 !important;
@@ -499,7 +509,9 @@
     margin-bottom: 1rem;
   }
 
-  .recentSuccessText {
+  .recentSuccessText,
+  .recentSuccessText p,
+  .recentSuccessText div {
     font-size: 18px !important;
     line-height: 1.7 !important;
   }
@@ -619,7 +631,9 @@
     font-size: 1.5rem;
   }
 
-  .communityServiceCornerText {
+  .communityServiceCornerText,
+  .communityServiceCornerText p,
+  .communityServiceCornerText div {
     font-size: 18px !important;
     line-height: 1.7 !important;
     color: #333;
@@ -759,7 +773,9 @@
     font-size: 1.5rem;
   }
 
-  .wellnessTipText {
+  .wellnessTipText,
+  .wellnessTipText p,
+  .wellnessTipText div {
     font-size: 18px !important;
     line-height: 1.7 !important;
   }
@@ -866,7 +882,9 @@
     padding-bottom: 10px;
   }
 
-  .thingsToDoDescription {
+  .thingsToDoDescription,
+  .thingsToDoDescription p,
+  .thingsToDoDescription div {
     font-size: 18px !important;
     line-height: 1.7 !important;
   }
@@ -1031,7 +1049,9 @@
     text-align: left;
   }
 
-  .employeeSpotlightDescription {
+  .employeeSpotlightDescription,
+  .employeeSpotlightDescription p,
+  .employeeSpotlightDescription div {
     font-size: 18px !important;
     line-height: 1.7 !important;
   }

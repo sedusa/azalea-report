@@ -98,12 +98,15 @@
     padding: 20px;
   }
 
-  .basicText {
+  .basicText,
+  .basicText p,
+  .basicText div {
     font-size: 18px !important;
     line-height: 1.7 !important;
   }
 
-  .basicDescription {
+  .basicDescription,
+  .basicDescription p {
     font-size: 18px !important;
     line-height: 1.7 !important;
   }

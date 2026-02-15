@@ -96,7 +96,9 @@
     padding: 20px;
   }
 
-  .recentSuccessText {
+  .recentSuccessText,
+  .recentSuccessText p,
+  .recentSuccessText div {
     color: #333;
     font-size: 18px !important;
     line-height: 1.7 !important;

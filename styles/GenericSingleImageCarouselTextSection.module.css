@@ -98,12 +98,15 @@
     padding: 20px;
   }
 
-  .genericText {
+  .genericText,
+  .genericText p,
+  .genericText div {
     font-size: 18px !important;
     line-height: 1.7 !important;
   }
 
-  .genericDescription {
+  .genericDescription,
+  .genericDescription p {
     font-size: 18px !important;
     line-height: 1.7 !important;
   }

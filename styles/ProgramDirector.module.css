@@ -65,7 +65,9 @@
     width: 200px;
   }
 
-  .programDirectorMessage {
+  .programDirectorMessage,
+  .programDirectorMessage p,
+  .programDirectorMessage div {
     color: #333;
     font-size: 18px !important;
     line-height: 1.7 !important;
