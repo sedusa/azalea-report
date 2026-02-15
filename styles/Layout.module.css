@@ -72,12 +72,10 @@
 
   .themeToggle {
     -webkit-tap-highlight-color: transparent;
-    -webkit-text-size-adjust: 100%;
     font-size: 20px;
     height: 3rem;
     min-height: 3rem;
     min-width: 3rem;
-    text-size-adjust: 100%;
     width: 3rem;
 
     & svg {
