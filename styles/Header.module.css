@@ -83,6 +83,16 @@
   transform: scaleX(1);
 }
 
+.disabledLink {
+  color: #999;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 .container {
   padding-top: 60px; 
 }

@@ -31,7 +31,14 @@
 body {
   background-color: var(--background-color);
   color: var(--text-color);
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  line-height: 1.6;
   transition: all 0.01s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
 }
 
 * {

@@ -7,11 +7,11 @@ banner:
   date: January 2026
 about:
   sectionTitle:
-  content: Welcome 👋🏼 to the Azalea Report - where the blooms of South Georgia Health's Internal Medicine Residency program come to life! As we step into 2026, we're excited to continue cultivating the brilliant minds and inspiring stories flourishing in our program. Like the azaleas that will soon paint Valdosta in stunning color this spring, our residents are preparing to bloom with new opportunities, fresh perspectives, and renewed dedication. From program milestones to personal celebrations, we're here to bring you all the buzz from the Azalea City. Join us as we plant the seeds for another year of excellence, growth, and community! 🌸 🌸 🌸<br/><br/> Sincerely,
+  content: Welcome 👋🏼 to the Azalea Report! As we kick off 2026, we're bringing you the latest from SGMC Health's Internal Medicine Residency program. It's been a busy season — new chief residents, conference wins, community outreach, and plenty of reasons to celebrate. Spring is around the corner in the Azalea City, and there's a lot to look forward to. Here's what's been happening. 🌸<br/><br/> Sincerely,
   signature: The Azalea Report team
 program:
   title: About the Program
-  about: SGMC Health's Internal Medicine Residency Program, partnering with Mercer University School of Medicine, delivers academic excellence and hands-on training to address primary care needs in rural and underserved Georgia communities.
+  about: SGMC Health's Internal Medicine Residency Program partners with Mercer University School of Medicine to train physicians for primary care in rural and underserved Georgia communities.
   sgmcImage: /img/sgmc.jpg
   sgmcImageCaption: Aerial view of SGMC in Valdosta, GA
   statistics:
@@ -39,38 +39,38 @@ genericSingleImageTextSection:
   coverImage: /img/new-chiefs-2026.jpeg
   imageCaption: Outgoing Chief Residents Mariya Tom, MD, and Brandon Rockwell, MD; Internal Medicine Program Director Greg Beale, MD, and Associate Program Director Leslie Lamptey, MD; 2026 Chief Residents Ornob Rahman, MD, and Samuel Edusa, MD
   content: >
-    <p>SGMC Health's Graduate Medical Education program announced the appointment of Samuel Edusa, MD and Ornob Rahman, MD as Chief Residents for the Internal Medicine Residency Program beginning in March 2026. Selected by their peers and approved by faculty, both physicians were recognized for exceptional leadership, professionalism, and clinical excellence.</p>
+    <p>SGMC Health's Graduate Medical Education program announced the appointment of Samuel Edusa, MD and Ornob Rahman, MD as Chief Residents for the Internal Medicine Residency Program beginning in March 2026. Their peers selected them, and faculty approved the appointments.</p>
 
-    <p>During their one-year term, Dr. Edusa and Dr. Rahman will serve as liaisons between residents and faculty, lead educational conferences, coordinate schedules, supervise trainees, and champion resident well-being while overseeing both Internal Medicine and Transitional Year residents.</p>
+    <p>During their one-year term, Dr. Edusa and Dr. Rahman will coordinate between residents and faculty, lead educational conferences, manage schedules, supervise trainees, and support resident well-being across both Internal Medicine and Transitional Year programs.</p>
 
-    <p>Dr. Edusa graduated from the University of Ghana Medical School, where he developed a reputation for clinical excellence and compassionate mentorship. Dr. Rahman earned his medical degree from the University of Medicine and Health Sciences in St. Kitts.</p>
+    <p>Dr. Edusa graduated from the University of Ghana Medical School. Dr. Rahman earned his medical degree from the University of Medicine and Health Sciences in St. Kitts.</p>
 
-    <p>"Dr. Edusa and Dr. Rahman represent the future of medicine," said Greg Beale, MD, Program Director of the Internal Medicine Residency Program. "Their dedication to education and patient care will strengthen our residency program and inspire the next generation of physicians."</p>
+    <p>"We're excited to have Dr. Edusa and Dr. Rahman leading the program," said Greg Beale, MD, Program Director. "They bring strong clinical skills and a real commitment to education and patient care."</p>
 
-    <p>SGMC Health's Medical Education program continues to expand. In addition to Internal Medicine and Transitional Year residencies, the system will launch a Family Medicine residency program in summer 2026. SGMC Health also serves as a clinical campus for Mercer University School of Medicine, providing third- and fourth-year medical students with hands-on clinical training.</p>
+    <p>SGMC Health's Medical Education program is also growing. Beyond Internal Medicine and Transitional Year residencies, a Family Medicine residency program launches in summer 2026. SGMC Health is a clinical campus for Mercer University School of Medicine, where third- and fourth-year medical students complete clinical rotations.</p>
 chiefsCorner:
   title: The Chiefs' Corner
   chiefs:
     - name: Mariya Tom, MD
       image: /img/mariya-tom-md.jpeg
       content: >
-        Meet our Chief Resident, Dr. Mariya Tom, who brings the heart of Atlanta and a dancer's grace to our program. Her journey into medicine began with family—uncles and aunties whose tireless work in healthcare shaped her understanding of what it truly means to be a physician. Their stories of patient care and the fulfillment found in saving lives became the foundation of her medical calling.
+        Meet our Chief Resident, Dr. Mariya Tom, from Atlanta. She grew up watching uncles and aunties work in healthcare, and their stories about patient care are what drew her to medicine.
 
-        A trained professional Indian classical dancer with a passion for Zumba, Dr. Tom embodies the balance between artistic expression and clinical excellence. When she's not in the hospital, you'll find her traveling, reading, or back home in Atlanta with her husband and family, often recharging with her go-to comfort food of chicken and rice after long shifts.
+        Outside the hospital, Dr. Tom is a trained Indian classical dancer who also loves Zumba. She travels when she can, reads when she can't, and recharges in Atlanta with her husband and family. Her comfort food after long shifts? Chicken and rice.
 
-        Dr. Tom's clinical interests center on endocrinology, with post-residency plans including fellowship training before returning to Atlanta to build both her practice and family life. Her guidance to incoming residents reflects hard-earned wisdom: "Give yourself grace. You'll make mistakes. Own them, learn from them, and forgive yourself. Progress, not perfection, is the goal."
+        She's interested in endocrinology and plans to pursue fellowship training before heading back to Atlanta. Her advice to incoming residents: "Give yourself grace. You'll make mistakes. Own them, learn from them, and forgive yourself. Progress, not perfection, is the goal."
 
-        The advice that has anchored her own journey continues to shape her leadership: "Be the doctor you would want for your own family." This principle has kept her grounded and compassionate through the most challenging days, reminding her to communicate clearly, stay present, and care deeply for every patient. Dr. Tom's blend of clinical expertise, cultural richness, and artistic soul represents the multifaceted nature of healers who bring their whole selves to the art of caring for others.
+        The principle that guides her: "Be the doctor you would want for your own family." It keeps her grounded on the hardest days and reminds her to communicate clearly, stay present, and actually care about every patient.
     - name: Brandon Rockwell, MD
       image: /img/brandon-rockwell-md.jpeg
       content: >
-        Meet Dr. Brandon Rockwell, our Chief Resident from Warner Robins, Georgia, who discovered his calling at the intersection of his fascination with the natural world and desire to help others thrive. Internal medicine represents the perfect convergence of intellectual curiosity and meaningful human connection, allowing him to channel his analytical nature into creating positive change in patients' lives.
+        Meet Dr. Brandon Rockwell, our Chief Resident from Warner Robins, Georgia. He got into internal medicine because he likes figuring things out and he likes people. That's pretty much the job description.
 
-        An avid sports enthusiast, Dr. Rockwell follows college athletics with passion while staying active through pickleball and regular gym sessions. His love for reading feeds his intellectual appetite, and he's developed a unique hobby of brewing his own kombucha. After demanding shifts, he unwinds with his favorite comfort meal: a hearty steak burrito loaded with queso.
+        He follows college athletics closely, plays pickleball, hits the gym, and reads a lot. He also brews his own kombucha, which is either impressive or concerning depending on who you ask. After long shifts, his go-to is a steak burrito loaded with queso.
 
-        Dr. Rockwell's professional aspirations center on primary care, where he envisions building lasting relationships with patients and serving as their advocate throughout their healthcare journey. His philosophy for succeeding in residency is refreshingly straightforward: "Trust your gut. Diligence outlasts intelligence and talent." The guidance that has shaped his own path emphasizes embracing challenges: "If deciding between two things, the right answer is likely whichever is more work."
+        Dr. Rockwell plans to go into primary care. He wants to build long-term relationships with patients and actually be their doctor, not just someone they see once. His residency philosophy: "Trust your gut. Diligence outlasts intelligence and talent." And when choosing between two options: "The right answer is probably whichever is more work."
 
-        Interestingly, if medicine hadn't captured his heart, Dr. Rockwell might have found himself in plumbing—a profession that, like medicine, requires problem-solving skills, attention to detail, and the satisfaction of fixing what's broken. His practical mindset and dedication to helping others showcase the versatile spirit he brings to our residency program.
+        If medicine hadn't worked out, he says he'd have gone into plumbing. Same idea, really: figure out what's broken, fix it, move on to the next problem.
 recentSuccess:
   sectionTitle: Recent Success
   title: SGMC Residents Shine Bright at recent Georgia ACP Conference in Atlanta, GA
@@ -97,7 +97,7 @@ recentSuccess:
     - image: /img/acp25/poster-7.jpeg
       caption: "Dr. Edusa"
   content: >
-    <p>Our residents shone brightly at the Georgia ACP conference in Atlanta! They presented compelling posters, delivered captivating oral podium presentations, and competed in the always-intense Jeopardy competition. The SGMC Internal Medicine Residency Program couldn't be prouder. Their outstanding performance brought recognition to our program and set a new benchmark for future residents. As we celebrate this year's achievements, we're already excited for an even stronger showing next year. Strong work 💪🏼 everyone!</p><br/>
+    <p>Our residents had a great showing at the Georgia ACP conference in Atlanta. They presented posters, gave oral podium presentations, and competed in the Jeopardy competition. The whole team represented the program well, and we're already looking forward to next year. Strong work 💪🏼 everyone!</p><br/>
 
 communityServiceCorner:
   sectionTitle: Community Service Corner
@@ -106,9 +106,9 @@ communityServiceCorner:
   image: /img/agexpo25/beale-ag-expo.jpeg
   imageCaption: "Drs. Shaikh and Yasin with Dr. Beale at the Expo"
   content: >
-    <p>This year, SGMC Health had excellent representation at the Sunbelt Agricultural Exposition in Moultrie, Georgia. The Sunbelt Ag Expo is truly a spectacle to behold — rightfully crowned as "North America's Premier Farm Show." It's a melting pot of farmers, educators, policymakers, and ag-enthusiasts, all gathered to witness the latest innovations in agriculture. From cutting-edge technology demonstrations to the naming of the Southeastern Farmer of the Year, the expo is a celebration of all things agriculture.</p>
-    
-    <p>As part of the healthcare initiatives at this year's expo, SGMC Health residents delivered presentations on pertinent health topics. Drs. Ledford, Yakubu, Randhawa, and Akram represented our program, sharing their expertise with the agricultural community and contributing to the important work of bringing healthcare education to farmers and their families.</p>
+    <p>SGMC Health was well represented at this year's Sunbelt Agricultural Exposition in Moultrie, Georgia. The Sunbelt Ag Expo bills itself as "North America's Premier Farm Show," and it lives up to it — farmers, educators, policymakers, and ag enthusiasts all in one place, checking out the latest in agricultural technology and watching the Southeastern Farmer of the Year get named.</p>
+
+    <p>Our residents gave health presentations at the expo. Drs. Ledford, Yakubu, Randhawa, and Akram talked to farmers and their families about topics like skin cancer prevention and managing chronic conditions — the kind of practical health information that matters most to people who work outside every day.</p>
   photosTitle: Highlights from the Expo
   photos:
     - image: /img/agexpo25/expo-1.jpeg
@@ -132,8 +132,8 @@ communityServiceCorner:
     - image: /img/agexpo25/expo-10.jpeg
       caption: "Dr. Yakubu"
   content2: > 
-    <p>Participating in the Sunbelt Agricultural Exposition is an eye-opening experience because it highlights the intricate connection between agriculture and healthcare, particularly in areas like skin cancer prevention for farmers. Events like these provide a unique opportunity to bridge the gap between these two vital sectors, ensuring that those who feed the world are also taking care of their health.</p> 
-    
+    <p>Being at the Sunbelt Ag Expo drives home how closely agriculture and healthcare are connected. Farmers spend long hours in the sun but don't always have easy access to health education. Events like this let us reach people where they already are.</p>
+
 internsCorner:
   title: Intern Spotlight
   interns:
@@ -158,24 +158,24 @@ podcast:
   subtitle: A Podcast from SGMC Health
   episodes:
     - name: 'Episode #5 - Joseph Hayes, MD'
-      synopsis: This episode of the podcast features Dr. Hayes, Medical Director at SGMC  Internal Medicine and Assistant Professor at Mercer Medical School. From chief resident to program architect, he now leads South Georgia's newest medical residency program, training the next generation of physicians.
+      synopsis: Dr. Hayes is the Medical Director at SGMC Internal Medicine and Assistant Professor at Mercer Medical School. He went from chief resident to building South Georgia's newest residency program. In this episode, he talks about how the program came together.
       iframeUrl: https://open.spotify.com/embed/episode/68KNFYvib3spPv0rqB56aB?utm_source=generator&theme=0
       noPlayerLink: https://open.spotify.com/episode/68KNFYvib3spPv0rqB56aB?si=YyhvygV2T9G3jpyiQG0OJg
       noPlayerLinkText: Listen to Episode 5 with Dr. Joseph Hayes on Spotify
     - name: 'Episode #23 - Anna Ledford, MD & Samuel Edusa, MD'
-      synopsis: This episode of the podcast features Dr. Anna Ledford and Dr. Samuel Edusa, internal medicine resident physicians at SGMC Health. These dedicated physicians share their unique paths to medicine, provide insight into the daily rhythms of residency training, and discuss the vital importance of primary care relationships.
+      synopsis: Dr. Anna Ledford and Dr. Samuel Edusa, internal medicine residents at SGMC Health, talk about how they ended up in medicine, what a typical day in residency looks like, and why primary care relationships matter to them.
       iframeUrl: https://open.spotify.com/embed/episode/4lCMsGHz2YIvevCzMVwxvw??utm_source=generator&theme=0
       noPlayerLink: https://open.spotify.com/episode/4lCMsGHz2YIvevCzMVwxvw?si=aAvDCs23Rl2Xtn0lXTSA8g
       noPlayerLinkText: Listen to Episode 23 with Dr. Anna and Dr. Samuel on Spotify
     - name: 'Episode #26 - Joseph Hayes, MD'
-      synopsis: This episode of the podcast welcomes back Dr. Joseph Hayes, Medical Director at SGMC Internal Medicine and Assistant Professor at Mercer Medical School, for an engaging exploration of 2024's most searched health topics. From common phenomena like motion sickness and hiccups to popular medical myths, Dr. Hayes brings his expertise to answer pressing health questions and debunk widespread misconceptions with both scientific insight and humor.
+      synopsis: Dr. Joseph Hayes is back to go through 2024's most Googled health questions. He covers everything from motion sickness and hiccups to common medical myths, sorting out what's actually true from what people just assume.
       iframeUrl: https://open.spotify.com/embed/episode/7aaDfIN16pms2nx5D22anB?utm_source=generator&theme=0
       noPlayerLink: https://open.spotify.com/episode/7aaDfIN16pms2nx5D22anB?si=LpT8tewbQuC6WQd8m-EyWQ
       noPlayerLinkText: Listen to Episode 26 with Dr. Joseph Hayes on Spotify
 basicSection:
   sectionTitle: Recent Wins
   sectionColor: '#E6E6FA'
-  description: The Josh Nahum Award, presented annually at the GHA Patient Safety Summit, recognizes exceptional initiatives that improve healthcare delivery and patient care. Recipients are selected for their commitment to patient safety excellence, implementation of best practices, and contributions to positive change in healthcare.
+  description: The Josh Nahum Award is given each year at the GHA Patient Safety Summit to hospitals and teams working on projects that improve patient safety.
   title: SGMC Health Receives Statewide Awards for Patient Safety
   author: SGMC Health
   content: >
@@ -199,9 +199,9 @@ basicSection:
       </div>
     </div>
 
-    <p>"These award-winning initiatives highlight SGMC Health's role in advancing medical education and research to enhance patient safety and quality," said Senior Vice President and Chief Medical Officer Pankaj Agrawal, MD. "The clinical acumen, collaboration, and innovation of our team deserves this recognition."</p>
+    <p>"These projects show what our team can do when they focus on real problems in patient safety," said Senior Vice President and Chief Medical Officer Pankaj Agrawal, MD.</p>
 
-    <p>GHA President and CEO Caylee Noggle praised SGMC Health's contributions: "We are proud to recognize SGMC Health for their outstanding work to enhance patient safety and quality. Their projects support GHA's strategic initiatives and demonstrate our shared commitment to improving patient outcomes across Georgia."</p>
+    <p>GHA President and CEO Caylee Noggle also recognized the work: "SGMC Health's projects directly support efforts to improve patient outcomes across Georgia. We're glad to see this kind of work happening."</p>
 
 musings:
   sectionTitle: 'House Staff Diaries'
@@ -211,69 +211,51 @@ musings:
   content: >
     <p>Look how far you've come.</p>
 
-    <p>Four months ago, I wrote to you about finding your footing—about those tentative first steps, the wobbles, and the falls that would teach you balance. Today, I'm writing to celebrate the progress you've made and to help you navigate what many call "intern winter" — that challenging middle stretch where the initial excitement has faded, but the finish line still feels distant.</p>
+    <p>Four months ago, I wrote about finding your footing. The wobbles, the falls, the slow process of figuring out how to stand on your own. Now I'm writing because you've made real progress, and I want to talk about what comes next: the mid-year stretch, where the early excitement has worn off but the end still feels far away.</p>
 
-    <h3>You're No Longer Walking — You're Stepping Forward</h3>
+    <h3>You've come a long way</h3>
 
-    <p>Remember when Epic seemed like an impossible maze? Now you navigate it with muscle memory. Remember when every lab value required frantic Googling? Now you're recognizing patterns. Remember when a simple admission felt overwhelming? Now you're managing multiple complex patients with growing confidence.</p>
+    <p>Epic used to feel impossible. Now you move through it without thinking. Lab values that once sent you scrambling are starting to form patterns. Admissions that used to take everything out of you? You're handling multiple complex patients now.</p>
 
-    <p>These aren't small victories — they're monumental shifts. The fact that you're aware of what you don't know shows you know enough to recognize the gaps. That's progress, not failure.</p>
+    <p>That matters. And the fact that you can see what you still don't know means you know a lot more than you did in July.</p>
 
-    <h3>The Mid-Year Slump Is Real—And Normal</h3>
+    <h3>The mid-year slump is real</h3>
 
-    <p>Right now, you might be feeling tired in a way that's different from those first exhausting months. The novelty has worn off. The adrenaline that fueled your early days has settled. You're deep enough to see how much you still don't know, but not far enough to feel like you've truly mastered anything.</p>
+    <p>You're probably tired in a different way than before. The adrenaline is gone. The novelty wore off. You know enough to see how much is left to learn, but you haven't been at it long enough to feel like you've mastered anything.</p>
 
-    <p>This is the hardest part—the middle ground between "I have no idea what I'm doing" and "I've got this." It's the place where imposter syndrome whispers loudest, where fatigue feels permanent, and where the path ahead still seems long.</p>
+    <p>That in-between space is uncomfortable. Imposter syndrome gets louder here. The fatigue feels more permanent. I want you to know: this is normal. Being in the middle doesn't mean you're falling behind. It means you're in it.</p>
 
-    <p>I want you to know: this is exactly where you're supposed to be. The mid-year slump doesn't mean you're failing. It means you're growing.</p>
+    <h3>Think back to July</h3>
 
-    <h3>Reflecting on Your Growth</h3>
+    <p>Remember needing help with every note? Hesitating before calling an attending? Second-guessing every decision? You still have those moments, but they're fewer now. You write notes faster. You make calls with more confidence. You know when to ask for help and when you can handle it.</p>
 
-    <p>Think back to July. Remember that intern who needed help with every note, who hesitated before calling an attending, who second-guessed every decision? That person is still you, but transformed. You write notes faster now. You make clinical decisions with more confidence. You've learned when to call for help and when you can handle it yourself.</p>
+    <p>You've managed codes. You've delivered bad news. You've stayed calm when things got chaotic. Patients ask for you by name. Nurses trust you. That's not nothing.</p>
 
-    <p>You've helped manage codes. You've broken bad news. You've stayed calm when everything felt chaotic. You've built relationships with patients who now ask for you by name. You've earned the trust of nurses who've seen you grow. These aren't small accomplishments—they're evidence that you're becoming the physician you set out to be.</p>
+    <h3>What the next eight months look like</h3>
 
-    <h3>Building on Your Foundation</h3>
+    <p>You're not starting over. You're building on what you've already learned. Each rotation deepens your knowledge. Each complex case connects to something you saw months ago. That patient with the weird presentation? You'll remember a similar one from September. That drug interaction? It'll click because you learned about it in November. The knowledge adds up.</p>
 
-    <p>The remaining months aren't about starting over—they're about building. You've laid the foundation. Now it's time to construct the framework. Every rotation becomes an opportunity to deepen your knowledge. Every complex case becomes a chance to integrate what you've learned.</p>
+    <h3>Take care of yourself</h3>
 
-    <p>This is when you'll start to see connections you missed before. That patient with the strange presentation? You'll remember a similar case from September. That medication interaction? You'll recall learning about it in November. The knowledge is stacking, compounding, becoming part of your clinical intuition.</p>
+    <p>Four months of long hours and emotional weight takes a toll. You need your days off. Read the book you've been putting off. See the friend you keep meaning to call. Pick up the hobby you dropped. You're at the halfway point of a long year, and you need to pace yourself to finish it.</p>
 
-    <h3>Managing the Fatigue</h3>
+    <h3>Keep asking questions</h3>
 
-    <p>Let's talk about the exhaustion. It's real. Four months of long hours, emotional weight, and constant learning takes a toll. Sustainable medicine isn't about never being tired—it's about recognizing when you need rest and giving yourself permission to take it.</p>
+    <p>Don't let growing confidence make you stop asking. The best residents don't stop asking questions; they start asking better ones. Move from "What do I do?" to "Why do we do it this way?" From "Is this right?" to "What if we tried this instead?"</p>
 
-    <p>Your days off aren't optional extras—they're essential maintenance. That book you've been meaning to read? Read it. That friend you haven't seen? See them. That hobby you've abandoned? Pick it back up. Medicine is a marathon, and you're only at the halfway point. You need to pace yourself.</p>
+    <h3>You're not alone in this</h3>
 
-    <h3>Questions Are Still Your Superpower</h3>
+    <p>Look around. Your classmates have grown too. They're feeling the same weight and seeing the same progress. Lean on each other. Celebrate wins together. Get through the hard shifts together.</p>
 
-    <p>Don't let mid-year confidence make you hesitant to ask questions. The best residents aren't those who stop asking—they're those who ask better questions. As you grow, your inquiries should evolve from "What do I do?" to "Why do we do it this way?" from "Is this right?" to "What if we tried this?"</p>
+    <h3>Eight months left</h3>
 
-    <p>Curiosity isn't a sign of weakness—it's the engine of expertise. Keep questioning. Keep learning. Keep that beginner's mind that makes every case a teaching opportunity.</p>
+    <p>That's enough time to solidify what you've learned and build the confidence you'll carry into PGY-2. And when July comes, you'll realize intern year was just the beginning. There's a lot more ahead.</p>
 
-    <h3>You're Not Just Surviving—You're Thriving</h3>
+    <h3>We're still here</h3>
 
-    <p>We see you now: managing your list with efficiency, teaching medical students, supporting each other through difficult shifts. You're not just surviving intern year—you're actively shaping it into a transformative experience.</p>
+    <p>The support hasn't changed because you've grown. We're still here to answer questions, celebrate your wins, and back you up. You've proven you can do hard things. You've earned your place.</p>
 
-    <p>Look around at your classmates. They've grown too. You're not the only one feeling the weight and seeing the progress. Lean on each other. Celebrate each other's wins. Support each other through the hard days. This journey is individual, but you don't have to walk it alone.</p>
-
-    <h3>The Finish Line Is Closer Than It Feels</h3>
-
-    <p>Eight months remain. Eight months to solidify everything you've learned. Eight months to build the confidence that will carry you into PGY-2. Eight months to finish what you started.</p>
-
-    <p>But here's the thing—this isn't really about finishing. It's about continuing. Because when July comes and you become PGY-2s, you'll realize that intern year was just the first chapter. There's so much more learning ahead, more challenges to embrace, more growth to experience.</p>
-
-    <h3>Our Continued Commitment</h3>
-
-    <p>We're still here for you. The support hasn't changed just because you've grown. We're still celebrating your victories. We're still here to answer your questions. We're still invested in your success, now more than ever, because we've seen how much you've already achieved.</p>
-
-    <p>As you enter the second half, remember: you've proven you can do hard things. You've shown resilience, dedication, and growth. You've earned your place here.</p>
-
-    <h3>Moving Forward Together</h3>
-
-    <p>So keep stepping forward. Keep asking questions. Keep learning. Keep caring. And most importantly, keep believing in the physician you're becoming—because we believe in you.</p>
-
-    <p>You've made it almost halfway. You've got this. Now let's finish strong. 💪🏽</p>
+    <p>Keep going. You've got this. 💪🏽</p>
   photosTitle: Highlights from the Expo
   photos:
     - image: /img/moultrie/grounds.jpeg
@@ -289,17 +271,17 @@ musings:
     - image: /img/moultrie/mariya-presenting.jpeg
       caption: 'Dr. Tom presenting on complications of Diabetes mellitus'
   content2: >
-    <p>Participating in the Sunbelt Agricultural Exposition was an eye-opening experience. It highlighted the intricate connection between agriculture and healthcare, particularly in areas like skin cancer prevention for farmers. Events like these provide a unique opportunity to bridge the gap between these two vital sectors, ensuring that those who feed the world are also taking care of their health.</p> 
+    <p>The Sunbelt Ag Expo was a good reminder of how connected farming and health really are. Farmers deal with sun exposure, long physical hours, and limited access to healthcare. Getting to talk with them directly about things like skin cancer prevention felt worthwhile.</p>
     <p>See you all at next year's event!</p>
 culturosity:
   sectionTitle: Culturosity
-  description: Culturosity is a bite-sized journey through our residency community's cultures, one story at a time. This weekly column spotlights diverse traditions, celebrations, and daily lives, revealing the rich cultural tapestry that fosters growth within our community.
+  description: Culturosity is our column about the cultures in our residency community. Each installment features a different tradition, celebration, or piece of daily life from the places our residents call home.
   title: 'Caribbean Soul Feast 🇯🇲🇭🇹'
   author: Samuel Edusa, MD
   coverImage: /img/culturosity/jan-26/spread.jpeg
   imageCaption: Savory dishes from Jamaica and Haiti
   content: >
-    <p>Our Culturosity wellness program brought the vibrant tastes of the Caribbean to life as residents Michael Heron, MD and Patrick Joseph, MD transformed our gathering into an island feast! Dr. Heron treated us to authentic Jamaican comfort food with tender, fall off the bone oxtail paired with perfectly seasoned rice and peas, steamed cabbage, and sweet fried plantains that transported taste buds straight to Kingston. Not to be outdone, Dr. Patrick Joseph shared the rich culinary traditions of Haiti with his flavorful rice and chicken that had everyone coming back for seconds. Between bites, both doctors shared stories of their homelands, painting pictures of island life, family traditions, and the deep cultural roots that make Caribbean cuisine so special. It's moments like these that remind us how food brings us together, breaks down barriers, and turns colleagues into family, one delicious plate at a time!</p>
+    <p>For this Culturosity session, residents Michael Heron, MD and Patrick Joseph, MD cooked up a Caribbean feast. Dr. Heron made Jamaican oxtail (fall-off-the-bone tender), rice and peas, steamed cabbage, and fried plantains. Dr. Joseph brought Haitian rice and chicken that had people going back for seconds. Between plates, both talked about where they grew up, family food traditions, and what these dishes mean back home. There's something about cooking for people that turns a work gathering into something more personal.</p>
 
     <div class="imageGrid">
       <div class="imageColumn">
@@ -326,11 +308,11 @@ culturosity:
       </div>
     </div>
 
-    <p>The event showed how food really does bring people together, creating connections that go beyond the hospital walls. As the Jamaican saying goes, "One one coco full basket," and the Haitian proverb reminds us, "Men anpil, chay pa lou" (Many hands make the load lighter). Both doctors proved these truths as residents gathered around their dishes, sharing stories and laughter. One resident, plate piled high with seconds, put it perfectly: "When we understand where each other comes from, it makes us better at taking care of our patients." </p>
+    <p>As the Jamaican saying goes, "One one coco full basket," and the Haitian proverb puts it, "Men anpil, chay pa lou" (Many hands make the load lighter). One resident, going back for another plate, said it well: "When we understand where each other comes from, it makes us better at taking care of our patients."</p>
 
 photosOfMonth:
   sectionTitle: 'Residency Highlights'
-  subTitle: Capturing the Smiles, Milestones, and Unforgettable Moments
+  subTitle: The good times, the milestones, and the moments in between
   photos: 
     - image: /img/carousel/night-squad.jpeg
       caption: 'Night medicine: After Hour Heroes'
@@ -578,16 +560,16 @@ newsFromClinic:
     image: /img/clinic/felicia-farrell.jpeg
     title: Practice Manager
     profile: >
-      For the past eleven years, our Internal Medicine team has thrived under the steady leadership of Felicia Farrell, who brings both strategic vision and heartfelt dedication to her role as Practice Manager. What energizes her most is the collaborative spirit flowing through the practice, working alongside providers and nurses to build an environment where everyone feels supported. She finds deep satisfaction knowing that behind every compliance review and budget decision lies a tangible impact on community health and the lives of patients who walk through our doors.Family time anchors Felicia's life outside these walls, providing the balance that fuels her professional passion. When asked what makes her proud to serve here, she points to our unwavering commitment to patient-centered care and the team culture that puts collaboration first. She takes genuine pride in creating conditions that allow providers and staff to focus on what matters most: improving lives every day.Those who work with Felicia know she possesses a creative problem-solving streak that surfaces in unexpected moments, whether tackling workplace challenges or navigating everyday life. That same grounded approach, nurtured by her family connections, keeps her motivated and focused on what truly counts. Her eleven-year journey here reflects not just longevity but a deepening commitment to excellence and community health.
+      Felicia Farrell has been our Practice Manager for eleven years. She works closely with providers and nurses to keep the practice running smoothly, handling everything from compliance to budgets. What she likes most about the job is the teamwork. She says the best part is knowing that the administrative work she does directly affects patient care. Outside of work, family time keeps her grounded. When asked what makes her proud to work here, she points to the team culture and the focus on patient care. People who work with Felicia know she's a creative problem-solver, the kind of person who finds a way to make things work when the obvious solution doesn't.
 wellnessCorner:
   sectionTitle: Wellness Corner
   title: 'Finding Humor in the Hard Days: A Reminder About Emotional Well-being'
   altImageText: Emotional well-being
   image: /img/emotional-plushie.jpeg
   content: >
-    <p>Those charming "Emotional Support" plushies you might have spotted scattered throughout our hospital corridors capture the often-unspoken reality of medical residency perfectly. These whimsical crochet creations, shaped like teacups with wisps of steam rising from their rims, hold a telling message: "It's fine, I'm fine. Everything is fine!"</p>
+    <p>You might have noticed those little crochet "Emotional Support" plushies around the hospital. They're shaped like teacups with steam rising off the top, and they say: "It's fine, I'm fine. Everything is fine!"</p>
 
-    <p>While these delightful companions make us smile, they also open an important dialogue about how we, as healthcare professionals, process stress and emotions. It's a gentle reminder that sometimes saying "I'm fine" three times doesn't make it true, and that's okay.</p>
+    <p>They're funny, but they also get at something real. Saying "I'm fine" on repeat doesn't actually make it true. Residency is hard, and how we handle stress matters.</p>
 
-    <p>Remember: Our residency program offers confidential counseling services and peer support groups. Taking care of yourself isn't just fine—it's essential.</p>
+    <p>Our program offers confidential counseling and peer support groups. Use them. Taking care of yourself isn't optional.</p>
 ---

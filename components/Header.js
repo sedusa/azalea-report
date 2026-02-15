@@ -14,7 +14,7 @@ const Header = () => {
         </Link>
 
         <nav className={styles.desktopNav}>
-          <Link href='/archives'>Previous Issues</Link>
+          <span className={styles.disabledLink}>Previous Issues</span>
         </nav>
       </div>
     </header>
