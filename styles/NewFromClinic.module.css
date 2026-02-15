@@ -85,6 +85,7 @@
 .employeeSpotlightDescription {
   color: #333;
   display: block;
+  font-family: 'Georgia', serif;
   font-size: 1.3rem;
   line-height: 1.6;
   margin: 0;

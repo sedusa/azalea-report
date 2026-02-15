@@ -67,11 +67,13 @@
 }
 
 .thingsToDoDate {
+  font-family: 'Georgia', serif;
   font-size: 1rem;
   margin: 0 auto 5px;
 }
 
 .thingsToDoDescription {
+  font-family: 'Georgia', serif;
   font-size: 1.3rem;
   line-height: 1.6;
   margin: 0 auto;

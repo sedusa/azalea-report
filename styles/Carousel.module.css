@@ -65,6 +65,7 @@
 
 .photoCaption {
   display: block;
+  font-family: 'Georgia', serif;
   font-size: 1.0rem;
   line-height: 1.6;
   margin: 4px 0 0;

@@ -44,11 +44,13 @@
 
 .communityServiceCornerCaption {
   display: block;
+  font-family: 'Georgia', serif;
   font-size: 1.0rem;
   text-align: left;
 }
 
 .communityServiceCornerText {
+  font-family: 'Georgia', serif;
   font-size: 1.3rem;
   line-height: 1.6;
   margin-top: 1.5rem;

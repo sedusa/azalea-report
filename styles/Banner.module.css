@@ -140,6 +140,7 @@
 
 .bannerTitle {
   color: white;
+  font-family: 'Montserrat', sans-serif;
   font-size: 3rem;
   font-weight: bold;
   line-height: 1.2;
@@ -147,6 +148,7 @@
 }
 
 .bannerSubtitle {
+  font-family: 'Georgia', serif;
   font-size: 1.6rem;
   font-weight: normal;
   margin: 0;
@@ -157,6 +159,7 @@
 .bannerMetadata {
   display: flex;
   flex-direction: column;
+  font-family: 'Georgia', serif;
   font-size: 1.4rem;
   color: white;
 }

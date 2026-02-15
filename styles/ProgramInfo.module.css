@@ -13,6 +13,7 @@
 
 .sgmcImageCaption {
   display: block;
+  font-family: 'Georgia', serif;
   font-size: 1.0rem;
 }
 
@@ -22,6 +23,7 @@
 }
 
 .listItem {
+  font-family: 'Georgia', serif;
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
 }

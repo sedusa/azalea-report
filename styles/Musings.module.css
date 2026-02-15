@@ -36,6 +36,7 @@
 }
 
 .musingsText {
+  font-family: 'Georgia', serif;
   font-size: 1.3rem;
   line-height: 1.6;
   color: var(--text-color);
