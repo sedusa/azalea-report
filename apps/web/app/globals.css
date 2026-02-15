@@ -82,6 +82,8 @@
   html {
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   body {
@@ -97,6 +99,11 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Georgia', serif;
     font-weight: 600;
+  }
+
+  p {
+    font-size: inherit;
+    line-height: inherit;
   }
 
   a {
@@ -1352,14 +1359,14 @@
 
   .custom-description {
     font-family: 'Georgia', serif;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
   }
 
   .custom-html-content {
     font-family: 'Georgia', serif;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.6;
   }
 
@@ -1440,7 +1447,7 @@
 
   @media (max-width: 768px) {
     .newsletter-container {
-      font-size: 1rem;
+      font-size: 18px !important;
       padding: 0 1rem;
     }
 
@@ -1488,15 +1495,29 @@
     }
 
     .spotlight-text,
+    .spotlight-text *,
+    .spotlight-text p,
+    .spotlight-text div,
     .chief-text,
+    .chief-text *,
+    .chief-text p,
+    .chief-text div,
     .intern-text,
-    .basic-text {
-      font-size: 1rem;
-      line-height: 1.7;
+    .intern-text *,
+    .intern-text p,
+    .intern-text div,
+    .basic-text,
+    .basic-text *,
+    .basic-text p,
+    .basic-text div {
+      font-size: 18px !important;
+      line-height: 1.7 !important;
     }
 
-    .basic-description {
-      font-size: 1rem;
+    .basic-description,
+    .basic-description p {
+      font-size: 18px !important;
+      line-height: 1.7 !important;
     }
 
     .chiefs-section,
@@ -1562,7 +1583,8 @@
     }
 
     .section-card p {
-      font-size: 1rem;
+      font-size: 18px !important;
+      line-height: 1.7 !important;
     }
 
     /* Two Column Layout - Stack on mobile (matches TwoColumnLayout.module.css) */
@@ -1583,17 +1605,22 @@
       margin-bottom: 1rem;
     }
 
-    .spotlightText {
-      font-size: 1rem;
-      line-height: 1.7;
+    .spotlightText,
+    .spotlightText *,
+    .spotlightText p,
+    .spotlightText div {
+      font-size: 18px !important;
+      line-height: 1.7 !important;
     }
 
     .featureSubtitle {
       font-size: 1rem;
     }
 
-    .featureBullets {
-      font-size: 1rem;
+    .featureBullets,
+    .featureBullets li {
+      font-size: 18px !important;
+      line-height: 1.7 !important;
     }
 
     /* Text Image Section - stack on mobile */
@@ -1635,6 +1662,39 @@
 
     .section-with-bg {
       padding: 0.75rem 1.25rem !important;
+    }
+
+    /* Custom HTML content - force 18px on mobile */
+    .custom-html-content,
+    .custom-html-content p,
+    .custom-html-content div,
+    .custom-html-content li,
+    .custom-html-content span {
+      font-size: 18px !important;
+      line-height: 1.7 !important;
+    }
+
+    .custom-description,
+    .custom-description p {
+      font-size: 18px !important;
+      line-height: 1.7 !important;
+    }
+
+    /* Force 18px on all body text content rendered via dangerouslySetInnerHTML */
+    .section-with-bg p,
+    .section-with-bg div:not(.toggle-button),
+    .section-transparent p,
+    .section-transparent div:not(.toggle-button),
+    .section-card div:not(.toggle-button) {
+      font-size: 18px !important;
+      line-height: 1.7 !important;
+    }
+
+    /* Caption font size on mobile */
+    .basic-cover-image-caption,
+    .featureCaption,
+    .custom-image-caption {
+      font-size: 15px !important;
     }
 
     .theme-toggle,
