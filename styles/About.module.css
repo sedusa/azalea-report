@@ -1,0 +1,22 @@
+.sectionTitle {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.4;
+  margin: 1rem auto;
+}
+
+.text {
+  font-family: 'Georgia', serif;
+  font-size: 1.3rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .text {
+    font-size: 18px;
+  }
+}
