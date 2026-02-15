@@ -28,7 +28,10 @@
       "Bash(NEXT_PUBLIC_CONVEX_URL=http://127.0.0.1:3210 npx tsx:*)",
       "Bash(npx next build:*)",
       "Bash(npm run lint:*)",
-      "mcp__ide__getDiagnostics"
+      "mcp__ide__getDiagnostics",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
   }
 }
