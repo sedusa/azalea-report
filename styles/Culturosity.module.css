@@ -99,17 +99,17 @@
   }
 
   .culturosityText {
-    font-size: 18px;
-    line-height: 1.7;
+    font-size: 18px !important;
+    line-height: 1.7 !important;
   }
 
   .culturosityDescription {
-    font-size: 18px;
-    line-height: 1.7;
+    font-size: 18px !important;
+    line-height: 1.7 !important;
   }
 
   .culturosityCoverImageCaption {
-    font-size: 15px;
+    font-size: 15px !important;
   }
 
   .culturosityText :global(.imageGrid) {

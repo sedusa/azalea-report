@@ -89,8 +89,8 @@
   }
 
   .chiefText {
-    font-size: 18px;
-    line-height: 1.7;
+    font-size: 18px !important;
+    line-height: 1.7 !important;
     padding: 0;
     text-align: left;
   }

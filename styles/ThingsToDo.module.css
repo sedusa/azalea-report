@@ -121,8 +121,8 @@
   }
 
   .thingsToDoDescription {
-    font-size: 18px;
-    line-height: 1.7;
+    font-size: 18px !important;
+    line-height: 1.7 !important;
   }
 
   .thingsToDoItem:nth-last-child(2):nth-child(odd) {

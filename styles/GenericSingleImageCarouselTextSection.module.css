@@ -99,17 +99,17 @@
   }
 
   .genericText {
-    font-size: 18px;
-    line-height: 1.7;
+    font-size: 18px !important;
+    line-height: 1.7 !important;
   }
 
   .genericDescription {
-    font-size: 18px;
-    line-height: 1.7;
+    font-size: 18px !important;
+    line-height: 1.7 !important;
   }
 
   .genericCoverImageCaption {
-    font-size: 15px;
+    font-size: 15px !important;
   }
 
   .genericText :global(.imageGrid) {

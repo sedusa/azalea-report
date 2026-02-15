@@ -145,8 +145,8 @@
   .birthdayItem,
   .chiefText,
   .recentSuccessText {
-    font-size: 1.2rem;
-    line-height: 1.6;
+    font-size: 18px !important;
+    line-height: 1.7 !important;
   }
 }
 
@@ -204,7 +204,8 @@
   }
 
   .spotlightText {
-    font-size: 1.2rem;
+    font-size: 18px !important;
+    line-height: 1.7 !important;
   }
 }
 
@@ -241,8 +242,8 @@
 @media (max-width: 768px) {
   .list,
   .listItem {
-    font-size: 1.2rem;
-    line-height: 1.6;
+    font-size: 18px !important;
+    line-height: 1.7 !important;
   }
 }
 
@@ -328,7 +329,8 @@
   }
 
   .chiefText {
-    font-size: 1.2rem;
+    font-size: 18px !important;
+    line-height: 1.7 !important;
     padding: 0;
     text-align: left;
   }
@@ -337,7 +339,7 @@
     display: block;
     font-family: 'Georgia', serif;
     margin: 1rem 0 0;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 
@@ -398,8 +400,8 @@
 
   .programDirectorMessage {
     color: #333;
-    font-size: 1.2rem;
-    line-height: 1.6;
+    font-size: 18px !important;
+    line-height: 1.7 !important;
   }
 }
 
@@ -498,7 +500,8 @@
   }
 
   .recentSuccessText {
-    font-size: 1.2rem;
+    font-size: 18px !important;
+    line-height: 1.7 !important;
   }
 
   .recentSuccessToggleButton {
@@ -617,8 +620,8 @@
   }
 
   .communityServiceCornerText {
-    font-size: 1.2rem;
-    line-height: 1.6;
+    font-size: 18px !important;
+    line-height: 1.7 !important;
     color: #333;
   }
 
@@ -661,7 +664,8 @@
 
 @media (max-width: 768px) {
   .eventList {
-    font-size: 1.2rem;
+    font-size: 18px !important;
+    line-height: 1.7 !important;
   }
 }
 
@@ -695,7 +699,8 @@
   }
 
   .birthdayItem {
-    font-size: 1.2rem;
+    font-size: 18px !important;
+    line-height: 1.7 !important;
   }
 }
 
@@ -755,7 +760,8 @@
   }
 
   .wellnessTipText {
-    font-size: 1.2rem;
+    font-size: 18px !important;
+    line-height: 1.7 !important;
   }
 }
 
@@ -861,7 +867,8 @@
   }
 
   .thingsToDoDescription {
-    font-size: 1.2rem;
+    font-size: 18px !important;
+    line-height: 1.7 !important;
   }
 
   .thingsToDoItem:nth-last-child(2):nth-child(odd) {
@@ -1025,7 +1032,8 @@
   }
 
   .employeeSpotlightDescription {
-    font-size: 1.2rem;
+    font-size: 18px !important;
+    line-height: 1.7 !important;
   }
 }
 

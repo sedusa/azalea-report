@@ -19,7 +19,7 @@
 }
 
 .musingsTitle {
-  color:;
+  color: #016f53;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
   line-height: 1.4;
@@ -72,8 +72,8 @@
   }
 
   .musingsText {
-    font-size: 18px;
-    line-height: 1.7;
+    font-size: 18px !important;
+    line-height: 1.7 !important;
   }
 
   .musingsToggleButton {
