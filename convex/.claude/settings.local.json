@@ -17,7 +17,10 @@
       "Bash(gh api:*)",
       "Bash(npx convex:*)",
       "Bash(CONVEX_DEPLOYMENT=prod:resolute-emu-262 npx convex codegen:*)",
-      "Bash(npx next build)"
+      "Bash(npx next build)",
+      "Bash(npx skills add softaworks/agent-toolkit@humanizer -g -y)",
+      "Bash(git fetch:*)",
+      "Bash(git remote:*)"
     ]
   }
 }
