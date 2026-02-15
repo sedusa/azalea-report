@@ -95,11 +95,15 @@
   }
 
   .culturosityText {
-    font-size: 1.1rem;
+    font-size: 18px;
   }
 
   .culturosityDescription {
-    font-size: 1.1rem;
+    font-size: 18px;
+  }
+
+  .culturosityCoverImageCaption {
+    font-size: 15px;
   }
 
   .culturosityText :global(.imageGrid) {

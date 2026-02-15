@@ -35,8 +35,12 @@
 
   .list,
   .listItem {
-    font-size: 1.1rem;
+    font-size: 18px;
     line-height: 1.7;
+  }
+
+  .sgmcImageCaption {
+    font-size: 15px;
   }
 
   .sectionTitle {

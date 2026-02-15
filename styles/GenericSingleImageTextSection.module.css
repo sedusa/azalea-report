@@ -95,11 +95,15 @@
   }
 
   .genericText, {
-    font-size: 1rem;
+    font-size: 18px;
   }
 
   .genericDescription {
-    font-size: 1rem;
+    font-size: 18px;
+  }
+
+  .genericCoverImageCaption {
+    font-size: 15px;
   }
 
   .genericText :global(.imageGrid) {

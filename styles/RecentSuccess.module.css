@@ -98,8 +98,12 @@
 
   .recentSuccessText {
     color: #333;
-    font-size: 1.1rem;
+    font-size: 18px;
     line-height: 1.7;
+  }
+
+  .recentSuccessCaption {
+    font-size: 15px;
   }
 
   .recentSuccessImageWrapper {
@@ -115,7 +119,7 @@
   }
 
   .recentSuccessText {
-    font-size: 1.1rem;
+    font-size: 18px;
   }
 
   .recentSuccessToggleButton {
