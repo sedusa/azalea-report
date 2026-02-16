@@ -233,6 +233,16 @@
     transform: scaleX(1);
   }
 
+  .desktop-nav .nav-disabled {
+    color: var(--header-text-color);
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
   /* Padding for fixed header */
   .header-spacer {
     padding-top: 60px;

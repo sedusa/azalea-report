@@ -53,7 +53,7 @@ export default function ArchivePage({ params }: ArchivePageProps) {
             <span className="header-title">Azalea Report</span>
           </Link>
           <nav className="desktop-nav">
-            <Link href="/archives">Previous Issues</Link>
+            <span className="nav-disabled">Previous Issues</span>
           </nav>
         </div>
       </header>
