@@ -6,16 +6,13 @@ import HomePageClient from './HomePageClient';
 // Create a Convex HTTP client for server-side fetching
 const convex = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
 
-// Default OG image fallback
-const DEFAULT_OG_IMAGE = 'https://azaleareport.com/img/og.jpeg';
-
 export async function generateMetadata(): Promise<Metadata> {
+  // Use a proxied OG image URL on our own domain so WhatsApp's crawler can access it
+  const OG_IMAGE_URL = 'https://azaleareport.com/api/og-image';
+
   try {
     // Fetch the latest published issue server-side
     const latestIssue = await convex.query(api.issues.getLatestPublished);
-
-    // Use banner image if available, otherwise use default
-    const ogImage = (latestIssue as any)?.bannerImageUrl || DEFAULT_OG_IMAGE;
 
     // Dynamic title with edition info
     const title = latestIssue
@@ -36,7 +33,7 @@ export async function generateMetadata(): Promise<Metadata> {
         siteName: 'Azalea Report',
         images: [
           {
-            url: ogImage,
+            url: OG_IMAGE_URL,
             width: 1200,
             height: 630,
             alt: latestIssue?.bannerTitle || 'Azalea Report',
@@ -48,7 +45,7 @@ export async function generateMetadata(): Promise<Metadata> {
         card: 'summary_large_image',
         title: latestIssue?.bannerTitle || 'Azalea Report',
         description: 'SGMC Health IM Residency Newsletter',
-        images: [ogImage],
+        images: [OG_IMAGE_URL],
       },
     };
   } catch (error) {
@@ -64,7 +61,7 @@ export async function generateMetadata(): Promise<Metadata> {
         siteName: 'Azalea Report',
         images: [
           {
-            url: DEFAULT_OG_IMAGE,
+            url: OG_IMAGE_URL,
             width: 1200,
             height: 630,
             alt: 'Azalea Report',
@@ -76,7 +73,7 @@ export async function generateMetadata(): Promise<Metadata> {
         card: 'summary_large_image',
         title: 'Azalea Report',
         description: 'SGMC Health IM Residency Newsletter',
-        images: [DEFAULT_OG_IMAGE],
+        images: [OG_IMAGE_URL],
       },
     };
   }
